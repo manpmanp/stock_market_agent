@@ -1,0 +1,25 @@
+{
+  "_comment": "v1 seed universe. Tickers use Yahoo Finance symbol convention (Nordic listings carry the .ST suffix). Edit this file to add/remove tickers; nothing in the ingestion or scoring code is hardcoded to this list. region is used only for reporting/filtering, not for scoring.",
+  "tickers": [
+    { "ticker": "VOLV-B.ST", "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "ERIC-B.ST", "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "HM-B.ST",   "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "ATCO-A.ST", "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "INVE-B.ST", "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "SAND.ST",   "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "SEB-A.ST",  "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "SWED-A.ST", "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "TELIA.ST",  "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "EVO.ST",    "exchange": "OMX Stockholm", "region": "nordic", "currency": "SEK" },
+    { "ticker": "AAPL",  "exchange": "NASDAQ", "region": "us", "currency": "USD" },
+    { "ticker": "MSFT",  "exchange": "NASDAQ", "region": "us", "currency": "USD" },
+    { "ticker": "GOOGL", "exchange": "NASDAQ", "region": "us", "currency": "USD" },
+    { "ticker": "AMZN",  "exchange": "NASDAQ", "region": "us", "currency": "USD" },
+    { "ticker": "NVDA",  "exchange": "NASDAQ", "region": "us", "currency": "USD" },
+    { "ticker": "META",  "exchange": "NASDAQ", "region": "us", "currency": "USD" },
+    { "ticker": "BRK-B", "exchange": "NYSE",   "region": "us", "currency": "USD" },
+    { "ticker": "JNJ",   "exchange": "NYSE",   "region": "us", "currency": "USD" },
+    { "ticker": "JPM",   "exchange": "NYSE",   "region": "us", "currency": "USD" },
+    { "ticker": "XOM",   "exchange": "NYSE",   "region": "us", "currency": "USD" }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "quoteSummary": {
+    "result": [
+      {
+        "price": {
+          "longName": "Apple Inc.",
+          "shortName": "Apple Inc.",
+          "currency": "USD",
+          "exchangeName": "NMS",
+          "marketCap": { "raw": 3000000000000, "fmt": "3.00T" }
+        },
+        "assetProfile": { "sector": "Technology", "industry": "Consumer Electronics" },
+        "summaryDetail": {
+          "trailingPE": { "raw": 30.5, "fmt": "30.50" },
+          "forwardPE": { "raw": 27.1, "fmt": "27.10" },
+          "priceToSalesTrailing12Months": { "raw": 7.8, "fmt": "7.80" },
+          "dividendYield": { "raw": 0.005, "fmt": "0.50%" },
+          "payoutRatio": { "raw": 0.15, "fmt": "15.00%" }
+        },
+        "defaultKeyStatistics": {
+          "priceToBook": { "raw": 45.2, "fmt": "45.20" },
+          "pegRatio": { "raw": 2.9, "fmt": "2.90" },
+          "enterpriseToEbitda": { "raw": 22.4, "fmt": "22.40" }
+        },
+        "financialData": {
+          "targetMeanPrice": { "raw": 210.0, "fmt": "210.00" },
+          "targetLowPrice": { "raw": 180.0, "fmt": "180.00" },
+          "targetHighPrice": { "raw": 250.0, "fmt": "250.00" },
+          "recommendationKey": "buy",
+          "numberOfAnalystOpinions": { "raw": 42, "fmt": "42" },
+          "revenueGrowth": { "raw": 0.08, "fmt": "8.00%" },
+          "earningsGrowth": { "raw": 0.11, "fmt": "11.00%" },
+          "grossMargins": { "raw": 0.44, "fmt": "44.00%" },
+          "operatingMargins": { "raw": 0.30, "fmt": "30.00%" },
+          "profitMargins": { "raw": 0.25, "fmt": "25.00%" },
+          "returnOnEquity": { "raw": 1.5, "fmt": "150.00%" },
+          "debtToEquity": { "raw": 140.0, "fmt": "140.00" },
+          "freeCashflow": { "raw": 90000000000, "fmt": "90.00B" }
+        }
+      }
+    ],
+    "error": null
+  }
+}

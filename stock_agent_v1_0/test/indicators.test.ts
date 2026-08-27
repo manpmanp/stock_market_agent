@@ -1,0 +1,66 @@
+import { describe, expect, it } from "vitest";
+import { computeIndicators, type PricePoint } from "../src/scoring/indicators.js";
+
+function makeSeries(n: number, start: number, dailyDrift: number): PricePoint[] {
+  const points: PricePoint[] = [];
+  let price = start;
+  const base = new Date("2024-01-01T00:00:00Z").getTime();
+  for (let i = 0; i < n; i++) {
+    price = price * (1 + dailyDrift);
+    points.push({
+      date: new Date(base + i * 86400000).toISOString().slice(0, 10),
+      close: Math.round(price * 100) / 100,
+      volume: 1000000 + (i % 5) * 10000,
+    });
+  }
+  return points;
+}
+
+describe("computeIndicators", () => {
+  it("returns all nulls for an empty series", () => {
+    const result = computeIndicators([]);
+    expect(result.asOfDate).toBeNull();
+    expect(result.rsi14).toBeNull();
+    expect(result.sma50).toBeNull();
+  });
+
+  it("returns nulls for indicators that need more history than provided", () => {
+    const short = makeSeries(10, 100, 0.001);
+    const result = computeIndicators(short);
+    expect(result.asOfDate).not.toBeNull();
+    expect(result.sma50).toBeNull(); // needs 50 points
+    expect(result.macd).toBeNull(); // needs ~35 points
+  });
+
+  it("computes SMA50/100/200 once enough history exists", () => {
+    const long = makeSeries(260, 100, 0.0005);
+    const result = computeIndicators(long);
+    expect(result.sma50).not.toBeNull();
+    expect(result.sma100).not.toBeNull();
+    expect(result.sma200).not.toBeNull();
+    // steadily rising series: price should sit above all its SMAs
+    expect(result.priceVsSma50).toBeGreaterThan(0);
+    expect(result.priceVsSma200).toBeGreaterThan(0);
+  });
+
+  it("RSI approaches 100 for a monotonically rising series and is bounded [0,100]", () => {
+    const rising = makeSeries(30, 100, 0.02);
+    const result = computeIndicators(rising);
+    expect(result.rsi14).not.toBeNull();
+    expect(result.rsi14 as number).toBeGreaterThan(90);
+    expect(result.rsi14 as number).toBeLessThanOrEqual(100);
+  });
+
+  it("RSI approaches 0 for a monotonically falling series", () => {
+    const falling = makeSeries(30, 100, -0.02);
+    const result = computeIndicators(falling);
+    expect(result.rsi14 as number).toBeLessThan(10);
+  });
+
+  it("volatility is null with insufficient history and non-negative once computed", () => {
+    expect(computeIndicators(makeSeries(20, 100, 0.001)).volatility30d).toBeNull();
+    const v = computeIndicators(makeSeries(100, 100, 0.001)).volatility30d;
+    expect(v).not.toBeNull();
+    expect(v as number).toBeGreaterThanOrEqual(0);
+  });
+});

@@ -1,0 +1,21 @@
+name = "stock-agent"
+main = "src/index.ts"
+compatibility_date = "2025-08-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Free-tier friendly: fundamentals + technicals once/day, prices once/day.
+# Cron syntax is UTC. 06:00 UTC is after US market close and covers the
+# Stockholm session too. Adjust once real request volume against D1's
+# free-tier row read/write caps is known (see README "Free tier limits").
+[triggers]
+crons = ["0 6 * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "stock-agent-db"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[vars]
+# Comma-separated list is also supported via config/universe.json (preferred).
+# This var is a fallback / override hook for quick manual testing.
+UNIVERSE_SOURCE = "config"
