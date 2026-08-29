@@ -1,0 +1,28 @@
+name = "stock-agent"
+main = "src/index.ts"
+compatibility_date = "2025-08-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Two schedules, mapped to the two ingestion modes in src/ingestion/run.ts:
+#   "0 6 * * *"  -- daily FULL run (5y price backfill + fundamentals/
+#                   valuation + a prune of old snapshot rows). ~06:00 UTC is
+#                   after US market close and covers the Stockholm session.
+#   "0 * * * *"  -- hourly INCREMENTAL run (just the last 5 days of price
+#                   bars, no fundamentals refetch) so entry-timing/valuation
+#                   labels stay fresh through the day without re-pulling
+#                   everything -- see src/ingestion/run.ts ingestTicker doc
+#                   comment for the D1 free-tier write-budget math behind
+#                   this split. index.ts scheduled() picks the mode from
+#                   controller.cron.
+[triggers]
+crons = ["0 6 * * *", "0 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "stock-agent-db"
+database_id = "4b57c47b-d963-47bf-a9da-2e354eb92995"
+
+[vars]
+# Comma-separated list is also supported via config/universe.json (preferred).
+# This var is a fallback / override hook for quick manual testing.
+UNIVERSE_SOURCE = "config"

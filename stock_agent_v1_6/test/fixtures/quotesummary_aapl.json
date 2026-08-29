@@ -1,0 +1,62 @@
+{
+  "quoteSummary": {
+    "result": [
+      {
+        "price": {
+          "longName": "Apple Inc.",
+          "shortName": "Apple Inc.",
+          "currency": "USD",
+          "exchangeName": "NMS",
+          "marketCap": { "raw": 3000000000000, "fmt": "3.00T" }
+        },
+        "assetProfile": { "sector": "Technology", "industry": "Consumer Electronics" },
+        "summaryDetail": {
+          "trailingPE": { "raw": 30.5, "fmt": "30.50" },
+          "forwardPE": { "raw": 27.1, "fmt": "27.10" },
+          "priceToSalesTrailing12Months": { "raw": 7.8, "fmt": "7.80" },
+          "dividendYield": { "raw": 0.005, "fmt": "0.50%" },
+          "payoutRatio": { "raw": 0.15, "fmt": "15.00%" }
+        },
+        "defaultKeyStatistics": {
+          "priceToBook": { "raw": 45.2, "fmt": "45.20" },
+          "pegRatio": { "raw": 2.9, "fmt": "2.90" },
+          "enterpriseToEbitda": { "raw": 22.4, "fmt": "22.40" },
+          "beta": { "raw": 1.25, "fmt": "1.25" },
+          "enterpriseValue": { "raw": 3050000000000, "fmt": "3.05T" }
+        },
+        "financialData": {
+          "targetMeanPrice": { "raw": 210.0, "fmt": "210.00" },
+          "targetLowPrice": { "raw": 180.0, "fmt": "180.00" },
+          "targetHighPrice": { "raw": 250.0, "fmt": "250.00" },
+          "recommendationKey": "buy",
+          "numberOfAnalystOpinions": { "raw": 42, "fmt": "42" },
+          "revenueGrowth": { "raw": 0.08, "fmt": "8.00%" },
+          "earningsGrowth": { "raw": 0.11, "fmt": "11.00%" },
+          "grossMargins": { "raw": 0.44, "fmt": "44.00%" },
+          "operatingMargins": { "raw": 0.30, "fmt": "30.00%" },
+          "profitMargins": { "raw": 0.25, "fmt": "25.00%" },
+          "returnOnEquity": { "raw": 1.5, "fmt": "150.00%" },
+          "returnOnAssets": { "raw": 0.28, "fmt": "28.00%" },
+          "debtToEquity": { "raw": 140.0, "fmt": "140.00" },
+          "freeCashflow": { "raw": 90000000000, "fmt": "90.00B" },
+          "totalDebt": { "raw": 110000000000, "fmt": "110.00B" },
+          "totalCash": { "raw": 60000000000, "fmt": "60.00B" },
+          "ebitda": { "raw": 130000000000, "fmt": "130.00B" }
+        },
+        "recommendationTrend": {
+          "trend": [
+            { "period": "0m", "strongBuy": 15, "buy": 20, "hold": 8, "sell": 1, "strongSell": 0 },
+            { "period": "-1m", "strongBuy": 14, "buy": 19, "hold": 9, "sell": 1, "strongSell": 0 }
+          ]
+        },
+        "incomeStatementHistory": {
+          "incomeStatementHistory": [
+            { "endDate": { "raw": 1703980800, "fmt": "2023-12-31" }, "operatingIncome": { "raw": 115000000000, "fmt": "115.00B" }, "interestExpense": { "raw": 4000000000, "fmt": "4.00B" } },
+            { "endDate": { "raw": 1672444800, "fmt": "2022-12-31" }, "operatingIncome": { "raw": 108000000000, "fmt": "108.00B" }, "interestExpense": { "raw": 3800000000, "fmt": "3.80B" } }
+          ]
+        }
+      }
+    ],
+    "error": null
+  }
+}
