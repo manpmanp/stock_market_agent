@@ -1,0 +1,34 @@
+Ticker: EXAMPLE
+Overall: BULLISH
+
+SHORT  | score= 76.7 | BUY          | confidence= 89.7 | valuation=UNDERVALUED        | entry=NEUTRAL_ENTRY
+MEDIUM | score= 78.9 | BUY          | confidence= 89.7 | valuation=UNDERVALUED        | entry=NEUTRAL_ENTRY
+LONG   | score= 80.7 | BUY          | confidence= 89.7 | valuation=UNDERVALUED        | entry=NEUTRAL_ENTRY
+
+Valuation metrics:
+  fair_value_upside: 0.17999999999999994
+  margin_of_safety: 0.15254237288135597
+  expected_return: 0.30000000000000004
+  downside: 0.12
+  risk_reward: 2.5000000000000004
+
+Warnings:
+
+Long-term weight sensitivity:
+  quality              base= 80.68 -5%= 80.23 +5%= 81.13
+  growth               base= 80.68 -5%= 80.04 +5%= 81.32
+  financial_strength   base= 80.68 -5%= 80.49 +5%= 80.87
+  valuation            base= 80.68 -5%= 81.87 +5%= 79.49
+  future_potential     base= 80.68 -5%= 79.94 +5%= 81.42
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/spreadsheet_warmup.py", line 772, in warm_spreadsheet_runtime
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/connection.py", line 37, in get_or_create_client
+  File "/tmp/tmp.L2TH2Y5coc/artifact_tool_v2-2.8.22/artifact_tool/rpc/daemon.py", line 124, in start_daemon
+TimeoutError: Timed out waiting for artifact tool daemon socket. Set ARTIFACT_TOOL_RPC_DAEMON_STARTUP_TIMEOUT_S=<seconds> to increase the limit.
+Traceback (most recent call last):
+  File [35m"/mnt/data/Stock_Decision_Algorithm_First_Version/example.py"[0m, line [35m66[0m, in [35m<module>[0m
+    f"-5%=[1;31m{values['minus']:6.2f}[0m "
+          [1;31m^^^^^^^^^^^^^^^^^^^^^^[0m
+[1;35mTypeError[0m: [35munsupported format string passed to NoneType.__format__[0m
