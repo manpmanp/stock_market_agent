@@ -1,0 +1,9 @@
+node_modules/
+.wrangler/
+dist/
+*.log
+.dev.vars
+
+# scripts/backtest.sh output/working files -- regenerated per run, not checked in
+data/
+.venv-backtest/
