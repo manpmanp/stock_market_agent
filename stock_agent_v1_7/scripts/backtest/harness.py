@@ -50,6 +50,18 @@ harness only covers the technical/price-based factors, which have genuine
 point-in-time history. Fundamentals-driven factors are not included here --
 see the Methodology tab for why.
 
+Also fits Decision Lab's ACTUAL weight vector -- not a standalone technical
+model evaluated next to it, the real non-negative/sum-to-1 weights over the
+4 live factors that have point-in-time history today (entry, technical, a
+partial valuation, a partial risk -- see build-dataset.ts and
+DECISION_FACTORS below) via non-negative least squares, walk-forward,
+same discipline as everything else here. See fit_decision_weights and the
+"decision_weights" entry in each horizon's report. This is evaluated
+alongside linear/gbm/tabpfn (same IC/hit-rate/significance/holdout checks)
+but is NOT yet wired into the live engine -- it still needs the promotion
+gate (repeated, not one-off, passes before a fitted vector replaces
+src/decision/weights.ts's DEFAULT_WEIGHTS) that hasn't been built yet.
+
 Usage:
     python3 scripts/backtest/harness.py [--dataset data/backtest_dataset.csv]
                                          [--out-json data/backtest_report.json]
@@ -66,6 +78,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
+from scipy.optimize import nnls
 from sklearn.linear_model import Ridge
 from sklearn.ensemble import GradientBoostingRegressor
 
@@ -75,6 +88,22 @@ FEATURES = [
     "trend_pullback", "trend_near_high", "trend_downtrend", "trend_neutral",
 ]
 LABEL = "label_forward_return"
+
+# The actual trainable-Decision-Lab piece: 4 of the 10 live factors
+# (entry, technical, a partial valuation, a partial risk -- see
+# build-dataset.ts's comment on why only these 4 have point-in-time
+# history today) fit as a real non-negative, sum-to-1 weight vector against
+# real realized forward returns, walk-forward, same discipline as
+# linear/gbm above. This is what actually answers "does the model correct
+# its own weights from being wrong" for the live Decision Lab engine,
+# rather than just evaluating a disconnected technical-only model next to
+# it. The other 6 factors (quality, growth, financial_strength,
+# future_potential, catalyst, market_regime) are not included here yet --
+# they need fundamentals/news history that's only just started
+# accumulating (see src/lib/db.ts pruneOldSnapshots) -- extend
+# DECISION_FACTORS once that history is deep enough to fit against without
+# lookahead bias.
+DECISION_FACTORS = ["factor_entry", "factor_technical", "factor_valuation_partial", "factor_risk_partial"]
 
 HORIZON_DAYS = {"short": 10, "medium": 60, "long": 252}
 HOLDOUT_QUARTERS = 2       # ~6 months, never touched until the final report
@@ -275,6 +304,36 @@ def fit_model_only(model_name: str, train: pd.DataFrame):
         return None
 
 
+def fit_decision_weights(train: pd.DataFrame) -> np.ndarray | None:
+    """Fits Decision Lab's actual weight vector -- non-negative, summing to
+    1, exactly the shape validateWeights() in src/decision/types.ts
+    requires -- against real realized forward returns via non-negative
+    least squares (scipy.optimize.nnls). This is the literal "learn from
+    being wrong" step: nnls finds the weight combination that minimizes
+    squared prediction error on this training window, so a factor that
+    turns out not to predict returns gets pushed toward a near-zero
+    weight, and one that does gets a larger one -- nothing here is
+    hand-picked. Returns None if there isn't enough clean training data
+    to fit against (mirrors inner_tune's same guard)."""
+    sub = train.dropna(subset=DECISION_FACTORS + [LABEL])
+    if len(sub) < 30:
+        return None
+    X = sub[DECISION_FACTORS].to_numpy()
+    y = sub[LABEL].to_numpy()
+    try:
+        w, _residual = nnls(X, y)
+    except Exception:  # pragma: no cover -- a failed fit just skips this fold, doesn't crash the harness
+        return None
+    total = w.sum()
+    # total == 0 means nnls found no non-negative combination of these 4
+    # factors that beats predicting zero for everyone -- an honest "no
+    # signal this fold" result, not an error. Left un-normalized (all
+    # zeros); predictions from it are also all zero, which evaluate_fold's
+    # rank-correlation step correctly reports as no usable signal (NaN,
+    # filtered out) rather than a fake ranking.
+    return w / total if total > 0 else w
+
+
 def compute_correlations(hdf: pd.DataFrame) -> dict:
     """Pearson correlation between every technical feature and every other
     feature, AND between every feature and the realized forward return --
@@ -428,7 +487,28 @@ def bootstrap_pvalue(a: list[float], b: list[float], n: int = N_BOOTSTRAP, seed:
     return float((boot_means <= 0).mean())
 
 
-def run_horizon(df: pd.DataFrame, horizon: str) -> dict:
+def evaluate_live_active_weights(test_all: pd.DataFrame, active_weights: dict | None) -> dict | None:
+    """Evaluates the CURRENTLY ACTIVE (frozen, not refit) Decision Lab
+    weight vector for this horizon on this run's holdout data -- a
+    different question from decision_weights above ("would a fresh fit
+    pass"), this is "is what's actually live right now still working."
+    `active_weights` is the {factor_column: weight} dict for this horizon
+    from data/.active_decision_weights.json (see fetch-active-weights.ts),
+    or None if D1 had no active row for this horizon (fresh install) --
+    returns None in that case, meaning "not monitored this run", not "0
+    factors" or a failure."""
+    if not active_weights:
+        return None
+    eval_test = test_all.dropna(subset=DECISION_FACTORS)
+    if eval_test.empty:
+        return None
+    w = np.array([active_weights.get(c, 0.0) for c in DECISION_FACTORS])
+    preds = eval_test[DECISION_FACTORS].to_numpy() @ w
+    fm = evaluate_fold(eval_test, preds)
+    return {"ic": fm.ic, "hit_rate": fm.hit_rate, "n": fm.n}
+
+
+def run_horizon(df: pd.DataFrame, horizon: str, active_weights: dict | None = None) -> dict:
     hdf = df[df["horizon"] == horizon].copy()
     hdf["quarter"] = quarter_of(hdf["date"])
     quarters = sorted(hdf["quarter"].unique())
@@ -439,7 +519,7 @@ def run_horizon(df: pd.DataFrame, horizon: str) -> dict:
     walk_quarters = quarters[:-HOLDOUT_QUARTERS]
 
     embargo_days = HORIZON_DAYS[horizon]
-    model_names = ["linear", "gbm"] + (["tabpfn"] if TABPFN_AVAILABLE else [])
+    model_names = ["linear", "gbm", "decision_weights"] + (["tabpfn"] if TABPFN_AVAILABLE else [])
 
     fold_metrics: dict[str, list[FoldMetrics]] = {m: [] for m in model_names}
     fold_portfolios: dict[str, list[float]] = {m: [] for m in model_names}
@@ -449,6 +529,10 @@ def run_horizon(df: pd.DataFrame, horizon: str) -> dict:
     # read fold to fold, it shows whether/how the chosen config actually
     # shifted as more history accumulated. See the Model Results tab.
     tuning_history: dict[str, list[dict]] = {m: [] for m in model_names if m in ("linear", "gbm")}
+    # Same idea, for decision_weights -- the fitted 4-factor Decision Lab
+    # weight vector, per fold, so you can see it actually move as more
+    # history accumulates rather than trusting that it does.
+    decision_weight_history: list[dict] = []
 
     for i in range(MIN_TRAIN_QUARTERS, len(walk_quarters)):
         test_q = walk_quarters[i]
@@ -465,16 +549,31 @@ def run_horizon(df: pd.DataFrame, horizon: str) -> dict:
             continue
 
         for m in model_names:
+            # eval_test is the row set `preds` actually lines up with --
+            # normally test_clean, but decision_weights needs its own
+            # DECISION_FACTORS-filtered slice. Kept as a per-model local
+            # (never overwrites test_clean) so a later model in this same
+            # loop -- tabpfn, in particular, which runs after
+            # decision_weights in model_names -- still gets the right rows.
+            eval_test = test_clean
             if m in ("linear", "gbm"):
                 params, inner_ic, _ranked = inner_tune(m, train, embargo_days)
                 tuning_history[m].append({"test_quarter": str(test_q), "params": params, "inner_validation_ic": inner_ic})
                 model = fit_model_with_params(m, params, train)
                 preds = model.predict(test_clean[FEATURES].to_numpy()) if model is not None else None
+            elif m == "decision_weights":
+                w_norm = fit_decision_weights(train)
+                decision_weight_history.append({
+                    "test_quarter": str(test_q),
+                    "weights": {f: round(float(x), 4) for f, x in zip(DECISION_FACTORS, w_norm)} if w_norm is not None else None,
+                })
+                eval_test = test_clean.dropna(subset=DECISION_FACTORS)
+                preds = eval_test[DECISION_FACTORS].to_numpy() @ w_norm if (w_norm is not None and not eval_test.empty) else None
             else:
                 preds = fit_predict(m, train, test_clean)
             if preds is None:
                 continue
-            fm = evaluate_fold(test_clean, preds)
+            fm = evaluate_fold(eval_test, preds)
             fold_metrics[m].append(fm)
             fold_portfolios[m].extend(fm.portfolio_returns)
             fold_benchmarks[m].extend(fm.benchmark_returns)
@@ -520,6 +619,7 @@ def run_horizon(df: pd.DataFrame, horizon: str) -> dict:
     fitted_models: dict = {}
     train_all = pd.DataFrame()
     final_tuned_params: dict = {}
+    final_decision_weights: dict | None = None
     if holdout_start is not None:
         embargo_cutoff = holdout_start - pd.Timedelta(days=int(embargo_days * 1.5))
         train_all = hdf[(pd.to_datetime(hdf["date"]) < embargo_cutoff)].dropna(subset=FEATURES + [LABEL])
@@ -536,20 +636,37 @@ def run_horizon(df: pd.DataFrame, horizon: str) -> dict:
                 params, inner_ic, _ranked = inner_tune(m, train_all, embargo_days)
                 final_tuned_params[m] = {"params": params, "inner_validation_ic": inner_ic}
                 model = fit_model_with_params(m, params, train_all)
+                fitted_models[m] = model
+                if model is None:
+                    holdout_summary[m] = None
+                    continue
+                eval_test = test_all
+                preds = model.predict(test_all[FEATURES].to_numpy())
+            elif m == "decision_weights":
+                w_norm = fit_decision_weights(train_all)
+                final_decision_weights = {f: round(float(x), 4) for f, x in zip(DECISION_FACTORS, w_norm)} if w_norm is not None else None
+                eval_test = test_all.dropna(subset=DECISION_FACTORS)
+                if w_norm is None or eval_test.empty:
+                    holdout_summary[m] = None
+                    continue
+                preds = eval_test[DECISION_FACTORS].to_numpy() @ w_norm
             else:
                 model = fit_model_only(m, train_all)
-            fitted_models[m] = model
-            if model is None:
-                holdout_summary[m] = None
-                continue
-            preds = model.predict(test_all[FEATURES].to_numpy())
-            fm = evaluate_fold(test_all, preds)
+                fitted_models[m] = model
+                if model is None:
+                    holdout_summary[m] = None
+                    continue
+                eval_test = test_all
+                preds = model.predict(test_all[FEATURES].to_numpy())
+            fm = evaluate_fold(eval_test, preds)
             sharpe, dd = sharpe_and_drawdown(fm.portfolio_returns)
             excess = [p - b for p, b in zip(fm.portfolio_returns, fm.benchmark_returns)]
             holdout_summary[m] = {
                 "hit_rate": fm.hit_rate, "ic": fm.ic, "n": fm.n, "sharpe": sharpe, "max_drawdown": dd,
                 "mean_excess_return_vs_benchmark": float(np.mean(excess)) if excess else None,
             }
+
+    live_active_holdout = evaluate_live_active_weights(test_all, active_weights) if holdout_start is not None else None
 
     # Interpretability: what does each model actually respond to, and how
     # do the raw technical inputs relate to each other and to the label in
@@ -578,6 +695,25 @@ def run_horizon(df: pd.DataFrame, horizon: str) -> dict:
             "per_fold": tuning_history,
             "final": final_tuned_params,
         },
+        "decision_weights": {
+            "factors": DECISION_FACTORS,
+            "per_fold": decision_weight_history,
+            "final": final_decision_weights,
+            "note": (
+                "Fitted (non-negative, sum-to-1) weights for the 4 Decision Lab factors with "
+                "point-in-time history today -- see DECISION_FACTORS. The other 6 live factors "
+                "(quality, growth, financial_strength, future_potential, catalyst, market_regime) "
+                "aren't included yet -- they need fundamentals/news history that's only just "
+                "started accumulating. These fitted weights are NOT yet applied to the live "
+                "Decision Lab engine -- see the Methodology tab for the promotion gate this is "
+                "waiting on before that would be safe. Also: this model's walk_forward/"
+                "final_holdout hit_rate isn't meaningful -- its prediction is always >= 0 "
+                "(0-100 factor scores, non-negative weights), so it structurally always "
+                "'predicts positive'; IC, sharpe, and mean_excess_return_vs_benchmark are the "
+                "metrics that actually reflect this model's ranking skill."
+            ),
+        },
+        "live_active_holdout": live_active_holdout,
     }
 
 
@@ -628,6 +764,31 @@ def to_markdown(report: dict) -> str:
                 f"{'' if fh['max_drawdown'] is None else round(fh['max_drawdown'], 3)} |"
             )
         lines.append("")
+        dw = h.get("decision_weights", {})
+        lines.append("**Decision Lab fitted weights (final, from all pre-holdout history):**")
+        lines.append("")
+        if dw.get("final"):
+            for f, v in dw["final"].items():
+                lines.append(f"- {f}: {v}")
+        else:
+            lines.append("_Not enough clean training data to fit this horizon yet._")
+        lines.append("")
+        lines.append(
+            "_Note: decision_weights' hit rate above isn't a meaningful number -- its score "
+            "is always >= 0 (Decision-Lab-style 0-100 factor scores with non-negative weights), "
+            "so it structurally always \"predicts positive\" and hit rate just reflects how often "
+            "returns were positive, not real skill. IC, Sharpe, and excess-return ARE meaningful "
+            "(they compare ranking/relative sizing, not sign)._"
+        )
+        lines.append("")
+        lines.append("_Not yet applied to the live engine -- see decision_weights.note in the JSON report._")
+        lines.append("")
+        live = h.get("live_active_holdout")
+        if live is not None:
+            lines.append(f"**Live (currently active) weights on this run's holdout:** IC = {round(live['ic'], 3) if live['ic'] is not None else '--'}, n = {live['n']}")
+        else:
+            lines.append("_Live-weight monitoring: not evaluated this run (no active-weights file, or no active row in D1 for this horizon yet)._")
+        lines.append("")
     return "\n".join(lines)
 
 
@@ -640,6 +801,15 @@ def main():
         "--no-tune", action="store_true",
         help="Skip the nested hyperparameter search (use the fixed DEFAULT_PARAMS for linear/gbm instead) -- "
              "much faster, useful for a quick iteration run. Tuning is ON by default.",
+    )
+    ap.add_argument(
+        "--active-weights", default="data/.active_decision_weights.json",
+        help="JSON file mapping horizon -> {factor_column: weight} for Decision Lab's CURRENTLY ACTIVE "
+             "weights (written by scripts/backtest/fetch-active-weights.ts before this runs) -- used to "
+             "compute each horizon's live_active_holdout (rollback-monitoring input, see "
+             "evaluate_live_active_weights). Missing file or missing horizon key just means 'not monitored "
+             "this run', not an error -- scripts/backtest.sh always runs fetch-active-weights.ts first, but "
+             "a direct manual harness.py invocation without it is still fine.",
     )
     args = ap.parse_args()
 
@@ -657,7 +827,17 @@ def main():
     if not TUNING_ENABLED:
         print("Note: --no-tune set -- using fixed default hyperparameters, skipping the nested search.", file=sys.stderr)
 
-    report = {"horizons": [run_horizon(df, h) for h in HORIZON_DAYS]}
+    active_weights_by_horizon: dict = {}
+    active_weights_path = Path(args.active_weights)
+    if active_weights_path.exists():
+        try:
+            active_weights_by_horizon = json.loads(active_weights_path.read_text())
+        except Exception as exc:
+            print(f"Note: couldn't parse {active_weights_path} ({exc}) -- skipping live-weight monitoring this run.", file=sys.stderr)
+    else:
+        print(f"Note: {active_weights_path} not found -- skipping live-weight monitoring this run.", file=sys.stderr)
+
+    report = {"horizons": [run_horizon(df, h, active_weights_by_horizon.get(h)) for h in HORIZON_DAYS]}
 
     Path(args.out_json).write_text(json.dumps(report, indent=2))
     Path(args.out_md).write_text(to_markdown(report))

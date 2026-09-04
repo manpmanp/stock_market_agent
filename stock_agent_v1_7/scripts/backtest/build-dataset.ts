@@ -105,6 +105,82 @@ function fmt(n: number | null): string {
   return n === null || Number.isNaN(n) ? "" : String(n);
 }
 
+// --- Decision Lab factor columns (point-in-time-clean subset only) -----
+//
+// src/decision/factors.ts computes 10 factor scores, but 6 of them (quality,
+// growth, financial_strength, future_potential, catalyst, market_regime)
+// need fundamentals or news data this project doesn't have a point-in-time
+// history for yet (fundamentals_snapshot only recently stopped being
+// pruned -- see src/lib/db.ts pruneOldSnapshots -- so real history is only
+// now starting to accumulate). The 4 factors below are different: every
+// input they need (RSI, MACD, SMA50/200, price-range percentile,
+// volatility, distance from high, trend state) already comes from price
+// history alone, which this dataset already computes point-in-time
+// correctly. So these 4 can be fit honestly today, with no lookahead risk,
+// while the fundamentals-dependent 6 wait for real history to accumulate.
+//
+// Each formula below is copied from factors.ts, not re-derived -- if
+// factors.ts's math changes, these should be updated to match, since the
+// whole point is that what gets trained here is the same thing the live
+// engine actually computes. Two are intentionally partial versions of their
+// factors.ts counterpart (valuation drops the fair-value-gap and EV/EBIT
+// components, both fundamentals-dependent; risk drops leverage and beta,
+// same reason) -- named accordingly so nobody mistakes them for the full
+// factor.
+function clamp01(v: number): number {
+  return Math.max(0, Math.min(1, v));
+}
+
+function band(value: number | null, weak: number, strong: number, higherIsBetter = true): number | null {
+  if (value === null) return null;
+  const t = higherIsBetter ? (value - weak) / (strong - weak) : (weak - value) / (weak - strong);
+  return clamp01(t) * 100;
+}
+
+function avgIgnoringNulls(values: Array<number | null>): number | null {
+  const present = values.filter((v): v is number => v !== null);
+  if (present.length === 0) return null;
+  return present.reduce((a, b) => a + b, 0) / present.length;
+}
+
+/** Matches factors.ts scoreEntry exactly. */
+function factorEntry(trendState: string | null, rsi14: number | null): number | null {
+  const stateScore: Record<string, number> = { pullback_in_uptrend: 80, neutral: 50, near_historical_highs: 30, downtrend: 20 };
+  const rsiScore = rsi14 === null ? null : 1 - Math.abs(rsi14 - 50) / 50;
+  if (trendState === null || !(trendState in stateScore)) {
+    return rsiScore === null ? null : rsiScore * 100;
+  }
+  const base = stateScore[trendState]!;
+  return rsiScore === null ? base : base * 0.7 + rsiScore * 100 * 0.3;
+}
+
+/** Matches factors.ts scoreTechnical exactly. */
+function factorTechnical(rsi14: number | null, macd: number | null, macdSignal: number | null, priceVsSma50: number | null, priceVsSma200: number | null): number | null {
+  const rsiScore = rsi14 === null ? null : (1 - Math.abs(rsi14 - 50) / 50) * 100;
+  const macdScore = macd === null || macdSignal === null ? null : macd > macdSignal ? 70 : 30;
+  const sma50Score = band(priceVsSma50, -0.1, 0.1);
+  const sma200Score = band(priceVsSma200, -0.15, 0.15);
+  return avgIgnoringNulls([rsiScore, macdScore, sma50Score, sma200Score]);
+}
+
+/** Self-relative half ONLY of factors.ts scoreValuation -- the fair-value
+ *  gap and EV/EBIT components are dropped (both need fundamentals/analyst
+ *  data with no point-in-time history yet). Partial, not the real factor. */
+function factorValuationPartial(priceRangePercentile: number | null): number | null {
+  if (priceRangePercentile === null) return null;
+  const rangeSignal = 1 - 2 * priceRangePercentile; // 1 = at own low, -1 = at own high
+  return ((rangeSignal + 1) / 2) * 100;
+}
+
+/** Volatility + drawdown-from-high components ONLY of factors.ts scoreRisk
+ *  -- leverage and beta are dropped (fundamentals-dependent, same reason as
+ *  above). Partial, not the real factor. */
+function factorRiskPartial(volatility30d: number | null, distFromHighPct: number | null): number | null {
+  const volScore = band(volatility30d, 0.6, 0.15, false);
+  const drawdownScore = band(distFromHighPct, -0.6, -0.05, true);
+  return avgIgnoringNulls([volScore, drawdownScore]);
+}
+
 function main() {
   let files: string[];
   try {
@@ -123,6 +199,7 @@ function main() {
     "rsi14", "macd", "macd_signal", "price_vs_sma50", "price_vs_sma200",
     "volatility_30d", "volume_trend_20d", "price_range_pct", "dist_from_high_pct", "dist_from_low_pct",
     "trend_pullback", "trend_near_high", "trend_downtrend", "trend_neutral",
+    "factor_entry", "factor_technical", "factor_valuation_partial", "factor_risk_partial",
     "label_forward_return",
   ];
   const lines: string[] = [header.join(",")];
@@ -160,6 +237,10 @@ function main() {
       if (ind.asOfDate === null) continue;
       const t = trendStateOneHot(ind.trendState);
       const currentClose = rows[i]!.close as number;
+      const fEntry = factorEntry(ind.trendState, ind.rsi14);
+      const fTechnical = factorTechnical(ind.rsi14, ind.macd, ind.macdSignal, ind.priceVsSma50, ind.priceVsSma200);
+      const fValuationPartial = factorValuationPartial(ind.priceRangePercentile);
+      const fRiskPartial = factorRiskPartial(ind.volatility30d, ind.distFromHighPct);
 
       for (const [horizon, days] of Object.entries(HORIZON_DAYS)) {
         const futureIdx = i + days;
@@ -173,6 +254,7 @@ function main() {
           fmt(ind.rsi14), fmt(ind.macd), fmt(ind.macdSignal), fmt(ind.priceVsSma50), fmt(ind.priceVsSma200),
           fmt(ind.volatility30d), fmt(ind.volumeTrend20d), fmt(ind.priceRangePercentile), fmt(ind.distFromHighPct), fmt(ind.distFromLowPct),
           String(t.pullback), String(t.nearHigh), String(t.downtrend), String(t.neutral),
+          fmt(fEntry), fmt(fTechnical), fmt(fValuationPartial), fmt(fRiskPartial),
           fmt(label),
         ].join(","));
         rowsEmitted++;

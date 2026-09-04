@@ -372,12 +372,21 @@ export async function getLatestRankings(
  *  here: scoring's 5y self-relative valuation signal needs that history to
  *  stay intact. Called once a day (from the "full" scheduled run only, see
  *  index.ts) rather than every hour, since it's itself a handful of writes
- *  and there's no benefit to running it more often. */
+ *  and there's no benefit to running it more often.
+ *
+ *  fundamentals_snapshot is likewise NOT pruned here (as of this change):
+ *  it's the only point-in-time record of what each ticker's fundamentals
+ *  actually looked like on a given date, once a day, ~169 rows/day -- the
+ *  training data the trainable Decision Lab weight-fitting depends on
+ *  (see scripts/backtest/harness.py). Deleting it after 30 days, as before,
+ *  made that permanently impossible: there would never be more than a
+ *  month of fundamentals history to fit against. Volume stays trivial
+ *  (tens of thousands of rows/year) since it's written once/day, not
+ *  hourly like technical_snapshot. */
 export async function pruneOldSnapshots(env: Env, keepDays = 30): Promise<void> {
   const cutoff = new Date(Date.now() - keepDays * 86_400_000).toISOString().slice(0, 19).replace("T", " ");
   await env.DB.batch([
     env.DB.prepare(`DELETE FROM technical_snapshot WHERE pulled_at < ?`).bind(cutoff),
-    env.DB.prepare(`DELETE FROM fundamentals_snapshot WHERE pulled_at < ?`).bind(cutoff),
     env.DB.prepare(`DELETE FROM valuation_estimates WHERE pulled_at < ?`).bind(cutoff),
     env.DB.prepare(`DELETE FROM rankings WHERE run_at < ?`).bind(cutoff),
     env.DB.prepare(`DELETE FROM source_log WHERE pulled_at < ?`).bind(cutoff),

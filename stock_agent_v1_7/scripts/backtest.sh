@@ -6,9 +6,12 @@
 # publishes the result to D1 so the live /decision-lab "Model Results" tab
 # can actually show it -- not just describe the methodology in prose.
 #
-# Must run from your actual Mac Terminal, not through any bridged/sandboxed
-# shell -- the D1 export and publish steps need your real `wrangler login`
-# credentials, which only exist there.
+# Needs real Cloudflare credentials for the D1 export/publish steps: either
+# an interactive `wrangler login` (your Mac Terminal) or a
+# CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID env var pair (headless --
+# this is how .github/workflows/backtest.yml runs it on a schedule without
+# your Mac). Don't run it through a bridged/sandboxed shell that has
+# neither.
 #
 # One-time prerequisite: `npm run db:migrate:remote` (adds the
 # backtest_runs table -- migrations/0007_backtest_runs.sql). The publish
@@ -21,6 +24,8 @@
 #   scripts/backtest.sh --python <path>  use a specific python3/venv interpreter
 #   scripts/backtest.sh --no-tune        skip automatic hyperparameter tuning (fixed defaults,
 #                                        noticeably faster -- see harness.py's inner_tune)
+#   scripts/backtest.sh --no-promote     skip the live weight-promotion/rollback step (still fits
+#                                        and reports weights, just never writes anything to D1)
 #
 # First run installs Python deps (pandas/numpy/scipy/scikit-learn/tabpfn)
 # into a local venv at .venv-backtest/ if one doesn't already exist. tabpfn
@@ -40,6 +45,22 @@
 # scripts/backtest-scheduled.sh instead of calling this script directly --
 # it adds locking, a timeout, log rotation, and a status file on top of
 # this script's own behavior.
+#
+# Decision Lab's weights for 4 of its 10 factors (entry, technical,
+# valuation, risk -- the ones with real point-in-time history today, see
+# build-dataset.ts) are fit fresh every run and, after PROMOTION_STREAK
+# (currently 3) CONSECUTIVE runs where the fit beats the linear baseline,
+# get promoted to the live weight vector -- as a partial reallocation of
+# those 4 factors' existing combined share only, never touching the other
+# 6 (see promote-weights.ts's computeNewWeights doc comment for why). One
+# good run never promotes anything by itself.
+#
+# Separately, once a horizon HAS been promoted, its live weights get
+# monitored every run against fresh holdout data (see harness.py's
+# live_active_holdout and promote-weights.ts's rollback logic) -- if they
+# fail ROLLBACK_STREAK (currently 3) consecutive checks, they're
+# automatically reverted to whatever was active before that promotion. A
+# horizon still on its original hand-set weights is never touched by this.
 
 set -euo pipefail
 
@@ -54,14 +75,16 @@ VENV_DIR=".venv-backtest"
 SKIP_EXPORT=0
 PYTHON_BIN=""
 NO_TUNE=0
+NO_PROMOTE=0
 
 while [ $# -gt 0 ]; do
   case "$1" in
     --skip-export) SKIP_EXPORT=1; shift ;;
     --python) PYTHON_BIN="$2"; shift 2 ;;
     --no-tune) NO_TUNE=1; shift ;;
+    --no-promote) NO_PROMOTE=1; shift ;;
     -h|--help)
-      sed -n '2,42p' "${BASH_SOURCE[0]}"
+      sed -n '2,63p' "${BASH_SOURCE[0]}"
       exit 0
       ;;
     *)
@@ -218,6 +241,27 @@ if [ -z "$PYTHON_BIN" ]; then
   }
 fi
 
+# --- 3.5. Fetch Decision Lab's currently active weights from D1 so the
+#          harness can check whether what's LIVE right now is still
+#          working (rollback-monitoring input) -- separate from whether a
+#          fresh refit would pass (the promotion-gate question, step 6).
+#          Must run before the harness so data/.active_decision_weights.json
+#          exists when it needs it. Skipped entirely under --no-promote,
+#          since its only consumer is the promotion/rollback step. ---
+if [ "$NO_PROMOTE" != "1" ]; then
+  step "Fetching Decision Lab's currently active weights (for live-weight monitoring)"
+  if ! node scripts/backtest/fetch-active-weights.ts 2>/tmp/backtest-fetch-err.$$; then
+    if grep -qi "strip-types\|Unknown file extension\|Unexpected token" /tmp/backtest-fetch-err.$$; then
+      node --experimental-strip-types scripts/backtest/fetch-active-weights.ts
+    else
+      cat /tmp/backtest-fetch-err.$$ >&2
+      rm -f /tmp/backtest-fetch-err.$$
+      exit 1
+    fi
+  fi
+  rm -f /tmp/backtest-fetch-err.$$
+fi
+
 # --- 4. Run the walk-forward harness. Linear/GBM hyperparameters are
 #        tuned automatically per fold by default (nested walk-forward
 #        search, see harness.py) -- this genuinely takes longer than a
@@ -255,6 +299,42 @@ rm -f /tmp/backtest-push-err.$$
 npx wrangler d1 execute "$DB_NAME" --remote --file=data/.push-backtest.sql
 rm -f data/.push-backtest.sql
 echo "Published -- open /decision-lab and check the \"Model Results\" tab."
+
+# --- 6. Weight promotion gate: record this run's pass/fail against the
+#        promotion bar, and -- only after PROMOTION_STREAK consecutive
+#        passes with no gap -- write an updated live weight vector (see
+#        promote-weights.ts's module doc comment for exactly what "updated"
+#        means: a partial reallocation of the 4 trainable factors' existing
+#        share, never a full 10-factor replacement). This same step ALSO
+#        checks rollback: if a horizon's live weights were reached via a
+#        promotion and then fail ROLLBACK_STREAK consecutive live-holdout
+#        checks, it reverts to whatever was active before that promotion.
+#        Needs migrations 0008 and 0009 applied first, same pattern as the
+#        backtest_runs check above. ---
+if [ "$NO_PROMOTE" = "1" ]; then
+  step "Skipping weight-promotion/rollback gate (--no-promote)"
+  echo "Fitted weights were still computed and are in data/backtest_report.md/.json -- just never written to D1 this run."
+else
+  step "Weight-promotion / rollback gate (Decision Lab's trainable factors)"
+  if ! npx wrangler d1 execute "$DB_NAME" --remote --command "SELECT 1 FROM decision_weight_promotion_history LIMIT 1;" >/dev/null 2>&1 \
+    || ! npx wrangler d1 execute "$DB_NAME" --remote --command "SELECT 1 FROM live_weight_monitoring_history LIMIT 1;" >/dev/null 2>&1; then
+    echo "decision_weight_promotion_history or live_weight_monitoring_history doesn't exist in $DB_NAME yet -- run this once, then re-run this script:" >&2
+    echo "  npm run db:migrate:remote" >&2
+    exit 1
+  fi
+  if ! node scripts/backtest/promote-weights.ts 2>/tmp/backtest-promote-err.$$; then
+    if grep -qi "strip-types\|Unknown file extension\|Unexpected token" /tmp/backtest-promote-err.$$; then
+      node --experimental-strip-types scripts/backtest/promote-weights.ts
+    else
+      cat /tmp/backtest-promote-err.$$ >&2
+      rm -f /tmp/backtest-promote-err.$$
+      exit 1
+    fi
+  fi
+  rm -f /tmp/backtest-promote-err.$$
+  npx wrangler d1 execute "$DB_NAME" --remote --file=data/.promote-weights.sql
+  rm -f data/.promote-weights.sql
+fi
 
 echo
 echo "Done. Full report: data/backtest_report.md (and data/backtest_report.json)."
