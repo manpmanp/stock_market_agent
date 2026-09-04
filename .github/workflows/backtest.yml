@@ -1,9 +1,9 @@
 name: Backtest & weight training
 
 # Runs the learning loop (export -> dataset -> harness -> publish ->
-# promotion/rollback gate, see scripts/backtest.sh) on GitHub's own
-# infrastructure instead of your Mac. Weekly by default; also runnable
-# on demand from the Actions tab (workflow_dispatch).
+# promotion/rollback gate, see stock_agent_v1_7/scripts/backtest.sh) on
+# GitHub's own infrastructure instead of your Mac. Weekly by default; also
+# runnable on demand from the Actions tab (workflow_dispatch).
 on:
   schedule:
     - cron: "0 8 * * 0" # every Sunday, 08:00 UTC
@@ -13,6 +13,10 @@ on:
         description: "Extra flags for scripts/backtest.sh (e.g. --no-tune)"
         required: false
         default: ""
+
+defaults:
+  run:
+    working-directory: stock_agent_v1_7
 
 jobs:
   backtest:
@@ -25,6 +29,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: stock_agent_v1_7/package-lock.json
 
       - run: npm ci
 
@@ -32,6 +37,7 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
+          cache-dependency-path: stock_agent_v1_7/scripts/backtest/requirements.txt
 
       - name: Install Python deps
         # backtest.sh's own venv-creation/pip-install block only runs when
@@ -58,6 +64,6 @@ jobs:
         with:
           name: backtest-report
           path: |
-            data/backtest_report.md
-            data/backtest_report.json
+            stock_agent_v1_7/data/backtest_report.md
+            stock_agent_v1_7/data/backtest_report.json
           retention-days: 90
