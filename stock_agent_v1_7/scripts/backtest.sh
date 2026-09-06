@@ -150,11 +150,21 @@ else
   i=0
   failed=0
   skipped=0
+  consecutive_failed=0
+  # If the first few tickers in a row all fail, this is almost certainly a
+  # systemic problem (bad/missing CLOUDFLARE_API_TOKEN or ACCOUNT_ID, wrong
+  # D1 database name, network egress blocked) rather than anything
+  # ticker-specific -- looping through the rest of a 100+ ticker universe
+  # just to end with "N failed" and no visible reason wastes CI minutes and
+  # leaves you with nothing to debug (the per-ticker .err files never leave
+  # the runner). Fail fast and print the actual error inline instead.
+  FAIL_FAST_THRESHOLD=3
   while IFS= read -r TICKER; do
     i=$((i + 1))
     DEST="$RAW_DIR/${TICKER}.json"
     if [ -s "$DEST" ] && node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$DEST" >/dev/null 2>&1; then
       skipped=$((skipped + 1))
+      consecutive_failed=0
       printf "  [%d/%d] %s (already exported, skipping)\r" "$i" "$COUNT" "$TICKER"
       continue
     fi
@@ -167,11 +177,23 @@ else
       && node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$TMP" >/dev/null 2>&1; then
       mv "$TMP" "$DEST"
       rm -f "$RAW_DIR/.${TICKER}.err"
+      consecutive_failed=0
     else
       failed=$((failed + 1))
-      rm -f "$TMP"
+      consecutive_failed=$((consecutive_failed + 1))
       echo
       echo "  Export failed for $TICKER -- see $RAW_DIR/.${TICKER}.err (not written to $DEST, so the dataset builder won't choke on it -- re-run this command to retry just this ticker)" >&2
+      if [ "$consecutive_failed" -ge "$FAIL_FAST_THRESHOLD" ]; then
+        echo >&2
+        echo "The last $consecutive_failed tickers in a row all failed the same way -- stopping early instead of burning through the rest of the universe. Actual error from the most recent failure ($TICKER):" >&2
+        echo "----------------------------------------" >&2
+        cat "$RAW_DIR/.${TICKER}.err" >&2
+        echo "----------------------------------------" >&2
+        echo "Common causes: CLOUDFLARE_API_TOKEN/CLOUDFLARE_ACCOUNT_ID missing, expired, or lacking D1 permissions; wrong D1 database name; network/DNS blocked. Fix that, then re-run (already-exported tickers are skipped automatically)." >&2
+        rm -f "$TMP"
+        exit 1
+      fi
+      rm -f "$TMP"
     fi
   done <<< "$TICKERS"
   echo

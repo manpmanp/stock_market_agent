@@ -98,6 +98,9 @@ export function renderDecisionLab(): string {
   .tab { font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary); cursor: pointer; }
   .tab[aria-selected="true"] { color: var(--text-primary); border-color: var(--seq-400); font-weight: 600; }
   .run-at { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
+  .sort-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .sort-bar label { font-size: 12px; color: var(--text-secondary); }
+  .sort-bar select { font: inherit; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
   .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }
   .card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
   .t { font-weight: 700; font-size: 14px; }
@@ -462,6 +465,21 @@ export function renderDecisionLab(): string {
     <h2>Decisions</h2>
     <p class="note" style="margin-bottom: 14px;">Each card's <b>Decision</b> badge is the weighted average of all 10 factors (see Methodology). Its <b>Entry</b> and <b>Valuation</b> readings next to it are each just one factor's own score, shown separately on purpose -- they can disagree with the overall Decision, and with each other. A weak entry timing can still sit inside a Buy (the other 9 factors carried it); a good entry can still sit inside an Accumulate (something else pulled the average down). Sort/rank always follows the overall score, not either of these two.</p>
     <div class="tabs" id="horizon-tabs" role="tablist"></div>
+    <div class="sort-bar">
+      <label for="sort-select">Sort by</label>
+      <select id="sort-select">
+        <option value="score-desc">Score: high to low</option>
+        <option value="score-asc">Score: low to high</option>
+        <option value="entry-desc">Entry: best to worst (then score)</option>
+        <option value="entry-asc">Entry: worst to best (then score)</option>
+        <option value="decision-desc">Decision: best to worst (then score)</option>
+        <option value="decision-asc">Decision: worst to best (then score)</option>
+        <option value="valuation-desc">Valuation: best to worst (then score)</option>
+        <option value="valuation-asc">Valuation: worst to best (then score)</option>
+        <option value="combined-desc">Combined (entry + decision + valuation): best to worst</option>
+        <option value="combined-asc">Combined (entry + decision + valuation): worst to best</option>
+      </select>
+    </div>
     <div class="run-at" id="run-at"></div>
     <div id="decisions-list"></div>
   </section>
@@ -492,6 +510,79 @@ export function renderDecisionLab(): string {
   };
   var HORIZONS = ["short", "medium", "long"];
   var currentHorizon = "long";
+  var currentSort = "score-desc";
+  var lastDecisions = [];
+
+  // Lower rank = better. These mirror the thresholds in
+  // src/decision/engine.ts's entryStatus()/valuationStatus()/decisionLabel()
+  // exactly, so "best to worst" here matches what those functions consider
+  // best to worst. Anything not in the map (including null/unknown, e.g.
+  // valuation_status can come back "UNKNOWN" when fair-value data is
+  // missing) always sorts to the bottom, in both directions -- an unknown
+  // reading isn't "worse" than STRONG SELL, it's just not comparable.
+  var ENTRY_RANK = { GOOD_ENTRY: 0, NEUTRAL_ENTRY: 1, WEAK_ENTRY: 2, POOR_ENTRY: 3 };
+  var VALUATION_RANK = { DEEPLY_UNDERVALUED: 0, UNDERVALUED: 1, FAIRLY_VALUED: 2, EXPENSIVE: 3, VERY_EXPENSIVE: 4 };
+  var DECISION_RANK = { "STRONG BUY": 0, "BUY": 1, "ACCUMULATE": 2, "HOLD / WAIT": 3, "REDUCE": 4, "SELL": 5, "STRONG SELL": 6 };
+
+  function rankOf(map, value) {
+    var r = map[String(value || "").toUpperCase()];
+    return r === undefined ? null : r;
+  }
+  function normalizedRank(map, value, count) {
+    // 0 (best) .. 1 (worst) so entry/decision/valuation ranks -- which have
+    // different numbers of buckets -- combine on equal footing for the
+    // "combined" sort instead of one factor dominating just because it has
+    // more categories.
+    var r = rankOf(map, value);
+    return r === null ? null : r / Math.max(1, count - 1);
+  }
+  function scoreOf(d) {
+    var s = Number(d.score);
+    return isNaN(s) ? -Infinity : s;
+  }
+  // Comparator builder: keyFn returns a rank (null = unknown, always
+  // last) for a decision row; ties (including two unknowns, or keyFn
+  // omitted for the pure-score sorts) fall back to score, always
+  // high-to-low regardless of the outer direction -- "ranked with the
+  // score" means score is always the tiebreaker's own natural order, not
+  // something that flips with the primary key's direction.
+  function makeComparator(keyFn, dir) {
+    var sign = dir === "asc" ? 1 : -1;
+    return function (a, b) {
+      if (keyFn) {
+        var ra = keyFn(a), rb = keyFn(b);
+        if (ra === null && rb !== null) return 1;
+        if (rb === null && ra !== null) return -1;
+        if (ra !== null && rb !== null && ra !== rb) return sign * (ra - rb);
+      }
+      return scoreOf(b) - scoreOf(a);
+    };
+  }
+  function sortDecisions(list, sortKey) {
+    var parts = sortKey.split("-");
+    var field = parts[0], dir = parts[1];
+    var sorted = list.slice();
+    if (field === "score") {
+      sorted.sort(function (a, b) { return (dir === "asc" ? 1 : -1) * (scoreOf(a) - scoreOf(b)); });
+    } else if (field === "entry") {
+      sorted.sort(makeComparator(function (d) { return rankOf(ENTRY_RANK, d.entry_status); }, dir));
+    } else if (field === "decision") {
+      sorted.sort(makeComparator(function (d) { return rankOf(DECISION_RANK, d.decision); }, dir));
+    } else if (field === "valuation") {
+      sorted.sort(makeComparator(function (d) { return rankOf(VALUATION_RANK, d.valuation_status); }, dir));
+    } else if (field === "combined") {
+      sorted.sort(makeComparator(function (d) {
+        var parts = [
+          normalizedRank(ENTRY_RANK, d.entry_status, 4),
+          normalizedRank(DECISION_RANK, d.decision, 7),
+          normalizedRank(VALUATION_RANK, d.valuation_status, 5),
+        ].filter(function (r) { return r !== null; });
+        if (!parts.length) return null;
+        return parts.reduce(function (a, b) { return a + b; }, 0) / parts.length;
+      }, dir));
+    }
+    return sorted;
+  }
   var currentWeightHorizon = "long";
   var savedWeights = {};   // last-known-saved, per horizon, for Reset
   var draftWeights = {};   // in-progress slider edits, per horizon
@@ -975,6 +1066,16 @@ export function renderDecisionLab(): string {
     return card;
   }
 
+  function renderDecisionsList() {
+    var list = document.getElementById("decisions-list");
+    list.innerHTML = "";
+    if (!lastDecisions.length) {
+      list.appendChild(el("div", { class: "empty", text: "No decisions yet for this horizon." }));
+      return;
+    }
+    sortDecisions(lastDecisions, currentSort).forEach(function (d) { list.appendChild(renderDecisionCard(d)); });
+  }
+
   function loadDecisions() {
     var list = document.getElementById("decisions-list");
     list.innerHTML = '<div class="empty">Loading…</div>';
@@ -982,12 +1083,8 @@ export function renderDecisionLab(): string {
       .then(function (r) { return r.json(); })
       .then(function (data) {
         document.getElementById("run-at").textContent = data.runAt ? ("Last run (UTC): " + data.runAt) : "No decision run yet -- use \\"Recompute decisions now\\" below.";
-        list.innerHTML = "";
-        if (!data.decisions || !data.decisions.length) {
-          list.appendChild(el("div", { class: "empty", text: "No decisions yet for this horizon." }));
-          return;
-        }
-        data.decisions.forEach(function (d) { list.appendChild(renderDecisionCard(d)); });
+        lastDecisions = data.decisions || [];
+        renderDecisionsList();
       })
       .catch(function () { list.innerHTML = '<div class="empty">Failed to load decisions.</div>'; });
   }
@@ -1132,6 +1229,11 @@ export function renderDecisionLab(): string {
     if (open) { modelResultsPanel.removeAttribute("hidden"); } else { modelResultsPanel.setAttribute("hidden", ""); }
     modelResultsToggle.setAttribute("aria-expanded", open ? "true" : "false");
     modelResultsToggle.innerHTML = "Model Results " + (open ? "&#9652;" : "&#9662;");
+  });
+
+  document.getElementById("sort-select").addEventListener("change", function (e) {
+    currentSort = e.target.value;
+    renderDecisionsList();
   });
 
   renderHorizonTabs();
