@@ -1,10 +1,14 @@
-// Second, independent dashboard page for the 10-factor decision engine
-// (src/decision/*), served at GET /decision-lab. Deliberately a separate
-// route/page from GET /dashboard (src/dashboard.ts), which stays exactly
-// as it was -- per the explicit instruction to keep the two systems
-// comparable side by side rather than merging or replacing either. Shares
-// the same color-system tokens as dashboard.ts (same validated palette)
-// purely for visual family, not code -- no imports between the two pages.
+// Primary (and, since the page merge, only rendered) page for the site,
+// served at GET /decision-lab -- GET /dashboard now just redirects here
+// (see index.ts). Built around the 10-factor decision engine (src/decision/*);
+// the TradingView chart, stat row, universe panel, and Growth/Defensive
+// section below were carried over from the old watchlist page (dashboard.ts,
+// still present but no longer routed to) as part of that merge. v1's own
+// scoring computation (src/scoring/score.ts) is untouched and still runs on
+// its own schedule as a frozen baseline -- this page's stat row/style badges
+// just read its published /rankings output, they don't recompute anything.
+// Shares the same color-system tokens as dashboard.ts (same validated
+// palette) purely for visual family, not code -- no imports between the two.
 //
 // This is stock_agent_v1_7 -- the active playground for the v7 work
 // (data-driven, self-tuning model selection + backtest harness), forked
@@ -60,6 +64,15 @@ export function renderDecisionLab(): string {
     --div-neg: #e34948;
     --div-mid: #f0efec;
     --div-pos: #2a78d6;
+    /* Growth/Defensive style badge -- carried over from the old watchlist
+       page (v1's classifyStyle()), a fixed categorical identity axis kept
+       deliberately separate from the good/bad status colors above (see
+       dashboard.ts's original comment on this -- reusing a hue between the
+       two would make orange mean "Defensive" in one badge and "overvalued"
+       in the next). */
+    --series-growth:    #2a78d6;
+    --series-defensive: #7c5cbf;
+    --series-blend:     #898781;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -84,6 +97,9 @@ export function renderDecisionLab(): string {
       --div-neg: #e66767;
       --div-mid: #383835;
       --div-pos: #3987e5;
+      --series-growth:    #3987e5;
+      --series-defensive: #9b7fd4;
+      --series-blend:     #898781;
     }
   }
   * { box-sizing: border-box; }
@@ -101,6 +117,48 @@ export function renderDecisionLab(): string {
   .sort-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
   .sort-bar label { font-size: 12px; color: var(--text-secondary); }
   .sort-bar select { font: inherit; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
+  /* Stat row + universe panel + Growth/Defensive -- carried over from the
+     old watchlist page (dashboard.ts) as part of the page merge. */
+  .stat-row { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+  .stat { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; min-width: 120px; }
+  .stat .v { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat .l { font-size: 11px; color: var(--text-muted); }
+  .stat.clickable { cursor: pointer; user-select: none; }
+  .stat.clickable .l { display: flex; align-items: center; gap: 3px; }
+  .stat.clickable .l .chevron { display: inline-block; font-size: 9px; transition: transform .15s ease; }
+  .stat.clickable[aria-expanded="true"] .l .chevron { transform: rotate(180deg); }
+  .universe-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 4px 16px; margin: -8px 0 28px; max-width: 560px; }
+  .universe-panel[hidden] { display: none; }
+  .universe-region { border-bottom: 1px solid var(--gridline); padding: 10px 0; }
+  .universe-region:last-child { border-bottom: none; }
+  .universe-region-head { display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; font-size: 13px; }
+  .universe-region-head .n { font-weight: 600; }
+  .universe-region-head .c { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .universe-tickers { display: none; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+  .universe-tickers.open { display: flex; }
+  .universe-tickers span { font-size: 11px; font-variant-numeric: tabular-nums; padding: 2px 7px; border-radius: 6px; background: var(--gridline); color: var(--text-secondary); }
+  .style-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 640px) { .style-cols { grid-template-columns: 1fr; } }
+  .style-col h3 { font-size: 13px; display: flex; align-items: center; gap: 6px; margin: 0 0 10px; }
+  .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .swatch.growth { background: var(--series-growth); }
+  .swatch.defensive { background: var(--series-defensive); }
+  .style-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 6px; background: var(--surface-1); font-size: 13px; }
+  .style-row .t { font-weight: 600; }
+  .style-row .g { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .style-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 999px; color: #fff; white-space: nowrap; }
+  .style-badge.growth { background: var(--series-growth); }
+  .style-badge.defensive { background: var(--series-defensive); }
+  .style-badge.blend { background: var(--series-blend); }
+  /* TradingView chart block, per card -- same widget/config as the old
+     watchlist page, just wired into this page's DOM-builder (el()) instead
+     of dashboard.ts's string templates. */
+  .tv-range-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .tv-range-btn { font: inherit; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary); cursor: pointer; }
+  .tv-range-btn.active { color: #fff; background: var(--seq-400); border-color: var(--seq-400); }
+  .tv-widget-container { height: 420px; border-radius: 8px; overflow: hidden; }
+  .tv-empty { color: var(--text-muted); font-size: 12px; padding: 44px 0; text-align: center; }
+  .tv-credit { font-size: 10px; color: var(--text-muted); margin-top: 4px; }
   .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; cursor: pointer; }
   .card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
   .t { font-weight: 700; font-size: 14px; }
@@ -239,6 +297,9 @@ export function renderDecisionLab(): string {
   </div>
   <p class="sub">A 10-factor decision engine (quality, growth, financial strength, valuation, future potential, technical, entry, risk, catalyst, market regime). Weights are stored in the database and can be tuned below without redeploying. This build (v7) is also where a data-driven, self-tuning model is being developed and tested -- see Methodology &rarr; Model Selection &amp; Testing for status. (The original fixed-weight formula this replaced as the primary view still runs untouched in the background as a frozen comparison baseline -- see Methodology &rarr; Model Selection &amp; Testing.)</p>
   <p class="note">Catalyst has no news/events data source wired in yet, so it's currently a flagged neutral placeholder -- a future version could add one (see Methodology above). Market regime is a real (if simple) live computation from a broad market-index proxy, not this ticker's own data. Data-driven research output, not investment advice.</p>
+
+  <div class="stat-row" id="stats"></div>
+  <div class="universe-panel" id="universePanel" hidden></div>
 
   <section id="methodology-panel" class="methodology-panel" hidden>
     <div class="tabs" id="method-tabs" role="tablist">
@@ -485,6 +546,27 @@ export function renderDecisionLab(): string {
   </section>
 
   <section>
+    <h2>Growth <span class="swatch growth"></span> vs Defensive <span class="swatch defensive"></span></h2>
+    <p class="note" style="margin-bottom: 14px;">
+      A style label, not a ranking: fixed thresholds on each stock's own revenue/earnings growth,
+      dividend yield, and volatility -- never compared to the rest of the universe. "Blend" means
+      neither signal clears the threshold. This is v1's own classification (see
+      <code>src/scoring/score.ts classifyStyle()</code>) shown here for reference; it isn't part of
+      the Decision Lab's 10-factor score above.
+    </p>
+    <div class="style-cols">
+      <div class="style-col">
+        <h3><span class="swatch growth"></span> Growth</h3>
+        <div id="growthList"></div>
+      </div>
+      <div class="style-col">
+        <h3><span class="swatch defensive"></span> Defensive</h3>
+        <div id="defensiveList"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h2>Weight tuning</h2>
     <div class="weights-panel">
       <div class="tabs" id="weight-tabs" role="tablist"></div>
@@ -512,6 +594,235 @@ export function renderDecisionLab(): string {
   var currentHorizon = "long";
   var currentSort = "score-desc";
   var lastDecisions = [];
+  var expandedTickers = new Set(); // survives sort/horizon re-renders, like the old watchlist page
+  var styleByTicker = {}; // ticker -> "growth"|"defensive"|"blend", from v1's /rankings (see Growth vs Defensive section)
+
+  // --- TradingView chart (carried over from the old watchlist page, dashboard.ts) ---
+
+  // Maps this project's Yahoo Finance ticker spelling to TradingView's symbol
+  // format (EXCHANGE:SYMBOL) -- no data is read back from TradingView, this
+  // is only used to embed its official chart widget. Kept in sync with the
+  // same mapping in dashboard.ts (the frozen v1 page still uses its own copy).
+  var TV_SYMBOL_MAP = {
+    "ABB.ST": "OMXSTO:ABB", "ADDT-B.ST": "OMXSTO:ADDT_B", "ALFA.ST": "OMXSTO:ALFA",
+    "ASSA-B.ST": "OMXSTO:ASSA_B", "AZN.ST": "OMXSTO:AZN", "ATCO-A.ST": "OMXSTO:ATCO_A",
+    "BOL.ST": "OMXSTO:BOL", "EPI-A.ST": "OMXSTO:EPI_A", "EQT.ST": "OMXSTO:EQT",
+    "ERIC-B.ST": "OMXSTO:ERIC_B", "ESSITY-B.ST": "OMXSTO:ESSITY_B", "EVO.ST": "OMXSTO:EVO",
+    "SHB-A.ST": "OMXSTO:SHB_A", "HM-B.ST": "OMXSTO:HM_B", "HEXA-B.ST": "OMXSTO:HEXA_B",
+    "INDU-C.ST": "OMXSTO:INDU_C", "INVE-B.ST": "OMXSTO:INVE_B", "LIFCO-B.ST": "OMXSTO:LIFCO_B",
+    "NIBE-B.ST": "OMXSTO:NIBE_B", "NDA-SE.ST": "OMXSTO:NDA_SE", "SAAB-B.ST": "OMXSTO:SAAB_B",
+    "SAND.ST": "OMXSTO:SAND", "SCA-B.ST": "OMXSTO:SCA_B", "SEB-A.ST": "OMXSTO:SEB_A",
+    "SKA-B.ST": "OMXSTO:SKA_B", "SKF-B.ST": "OMXSTO:SKF_B", "SWED-A.ST": "OMXSTO:SWED_A",
+    "TEL2-B.ST": "OMXSTO:TEL2_B", "TELIA.ST": "OMXSTO:TELIA", "VOLV-B.ST": "OMXSTO:VOLV_B",
+    "INDT.ST": "OMXSTO:INDT",
+    "AAPL": "NASDAQ:AAPL", "MSFT": "NASDAQ:MSFT", "GOOGL": "NASDAQ:GOOGL", "AMZN": "NASDAQ:AMZN",
+    "NVDA": "NASDAQ:NVDA", "META": "NASDAQ:META", "BRK-B": "NYSE:BRK.B", "JNJ": "NYSE:JNJ",
+    "JPM": "NYSE:JPM", "XOM": "NYSE:XOM", "GS": "NYSE:GS", "CAT": "NYSE:CAT", "UNH": "NYSE:UNH",
+    "V": "NYSE:V", "TRV": "NYSE:TRV", "SHW": "NYSE:SHW", "AXP": "NYSE:AXP", "HD": "NYSE:HD",
+    "MCD": "NYSE:MCD", "CRM": "NYSE:CRM", "IBM": "NYSE:IBM", "HON": "NASDAQ:HON", "BA": "NYSE:BA",
+    "CVX": "NYSE:CVX", "MMM": "NYSE:MMM", "MRK": "NYSE:MRK", "PG": "NYSE:PG", "CSCO": "NASDAQ:CSCO",
+    "DIS": "NYSE:DIS", "WMT": "NYSE:WMT", "KO": "NYSE:KO", "VZ": "NYSE:VZ", "NKE": "NYSE:NKE",
+    "MA": "NYSE:MA", "COST": "NASDAQ:COST", "LLY": "NYSE:LLY", "ABBV": "NYSE:ABBV", "ABT": "NYSE:ABT",
+    "TMO": "NYSE:TMO", "DHR": "NYSE:DHR", "ISRG": "NASDAQ:ISRG", "BSX": "NYSE:BSX", "SPGI": "NYSE:SPGI",
+    "MCO": "NYSE:MCO", "ICE": "NYSE:ICE", "CME": "NASDAQ:CME", "AVGO": "NASDAQ:AVGO", "TXN": "NASDAQ:TXN",
+    "QCOM": "NASDAQ:QCOM", "ADI": "NASDAQ:ADI", "ORCL": "NYSE:ORCL", "ACN": "NYSE:ACN", "ROP": "NASDAQ:ROP",
+    "WM": "NYSE:WM", "RSG": "NYSE:RSG", "NEE": "NYSE:NEE",
+    "SIE.DE": "XETR:SIE", "SAP.DE": "XETR:SAP", "ALV.DE": "XETR:ALV", "AIR.DE": "XETR:AIR",
+    "DTE.DE": "XETR:DTE", "ENR.DE": "XETR:ENR", "IFX.DE": "XETR:IFX", "DBK.DE": "XETR:DBK",
+    "MUV2.DE": "XETR:MUV2", "DHL.DE": "XETR:DHL", "MRK.DE": "XETR:MRK", "RHM.DE": "XETR:RHM",
+    "DB1.DE": "XETR:DB1", "BAYN.DE": "XETR:BAYN", "EOAN.DE": "XETR:EOAN", "RWE.DE": "XETR:RWE",
+    "BAS.DE": "XETR:BAS", "MBG.DE": "XETR:MBG", "SHL.DE": "XETR:SHL", "CBK.DE": "XETR:CBK",
+    "HSBA.L": "LSE:HSBA", "SHEL.L": "LSE:SHEL", "RR.L": "LSE:RR", "RIO.L": "LSE:RIO",
+    "ULVR.L": "LSE:ULVR", "BATS.L": "LSE:BATS", "BP.L": "LSE:BP", "GSK.L": "LSE:GSK",
+    "GLEN.L": "LSE:GLEN", "BARC.L": "LSE:BARC", "LLOY.L": "LSE:LLOY", "BA.L": "LSE:BA",
+    "NG.L": "LSE:NG", "NWG.L": "LSE:NWG", "STAN.L": "LSE:STAN", "REL.L": "LSE:REL",
+    "AAL.L": "LSE:AAL", "LSEG.L": "LSE:LSEG", "ANTO.L": "LSE:ANTO", "DGE.L": "LSE:DGE",
+    "NOVO-B.CO": "OMXCOP:NOVO_B", "ORSTED.CO": "OMXCOP:ORSTED", "DSV.CO": "OMXCOP:DSV",
+    "CARL-B.CO": "OMXCOP:CARL_B", "NOKIA.HE": "OMXHEX:NOKIA", "KNEBV.HE": "OMXHEX:KNEBV",
+    "FORTUM.HE": "OMXHEX:FORTUM", "EQNR.OL": "OSE:EQNR", "DNB.OL": "OSE:DNB", "ORK.OL": "OSE:ORK",
+    "YAR.OL": "OSE:YAR", "SALM.OL": "OSE:SALM",
+    "NESN.SW": "SIX:NESN", "NOVN.SW": "SIX:NOVN", "ROG.SW": "SIX:ROG", "ZURN.SW": "SIX:ZURN",
+    "SGSN.SW": "SIX:SGSN", "LONN.SW": "SIX:LONN", "GIVN.SW": "SIX:GIVN",
+    "MC.PA": "EURONEXT:MC", "OR.PA": "EURONEXT:OR", "SAN.PA": "EURONEXT:SAN", "AI.PA": "EURONEXT:AI",
+    "SU.PA": "EURONEXT:SU", "BNP.PA": "EURONEXT:BNP", "ASML": "NASDAQ:ASML",
+    "ADYEN.AS": "EURONEXT:ADYEN", "HEIA.AS": "EURONEXT:HEIA", "ENEL.MI": "MIL:ENEL",
+    "ISP.MI": "MIL:ISP", "IBE.MC": "BME:IBE", "ITX.MC": "BME:ITX", "SAN.MC": "BME:SAN",
+    "TM": "NYSE:TM", "SONY": "NYSE:SONY", "SMFG": "NYSE:SMFG", "TSM": "NYSE:TSM",
+    "BABA": "NYSE:BABA", "PDD": "NASDAQ:PDD", "NU": "NYSE:NU", "MELI": "NASDAQ:MELI", "INFY": "NYSE:INFY"
+  };
+  var RANGE_OPTIONS = [
+    { label: "1D", range: "1D" }, { label: "1W", range: "5D" }, { label: "1M", range: "1M" },
+    { label: "3M", range: "3M" }, { label: "6M", range: "6M" }, { label: "1Y", range: "12M" },
+    { label: "5Y", range: "60M" }, { label: "All", range: "ALL" }
+  ];
+  var DEFAULT_RANGE = "12M";
+  var selectedRanges = {}; // ticker -> range string, persists across expand/collapse and re-render
+
+  function cssSafe(ticker) { return String(ticker).replace(/[^a-zA-Z0-9]/g, "_"); }
+
+  // Builds the chart's DOM (range buttons + widget container), but doesn't
+  // load the widget itself -- that only happens once the card is actually
+  // expanded (loadChart, called from the card's click handler below), same
+  // lazy-on-expand behavior as the old watchlist page.
+  function chartBlock(ticker) {
+    var wrap = el("div", { class: "supporting" });
+    wrap.appendChild(el("h4", { text: "Price chart" }));
+    var container = el("div", { class: "tv-widget-container" }, [el("div", { class: "tv-empty", text: "Loading chart\\u2026" })]);
+    var rangeRow = el("div", { class: "tv-range-row" });
+    var activeRange = selectedRanges[ticker] || DEFAULT_RANGE;
+    RANGE_OPTIONS.forEach(function (o) {
+      var btn = el("button", { type: "button", class: "tv-range-btn" + (o.range === activeRange ? " active" : ""), text: o.label });
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation(); // don't let this bubble up to the card's own expand/collapse toggle
+        if (selectedRanges[ticker] === o.range) return;
+        selectedRanges[ticker] = o.range;
+        rangeRow.querySelectorAll(".tv-range-btn").forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        loadChart(ticker, container);
+      });
+      rangeRow.appendChild(btn);
+    });
+    wrap.appendChild(rangeRow);
+    wrap.appendChild(container);
+    wrap.appendChild(el("div", { class: "tv-credit", text: "Chart by TradingView" }));
+    return { wrap: wrap, container: container };
+  }
+
+  // Loads (or reloads) the TradingView Advanced Chart widget into one
+  // card's container. A double requestAnimationFrame defers past the next
+  // two paints -- TradingView's autosize:true widget measures its
+  // container's box on creation, and right after un-hiding the card the
+  // browser hasn't run a layout pass yet, so it could still measure 0x0.
+  function loadChart(ticker, container) {
+    var symbol = TV_SYMBOL_MAP[ticker];
+    if (!symbol) {
+      container.innerHTML = "";
+      container.appendChild(el("div", { class: "tv-empty", text: "No TradingView symbol mapped for " + ticker + " yet." }));
+      return;
+    }
+    container.innerHTML = "";
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        // The card list can be rebuilt (sort/horizon change) while this was
+        // queued, detaching the container we're about to fill -- bail if so.
+        if (!document.body.contains(container)) return;
+        var widgetContainer = document.createElement("div");
+        widgetContainer.className = "tradingview-widget-container";
+        widgetContainer.style.height = "100%";
+        widgetContainer.style.width = "100%";
+        var widgetDiv = document.createElement("div");
+        widgetDiv.className = "tradingview-widget-container__widget";
+        widgetContainer.appendChild(widgetDiv);
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+        script.async = true;
+        var theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        script.text = JSON.stringify({
+          autosize: true, symbol: symbol, interval: "D", range: selectedRanges[ticker] || DEFAULT_RANGE,
+          timezone: "Etc/UTC", theme: theme, style: "1", locale: "en",
+          allow_symbol_change: false, support_host: "https://www.tradingview.com"
+        });
+        widgetContainer.appendChild(script);
+        container.innerHTML = "";
+        container.appendChild(widgetContainer);
+      });
+    });
+  }
+
+  // --- Stat row, universe panel, Growth/Defensive (carried over from the old watchlist page) ---
+
+  var universeData = null; // cached -- the configured universe doesn't change without a redeploy
+  function fetchUniverse() {
+    if (universeData) return Promise.resolve(universeData);
+    return fetch("/universe").then(function (r) { return r.json(); }).then(function (u) { universeData = u; return u; });
+  }
+
+  function renderUniversePanel(universe) {
+    var panel = document.getElementById("universePanel");
+    panel.innerHTML = "";
+    universe.regions.forEach(function (r) {
+      var id = cssSafe(r.region);
+      var region = el("div", { class: "universe-region" });
+      var head = el("div", { class: "universe-region-head", "data-region": id }, [
+        el("span", { class: "n", text: r.label }),
+        el("span", { class: "c", text: String(r.count) })
+      ]);
+      var list = el("div", { class: "universe-tickers", id: "universe-tickers-" + id });
+      r.tickers.forEach(function (t) { list.appendChild(el("span", { text: t.ticker })); });
+      head.addEventListener("click", function () { list.classList.toggle("open"); });
+      region.appendChild(head);
+      region.appendChild(list);
+      panel.appendChild(region);
+    });
+  }
+
+  // Stats are read off v1's /rankings (the frozen baseline still runs on
+  // schedule and publishes these same rows -- see index.ts) purely for the
+  // "Scored / Excluded / Last run / Tracked tickers" counts; nothing here
+  // feeds back into the decision engine above.
+  function renderStats(rankingsData) {
+    var elStats = document.getElementById("stats");
+    var runAt = rankingsData.rankings[0] ? rankingsData.rankings[0].run_at : null;
+    var universeCount = universeData ? universeData.totalTickers : "\\u2026";
+    var panel = document.getElementById("universePanel");
+    var panelExpanded = panel && !panel.hidden;
+    elStats.innerHTML = "";
+    elStats.appendChild(el("div", { class: "stat" }, [el("div", { class: "v", text: String(rankingsData.rankings.length) }), el("div", { class: "l", text: "Scored" })]));
+    elStats.appendChild(el("div", { class: "stat" }, [el("div", { class: "v", text: String(rankingsData.excluded.length) }), el("div", { class: "l", text: "Excluded" })]));
+    elStats.appendChild(el("div", { class: "stat" }, [el("div", { class: "v", style: "font-size:14px", text: runAt || "\\u2014" }), el("div", { class: "l", text: "Last run (UTC)" })]));
+    var universeStat = el("div", { class: "stat clickable", id: "universeStat", "aria-expanded": panelExpanded ? "true" : "false" });
+    var uLabel = el("div", { class: "l" }, [document.createTextNode("Tracked tickers "), el("span", { class: "chevron", text: "\\u25be" })]);
+    universeStat.appendChild(el("div", { class: "v", text: String(universeCount) }));
+    universeStat.appendChild(uLabel);
+    universeStat.addEventListener("click", function () {
+      var nowOpen = panel.hidden;
+      panel.hidden = !nowOpen;
+      universeStat.setAttribute("aria-expanded", String(nowOpen));
+    });
+    elStats.appendChild(universeStat);
+  }
+
+  function renderStyleList(rankings, style, elId) {
+    var rows = rankings.filter(function (r) { return r.style === style; }).sort(function (a, b) { return b.composite_score - a.composite_score; });
+    var listEl = document.getElementById(elId);
+    if (rows.length === 0) { listEl.innerHTML = '<div class="empty">None in this universe today.</div>'; return; }
+    listEl.innerHTML = "";
+    rows.forEach(function (r) {
+      listEl.appendChild(el("div", { class: "style-row" }, [
+        el("span", { class: "t", text: r.ticker }),
+        el("span", { class: "g", text: String(r.composite_score) })
+      ]));
+    });
+  }
+
+  // Fetches v1's /rankings (long horizon -- v1's universe is small enough
+  // that every horizon's top-N is effectively the whole universe, so long
+  // is the most stable one to anchor style on) purely for the stat row,
+  // ticker-style badges, and Growth/Defensive lists above -- doesn't touch
+  // or recompute anything, just reads what the frozen baseline already
+  // publishes on its own schedule.
+  function loadV1Extras() {
+    fetch("/rankings?horizon=long")
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        styleByTicker = {};
+        (data.rankings || []).forEach(function (r) { styleByTicker[r.ticker] = r.style; });
+        renderStats(data);
+        renderStyleList(data.rankings || [], "growth", "growthList");
+        renderStyleList(data.rankings || [], "defensive", "defensiveList");
+        renderDecisionsList(); // re-render so already-drawn cards pick up their style badge
+      })
+      .catch(function () { /* v1 rankings not available yet -- stat row/style badges just stay empty */ });
+    fetchUniverse().then(function (u) {
+      renderUniversePanel(u);
+      var elStats = document.getElementById("stats");
+      if (elStats && elStats.children[3]) {
+        var v = elStats.children[3].querySelector(".v");
+        if (v) v.textContent = String(u.totalTickers);
+      }
+    });
+  }
 
   // Lower rank = better. These mirror the thresholds in
   // src/decision/engine.ts's entryStatus()/valuationStatus()/decisionLabel()
@@ -547,7 +858,13 @@ export function renderDecisionLab(): string {
   // score" means score is always the tiebreaker's own natural order, not
   // something that flips with the primary key's direction.
   function makeComparator(keyFn, dir) {
-    var sign = dir === "asc" ? 1 : -1;
+    // Rank maps are "lower number = better" (see above), which is the
+    // opposite convention from a plain numeric sort where bigger = later.
+    // So "desc" (best to worst) must walk the rank map in ASCENDING order
+    // (best/rank-0 first) and "asc" (worst to best) DESCENDING -- inverted
+    // from the plain-number case just below in sortDecisions()'s "score"
+    // branch, which doesn't need this flip.
+    var sign = dir === "asc" ? -1 : 1;
     return function (a, b) {
       if (keyFn) {
         var ra = keyFn(a), rb = keyFn(b);
@@ -1030,9 +1347,18 @@ export function renderDecisionLab(): string {
     try { contribution = JSON.parse(d.factor_contribution_json || "{}"); } catch (e) {}
     try { warnings = JSON.parse(d.warnings_json || "[]"); } catch (e) {}
 
-    var card = el("div", { class: "card", "aria-expanded": "false" });
-    var head = el("div", { class: "card-head" }, [
+    var isExpanded = expandedTickers.has(d.ticker);
+    var card = el("div", { class: "card", "aria-expanded": isExpanded ? "true" : "false" });
+    var titleGroup = el("div", { style: "display:flex; align-items:center; gap:6px;" }, [
       el("div", { class: "t", text: d.ticker }),
+    ]);
+    var style = styleByTicker[d.ticker];
+    if (style) {
+      var styleLabel = style.charAt(0).toUpperCase() + style.slice(1);
+      titleGroup.appendChild(el("span", { class: "style-badge " + style, text: styleLabel }));
+    }
+    var head = el("div", { class: "card-head" }, [
+      titleGroup,
       el("div", { class: "decision-badge " + decisionClass(d.decision), text: sentenceCase(d.decision) || "–" }),
     ]);
     card.appendChild(head);
@@ -1053,6 +1379,8 @@ export function renderDecisionLab(): string {
     FACTORS.forEach(function (f) { factors.appendChild(factorRow(f, scores, contribution)); });
     var supporting = renderSupportingMetrics(d);
     if (supporting) factors.appendChild(supporting);
+    var chart = chartBlock(d.ticker);
+    factors.appendChild(chart.wrap);
     if (warnings.length) {
       var w = el("div", { class: "warnings" });
       warnings.forEach(function (msg) { w.appendChild(el("div", { text: "⚠ " + msg })); });
@@ -1061,8 +1389,16 @@ export function renderDecisionLab(): string {
     card.appendChild(factors);
 
     card.addEventListener("click", function () {
-      card.setAttribute("aria-expanded", card.getAttribute("aria-expanded") === "true" ? "false" : "true");
+      var nowExpanded = card.getAttribute("aria-expanded") !== "true";
+      card.setAttribute("aria-expanded", nowExpanded ? "true" : "false");
+      if (nowExpanded) {
+        expandedTickers.add(d.ticker);
+        loadChart(d.ticker, chart.container);
+      } else {
+        expandedTickers.delete(d.ticker);
+      }
     });
+    if (isExpanded) loadChart(d.ticker, chart.container);
     return card;
   }
 
@@ -1240,6 +1576,7 @@ export function renderDecisionLab(): string {
   loadDecisions();
   loadWeights();
   loadBacktestResults();
+  loadV1Extras();
 })();
 </script>
 </body>
