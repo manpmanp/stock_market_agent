@@ -99,7 +99,31 @@ export function computeInterestCoverage(ebit: number | null, interestExpense: nu
 
 function detail(value: number | null, note?: string): FactorScoreDetail {
   if (value === null) return { value: NEUTRAL, unscored: true, note: note ?? "no data available for this ticker" };
-  return { value: Math.round(value * 10) / 10, unscored: false };
+  const out: FactorScoreDetail = { value: Math.round(value * 10) / 10, unscored: false };
+  // Unlike the null branch above, a note on a REAL (non-null) score isn't
+  // an excuse -- it's telling the reader this factor did something more
+  // than plain-average its inputs (a gate tripped, or two sub-signals
+  // disagreed and got pulled toward neutral instead of averaged). See
+  // scoreFinancialStrength/scoreRisk/scoreTechnical/scoreValuation below.
+  if (note) out.note = note;
+  return out;
+}
+
+/** Pulls two 0-100 sub-signals toward neutral (50) in proportion to how
+ *  much they disagree, instead of only ever averaging them. A plain mean
+ *  can't distinguish "both signals are genuinely uncertain, near 50" from
+ *  "the signals flatly contradict each other" -- those are different
+ *  situations that happen to average to the same number. dampenFactor
+ *  controls how hard disagreement pulls toward neutral (0 = plain
+ *  average, 1 = full disagreement fully neutralizes the read). Used where
+ *  a factor's own sub-parameters are answering genuinely different
+ *  questions (trend vs. mean-reversion in scoreTechnical, self-relative
+ *  pricing vs. an absolute multiple in scoreValuation) rather than
+ *  substitutable evidence for the same one. */
+function combineWithConflictAwareness(a: number, b: number, dampenFactor: number): number {
+  const mean = (a + b) / 2;
+  const disagreement = Math.abs(a - b) / 100; // 0 (fully agree) .. 1 (opposite extremes)
+  return mean * (1 - dampenFactor * disagreement) + NEUTRAL * (dampenFactor * disagreement);
 }
 
 /** Business quality: profitability + capital efficiency, fixed absolute
@@ -131,21 +155,44 @@ function scoreGrowth(row: UniverseSnapshotRow): FactorScoreDetail {
 
 /** Balance sheet + cash generation resilience: low leverage (both against
  *  equity and against actual cash-flow generation), real free cash flow
- *  yield, and can earnings comfortably cover interest payments. */
+ *  yield, and can earnings comfortably cover interest payments.
+ *
+ *  Debt-to-equity and FCF yield are compensatory -- a company can be a bit
+ *  light on FCF yield and still be fine if it isn't levered, or vice
+ *  versa. Interest coverage and Net Debt/EBITDA are different: they're the
+ *  two direct reads on "can this company actually service its debt from
+ *  what it earns," and a company failing either one is in a genuinely
+ *  different risk class, not just "somewhat weaker." A plain average lets
+ *  a strong D/E or FCF yield mask that; the cap below doesn't -- it's a
+ *  gate, not another vote. */
 function scoreFinancialStrength(row: UniverseSnapshotRow): FactorScoreDetail {
   const netDebtToEbitda = computeNetDebtToEbitda(row.total_debt, row.total_cash, row.ebitda);
   const interestCoverage = computeInterestCoverage(row.ebit, row.interest_expense);
-  const points = [
-    band(row.debt_to_equity, 2.5, 0.3, false),
-    band(row.fcf_yield, 0, 0.06),
-    // Net Debt/EBITDA: leverage relative to cash-flow generation, not just
-    // a balance-sheet ratio. ~4x+ is stretched, ~0x or net-cash is strong.
-    netDebtToEbitda === null ? null : band(netDebtToEbitda, 4, 0, false),
-    // Interest coverage: EBIT / interest expense. Below ~2x is a red flag,
-    // above ~8x is comfortable.
-    interestCoverage === null ? null : band(interestCoverage, 2, 8),
-  ];
-  return detail(avg(points), "insufficient balance-sheet/cash-flow data");
+  const deScore = band(row.debt_to_equity, 2.5, 0.3, false);
+  const fcfScore = band(row.fcf_yield, 0, 0.06);
+  // Net Debt/EBITDA: leverage relative to cash-flow generation, not just a
+  // balance-sheet ratio. ~4x+ is stretched, ~0x or net-cash is strong.
+  const ndScore = netDebtToEbitda === null ? null : band(netDebtToEbitda, 4, 0, false);
+  // Interest coverage: EBIT / interest expense. Below ~2x is a red flag,
+  // above ~8x is comfortable.
+  const icScore = interestCoverage === null ? null : band(interestCoverage, 2, 8);
+  const base = avg([deScore, fcfScore, ndScore, icScore]);
+  if (base === null) return detail(null, "insufficient balance-sheet/cash-flow data");
+
+  const coverageDistressed = interestCoverage !== null && interestCoverage < 1;
+  const leverageDistressed = netDebtToEbitda !== null && netDebtToEbitda > 6;
+  if (!coverageDistressed && !leverageDistressed) return detail(base);
+
+  const cap = coverageDistressed && leverageDistressed ? 20 : 35;
+  const capped = Math.min(base, cap);
+  const reason =
+    coverageDistressed && leverageDistressed
+      ? "interest coverage below 1x AND Net Debt/EBITDA above 6x"
+      : coverageDistressed
+        ? "interest coverage below 1x (can't cover interest expense from operating income)"
+        : "Net Debt/EBITDA above 6x";
+  const note = capped < base ? `Financial-strength capped at ${cap}: ${reason} -- a solvency red flag the other metrics shouldn't be able to average away.` : undefined;
+  return detail(capped, note);
 }
 
 /** Relative/intrinsic valuation attractiveness -- same two self-relative
@@ -173,8 +220,26 @@ function scoreValuation(row: UniverseSnapshotRow): FactorScoreDetail {
     return detail(null, "no valuation data (price range / fair value / EV-EBIT all missing)");
   }
   const selfRelative = combined === null ? null : (combined + 1) / 2; // -> 0..1
-  const overall = avg([selfRelative, evToEbitSignal]);
-  return detail(overall === null ? null : overall * 100);
+  if (selfRelative === null) return detail(evToEbitSignal === null ? null : evToEbitSignal * 100);
+  if (evToEbitSignal === null) return detail(selfRelative * 100);
+
+  // Both present: self-relative (this ticker vs. its own price range +
+  // analyst fair value) and EV/EBIT (an absolute multiple, unrelated to
+  // this ticker's own history) are answering different questions --
+  // "cheap for THIS stock" vs. "cheap in absolute terms." When they
+  // sharply disagree, that disagreement is itself informative (this
+  // stock is cheap relative to its own history but expensive by an
+  // absolute yardstick, or vice versa) and shouldn't be quietly averaged
+  // into a confident-looking single number.
+  const a = selfRelative * 100;
+  const b = evToEbitSignal * 100;
+  const disagreement = Math.abs(a - b) / 100;
+  const overall = combineWithConflictAwareness(a, b, 0.3);
+  const note =
+    disagreement > 0.4
+      ? "Valuation signals conflict: EV/EBIT disagrees with this ticker's own price-range/fair-value read -- pulled toward neutral rather than averaged."
+      : undefined;
+  return detail(overall, note);
 }
 
 /** Structural/forward growth potential -- a proxy, not a real TAM or
@@ -188,8 +253,30 @@ function scoreValuation(row: UniverseSnapshotRow): FactorScoreDetail {
 function scoreFuturePotential(row: UniverseSnapshotRow): FactorScoreDetail {
   const pegScore = row.peg_ratio === null || row.peg_ratio <= 0 ? null : band(row.peg_ratio, 3, 0.75, false);
   const coverageScore = row.num_analysts === null ? null : band(row.num_analysts, 1, 12);
-  const points = [pegScore, coverageScore];
-  return detail(avg(points), "insufficient data for a future-potential proxy (PEG / analyst coverage)");
+  if (pegScore === null && coverageScore === null) {
+    return detail(null, "insufficient data for a future-potential proxy (PEG / analyst coverage)");
+  }
+  if (pegScore === null) {
+    // Coverage breadth alone doesn't say anything about growth potential
+    // -- a well-covered stock with an unknown PEG isn't "average
+    // potential," it's just unmeasured. Neutral, explicitly flagged, not
+    // averaged from a single unrelated input.
+    return detail(NEUTRAL, "future-potential proxy unavailable (PEG missing) -- analyst coverage alone isn't a substitute, treated as neutral");
+  }
+  // Coverage isn't independent evidence of growth potential the way PEG
+  // is -- it's really a confidence signal on how much to trust the PEG
+  // read (a PEG built off one analyst's estimate is noisier than one
+  // averaged across a dozen). So it modulates how far PEG is allowed to
+  // pull the score away from neutral, rather than getting averaged in as
+  // a second, equal-weight vote. Floor of 0.3 so thin coverage damps a
+  // real PEG read but never fully zeroes it.
+  const confidenceFactor = coverageScore === null ? 0.7 : clamp(0.3 + 0.7 * (coverageScore / 100), 0.3, 1);
+  const value = NEUTRAL + (pegScore - NEUTRAL) * confidenceFactor;
+  const note =
+    confidenceFactor < 0.6
+      ? "Future-potential reading damped toward neutral: thin analyst coverage makes the PEG-based read less reliable."
+      : undefined;
+  return detail(value, note);
 }
 
 /** Trend, momentum, relative strength, market structure -- from the
@@ -202,8 +289,27 @@ function scoreTechnical(row: UniverseSnapshotRow): FactorScoreDetail {
   const macdScore = row.macd === null || row.macd_signal === null ? null : row.macd > row.macd_signal ? 70 : 30;
   const sma50Score = row.price_vs_sma50 === null ? null : band(row.price_vs_sma50, -0.1, 0.1);
   const sma200Score = row.price_vs_sma200 === null ? null : band(row.price_vs_sma200, -0.15, 0.15);
-  const points = [rsiScore, macdScore, sma50Score, sma200Score];
-  return detail(avg(points), "insufficient technical-indicator data");
+
+  // MACD and both SMA reads are all trend-following -- they're
+  // substitutable evidence for "is this in an uptrend," so a plain
+  // average across them is fine. RSI answers a different question
+  // (overbought/oversold, mean-reversion) -- a strong uptrend PLUS an
+  // overbought RSI isn't "neutral," it's two real signals in tension, and
+  // a flat average of all four can't tell that apart from "no signal
+  // anywhere." Combine the trend cluster with RSI using conflict-aware
+  // blending instead.
+  const trend = avg([macdScore, sma50Score, sma200Score]);
+  if (trend === null && rsiScore === null) return detail(null, "insufficient technical-indicator data");
+  if (trend === null) return detail(rsiScore);
+  if (rsiScore === null) return detail(trend);
+
+  const disagreement = Math.abs(trend - rsiScore) / 100;
+  const combined = combineWithConflictAwareness(trend, rsiScore, 0.4);
+  const note =
+    disagreement > 0.35
+      ? "Trend and RSI signals conflict (e.g. strong trend with an overbought/oversold RSI reading) -- pulled toward neutral rather than averaged."
+      : undefined;
+  return detail(combined, note);
 }
 
 /** Quality of the current purchase point -- reuses the same trend_state
@@ -239,8 +345,29 @@ function scoreRisk(row: UniverseSnapshotRow): FactorScoreDetail {
   // ticker's own (absolute) volatility above -- a stock can be internally
   // calm but still swing hard with the market (high beta), or the reverse.
   const betaScore = row.beta === null ? null : band(row.beta, 2.0, 0.5, false);
-  const points = [volScore, leverageScore, drawdownScore, betaScore];
-  return detail(avg(points), "insufficient volatility/leverage/drawdown/beta data");
+  const base = avg([volScore, leverageScore, drawdownScore, betaScore]);
+  if (base === null) return detail(null, "insufficient volatility/leverage/drawdown/beta data");
+
+  // Volatility, leverage, and beta compound rather than add: a stock
+  // that's simultaneously volatile, levered, AND high-beta is riskier
+  // than "the average of three medium scores" suggests -- leverage
+  // amplifies a volatile swing, and a high-beta name gets dragged down
+  // harder in exactly the broad selloff it's already leveraged against.
+  // "danger" is each score's own badness (0 = safe, 1 = worst); their
+  // PRODUCT (not average) only gets large when all three are bad
+  // together, which is the actual compounding condition -- applied as a
+  // capped multiplicative penalty on top of the plain average (which
+  // still carries drawdown and the ordinary, non-compounding case) rather
+  // than folded into it, so it only bites when it's genuinely earned.
+  const dangers = [volScore, leverageScore, betaScore].filter((s): s is number => s !== null).map((s) => 1 - s / 100);
+  const compounding = dangers.length === 3 ? dangers.reduce((a, b) => a * b, 1) : 0;
+  const penalty = 1 - Math.min(0.4, compounding); // up to a 40% multiplicative haircut
+  const adjusted = base * penalty;
+  const note =
+    compounding > 0.3
+      ? "Risk score reduced: volatility, leverage, and beta are all elevated at once -- compounding risk, not just three separately weak metrics."
+      : undefined;
+  return detail(adjusted, note);
 }
 
 /** No news/events/earnings-calendar data source exists in this project YET

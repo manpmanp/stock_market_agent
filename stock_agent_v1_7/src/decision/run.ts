@@ -80,6 +80,17 @@ export async function runDecisions(env: Env): Promise<DecisionSummary> {
       .filter(([, d]) => (d as FactorScoreDetail).unscored)
       .map(([f]) => f);
     if (unscoredNote.length > 0) warnings.push(`Placeholder/unscored factors used: ${unscoredNote.join(", ")}.`);
+    // A note on a REAL (non-unscored) factor score means that factor's own
+    // internal computation did something beyond a plain average -- a
+    // solvency gate tripped (financial_strength), a compounding-risk
+    // penalty applied (risk), or two sub-signals disagreed and got pulled
+    // toward neutral instead of averaged (technical, valuation, future_
+    // potential). Surfacing these here reuses the same warnings_json path
+    // already wired end-to-end to the card UI, rather than needing a
+    // schema change to persist per-factor notes separately.
+    for (const [f, d] of Object.entries(details) as Array<[string, FactorScoreDetail]>) {
+      if (!d.unscored && d.note) warnings.push(`${f}: ${d.note}`);
+    }
 
     const supportingMetricsJson = JSON.stringify(computeSupportingMetrics(row));
 

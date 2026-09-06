@@ -141,6 +141,82 @@ describe("computeFactorScores", () => {
     const lowRoa = computeFactorScores(baseRow({ return_on_assets: 0.01 }), neutralRegime);
     expect(highRoa.quality.value).toBeGreaterThan(lowRoa.quality.value);
   });
+
+  // --- Internal-parameter dependency modeling (gating / compounding / conflict-awareness) ---
+
+  it("gates financial_strength when interest coverage can't cover debt service, even with a strong D/E and FCF yield", () => {
+    // Excellent D/E (0.2) and FCF yield (0.08), but EBIT can't cover
+    // interest expense (interestCoverage = 3/4 = 0.75x, below the 1x gate).
+    const distressed = computeFactorScores(
+      baseRow({ debt_to_equity: 0.2, fcf_yield: 0.08, ebit: 3, interest_expense: 4, total_debt: 20, total_cash: 15, ebitda: 25 }),
+      neutralRegime
+    );
+    expect(distressed.financial_strength.value).toBeLessThanOrEqual(35);
+    expect(distressed.financial_strength.note).toMatch(/interest coverage below 1x/);
+  });
+
+  it("does not gate financial_strength when both solvency metrics are healthy", () => {
+    const healthy = computeFactorScores(baseRow(), neutralRegime); // baseRow: netDebt/EBITDA=0.8, coverage=10x
+    expect(healthy.financial_strength.note).toBeUndefined();
+  });
+
+  it("scores risk lower when volatility, leverage, and beta are ALL elevated than when only one of the three is", () => {
+    const allThreeBad = computeFactorScores(
+      baseRow({ volatility_30d: 0.55, debt_to_equity: 2.7, beta: 1.9, dist_from_high_pct: -0.1 }),
+      neutralRegime
+    );
+    const onlyOneBad = computeFactorScores(
+      // Same volatility reading, but leverage and beta both back to a
+      // clearly healthy level -- so the compounding condition (all three
+      // bad at once) no longer holds.
+      baseRow({ volatility_30d: 0.55, debt_to_equity: 0.4, beta: 0.6, dist_from_high_pct: -0.1 }),
+      neutralRegime
+    );
+    expect(allThreeBad.risk.note).toMatch(/compounding/);
+    expect(onlyOneBad.risk.note).toBeUndefined();
+    expect(allThreeBad.risk.value).toBeLessThan(onlyOneBad.risk.value);
+  });
+
+  it("does not apply a compounding penalty to risk when only one input is elevated", () => {
+    const oneWeak = computeFactorScores(baseRow({ beta: 2.5 }), neutralRegime); // vol/leverage stay at baseRow defaults (moderate)
+    expect(oneWeak.risk.note).toBeUndefined();
+  });
+
+  it("pulls technical toward neutral when trend and RSI conflict, rather than averaging them", () => {
+    // Strong uptrend (MACD bullish, price well above both SMAs) but a
+    // deeply overbought RSI -- two real, contradictory signals.
+    const conflicted = computeFactorScores(
+      baseRow({ macd: 2, macd_signal: 0.5, price_vs_sma50: 0.09, price_vs_sma200: 0.14, rsi_14: 90 }),
+      neutralRegime
+    );
+    expect(conflicted.technical.note).toMatch(/conflict/);
+    // The conflict-aware read should sit closer to neutral (50) than a
+    // plain average of a ~100 trend cluster and a ~20 RSI score (~60) would.
+    expect(conflicted.technical.value).toBeLessThan(60);
+  });
+
+  it("does not flag a technical conflict when trend and RSI agree", () => {
+    const agree = computeFactorScores(baseRow(), neutralRegime); // baseRow: mild uptrend, neutral RSI
+    expect(agree.technical.note).toBeUndefined();
+  });
+
+  it("flags a valuation conflict when EV/EBIT disagrees sharply with the self-relative read", () => {
+    // Cheap by its own price range / fair-value gap, but expensive on an
+    // absolute EV/EBIT multiple.
+    const conflicted = computeFactorScores(
+      baseRow({ price_range_pct: 0.05, fair_value: 130, enterprise_value: 900, ebit: 15 }),
+      neutralRegime
+    );
+    expect(conflicted.valuation.note).toMatch(/conflict/);
+  });
+
+  it("damps future_potential toward neutral when analyst coverage is thin", () => {
+    const thin = computeFactorScores(baseRow({ peg_ratio: 0.8, num_analysts: 1 }), neutralRegime);
+    const wellCovered = computeFactorScores(baseRow({ peg_ratio: 0.8, num_analysts: 12 }), neutralRegime);
+    expect(thin.future_potential.note).toMatch(/thin analyst coverage/);
+    // Same PEG, but the thinly-covered read should sit closer to neutral.
+    expect(Math.abs(thin.future_potential.value - 50)).toBeLessThan(Math.abs(wellCovered.future_potential.value - 50));
+  });
 });
 
 describe("computeEvToEbit", () => {
