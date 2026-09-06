@@ -227,7 +227,6 @@ export function renderDecisionLab(): string {
 </head>
 <body>
 <main>
-  <p><a class="back" href="/dashboard">&larr; back to the main watchlist</a></p>
   <div class="page-header-row">
     <h1>Decision Lab</h1>
     <div style="display:flex; gap:8px; flex-wrap:wrap;">
@@ -235,7 +234,7 @@ export function renderDecisionLab(): string {
       <button id="model-results-toggle" class="methodology-toggle" aria-expanded="false" aria-controls="model-results-panel">Model Results &#9662;</button>
     </div>
   </div>
-  <p class="sub">A second, independent 10-factor decision engine (quality, growth, financial strength, valuation, future potential, technical, entry, risk, catalyst, market regime), run alongside the main watchlist for comparison. Weights are stored in the database and can be tuned below without redeploying. This build (v7) is also where a data-driven, self-tuning model is being developed and tested -- see Methodology &rarr; Model Selection &amp; Testing for status.</p>
+  <p class="sub">A 10-factor decision engine (quality, growth, financial strength, valuation, future potential, technical, entry, risk, catalyst, market regime). Weights are stored in the database and can be tuned below without redeploying. This build (v7) is also where a data-driven, self-tuning model is being developed and tested -- see Methodology &rarr; Model Selection &amp; Testing for status. (The original fixed-weight formula this replaced as the primary view still runs untouched in the background as a frozen comparison baseline -- see Methodology &rarr; Model Selection &amp; Testing.)</p>
   <p class="note">Catalyst has no news/events data source wired in yet, so it's currently a flagged neutral placeholder -- a future version could add one (see Methodology above). Market regime is a real (if simple) live computation from a broad market-index proxy, not this ticker's own data. Data-driven research output, not investment advice.</p>
 
   <section id="methodology-panel" class="methodology-panel" hidden>

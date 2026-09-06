@@ -8,7 +8,6 @@ import {
   getRecentBacktestRuns,
   pruneOldSnapshots,
 } from "./lib/db.js";
-import { renderDashboard } from "./dashboard.js";
 import { renderDecisionLab } from "./decisionLab.js";
 import { CHART_RANGES, fetchChartSeries, isChartRange } from "./lib/chart.js";
 import { runDecisions } from "./decision/run.js";
@@ -196,22 +195,26 @@ export default {
     }
 
     if (url.pathname === "/dashboard") {
-      return new Response(renderDashboard(), {
-        headers: { "content-type": "text/html; charset=utf-8" },
-      });
+      // The old v1 watchlist page and the Decision Lab page have been merged
+      // into one (Decision Lab is now the single primary view) -- this
+      // redirect just keeps old bookmarks/links working. renderDashboard()
+      // and the v1 scoring it displayed (src/scoring/score.ts) are
+      // untouched and still run on schedule as a frozen comparison
+      // baseline; they're just no longer rendered as a separate page.
+      return Response.redirect(new URL("/decision-lab", url).toString(), 301);
     }
 
     return json(
       {
         service: "stock-agent",
         endpoints: {
-          "GET /dashboard": "graphical view of the latest rankings",
+          "GET /dashboard": "redirects to /decision-lab (the two pages were merged; kept for old links)",
           "GET /universe": "configured ticker universe, grouped by region",
-          "GET /rankings?horizon=short|mid|long": "latest ranked watchlist (JSON)",
+          "GET /rankings?horizon=short|mid|long": "latest v1 ranked watchlist (JSON) -- frozen fixed-weight baseline, no longer rendered as its own page",
           "GET /chart?ticker=&range=1h|1d|1w|1m|3m|6m|1y|3y|5y": "live price snapshot for one ticker (JSON)",
           "POST /ingest": "manually trigger data ingestion (normally runs on the cron schedule)",
-          "POST /score": "manually trigger rescoring against current data",
-          "GET /decision-lab": "second, independent 10-factor decision engine -- comparison page, tunable weights",
+          "POST /score": "manually trigger v1 rescoring against current data",
+          "GET /decision-lab": "the main graphical view -- 10-factor decision engine, tunable weights, model results",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
           "GET /decisions?horizon=short|medium|long": "latest decision-engine output (JSON)",
           "GET /weights[?horizon=]": "active (or per-horizon history of) decision-engine weight vectors",
