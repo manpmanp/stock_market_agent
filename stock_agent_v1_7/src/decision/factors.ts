@@ -216,28 +216,50 @@ function scoreValuation(row: UniverseSnapshotRow): FactorScoreDetail {
   const evToEbit = computeEvToEbit(row.enterprise_value, row.ebit);
   const evToEbitSignal = evToEbit === null ? null : (band(evToEbit, 30, 8, false) as number) / 100; // -> 0..1
 
-  if (combined === null && evToEbitSignal === null) {
-    return detail(null, "no valuation data (price range / fair value / EV-EBIT all missing)");
+  // EV/EBITDA: the same "cheap in absolute terms" question as EV/EBIT, but
+  // not distorted by depreciation/amortization-policy differences across
+  // tickers the way EV/EBIT can be. Ingested since migration 0006 but,
+  // until now, only ever displayed via computeSupportingMetrics, never
+  // scored. ~6x or below reads cheap, ~18x+ reads expensive.
+  const evToEbitdaSignal = row.ev_to_ebitda === null ? null : (band(row.ev_to_ebitda, 18, 6, false) as number) / 100;
+
+  // Price/Book: a balance-sheet-based absolute multiple -- most useful for
+  // asset-heavy or financial businesses where EV/EBIT(DA) can be noisy
+  // (thin or volatile operating income). Ingested into fundamentals_
+  // snapshot from the start but never joined into this decision engine's
+  // input row at all until now (see UniverseSnapshotRow in lib/db.ts).
+  // Below ~1x is classically "cheap" (trading at/under book value); above
+  // ~5x is expensive.
+  const pbSignal = row.price_to_book === null ? null : (band(row.price_to_book, 5, 1, false) as number) / 100;
+
+  // EV/EBIT, EV/EBITDA, and P/B are substitutable evidence for the SAME
+  // question -- "is this cheap by an absolute yardstick" -- unlike the
+  // self-relative pair above, so they're plain-averaged with each other
+  // (not conflict-dampened) before being weighed against self-relative.
+  const absoluteMultiples = avg([evToEbitSignal, evToEbitdaSignal, pbSignal]);
+
+  if (combined === null && absoluteMultiples === null) {
+    return detail(null, "no valuation data (price range / fair value / absolute multiples all missing)");
   }
   const selfRelative = combined === null ? null : (combined + 1) / 2; // -> 0..1
-  if (selfRelative === null) return detail(evToEbitSignal === null ? null : evToEbitSignal * 100);
-  if (evToEbitSignal === null) return detail(selfRelative * 100);
+  if (selfRelative === null) return detail(absoluteMultiples === null ? null : absoluteMultiples * 100);
+  if (absoluteMultiples === null) return detail(selfRelative * 100);
 
   // Both present: self-relative (this ticker vs. its own price range +
-  // analyst fair value) and EV/EBIT (an absolute multiple, unrelated to
-  // this ticker's own history) are answering different questions --
-  // "cheap for THIS stock" vs. "cheap in absolute terms." When they
-  // sharply disagree, that disagreement is itself informative (this
-  // stock is cheap relative to its own history but expensive by an
-  // absolute yardstick, or vice versa) and shouldn't be quietly averaged
-  // into a confident-looking single number.
+  // analyst fair value) and the absolute-multiple composite (EV/EBIT,
+  // EV/EBITDA, P/B -- unrelated to this ticker's own history) are
+  // answering different questions -- "cheap for THIS stock" vs. "cheap in
+  // absolute terms." When they sharply disagree, that disagreement is
+  // itself informative (this stock is cheap relative to its own history
+  // but expensive by an absolute yardstick, or vice versa) and shouldn't
+  // be quietly averaged into a confident-looking single number.
   const a = selfRelative * 100;
-  const b = evToEbitSignal * 100;
+  const b = absoluteMultiples * 100;
   const disagreement = Math.abs(a - b) / 100;
   const overall = combineWithConflictAwareness(a, b, 0.3);
   const note =
     disagreement > 0.4
-      ? "Valuation signals conflict: EV/EBIT disagrees with this ticker's own price-range/fair-value read -- pulled toward neutral rather than averaged."
+      ? "Valuation signals conflict: absolute multiples (EV/EBIT, EV/EBITDA, P/B) disagree with this ticker's own price-range/fair-value read -- pulled toward neutral rather than averaged."
       : undefined;
   return detail(overall, note);
 }
@@ -448,13 +470,14 @@ export function toFactorScores(details: FactorScoreDetails): Record<Factor, numb
  *  0006) so the card can show the underlying evidence, not just the
  *  abstracted 0-100 factor score it fed into. None of this is re-derived
  *  or re-scored here; it's a display-only snapshot of what
- *  computeFactorScores already used (plus P/E and EV/EBITDA, which aren't
- *  scored at all, for a direct side-by-side against EV/EBIT). */
+ *  computeFactorScores already used (plus trailing P/E, which isn't
+ *  scored at all, for a side-by-side against the scored multiples). */
 export interface SupportingMetrics {
   currentPrice: number | null;
   trailingPe: number | null;
   evToEbitda: number | null;
   evToEbit: number | null;
+  priceToBook: number | null;
   netDebtToEbitda: number | null;
   interestCoverage: number | null;
   beta: number | null;
@@ -486,6 +509,7 @@ export function computeSupportingMetrics(row: UniverseSnapshotRow): SupportingMe
     trailingPe: row.trailing_pe,
     evToEbitda: row.ev_to_ebitda,
     evToEbit: computeEvToEbit(row.enterprise_value, row.ebit),
+    priceToBook: row.price_to_book,
     netDebtToEbitda: computeNetDebtToEbitda(row.total_debt, row.total_cash, row.ebitda),
     interestCoverage: computeInterestCoverage(row.ebit, row.interest_expense),
     beta: row.beta,

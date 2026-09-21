@@ -179,6 +179,7 @@ export interface UniverseSnapshotRow {
   price: number | null;
   trailing_pe: number | null;
   peg_ratio: number | null;
+  price_to_book: number | null;
   ev_to_ebitda: number | null;
   fcf_yield: number | null;
   gross_margin: number | null;
@@ -262,7 +263,7 @@ export async function getUniverseSnapshot(env: Env): Promise<UniverseSnapshotRow
      SELECT
        s.ticker,
        lp.price,
-       lf.trailing_pe, lf.peg_ratio, lf.fcf_yield, lf.gross_margin, lf.operating_margin,
+       lf.trailing_pe, lf.peg_ratio, lf.price_to_book, lf.fcf_yield, lf.gross_margin, lf.operating_margin,
        lf.net_margin, lf.return_on_equity, lf.revenue_growth_yoy, lf.earnings_growth_yoy,
        lf.debt_to_equity, lf.dividend_yield, lf.ev_to_ebitda,
        lf.beta, lf.return_on_assets, lf.ebit, lf.ebitda, lf.enterprise_value,

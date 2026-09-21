@@ -1301,8 +1301,9 @@ export function renderDecisionLab(): string {
     wrap.appendChild(el("h4", { text: "Valuation & balance-sheet multiples" }));
     var grid = el("div", { class: "metric-grid" });
     grid.appendChild(metricTile("P/E", fmtX(m.trailingPe)));
-    grid.appendChild(metricTile("EV/EBITDA", fmtX(m.evToEbitda)));
+    grid.appendChild(metricTile("EV/EBITDA", fmtX(m.evToEbitda), true));
     grid.appendChild(metricTile("EV/EBIT", fmtX(m.evToEbit), true));
+    grid.appendChild(metricTile("Price/Book", fmtX(m.priceToBook), true));
     grid.appendChild(metricTile("Net Debt/EBITDA", fmtX(m.netDebtToEbitda)));
     grid.appendChild(metricTile("Interest coverage", fmtX(m.interestCoverage)));
     grid.appendChild(metricTile("Beta", fmt(m.beta, 2)));

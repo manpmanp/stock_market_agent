@@ -19,6 +19,7 @@ function baseRow(overrides: Partial<UniverseSnapshotRow> = {}): UniverseSnapshot
     price: 100,
     trailing_pe: 20,
     peg_ratio: 1.5,
+    price_to_book: 2,
     fcf_yield: 0.05,
     gross_margin: 0.4,
     operating_margin: 0.2,
@@ -133,6 +134,23 @@ describe("computeFactorScores", () => {
 
   it("still scores valuation from the self-relative signals alone when EV/EBIT inputs are missing", () => {
     const details = computeFactorScores(baseRow({ enterprise_value: null, ebit: null }), neutralRegime);
+    expect(details.valuation.unscored).toBe(false);
+  });
+
+  it("scores valuation higher for a cheaper EV/EBITDA, all else equal", () => {
+    const cheap = computeFactorScores(baseRow({ ev_to_ebitda: 5 }), neutralRegime);
+    const expensive = computeFactorScores(baseRow({ ev_to_ebitda: 25 }), neutralRegime);
+    expect(cheap.valuation.value).toBeGreaterThan(expensive.valuation.value);
+  });
+
+  it("scores valuation higher for a cheaper Price/Book, all else equal", () => {
+    const cheap = computeFactorScores(baseRow({ price_to_book: 0.7 }), neutralRegime);
+    const expensive = computeFactorScores(baseRow({ price_to_book: 6 }), neutralRegime);
+    expect(cheap.valuation.value).toBeGreaterThan(expensive.valuation.value);
+  });
+
+  it("still scores valuation from self-relative + EV/EBIT alone when EV/EBITDA and P/B are both missing", () => {
+    const details = computeFactorScores(baseRow({ ev_to_ebitda: null, price_to_book: null }), neutralRegime);
     expect(details.valuation.unscored).toBe(false);
   });
 
@@ -258,6 +276,7 @@ describe("computeSupportingMetrics", () => {
     expect(metrics.trailingPe).toBe(20);
     expect(metrics.evToEbitda).toBe(12);
     expect(metrics.evToEbit).toBeCloseTo(10, 6); // 200 / 20
+    expect(metrics.priceToBook).toBe(2);
     expect(metrics.netDebtToEbitda).toBeCloseTo(0.8, 6); // (50-30)/25
     expect(metrics.interestCoverage).toBeCloseTo(10, 6); // 20/2
     expect(metrics.beta).toBe(1.0);

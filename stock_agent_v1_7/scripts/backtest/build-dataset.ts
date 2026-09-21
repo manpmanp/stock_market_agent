@@ -44,6 +44,24 @@ import { join } from "node:path";
 // (see there) so this doesn't conflict with the rest of the project's
 // Bundler-resolution convention or its `npm run typecheck`.
 import { computeIndicators, type PricePoint } from "../../src/scoring/indicators.ts";
+// Same discipline as computeIndicators above: CALL the live decision-engine
+// scoring functions, don't reimplement them. This file used to carry its
+// own hand-copied factorEntry/factorTechnical/factorValuationPartial/
+// factorRiskPartial functions with comments claiming they "match factors.ts
+// exactly" -- and they silently stopped matching the first time factors.ts
+// changed (scoreTechnical picked up conflict-aware RSI/trend blending;
+// scoreRisk picked up a compounding-risk penalty) without anyone touching
+// this file. That meant the backtest harness was quietly fitting weights
+// and reporting correlations against a DIFFERENT, out-of-date algorithm
+// than the one actually live on the site -- a hand-duplicated copy can
+// only ever be as fresh as the last time someone remembered to update it.
+// Importing computeFactorScores directly makes that drift structurally
+// impossible: whatever factors.ts computes for entry/technical/valuation/
+// risk IS what this dataset is built from, always, with no second copy to
+// forget.
+import { computeFactorScores, neutralMarketRegime } from "../../src/decision/factors.ts";
+import type { UniverseSnapshotRow } from "../../src/lib/db.ts";
+import type { TechnicalIndicators } from "../../src/scoring/indicators.ts";
 
 const RAW_DIR = join(process.cwd(), "data", "raw");
 const OUT_PATH = join(process.cwd(), "data", "backtest_dataset.csv");
@@ -119,66 +137,65 @@ function fmt(n: number | null): string {
 // correctly. So these 4 can be fit honestly today, with no lookahead risk,
 // while the fundamentals-dependent 6 wait for real history to accumulate.
 //
-// Each formula below is copied from factors.ts, not re-derived -- if
-// factors.ts's math changes, these should be updated to match, since the
-// whole point is that what gets trained here is the same thing the live
-// engine actually computes. Two are intentionally partial versions of their
-// factors.ts counterpart (valuation drops the fair-value-gap and EV/EBIT
-// components, both fundamentals-dependent; risk drops leverage and beta,
-// same reason) -- named accordingly so nobody mistakes them for the full
-// factor.
-function clamp01(v: number): number {
-  return Math.max(0, Math.min(1, v));
-}
+// These 4 columns are read straight off computeFactorScores (imported
+// above) instead of a hand-copied reimplementation -- a prior version of
+// this file duplicated scoreEntry/scoreTechnical/scoreValuation/scoreRisk's
+// math by hand, with a comment claiming each "matches factors.ts exactly."
+// That claim silently went stale the first time factors.ts's scoring
+// changed (scoreTechnical's RSI/trend conflict-aware blending, scoreRisk's
+// compounding-risk penalty) without this file being touched -- meaning the
+// backtest harness was quietly fitting weights and reporting correlations
+// against an outdated algorithm, not the one actually live. Calling the
+// real function makes that class of drift structurally impossible: there
+// is no second copy of the math left to forget to update.
+//
+// The unused 6 fundamentals/news-dependent fields are passed as null,
+// which computeFactorScores already handles by returning a flagged
+// unscored=true neutral (50) for each -- exactly the same null-safe path
+// the live engine takes for a ticker missing that data, so this isn't a
+// special case, just the normal one. Only entry/technical/valuation/risk's
+// .value are read out; valuation and risk come out as the SAME "partial"
+// reads as before (valuation's fair-value-gap and EV/EBIT components, and
+// risk's leverage/beta component, all naturally fall away to null/absent
+// through the exact same null-guards, not a separately maintained "partial"
+// formula) -- see factors.ts's scoreValuation/scoreRisk for how each
+// degrades when those fundamentals inputs are missing.
+const NEUTRAL_REGIME = neutralMarketRegime("backtest dataset: market regime isn't modeled point-in-time, not used by any of the 4 trainable factors");
 
-function band(value: number | null, weak: number, strong: number, higherIsBetter = true): number | null {
-  if (value === null) return null;
-  const t = higherIsBetter ? (value - weak) / (strong - weak) : (weak - value) / (weak - strong);
-  return clamp01(t) * 100;
-}
-
-function avgIgnoringNulls(values: Array<number | null>): number | null {
-  const present = values.filter((v): v is number => v !== null);
-  if (present.length === 0) return null;
-  return present.reduce((a, b) => a + b, 0) / present.length;
-}
-
-/** Matches factors.ts scoreEntry exactly. */
-function factorEntry(trendState: string | null, rsi14: number | null): number | null {
-  const stateScore: Record<string, number> = { pullback_in_uptrend: 80, neutral: 50, near_historical_highs: 30, downtrend: 20 };
-  const rsiScore = rsi14 === null ? null : 1 - Math.abs(rsi14 - 50) / 50;
-  if (trendState === null || !(trendState in stateScore)) {
-    return rsiScore === null ? null : rsiScore * 100;
-  }
-  const base = stateScore[trendState]!;
-  return rsiScore === null ? base : base * 0.7 + rsiScore * 100 * 0.3;
-}
-
-/** Matches factors.ts scoreTechnical exactly. */
-function factorTechnical(rsi14: number | null, macd: number | null, macdSignal: number | null, priceVsSma50: number | null, priceVsSma200: number | null): number | null {
-  const rsiScore = rsi14 === null ? null : (1 - Math.abs(rsi14 - 50) / 50) * 100;
-  const macdScore = macd === null || macdSignal === null ? null : macd > macdSignal ? 70 : 30;
-  const sma50Score = band(priceVsSma50, -0.1, 0.1);
-  const sma200Score = band(priceVsSma200, -0.15, 0.15);
-  return avgIgnoringNulls([rsiScore, macdScore, sma50Score, sma200Score]);
-}
-
-/** Self-relative half ONLY of factors.ts scoreValuation -- the fair-value
- *  gap and EV/EBIT components are dropped (both need fundamentals/analyst
- *  data with no point-in-time history yet). Partial, not the real factor. */
-function factorValuationPartial(priceRangePercentile: number | null): number | null {
-  if (priceRangePercentile === null) return null;
-  const rangeSignal = 1 - 2 * priceRangePercentile; // 1 = at own low, -1 = at own high
-  return ((rangeSignal + 1) / 2) * 100;
-}
-
-/** Volatility + drawdown-from-high components ONLY of factors.ts scoreRisk
- *  -- leverage and beta are dropped (fundamentals-dependent, same reason as
- *  above). Partial, not the real factor. */
-function factorRiskPartial(volatility30d: number | null, distFromHighPct: number | null): number | null {
-  const volScore = band(volatility30d, 0.6, 0.15, false);
-  const drawdownScore = band(distFromHighPct, -0.6, -0.05, true);
-  return avgIgnoringNulls([volScore, drawdownScore]);
+function decisionFactorsFromIndicators(ticker: string, ind: TechnicalIndicators): { entry: number | null; technical: number | null; valuationPartial: number | null; riskPartial: number | null } {
+  const row: UniverseSnapshotRow = {
+    ticker,
+    price: null, trailing_pe: null, peg_ratio: null, price_to_book: null, ev_to_ebitda: null, fcf_yield: null,
+    gross_margin: null, operating_margin: null, net_margin: null, return_on_equity: null,
+    revenue_growth_yoy: null, earnings_growth_yoy: null, debt_to_equity: null, fair_value: null,
+    num_analysts: null,
+    rsi_14: ind.rsi14, macd: ind.macd, macd_signal: ind.macdSignal,
+    price_vs_sma50: ind.priceVsSma50, price_vs_sma200: ind.priceVsSma200,
+    volume_trend_20d: ind.volumeTrend20d, dividend_yield: null,
+    volatility_30d: ind.volatility30d, price_range_pct: ind.priceRangePercentile,
+    dist_from_high_pct: ind.distFromHighPct, dist_from_low_pct: ind.distFromLowPct,
+    trend_state: ind.trendState,
+    beta: null, return_on_assets: null, ebit: null, ebitda: null, enterprise_value: null,
+    total_debt: null, total_cash: null, interest_expense: null, payout_ratio: null,
+    target_low: null, target_high: null, rating: null,
+    rec_strong_buy: null, rec_buy: null, rec_hold: null, rec_sell: null, rec_strong_sell: null,
+  };
+  const details = computeFactorScores(row, NEUTRAL_REGIME);
+  // computeFactorScores returns a flagged neutral 50 (unscored: true) for
+  // missing data, not null -- the right behavior for the live UI (always
+  // show SOME number), but the wrong one for training data: a fabricated
+  // neutral would silently look like a real, informative reading to nnls/
+  // the walk-forward harness instead of the missing value it actually is.
+  // Map unscored back to null so harness.py's existing dropna(subset=...)
+  // still excludes these rows, exactly like the old hand-copied functions
+  // (which returned null on missing inputs) did.
+  const val = (d: { value: number; unscored: boolean }) => (d.unscored ? null : d.value);
+  return {
+    entry: val(details.entry),
+    technical: val(details.technical),
+    valuationPartial: val(details.valuation),
+    riskPartial: val(details.risk),
+  };
 }
 
 function main() {
@@ -237,10 +254,11 @@ function main() {
       if (ind.asOfDate === null) continue;
       const t = trendStateOneHot(ind.trendState);
       const currentClose = rows[i]!.close as number;
-      const fEntry = factorEntry(ind.trendState, ind.rsi14);
-      const fTechnical = factorTechnical(ind.rsi14, ind.macd, ind.macdSignal, ind.priceVsSma50, ind.priceVsSma200);
-      const fValuationPartial = factorValuationPartial(ind.priceRangePercentile);
-      const fRiskPartial = factorRiskPartial(ind.volatility30d, ind.distFromHighPct);
+      const decisionFactors = decisionFactorsFromIndicators(ticker, ind);
+      const fEntry = decisionFactors.entry;
+      const fTechnical = decisionFactors.technical;
+      const fValuationPartial = decisionFactors.valuationPartial;
+      const fRiskPartial = decisionFactors.riskPartial;
 
       for (const [horizon, days] of Object.entries(HORIZON_DAYS)) {
         const futureIdx = i + days;
