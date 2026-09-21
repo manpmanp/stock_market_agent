@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  computeAnalystConsensus,
   computeEvToEbit,
   computeFactorScores,
   computeInterestCoverage,
@@ -234,6 +235,81 @@ describe("computeFactorScores", () => {
     expect(thin.future_potential.note).toMatch(/thin analyst coverage/);
     // Same PEG, but the thinly-covered read should sit closer to neutral.
     expect(Math.abs(thin.future_potential.value - 50)).toBeLessThan(Math.abs(wellCovered.future_potential.value - 50));
+  });
+
+  it("scores future_potential higher for a stronger analyst consensus, all else equal", () => {
+    const bullish = computeFactorScores(
+      baseRow({ rec_strong_buy: 10, rec_buy: 0, rec_hold: 0, rec_sell: 0, rec_strong_sell: 0 }),
+      neutralRegime
+    );
+    const bearish = computeFactorScores(
+      baseRow({ rec_strong_buy: 0, rec_buy: 0, rec_hold: 0, rec_sell: 0, rec_strong_sell: 10 }),
+      neutralRegime
+    );
+    expect(bullish.future_potential.value).toBeGreaterThan(bearish.future_potential.value);
+  });
+
+  it("still scores future_potential from analyst consensus alone when PEG is missing", () => {
+    const details = computeFactorScores(baseRow({ peg_ratio: null }), neutralRegime);
+    expect(details.future_potential.unscored).toBe(false);
+    expect(details.future_potential.note).toMatch(/analyst consensus alone/);
+  });
+
+  it("falls back to the textual rating when the rec_* breakdown is unavailable", () => {
+    const details = computeFactorScores(
+      baseRow({ rec_strong_buy: null, rec_buy: null, rec_hold: null, rec_sell: null, rec_strong_sell: null, rating: "strong_buy", peg_ratio: null }),
+      neutralRegime
+    );
+    expect(details.future_potential.unscored).toBe(false);
+    expect(details.future_potential.value).toBeGreaterThan(50);
+  });
+
+  it("gates future_potential when a well-covered analyst consensus is net sell-leaning, even with a strong PEG", () => {
+    const distressed = computeFactorScores(
+      baseRow({ peg_ratio: 0.5, rec_strong_buy: 0, rec_buy: 0, rec_hold: 0, rec_sell: 4, rec_strong_sell: 4 }),
+      neutralRegime
+    );
+    expect(distressed.future_potential.value).toBeLessThanOrEqual(30);
+    expect(distressed.future_potential.note).toMatch(/capped/);
+  });
+
+  it("does not gate future_potential on a sell-leaning consensus from too few analysts", () => {
+    const thinSell = computeFactorScores(
+      baseRow({ peg_ratio: 0.5, rec_strong_buy: 0, rec_buy: 0, rec_hold: 0, rec_sell: 1, rec_strong_sell: 1 }),
+      neutralRegime
+    );
+    expect(thinSell.future_potential.note ?? "").not.toMatch(/capped/);
+  });
+
+  it("flags a future_potential conflict when analyst consensus disagrees sharply with PEG, without gating a non-distressed consensus", () => {
+    const conflicted = computeFactorScores(
+      baseRow({ peg_ratio: 0.5, rec_strong_buy: 0, rec_buy: 0, rec_hold: 10, rec_sell: 0, rec_strong_sell: 0 }),
+      neutralRegime
+    );
+    expect(conflicted.future_potential.note).toMatch(/conflict/);
+  });
+});
+
+describe("computeAnalystConsensus", () => {
+  it("computes a count-weighted consensus score from the rec_* breakdown", () => {
+    const c = computeAnalystConsensus(baseRow({ rec_strong_buy: 5, rec_buy: 8, rec_hold: 3, rec_sell: 0, rec_strong_sell: 0 }));
+    expect(c).not.toBeNull();
+    expect(c!.totalAnalysts).toBe(16);
+    expect(c!.score).toBeCloseTo((5 * 100 + 8 * 75 + 3 * 50) / 16, 6);
+  });
+
+  it("falls back to the textual rating, using num_analysts for coverage, when rec_* is all missing", () => {
+    const c = computeAnalystConsensus(
+      baseRow({ rec_strong_buy: null, rec_buy: null, rec_hold: null, rec_sell: null, rec_strong_sell: null, rating: "sell", num_analysts: 7 })
+    );
+    expect(c).toEqual({ score: 25, totalAnalysts: 7 });
+  });
+
+  it("returns null when neither the rec_* breakdown nor a recognized rating is available", () => {
+    const c = computeAnalystConsensus(
+      baseRow({ rec_strong_buy: null, rec_buy: null, rec_hold: null, rec_sell: null, rec_strong_sell: null, rating: null })
+    );
+    expect(c).toBeNull();
   });
 });
 

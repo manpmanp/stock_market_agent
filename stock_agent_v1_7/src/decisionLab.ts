@@ -319,15 +319,15 @@ export function renderDecisionLab(): string {
           <tr><td>Quality</td><td>Gross margin, operating margin, net margin, return on equity (ROE), return on assets (ROA) -- is this a good business</td></tr>
           <tr><td>Growth</td><td>Revenue growth (YoY), earnings growth (YoY)</td></tr>
           <tr><td>Financial strength</td><td>Debt-to-equity, free cash flow (FCF) yield, Net Debt/EBITDA, interest coverage -- can it weather a downturn</td></tr>
-          <tr><td>Valuation</td><td>Where price sits in its own ~5y range, the gap vs. analyst fair value, plus EV/EBIT as an absolute cross-check against those two self-relative reads</td></tr>
-          <tr><td>Future potential</td><td>A proxy (PEG ratio + analyst coverage count) for growth-adjusted upside -- not a real TAM/runway estimate, no data source for that exists</td></tr>
+          <tr><td>Valuation</td><td>Where price sits in its own ~5y range, the gap vs. analyst fair value, plus EV/EBIT, EV/EBITDA, and Price/Book as absolute cross-checks against those two self-relative reads</td></tr>
+          <tr><td>Future potential</td><td>A proxy (PEG ratio + sell-side analyst consensus, confidence-modulated by coverage breadth) for growth-adjusted upside -- not a real TAM/runway estimate, no data source for that exists</td></tr>
           <tr><td>Technical</td><td>RSI (14-day), MACD vs. its signal line, price vs. 50-day average, price vs. 200-day average -- see the Glossary tab for what each one means and how to read the numbers</td></tr>
           <tr><td>Entry</td><td>This ticker's own trend-state read (pullback in an uptrend / near highs / downtrend / neutral) plus RSI -- is right now, specifically, a reasonable point to buy</td></tr>
           <tr><td>Risk</td><td>30-day volatility, debt-to-equity, distance from this ticker's own high, Beta -- higher score = lower risk</td></tr>
           <tr><td>Catalyst</td><td>Currently a flagged neutral placeholder (50) in this version -- no news/events data source is wired in yet (planned for a future version, not this one)</td></tr>
           <tr><td>Market regime</td><td>One shared reading per run, from a market-index proxy's (SPY) own trend -- not this ticker's own data, so it moves every ticker together, not against each other</td></tr>
         </table>
-        <p class="note">P/E, EV/EBITDA, payout ratio, and the analyst recommendation/price-target spread are shown on each card as supporting metrics but aren't blended into any factor score -- see "Valuation & balance-sheet multiples" and "Analyst cross-check" on the decision cards below.</p>
+        <p class="note">P/E and payout ratio are shown on each card as supporting metrics but aren't blended into any factor score. EV/EBITDA and Price/Book now feed Valuation, and the analyst recommendation breakdown now feeds Future Potential (see the rows above) -- only the price-target range itself remains a display-only cross-check. See "Valuation & balance-sheet multiples" and "Analyst data" on the decision cards below.</p>
       </div>
     </div>
 
@@ -370,7 +370,11 @@ export function renderDecisionLab(): string {
         </div>
         <div class="term-row">
           <div class="term-name">EV/EBITDA <span class="term-full">Enterprise Value / EBITDA</span></div>
-          <div class="term-def">Same idea as EV/EBIT, but against EBITDA (operating profit before interest, tax, depreciation, and amortization) instead of EBIT -- so it also strips out the effect of how much a company depreciates its assets. Already pulled from Yahoo Finance directly (not derived here). Shown as a supporting metric next to EV/EBIT for comparison; not separately scored, since EV/EBIT is the one feeding the Valuation factor.</div>
+          <div class="term-def">Same idea as EV/EBIT, but against EBITDA (operating profit before interest, tax, depreciation, and amortization) instead of EBIT -- so it also strips out the effect of how much a company depreciates its assets. Pulled from Yahoo Finance directly (not derived here) -- this engine treats roughly 6x as cheap and 18x+ as expensive. Feeds the Valuation factor alongside EV/EBIT and Price/Book, as part of the absolute-multiple composite (see below); also shown raw next to EV/EBIT on each card.</div>
+        </div>
+        <div class="term-row">
+          <div class="term-name">Price/Book <span class="term-full">P/B ratio</span></div>
+          <div class="term-def">Share price divided by book value per share (shareholders' equity per share) -- what you're paying relative to the accounting value of the company's net assets. Most informative for asset-heavy or financial businesses, where EV/EBIT(DA) can be noisy off thin or volatile operating income -- this engine treats roughly 1x as cheap and 5x+ as expensive. Feeds the Valuation factor alongside EV/EBIT and EV/EBITDA: the three are averaged together into one "cheap by an absolute yardstick" composite (they're substitutable evidence for the same question), then that composite is weighed against the self-relative signals (own price range, gap vs. analyst fair value) with conflict-awareness.</div>
         </div>
         <div class="term-row">
           <div class="term-name">Net Debt/EBITDA</div>
@@ -401,10 +405,14 @@ export function renderDecisionLab(): string {
           <div class="term-name">Payout ratio</div>
           <div class="term-def">The share of earnings paid out as dividends (dividends / net income). Not scored into any factor here -- a high payout ratio isn't automatically a bad sign (mature, stable-cash-flow businesses often run high payout ratios by design), so it doesn't map cleanly onto a single "higher/lower is better" band the way a leverage ratio does. Shown as a supporting metric on each card for the reader to weigh in context, e.g. alongside FCF yield and Net Debt/EBITDA.</div>
         </div>
-        <h4>Analyst cross-check (never blended into the score)</h4>
+        <h4>Analyst data</h4>
         <div class="term-row">
-          <div class="term-name">Analyst recommendations &amp; price targets</div>
-          <div class="term-def">The current breakdown of sell-side analyst ratings (strong buy / buy / hold / sell / strong sell) and their low/mean/high 12-month price targets, both from Yahoo Finance. Shown as a cross-check on each card -- it's other analysts' independent view, useful for sanity-checking this engine's read, not an input to it.</div>
+          <div class="term-name">Analyst recommendations <span class="term-full">strong buy / buy / hold / sell / strong sell breakdown</span></div>
+          <div class="term-def">The current breakdown of sell-side analyst ratings from Yahoo Finance, converted to a 0-100 consensus score (count-weighted: strong buy=100, buy=75, hold=50, sell=25, strong sell=0) and blended into Future Potential alongside PEG, with conflict-awareness between the two reads and a hard cap when a well-covered (3+ analyst) consensus is net sell-leaning -- see the Future Potential row above. When the count breakdown isn't available, falls back to Yahoo's single textual rating (e.g. "buy", "strong_sell"), mapped onto the same 0-100 scale.</div>
+        </div>
+        <div class="term-row">
+          <div class="term-name">Price targets</div>
+          <div class="term-def">Low/mean/high 12-month analyst price targets, also from Yahoo Finance. Shown as a cross-check on each card -- other analysts' independent view of where the price might go, not an input to any factor score.</div>
         </div>
       </div>
     </div>
@@ -1286,11 +1294,12 @@ export function renderDecisionLab(): string {
     return tile;
   }
 
-  // EV/EBIT, Net Debt/EBITDA, interest coverage, Beta, ROA, and the
-  // analyst recommendation/target-price spread -- the raw numbers behind
-  // some of the factor scores above, shown directly rather than only as
-  // an abstracted 0-100 score. Analyst data is a cross-check, never
-  // blended into the weighted score.
+  // EV/EBIT, EV/EBITDA, Price/Book, Net Debt/EBITDA, interest coverage,
+  // Beta, ROA, and the analyst recommendation/target-price spread -- the
+  // raw numbers behind some of the factor scores above, shown directly
+  // rather than only as an abstracted 0-100 score. The recommendation
+  // breakdown feeds Future Potential (see Methodology -> Analyst data);
+  // price targets remain a display-only cross-check.
   function renderSupportingMetrics(d) {
     var m = null;
     try { m = JSON.parse(d.supporting_metrics_json || "null"); } catch (e) {}
@@ -1314,7 +1323,7 @@ export function renderDecisionLab(): string {
     var a = m.analyst || {};
     var recTotal = (a.recStrongBuy || 0) + (a.recBuy || 0) + (a.recHold || 0) + (a.recSell || 0) + (a.recStrongSell || 0);
     if (recTotal > 0 || a.targetLow !== null) {
-      wrap.appendChild(el("h4", { text: "Analyst cross-check (not part of the score)" }));
+      wrap.appendChild(el("h4", { text: "Analyst data (recommendations feed Future Potential; price targets remain a cross-check)" }));
     }
     if (recTotal > 0) {
       var bar = el("div", { class: "rec-bar" });

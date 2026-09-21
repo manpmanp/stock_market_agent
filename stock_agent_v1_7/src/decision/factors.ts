@@ -264,41 +264,131 @@ function scoreValuation(row: UniverseSnapshotRow): FactorScoreDetail {
   return detail(overall, note);
 }
 
+// --- Analyst consensus (rec_strong_buy..rec_strong_sell breakdown, or the
+// single textual rating as a fallback) -------------------------------------
+// Previously ingested and persisted but only ever displayed (see
+// SupportingMetrics.analyst below) -- never fed into any factor score, even
+// though a sell-side consensus is exactly the kind of independent forward-
+// looking read future_potential is trying to approximate. Exported so it's
+// directly unit-testable, same convention as computeEvToEbit etc. above.
+
+const RATING_KEY_SCORE: Record<string, number> = {
+  strong_buy: 100,
+  buy: 75,
+  overweight: 75,
+  outperform: 75,
+  hold: 50,
+  neutral: 50,
+  market_perform: 50,
+  equal_weight: 50,
+  underweight: 25,
+  underperform: 25,
+  sell: 25,
+  strong_sell: 0,
+};
+
+export interface AnalystConsensus {
+  /** 0 (unanimous strong sell) .. 100 (unanimous strong buy). */
+  score: number;
+  /** Analysts backing the read -- the summed rec_* counts when available,
+   *  else row.num_analysts (or 1 if even that's missing) when falling back
+   *  to the single textual rating. Used to gate/modulate confidence, never
+   *  to change the score's direction. */
+  totalAnalysts: number;
+}
+
+export function computeAnalystConsensus(row: UniverseSnapshotRow): AnalystConsensus | null {
+  const buckets: Array<[number | null, number]> = [
+    [row.rec_strong_buy, 100],
+    [row.rec_buy, 75],
+    [row.rec_hold, 50],
+    [row.rec_sell, 25],
+    [row.rec_strong_sell, 0],
+  ];
+  const total = buckets.reduce((sum, [n]) => sum + (n ?? 0), 0);
+  if (total > 0) {
+    const weighted = buckets.reduce((sum, [n, w]) => sum + (n ?? 0) * w, 0);
+    return { score: weighted / total, totalAnalysts: total };
+  }
+  // No rec_* breakdown -- fall back to Yahoo's single recommendationKey
+  // (e.g. "buy", "strong_sell") when present. Coarser than the full
+  // distribution but still a real, independent consensus read rather than
+  // nothing.
+  if (row.rating) {
+    const mapped = RATING_KEY_SCORE[row.rating.toLowerCase().replace(/[\s-]+/g, "_")];
+    if (mapped !== undefined) return { score: mapped, totalAnalysts: row.num_analysts ?? 1 };
+  }
+  return null;
+}
+
 /** Structural/forward growth potential -- a proxy, not a real TAM or
  *  reinvestment-runway estimate (this project has no data source for
- *  either). Built from PEG ratio (growth priced in relative to what you
- *  pay -- lower is more room to run) and analyst coverage breadth as a
- *  rough confidence signal on the growth read. Weaker evidentiary basis
- *  than the other fundamentals-backed factors; not flagged `unscored`
- *  because it IS a real computation from real data, just an acknowledged
- *  proxy for what the spec actually asks for. */
+ *  either). Built from two independent forward-looking reads: the PEG
+ *  ratio (growth priced in relative to what you pay -- lower is more room
+ *  to run) and sell-side analyst consensus (the professional forecaster
+ *  view, from the rec_strong_buy..rec_strong_sell breakdown or the single
+ *  textual rating as a fallback). Weaker evidentiary basis than the other
+ *  fundamentals-backed factors; not flagged `unscored` because it IS a real
+ *  computation from real data, just an acknowledged proxy for what the spec
+ *  actually asks for. */
 function scoreFuturePotential(row: UniverseSnapshotRow): FactorScoreDetail {
   const pegScore = row.peg_ratio === null || row.peg_ratio <= 0 ? null : band(row.peg_ratio, 3, 0.75, false);
+  const consensus = computeAnalystConsensus(row);
+  const consensusScore = consensus === null ? null : consensus.score;
   const coverageScore = row.num_analysts === null ? null : band(row.num_analysts, 1, 12);
-  if (pegScore === null && coverageScore === null) {
-    return detail(null, "insufficient data for a future-potential proxy (PEG / analyst coverage)");
+
+  if (pegScore === null && consensusScore === null) {
+    return detail(null, "insufficient data for a future-potential proxy (PEG / analyst rating)");
   }
+
+  // PEG and analyst consensus are answering genuinely different questions
+  // -- "cheap relative to priced-in growth" vs. "what do professional
+  // forecasters think of this stock's prospects" -- so when both are
+  // present they're combined with conflict-awareness (same treatment as
+  // valuation's self-relative vs. absolute-multiple signals) rather than
+  // one silently substituting for the other.
+  let base: number;
+  let combinedNote: string | undefined;
   if (pegScore === null) {
-    // Coverage breadth alone doesn't say anything about growth potential
-    // -- a well-covered stock with an unknown PEG isn't "average
-    // potential," it's just unmeasured. Neutral, explicitly flagged, not
-    // averaged from a single unrelated input.
-    return detail(NEUTRAL, "future-potential proxy unavailable (PEG missing) -- analyst coverage alone isn't a substitute, treated as neutral");
+    base = consensusScore as number;
+    combinedNote = "Future-potential proxy from analyst consensus alone (PEG missing).";
+  } else if (consensusScore === null) {
+    base = pegScore;
+  } else {
+    const disagreement = Math.abs(pegScore - consensusScore) / 100;
+    base = combineWithConflictAwareness(pegScore, consensusScore, 0.3);
+    if (disagreement > 0.4) {
+      combinedNote = "Future-potential signals conflict: analyst consensus disagrees sharply with the PEG-implied growth read -- pulled toward neutral rather than averaged.";
+    }
   }
-  // Coverage isn't independent evidence of growth potential the way PEG
-  // is -- it's really a confidence signal on how much to trust the PEG
-  // read (a PEG built off one analyst's estimate is noisier than one
-  // averaged across a dozen). So it modulates how far PEG is allowed to
-  // pull the score away from neutral, rather than getting averaged in as
-  // a second, equal-weight vote. Floor of 0.3 so thin coverage damps a
-  // real PEG read but never fully zeroes it.
+
+  // Coverage breadth modulates confidence in the combined read exactly as
+  // it did for PEG alone -- a read built off one analyst's estimate/rating
+  // is noisier than one averaged across a dozen. Floor of 0.3 so thin
+  // coverage damps the read but never fully zeroes it.
   const confidenceFactor = coverageScore === null ? 0.7 : clamp(0.3 + 0.7 * (coverageScore / 100), 0.3, 1);
-  const value = NEUTRAL + (pegScore - NEUTRAL) * confidenceFactor;
-  const note =
+  let value = NEUTRAL + (base - NEUTRAL) * confidenceFactor;
+
+  // Hard gate: a broad, well-covered sell-leaning consensus is a red flag
+  // professional forecasters are seeing that a decent PEG shouldn't be
+  // able to quietly average away -- same treatment as
+  // scoreFinancialStrength's solvency cap. Requires at least 3 analysts so
+  // a single outlier rating can't trip it.
+  let gateNote: string | undefined;
+  if (consensus !== null && consensus.totalAnalysts >= 3 && consensus.score < 25) {
+    const cap = 30;
+    if (value > cap) {
+      value = cap;
+      gateNote = `Future-potential capped at ${cap}: analyst consensus is net sell-leaning across ${consensus.totalAnalysts} analysts -- a red flag the PEG read shouldn't be able to average away.`;
+    }
+  }
+
+  const confidenceNote =
     confidenceFactor < 0.6
-      ? "Future-potential reading damped toward neutral: thin analyst coverage makes the PEG-based read less reliable."
+      ? "Future-potential reading damped toward neutral: thin analyst coverage makes this read less reliable."
       : undefined;
-  return detail(value, note);
+
+  return detail(value, gateNote ?? combinedNote ?? confidenceNote);
 }
 
 /** Trend, momentum, relative strength, market structure -- from the
@@ -487,9 +577,12 @@ export interface SupportingMetrics {
   // (mature, stable-cash-flow businesses often run high payout), so it
   // doesn't map cleanly onto a single "higher is better/worse" band the
   // way leverage or coverage ratios do -- shown for the reader to weigh
-  // in context, same treatment as the analyst data below.
+  // in context, same treatment as the price-target spread below.
   payoutRatio: number | null;
   analyst: {
+    // rating and the rec_* breakdown (via computeAnalystConsensus) now
+    // feed the Future Potential factor -- see scoreFuturePotential above.
+    // numAnalysts and the target price range remain display-only.
     numAnalysts: number | null;
     rating: string | null;
     targetLow: number | null;
