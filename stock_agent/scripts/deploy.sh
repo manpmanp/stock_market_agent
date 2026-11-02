@@ -113,7 +113,7 @@ npx wrangler deploy
 step "Verifying deploy (GET /healthz)"
 HEALTH="$(curl -sS "$WORKER_URL/healthz")"
 echo "$HEALTH"
-if ! echo "$HEALTH" | grep -q '"ok":true'; then
+if ! echo "$HEALTH" | grep -Eq '"ok"[[:space:]]*:[[:space:]]*true'; then
   echo "Warning: /healthz did not return ok:true -- check the Worker manually." >&2
   exit 1
 fi
