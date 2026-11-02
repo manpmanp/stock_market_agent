@@ -10,12 +10,12 @@
 // Shares the same color-system tokens as dashboard.ts (same validated
 // palette) purely for visual family, not code -- no imports between the two.
 //
-// This is stock_agent_v1_7 -- the active playground for the v7 work
-// (data-driven, self-tuning model selection + backtest harness), forked
-// from stock_agent_v1_6, which stays frozen as the last known-good
-// reference exactly like v1_5 was frozen when v1_6 was created. Same
-// Worker name and D1 database as v6 (see wrangler.toml) -- only one of
-// v6/v7 is ever actually deployed at a time.
+// This is stock_agent -- the data-driven, self-tuning model selection +
+// backtest harness work (formerly tracked as the "v7" folder). Earlier
+// manual version-folder snapshots (v1_0 through v1_6, plus the original
+// Decision_Algorithm_v0) were removed from the working tree once this
+// repo moved to git tags for versioning (see the v0.2.0 tag) -- they're
+// still reachable in git history, just not duplicated on disk anymore.
 //
 // The old "How the algorithm works" / "How weight tuning works"
 // collapsible pair was restructured into a single "Methodology" control

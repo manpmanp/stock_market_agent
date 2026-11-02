@@ -1,5 +1,5 @@
 #!/bin/bash
-# Full update-and-deploy pipeline for this Worker (stock_agent_v1_7).
+# Full update-and-deploy pipeline for this Worker (stock_agent).
 #
 # Runs everything you'd otherwise have to remember and run by hand:
 # install deps, typecheck, unit tests, check whether any D1 migration is

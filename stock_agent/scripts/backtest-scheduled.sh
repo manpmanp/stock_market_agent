@@ -26,8 +26,8 @@
 #        scripts/backtest-scheduled.sh
 #      Then check logs/backtest/last-status.txt.
 #   2. Add it to your crontab (`crontab -e`) to run weekly, e.g. Sunday 3am:
-#        0 3 * * 0 cd /path/to/stock_agent_v1_7 && ./scripts/backtest-scheduled.sh >> logs/backtest/cron.log 2>&1
-#      Replace /path/to/stock_agent_v1_7 with this repo's actual path
+#        0 3 * * 0 cd /path/to/stock_agent && ./scripts/backtest-scheduled.sh >> logs/backtest/cron.log 2>&1
+#      Replace /path/to/stock_agent with this repo's actual path
 #      (run `pwd` in this directory to get it). Weekly is the suggested
 #      default -- walk-forward folds don't move much day to day, and each
 #      run costs real time (TabPFN + D1 export).
