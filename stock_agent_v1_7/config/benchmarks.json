@@ -1,0 +1,23 @@
+{
+  "_comment": "Market-index benchmarks, ingested via the same Yahoo Finance chart endpoint used for every stock, into the same stocks/price_history tables -- but upserted with active = 0, so they are invisible to getUniverseSnapshot() (WHERE s.active = 1) and can never appear in v1 rankings, Decision Lab scoring, or the dashboard's ticker counts. This is the full list from the user's own benchmark reference list (Dow Jones, S&P 500, Nasdaq Composite, Nikkei 225, FTSE 100, Russell 2000, S&P/TSX, DAX, CAC 40, EURO STOXX 50, OMX Stockholm 30, Hang Seng, KOSPI, NIFTY 50, S&P/ASX 200, MSCI World, Bovespa, BIST 100). Yahoo ticker symbols for indices are hand-mapped, same as config/universe.json's own disclaimer -- spot-check before relying on any single one, especially ones never previously used anywhere in this project (everything here is new). MSCI World has no direct Yahoo index symbol, so URTH (iShares MSCI World ETF) is used as a tracking proxy instead -- flagged via is_etf_proxy. 'regime_proxy_for' names which config/universe.json region(s) this index is the natural regional benchmark for -- used by nothing yet (this file only wires up ingestion); decision/run.ts's market-regime factor and the backtest harness's benchmark comparison are the two follow-up consumers, not built in this pass. Two universe regions currently have no clean single-index proxy in this list -- switzerland and emerging_markets -- left unmapped rather than guessing; revisit if/when those factors are actually built.",
+  "benchmarks": [
+    { "ticker": "^GSPC",     "name": "S&P 500",             "exchange": "SNP",     "region": "us",     "currency": "USD", "regime_proxy_for": ["us"] },
+    { "ticker": "^DJI",      "name": "Dow Jones Industrial Average", "exchange": "DJI", "region": "us", "currency": "USD", "regime_proxy_for": [] },
+    { "ticker": "^IXIC",     "name": "Nasdaq Composite",    "exchange": "NIAC",    "region": "us",     "currency": "USD", "regime_proxy_for": [] },
+    { "ticker": "^RUT",      "name": "Russell 2000",        "exchange": "RUI",     "region": "us",     "currency": "USD", "regime_proxy_for": [] },
+    { "ticker": "^GSPTSE",   "name": "S&P/TSX Composite",   "exchange": "TOR",     "region": "global", "currency": "CAD", "regime_proxy_for": [] },
+    { "ticker": "^FTSE",     "name": "FTSE 100",            "exchange": "FGI",     "region": "uk",     "currency": "GBP", "regime_proxy_for": ["uk"] },
+    { "ticker": "^GDAXI",    "name": "DAX",                 "exchange": "GER",     "region": "germany","currency": "EUR", "regime_proxy_for": ["germany"] },
+    { "ticker": "^FCHI",     "name": "CAC 40",              "exchange": "PAR",     "region": "europe", "currency": "EUR", "regime_proxy_for": [] },
+    { "ticker": "^STOXX50E", "name": "EURO STOXX 50",       "exchange": "STO",     "region": "europe", "currency": "EUR", "regime_proxy_for": ["europe"] },
+    { "ticker": "^OMX",      "name": "OMX Stockholm 30",    "exchange": "STO",     "region": "nordic", "currency": "SEK", "regime_proxy_for": ["nordic", "nordic_ex_sweden"] },
+    { "ticker": "^HSI",      "name": "Hang Seng",           "exchange": "HKG",     "region": "global", "currency": "HKD", "regime_proxy_for": [] },
+    { "ticker": "^KS11",     "name": "KOSPI",               "exchange": "KSC",     "region": "global", "currency": "KRW", "regime_proxy_for": [] },
+    { "ticker": "^NSEI",     "name": "NIFTY 50",            "exchange": "NSE",     "region": "emerging_markets", "currency": "INR", "regime_proxy_for": [] },
+    { "ticker": "^AXJO",     "name": "S&P/ASX 200",         "exchange": "ASX",     "region": "global", "currency": "AUD", "regime_proxy_for": [] },
+    { "ticker": "^N225",     "name": "Nikkei 225",          "exchange": "OSA",     "region": "japan",  "currency": "JPY", "regime_proxy_for": ["japan"] },
+    { "ticker": "URTH",      "name": "MSCI World",          "exchange": "PCX",     "region": "global", "currency": "USD", "regime_proxy_for": ["global"], "is_etf_proxy": true },
+    { "ticker": "^BVSP",     "name": "Bovespa",             "exchange": "SAO",     "region": "emerging_markets", "currency": "BRL", "regime_proxy_for": [] },
+    { "ticker": "XU100.IS",  "name": "BIST 100",            "exchange": "IST",     "region": "emerging_markets", "currency": "TRY", "regime_proxy_for": [] }
+  ]
+}

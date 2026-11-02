@@ -1,5 +1,6 @@
 import type { Env } from "./lib/types.js";
 import { runIngestion, loadUniverse } from "./ingestion/run.js";
+import { runBenchmarkIngestion } from "./ingestion/benchmarks.js";
 import { runScoring } from "./scoring/run.js";
 import {
   getLatestDecisionRunAt,
@@ -89,6 +90,12 @@ export default {
       if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
       const mode = url.searchParams.get("mode") === "incremental" ? "incremental" : "full";
       const summary = await runIngestion(env, { mode });
+      return json({ summary });
+    }
+
+    if (url.pathname === "/ingest-benchmarks" && request.method === "POST") {
+      if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
+      const summary = await runBenchmarkIngestion(env);
       return json({ summary });
     }
 
@@ -213,6 +220,7 @@ export default {
           "GET /rankings?horizon=short|mid|long": "latest v1 ranked watchlist (JSON) -- frozen fixed-weight baseline, no longer rendered as its own page",
           "GET /chart?ticker=&range=1h|1d|1w|1m|3m|6m|1y|3y|5y": "live price snapshot for one ticker (JSON)",
           "POST /ingest": "manually trigger data ingestion (normally runs on the cron schedule)",
+          "POST /ingest-benchmarks": "manually trigger market-index benchmark ingestion (normally runs on the daily cron only, see config/benchmarks.json)",
           "POST /score": "manually trigger v1 rescoring against current data",
           "GET /decision-lab": "the main graphical view -- 10-factor decision engine, tunable weights, model results",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
@@ -237,6 +245,17 @@ export default {
   async scheduled(controller: ScheduledController, env: Env): Promise<void> {
     const isFullRun = controller.cron === "0 6 * * *";
     await runIngestion(env, { mode: isFullRun ? "full" : "incremental" });
+    // Benchmarks only need the daily cadence -- index-level price history
+    // doesn't need hourly freshness, and this keeps the hourly incremental
+    // run (30s CPU budget on Cloudflare Workers Paid) untouched. A failure
+    // here must never take down stock ingestion/scoring, so it's isolated.
+    if (isFullRun) {
+      try {
+        await runBenchmarkIngestion(env);
+      } catch (err) {
+        console.error("runBenchmarkIngestion failed", err);
+      }
+    }
     await runScoring(env);
     // Runs after scoring so it reuses the technical_snapshot rows scoring
     // just refreshed (see decision/run.ts) rather than recomputing them.

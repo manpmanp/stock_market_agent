@@ -1,6 +1,6 @@
 {
   "name": "stock-agent",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "AI-assisted stock research and screening agent: Cloudflare Worker + D1 pipeline that ingests market data and scores stocks by valuation and expected return across short, mid, and long-term horizons.",
   "type": "module",
