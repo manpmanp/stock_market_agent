@@ -157,9 +157,9 @@ export function renderDecisionLab(): string {
   .search-suggestions[hidden] { display: none; }
   .search-suggestions .sugg-item { padding: 7px 10px; font-size: 13px; cursor: pointer; }
   .search-suggestions .sugg-item:hover, .search-suggestions .sugg-item.active { background: var(--page); }
-  .benchmark-filter-wrap { display: flex; align-items: center; gap: 8px; }
-  .benchmark-filter-wrap label { font-size: 12px; color: var(--text-secondary); }
-  .benchmark-filter-wrap select { font: inherit; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
+  .benchmark-filter-wrap, .style-filter-wrap { display: flex; align-items: center; gap: 8px; }
+  .benchmark-filter-wrap label, .style-filter-wrap label { font-size: 12px; color: var(--text-secondary); }
+  .benchmark-filter-wrap select, .style-filter-wrap select { font: inherit; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
   .decisions-more-wrap { margin-top: 14px; }
   .decisions-more-wrap[hidden] { display: none; }
   .show-more-btn { font: inherit; font-size: 13px; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
@@ -659,6 +659,14 @@ export function renderDecisionLab(): string {
           <option value="">All tickers</option>
         </select>
       </div>
+      <div class="style-filter-wrap">
+        <label for="style-filter">Style</label>
+        <select id="style-filter">
+          <option value="">All styles</option>
+          <option value="growth">Growth only</option>
+          <option value="defensive">Defensive only</option>
+        </select>
+      </div>
     </div>
     <div class="sort-bar">
       <label for="sort-select">Sort by</label>
@@ -733,6 +741,7 @@ export function renderDecisionLab(): string {
   var lastDecisions = [];
   var searchQuery = "";
   var selectedBenchmark = "";
+  var selectedStyle = "";
   var showAllDecisions = false;
   var tickerRegionMap = {}; // ticker -> region, built from /universe once loaded
   var expandedTickers = new Set(); // survives sort/horizon re-renders, like the old watchlist page
@@ -952,7 +961,7 @@ export function renderDecisionLab(): string {
         renderStats(data);
         renderStyleList(data.rankings || [], "growth", "growthList");
         renderStyleList(data.rankings || [], "defensive", "defensiveList");
-        renderDecisionsList(); // re-render so already-drawn cards pick up their style badge
+        renderDecisionsList(); // re-render so already-drawn cards pick up their style badge, and the style filter can now resolve
       })
       .catch(function () { /* v1 rankings not available yet -- stat row/style badges just stay empty */ });
     fetchUniverse().then(function (u) {
@@ -1569,11 +1578,17 @@ export function renderDecisionLab(): string {
     return region ? b.regimeProxyFor.indexOf(region) !== -1 : false;
   }
 
+  function styleTickerAllowed(ticker) {
+    if (!selectedStyle) return true;
+    return styleByTicker[ticker] === selectedStyle;
+  }
+
   function filteredDecisions() {
     var q = searchQuery.trim().toUpperCase();
     return sortDecisions(lastDecisions, currentSort).filter(function (d) {
       if (q && d.ticker.toUpperCase().indexOf(q) === -1) return false;
       if (!benchmarkTickerAllowed(d.ticker)) return false;
+      if (!styleTickerAllowed(d.ticker)) return false;
       return true;
     });
   }
@@ -1757,7 +1772,8 @@ export function renderDecisionLab(): string {
   });
 
   methodTabs.forEach(function (tab) {
-    tab.addEventListener("click", function () {
+    tab.addEventListener("click", function (ev) {
+      ev.stopPropagation(); // keep this click from also tripping the outside-click closer below
       var target = tab.getAttribute("data-section");
       var wasOpenOnThisTab = referenceFlyout.classList.contains("open") && tab.getAttribute("aria-expanded") === "true";
       closeDemoFlyout();
@@ -1772,6 +1788,19 @@ export function renderDecisionLab(): string {
     });
   });
 
+  // Clicking anywhere that is not the sidebar (Demo/tab buttons) and not inside
+  // the currently open flyout's own box closes whichever flyout is open --
+  // the main page, another part of the list, anywhere outside the open box.
+  document.addEventListener("click", function (e) {
+    var t = e.target;
+    var insideSidebar = t.closest && t.closest(".page-sidebar");
+    var insideDemoFlyout = t.closest && t.closest("#demo-flyout");
+    var insideReferenceFlyout = t.closest && t.closest("#reference-panel");
+    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout) return;
+    closeDemoFlyout();
+    closeReferenceFlyout();
+  });
+
   document.getElementById("sort-select").addEventListener("change", function (e) {
     currentSort = e.target.value;
     renderDecisionsList();
@@ -1784,6 +1813,12 @@ export function renderDecisionLab(): string {
 
   document.getElementById("benchmark-filter").addEventListener("change", function (e) {
     selectedBenchmark = e.target.value;
+    showAllDecisions = false;
+    renderDecisionsList();
+  });
+
+  document.getElementById("style-filter").addEventListener("change", function (e) {
+    selectedStyle = e.target.value;
     showAllDecisions = false;
     renderDecisionsList();
   });
