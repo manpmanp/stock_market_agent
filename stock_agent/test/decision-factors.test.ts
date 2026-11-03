@@ -230,11 +230,13 @@ describe("computeFactorScores", () => {
     expect(agree.technical.note).toBeUndefined();
   });
 
-  it("flags a valuation conflict when EV/EBIT disagrees sharply with the self-relative read", () => {
-    // Cheap by its own price range / fair-value gap, but expensive on an
-    // absolute EV/EBIT multiple.
+  it("flags a valuation conflict when absolute multiples disagree sharply with the self-relative read", () => {
+    // Cheap by its own price range / fair-value gap, but expensive on
+    // absolute EV/EBITDA and Price/Book multiples (EV/EBIT is deliberately
+    // NOT part of this: it was removed from valuation's scoring as part of
+    // the raw-input collinearity fix -- see scoreValuation's comment).
     const conflicted = computeFactorScores(
-      baseRow({ price_range_pct: 0.05, fair_value: 130, enterprise_value: 900, ebit: 15 }),
+      baseRow({ price_range_pct: 0.05, fair_value: 130, ev_to_ebitda: 30, price_to_book: 8 }),
       neutralRegime
     );
     expect(conflicted.valuation.note).toMatch(/conflict/);
