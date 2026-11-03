@@ -17,6 +17,7 @@ import { CHART_RANGES, fetchChartSeries, isChartRange } from "./lib/chart.js";
 import { runDecisions } from "./decision/run.js";
 import { getAllActiveWeights, getWeightHistory, setActiveWeights } from "./decision/weights.js";
 import { HORIZONS, type DecisionHorizon, type WeightVector } from "./decision/types.js";
+import { newUsage, formatBytes, estimateD1WriteCostUsd, formatCostUsd } from "./lib/usage.js";
 
 function isDecisionHorizon(v: string): v is DecisionHorizon {
   return (HORIZONS as readonly string[]).includes(v);
@@ -27,6 +28,33 @@ function json(data: unknown, status = 200): Response {
     status,
     headers: { "content-type": "application/json; charset=utf-8" },
   });
+}
+
+// Newline-delimited JSON ("NDJSON") streaming response for the dashboard's
+// "Run & update" admin panel: each manual trigger below can emit a
+// { type: "progress", ... } line per ticker/step as it works, so the panel
+// shows live progress instead of one opaque spinner, ending with exactly
+// one { type: "done" | "error", ... } line. Returning the Response here
+// does not wait for `run` to finish -- the Workers runtime keeps this
+// request alive for as long as the client keeps reading the stream, which
+// is also what lets the client "stop" a run just by aborting its fetch.
+function streamingNdjson(run: (emit: (event: Record<string, unknown>) => void) => Promise<void>): Response {
+  const { readable, writable } = new TransformStream();
+  const writer = writable.getWriter();
+  const encoder = new TextEncoder();
+  const emit = (event: Record<string, unknown>) => {
+    writer.write(encoder.encode(JSON.stringify(event) + "\n")).catch(() => {});
+  };
+  (async () => {
+    try {
+      await run(emit);
+    } catch (err) {
+      emit({ type: "error", error: (err as Error).message });
+    } finally {
+      writer.close().catch(() => {});
+    }
+  })();
+  return new Response(readable, { headers: { "content-type": "application/x-ndjson; charset=utf-8" } });
 }
 
 function isAuthorized(request: Request, env: Env): boolean {
@@ -102,32 +130,87 @@ export default {
     if (url.pathname === "/ingest" && request.method === "POST") {
       if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
       const mode = url.searchParams.get("mode") === "incremental" ? "incremental" : "full";
-      const summary = await runIngestion(env, { mode });
-      return json({ summary });
+      return streamingNdjson(async (emit) => {
+        const usage = newUsage();
+        const summary = await runIngestion(env, { mode }, usage, (p) => emit({ type: "progress", source: "Yahoo Finance -> D1", ...p, downloadedLabel: formatBytes(p.downloadedBytes) }));
+        const rowsWritten = summary.priceBarsWritten + summary.fundamentalsWritten + summary.valuationsWritten;
+        const costUsd = estimateD1WriteCostUsd(rowsWritten);
+        emit({
+          type: "done",
+          summary,
+          source: "Yahoo Finance -> D1",
+          downloadedBytes: usage.downloadedBytes,
+          downloadedLabel: formatBytes(usage.downloadedBytes),
+          rowsWritten,
+          costUsd,
+          costLabel: formatCostUsd(costUsd),
+        });
+      });
     }
 
     if (url.pathname === "/ingest-benchmarks" && request.method === "POST") {
       if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
-      const summary = await runBenchmarkIngestion(env);
-      return json({ summary });
+      return streamingNdjson(async (emit) => {
+        const usage = newUsage();
+        const summary = await runBenchmarkIngestion(env, {}, usage, (p) => emit({ type: "progress", source: "Yahoo Finance -> D1", ...p, downloadedLabel: formatBytes(p.downloadedBytes) }));
+        const costUsd = estimateD1WriteCostUsd(summary.priceBarsWritten);
+        emit({
+          type: "done",
+          summary,
+          source: "Yahoo Finance -> D1",
+          downloadedBytes: usage.downloadedBytes,
+          downloadedLabel: formatBytes(usage.downloadedBytes),
+          rowsWritten: summary.priceBarsWritten,
+          costUsd,
+          costLabel: formatCostUsd(costUsd),
+        });
+      });
     }
 
     if (url.pathname === "/screen-broad-universe" && request.method === "POST") {
       if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
-      const summary = await runBroadScreen(env);
-      return json({ summary });
+      return streamingNdjson(async (emit) => {
+        const usage = newUsage();
+        const summary = await runBroadScreen(env, {}, usage, (p) => emit({ type: "progress", source: "Yahoo Finance -> D1", ...p, downloadedLabel: formatBytes(p.downloadedBytes) }));
+        const costUsd = estimateD1WriteCostUsd(summary.candidatesScored);
+        emit({
+          type: "done",
+          summary,
+          source: "Yahoo Finance -> D1",
+          downloadedBytes: usage.downloadedBytes,
+          downloadedLabel: formatBytes(usage.downloadedBytes),
+          rowsWritten: summary.candidatesScored,
+          costUsd,
+          costLabel: formatCostUsd(costUsd),
+        });
+      });
     }
 
     if (url.pathname === "/score" && request.method === "POST") {
       if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
-      const summary = await runScoring(env);
-      return json({ summary });
+      return streamingNdjson(async (emit) => {
+        const summary = await runScoring(env, (p) => emit({ type: "progress", source: "D1 (no external fetch)", ...p, downloadedLabel: formatBytes(p.downloadedBytes) }));
+        const costUsd = estimateD1WriteCostUsd(summary.rankingsWritten);
+        emit({
+          type: "done",
+          summary,
+          source: "D1 (no external fetch)",
+          downloadedBytes: 0,
+          downloadedLabel: formatBytes(0),
+          rowsWritten: summary.rankingsWritten,
+          costUsd,
+          costLabel: formatCostUsd(costUsd),
+        });
+      });
     }
 
     if (url.pathname === "/market-analysis" && request.method === "POST") {
       if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
-      const result = await runMarketAnalysis(env);
-      return json(result, result.ok ? 200 : 502);
+      return streamingNdjson(async (emit) => {
+        emit({ type: "progress", source: "D1 -> Anthropic API", step: "Calling the LLM for synthesis\u2026", index: 0, total: 1, downloadedBytes: 0, downloadedLabel: formatBytes(0) });
+        const result = await runMarketAnalysis(env);
+        emit({ type: "done", summary: result, source: "D1 -> Anthropic API", downloadedBytes: 0, downloadedLabel: formatBytes(0), rowsWritten: 0, costUsd: 0, costLabel: "Billed separately against your Anthropic Console spend limit, not Cloudflare -- see README" });
+      });
     }
 
     if (url.pathname === "/trigger-backtest" && request.method === "POST") {
@@ -238,8 +321,20 @@ export default {
 
     if (url.pathname === "/decide" && request.method === "POST") {
       if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
-      const summary = await runDecisions(env);
-      return json({ summary });
+      return streamingNdjson(async (emit) => {
+        const summary = await runDecisions(env, undefined, (p) => emit({ type: "progress", source: "D1 (plus one market-regime fetch)", ...p, downloadedLabel: formatBytes(p.downloadedBytes) }));
+        const costUsd = estimateD1WriteCostUsd(summary.decisionsWritten);
+        emit({
+          type: "done",
+          summary,
+          source: "D1 (plus one market-regime fetch)",
+          downloadedBytes: 0,
+          downloadedLabel: formatBytes(0),
+          rowsWritten: summary.decisionsWritten,
+          costUsd,
+          costLabel: formatCostUsd(costUsd),
+        });
+      });
     }
 
     if (url.pathname === "/backtest-results") {
@@ -274,17 +369,17 @@ export default {
           "GET /universe": "configured ticker universe grouped by region, plus benchmark/index metadata (for the dashboard\u0027s benchmark filter)",
           "GET /rankings?horizon=short|mid|long": "latest v1 ranked watchlist (JSON) -- frozen fixed-weight baseline, no longer rendered as its own page",
           "GET /chart?ticker=&range=1h|1d|1w|1m|3m|6m|1y|3y|5y": "live price snapshot for one ticker (JSON)",
-          "POST /ingest": "manually trigger data ingestion (normally runs on the cron schedule)",
-          "POST /ingest-benchmarks": "manually trigger market-index benchmark ingestion (normally runs on the daily cron only, see config/benchmarks.json)",
-          "POST /screen-broad-universe": "manually trigger the Stage A broad valuation/momentum screen + auto-promotion over config/broad-universe.json (normally runs on the daily cron only, before ingestion)",
-          "POST /score": "manually trigger v1 rescoring against current data",
+          "POST /ingest": "manually trigger data ingestion (normally runs on the cron schedule) -- streams NDJSON progress lines, see dashboard admin panel",
+          "POST /ingest-benchmarks": "manually trigger market-index benchmark ingestion (normally runs on the daily cron only, see config/benchmarks.json) -- streams NDJSON progress",
+          "POST /screen-broad-universe": "manually trigger the Stage A broad valuation/momentum screen + auto-promotion over config/broad-universe.json (normally runs on the daily cron only, before ingestion) -- streams NDJSON progress",
+          "POST /score": "manually trigger v1 rescoring against current data -- streams NDJSON progress",
           "POST /market-analysis": "on-demand LLM synthesis across tracked tickers + benchmarks (ADMIN_TOKEN-gated, requires ANTHROPIC_API_KEY/ANTHROPIC_MODEL secrets) -- never sizing/orders, every claim grounded against real decision-engine data, see docs/agentic-architecture-proposal.md section 3",
           "POST /trigger-backtest": "manually dispatch the backtest.yml GitHub Actions workflow (ADMIN_TOKEN + GITHUB_TOKEN secrets required) -- does not run the harness itself here, just asks GitHub to start it; see Actions tab for progress",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
           "GET /decisions?horizon=short|medium|long": "latest decision-engine output (JSON)",
           "GET /weights[?horizon=]": "active (or per-horizon history of) decision-engine weight vectors",
           "POST /weights": "set a new active weight vector for one horizon (admin token required)",
-          "POST /decide": "manually trigger the decision engine against current data",
+          "POST /decide": "manually trigger the decision engine against current data -- streams NDJSON progress",
           "GET /assets/<key>": "static assets served from R2 (currently the Decision Lab demo videos) -- see README \"Demo videos\"",
           "GET /healthz": "health check",
         },

@@ -1,5 +1,6 @@
 import type { Env, UniverseEntry } from "../lib/types.js";
 import { fetchChart, fetchQuoteSummary } from "../lib/yahoo.js";
+import type { UsageTotals } from "../lib/usage.js";
 import { parseFundamentals, parseIdentity, parsePriceHistory, parseValuation } from "../lib/parse.js";
 import { getPromotedTickers, insertFundamentals, insertValuation, logSource, upsertPriceHistory, upsertStock } from "../lib/db.js";
 // Plain JSON import (no "with { type: 'json' }" attribute): esbuild, which
@@ -56,14 +57,20 @@ export async function loadFullUniverse(env: Env): Promise<UniverseEntry[]> {
  *  targets, which don't meaningfully change hour to hour. That keeps an
  *  hourly cron affordable: ~5 row-writes/ticker instead of ~1,300. See
  *  wrangler.toml [triggers] for how the two crons map to these two modes. */
-async function ingestTicker(env: Env, entry: UniverseEntry, summary: IngestionSummary, mode: IngestionMode): Promise<void> {
+async function ingestTicker(
+  env: Env,
+  entry: UniverseEntry,
+  summary: IngestionSummary,
+  mode: IngestionMode,
+  usage?: UsageTotals
+): Promise<void> {
   // Upsert a minimal stock row FIRST, from the universe config alone. price_history
   // has a foreign key on stocks(ticker), so writing price bars before this row
   // exists fails the whole ticker with a FOREIGN KEY constraint error. This gets
   // overwritten with richer data (name, sector, ...) once quoteSummary comes back.
   await upsertStock(env, parseIdentity(entry.ticker, entry, null));
 
-  const chart = await fetchChart(entry.ticker, mode === "full" ? "5y" : "5d");
+  const chart = await fetchChart(entry.ticker, mode === "full" ? "5y" : "5d", "1d", usage);
   if (!chart.ok || !chart.data) {
     await logSource(env, {
       source: "yahoo_finance_chart",
@@ -86,7 +93,7 @@ async function ingestTicker(env: Env, entry: UniverseEntry, summary: IngestionSu
 
   if (mode === "incremental") return; // fundamentals/valuation are the "full" run's job -- see doc comment above
 
-  const quoteSummary = await fetchQuoteSummary(entry.ticker);
+  const quoteSummary = await fetchQuoteSummary(entry.ticker, usage);
   if (!quoteSummary.ok || !quoteSummary.data) {
     await logSource(env, {
       source: "yahoo_finance_quotesummary",
@@ -130,7 +137,9 @@ async function ingestTicker(env: Env, entry: UniverseEntry, summary: IngestionSu
  *  much larger than that. */
 export async function runIngestion(
   env: Env,
-  opts: { mode?: IngestionMode; delayMs?: number } = {}
+  opts: { mode?: IngestionMode; delayMs?: number } = {},
+  usage?: UsageTotals,
+  onProgress?: (p: { step: string; index: number; total: number; downloadedBytes: number }) => void
 ): Promise<IngestionSummary> {
   const mode = opts.mode ?? "full";
   const delayMs = opts.delayMs ?? 250;
@@ -144,9 +153,14 @@ export async function runIngestion(
     errors: [],
   };
 
+  let index = 0;
   for (const entry of universe) {
-    await ingestTicker(env, entry, summary, mode);
+    await ingestTicker(env, entry, summary, mode, usage);
+    index += 1;
     summary.tickersProcessed += 1;
+    if (onProgress) {
+      onProgress({ step: entry.ticker, index, total: universe.length, downloadedBytes: usage ? usage.downloadedBytes : 0 });
+    }
     if (delayMs > 0) await new Promise((resolve) => setTimeout(resolve, delayMs));
   }
 

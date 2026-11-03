@@ -25,6 +25,7 @@
 
 import type { Env, UniverseEntry } from "../lib/types.js";
 import { fetchChart, fetchQuoteSummary } from "../lib/yahoo.js";
+import type { UsageTotals } from "../lib/usage.js";
 import { parsePriceHistory } from "../lib/parse.js";
 import {
   getPromotedTickers,
@@ -107,7 +108,12 @@ export interface BroadScreenOptions {
   minScreenScore?: number;
 }
 
-export async function runBroadScreen(env: Env, opts: BroadScreenOptions = {}): Promise<BroadScreenSummary> {
+export async function runBroadScreen(
+  env: Env,
+  opts: BroadScreenOptions = {},
+  usage?: UsageTotals,
+  onProgress?: (p: { step: string; index: number; total: number; downloadedBytes: number }) => void
+): Promise<BroadScreenSummary> {
   const promoteTop = opts.promoteTop ?? 10;
   const minScreenScore = opts.minScreenScore ?? 60;
 
@@ -124,12 +130,13 @@ export async function runBroadScreen(env: Env, opts: BroadScreenOptions = {}): P
 
   const raw: RawCandidate[] = [];
 
+  let index = 0;
   for (const entry of candidates) {
     summary.candidatesProcessed += 1;
     try {
       const [quote, chart] = await Promise.all([
-        fetchQuoteSummary(entry.ticker),
-        fetchChart(entry.ticker, "6mo", "1d"),
+        fetchQuoteSummary(entry.ticker, usage),
+        fetchChart(entry.ticker, "6mo", "1d", usage),
       ]);
 
       if (!quote.ok || !quote.data) {
@@ -176,6 +183,10 @@ export async function runBroadScreen(env: Env, opts: BroadScreenOptions = {}): P
       await logSource(env, { source: "yahoo_finance_quote_summary_broad_screen", ticker: entry.ticker, status: "ok" });
     } catch (err) {
       summary.errors.push({ ticker: entry.ticker, error: (err as Error).message });
+    }
+    index += 1;
+    if (onProgress) {
+      onProgress({ step: entry.ticker, index, total: candidates.length, downloadedBytes: usage ? usage.downloadedBytes : 0 });
     }
   }
 

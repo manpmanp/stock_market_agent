@@ -15,6 +15,7 @@ import { buildWarnings, evaluateHorizon, overallView, valuationMetrics } from ".
 import { getAllActiveWeights } from "./weights.js";
 import { HORIZONS, type DecisionHorizon, type FactorScoreDetail, type HorizonResult } from "./types.js";
 import type { Env } from "../lib/types.js";
+import type { UsageTotals } from "../lib/usage.js";
 
 export interface DecisionSummary {
   tickersDecided: number;
@@ -30,9 +31,9 @@ export interface DecisionSummary {
 // stocks, so it can't affect the v1 dashboard's ticker counts or lists.
 const MARKET_REGIME_PROXY_TICKER = "SPY";
 
-async function computeMarketRegime(): Promise<FactorScoreDetail> {
+async function computeMarketRegime(usage?: UsageTotals): Promise<FactorScoreDetail> {
   try {
-    const resp = await fetchChart(MARKET_REGIME_PROXY_TICKER, "1y", "1d");
+    const resp = await fetchChart(MARKET_REGIME_PROXY_TICKER, "1y", "1d", usage);
     if (!resp.ok || !resp.data) {
       return neutralMarketRegime(`market-regime proxy fetch (${MARKET_REGIME_PROXY_TICKER}) failed: ${resp.error ?? `HTTP ${resp.status}`}`);
     }
@@ -53,19 +54,28 @@ async function computeMarketRegime(): Promise<FactorScoreDetail> {
  *  on its own against whatever's already in D1 -- like runScoring, this
  *  doesn't re-fetch from Yahoo for individual tickers, only for the one
  *  market-regime proxy. */
-export async function runDecisions(env: Env): Promise<DecisionSummary> {
+export async function runDecisions(
+  env: Env,
+  usage?: UsageTotals,
+  onProgress?: (p: { step: string; index: number; total: number; downloadedBytes: number }) => void
+): Promise<DecisionSummary> {
   const [snapshot, weights, marketRegime] = await Promise.all([
     getUniverseSnapshot(env),
     getAllActiveWeights(env),
-    computeMarketRegime(),
+    computeMarketRegime(usage),
   ]);
 
   const runAt = new Date().toISOString().slice(0, 19).replace("T", " ");
   const rows: DecisionRow[] = [];
   let tickersDecided = 0;
 
+  let index = 0;
   for (const row of snapshot) {
-    if (row.price === null) continue; // can't compute valuation/entry status without a current price
+    index += 1;
+    if (row.price === null) {
+      if (onProgress) onProgress({ step: row.ticker, index, total: snapshot.length, downloadedBytes: usage ? usage.downloadedBytes : 0 });
+      continue; // can't compute valuation/entry status without a current price
+    }
 
     const details = computeFactorScores(row, marketRegime);
     const scores = toFactorScores(details);
@@ -112,6 +122,7 @@ export async function runDecisions(env: Env): Promise<DecisionSummary> {
         supportingMetricsJson,
       });
     }
+    if (onProgress) onProgress({ step: row.ticker, index, total: snapshot.length, downloadedBytes: usage ? usage.downloadedBytes : 0 });
   }
 
   await insertDecisionsBatch(env, rows, runAt);

@@ -22,6 +22,7 @@
 
 import type { Env } from "../lib/types.js";
 import { fetchChart } from "../lib/yahoo.js";
+import type { UsageTotals } from "../lib/usage.js";
 import { parseIdentity, parsePriceHistory } from "../lib/parse.js";
 import { logSource, upsertPriceHistory, upsertStock } from "../lib/db.js";
 import benchmarksConfig from "../../config/benchmarks.json";
@@ -48,12 +49,15 @@ export function loadBenchmarks(): BenchmarkEntry[] {
 
 export async function runBenchmarkIngestion(
   env: Env,
-  opts: { range?: string } = {}
+  opts: { range?: string } = {},
+  usage?: UsageTotals,
+  onProgress?: (p: { step: string; index: number; total: number; downloadedBytes: number }) => void
 ): Promise<BenchmarkIngestionSummary> {
   const range = opts.range ?? "5y";
   const benchmarks = loadBenchmarks();
   const summary: BenchmarkIngestionSummary = { benchmarksProcessed: 0, priceBarsWritten: 0, errors: [] };
 
+  let index = 0;
   for (const entry of benchmarks) {
     await upsertStock(
       env,
@@ -66,7 +70,7 @@ export async function runBenchmarkIngestion(
     // just always send it.
     await env.DB.prepare(`UPDATE stocks SET active = 0 WHERE ticker = ?`).bind(entry.ticker).run();
 
-    const chart = await fetchChart(entry.ticker, range);
+    const chart = await fetchChart(entry.ticker, range, "1d", usage);
     if (!chart.ok || !chart.data) {
       await logSource(env, {
         source: "yahoo_finance_chart_benchmark",
@@ -89,6 +93,10 @@ export async function runBenchmarkIngestion(
       await logSource(env, { source: "yahoo_finance_chart_benchmark", ticker: entry.ticker, status: "ok" });
     }
     summary.benchmarksProcessed += 1;
+    index += 1;
+    if (onProgress) {
+      onProgress({ step: entry.ticker, index, total: benchmarks.length, downloadedBytes: usage ? usage.downloadedBytes : 0 });
+    }
   }
 
   return summary;

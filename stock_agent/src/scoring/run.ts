@@ -19,11 +19,17 @@ export interface ScoringSummary {
  *  scores the whole universe and persists a fresh rankings run. Meant to run
  *  right after ingestion (see src/index.ts scheduled handler), but is safe
  *  to call on its own against whatever data already exists in D1. */
-export async function runScoring(env: Env): Promise<ScoringSummary> {
+export async function runScoring(
+  env: Env,
+  onProgress?: (p: { step: string; index: number; total: number; downloadedBytes: number }) => void
+): Promise<ScoringSummary> {
   const snapshot = await getUniverseSnapshot(env);
 
   // Recompute technicals fresh from price_history so they're never stale
   // relative to today's prices, then re-read the snapshot to pick them up.
+  // No Yahoo Finance calls here -- technicals are derived from price_
+  // history already in D1, so this step has nothing to "download".
+  let index = 0;
   for (const row of snapshot) {
     // ~5y of daily bars (see lib/yahoo.ts fetchChart default), so the
     // self-relative range percentile spans a real market cycle rather than
@@ -48,6 +54,8 @@ export async function runScoring(env: Env): Promise<ScoringSummary> {
       distFromLowPct: indicators.distFromLowPct,
       trendState: indicators.trendState,
     });
+    index += 1;
+    if (onProgress) onProgress({ step: row.ticker, index, total: snapshot.length, downloadedBytes: 0 });
   }
 
   const refreshed = await getUniverseSnapshot(env);

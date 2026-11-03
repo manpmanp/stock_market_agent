@@ -27,31 +27,43 @@
 // "Reference & methodology" tabs (Factors & Inputs / Glossary / Scoring &
 // Decisions / Weight Tuning Guide / Model Selection & Testing / Model
 // Results -- the methodology one is named "...Guide" specifically to not
-// collide with the live tool below), and a "Weight Tuning" bookmark for
-// the actual interactive tool (sliders, Save/Reset/Recompute -- formerly
-// a section at the bottom of the page, now its own flyout). All 8 behave
-// as independent slide-out flyouts: closed by default (the default view
+// collide with the live tool below), a "Weight Tuning" bookmark for the
+// actual interactive tool (sliders, Save/Reset/Recompute -- formerly a
+// section at the bottom of the page, now its own flyout), and a "Run &
+// Update" bookmark for the admin panel (see below). All 9 behave as
+// independent slide-out flyouts: closed by default (the default view
 // is just the ticker/decisions list below), clicking one slides its
 // content out to the right of the sidebar, clicking it again (or picking
 // a different one, or clicking anywhere outside the open box -- the main
 // page, a decision card, etc.) retracts it -- only one flyout is ever
-// open at a time (see .reference-flyout / .demo-flyout CSS and the click
-// handlers near the bottom of the <script>, including the document-level
-// outside-click closer). Each reference tab's content still opens with a
-// one-paragraph plain-language summary before the technical detail.
+// open at a time (see .reference-flyout / .demo-flyout CSS and the
+// closeAllFlyoutsExcept() helper + click handlers near the bottom of the
+// <script>, including the document-level outside-click closer). Each
+// reference tab's content still opens with a one-paragraph
+// plain-language summary before the technical detail.
 //
-// Below the sidebar/flyouts sits a "Run & update" admin panel
-// (.admin-panel): one button per manual trigger already exposed by
-// index.ts (update prices/tickers, update benchmarks, screen broad
-// universe, rescore v1, recompute decisions, the on-call AI market
-// analysis advisor, and a GitHub Actions-dispatched backtest harness run
-// via the new POST /trigger-backtest) -- all ADMIN_TOKEN-gated through
-// the same window.prompt pattern the old Recompute/Save buttons used,
-// generalized into one handler (see the "Run & update (admin panel)"
-// section of the <script>). The backtest harness itself cannot run
-// inside this Worker (Python, up to ~180 minutes) -- that button only
-// asks the existing backtest.yml GitHub Actions workflow to start, the
-// same workflow that already runs weekly on its own schedule.
+// The "Run & Update" flyout (.admin-panel, id="admin-flyout") holds one
+// button per manual trigger already exposed by index.ts: update prices/
+// tickers, update benchmarks, screen broad universe, rescore v1,
+// recompute decisions, the on-call AI market analysis advisor, and a
+// GitHub Actions-dispatched backtest harness run (POST /trigger-backtest
+// -- it cannot run inside this Worker itself, Python + up to ~180
+// minutes, so that button only asks the existing backtest.yml workflow
+// to start, the same one that already runs weekly on its own schedule).
+// All are ADMIN_TOKEN-gated via window.prompt. Every button except the
+// backtest dispatch (data-stream="1") reads its response as NDJSON (see
+// index.ts's streamingNdjson()): one { type: "progress" } line per
+// ticker/step, updating that button's own status line live with where
+// the data's going (e.g. "Yahoo Finance -> D1"), how much has been
+// downloaded, and which step is running; then one { type: "done" } line
+// with a rows-written count and a cost estimate against Cloudflare's
+// published D1 pricing (src/lib/usage.ts -- effectively always $0.00 at
+// this project's universe size, shown anyway for visibility). Clicking a
+// running button again calls AbortController.abort() on its fetch
+// instead of starting a new one ("Stop behavior": this ends the Worker's
+// own execution when the connection drops, but does not roll back any
+// individual D1/R2 write already issued right before that moment -- see
+// runStreamingAdminAction()).
 //
 // The Decisions list itself has: a ticker search box with a live
 // autocomplete suggestion dropdown; a benchmark filter (resolves the
@@ -280,10 +292,17 @@ export function renderDecisionLab(): string {
   .page-header-row h1 { margin: 0; }
   .methodology-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 36px; }
   .admin-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 28px; }
-  .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; margin-top: 12px; }
-  .admin-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; font: inherit; font-size: 13px; font-weight: 600; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--page); color: var(--text-primary); cursor: pointer; }
+  .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin-top: 12px; }
+  .admin-item { display: flex; flex-direction: column; gap: 6px; }
+  .admin-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; font: inherit; font-size: 13px; font-weight: 600; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--page); color: var(--text-primary); cursor: pointer; width: 100%; }
   .admin-btn:hover { background: color-mix(in srgb, var(--text-primary) 5%, var(--page)); }
   .admin-btn-sub { font-size: 11px; font-weight: 400; color: var(--text-secondary); line-height: 1.35; }
+  .admin-btn.running { background: color-mix(in srgb, var(--seq-400) 14%, var(--page)); border-color: var(--seq-400); }
+  .admin-btn.running .admin-btn-stop-hint { display: inline; }
+  .admin-btn-stop-hint { display: none; font-weight: 700; color: var(--seq-400); }
+  .admin-item-status { font-size: 11px; color: var(--text-secondary); min-height: 14px; line-height: 1.4; }
+  .admin-item-status.ok { color: var(--status-good); }
+  .admin-item-status.bad { color: var(--status-bad); }
   .method-section { display: none; }
   .method-section.active { display: block; }
   .method-body { font-size: 13px; color: var(--text-secondary); }
@@ -411,6 +430,7 @@ export function renderDecisionLab(): string {
       <button class="tab ref-tab" data-section="results" aria-expanded="false" style="--tab-accent:var(--cat-6)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="14" x2="14" y2="14"></line><rect x="3" y="8.5" width="2.6" height="5.2" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="6.8" y="5" width="2.6" height="8.7" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="10.6" y="2.5" width="2.6" height="11.2" rx="0.4" fill="currentColor" stroke="none"></rect></svg><span>Model Results</span></button>
     </div>
     <button class="ref-tab weight-tab" id="weight-tab" type="button" aria-expanded="false" aria-controls="weight-flyout" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
+    <button class="ref-tab admin-tab" id="admin-tab" type="button" aria-expanded="false" aria-controls="admin-flyout" style="--tab-accent:var(--text-primary)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.8 1.3 2.6 9.1h3.4L5.2 14.7l6.2-7.8H8z" fill="currentColor" stroke="none"></path></svg><span>Run &amp; Update</span></button>
   </div>
 
   <div class="demo-flyout" id="demo-flyout">
@@ -437,19 +457,39 @@ export function renderDecisionLab(): string {
   <div class="stat-row" id="stats"></div>
   <div class="universe-panel" id="universePanel" hidden></div>
 
-  <section class="admin-panel">
+  <section class="admin-panel reference-flyout" id="admin-flyout">
     <h2>Run &amp; update</h2>
-    <p class="sub">Manual triggers -- everything here also runs on its own schedule automatically; use these to run something early or check on demand. All require the admin token (<code>wrangler secret put ADMIN_TOKEN</code>).</p>
+    <p class="sub">Manual triggers -- everything here also runs on its own schedule automatically; use these to run something early or check on demand. All require the admin token (<code>wrangler secret put ADMIN_TOKEN</code>). Click a running task again to stop it.</p>
     <div class="admin-grid">
-      <button class="admin-btn" id="btn-ingest" data-path="/ingest" data-busy="Updating prices &amp; tickers\u2026">Update prices &amp; tickers<span class="admin-btn-sub">Re-fetch price/fundamentals data for the tracked universe (POST /ingest)</span></button>
-      <button class="admin-btn" id="btn-ingest-benchmarks" data-path="/ingest-benchmarks" data-busy="Updating benchmarks\u2026">Update benchmarks<span class="admin-btn-sub">Re-fetch the index/benchmark data used for regime &amp; the benchmark filter (POST /ingest-benchmarks)</span></button>
-      <button class="admin-btn" id="btn-screen" data-path="/screen-broad-universe" data-busy="Screening broad universe\u2026">Screen broad universe<span class="admin-btn-sub">Re-run the Stage A valuation/momentum screen and auto-promote new tickers (POST /screen-broad-universe)</span></button>
-      <button class="admin-btn" id="btn-score" data-path="/score" data-busy="Rescoring (v1)\u2026">Rescore v1 baseline<span class="admin-btn-sub">Re-run the frozen v1 fixed-weight scoring against current data (POST /score)</span></button>
-      <button class="admin-btn" id="btn-decide" data-path="/decide" data-busy="Recomputing decisions\u2026">Recompute decisions<span class="admin-btn-sub">Re-run the 10-factor decision engine against current data (POST /decide)</span></button>
-      <button class="admin-btn" id="btn-market-analysis" data-path="/market-analysis" data-busy="Running AI market analysis\u2026 this can take a bit">On-call AI agent advisor<span class="admin-btn-sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data (POST /market-analysis)</span></button>
-      <button class="admin-btn" id="btn-trigger-backtest" data-path="/trigger-backtest" data-busy="Dispatching backtest workflow\u2026">Run backtest harness<span class="admin-btn-sub">Starts the backtest.yml GitHub Actions workflow on demand -- runs remotely on GitHub, not here; check the Actions tab for progress (POST /trigger-backtest)</span></button>
+      <div class="admin-item">
+        <button class="admin-btn" id="btn-ingest" data-path="/ingest" data-label="Update prices &amp; tickers" data-stream="1">Update prices &amp; tickers<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-fetch price/fundamentals data for the tracked universe -- Yahoo Finance &rarr; D1 (POST /ingest)</span></button>
+        <div class="admin-item-status" id="status-btn-ingest"></div>
+      </div>
+      <div class="admin-item">
+        <button class="admin-btn" id="btn-ingest-benchmarks" data-path="/ingest-benchmarks" data-label="Update benchmarks" data-stream="1">Update benchmarks<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-fetch the index/benchmark data used for regime &amp; the benchmark filter -- Yahoo Finance &rarr; D1 (POST /ingest-benchmarks)</span></button>
+        <div class="admin-item-status" id="status-btn-ingest-benchmarks"></div>
+      </div>
+      <div class="admin-item">
+        <button class="admin-btn" id="btn-screen" data-path="/screen-broad-universe" data-label="Screen broad universe" data-stream="1">Screen broad universe<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-run the Stage A valuation/momentum screen and auto-promote new tickers -- Yahoo Finance &rarr; D1 (POST /screen-broad-universe)</span></button>
+        <div class="admin-item-status" id="status-btn-screen"></div>
+      </div>
+      <div class="admin-item">
+        <button class="admin-btn" id="btn-score" data-path="/score" data-label="Rescore v1 baseline" data-stream="1">Rescore v1 baseline<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-run the frozen v1 fixed-weight scoring against current data -- D1 only, no external fetch (POST /score)</span></button>
+        <div class="admin-item-status" id="status-btn-score"></div>
+      </div>
+      <div class="admin-item">
+        <button class="admin-btn" id="btn-decide" data-path="/decide" data-label="Recompute decisions" data-stream="1">Recompute decisions<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-run the 10-factor decision engine against current data -- D1, plus one market-regime fetch (POST /decide)</span></button>
+        <div class="admin-item-status" id="status-btn-decide"></div>
+      </div>
+      <div class="admin-item">
+        <button class="admin-btn" id="btn-market-analysis" data-path="/market-analysis" data-label="On-call AI agent advisor" data-stream="1">On-call AI agent advisor<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data -- D1 &rarr; Anthropic API (POST /market-analysis)</span></button>
+        <div class="admin-item-status" id="status-btn-market-analysis"></div>
+      </div>
+      <div class="admin-item">
+        <button class="admin-btn" id="btn-trigger-backtest" data-path="/trigger-backtest" data-label="Run backtest harness" data-stream="0">Run backtest harness<span class="admin-btn-sub">Starts the backtest.yml GitHub Actions workflow on demand -- runs remotely on GitHub, not here; check the Actions tab for progress (POST /trigger-backtest)</span></button>
+        <div class="admin-item-status" id="status-btn-trigger-backtest"></div>
+      </div>
     </div>
-    <div class="status-msg" id="admin-status-msg"></div>
   </section>
 
   <section class="weights-panel reference-flyout" id="weight-flyout">
@@ -1791,6 +1831,8 @@ export function renderDecisionLab(): string {
   var referenceFlyout = document.getElementById("reference-panel");
   var weightTab = document.getElementById("weight-tab");
   var weightFlyout = document.getElementById("weight-flyout");
+  var adminTab = document.getElementById("admin-tab");
+  var adminFlyout = document.getElementById("admin-flyout");
   var methodTabs = document.querySelectorAll("#method-tabs .tab");
   var methodSections = document.querySelectorAll(".method-section");
 
@@ -1806,15 +1848,26 @@ export function renderDecisionLab(): string {
     weightFlyout.classList.remove("open");
     weightTab.setAttribute("aria-expanded", "false");
   }
+  function closeAdminFlyout() {
+    adminFlyout.classList.remove("open");
+    adminTab.setAttribute("aria-expanded", "false");
+  }
+  function closeAllFlyoutsExcept(keep) {
+    // Demo, the reference tabs, Weight Tuning, and Run & Update are all
+    // single-flyout UIs sharing the same sidebar -- opening one always
+    // closes the others, so only one slide-out panel is ever visible at
+    // a time. A running admin task keeps running in the background even
+    // while its flyout is closed -- only the panel is hidden.
+    if (keep !== "demo") closeDemoFlyout();
+    if (keep !== "reference") closeReferenceFlyout();
+    if (keep !== "weight") closeWeightFlyout();
+    if (keep !== "admin") closeAdminFlyout();
+  }
 
   demoTab.addEventListener("click", function (ev) {
     ev.stopPropagation();
     var open = !demoFlyout.classList.contains("open");
-    // Demo, the reference tabs, and Weight Tuning are all single-flyout
-    // UIs sharing the same sidebar -- opening one always closes the
-    // others, so only one slide-out panel is ever visible at a time.
-    closeReferenceFlyout();
-    closeWeightFlyout();
+    closeAllFlyoutsExcept(null);
     demoFlyout.classList.toggle("open", open);
     demoTab.setAttribute("aria-expanded", open ? "true" : "false");
   });
@@ -1822,10 +1875,17 @@ export function renderDecisionLab(): string {
   weightTab.addEventListener("click", function (ev) {
     ev.stopPropagation();
     var open = !weightFlyout.classList.contains("open");
-    closeDemoFlyout();
-    closeReferenceFlyout();
+    closeAllFlyoutsExcept(null);
     weightFlyout.classList.toggle("open", open);
     weightTab.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  adminTab.addEventListener("click", function (ev) {
+    ev.stopPropagation();
+    var open = !adminFlyout.classList.contains("open");
+    closeAllFlyoutsExcept(null);
+    adminFlyout.classList.toggle("open", open);
+    adminTab.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
   methodTabs.forEach(function (tab) {
@@ -1833,8 +1893,7 @@ export function renderDecisionLab(): string {
       ev.stopPropagation(); // keep this click from also tripping the outside-click closer below
       var target = tab.getAttribute("data-section");
       var wasOpenOnThisTab = referenceFlyout.classList.contains("open") && tab.getAttribute("aria-expanded") === "true";
-      closeDemoFlyout();
-      closeWeightFlyout();
+      closeAllFlyoutsExcept("reference");
       if (wasOpenOnThisTab) {
         // Clicking the already-open tab closes it -- back to just the ticker list.
         closeReferenceFlyout();
@@ -1855,47 +1914,129 @@ export function renderDecisionLab(): string {
     var insideDemoFlyout = t.closest && t.closest("#demo-flyout");
     var insideReferenceFlyout = t.closest && t.closest("#reference-panel");
     var insideWeightFlyout = t.closest && t.closest("#weight-flyout");
-    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout) return;
-    closeDemoFlyout();
-    closeReferenceFlyout();
-    closeWeightFlyout();
+    var insideAdminFlyout = t.closest && t.closest("#admin-flyout");
+    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout || insideAdminFlyout) return;
+    closeAllFlyoutsExcept(null);
   });
 
-  // --- Run & update (admin panel) ---
+  // --- Run & update (admin panel): per-button live progress + abort-to-stop ---
 
-  function setAdminStatus(msg, ok) {
-    var e = document.getElementById("admin-status-msg");
+  var adminRunning = {}; // btn id -> AbortController, only while that task is in flight
+
+  function setItemStatus(btn, msg, cls) {
+    var e = document.getElementById("status-" + btn.id);
+    if (!e) return;
     e.textContent = msg;
-    e.className = "status-msg " + (ok ? "ok" : "bad");
+    e.className = "admin-item-status" + (cls ? " " + cls : "");
   }
 
-  function summarize(data) {
-    if (!data) return "";
-    if (data.summary) { try { return " (" + JSON.stringify(data.summary) + ")"; } catch (e) { return ""; } }
-    if (data.note) return " -- " + data.note;
-    return "";
+  function setRunning(btn, running) {
+    btn.classList.toggle("running", running);
+  }
+
+  function describeDone(path, event) {
+    var bits = [];
+    if (event.downloadedLabel) bits.push(event.downloadedLabel + " downloaded");
+    if (typeof event.rowsWritten === "number") bits.push(event.rowsWritten + " rows written");
+    if (event.source) bits.push(event.source);
+    var line = "Done" + (bits.length ? " -- " + bits.join(", ") : "") + ".";
+    if (event.costLabel) line += " " + event.costLabel;
+    return line;
+  }
+
+  // Streamed (NDJSON) admin actions: one progress line per ticker/step,
+  // then exactly one done/error line. A second click while running aborts
+  // the fetch instead of starting a new one -- see "Stop behavior" (the
+  // Worker's own execution ends when the connection closes; this does not
+  // roll back any individual D1/R2 write already issued before that).
+  function runStreamingAdminAction(btn, path, token) {
+    var controller = new AbortController();
+    adminRunning[btn.id] = controller;
+    setRunning(btn, true);
+    setItemStatus(btn, "Starting\u2026", null);
+    fetch(path, { method: "POST", headers: { authorization: "Bearer " + token }, signal: controller.signal })
+      .then(function (r) {
+        if (!r.ok || !r.body) {
+          return r.json().catch(function () { return {}; }).then(function (data) {
+            throw new Error(data.error || ("HTTP " + r.status));
+          });
+        }
+        var reader = r.body.getReader();
+        var decoder = new TextDecoder();
+        var buffer = "";
+        function pump() {
+          return reader.read().then(function (res) {
+            if (res.done) return;
+            buffer += decoder.decode(res.value, { stream: true });
+            var lines = buffer.split("\\n");
+            buffer = lines.pop(); // last entry may be a partial line -- keep it for next chunk
+            lines.forEach(function (line) {
+              if (!line.trim()) return;
+              var event;
+              try { event = JSON.parse(line); } catch (e) { return; }
+              if (event.type === "progress") {
+                var bytesBit = event.downloadedLabel ? ", " + event.downloadedLabel + " so far" : "";
+                setItemStatus(btn, (event.step || "") + " (" + event.index + "/" + event.total + ")" + bytesBit, null);
+              } else if (event.type === "done") {
+                setItemStatus(btn, describeDone(path, event), "ok");
+                if (path === "/decide") loadDecisions();
+              } else if (event.type === "error") {
+                setItemStatus(btn, "Failed: " + event.error, "bad");
+              }
+            });
+            return pump();
+          });
+        }
+        return pump();
+      })
+      .catch(function (err) {
+        if (err && err.name === "AbortError") {
+          setItemStatus(btn, "Stopped.", "bad");
+        } else {
+          setItemStatus(btn, "Failed: " + ((err && err.message) || "network error"), "bad");
+        }
+      })
+      .then(function () {
+        delete adminRunning[btn.id];
+        setRunning(btn, false);
+      });
+  }
+
+  // /trigger-backtest is instant and fire-and-forget (the real work
+  // happens on GitHub's own infrastructure, not in this request), so it
+  // stays a plain one-shot JSON call -- there is nothing to stream or stop.
+  function runOneShotAdminAction(btn, path, token) {
+    setItemStatus(btn, "Dispatching\u2026", null);
+    btn.disabled = true;
+    fetch(path, { method: "POST", headers: { authorization: "Bearer " + token } })
+      .then(function (r) { return r.json().then(function (data) { return { status: r.status, data: data }; }); })
+      .then(function (res) {
+        btn.disabled = false;
+        if (res.status < 200 || res.status >= 300) {
+          setItemStatus(btn, "Failed: " + (res.data.error || res.status), "bad");
+          return;
+        }
+        setItemStatus(btn, res.data.note || "Dispatched.", "ok");
+      })
+      .catch(function () { btn.disabled = false; setItemStatus(btn, "Failed: network error.", "bad"); });
   }
 
   document.querySelectorAll(".admin-btn").forEach(function (btn) {
-    btn.addEventListener("click", function () {
+    btn.addEventListener("click", function (ev) {
+      ev.stopPropagation();
       var path = btn.getAttribute("data-path");
-      var busy = btn.getAttribute("data-busy") || "Working\u2026";
+      var streams = btn.getAttribute("data-stream") === "1";
+      if (streams && adminRunning[btn.id]) {
+        adminRunning[btn.id].abort();
+        return;
+      }
       var token = window.prompt("Admin token -- required for " + path + ":");
       if (!token) return;
-      setAdminStatus(busy, true);
-      btn.disabled = true;
-      fetch(path, { method: "POST", headers: { authorization: "Bearer " + token } })
-        .then(function (r) { return r.json().then(function (data) { return { status: r.status, data: data }; }); })
-        .then(function (res) {
-          btn.disabled = false;
-          if (res.status < 200 || res.status >= 300) {
-            setAdminStatus(path + " failed: " + (res.data.error || res.status), false);
-            return;
-          }
-          setAdminStatus(path + " done." + summarize(res.data), true);
-          if (path === "/decide") loadDecisions();
-        })
-        .catch(function () { btn.disabled = false; setAdminStatus(path + " failed: network error.", false); });
+      if (streams) {
+        runStreamingAdminAction(btn, path, token);
+      } else {
+        runOneShotAdminAction(btn, path, token);
+      }
     });
   });
 

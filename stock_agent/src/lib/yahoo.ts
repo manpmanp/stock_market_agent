@@ -19,6 +19,8 @@ const QUOTE_SUMMARY_HOST = "https://query2.finance.yahoo.com";
 const USER_AGENT =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
+import type { UsageTotals } from "./usage.js";
+
 export interface FetchResult<T> {
   ok: boolean;
   status: number;
@@ -51,7 +53,7 @@ async function getCrumb(): Promise<{ crumb: string; cookie: string } | null> {
   }
 }
 
-async function yahooFetch<T>(url: string): Promise<FetchResult<T>> {
+async function yahooFetch<T>(url: string, usage?: UsageTotals): Promise<FetchResult<T>> {
   try {
     const auth = await getCrumb();
     const finalUrl = auth ? `${url}&crumb=${encodeURIComponent(auth.crumb)}` : url;
@@ -64,7 +66,12 @@ async function yahooFetch<T>(url: string): Promise<FetchResult<T>> {
     if (!resp.ok) {
       return { ok: false, status: resp.status, data: null, error: `HTTP ${resp.status}` };
     }
-    const data = (await resp.json()) as T;
+    // Read as text first (rather than resp.json() directly) so the raw
+    // response size can be counted for the admin panel's "downloaded"
+    // figure -- a single read either way, just measured before parsing.
+    const text = await resp.text();
+    if (usage) usage.downloadedBytes += new TextEncoder().encode(text).length;
+    const data = JSON.parse(text) as T;
     return { ok: true, status: resp.status, data, error: null };
   } catch (err) {
     return { ok: false, status: 0, data: null, error: (err as Error).message };
@@ -74,14 +81,14 @@ async function yahooFetch<T>(url: string): Promise<FetchResult<T>> {
 // 5y default: the self-relative valuation signal (where today's price sits
 // within this stock's own trading range, see scoring/indicators.ts) needs
 // enough history to span a market cycle, not just the last two years.
-export async function fetchChart(ticker: string, range = "5y", interval = "1d") {
+export async function fetchChart(ticker: string, range = "5y", interval = "1d", usage?: UsageTotals) {
   const url = `${CHART_HOST}/v8/finance/chart/${encodeURIComponent(
     ticker
   )}?range=${range}&interval=${interval}&events=div,splits`;
-  return yahooFetch<YahooChartResponse>(url);
+  return yahooFetch<YahooChartResponse>(url, usage);
 }
 
-export async function fetchQuoteSummary(ticker: string) {
+export async function fetchQuoteSummary(ticker: string, usage?: UsageTotals) {
   const modules = [
     "price",
     "summaryDetail",
@@ -98,7 +105,7 @@ export async function fetchQuoteSummary(ticker: string) {
   const url = `${QUOTE_SUMMARY_HOST}/v10/finance/quoteSummary/${encodeURIComponent(
     ticker
   )}?modules=${modules}`;
-  return yahooFetch<YahooQuoteSummaryResponse>(url);
+  return yahooFetch<YahooQuoteSummaryResponse>(url, usage);
 }
 
 // --- Minimal response typings (only the fields this project reads) ---
