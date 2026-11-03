@@ -82,7 +82,7 @@ once a day automatically; no further manual steps are needed.
 `Authorization: Bearer <ADMIN_TOKEN>`. Without that secret set, they
 refuse every request (closed by default, not open). The scheduled cron
 job bypasses this since Cloudflare invokes it directly, not over HTTP.
-`/rankings`, `/universe`, `/chart`, `/decisions`, `/decision-lab`, and
+`/rankings`, `/universe`, `/chart`, `/decisions`, `/dashboard`, and
 `/healthz` are intentionally public and read-only.
 
 ### `/market-analysis`'s two extra secrets

@@ -1,5 +1,5 @@
 // Primary (and, since the page merge, only rendered) page for the site,
-// served at GET /decision-lab -- GET /dashboard now just redirects here
+// served at GET /dashboard -- GET /decision-lab now just redirects here
 // (see index.ts). Built around the 10-factor decision engine (src/decision/*);
 // the TradingView chart, stat row, universe panel, and Growth/Defensive
 // section below were carried over from the old watchlist page (dashboard.ts,
@@ -17,12 +17,17 @@
 // repo moved to git tags for versioning (see the v0.2.0 tag) -- they're
 // still reachable in git history, just not duplicated on disk anymore.
 //
-// The old "How the algorithm works" / "How weight tuning works"
-// collapsible pair was restructured into a single "Methodology" control
-// in the page header, opening a tabbed panel (Factors & Inputs / Glossary
-// / Scoring & Decisions / Weight Tuning / Model Selection & Testing) --
-// one flat dropdown didn't scale once the model-selection content was
-// added, per explicit instruction to organize it more readably.
+// The old "How the algorithm works" / "How weight tuning works" collapsible
+// pair, then later a single "Methodology" toggle button hiding a tabbed
+// panel, were both replaced by this page's current layout: demo videos
+// pinned near the top (first thing a new visitor sees), and a single
+// always-visible "Reference & methodology" tab bar further down -- no
+// toggle button or hidden panel standing between a visitor and the tabs
+// -- covering Factors & Inputs / Glossary / Scoring & Decisions / Weight
+// Tuning / Model Selection & Testing / Model Results. Each tab opens with
+// a one-paragraph plain-language summary before the technical detail,
+// per explicit instruction that the old layout wasn't easy to follow for
+// anyone not already familiar with it.
 export function renderDecisionLab(): string {
   return `<!doctype html>
 <html lang="en">
@@ -206,10 +211,7 @@ export function renderDecisionLab(): string {
   .weight-row .wval { font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; }
   .page-header-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
   .page-header-row h1 { margin: 0; }
-  .methodology-toggle { font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary); cursor: pointer; white-space: nowrap; }
-  .methodology-toggle[aria-expanded="true"] { color: var(--text-primary); border-color: var(--seq-400); font-weight: 600; }
   .methodology-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 36px; }
-  .methodology-panel[hidden] { display: none; }
   .method-section { display: none; }
   .method-section.active { display: block; }
   .method-body { font-size: 13px; color: var(--text-secondary); }
@@ -218,6 +220,14 @@ export function renderDecisionLab(): string {
   .method-body h4 { font-size: 12px; color: var(--text-primary); margin: 14px 0 6px; }
   .method-body h4:first-child { margin-top: 0; }
   .method-body p { margin: 0 0 8px; }
+  .plain-intro { background: var(--surface-1); border-left: 3px solid var(--seq-400); border-radius: 4px; padding: 10px 14px; margin: 0 0 16px; font-size: 13px; color: var(--text-primary); }
+  .demos-section { margin: 18px 0 30px; }
+  .demos-section h2 { margin: 0 0 4px; }
+  .demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 14px; }
+  .demo-card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+  .demo-card .demo-title { font-weight: 600; font-size: 13px; margin-bottom: 8px; }
+  .demo-card video { width: 100%; border-radius: 8px; border: 1px solid var(--border); background: var(--page); display: block; }
+  .ref-nav { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 18px; }
   .method-body ul { margin: 0 0 8px; padding-left: 18px; }
   .method-body li { margin-bottom: 4px; }
   .method-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 6px 0 10px; }
@@ -290,29 +300,52 @@ export function renderDecisionLab(): string {
 <main>
   <div class="page-header-row">
     <h1>Decision Lab</h1>
-    <div style="display:flex; gap:8px; flex-wrap:wrap;">
-      <button id="methodology-toggle" class="methodology-toggle" aria-expanded="false" aria-controls="methodology-panel">Methodology &#9662;</button>
-      <button id="model-results-toggle" class="methodology-toggle" aria-expanded="false" aria-controls="model-results-panel">Model Results &#9662;</button>
-    </div>
   </div>
-  <p class="sub">A 10-factor decision engine (quality, growth, financial strength, valuation, future potential, technical, entry, risk, catalyst, market regime). Weights are stored in the database and can be tuned below without redeploying. This build (v7) is also where a data-driven, self-tuning model is being developed and tested -- see Methodology &rarr; Model Selection &amp; Testing for status. (The original fixed-weight formula this replaced as the primary view still runs untouched in the background as a frozen comparison baseline -- see Methodology &rarr; Model Selection &amp; Testing.)</p>
-  <p class="note">Catalyst has no news/events data source wired in yet, so it's currently a flagged neutral placeholder -- a future version could add one (see Methodology above). Market regime is a real (if simple) live computation from a broad market-index proxy, not this ticker's own data. Data-driven research output, not investment advice.</p>
+  <p class="sub">A 10-factor decision engine (quality, growth, financial strength, valuation, future potential, technical, entry, risk, catalyst, market regime). Weights are stored in the database and can be tuned below without redeploying. This build (v7) is also where a data-driven, self-tuning model is being developed and tested -- see Reference &amp; methodology &rarr; Model Selection &amp; Testing below for status. (The original fixed-weight formula this replaced as the primary view still runs untouched in the background as a frozen comparison baseline -- see the same tab.)</p>
+  <p class="note">Catalyst has no news/events data source wired in yet, so it's currently a flagged neutral placeholder -- a future version could add one (see Reference &amp; methodology below). Market regime is a real (if simple) live computation from a broad market-index proxy, not this ticker's own data. Data-driven research output, not investment advice.</p>
+
+  <section class="demos-section">
+    <h2>See it in action</h2>
+    <p class="sub">Four short demos, no sound needed &mdash; captions are burnt into each clip. Start here if this page is new to you.</p>
+    <div class="demo-grid">
+      <div class="demo-card">
+        <div class="demo-title">1. How to read a score (21s)</div>
+        <video controls preload="none" src="/assets/demos/1_how_to_read_a_score.mp4"></video>
+      </div>
+      <div class="demo-card">
+        <div class="demo-title">2. What creates the scoring (27s)</div>
+        <video controls preload="none" src="/assets/demos/2_what_creates_the_scoring.mp4"></video>
+      </div>
+      <div class="demo-card">
+        <div class="demo-title">3. What to do (20s)</div>
+        <video controls preload="none" src="/assets/demos/3_what_to_do.mp4"></video>
+      </div>
+      <div class="demo-card">
+        <div class="demo-title">4. The agentic layer &mdash; POST /market-analysis (30s)</div>
+        <video controls preload="none" src="/assets/demos/4_the_agentic_layer.mp4"></video>
+      </div>
+    </div>
+    <p class="note">If a video shows a broken-link icon instead of playing, the R2 asset bucket hasn't been set up/uploaded to yet on this deploy &mdash; see README "Demo videos".</p>
+  </section>
 
   <div class="stat-row" id="stats"></div>
   <div class="universe-panel" id="universePanel" hidden></div>
 
-  <section id="methodology-panel" class="methodology-panel" hidden>
-    <div class="tabs" id="method-tabs" role="tablist">
+  <section id="reference-panel" class="methodology-panel">
+    <h2>Reference &amp; methodology</h2>
+    <p class="sub">How the scoring actually works, in as much depth as you want &mdash; pick a tab.</p>
+    <div class="tabs ref-nav" id="method-tabs" role="tablist">
       <button class="tab" role="tab" data-section="factors" aria-selected="true">Factors &amp; Inputs</button>
       <button class="tab" role="tab" data-section="glossary" aria-selected="false">Glossary</button>
       <button class="tab" role="tab" data-section="scoring" aria-selected="false">Scoring &amp; Decisions</button>
       <button class="tab" role="tab" data-section="tuning" aria-selected="false">Weight Tuning</button>
       <button class="tab" role="tab" data-section="model" aria-selected="false">Model Selection &amp; Testing</button>
-      <button class="tab" role="tab" data-section="demos" aria-selected="false">Demos</button>
+      <button class="tab" role="tab" data-section="results" aria-selected="false">Model Results</button>
     </div>
 
     <div class="method-section active" data-section="factors">
       <div class="method-body">
+        <p class="plain-intro">In plain terms: every stock gets scored 0-100 on ten different questions &mdash; is it a profitable business, is it growing, could it survive a downturn, is it fairly priced, and so on. Each factor below covers one of those questions and lists exactly what financial data feeds it.</p>
         <h3>The 10 factors</h3>
         <p>Every ticker gets a 0-100 score on each of 10 factors, each meant to answer a different question:</p>
         <table>
@@ -334,6 +367,7 @@ export function renderDecisionLab(): string {
 
     <div class="method-section" data-section="glossary">
       <div class="method-body">
+        <p class="plain-intro">Short, plain-English definitions for every technical or financial term used elsewhere on this page (RSI, PEG, EV/EBITDA, and so on) &mdash; useful if a term on a decision card or in the Factors tab isn't familiar.</p>
         <p>What each technical or financial term means, and how this engine specifically reads the number -- grouped by what kind of read it feeds.</p>
         <h4>Momentum &amp; trend (feeds Technical, Entry, Risk)</h4>
         <div class="term-row">
@@ -420,6 +454,7 @@ export function renderDecisionLab(): string {
 
     <div class="method-section" data-section="scoring">
       <div class="method-body">
+        <p class="plain-intro">Short version: each factor's 0-100 score gets multiplied by its weight and added up into one final number, which maps onto a label like BUY or HOLD. "Confidence" is a separate measure of how much the ten factors agree with each other, not part of that final number.</p>
         <h3>How a score becomes a decision</h3>
         <p>Each horizon (Short / Medium / Long) has its own weight vector -- see the Weight Tuning tab. The final score is a straight weighted average: each factor's 0-100 value &times; its weight for that horizon, summed. That score maps to a label through fixed bands: <code>&ge;85 STRONG BUY</code>, <code>&ge;75 BUY</code>, <code>&ge;65 ACCUMULATE</code>, <code>&ge;50 HOLD/WAIT</code>, <code>&ge;40 REDUCE</code>, <code>&ge;25 SELL</code>, below that <code>STRONG SELL</code>.</p>
         <h3>Confidence</h3>
@@ -431,6 +466,7 @@ export function renderDecisionLab(): string {
 
     <div class="method-section" data-section="tuning">
       <div class="method-body">
+        <p class="plain-intro">This is where you can change how much each factor counts, per time horizon, without touching any code. Read the recommended process below before changing anything &mdash; these starting weights haven't been backtested yet.</p>
         <p>The weights below are ported starting hypotheses, not backtested or calibrated values -- treat every change as an experiment, not a correction.</p>
         <h3>Recommended process</h3>
         <ul>
@@ -448,6 +484,7 @@ export function renderDecisionLab(): string {
 
     <div class="method-section" data-section="model">
       <div class="method-body">
+        <p class="plain-intro">Separate from the live scoring above, an experimental system is being built and tested here that would learn the weighting from real outcomes instead of having it typed in by hand. Nothing from it is live yet &mdash; see the status callout below for what's actually running today.</p>
         <h3>Why a model at all</h3>
         <p>Manually tuning ten factor weights per horizon has no stopping rule -- there are effectively unlimited combinations to try, each one requiring a change, a wait, and a check, with no way to tell a real improvement from noise. A data-driven model that learns the weighting (or more) from actual outcomes replaces that open-ended search with something that can be evaluated on evidence -- but only if it's tested rigorously, not just swapped in and trusted.</p>
         <h3>Alternatives considered</h3>
@@ -515,50 +552,25 @@ export function renderDecisionLab(): string {
           <li><b>Automatic hyperparameter tuning.</b> Linear and GBM's own settings (Ridge's regularization strength; GBM's tree depth/learning rate) aren't fixed -- each fold runs its own small search on an inner slice carved out of just that fold's training window (never touching that fold's test data), and picks whichever setting scored best there. This lets the chosen configuration track new patterns as more history accumulates instead of guessing once and freezing it -- see Model Results for the actual fold-by-fold record of what got chosen. TabPFN has no comparable hyperparameters to search.</li>
         </ul>
         <div class="status-callout">
-          <b>What is selected today:</b> nothing yet -- the backtest harness runs and its results are published (see the "Model Results" button next to the page title), but nothing from it is wired into live scoring. Live decisions on this page still use the hand-set weights in the Weight Tuning tab. A model only gets adopted here once it beats the linear baseline by a real, statistically-checked margin -- see Model Results for whether that's happened yet.
+          <b>What is selected today:</b> nothing yet -- the backtest harness runs and its results are published (see the "Model Results" tab above), but nothing from it is wired into live scoring. Live decisions on this page still use the hand-set weights in the Weight Tuning tab. A model only gets adopted here once it beats the linear baseline by a real, statistically-checked margin -- see Model Results for whether that's happened yet.
         </div>
         <h3>Known limits</h3>
         <p>This backtest is only fully honest for the technical/price-based factors, which have genuine point-in-time history going back 5 years. Fundamentals-driven factors (quality, valuation, etc.) don't have point-in-time history available at this project's current data budget -- their outcomes accrue live, going forward, rather than from backtesting, and the model won't be extended to lean on them until that live history exists. Catalyst/news-based scoring (e.g. via an LLM reading filings or news) was considered and deliberately deferred to a future version -- out of scope here.</p>
       </div>
     </div>
-    <div class="method-section" data-section="demos">
+    <div class="method-section" data-section="results">
       <div class="method-body">
-        <h3>Three short demos</h3>
-        <p class="sub">No sound needed &mdash; captions are burnt into each clip. ~20-30 seconds each, minimal overlap between them.</p>
-        <div style="display:flex;flex-direction:column;gap:22px;max-width:720px">
-          <div>
-            <div style="font-weight:600;margin-bottom:6px">1. How to read a score (21s)</div>
-            <video controls preload="none" style="width:100%;border-radius:10px;border:1px solid var(--border);background:var(--surface-1)" src="/assets/demos/1_how_to_read_a_score.mp4"></video>
-          </div>
-          <div>
-            <div style="font-weight:600;margin-bottom:6px">2. What creates the scoring (27s)</div>
-            <video controls preload="none" style="width:100%;border-radius:10px;border:1px solid var(--border);background:var(--surface-1)" src="/assets/demos/2_what_creates_the_scoring.mp4"></video>
-          </div>
-          <div>
-            <div style="font-weight:600;margin-bottom:6px">3. What to do (20s)</div>
-            <video controls preload="none" style="width:100%;border-radius:10px;border:1px solid var(--border);background:var(--surface-1)" src="/assets/demos/3_what_to_do.mp4"></video>
-          </div>
-          <div>
-            <div style="font-weight:600;margin-bottom:6px">4. The agentic layer &mdash; POST /market-analysis (30s)</div>
-            <video controls preload="none" style="width:100%;border-radius:10px;border:1px solid var(--border);background:var(--surface-1)" src="/assets/demos/4_the_agentic_layer.mp4"></video>
-          </div>
-        </div>
-        <p class="note">If a video shows a broken-link icon instead of playing, the R2 asset bucket hasn't been set up/uploaded to yet on this deploy &mdash; see README "Demo videos".</p>
+        <p class="plain-intro">The experimental model from the "Model Selection &amp; Testing" tab is actually being tested on real historical data; this tab shows the real output from the last test run, not just the plan.</p>
+        <h3>Model Results</h3>
+        <p>Actual output from the last time <code>scripts/backtest.sh</code> ran on your machine -- the same walk-forward comparison described in Model Selection &amp; Testing, but the real numbers instead of the plan. Per horizon: comparison metrics, then the automatic hyperparameter tuning record (what got chosen per fold, and why that can change fold to fold), then three interpretability views -- feature importance (what each model leaned on), feature/label correlations (how the raw technical inputs relate to each other and to actual outcomes), and partial dependence (each input's own learned effect). This covers the technical/price-based features only, not the full 10-factor decision engine -- see Model Selection &amp; Testing's "Known limits" for why. Nothing here changes live decisions by itself (see the status callout there); this is the evidence you'd need before it did.</p>
+        <div id="model-results-content"><div class="empty">Loading&hellip;</div></div>
       </div>
-    </div>
-  </section>
-
-  <section id="model-results-panel" class="methodology-panel" hidden>
-    <div class="method-body">
-      <h3>Model Results</h3>
-      <p>Actual output from the last time <code>scripts/backtest.sh</code> ran on your machine -- the same walk-forward comparison described in Methodology &rarr; Model Selection &amp; Testing, but the real numbers instead of the plan. Per horizon: comparison metrics, then the automatic hyperparameter tuning record (what got chosen per fold, and why that can change fold to fold), then three interpretability views -- feature importance (what each model leaned on), feature/label correlations (how the raw technical inputs relate to each other and to actual outcomes), and partial dependence (each input's own learned effect). This covers the technical/price-based features only, not the full 10-factor decision engine -- see Methodology &rarr; Model Selection &amp; Testing's "Known limits" for why. Nothing here changes live decisions by itself (see the status callout there); this is the evidence you'd need before it did.</p>
-      <div id="model-results-content"><div class="empty">Loading&hellip;</div></div>
     </div>
   </section>
 
   <section>
     <h2>Decisions</h2>
-    <p class="note" style="margin-bottom: 14px;">Each card's <b>Decision</b> badge is the weighted average of all 10 factors (see Methodology). Its <b>Entry</b> and <b>Valuation</b> readings next to it are each just one factor's own score, shown separately on purpose -- they can disagree with the overall Decision, and with each other. A weak entry timing can still sit inside a Buy (the other 9 factors carried it); a good entry can still sit inside an Accumulate (something else pulled the average down). Sort/rank always follows the overall score, not either of these two.</p>
+    <p class="note" style="margin-bottom: 14px;">Each card's <b>Decision</b> badge is the weighted average of all 10 factors (see Reference &amp; methodology below). Its <b>Entry</b> and <b>Valuation</b> readings next to it are each just one factor's own score, shown separately on purpose -- they can disagree with the overall Decision, and with each other. A weak entry timing can still sit inside a Buy (the other 9 factors carried it); a good entry can still sit inside an Accumulate (something else pulled the average down). Sort/rank always follows the overall score, not either of these two.</p>
     <div class="tabs" id="horizon-tabs" role="tablist"></div>
     <div class="sort-bar">
       <label for="sort-select">Sort by</label>
@@ -1260,7 +1272,7 @@ export function renderDecisionLab(): string {
     if (!runs.length) {
       content.appendChild(el("div", {
         class: "empty",
-        text: "No backtest results published yet. Run scripts/backtest.sh on your machine (see Methodology -> Model Selection & Testing for what it does) -- it publishes here automatically when it finishes.",
+        text: "No backtest results published yet. Run scripts/backtest.sh on your machine (see Model Selection & Testing for what it does) -- it publishes here automatically when it finishes.",
       }));
       return;
     }
@@ -1324,7 +1336,7 @@ export function renderDecisionLab(): string {
   // Beta, ROA, and the analyst recommendation/target-price spread -- the
   // raw numbers behind some of the factor scores above, shown directly
   // rather than only as an abstracted 0-100 score. The recommendation
-  // breakdown feeds Future Potential (see Methodology -> Analyst data);
+  // breakdown feeds Future Potential (see Reference & methodology -> Glossary -> Analyst data);
   // price targets remain a display-only cross-check.
   function renderSupportingMetrics(d) {
     var m = null;
@@ -1571,16 +1583,7 @@ export function renderDecisionLab(): string {
       .catch(function () { setStatus("Recompute failed: network error.", false); });
   });
 
-  // --- Methodology panel ---
-
-  var methodologyToggle = document.getElementById("methodology-toggle");
-  var methodologyPanel = document.getElementById("methodology-panel");
-  methodologyToggle.addEventListener("click", function () {
-    var open = methodologyPanel.hasAttribute("hidden");
-    if (open) { methodologyPanel.removeAttribute("hidden"); } else { methodologyPanel.setAttribute("hidden", ""); }
-    methodologyToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    methodologyToggle.innerHTML = "Methodology " + (open ? "&#9652;" : "&#9662;");
-  });
+  // --- Reference & methodology tabs (always visible, no separate toggle) ---
 
   var methodTabs = document.querySelectorAll("#method-tabs .tab");
   var methodSections = document.querySelectorAll(".method-section");
@@ -1590,17 +1593,6 @@ export function renderDecisionLab(): string {
       methodTabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
       methodSections.forEach(function (s) { s.classList.toggle("active", s.getAttribute("data-section") === target); });
     });
-  });
-
-  // --- Model Results panel toggle (same pattern as Methodology above) ---
-
-  var modelResultsToggle = document.getElementById("model-results-toggle");
-  var modelResultsPanel = document.getElementById("model-results-panel");
-  modelResultsToggle.addEventListener("click", function () {
-    var open = modelResultsPanel.hasAttribute("hidden");
-    if (open) { modelResultsPanel.removeAttribute("hidden"); } else { modelResultsPanel.setAttribute("hidden", ""); }
-    modelResultsToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    modelResultsToggle.innerHTML = "Model Results " + (open ? "&#9652;" : "&#9662;");
   });
 
   document.getElementById("sort-select").addEventListener("change", function (e) {
