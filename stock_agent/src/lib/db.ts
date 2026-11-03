@@ -503,3 +503,66 @@ export async function getRecentBacktestRuns(env: Env, limit = 10): Promise<Backt
     report: JSON.parse(r.report_json),
   }));
 }
+
+export interface BroadScreenRow {
+  ticker: string;
+  trailingPe: number | null;
+  priceToBook: number | null;
+  evToEbitda: number | null;
+  momentum3mPct: number | null;
+  screenScore: number | null;
+}
+
+/** Writes one Stage A broad-screen run's results in batches (same chunking
+ *  reasoning as upsertPriceHistory -- D1's per-statement bound-parameter
+ *  limit). See migrations/0010_broad_screening.sql. */
+export async function insertBroadScreenBatch(env: Env, rows: BroadScreenRow[], explicitPulledAt: string): Promise<void> {
+  const CHUNK = 50;
+  for (let i = 0; i < rows.length; i += CHUNK) {
+    const chunk = rows.slice(i, i + CHUNK);
+    const stmts = chunk.map((r) =>
+      env.DB.prepare(
+        `INSERT INTO broad_screen_snapshot
+           (ticker, pulled_at, trailing_pe, price_to_book, ev_to_ebitda, momentum_3m_pct, screen_score)
+         VALUES (?, ?, ?, ?, ?, ?, ?)`
+      ).bind(r.ticker, explicitPulledAt, r.trailingPe, r.priceToBook, r.evToEbitda, r.momentum3mPct, r.screenScore)
+    );
+    await env.DB.batch(stmts);
+  }
+}
+
+export interface PromotedTickerRow {
+  ticker: string;
+  exchange: string;
+  region: string;
+  currency: string;
+  screenScore: number | null;
+}
+
+/** Tickers Stage A has ever auto-promoted -- see migrations/0010_broad_
+ *  screening.sql's doc comment for why this exists (a Worker can't edit
+ *  config/universe.json at runtime, so this D1 table is the dynamic half
+ *  of the effective live universe; see ingestion/run.ts's
+ *  loadFullUniverse). */
+export async function getPromotedTickers(env: Env): Promise<PromotedTickerRow[]> {
+  const { results } = await env.DB.prepare(
+    `SELECT ticker, exchange, region, currency, screen_score FROM promoted_tickers`
+  ).all<{ ticker: string; exchange: string; region: string; currency: string; screen_score: number | null }>();
+  return (results ?? []).map((r) => ({
+    ticker: r.ticker,
+    exchange: r.exchange,
+    region: r.region,
+    currency: r.currency,
+    screenScore: r.screen_score,
+  }));
+}
+
+export async function upsertPromotedTicker(env: Env, row: PromotedTickerRow): Promise<void> {
+  await env.DB.prepare(
+    `INSERT INTO promoted_tickers (ticker, exchange, region, currency, screen_score)
+     VALUES (?, ?, ?, ?, ?)
+     ON CONFLICT(ticker) DO UPDATE SET screen_score = excluded.screen_score`
+  )
+    .bind(row.ticker, row.exchange, row.region, row.currency, row.screenScore)
+    .run();
+}

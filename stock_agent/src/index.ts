@@ -1,6 +1,7 @@
 import type { Env } from "./lib/types.js";
-import { runIngestion, loadUniverse } from "./ingestion/run.js";
+import { runIngestion, loadFullUniverse } from "./ingestion/run.js";
 import { runBenchmarkIngestion } from "./ingestion/benchmarks.js";
+import { runBroadScreen } from "./screening/run.js";
 import { runScoring } from "./scoring/run.js";
 import {
   getLatestDecisionRunAt,
@@ -49,7 +50,7 @@ export default {
       // Currency isn't stored on the rankings row itself -- it's a static per-ticker
       // fact from the universe config, so it's cheaper to attach it here than to
       // join it in every scoring query.
-      const currencyByTicker = new Map(loadUniverse().map((u) => [u.ticker, u.currency]));
+      const currencyByTicker = new Map((await loadFullUniverse(env)).map((u) => [u.ticker, u.currency]));
       const withCurrency = (rows: Array<Record<string, unknown>>) =>
         rows.map((r) => ({ ...r, currency: currencyByTicker.get(r.ticker as string) ?? null }));
       return json({ horizon, rankings: withCurrency(rankings), excluded: withCurrency(excluded), disclaimer: DISCLAIMER });
@@ -70,7 +71,7 @@ export default {
         emerging_markets: "Emerging Markets (US-listed only)",
         global: "Other",
       };
-      const universe = loadUniverse();
+      const universe = await loadFullUniverse(env);
       const byRegion = new Map<string, typeof universe>();
       for (const entry of universe) {
         const list = byRegion.get(entry.region) ?? [];
@@ -99,6 +100,12 @@ export default {
       return json({ summary });
     }
 
+    if (url.pathname === "/screen-broad-universe" && request.method === "POST") {
+      if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
+      const summary = await runBroadScreen(env);
+      return json({ summary });
+    }
+
     if (url.pathname === "/score" && request.method === "POST") {
       if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
       const summary = await runScoring(env);
@@ -110,7 +117,7 @@ export default {
       const range = url.searchParams.get("range") ?? "";
       // Restrict to the configured universe so this endpoint can't be used as an
       // open proxy for arbitrary Yahoo Finance lookups.
-      if (!loadUniverse().some((u) => u.ticker === ticker)) {
+      if (!(await loadFullUniverse(env)).some((u) => u.ticker === ticker)) {
         return json({ error: "unknown ticker" }, 400);
       }
       if (!isChartRange(range)) {
@@ -221,6 +228,7 @@ export default {
           "GET /chart?ticker=&range=1h|1d|1w|1m|3m|6m|1y|3y|5y": "live price snapshot for one ticker (JSON)",
           "POST /ingest": "manually trigger data ingestion (normally runs on the cron schedule)",
           "POST /ingest-benchmarks": "manually trigger market-index benchmark ingestion (normally runs on the daily cron only, see config/benchmarks.json)",
+          "POST /screen-broad-universe": "manually trigger the Stage A broad valuation/momentum screen + auto-promotion over config/broad-universe.json (normally runs on the daily cron only, before ingestion)",
           "POST /score": "manually trigger v1 rescoring against current data",
           "GET /decision-lab": "the main graphical view -- 10-factor decision engine, tunable weights, model results",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
@@ -244,6 +252,18 @@ export default {
   // to happen once a day, so it rides along with the full run.
   async scheduled(controller: ScheduledController, env: Env): Promise<void> {
     const isFullRun = controller.cron === "0 6 * * *";
+    // Runs before ingestion (full-run days only) so any newly auto-promoted
+    // ticker is already in promoted_tickers -- and therefore in
+    // loadFullUniverse()'s result -- by the time runIngestion reads the
+    // universe a few lines down, letting it get fully ingested the same day
+    // instead of waiting until tomorrow's run.
+    if (isFullRun) {
+      try {
+        await runBroadScreen(env);
+      } catch (err) {
+        console.error("runBroadScreen failed", err);
+      }
+    }
     await runIngestion(env, { mode: isFullRun ? "full" : "incremental" });
     // Benchmarks only need the daily cadence -- index-level price history
     // doesn't need hourly freshness, and this keeps the hourly incremental

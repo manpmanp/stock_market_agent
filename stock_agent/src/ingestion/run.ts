@@ -1,7 +1,7 @@
 import type { Env, UniverseEntry } from "../lib/types.js";
 import { fetchChart, fetchQuoteSummary } from "../lib/yahoo.js";
 import { parseFundamentals, parseIdentity, parsePriceHistory, parseValuation } from "../lib/parse.js";
-import { insertFundamentals, insertValuation, logSource, upsertPriceHistory, upsertStock } from "../lib/db.js";
+import { getPromotedTickers, insertFundamentals, insertValuation, logSource, upsertPriceHistory, upsertStock } from "../lib/db.js";
 // Plain JSON import (no "with { type: 'json' }" attribute): esbuild, which
 // both Wrangler and Vitest bundle with, resolves .json imports natively and
 // an older bundled esbuild version chokes on the import-attribute syntax.
@@ -20,6 +20,27 @@ export interface IngestionSummary {
 
 export function loadUniverse(): UniverseEntry[] {
   return universeConfig.tickers as UniverseEntry[];
+}
+
+/** The real effective live universe: the static config/universe.json list
+ *  unioned with whatever src/screening/run.ts's Stage A broad screen has
+ *  auto-promoted into promoted_tickers (see migrations/0010_broad_
+ *  screening.sql -- a Worker can't edit its own bundled config/universe.json
+ *  at runtime, so promotion has to live in D1 instead). Static entries win
+ *  on ticker collision, since they're the hand-curated/maintained list. */
+export async function loadFullUniverse(env: Env): Promise<UniverseEntry[]> {
+  const staticEntries = loadUniverse();
+  const staticTickers = new Set(staticEntries.map((e) => e.ticker));
+  const promoted = await getPromotedTickers(env);
+  const promotedEntries: UniverseEntry[] = promoted
+    .filter((p) => !staticTickers.has(p.ticker))
+    .map((p) => ({
+      ticker: p.ticker,
+      exchange: p.exchange,
+      region: p.region as UniverseEntry["region"],
+      currency: p.currency,
+    }));
+  return [...staticEntries, ...promotedEntries];
 }
 
 /** Ingests one ticker: price history, and (in "full" mode only) fundamentals/
@@ -113,7 +134,7 @@ export async function runIngestion(
 ): Promise<IngestionSummary> {
   const mode = opts.mode ?? "full";
   const delayMs = opts.delayMs ?? 250;
-  const universe = loadUniverse();
+  const universe = await loadFullUniverse(env);
   const summary: IngestionSummary = {
     mode,
     tickersProcessed: 0,

@@ -1,0 +1,3029 @@
+{
+  "_comment": "Stage A broad-screening candidate pool: a best-effort S&P 500 constituent list (Yahoo ticker convention, e.g. BRK-B not BRK.B), hand-compiled -- same disclaimer as config/universe.json: spot-check before relying on any single ticker, and expect some drift from the real-time index as reconstitutions happen (this needs an occasional manual refresh, not a live feed -- see docs/agentic-architecture-proposal.md section 8). This is NOT config/universe.json: tickers here are candidates for src/screening/run.ts's cheap Stage A screen, not automatically scored or ranked. A ticker only joins the live, fully-tracked universe (config/universe.json's effective set, via the promoted_tickers D1 table -- see migrations/0010_broad_screening.sql) if Stage A's screen_score puts it in the shortlist. US-only for this first build; S&P 400 MidCap and OMX Stockholm were deliberately deferred to keep the first version bounded and verifiable.",
+  "tickers": [
+    {
+      "ticker": "MMM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AOS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ABT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ABBV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ACN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ADBE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AMD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AES",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AFL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "A",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "APD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ABNB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AKAM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ALB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ARE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ALGN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ALLE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LNT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ALL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GOOGL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GOOG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AMZN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AMCR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AEE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AEP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AXP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AIG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AMT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AWK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AMP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AME",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AMGN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "APH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ADI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ANSS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AON",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "APA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "APO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AAPL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AMAT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "APTV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ACGL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ADM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ANET",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AJG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AIZ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "T",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ATO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ADSK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ADP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AZO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AVB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AVY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AXON",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BKR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BALL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BAC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BAX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BDX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BRK-B",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BBY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TECH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BIIB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BLK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BKNG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BWA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BSX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BMY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "AVGO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BRO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BF-B",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BLDR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BXP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CHRW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CDNS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CZR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CPT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CPB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "COF",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CAH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KMX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CCL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CARR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CAT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CBOE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CBRE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CDW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "COR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CNC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CNP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CF",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CRL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SCHW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CHTR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CVX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CMG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CHD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CINF",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CTAS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CSCO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "C",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CFG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CLX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CME",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CMS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CTSH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CMCSA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CAG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "COP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ED",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "STZ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CEG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "COO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CPRT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GLW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CPAY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CTVA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CSGP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "COST",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CTRA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CRWD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CCI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CSX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CMI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CVS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DHR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DRI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DVA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DAY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DECK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DELL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DAL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DVN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DXCM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FANG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DLR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DFS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DLTR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "D",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DPZ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DOV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DOW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DHI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DTE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DUK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EMN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ETN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EBAY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ECL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EIX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ELV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EMR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ENPH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ETR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EOG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EPAM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EQT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EFX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EQIX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EQR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ERIE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ESS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EVRG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ES",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EXC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EXPE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EXPD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "EXR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "XOM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FFIV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FDS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FICO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FAST",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FRT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FDX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FIS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FITB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FSLR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FMC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "F",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FTNT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FTV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FOXA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FOX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "BEN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "FCX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GRMN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GEHC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GEV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GEN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GNRC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GIS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GPC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GILD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GPN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GDDY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HAL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HIG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HAS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HCA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DOC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HSIC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HSY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HES",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HPE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HLT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HOLX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HON",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HRL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HST",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HWM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HPQ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HUBB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HUM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HBAN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "HII",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IBM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IEX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IDXX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ITW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "INCY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PODD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "INTC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ICE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IFF",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IPG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "INTU",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ISRG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IVZ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "INVH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IQV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "IRM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "JBHT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "JBL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "JKHY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "J",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "JNJ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "JCI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "JPM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "JNPR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "K",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KVUE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KDP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KEY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KEYS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KMB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KIM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KMI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KKR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KLAC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KHC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "KR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LHX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LRCX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LVS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LDOS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LEN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LII",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LLY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LIN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LYV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LKQ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LMT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "L",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LOW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LULU",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LYB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MTB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MRO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MPC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MKTX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MAR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MMC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MLM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MAS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MTCH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MKC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MCD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MCK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MDT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MRK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "META",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MET",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MTD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MGM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MCHP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MU",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MSFT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MAA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MRNA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MHK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MOH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TAP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MDLZ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MPWR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MNST",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MCO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MOS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MSI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "MSCI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NDAQ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NTAP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NFLX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NEM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NWSA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NWS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NEE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NKE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NDSN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NSC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NTRS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NOC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NCLH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NRG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NUE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NVDA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NVR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NXPI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ORLY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "OXY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ODFL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "OMC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ON",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "OKE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ORCL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "OTIS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PCAR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PKG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PLTR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PANW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PARA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PAYX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PAYC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PYPL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PNR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PEP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PFE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PCG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PSX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PNW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PNC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "POOL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PPG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PPL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PFG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PGR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PLD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PRU",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PEG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PTC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PSA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PHM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "QRVO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "PWR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "QCOM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DGX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "RL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "RJF",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "RTX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "O",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "REG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "REGN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "RF",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "RSG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "RMD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "RVTY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ROK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ROL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ROP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ROST",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "RCL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SPGI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "CRM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SBAC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SLB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "STX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SRE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "NOW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SHW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SPG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SWKS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SJM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SNA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SOLV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "LUV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SWK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SBUX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "STT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "STLD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "STE",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SYK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SMCI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SYF",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SNPS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "SYY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TMUS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TROW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TTWO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TPR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TRGP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TGT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TEL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TDY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TFX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TER",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TSLA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TXN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TPL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TXT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TMO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TJX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TKO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TSCO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TDG",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TRV",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TRMB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TFC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TYL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "TSN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "USB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "UBER",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "UDR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ULTA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "UNP",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "UAL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "UPS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "URI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "UNH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "UHS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VLO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VTR",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VLTO",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VRSN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VRSK",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VZ",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VRTX",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VTRS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VICI",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "V",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VST",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "VMC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WRB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "GWW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WAB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WMT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "DIS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WBD",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WAT",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WEC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WFC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WELL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WST",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WDC",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WY",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WMB",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WTW",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WSM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "WYNN",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "XEL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "XYL",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "YUM",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ZBRA",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ZBH",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    },
+    {
+      "ticker": "ZTS",
+      "exchange": "US",
+      "region": "us",
+      "currency": "USD"
+    }
+  ]
+}
