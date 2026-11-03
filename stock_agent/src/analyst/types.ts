@@ -53,6 +53,25 @@ export interface AnalystSynthesis {
  *  this is hand-kept in sync with AnalystSynthesis above; a mismatch
  *  would surface immediately as a grounding/shape-validation failure in
  *  run.ts, not a silent bug. */
+// additionalProperties: false on every object level is required by
+// Anthropic's structured-outputs (output_config.format: json_schema) mode
+// -- see callAnalyst() in run.ts. Forced tool_choice (the original
+// approach here) turned out to be unsupported on Sonnet 5.5
+// ("tool_choice: type \"tool\" and \"any\" are not supported for this
+// model" -- a real 400 hit the first time this endpoint was actually
+// called), so this schema now drives output_config.format instead of a
+// tool's input_schema; the shape itself didn't need to change.
+const CITATION_SCHEMA = {
+  type: "object",
+  properties: {
+    ticker: { type: "string" },
+    metric: { type: "string", description: "Dotted path into the data you were given, e.g. decisions.long.score or supportingMetrics.evToEbit." },
+    value: { type: "number", description: "The exact value you were given for that ticker+metric -- never a rounded-off or remembered approximation." },
+  },
+  required: ["ticker", "metric", "value"],
+  additionalProperties: false,
+} as const;
+
 export const ANALYST_SYNTHESIS_SCHEMA = {
   type: "object",
   properties: {
@@ -60,15 +79,7 @@ export const ANALYST_SYNTHESIS_SCHEMA = {
     citations: {
       type: "array",
       description: "Citations backing marketContext specifically (e.g. benchmark trend/RSI readings).",
-      items: {
-        type: "object",
-        properties: {
-          ticker: { type: "string" },
-          metric: { type: "string" },
-          value: { type: "number" },
-        },
-        required: ["ticker", "metric", "value"],
-      },
+      items: CITATION_SCHEMA,
     },
     picks: {
       type: "array",
@@ -83,18 +94,11 @@ export const ANALYST_SYNTHESIS_SCHEMA = {
           citations: {
             type: "array",
             minItems: 1,
-            items: {
-              type: "object",
-              properties: {
-                ticker: { type: "string" },
-                metric: { type: "string", description: "Dotted path into the data you were given, e.g. decisions.long.score or supportingMetrics.evToEbit." },
-                value: { type: "number", description: "The exact value you were given for that ticker+metric -- never a rounded-off or remembered approximation." },
-              },
-              required: ["ticker", "metric", "value"],
-            },
+            items: CITATION_SCHEMA,
           },
         },
         required: ["ticker", "horizon", "stance", "rationale", "citations"],
+        additionalProperties: false,
       },
     },
     warnings: {
@@ -103,4 +107,5 @@ export const ANALYST_SYNTHESIS_SCHEMA = {
     },
   },
   required: ["marketContext", "citations", "picks", "warnings"],
+  additionalProperties: false,
 } as const;

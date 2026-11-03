@@ -32,7 +32,6 @@ import { ANALYST_SYNTHESIS_SCHEMA, type AnalystCitation, type AnalystSynthesis }
 const MAX_ATTEMPTS = 3;
 const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
 const ANTHROPIC_VERSION = "2023-06-01";
-const TOOL_NAME = "emit_market_analysis";
 
 export interface TickerBundleEntry {
   decisions: Partial<
@@ -195,7 +194,7 @@ Your job: synthesize across tickers, factors, and the relevant benchmark context
 
 Hard rule: every single factual claim you make -- in marketContext and in every pick's rationale -- must be backed by at least one citation in that section's citations array, and every citation's (ticker, metric, value) must be copied EXACTLY from the data you were given, not rounded, not remembered, not inferred. Never invent a ticker, metric, or value that isn't in the data. Never override or second-guess a factor score -- your job is to synthesize and explain the existing scores, not replace them with your own judgment of what they should be. If the data doesn't support a confident read, say so in warnings rather than forcing a pick.
 
-Call the ${TOOL_NAME} tool with your complete synthesis. Do not respond with plain text.`;
+Respond with JSON matching the schema you were given -- nothing else, no surrounding prose.`;
 
 interface AnthropicCallResult {
   ok: boolean;
@@ -217,29 +216,56 @@ async function callAnalyst(env: Env, userContent: string): Promise<AnthropicCall
       },
       body: JSON.stringify({
         model: env.ANTHROPIC_MODEL,
-        max_tokens: 4096,
+        // Generous headroom over the proposal's ~3,000-token output
+        // estimate (docs/agentic-architecture-proposal.md section 5) --
+        // with no tool-call wrapper overhead now (see output_config
+        // below), a wide universe with many citations per pick could
+        // still run long, and a truncated response is an explicit error
+        // (stop_reason === "max_tokens" below) rather than a silent
+        // partial parse.
+        max_tokens: 8192,
         system: SYSTEM_PROMPT,
         messages: [{ role: "user", content: userContent }],
-        tools: [
-          {
-            name: TOOL_NAME,
-            description: "Emit the complete, grounded market-analysis synthesis.",
-            input_schema: ANALYST_SYNTHESIS_SCHEMA,
-          },
-        ],
-        tool_choice: { type: "tool", name: TOOL_NAME },
+        // Originally this forced a specific tool call via tool_choice:
+        // {type: "tool", name: ...} -- that 400'd the first time this
+        // endpoint was actually called ("tool_choice: type \"tool\" and
+        // \"any\" are not supported for this model", confirmed against
+        // Anthropic's own docs as an unconditional restriction on Sonnet
+        // 5.5/Opus 5.5). output_config.format is the current mechanism
+        // for forcing one exact JSON shape and needs no tools/tool_choice
+        // at all -- see ANALYST_SYNTHESIS_SCHEMA's own comment in
+        // ./types.ts for why its objects all carry additionalProperties:
+        // false (required by this mode).
+        output_config: {
+          format: { type: "json_schema", schema: ANALYST_SYNTHESIS_SCHEMA },
+        },
       }),
     });
     if (!resp.ok) {
       const text = await resp.text().catch(() => "");
       return { ok: false, synthesis: null, error: `Anthropic API HTTP ${resp.status}: ${text.slice(0, 500)}` };
     }
-    const body = (await resp.json()) as { content?: Array<{ type: string; name?: string; input?: unknown }> };
-    const toolUse = (body.content ?? []).find((c) => c.type === "tool_use" && c.name === TOOL_NAME);
-    if (!toolUse || typeof toolUse.input !== "object" || toolUse.input === null) {
-      return { ok: false, synthesis: null, error: "Anthropic response did not include the expected tool_use block" };
+    const body = (await resp.json()) as { content?: Array<{ type: string; text?: string }>; stop_reason?: string };
+    if (body.stop_reason === "refusal") {
+      return { ok: false, synthesis: null, error: "Anthropic declined to produce a response for this request (stop_reason: refusal)" };
     }
-    return { ok: true, synthesis: toolUse.input as AnalystSynthesis };
+    if (body.stop_reason === "max_tokens") {
+      return { ok: false, synthesis: null, error: "Anthropic response was cut off at the max_tokens limit before completing -- raise max_tokens in callAnalyst()" };
+    }
+    const textBlock = (body.content ?? []).find((c) => c.type === "text" && typeof c.text === "string");
+    if (!textBlock || !textBlock.text) {
+      return { ok: false, synthesis: null, error: "Anthropic response did not include the expected text content block" };
+    }
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(textBlock.text);
+    } catch (err) {
+      return { ok: false, synthesis: null, error: `Anthropic response text was not valid JSON: ${(err as Error).message}` };
+    }
+    if (typeof parsed !== "object" || parsed === null) {
+      return { ok: false, synthesis: null, error: "Anthropic response JSON was not an object" };
+    }
+    return { ok: true, synthesis: parsed as AnalystSynthesis };
   } catch (err) {
     return { ok: false, synthesis: null, error: `Anthropic API call threw: ${(err as Error).message}` };
   }
@@ -247,7 +273,8 @@ async function callAnalyst(env: Env, userContent: string): Promise<AnthropicCall
 
 /** Shape-validates `synthesis` beyond what the API's own schema
  *  enforcement guarantees (defensive -- a model can still return
- *  something subtly malformed despite tool_choice forcing the shape) and
+ *  something subtly malformed despite output_config.format forcing the
+ *  shape) and
  *  verifies every citation's claimed value against `lookup`, the exact
  *  data the model was shown. Returns a flat list of violations, each one
  *  specific enough to feed back to the model verbatim; empty means fully
