@@ -20,16 +20,30 @@
 // still reachable in git history, just not duplicated on disk anymore.
 //
 // The old "How the algorithm works" / "How weight tuning works" collapsible
-// pair, then later a single "Methodology" toggle button hiding a tabbed
-// panel, were both replaced by this page's current layout: demo videos
-// pinned near the top (first thing a new visitor sees), and a single
-// always-visible "Reference & methodology" tab bar further down -- no
-// toggle button or hidden panel standing between a visitor and the tabs
-// -- covering Factors & Inputs / Glossary / Scoring & Decisions / Weight
-// Tuning / Model Selection & Testing / Model Results. Each tab opens with
-// a one-paragraph plain-language summary before the technical detail,
-// per explicit instruction that the old layout wasn't easy to follow for
-// anyone not already familiar with it.
+// pair, then a single "Methodology" toggle button hiding a tabbed panel,
+// then a single always-visible tab bar, have all been replaced by this
+// page's current layout: a fixed left sidebar (position: fixed, stays put
+// while the page scrolls) holding a "Demo" bookmark plus 6 "Reference &
+// methodology" tabs (Factors & Inputs / Glossary / Scoring & Decisions /
+// Weight Tuning / Model Selection & Testing / Model Results). All 7 behave
+// as independent slide-out flyouts: closed by default (the default view is
+// just the ticker/decisions list below), clicking one slides its content
+// out to the right of the sidebar, clicking it again (or picking a
+// different one) retracts it -- only one flyout is ever open at a time,
+// matching the demo videos' own open/close pattern (see .reference-flyout /
+// .demo-flyout CSS and the click handlers near the bottom of the <script>).
+// Each reference tab's content still opens with a one-paragraph
+// plain-language summary before the technical detail.
+//
+// The Decisions list itself (below the sidebar/flyouts) has: a ticker
+// search box with a live autocomplete suggestion dropdown; a benchmark
+// filter (resolves the selected index's regime_proxy_for regions against
+// /universe's own per-region ticker lists -- see fetchUniverse() and
+// filteredDecisions()); and shows only the top 10 matching tickers by
+// default; with the rest behind a "Show N more" toggle (renderDecisionsList()).
+// Each expanded ticker card shows its factor-score breakdown and
+// TradingView chart side by side (.factors-top-row), not stacked, for
+// easier side-by-side comparison.
 export function renderDecisionLab(): string {
   return `<!doctype html>
 <html lang="en">
@@ -136,6 +150,20 @@ export function renderDecisionLab(): string {
   .sort-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
   .sort-bar label { font-size: 12px; color: var(--text-secondary); }
   .sort-bar select { font: inherit; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
+  .decisions-filter-bar { display: flex; gap: 14px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 14px; }
+  .search-wrap { position: relative; flex: 0 1 260px; min-width: 200px; }
+  .search-wrap input { width: 100%; font: inherit; font-size: 13px; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); box-sizing: border-box; }
+  .search-suggestions { position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 10px 24px rgba(11,11,11,0.16); max-height: 240px; overflow-y: auto; z-index: 20; }
+  .search-suggestions[hidden] { display: none; }
+  .search-suggestions .sugg-item { padding: 7px 10px; font-size: 13px; cursor: pointer; }
+  .search-suggestions .sugg-item:hover, .search-suggestions .sugg-item.active { background: var(--page); }
+  .benchmark-filter-wrap { display: flex; align-items: center; gap: 8px; }
+  .benchmark-filter-wrap label { font-size: 12px; color: var(--text-secondary); }
+  .benchmark-filter-wrap select { font: inherit; font-size: 13px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
+  .decisions-more-wrap { margin-top: 14px; }
+  .decisions-more-wrap[hidden] { display: none; }
+  .show-more-btn { font: inherit; font-size: 13px; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
+  .show-more-btn:hover { background: var(--page); }
   /* Stat row + universe panel + Growth/Defensive -- carried over from the
      old watchlist page (dashboard.ts) as part of the page merge. */
   .stat-row { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
@@ -190,6 +218,12 @@ export function renderDecisionLab(): string {
   .meta-row b { color: var(--text-primary); }
   .factors { display: none; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
   .card[aria-expanded="true"] .factors { display: block; }
+  .factors-top-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  .factors-scores { flex: 1 1 320px; min-width: 260px; }
+  .factors-top-row .supporting.chart-pane { flex: 1 1 380px; min-width: 300px; margin-top: 0; padding-top: 0; border-top: none; }
+  @media (max-width: 680px) {
+    .factors-top-row { flex-direction: column; }
+  }
   .factor-row { display: grid; grid-template-columns: 140px 1fr 40px; align-items: center; gap: 8px; margin-bottom: 5px; font-size: 12px; }
   .factor-row .fname { color: var(--text-secondary); display: flex; align-items: center; gap: 4px; }
   .factor-row .unscored-flag { color: var(--unscored); font-size: 10px; border: 1px solid var(--unscored); border-radius: 4px; padding: 0 4px; }
@@ -242,9 +276,17 @@ export function renderDecisionLab(): string {
   .demo-tab { margin-bottom: 6px; }
   .demo-tab .demo-badge { margin-left: auto; font-size: 11px; font-weight: 700; background: var(--tab-accent); color: var(--surface-1); border-radius: 999px; padding: 1px 7px; }
   .demo-tab[aria-expanded="true"] { color: var(--text-primary); font-weight: 700; background-color: color-mix(in srgb, var(--tab-accent) 16%, var(--surface-1)); border-left-width: 8px; }
-  .demo-flyout { position: fixed; top: 20px; left: 238px; z-index: 39; display: flex; gap: 12px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 14px; box-shadow: 0 10px 30px rgba(11,11,11,0.18); max-width: calc(100vw - 260px); overflow-x: auto; transform: translateX(-24px); opacity: 0; pointer-events: none; transition: transform 0.22s ease, opacity 0.22s ease; }
-  .demo-flyout.open { transform: translateX(0); opacity: 1; pointer-events: auto; }
-  .demo-card { background: var(--page); border: 1px solid var(--border); border-radius: 10px; padding: 10px; width: 210px; flex: 0 0 210px; }
+  .demo-flyout { position: fixed; top: 20px; left: 238px; z-index: 39; display: flex; gap: 12px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 14px; box-shadow: 0 10px 30px rgba(11,11,11,0.18); max-width: calc(100vw - 260px); overflow-x: auto; opacity: 0; pointer-events: none; transition: opacity 0.1s ease; }
+  .demo-flyout.open { opacity: 1; pointer-events: auto; }
+  .reference-flyout { position: fixed; top: 20px; left: 238px; z-index: 39; width: 760px; max-width: calc(100vw - 260px); max-height: calc(100vh - 40px); overflow-y: auto; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px 26px 26px; box-shadow: 0 10px 30px rgba(11,11,11,0.18); opacity: 0; pointer-events: none; transform: translateX(-16px); transition: opacity 0.2s ease, transform 0.2s ease; }
+  .reference-flyout.open { opacity: 1; pointer-events: auto; transform: translateX(0); }
+  .ref-tab[aria-expanded="true"] { color: var(--text-primary); font-weight: 700; border-left-width: 8px; background-color: color-mix(in srgb, var(--tab-accent) 16%, var(--surface-1)); }
+  .demo-card { background: var(--page); border: 1px solid var(--border); border-radius: 10px; padding: 10px; width: 210px; flex: 0 0 210px; transform: translateX(-36px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .demo-flyout.open .demo-card { transform: translateX(0); opacity: 1; }
+  .demo-flyout.open .demo-card:nth-child(1) { transition-delay: 0s; }
+  .demo-flyout.open .demo-card:nth-child(2) { transition-delay: 0.09s; }
+  .demo-flyout.open .demo-card:nth-child(3) { transition-delay: 0.18s; }
+  .demo-flyout.open .demo-card:nth-child(4) { transition-delay: 0.27s; }
   .demo-card .demo-title { font-weight: 600; font-size: 12px; margin-bottom: 8px; line-height: 1.35; }
   .demo-card video { width: 100%; border-radius: 8px; border: 1px solid var(--border); background: var(--page); display: block; }
   .ref-content { min-width: 0; }
@@ -257,6 +299,8 @@ export function renderDecisionLab(): string {
     .ref-tab[aria-selected="true"], .demo-tab[aria-expanded="true"] { border-left-width: 1px; border-top-width: 7px; }
     .demo-flyout { position: static; transform: none; opacity: 1; pointer-events: auto; max-width: 100%; margin: 0 0 18px; display: none; }
     .demo-flyout.open { display: flex; }
+    .reference-flyout { position: static; width: 100%; max-width: 100%; transform: none; opacity: 1; pointer-events: auto; max-height: none; margin: 0 0 18px; display: none; }
+    .reference-flyout.open { display: block; }
   }
   .method-body ul { margin: 0 0 8px; padding-left: 18px; }
   .method-body li { margin-bottom: 4px; }
@@ -335,12 +379,12 @@ export function renderDecisionLab(): string {
   <div class="page-sidebar">
     <button class="ref-tab demo-tab" id="demo-tab" type="button" aria-expanded="false" aria-controls="demo-flyout" style="--tab-accent:var(--text-primary)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.3" y="3" width="13.4" height="10" rx="1.6"></rect><path d="M6.6 5.8l4 2.2-4 2.2z" fill="currentColor" stroke="none"></path></svg><span>Demo</span><span class="demo-badge">4</span></button>
     <div id="method-tabs" role="tablist" style="display:contents">
-      <button class="tab ref-tab" role="tab" data-section="factors" aria-selected="true" style="--tab-accent:var(--cat-1)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="1.5" y="9" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="9" width="5.5" height="5.5" rx="1"></rect></svg><span>Factors &amp; Inputs</span></button>
-      <button class="tab ref-tab" role="tab" data-section="glossary" aria-selected="false" style="--tab-accent:var(--cat-2)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2 2.5h4.5a2 2 0 0 1 2 2V14a1.5 1.5 0 0 0-1.5-1.5H2z"></path><path d="M14 2.5H9.5a2 2 0 0 0-2 2V14a1.5 1.5 0 0 1 1.5-1.5H14z"></path></svg><span>Glossary</span></button>
-      <button class="tab ref-tab" role="tab" data-section="scoring" aria-selected="false" style="--tab-accent:var(--cat-3)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.3"></circle><path d="M5.3 8.2l1.9 1.9 3.5-4"></path></svg><span>Scoring &amp; Decisions</span></button>
-      <button class="tab ref-tab" role="tab" data-section="tuning" aria-selected="false" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
-      <button class="tab ref-tab" role="tab" data-section="model" aria-selected="false" style="--tab-accent:var(--cat-5)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6.3 1.8h3.4"></path><path d="M6.8 2v3.8L2.9 12a1.4 1.4 0 0 0 1.2 2.1h7.8a1.4 1.4 0 0 0 1.2-2.1L9.2 5.8V2"></path><path d="M4.6 10.2h6.8"></path></svg><span>Model Selection &amp; Testing</span></button>
-      <button class="tab ref-tab" role="tab" data-section="results" aria-selected="false" style="--tab-accent:var(--cat-6)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="14" x2="14" y2="14"></line><rect x="3" y="8.5" width="2.6" height="5.2" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="6.8" y="5" width="2.6" height="8.7" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="10.6" y="2.5" width="2.6" height="11.2" rx="0.4" fill="currentColor" stroke="none"></rect></svg><span>Model Results</span></button>
+      <button class="tab ref-tab" data-section="factors" aria-expanded="false" style="--tab-accent:var(--cat-1)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="1.5" y="9" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="9" width="5.5" height="5.5" rx="1"></rect></svg><span>Factors &amp; Inputs</span></button>
+      <button class="tab ref-tab" data-section="glossary" aria-expanded="false" style="--tab-accent:var(--cat-2)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2 2.5h4.5a2 2 0 0 1 2 2V14a1.5 1.5 0 0 0-1.5-1.5H2z"></path><path d="M14 2.5H9.5a2 2 0 0 0-2 2V14a1.5 1.5 0 0 1 1.5-1.5H14z"></path></svg><span>Glossary</span></button>
+      <button class="tab ref-tab" data-section="scoring" aria-expanded="false" style="--tab-accent:var(--cat-3)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.3"></circle><path d="M5.3 8.2l1.9 1.9 3.5-4"></path></svg><span>Scoring &amp; Decisions</span></button>
+      <button class="tab ref-tab" data-section="tuning" aria-expanded="false" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
+      <button class="tab ref-tab" data-section="model" aria-expanded="false" style="--tab-accent:var(--cat-5)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6.3 1.8h3.4"></path><path d="M6.8 2v3.8L2.9 12a1.4 1.4 0 0 0 1.2 2.1h7.8a1.4 1.4 0 0 0 1.2-2.1L9.2 5.8V2"></path><path d="M4.6 10.2h6.8"></path></svg><span>Model Selection &amp; Testing</span></button>
+      <button class="tab ref-tab" data-section="results" aria-expanded="false" style="--tab-accent:var(--cat-6)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="14" x2="14" y2="14"></line><rect x="3" y="8.5" width="2.6" height="5.2" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="6.8" y="5" width="2.6" height="8.7" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="10.6" y="2.5" width="2.6" height="11.2" rx="0.4" fill="currentColor" stroke="none"></rect></svg><span>Model Results</span></button>
     </div>
   </div>
 
@@ -368,12 +412,12 @@ export function renderDecisionLab(): string {
   <div class="stat-row" id="stats"></div>
   <div class="universe-panel" id="universePanel" hidden></div>
 
-  <section id="reference-panel" class="methodology-panel">
+  <section id="reference-panel" class="methodology-panel reference-flyout">
     <h2>Reference &amp; methodology</h2>
     <p class="sub">How the scoring actually works, in as much depth as you want &mdash; pick a tab.</p>
     <div class="ref-content">
 
-    <div class="method-section active" data-section="factors">
+    <div class="method-section" data-section="factors">
       <div class="method-body">
         <p class="plain-intro">In plain terms: every stock gets scored 0-100 on ten different questions &mdash; is it a profitable business, is it growing, could it survive a downturn, is it fairly priced, and so on. Each factor below covers one of those questions and lists exactly what financial data feeds it.</p>
         <h3>The 10 factors</h3>
@@ -604,6 +648,18 @@ export function renderDecisionLab(): string {
     <h2>Decisions</h2>
     <p class="note" style="margin-bottom: 14px;">Each card's <b>Decision</b> badge is the weighted average of all 10 factors (see Reference &amp; methodology below). Its <b>Entry</b> and <b>Valuation</b> readings next to it are each just one factor's own score, shown separately on purpose -- they can disagree with the overall Decision, and with each other. A weak entry timing can still sit inside a Buy (the other 9 factors carried it); a good entry can still sit inside an Accumulate (something else pulled the average down). Sort/rank always follows the overall score, not either of these two.</p>
     <div class="tabs" id="horizon-tabs" role="tablist"></div>
+    <div class="decisions-filter-bar">
+      <div class="search-wrap">
+        <input type="text" id="ticker-search" placeholder="Search ticker\u2026" autocomplete="off" />
+        <div class="search-suggestions" id="search-suggestions" hidden></div>
+      </div>
+      <div class="benchmark-filter-wrap">
+        <label for="benchmark-filter">Benchmark</label>
+        <select id="benchmark-filter">
+          <option value="">All tickers</option>
+        </select>
+      </div>
+    </div>
     <div class="sort-bar">
       <label for="sort-select">Sort by</label>
       <select id="sort-select">
@@ -621,6 +677,9 @@ export function renderDecisionLab(): string {
     </div>
     <div class="run-at" id="run-at"></div>
     <div id="decisions-list"></div>
+    <div class="decisions-more-wrap" id="decisions-more-wrap" hidden>
+      <button type="button" class="show-more-btn" id="show-more-btn"></button>
+    </div>
   </section>
 
   <section>
@@ -672,6 +731,10 @@ export function renderDecisionLab(): string {
   var currentHorizon = "long";
   var currentSort = "score-desc";
   var lastDecisions = [];
+  var searchQuery = "";
+  var selectedBenchmark = "";
+  var showAllDecisions = false;
+  var tickerRegionMap = {}; // ticker -> region, built from /universe once loaded
   var expandedTickers = new Set(); // survives sort/horizon re-renders, like the old watchlist page
   var styleByTicker = {}; // ticker -> "growth"|"defensive"|"blend", from v1's /rankings (see Growth vs Defensive section)
 
@@ -899,6 +962,16 @@ export function renderDecisionLab(): string {
         var v = elStats.children[3].querySelector(".v");
         if (v) v.textContent = String(u.totalTickers);
       }
+      tickerRegionMap = {};
+      (u.regions || []).forEach(function (r) {
+        (r.tickers || []).forEach(function (t) { tickerRegionMap[t.ticker] = r.region; });
+      });
+      var benchSelect = document.getElementById("benchmark-filter");
+      (u.benchmarks || []).forEach(function (b) {
+        var opt = el("option", { value: b.ticker, text: b.name + " (" + b.ticker + ")" });
+        benchSelect.appendChild(opt);
+      });
+      renderDecisionsList();
     });
   }
 
@@ -1456,11 +1529,14 @@ export function renderDecisionLab(): string {
     ]));
 
     var factors = el("div", { class: "factors" });
-    FACTORS.forEach(function (f) { factors.appendChild(factorRow(f, scores, contribution)); });
+    var scoresCol = el("div", { class: "factors-scores" });
+    FACTORS.forEach(function (f) { scoresCol.appendChild(factorRow(f, scores, contribution)); });
+    var chart = chartBlock(d.ticker);
+    chart.wrap.classList.add("chart-pane");
+    var topRow = el("div", { class: "factors-top-row" }, [scoresCol, chart.wrap]);
+    factors.appendChild(topRow);
     var supporting = renderSupportingMetrics(d);
     if (supporting) factors.appendChild(supporting);
-    var chart = chartBlock(d.ticker);
-    factors.appendChild(chart.wrap);
     if (warnings.length) {
       var w = el("div", { class: "warnings" });
       warnings.forEach(function (msg) { w.appendChild(el("div", { text: "⚠ " + msg })); });
@@ -1482,14 +1558,51 @@ export function renderDecisionLab(): string {
     return card;
   }
 
+  var TOP_N = 10;
+
+  function benchmarkTickerAllowed(ticker) {
+    if (!selectedBenchmark) return true;
+    if (!universeData || !universeData.benchmarks) return true;
+    var b = universeData.benchmarks.filter(function (x) { return x.ticker === selectedBenchmark; })[0];
+    if (!b || !b.regimeProxyFor) return true;
+    var region = tickerRegionMap[ticker];
+    return region ? b.regimeProxyFor.indexOf(region) !== -1 : false;
+  }
+
+  function filteredDecisions() {
+    var q = searchQuery.trim().toUpperCase();
+    return sortDecisions(lastDecisions, currentSort).filter(function (d) {
+      if (q && d.ticker.toUpperCase().indexOf(q) === -1) return false;
+      if (!benchmarkTickerAllowed(d.ticker)) return false;
+      return true;
+    });
+  }
+
   function renderDecisionsList() {
     var list = document.getElementById("decisions-list");
+    var moreWrap = document.getElementById("decisions-more-wrap");
+    var moreBtn = document.getElementById("show-more-btn");
     list.innerHTML = "";
     if (!lastDecisions.length) {
       list.appendChild(el("div", { class: "empty", text: "No decisions yet for this horizon." }));
+      moreWrap.hidden = true;
       return;
     }
-    sortDecisions(lastDecisions, currentSort).forEach(function (d) { list.appendChild(renderDecisionCard(d)); });
+    var matches = filteredDecisions();
+    if (!matches.length) {
+      list.appendChild(el("div", { class: "empty", text: "No tickers match this search/filter." }));
+      moreWrap.hidden = true;
+      return;
+    }
+    var visible = showAllDecisions ? matches : matches.slice(0, TOP_N);
+    visible.forEach(function (d) { list.appendChild(renderDecisionCard(d)); });
+    var remaining = matches.length - visible.length;
+    if (matches.length > TOP_N) {
+      moreWrap.hidden = false;
+      moreBtn.textContent = showAllDecisions ? "Show top " + TOP_N + " only" : "Show " + remaining + " more";
+    } else {
+      moreWrap.hidden = true;
+    }
   }
 
   function loadDecisions() {
@@ -1500,6 +1613,7 @@ export function renderDecisionLab(): string {
       .then(function (data) {
         document.getElementById("run-at").textContent = data.runAt ? ("Last run (UTC): " + data.runAt) : "No decision run yet -- use \\"Recompute decisions now\\" below.";
         lastDecisions = data.decisions || [];
+        showAllDecisions = false;
         renderDecisionsList();
       })
       .catch(function () { list.innerHTML = '<div class="empty">Failed to load decisions.</div>'; });
@@ -1619,23 +1733,42 @@ export function renderDecisionLab(): string {
 
   var demoTab = document.getElementById("demo-tab");
   var demoFlyout = document.getElementById("demo-flyout");
+  var referenceFlyout = document.getElementById("reference-panel");
+  var methodTabs = document.querySelectorAll("#method-tabs .tab");
+  var methodSections = document.querySelectorAll(".method-section");
+
+  function closeReferenceFlyout() {
+    referenceFlyout.classList.remove("open");
+    methodTabs.forEach(function (t) { t.setAttribute("aria-expanded", "false"); });
+  }
+  function closeDemoFlyout() {
+    demoFlyout.classList.remove("open");
+    demoTab.setAttribute("aria-expanded", "false");
+  }
+
   demoTab.addEventListener("click", function () {
     var open = !demoFlyout.classList.contains("open");
+    // Demo and the reference tabs are both single-flyout UIs sharing the
+    // same sidebar -- opening one always closes the other, so only one
+    // slide-out panel is ever visible at a time.
+    closeReferenceFlyout();
     demoFlyout.classList.toggle("open", open);
     demoTab.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
-  var methodTabs = document.querySelectorAll("#method-tabs .tab");
-  var methodSections = document.querySelectorAll(".method-section");
   methodTabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
       var target = tab.getAttribute("data-section");
-      methodTabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
+      var wasOpenOnThisTab = referenceFlyout.classList.contains("open") && tab.getAttribute("aria-expanded") === "true";
+      closeDemoFlyout();
+      if (wasOpenOnThisTab) {
+        // Clicking the already-open tab closes it -- back to just the ticker list.
+        closeReferenceFlyout();
+        return;
+      }
+      methodTabs.forEach(function (t) { t.setAttribute("aria-expanded", t === tab ? "true" : "false"); });
       methodSections.forEach(function (s) { s.classList.toggle("active", s.getAttribute("data-section") === target); });
-      // Picking a reference tab closes the demo flyout if it was open --
-      // the two aren't meant to be visible at the same time.
-      demoFlyout.classList.remove("open");
-      demoTab.setAttribute("aria-expanded", "false");
+      referenceFlyout.classList.add("open");
     });
   });
 
@@ -1643,6 +1776,60 @@ export function renderDecisionLab(): string {
     currentSort = e.target.value;
     renderDecisionsList();
   });
+
+  document.getElementById("show-more-btn").addEventListener("click", function () {
+    showAllDecisions = !showAllDecisions;
+    renderDecisionsList();
+  });
+
+  document.getElementById("benchmark-filter").addEventListener("change", function (e) {
+    selectedBenchmark = e.target.value;
+    showAllDecisions = false;
+    renderDecisionsList();
+  });
+
+  (function () {
+    var input = document.getElementById("ticker-search");
+    var suggBox = document.getElementById("search-suggestions");
+    function closeSuggestions() { suggBox.hidden = true; suggBox.innerHTML = ""; }
+    function showSuggestions() {
+      var q = input.value.trim().toUpperCase();
+      suggBox.innerHTML = "";
+      if (!q) { closeSuggestions(); return; }
+      var seen = {};
+      var matches = lastDecisions
+        .map(function (d) { return d.ticker; })
+        .filter(function (t) {
+          if (seen[t]) return false;
+          seen[t] = true;
+          return t.toUpperCase().indexOf(q) !== -1;
+        })
+        .slice(0, 8);
+      if (!matches.length) { closeSuggestions(); return; }
+      matches.forEach(function (t) {
+        var item = el("div", { class: "sugg-item", text: t });
+        item.addEventListener("mousedown", function (ev) {
+          ev.preventDefault();
+          input.value = t;
+          searchQuery = t;
+          showAllDecisions = false;
+          closeSuggestions();
+          renderDecisionsList();
+        });
+        suggBox.appendChild(item);
+      });
+      suggBox.hidden = false;
+    }
+    input.addEventListener("input", function () {
+      searchQuery = input.value;
+      showAllDecisions = false;
+      showSuggestions();
+      renderDecisionsList();
+    });
+    input.addEventListener("focus", showSuggestions);
+    input.addEventListener("blur", function () { setTimeout(closeSuggestions, 100); });
+    input.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSuggestions(); });
+  })();
 
   renderHorizonTabs();
   loadDecisions();

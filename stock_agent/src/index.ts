@@ -1,6 +1,6 @@
 import type { Env } from "./lib/types.js";
 import { runIngestion, loadFullUniverse } from "./ingestion/run.js";
-import { runBenchmarkIngestion } from "./ingestion/benchmarks.js";
+import { runBenchmarkIngestion, loadBenchmarks } from "./ingestion/benchmarks.js";
 import { runBroadScreen } from "./screening/run.js";
 import { runMarketAnalysis } from "./analyst/run.js";
 import { serveAsset } from "./lib/assets.js";
@@ -86,7 +86,17 @@ export default {
         count: tickers.length,
         tickers: tickers.map((t) => ({ ticker: t.ticker, exchange: t.exchange, currency: t.currency })),
       }));
-      return json({ totalTickers: universe.length, regions });
+      // Benchmark metadata for the dashboard's "filter by benchmark" control --
+      // regimeProxyFor names which universe region(s) each index is the
+      // natural benchmark for (config/benchmarks.json); the dashboard
+      // resolves that against `regions` above itself rather than this
+      // endpoint pre-joining the two, so it stays one source of truth.
+      const benchmarks = loadBenchmarks().map((b) => ({
+        ticker: b.ticker,
+        name: b.name,
+        regimeProxyFor: b.regime_proxy_for,
+      }));
+      return json({ totalTickers: universe.length, regions, benchmarks });
     }
 
     if (url.pathname === "/ingest" && request.method === "POST") {
@@ -226,7 +236,7 @@ export default {
         service: "stock-agent",
         endpoints: {
           "GET /dashboard": "the main graphical view -- 10-factor decision engine, tunable weights, model results, demo videos",
-          "GET /universe": "configured ticker universe, grouped by region",
+          "GET /universe": "configured ticker universe grouped by region, plus benchmark/index metadata (for the dashboard\u0027s benchmark filter)",
           "GET /rankings?horizon=short|mid|long": "latest v1 ranked watchlist (JSON) -- frozen fixed-weight baseline, no longer rendered as its own page",
           "GET /chart?ticker=&range=1h|1d|1w|1m|3m|6m|1y|3y|5y": "live price snapshot for one ticker (JSON)",
           "POST /ingest": "manually trigger data ingestion (normally runs on the cron schedule)",
