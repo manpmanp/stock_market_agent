@@ -109,10 +109,22 @@ describe("computeFactorScores", () => {
     expect(pullback.entry.value).toBeGreaterThan(downtrend.entry.value);
   });
 
-  it("scores risk higher (lower risk) for a low-volatility, low-leverage row", () => {
-    const safe = computeFactorScores(baseRow({ volatility_30d: 0.15, debt_to_equity: 0.2, dist_from_high_pct: -0.02 }), neutralRegime);
-    const risky = computeFactorScores(baseRow({ volatility_30d: 0.6, debt_to_equity: 3, dist_from_high_pct: -0.6 }), neutralRegime);
+  it("does NOT let rsi_14 move the entry score -- RSI is scored once, in technical (raw-input collinearity fix)", () => {
+    const lowRsi = computeFactorScores(baseRow({ trend_state: "neutral", rsi_14: 10 }), neutralRegime);
+    const highRsi = computeFactorScores(baseRow({ trend_state: "neutral", rsi_14: 90 }), neutralRegime);
+    expect(lowRsi.entry.value).toBe(highRsi.entry.value);
+  });
+
+  it("scores risk higher (lower risk) for a low-volatility, shallow-drawdown row", () => {
+    const safe = computeFactorScores(baseRow({ volatility_30d: 0.15, dist_from_high_pct: -0.02 }), neutralRegime);
+    const risky = computeFactorScores(baseRow({ volatility_30d: 0.6, dist_from_high_pct: -0.6 }), neutralRegime);
     expect(safe.risk.value).toBeGreaterThan(risky.risk.value);
+  });
+
+  it("does NOT let debt_to_equity move the risk score -- leverage is scored once, in financial_strength (raw-input collinearity fix)", () => {
+    const lowLeverage = computeFactorScores(baseRow({ debt_to_equity: 0.2 }), neutralRegime);
+    const highLeverage = computeFactorScores(baseRow({ debt_to_equity: 4 }), neutralRegime);
+    expect(lowLeverage.risk.value).toBe(highLeverage.risk.value);
   });
 
   it("scores risk lower for a high-beta row than a low-beta row, all else equal", () => {
@@ -127,13 +139,13 @@ describe("computeFactorScores", () => {
     expect(strong.financial_strength.value).toBeGreaterThan(weak.financial_strength.value);
   });
 
-  it("scores valuation higher for a cheaper EV/EBIT, all else equal", () => {
-    const cheap = computeFactorScores(baseRow({ enterprise_value: 100, ebit: 15 }), neutralRegime); // ~6.7x
-    const expensive = computeFactorScores(baseRow({ enterprise_value: 800, ebit: 15 }), neutralRegime); // ~53x
-    expect(cheap.valuation.value).toBeGreaterThan(expensive.valuation.value);
+  it("does NOT let EV/EBIT move the valuation score -- ebit is scored once, in financial_strength (raw-input collinearity fix)", () => {
+    const cheap = computeFactorScores(baseRow({ enterprise_value: 100, ebit: 15 }), neutralRegime); // ~6.7x EV/EBIT
+    const expensive = computeFactorScores(baseRow({ enterprise_value: 800, ebit: 15 }), neutralRegime); // ~53x EV/EBIT
+    expect(cheap.valuation.value).toBe(expensive.valuation.value);
   });
 
-  it("still scores valuation from the self-relative signals alone when EV/EBIT inputs are missing", () => {
+  it("still scores valuation from the self-relative signals alone when enterprise_value/ebit are missing", () => {
     const details = computeFactorScores(baseRow({ enterprise_value: null, ebit: null }), neutralRegime);
     expect(details.valuation.unscored).toBe(false);
   });
@@ -150,7 +162,7 @@ describe("computeFactorScores", () => {
     expect(cheap.valuation.value).toBeGreaterThan(expensive.valuation.value);
   });
 
-  it("still scores valuation from self-relative + EV/EBIT alone when EV/EBITDA and P/B are both missing", () => {
+  it("still scores valuation from the self-relative signals alone when EV/EBITDA and P/B are both missing (its only absolute-multiple inputs)", () => {
     const details = computeFactorScores(baseRow({ ev_to_ebitda: null, price_to_book: null }), neutralRegime);
     expect(details.valuation.unscored).toBe(false);
   });
@@ -179,25 +191,24 @@ describe("computeFactorScores", () => {
     expect(healthy.financial_strength.note).toBeUndefined();
   });
 
-  it("scores risk lower when volatility, leverage, and beta are ALL elevated than when only one of the three is", () => {
-    const allThreeBad = computeFactorScores(
-      baseRow({ volatility_30d: 0.55, debt_to_equity: 2.7, beta: 1.9, dist_from_high_pct: -0.1 }),
+  it("scores risk lower when volatility AND beta are BOTH elevated than when only one of the two is (compounding, post raw-input dedup: risk's inputs are now just volatility/drawdown/beta)", () => {
+    const bothBad = computeFactorScores(
+      baseRow({ volatility_30d: 0.55, beta: 1.9, dist_from_high_pct: -0.1 }),
       neutralRegime
     );
     const onlyOneBad = computeFactorScores(
-      // Same volatility reading, but leverage and beta both back to a
-      // clearly healthy level -- so the compounding condition (all three
-      // bad at once) no longer holds.
-      baseRow({ volatility_30d: 0.55, debt_to_equity: 0.4, beta: 0.6, dist_from_high_pct: -0.1 }),
+      // Same volatility reading, but beta back to a clearly healthy level
+      // -- so the compounding condition (both bad at once) no longer holds.
+      baseRow({ volatility_30d: 0.55, beta: 0.6, dist_from_high_pct: -0.1 }),
       neutralRegime
     );
-    expect(allThreeBad.risk.note).toMatch(/compounding/);
+    expect(bothBad.risk.note).toMatch(/compounding/);
     expect(onlyOneBad.risk.note).toBeUndefined();
-    expect(allThreeBad.risk.value).toBeLessThan(onlyOneBad.risk.value);
+    expect(bothBad.risk.value).toBeLessThan(onlyOneBad.risk.value);
   });
 
   it("does not apply a compounding penalty to risk when only one input is elevated", () => {
-    const oneWeak = computeFactorScores(baseRow({ beta: 2.5 }), neutralRegime); // vol/leverage stay at baseRow defaults (moderate)
+    const oneWeak = computeFactorScores(baseRow({ beta: 2.5 }), neutralRegime); // vol stays at baseRow default (moderate)
     expect(oneWeak.risk.note).toBeUndefined();
   });
 

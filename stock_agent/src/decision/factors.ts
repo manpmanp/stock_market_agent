@@ -33,6 +33,20 @@
 // Every factor score is returned as a FactorScoreDetail (value + unscored)
 // specifically so the UI and warnings can tell a placeholder from a real
 // read, not just see a 50.
+//
+// Raw-input collinearity fix (build-order step 3, see docs/factors-
+// weighting-scoring-ranking-assessment.md section 1 and docs/agentic-
+// architecture-proposal.md's build order): three raw inputs used to feed
+// two factors each, inflating the correlation between those factors
+// beyond what their actual underlying signal justifies. Each is now
+// scored in exactly one factor:
+//   - debt_to_equity: scoreFinancialStrength only (was also in scoreRisk)
+//   - ebit (via EV/EBIT): scoreFinancialStrength's interest-coverage read
+//     only (was also blended into scoreValuation's absolute multiples)
+//   - rsi_14: scoreTechnical only (was also blended directly into
+//     scoreEntry, on top of trend_state, which itself already uses rsi14
+//     as part of its own "pullback_in_uptrend" classification)
+// See each factor function's own comment for the specific reasoning.
 
 import type { UniverseSnapshotRow } from "../lib/db.js";
 import type { TechnicalIndicators } from "../scoring/indicators.js";
@@ -207,24 +221,21 @@ function scoreValuation(row: UniverseSnapshotRow): FactorScoreDetail {
   const gapSignal = gapPct === null ? null : clamp(-gapPct / 0.25, -1, 1); // 25% below fair value -> +1
   const combined = avg([rangeSignal, gapSignal]);
 
-  // EV/EBIT as a third, independent valuation cross-check: unlike the two
-  // signals above (both self-relative, comparing this ticker to its own
-  // history/estimate), EV/EBIT is an absolute multiple -- and unlike P/E,
-  // it isn't distorted by capital structure or tax rate, which is exactly
-  // why it's worth including alongside P/E rather than instead of it (P/E
-  // itself isn't scored here, but is shown next to it on the card).
-  const evToEbit = computeEvToEbit(row.enterprise_value, row.ebit);
-  const evToEbitSignal = evToEbit === null ? null : (band(evToEbit, 30, 8, false) as number) / 100; // -> 0..1
-
-  // EV/EBITDA: the same "cheap in absolute terms" question as EV/EBIT, but
-  // not distorted by depreciation/amortization-policy differences across
-  // tickers the way EV/EBIT can be. Ingested since migration 0006 but,
-  // until now, only ever displayed via computeSupportingMetrics, never
-  // scored. ~6x or below reads cheap, ~18x+ reads expensive.
+  // EV/EBITDA: an absolute "cheap in absolute terms" multiple, not
+  // distorted by capital structure or tax rate the way P/E can be. ~6x or
+  // below reads cheap, ~18x+ reads expensive. Deliberately NOT joined by
+  // an EV/EBIT signal here: EV/EBIT shares its ebit raw input with
+  // scoreFinancialStrength's interest-coverage read, and double-counting
+  // that one input across two factors is exactly the raw-input
+  // collinearity this was fixed to remove (build-order step 3, see docs/
+  // factors-weighting-scoring-ranking-assessment.md section 1) -- ebit is
+  // scored once, there, not here too. computeEvToEbit is still computed
+  // for computeSupportingMetrics below, as a side-by-side display next to
+  // trailing P/E; it's just no longer blended into this factor's score.
   const evToEbitdaSignal = row.ev_to_ebitda === null ? null : (band(row.ev_to_ebitda, 18, 6, false) as number) / 100;
 
   // Price/Book: a balance-sheet-based absolute multiple -- most useful for
-  // asset-heavy or financial businesses where EV/EBIT(DA) can be noisy
+  // asset-heavy or financial businesses where EV/EBITDA can be noisy
   // (thin or volatile operating income). Ingested into fundamentals_
   // snapshot from the start but never joined into this decision engine's
   // input row at all until now (see UniverseSnapshotRow in lib/db.ts).
@@ -232,11 +243,11 @@ function scoreValuation(row: UniverseSnapshotRow): FactorScoreDetail {
   // ~5x is expensive.
   const pbSignal = row.price_to_book === null ? null : (band(row.price_to_book, 5, 1, false) as number) / 100;
 
-  // EV/EBIT, EV/EBITDA, and P/B are substitutable evidence for the SAME
-  // question -- "is this cheap by an absolute yardstick" -- unlike the
-  // self-relative pair above, so they're plain-averaged with each other
-  // (not conflict-dampened) before being weighed against self-relative.
-  const absoluteMultiples = avg([evToEbitSignal, evToEbitdaSignal, pbSignal]);
+  // EV/EBITDA and P/B are substitutable evidence for the SAME question --
+  // "is this cheap by an absolute yardstick" -- unlike the self-relative
+  // pair above, so they're plain-averaged with each other (not
+  // conflict-dampened) before being weighed against self-relative.
+  const absoluteMultiples = avg([evToEbitdaSignal, pbSignal]);
 
   if (combined === null && absoluteMultiples === null) {
     return detail(null, "no valuation data (price range / fair value / absolute multiples all missing)");
@@ -259,7 +270,7 @@ function scoreValuation(row: UniverseSnapshotRow): FactorScoreDetail {
   const overall = combineWithConflictAwareness(a, b, 0.3);
   const note =
     disagreement > 0.4
-      ? "Valuation signals conflict: absolute multiples (EV/EBIT, EV/EBITDA, P/B) disagree with this ticker's own price-range/fair-value read -- pulled toward neutral rather than averaged."
+      ? "Valuation signals conflict: absolute multiples (EV/EBITDA, P/B) disagree with this ticker's own price-range/fair-value read -- pulled toward neutral rather than averaged."
       : undefined;
   return detail(overall, note);
 }
@@ -426,7 +437,18 @@ function scoreTechnical(row: UniverseSnapshotRow): FactorScoreDetail {
 
 /** Quality of the current purchase point -- reuses the same trend_state
  *  read as scoring/score.ts's entryTimingVerdict (itself purely a
- *  function of this ticker's own price series). */
+ *  function of this ticker's own price series).
+ *
+ *  Deliberately does NOT also blend in row.rsi_14 directly: rsi_14
+ *  already feeds scoreTechnical, AND indicators.ts's trendState() already
+ *  uses rsi14 as part of how it classifies "pullback_in_uptrend" (gated
+ *  on rsi14 < 45) -- re-adding the raw RSI value here on top of that
+ *  would double-count the same input twice over, once through
+ *  scoreTechnical and once baked into trend_state itself. This is part of
+ *  the raw-input collinearity fix (build-order step 3, see docs/factors-
+ *  weighting-scoring-ranking-assessment.md section 1): rsi_14 is scored
+ *  once, in scoreTechnical; entry reads only the already-derived
+ *  trend_state classification. */
 function scoreEntry(row: UniverseSnapshotRow): FactorScoreDetail {
   const stateScore: Record<string, number> = {
     pullback_in_uptrend: 80,
@@ -434,14 +456,10 @@ function scoreEntry(row: UniverseSnapshotRow): FactorScoreDetail {
     near_historical_highs: 30,
     downtrend: 20,
   };
-  const rsiScore = row.rsi_14 === null ? null : 1 - Math.abs(row.rsi_14 - 50) / 50;
   if (row.trend_state === null || !(row.trend_state in stateScore)) {
-    if (rsiScore === null) return detail(null, "insufficient price-history data for entry timing");
-    return detail(rsiScore * 100);
+    return detail(null, "insufficient price-history data for entry timing");
   }
-  const base = stateScore[row.trend_state] as number;
-  const combined = rsiScore === null ? base : base * 0.7 + rsiScore * 100 * 0.3;
-  return detail(combined);
+  return detail(stateScore[row.trend_state] as number);
 }
 
 /** Downside/volatility/leverage risk -- higher score = LOWER risk (0-100
@@ -451,33 +469,37 @@ function scoreEntry(row: UniverseSnapshotRow): FactorScoreDetail {
  *  factor's "is a pullback a buying opportunity" read). */
 function scoreRisk(row: UniverseSnapshotRow): FactorScoreDetail {
   const volScore = row.volatility_30d === null ? null : band(row.volatility_30d, 0.6, 0.15, false);
-  const leverageScore = row.debt_to_equity === null ? null : band(row.debt_to_equity, 3, 0.5, false);
   const drawdownScore = row.dist_from_high_pct === null ? null : band(row.dist_from_high_pct, -0.6, -0.05, true);
   // Beta: volatility relative to the broader market, distinct from this
   // ticker's own (absolute) volatility above -- a stock can be internally
   // calm but still swing hard with the market (high beta), or the reverse.
   const betaScore = row.beta === null ? null : band(row.beta, 2.0, 0.5, false);
-  const base = avg([volScore, leverageScore, drawdownScore, betaScore]);
-  if (base === null) return detail(null, "insufficient volatility/leverage/drawdown/beta data");
+  // debt_to_equity deliberately does NOT feed this factor -- it's a
+  // raw-input collinearity fix (build-order step 3, see docs/factors-
+  // weighting-scoring-ranking-assessment.md section 1): leverage is
+  // scored once, in scoreFinancialStrength, not duplicated here. Risk is
+  // volatility/beta/drawdown -- how much this stock's PRICE moves and how
+  // far it's fallen from its own highs, not its balance sheet.
+  const base = avg([volScore, drawdownScore, betaScore]);
+  if (base === null) return detail(null, "insufficient volatility/drawdown/beta data");
 
-  // Volatility, leverage, and beta compound rather than add: a stock
-  // that's simultaneously volatile, levered, AND high-beta is riskier
-  // than "the average of three medium scores" suggests -- leverage
-  // amplifies a volatile swing, and a high-beta name gets dragged down
-  // harder in exactly the broad selloff it's already leveraged against.
-  // "danger" is each score's own badness (0 = safe, 1 = worst); their
-  // PRODUCT (not average) only gets large when all three are bad
+  // Volatility and beta compound rather than add: a stock that's
+  // simultaneously volatile AND high-beta is riskier than "the average of
+  // two medium scores" suggests -- a high-beta name gets dragged down
+  // harder in exactly the broad selloff it's already prone to swinging
+  // with. "danger" is each score's own badness (0 = safe, 1 = worst);
+  // their PRODUCT (not average) only gets large when both are bad
   // together, which is the actual compounding condition -- applied as a
   // capped multiplicative penalty on top of the plain average (which
   // still carries drawdown and the ordinary, non-compounding case) rather
   // than folded into it, so it only bites when it's genuinely earned.
-  const dangers = [volScore, leverageScore, betaScore].filter((s): s is number => s !== null).map((s) => 1 - s / 100);
-  const compounding = dangers.length === 3 ? dangers.reduce((a, b) => a * b, 1) : 0;
+  const dangers = [volScore, betaScore].filter((s): s is number => s !== null).map((s) => 1 - s / 100);
+  const compounding = dangers.length === 2 ? dangers.reduce((a, b) => a * b, 1) : 0;
   const penalty = 1 - Math.min(0.4, compounding); // up to a 40% multiplicative haircut
   const adjusted = base * penalty;
   const note =
     compounding > 0.3
-      ? "Risk score reduced: volatility, leverage, and beta are all elevated at once -- compounding risk, not just three separately weak metrics."
+      ? "Risk score reduced: volatility and beta are both elevated at once -- compounding risk, not just two separately weak metrics."
       : undefined;
   return detail(adjusted, note);
 }
