@@ -221,20 +221,6 @@ export default {
       return json({ ok: true });
     }
 
-    if (url.pathname === "/decision-lab") {
-      // /decision-lab and /dashboard used to be two separate pages (the old
-      // v1 watchlist view and this one); they were merged into one single
-      // page some time ago, kept reachable at both URLs via a redirect.
-      // This just flips which URL is canonical -- /dashboard is now the
-      // primary link (per explicit instruction), /decision-lab keeps old
-      // bookmarks/links working. renderDashboard() (the actual old v1
-      // watchlist page) and the v1 scoring it displayed
-      // (src/scoring/score.ts) are untouched and still run on schedule as
-      // a frozen comparison baseline; they're just not rendered as a page
-      // of their own.
-      return Response.redirect(new URL("/dashboard", url).toString(), 301);
-    }
-
     return json(
       {
         service: "stock-agent",
@@ -248,7 +234,6 @@ export default {
           "POST /screen-broad-universe": "manually trigger the Stage A broad valuation/momentum screen + auto-promotion over config/broad-universe.json (normally runs on the daily cron only, before ingestion)",
           "POST /score": "manually trigger v1 rescoring against current data",
           "POST /market-analysis": "on-demand LLM synthesis across tracked tickers + benchmarks (ADMIN_TOKEN-gated, requires ANTHROPIC_API_KEY/ANTHROPIC_MODEL secrets) -- never sizing/orders, every claim grounded against real decision-engine data, see docs/agentic-architecture-proposal.md section 3",
-          "GET /decision-lab": "redirects to /dashboard (the two pages were merged; kept for old links)",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
           "GET /decisions?horizon=short|medium|long": "latest decision-engine output (JSON)",
           "GET /weights[?horizon=]": "active (or per-horizon history of) decision-engine weight vectors",

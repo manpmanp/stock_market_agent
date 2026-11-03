@@ -132,4 +132,3 @@ fi
 echo
 echo "Done."
 echo "  $WORKER_URL/dashboard"
-echo "  $WORKER_URL/decision-lab"
