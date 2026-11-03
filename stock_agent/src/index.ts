@@ -3,6 +3,7 @@ import { runIngestion, loadFullUniverse } from "./ingestion/run.js";
 import { runBenchmarkIngestion } from "./ingestion/benchmarks.js";
 import { runBroadScreen } from "./screening/run.js";
 import { runMarketAnalysis } from "./analyst/run.js";
+import { serveAsset } from "./lib/assets.js";
 import { runScoring } from "./scoring/run.js";
 import {
   getLatestDecisionRunAt,
@@ -211,6 +212,11 @@ export default {
       });
     }
 
+    if (url.pathname.startsWith("/assets/")) {
+      const key = decodeURIComponent(url.pathname.slice("/assets/".length));
+      return serveAsset(env, key);
+    }
+
     if (url.pathname === "/healthz") {
       return json({ ok: true });
     }
@@ -244,6 +250,7 @@ export default {
           "GET /weights[?horizon=]": "active (or per-horizon history of) decision-engine weight vectors",
           "POST /weights": "set a new active weight vector for one horizon (admin token required)",
           "POST /decide": "manually trigger the decision engine against current data",
+          "GET /assets/<key>": "static assets served from R2 (currently the Decision Lab demo videos) -- see README \"Demo videos\"",
           "GET /healthz": "health check",
         },
         disclaimer: DISCLAIMER,

@@ -107,6 +107,37 @@ over time and a stale fallback could silently call the wrong one. Every
 other endpoint in this project has no LLM dependency at all; this is the
 only one that does.
 
+## Demo videos
+
+The Decision Lab dashboard's Methodology panel has a "Demos" tab with four
+short silent/captioned walkthroughs (how to read a score, what creates the
+scoring, what to do with a result, and the agentic `/market-analysis`
+layer). The videos themselves are served from an R2 bucket via
+`GET /assets/<key>` (src/lib/assets.ts) -- they are not bundled into the
+Worker, so this is a one-time setup step before the tab will actually play
+anything.
+
+```
+npx wrangler r2 bucket create stock-agent-assets
+
+npx wrangler r2 object put stock-agent-assets/demos/1_how_to_read_a_score.mp4 \
+  --file=/path/to/1_how_to_read_a_score.mp4
+npx wrangler r2 object put stock-agent-assets/demos/2_what_creates_the_scoring.mp4 \
+  --file=/path/to/2_what_creates_the_scoring.mp4
+npx wrangler r2 object put stock-agent-assets/demos/3_what_to_do.mp4 \
+  --file=/path/to/3_what_to_do.mp4
+npx wrangler r2 object put stock-agent-assets/demos/4_the_agentic_layer.mp4 \
+  --file=/path/to/4_the_agentic_layer.mp4
+```
+
+Run these from your own machine (they need your Cloudflare credentials),
+pointing `--file` at wherever you saved the four video files. The
+`[[r2_buckets]]` binding in wrangler.toml (binding name `ASSETS`) already
+points at this bucket name, so no further config is needed -- just
+`scripts/deploy.sh` after the bucket exists and the objects are uploaded.
+Until the bucket is created, `/assets/*` returns a 503 and the Demos tab
+shows a note explaining that instead of a broken video player.
+
 ## Free tier limits
 
 Cloudflare's free plan currently allows roughly 5M D1 row reads/day, 100k

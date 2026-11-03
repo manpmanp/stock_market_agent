@@ -26,3 +26,12 @@ database_id = "4b57c47b-d963-47bf-a9da-2e354eb92995"
 # Comma-separated list is also supported via config/universe.json (preferred).
 # This var is a fallback / override hook for quick manual testing.
 UNIVERSE_SOURCE = "config"
+
+# Static assets (currently: the three Decision Lab demo videos, served via
+# GET /assets/<key> -- see src/lib/assets.ts and README "Demo videos").
+# Optional at the Env type level (ASSETS?: R2Bucket) so a deploy before
+# you've created this bucket still works everywhere else -- /assets/*
+# just returns a clear 503 until you run the one-time setup below.
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "stock-agent-assets"

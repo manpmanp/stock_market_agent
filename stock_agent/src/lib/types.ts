@@ -24,6 +24,14 @@ export interface Env {
    *  model name itself sensitive) to whatever current model id you want
    *  billed against your own Anthropic Console spend limit. */
   ANTHROPIC_MODEL?: string;
+  /** R2 bucket serving static assets via GET /assets/<key> (src/lib/
+   *  assets.ts) -- currently just the three Decision Lab demo videos
+   *  (src/decisionLab.ts's Methodology -> Demos tab). Optional: a deploy
+   *  that hasn't created/bound the bucket yet still works everywhere
+   *  else, with /assets/* returning a clear 503 instead of crashing. See
+   *  README "Demo videos" for how to create the bucket, bind it in
+   *  wrangler.toml, and upload the video files. */
+  ASSETS?: R2Bucket;
 }
 
 export interface UniverseEntry {

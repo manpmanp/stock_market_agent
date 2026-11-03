@@ -308,6 +308,7 @@ export function renderDecisionLab(): string {
       <button class="tab" role="tab" data-section="scoring" aria-selected="false">Scoring &amp; Decisions</button>
       <button class="tab" role="tab" data-section="tuning" aria-selected="false">Weight Tuning</button>
       <button class="tab" role="tab" data-section="model" aria-selected="false">Model Selection &amp; Testing</button>
+      <button class="tab" role="tab" data-section="demos" aria-selected="false">Demos</button>
     </div>
 
     <div class="method-section active" data-section="factors">
@@ -518,6 +519,31 @@ export function renderDecisionLab(): string {
         </div>
         <h3>Known limits</h3>
         <p>This backtest is only fully honest for the technical/price-based factors, which have genuine point-in-time history going back 5 years. Fundamentals-driven factors (quality, valuation, etc.) don't have point-in-time history available at this project's current data budget -- their outcomes accrue live, going forward, rather than from backtesting, and the model won't be extended to lean on them until that live history exists. Catalyst/news-based scoring (e.g. via an LLM reading filings or news) was considered and deliberately deferred to a future version -- out of scope here.</p>
+      </div>
+    </div>
+    <div class="method-section" data-section="demos">
+      <div class="method-body">
+        <h3>Three short demos</h3>
+        <p class="sub">No sound needed &mdash; captions are burnt into each clip. ~20-30 seconds each, minimal overlap between them.</p>
+        <div style="display:flex;flex-direction:column;gap:22px;max-width:720px">
+          <div>
+            <div style="font-weight:600;margin-bottom:6px">1. How to read a score (21s)</div>
+            <video controls preload="none" style="width:100%;border-radius:10px;border:1px solid var(--border);background:var(--surface-1)" src="/assets/demos/1_how_to_read_a_score.mp4"></video>
+          </div>
+          <div>
+            <div style="font-weight:600;margin-bottom:6px">2. What creates the scoring (27s)</div>
+            <video controls preload="none" style="width:100%;border-radius:10px;border:1px solid var(--border);background:var(--surface-1)" src="/assets/demos/2_what_creates_the_scoring.mp4"></video>
+          </div>
+          <div>
+            <div style="font-weight:600;margin-bottom:6px">3. What to do (20s)</div>
+            <video controls preload="none" style="width:100%;border-radius:10px;border:1px solid var(--border);background:var(--surface-1)" src="/assets/demos/3_what_to_do.mp4"></video>
+          </div>
+          <div>
+            <div style="font-weight:600;margin-bottom:6px">4. The agentic layer &mdash; POST /market-analysis (30s)</div>
+            <video controls preload="none" style="width:100%;border-radius:10px;border:1px solid var(--border);background:var(--surface-1)" src="/assets/demos/4_the_agentic_layer.mp4"></video>
+          </div>
+        </div>
+        <p class="note">If a video shows a broken-link icon instead of playing, the R2 asset bucket hasn't been set up/uploaded to yet on this deploy &mdash; see README "Demo videos".</p>
       </div>
     </div>
   </section>
