@@ -77,11 +77,35 @@ once a day automatically; no further manual steps are needed.
 
 ## Securing the manual endpoints
 
-`/ingest` and `/score` are POST-only and require
+`/ingest`, `/score`, `/ingest-benchmarks`, `/screen-broad-universe`, and
+`/market-analysis` are POST-only and require
 `Authorization: Bearer <ADMIN_TOKEN>`. Without that secret set, they
 refuse every request (closed by default, not open). The scheduled cron
 job bypasses this since Cloudflare invokes it directly, not over HTTP.
-`/rankings` and `/healthz` are intentionally public and read-only.
+`/rankings`, `/universe`, `/chart`, `/decisions`, `/decision-lab`, and
+`/healthz` are intentionally public and read-only.
+
+### `/market-analysis`'s two extra secrets
+
+`/market-analysis` (src/analyst/run.ts) makes a real, billed call to the
+Anthropic API on top of the `ADMIN_TOKEN` gate above, so it needs two
+more secrets before it will do anything:
+
+```
+npx wrangler secret put ANTHROPIC_API_KEY
+npx wrangler secret put ANTHROPIC_MODEL
+```
+
+`ANTHROPIC_API_KEY` is a real API key from the Anthropic Console --
+**set a spend limit there** before putting this key into production; that
+limit, not anything in this codebase, is the actual cost backstop (see
+docs/agentic-architecture-proposal.md section 5 for the cost math this
+endpoint's grounding-retry loop was sized against). `ANTHROPIC_MODEL` is
+the exact model id you want billed (e.g. a current Sonnet model id) --
+deliberately not hardcoded anywhere in this repo, since model ids change
+over time and a stale fallback could silently call the wrong one. Every
+other endpoint in this project has no LLM dependency at all; this is the
+only one that does.
 
 ## Free tier limits
 

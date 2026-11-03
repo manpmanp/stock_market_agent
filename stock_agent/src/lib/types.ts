@@ -1,12 +1,29 @@
 export interface Env {
   DB: D1Database;
   UNIVERSE_SOURCE?: string;
-  /** Shared-secret gate for the manual /ingest and /score endpoints, set via
-   *  `wrangler secret put ADMIN_TOKEN`. If unset, those endpoints refuse all
-   *  requests rather than defaulting to open -- see README "Securing the
-   *  manual endpoints". The scheduled cron handler bypasses this, since it
-   *  isn't reached over HTTP. */
+  /** Shared-secret gate for the manual /ingest, /score, /screen-broad-
+   *  universe, and /market-analysis endpoints, set via `wrangler secret
+   *  put ADMIN_TOKEN`. If unset, those endpoints refuse all requests
+   *  rather than defaulting to open -- see README "Securing the manual
+   *  endpoints". The scheduled cron handler bypasses this, since it isn't
+   *  reached over HTTP. */
   ADMIN_TOKEN?: string;
+  /** Anthropic API key for POST /market-analysis's LLM synthesis call
+   *  (src/analyst/run.ts) -- set via `wrangler secret put
+   *  ANTHROPIC_API_KEY`, same pattern as ADMIN_TOKEN. Unset means that one
+   *  endpoint refuses (clearly, not silently) rather than making an
+   *  unauthenticated call to api.anthropic.com. No other part of this
+   *  project calls any LLM, so this key is scoped to exactly one feature. */
+  ANTHROPIC_API_KEY?: string;
+  /** Which Anthropic model /market-analysis calls, e.g. a current Sonnet
+   *  model id -- deliberately NOT hardcoded with a fallback default:
+   *  Anthropic model ids change over time, and silently falling back to
+   *  one typed into this file months ago risks calling a deprecated or
+   *  wrong model without anyone noticing. Set via `wrangler secret put
+   *  ANTHROPIC_MODEL` (or a plain [vars] entry, if you don't consider the
+   *  model name itself sensitive) to whatever current model id you want
+   *  billed against your own Anthropic Console spend limit. */
+  ANTHROPIC_MODEL?: string;
 }
 
 export interface UniverseEntry {

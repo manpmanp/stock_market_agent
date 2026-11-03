@@ -2,6 +2,7 @@ import type { Env } from "./lib/types.js";
 import { runIngestion, loadFullUniverse } from "./ingestion/run.js";
 import { runBenchmarkIngestion } from "./ingestion/benchmarks.js";
 import { runBroadScreen } from "./screening/run.js";
+import { runMarketAnalysis } from "./analyst/run.js";
 import { runScoring } from "./scoring/run.js";
 import {
   getLatestDecisionRunAt,
@@ -110,6 +111,12 @@ export default {
       if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
       const summary = await runScoring(env);
       return json({ summary });
+    }
+
+    if (url.pathname === "/market-analysis" && request.method === "POST") {
+      if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
+      const result = await runMarketAnalysis(env);
+      return json(result, result.ok ? 200 : 502);
     }
 
     if (url.pathname === "/chart") {
@@ -230,6 +237,7 @@ export default {
           "POST /ingest-benchmarks": "manually trigger market-index benchmark ingestion (normally runs on the daily cron only, see config/benchmarks.json)",
           "POST /screen-broad-universe": "manually trigger the Stage A broad valuation/momentum screen + auto-promotion over config/broad-universe.json (normally runs on the daily cron only, before ingestion)",
           "POST /score": "manually trigger v1 rescoring against current data",
+          "POST /market-analysis": "on-demand LLM synthesis across tracked tickers + benchmarks (ADMIN_TOKEN-gated, requires ANTHROPIC_API_KEY/ANTHROPIC_MODEL secrets) -- never sizing/orders, every claim grounded against real decision-engine data, see docs/agentic-architecture-proposal.md section 3",
           "GET /decision-lab": "the main graphical view -- 10-factor decision engine, tunable weights, model results",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
           "GET /decisions?horizon=short|medium|long": "latest decision-engine output (JSON)",
