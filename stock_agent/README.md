@@ -77,13 +77,14 @@ once a day automatically; no further manual steps are needed.
 
 ## Securing the manual endpoints
 
-`/ingest`, `/score`, `/ingest-benchmarks`, `/screen-broad-universe`, and
-`/market-analysis` are POST-only and require
-`Authorization: Bearer <ADMIN_TOKEN>`. Without that secret set, they
-refuse every request (closed by default, not open). The scheduled cron
-job bypasses this since Cloudflare invokes it directly, not over HTTP.
-`/rankings`, `/universe`, `/chart`, `/decisions`, `/dashboard`, and
-`/healthz` are intentionally public and read-only.
+`/ingest`, `/score`, `/ingest-benchmarks`, `/screen-broad-universe`,
+`/market-analysis`, `/decide`, `/weights` (POST), and `/trigger-backtest`
+are POST-only and require `Authorization: Bearer <ADMIN_TOKEN>`. Without
+that secret set, they refuse every request (closed by default, not
+open). The scheduled cron job bypasses this since Cloudflare invokes it
+directly, not over HTTP. `/rankings`, `/universe`, `/chart`,
+`/decisions`, `/dashboard`, and `/healthz` are intentionally public and
+read-only.
 
 ### `/market-analysis`'s two extra secrets
 
@@ -95,6 +96,27 @@ more secrets before it will do anything:
 npx wrangler secret put ANTHROPIC_API_KEY
 npx wrangler secret put ANTHROPIC_MODEL
 ```
+
+### `/trigger-backtest`'s extra secret
+
+`/trigger-backtest` dispatches the existing `.github/workflows/backtest.yml`
+GitHub Actions workflow on demand -- it does not run the backtest harness
+itself inside the Worker (scripts/backtest.sh needs Python and up to
+~180 minutes, which a Worker can't do). On top of `ADMIN_TOKEN`, it
+needs a GitHub token with permission to dispatch workflow runs on this
+repo:
+
+```
+npx wrangler secret put GITHUB_TOKEN
+```
+
+A fine-grained PAT scoped to just this repo with "Actions: write" is
+enough (a classic PAT with the `workflow` scope also works). Unset means
+the endpoint refuses with a clear error instead of silently doing
+nothing. This workflow also already runs weekly on its own schedule and
+is runnable by hand from the repo's Actions tab, with or without this
+secret -- it only adds a third way to start the same run, from the
+dashboard.
 
 `ANTHROPIC_API_KEY` is a real API key from the Anthropic Console --
 **set a spend limit there** before putting this key into production; that

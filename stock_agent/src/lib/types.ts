@@ -24,6 +24,15 @@ export interface Env {
    *  model name itself sensitive) to whatever current model id you want
    *  billed against your own Anthropic Console spend limit. */
   ANTHROPIC_MODEL?: string;
+  /** GitHub PAT (fine-grained, "Actions: write" / classic with "workflow"
+   *  scope) used only by POST /trigger-backtest to kick off the
+   *  backtest.yml GitHub Actions workflow on demand (workflow_dispatch),
+   *  the same workflow that already runs weekly on its own schedule --
+   *  set via `wrangler secret put GITHUB_TOKEN`. Scoped to exactly this
+   *  one repo if you can (fine-grained PAT); unset means that one
+   *  endpoint refuses rather than silently doing nothing. Nothing else
+   *  in this project talks to the GitHub API. */
+  GITHUB_TOKEN?: string;
   /** R2 bucket serving static assets via GET /assets/<key> (src/lib/
    *  assets.ts) -- currently just the three Decision Lab demo videos
    *  (src/decisionLab.ts's Methodology -> Demos tab). Optional: a deploy

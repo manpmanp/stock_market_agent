@@ -23,27 +23,46 @@
 // pair, then a single "Methodology" toggle button hiding a tabbed panel,
 // then a single always-visible tab bar, have all been replaced by this
 // page's current layout: a fixed left sidebar (position: fixed, stays put
-// while the page scrolls) holding a "Demo" bookmark plus 6 "Reference &
-// methodology" tabs (Factors & Inputs / Glossary / Scoring & Decisions /
-// Weight Tuning / Model Selection & Testing / Model Results). All 7 behave
-// as independent slide-out flyouts: closed by default (the default view is
-// just the ticker/decisions list below), clicking one slides its content
-// out to the right of the sidebar, clicking it again (or picking a
-// different one) retracts it -- only one flyout is ever open at a time,
-// matching the demo videos' own open/close pattern (see .reference-flyout /
-// .demo-flyout CSS and the click handlers near the bottom of the <script>).
-// Each reference tab's content still opens with a one-paragraph
-// plain-language summary before the technical detail.
+// while the page scrolls) holding, top to bottom: a "Demo" bookmark, 6
+// "Reference & methodology" tabs (Factors & Inputs / Glossary / Scoring &
+// Decisions / Weight Tuning Guide / Model Selection & Testing / Model
+// Results -- the methodology one is named "...Guide" specifically to not
+// collide with the live tool below), and a "Weight Tuning" bookmark for
+// the actual interactive tool (sliders, Save/Reset/Recompute -- formerly
+// a section at the bottom of the page, now its own flyout). All 8 behave
+// as independent slide-out flyouts: closed by default (the default view
+// is just the ticker/decisions list below), clicking one slides its
+// content out to the right of the sidebar, clicking it again (or picking
+// a different one, or clicking anywhere outside the open box -- the main
+// page, a decision card, etc.) retracts it -- only one flyout is ever
+// open at a time (see .reference-flyout / .demo-flyout CSS and the click
+// handlers near the bottom of the <script>, including the document-level
+// outside-click closer). Each reference tab's content still opens with a
+// one-paragraph plain-language summary before the technical detail.
 //
-// The Decisions list itself (below the sidebar/flyouts) has: a ticker
-// search box with a live autocomplete suggestion dropdown; a benchmark
-// filter (resolves the selected index's regime_proxy_for regions against
-// /universe's own per-region ticker lists -- see fetchUniverse() and
-// filteredDecisions()); and shows only the top 10 matching tickers by
-// default; with the rest behind a "Show N more" toggle (renderDecisionsList()).
-// Each expanded ticker card shows its factor-score breakdown and
-// TradingView chart side by side (.factors-top-row), not stacked, for
-// easier side-by-side comparison.
+// Below the sidebar/flyouts sits a "Run & update" admin panel
+// (.admin-panel): one button per manual trigger already exposed by
+// index.ts (update prices/tickers, update benchmarks, screen broad
+// universe, rescore v1, recompute decisions, the on-call AI market
+// analysis advisor, and a GitHub Actions-dispatched backtest harness run
+// via the new POST /trigger-backtest) -- all ADMIN_TOKEN-gated through
+// the same window.prompt pattern the old Recompute/Save buttons used,
+// generalized into one handler (see the "Run & update (admin panel)"
+// section of the <script>). The backtest harness itself cannot run
+// inside this Worker (Python, up to ~180 minutes) -- that button only
+// asks the existing backtest.yml GitHub Actions workflow to start, the
+// same workflow that already runs weekly on its own schedule.
+//
+// The Decisions list itself has: a ticker search box with a live
+// autocomplete suggestion dropdown; a benchmark filter (resolves the
+// selected index's regime_proxy_for regions against /universe's own
+// per-region ticker lists -- see fetchUniverse() and filteredDecisions());
+// a Growth/Defensive style filter (styleByTicker, same classification
+// shown in the Growth vs Defensive section); and shows only the top 10
+// matching tickers by default, with the rest behind a "Show N more"
+// toggle (renderDecisionsList()). Each expanded ticker card shows its
+// factor-score breakdown and TradingView chart side by side
+// (.factors-top-row), not stacked, for easier side-by-side comparison.
 export function renderDecisionLab(): string {
   return `<!doctype html>
 <html lang="en">
@@ -260,6 +279,11 @@ export function renderDecisionLab(): string {
   .page-header-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
   .page-header-row h1 { margin: 0; }
   .methodology-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 36px; }
+  .admin-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 28px; }
+  .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; margin-top: 12px; }
+  .admin-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; font: inherit; font-size: 13px; font-weight: 600; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--page); color: var(--text-primary); cursor: pointer; }
+  .admin-btn:hover { background: color-mix(in srgb, var(--text-primary) 5%, var(--page)); }
+  .admin-btn-sub { font-size: 11px; font-weight: 400; color: var(--text-secondary); line-height: 1.35; }
   .method-section { display: none; }
   .method-section.active { display: block; }
   .method-body { font-size: 13px; color: var(--text-secondary); }
@@ -382,10 +406,11 @@ export function renderDecisionLab(): string {
       <button class="tab ref-tab" data-section="factors" aria-expanded="false" style="--tab-accent:var(--cat-1)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="1.5" y="9" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="9" width="5.5" height="5.5" rx="1"></rect></svg><span>Factors &amp; Inputs</span></button>
       <button class="tab ref-tab" data-section="glossary" aria-expanded="false" style="--tab-accent:var(--cat-2)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2 2.5h4.5a2 2 0 0 1 2 2V14a1.5 1.5 0 0 0-1.5-1.5H2z"></path><path d="M14 2.5H9.5a2 2 0 0 0-2 2V14a1.5 1.5 0 0 1 1.5-1.5H14z"></path></svg><span>Glossary</span></button>
       <button class="tab ref-tab" data-section="scoring" aria-expanded="false" style="--tab-accent:var(--cat-3)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.3"></circle><path d="M5.3 8.2l1.9 1.9 3.5-4"></path></svg><span>Scoring &amp; Decisions</span></button>
-      <button class="tab ref-tab" data-section="tuning" aria-expanded="false" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
+      <button class="tab ref-tab" data-section="tuning" aria-expanded="false" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning Guide</span></button>
       <button class="tab ref-tab" data-section="model" aria-expanded="false" style="--tab-accent:var(--cat-5)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6.3 1.8h3.4"></path><path d="M6.8 2v3.8L2.9 12a1.4 1.4 0 0 0 1.2 2.1h7.8a1.4 1.4 0 0 0 1.2-2.1L9.2 5.8V2"></path><path d="M4.6 10.2h6.8"></path></svg><span>Model Selection &amp; Testing</span></button>
       <button class="tab ref-tab" data-section="results" aria-expanded="false" style="--tab-accent:var(--cat-6)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="14" x2="14" y2="14"></line><rect x="3" y="8.5" width="2.6" height="5.2" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="6.8" y="5" width="2.6" height="8.7" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="10.6" y="2.5" width="2.6" height="11.2" rx="0.4" fill="currentColor" stroke="none"></rect></svg><span>Model Results</span></button>
     </div>
+    <button class="ref-tab weight-tab" id="weight-tab" type="button" aria-expanded="false" aria-controls="weight-flyout" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
   </div>
 
   <div class="demo-flyout" id="demo-flyout">
@@ -411,6 +436,35 @@ export function renderDecisionLab(): string {
 
   <div class="stat-row" id="stats"></div>
   <div class="universe-panel" id="universePanel" hidden></div>
+
+  <section class="admin-panel">
+    <h2>Run &amp; update</h2>
+    <p class="sub">Manual triggers -- everything here also runs on its own schedule automatically; use these to run something early or check on demand. All require the admin token (<code>wrangler secret put ADMIN_TOKEN</code>).</p>
+    <div class="admin-grid">
+      <button class="admin-btn" id="btn-ingest" data-path="/ingest" data-busy="Updating prices &amp; tickers\u2026">Update prices &amp; tickers<span class="admin-btn-sub">Re-fetch price/fundamentals data for the tracked universe (POST /ingest)</span></button>
+      <button class="admin-btn" id="btn-ingest-benchmarks" data-path="/ingest-benchmarks" data-busy="Updating benchmarks\u2026">Update benchmarks<span class="admin-btn-sub">Re-fetch the index/benchmark data used for regime &amp; the benchmark filter (POST /ingest-benchmarks)</span></button>
+      <button class="admin-btn" id="btn-screen" data-path="/screen-broad-universe" data-busy="Screening broad universe\u2026">Screen broad universe<span class="admin-btn-sub">Re-run the Stage A valuation/momentum screen and auto-promote new tickers (POST /screen-broad-universe)</span></button>
+      <button class="admin-btn" id="btn-score" data-path="/score" data-busy="Rescoring (v1)\u2026">Rescore v1 baseline<span class="admin-btn-sub">Re-run the frozen v1 fixed-weight scoring against current data (POST /score)</span></button>
+      <button class="admin-btn" id="btn-decide" data-path="/decide" data-busy="Recomputing decisions\u2026">Recompute decisions<span class="admin-btn-sub">Re-run the 10-factor decision engine against current data (POST /decide)</span></button>
+      <button class="admin-btn" id="btn-market-analysis" data-path="/market-analysis" data-busy="Running AI market analysis\u2026 this can take a bit">On-call AI agent advisor<span class="admin-btn-sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data (POST /market-analysis)</span></button>
+      <button class="admin-btn" id="btn-trigger-backtest" data-path="/trigger-backtest" data-busy="Dispatching backtest workflow\u2026">Run backtest harness<span class="admin-btn-sub">Starts the backtest.yml GitHub Actions workflow on demand -- runs remotely on GitHub, not here; check the Actions tab for progress (POST /trigger-backtest)</span></button>
+    </div>
+    <div class="status-msg" id="admin-status-msg"></div>
+  </section>
+
+  <section class="weights-panel reference-flyout" id="weight-flyout">
+    <h2>Weight tuning</h2>
+    <p class="sub">Change how much each factor counts, per time horizon, without touching any code.</p>
+    <div class="tabs" id="weight-tabs" role="tablist"></div>
+    <div id="weight-sliders"></div>
+    <div class="weight-sum" id="weight-sum"></div>
+    <div class="actions">
+      <button id="reset-btn">Reset to last saved</button>
+      <button class="primary" id="save-btn">Save weights</button>
+      <button id="recompute-btn">Recompute decisions now</button>
+    </div>
+    <div class="status-msg" id="status-msg"></div>
+  </section>
 
   <section id="reference-panel" class="methodology-panel reference-flyout">
     <h2>Reference &amp; methodology</h2>
@@ -711,20 +765,6 @@ export function renderDecisionLab(): string {
     </div>
   </section>
 
-  <section>
-    <h2>Weight tuning</h2>
-    <div class="weights-panel">
-      <div class="tabs" id="weight-tabs" role="tablist"></div>
-      <div id="weight-sliders"></div>
-      <div class="weight-sum" id="weight-sum"></div>
-      <div class="actions">
-        <button id="reset-btn">Reset to last saved</button>
-        <button class="primary" id="save-btn">Save weights</button>
-        <button id="recompute-btn">Recompute decisions now</button>
-      </div>
-      <div class="status-msg" id="status-msg"></div>
-    </div>
-  </section>
 </main>
 
 <script>
@@ -1749,6 +1789,8 @@ export function renderDecisionLab(): string {
   var demoTab = document.getElementById("demo-tab");
   var demoFlyout = document.getElementById("demo-flyout");
   var referenceFlyout = document.getElementById("reference-panel");
+  var weightTab = document.getElementById("weight-tab");
+  var weightFlyout = document.getElementById("weight-flyout");
   var methodTabs = document.querySelectorAll("#method-tabs .tab");
   var methodSections = document.querySelectorAll(".method-section");
 
@@ -1760,15 +1802,30 @@ export function renderDecisionLab(): string {
     demoFlyout.classList.remove("open");
     demoTab.setAttribute("aria-expanded", "false");
   }
+  function closeWeightFlyout() {
+    weightFlyout.classList.remove("open");
+    weightTab.setAttribute("aria-expanded", "false");
+  }
 
-  demoTab.addEventListener("click", function () {
+  demoTab.addEventListener("click", function (ev) {
+    ev.stopPropagation();
     var open = !demoFlyout.classList.contains("open");
-    // Demo and the reference tabs are both single-flyout UIs sharing the
-    // same sidebar -- opening one always closes the other, so only one
-    // slide-out panel is ever visible at a time.
+    // Demo, the reference tabs, and Weight Tuning are all single-flyout
+    // UIs sharing the same sidebar -- opening one always closes the
+    // others, so only one slide-out panel is ever visible at a time.
     closeReferenceFlyout();
+    closeWeightFlyout();
     demoFlyout.classList.toggle("open", open);
     demoTab.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  weightTab.addEventListener("click", function (ev) {
+    ev.stopPropagation();
+    var open = !weightFlyout.classList.contains("open");
+    closeDemoFlyout();
+    closeReferenceFlyout();
+    weightFlyout.classList.toggle("open", open);
+    weightTab.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
   methodTabs.forEach(function (tab) {
@@ -1777,6 +1834,7 @@ export function renderDecisionLab(): string {
       var target = tab.getAttribute("data-section");
       var wasOpenOnThisTab = referenceFlyout.classList.contains("open") && tab.getAttribute("aria-expanded") === "true";
       closeDemoFlyout();
+      closeWeightFlyout();
       if (wasOpenOnThisTab) {
         // Clicking the already-open tab closes it -- back to just the ticker list.
         closeReferenceFlyout();
@@ -1796,9 +1854,49 @@ export function renderDecisionLab(): string {
     var insideSidebar = t.closest && t.closest(".page-sidebar");
     var insideDemoFlyout = t.closest && t.closest("#demo-flyout");
     var insideReferenceFlyout = t.closest && t.closest("#reference-panel");
-    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout) return;
+    var insideWeightFlyout = t.closest && t.closest("#weight-flyout");
+    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout) return;
     closeDemoFlyout();
     closeReferenceFlyout();
+    closeWeightFlyout();
+  });
+
+  // --- Run & update (admin panel) ---
+
+  function setAdminStatus(msg, ok) {
+    var e = document.getElementById("admin-status-msg");
+    e.textContent = msg;
+    e.className = "status-msg " + (ok ? "ok" : "bad");
+  }
+
+  function summarize(data) {
+    if (!data) return "";
+    if (data.summary) { try { return " (" + JSON.stringify(data.summary) + ")"; } catch (e) { return ""; } }
+    if (data.note) return " -- " + data.note;
+    return "";
+  }
+
+  document.querySelectorAll(".admin-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var path = btn.getAttribute("data-path");
+      var busy = btn.getAttribute("data-busy") || "Working\u2026";
+      var token = window.prompt("Admin token -- required for " + path + ":");
+      if (!token) return;
+      setAdminStatus(busy, true);
+      btn.disabled = true;
+      fetch(path, { method: "POST", headers: { authorization: "Bearer " + token } })
+        .then(function (r) { return r.json().then(function (data) { return { status: r.status, data: data }; }); })
+        .then(function (res) {
+          btn.disabled = false;
+          if (res.status < 200 || res.status >= 300) {
+            setAdminStatus(path + " failed: " + (res.data.error || res.status), false);
+            return;
+          }
+          setAdminStatus(path + " done." + summarize(res.data), true);
+          if (path === "/decide") loadDecisions();
+        })
+        .catch(function () { btn.disabled = false; setAdminStatus(path + " failed: network error.", false); });
+    });
   });
 
   document.getElementById("sort-select").addEventListener("change", function (e) {

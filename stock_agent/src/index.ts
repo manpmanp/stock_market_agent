@@ -130,6 +130,41 @@ export default {
       return json(result, result.ok ? 200 : 502);
     }
 
+    if (url.pathname === "/trigger-backtest" && request.method === "POST") {
+      // Kicks off the existing .github/workflows/backtest.yml workflow
+      // on demand (it already runs weekly on its own schedule, and is
+      // already runnable by hand from the GitHub Actions tab -- this just
+      // exposes that same workflow_dispatch call from the dashboard). The
+      // backtest harness itself (scripts/backtest.sh: Python, up to ~180
+      // minutes, needs real Cloudflare credentials for the D1 export/
+      // publish steps) cannot run inside this Worker -- this endpoint only
+      // asks GitHub to start that run elsewhere; it does not wait for it
+      // or report its result. Check the Actions tab, or the Model Results
+      // tab once backtest.sh's publish step has run, for the outcome.
+      if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
+      if (!env.GITHUB_TOKEN) {
+        return json({ error: "GITHUB_TOKEN not set -- see README \"Securing the manual endpoints\"" }, 503);
+      }
+      const ghResponse = await fetch(
+        "https://api.github.com/repos/manpmanp/stock_market_agent/actions/workflows/backtest.yml/dispatches",
+        {
+          method: "POST",
+          headers: {
+            authorization: `Bearer ${env.GITHUB_TOKEN}`,
+            accept: "application/vnd.github+json",
+            "content-type": "application/json",
+            "user-agent": "stock-agent-worker",
+          },
+          body: JSON.stringify({ ref: "main" }),
+        }
+      );
+      if (ghResponse.status !== 204) {
+        const detail = await ghResponse.text().catch(() => "");
+        return json({ error: `GitHub API returned ${ghResponse.status}`, detail }, 502);
+      }
+      return json({ ok: true, note: "Backtest workflow dispatched -- check the GitHub Actions tab for progress." });
+    }
+
     if (url.pathname === "/chart") {
       const ticker = url.searchParams.get("ticker") ?? "";
       const range = url.searchParams.get("range") ?? "";
@@ -244,6 +279,7 @@ export default {
           "POST /screen-broad-universe": "manually trigger the Stage A broad valuation/momentum screen + auto-promotion over config/broad-universe.json (normally runs on the daily cron only, before ingestion)",
           "POST /score": "manually trigger v1 rescoring against current data",
           "POST /market-analysis": "on-demand LLM synthesis across tracked tickers + benchmarks (ADMIN_TOKEN-gated, requires ANTHROPIC_API_KEY/ANTHROPIC_MODEL secrets) -- never sizing/orders, every claim grounded against real decision-engine data, see docs/agentic-architecture-proposal.md section 3",
+          "POST /trigger-backtest": "manually dispatch the backtest.yml GitHub Actions workflow (ADMIN_TOKEN + GITHUB_TOKEN secrets required) -- does not run the harness itself here, just asks GitHub to start it; see Actions tab for progress",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
           "GET /decisions?horizon=short|medium|long": "latest decision-engine output (JSON)",
           "GET /weights[?horizon=]": "active (or per-horizon history of) decision-engine weight vectors",
