@@ -824,6 +824,7 @@ export function renderDecisionLab(): string {
   var selectedStyle = "";
   var showAllDecisions = false;
   var tickerRegionMap = {}; // ticker -> region, built from /universe once loaded
+  var tickerNameMap = {}; // ticker -> company/issuer name (e.g. "Walmart Inc"), built from /universe once loaded -- lets search/autocomplete match on name as well as symbol
   var expandedTickers = new Set(); // survives sort/horizon re-renders, like the old watchlist page
   var styleByTicker = {}; // ticker -> "growth"|"defensive"|"blend", from v1's /rankings (see Growth vs Defensive section)
 
@@ -1052,8 +1053,12 @@ export function renderDecisionLab(): string {
         if (v) v.textContent = String(u.totalTickers);
       }
       tickerRegionMap = {};
+      tickerNameMap = {};
       (u.regions || []).forEach(function (r) {
-        (r.tickers || []).forEach(function (t) { tickerRegionMap[t.ticker] = r.region; });
+        (r.tickers || []).forEach(function (t) {
+          tickerRegionMap[t.ticker] = r.region;
+          if (t.name) tickerNameMap[t.ticker] = t.name;
+        });
       });
       var benchSelect = document.getElementById("benchmark-filter");
       (u.benchmarks || []).forEach(function (b) {
@@ -1663,10 +1668,21 @@ export function renderDecisionLab(): string {
     return styleByTicker[ticker] === selectedStyle;
   }
 
+  function tickerMatchesQuery(ticker, q) {
+    // Matches on the ticker symbol itself ("WMT") or on its company/issuer
+    // name ("Walmart" -> WMT), so typing a company name works the same as
+    // typing its symbol. Name lookup comes from /universe (tickerNameMap);
+    // tickers with no known name (e.g. auto-promoted ones) just fall back
+    // to symbol-only matching.
+    if (ticker.toUpperCase().indexOf(q) !== -1) return true;
+    var name = tickerNameMap[ticker];
+    return !!(name && name.toUpperCase().indexOf(q) !== -1);
+  }
+
   function filteredDecisions() {
     var q = searchQuery.trim().toUpperCase();
     return sortDecisions(lastDecisions, currentSort).filter(function (d) {
-      if (q && d.ticker.toUpperCase().indexOf(q) === -1) return false;
+      if (q && !tickerMatchesQuery(d.ticker, q)) return false;
       if (!benchmarkTickerAllowed(d.ticker)) return false;
       if (!styleTickerAllowed(d.ticker)) return false;
       return true;
@@ -2076,12 +2092,13 @@ export function renderDecisionLab(): string {
         .filter(function (t) {
           if (seen[t]) return false;
           seen[t] = true;
-          return t.toUpperCase().indexOf(q) !== -1;
+          return tickerMatchesQuery(t, q);
         })
         .slice(0, 8);
       if (!matches.length) { closeSuggestions(); return; }
       matches.forEach(function (t) {
-        var item = el("div", { class: "sugg-item", text: t });
+        var name = tickerNameMap[t];
+        var item = el("div", { class: "sugg-item", text: name ? t + " \\u2014 " + name : t });
         item.addEventListener("mousedown", function (ev) {
           ev.preventDefault();
           input.value = t;

@@ -112,7 +112,7 @@ export default {
         region,
         label: REGION_LABELS[region] ?? region,
         count: tickers.length,
-        tickers: tickers.map((t) => ({ ticker: t.ticker, exchange: t.exchange, currency: t.currency })),
+        tickers: tickers.map((t) => ({ ticker: t.ticker, name: t.name ?? null, exchange: t.exchange, currency: t.currency })),
       }));
       // Benchmark metadata for the dashboard's "filter by benchmark" control --
       // regimeProxyFor names which universe region(s) each index is the

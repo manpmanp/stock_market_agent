@@ -45,6 +45,13 @@ export interface Env {
 
 export interface UniverseEntry {
   ticker: string;
+  /** Company/issuer display name, e.g. "Walmart Inc" for WMT -- used so
+   *  the dashboard's ticker search/autocomplete can match on name as well
+   *  as symbol ("walmart" finds WMT). Hand-maintained in config/
+   *  universe.json alongside the ticker; optional because tickers
+   *  auto-promoted into promoted_tickers (src/screening/run.ts) have no
+   *  name available without an extra Yahoo quoteSummary lookup. */
+  name?: string;
   exchange: string;
   region:
     | "nordic"
