@@ -279,7 +279,19 @@ export default {
       if (!isDecisionHorizon(horizon)) {
         return json({ error: `horizon must be one of: ${HORIZONS.join(", ")}` }, 400);
       }
-      const decisions = await getLatestDecisions(env, horizon, 200);
+      // This limit must cover the WHOLE configured + promoted universe, not
+      // just a "top N" display cut -- the dashboard's own Decision Lab does
+      // its own client-side "Show N more" pagination on top of whatever
+      // this returns, and its ticker search/autocomplete can only find a
+      // ticker that's actually in this response. A tighter limit here (it
+      // used to be 200, against a universe that has since grown past that)
+      // silently drops the lowest-scored tail of tickers for that horizon
+      // from both display AND search -- which is what made some real
+      // tracked tickers (e.g. WMT on some horizons) unsearchable even
+      // though they're in config/universe.json and were ingested/scored
+      // normally. Set well above the current universe size (~210) so
+      // normal near-term growth doesn't silently reintroduce the same bug.
+      const decisions = await getLatestDecisions(env, horizon, 500);
       const runAt = await getLatestDecisionRunAt(env);
       return json({ horizon, runAt, decisions, disclaimer: DISCLAIMER });
     }
