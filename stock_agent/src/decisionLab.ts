@@ -29,9 +29,12 @@
 // Results -- the methodology one is named "...Guide" specifically to not
 // collide with the live tool below), a "Weight Tuning" bookmark for the
 // actual interactive tool (sliders, Save/Reset/Recompute -- formerly a
-// section at the bottom of the page, now its own flyout), and a "Run &
-// Update" bookmark for the admin panel (see below). All 9 behave as
-// independent slide-out flyouts: closed by default (the default view
+// section at the bottom of the page, now its own flyout), a "Run &
+// Update" bookmark for the admin panel (see below), and a "Market
+// Advisor" bookmark for the on-call LLM synthesis (moved out of the
+// admin panel into its own flyout -- a long list of consultation
+// results was too easy to lose track of buried in Run & Update). All 10
+// behave as independent slide-out flyouts: closed by default (the default view
 // is just the ticker/decisions list below), clicking one slides its
 // content out to the right of the sidebar, clicking it again (or picking
 // a different one, or clicking anywhere outside the open box -- the main
@@ -45,12 +48,19 @@
 // The "Run & Update" flyout (.admin-panel, id="admin-flyout") holds one
 // button per manual trigger already exposed by index.ts: update prices/
 // tickers, update benchmarks, screen broad universe, rescore v1,
-// recompute decisions, the on-call AI market analysis advisor, and a
-// GitHub Actions-dispatched backtest harness run (POST /trigger-backtest
-// -- it cannot run inside this Worker itself, Python + up to ~180
-// minutes, so that button only asks the existing backtest.yml workflow
-// to start, the same one that already runs weekly on its own schedule).
-// All are ADMIN_TOKEN-gated. The token comes from a persistent
+// recompute decisions, and a GitHub Actions-dispatched backtest harness
+// run (POST /trigger-backtest -- it cannot run inside this Worker
+// itself, Python + up to ~180 minutes, so that button only asks the
+// existing backtest.yml workflow to start, the same one that already
+// runs weekly on its own schedule). The on-call AI market analysis
+// advisor used to live here too, but its button plus a long scrolling
+// list of consultation picks didn't fit alongside the other one-line
+// triggers, so it now has its own "Market Advisor" flyout
+// (.advisor-panel, id="advisor-flyout") just below this one -- same
+// #admin-token-input/ADMIN_TOKEN gating, same streamed-NDJSON wiring
+// (runStreamingAdminAction()), just a dedicated, more spacious home for
+// the results, grouped by stance (Enter / Watch / Avoid) instead of one
+// flat list. All are ADMIN_TOKEN-gated. The token comes from a persistent
 // password-type input (#admin-token-input, in a small form at the top
 // of this flyout) rather than window.prompt() on every click -- a
 // native prompt() dialog is invisible to Chrome's password manager, so
@@ -333,6 +343,19 @@ export function renderDecisionLab(): string {
   .admin-item-result .analyst-pick p { margin: 0; line-height: 1.4; }
   .admin-item-result .analyst-warnings { margin: 10px 0 0; padding-left: 18px; color: var(--status-warn); }
   .admin-item-result .analyst-meta { margin: 10px 0 0; color: var(--text-secondary); }
+  .advisor-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 28px; }
+  .advisor-panel .admin-item-result { margin-top: 16px; padding: 0; border: none; background: none; }
+  .advisor-stance-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
+  .advisor-stance-col h3 { margin: 0 0 10px; padding-bottom: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 2px solid; }
+  .advisor-stance-col.enter h3 { color: var(--status-good); border-color: var(--status-good); }
+  .advisor-stance-col.watch h3 { color: var(--status-warn); border-color: var(--status-warn); }
+  .advisor-stance-col.avoid h3 { color: var(--status-bad); border-color: var(--status-bad); }
+  .advisor-stance-col .analyst-pick { margin-bottom: 8px; border-left: 3px solid var(--border); }
+  .advisor-stance-col.enter .analyst-pick { border-left-color: var(--status-good); }
+  .advisor-stance-col.watch .analyst-pick { border-left-color: var(--status-warn); }
+  .advisor-stance-col.avoid .analyst-pick { border-left-color: var(--status-bad); }
+  .advisor-empty-col { margin: 0; font-size: 12px; font-style: italic; color: var(--text-muted); }
+  @media (max-width: 860px) { .advisor-stance-cols { grid-template-columns: 1fr; } }
   .method-section { display: none; }
   .method-section.active { display: block; }
   .method-body { font-size: 13px; color: var(--text-secondary); }
@@ -461,6 +484,7 @@ export function renderDecisionLab(): string {
     </div>
     <button class="ref-tab weight-tab" id="weight-tab" type="button" aria-expanded="false" aria-controls="weight-flyout" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
     <button class="ref-tab admin-tab" id="admin-tab" type="button" aria-expanded="false" aria-controls="admin-flyout" style="--tab-accent:var(--text-primary)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.8 1.3 2.6 9.1h3.4L5.2 14.7l6.2-7.8H8z" fill="currentColor" stroke="none"></path></svg><span>Run &amp; Update</span></button>
+    <button class="ref-tab advisor-tab" id="advisor-tab" type="button" aria-expanded="false" aria-controls="advisor-flyout" style="--tab-accent:var(--seq-400)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5 9.6 5.9 14 7.5 9.6 9.1 8 13.5 6.4 9.1 2 7.5 6.4 5.9z"></path><circle cx="12.5" cy="2.8" r="1" fill="currentColor" stroke="none"></circle></svg><span>Market Advisor</span></button>
   </div>
 
   <div class="demo-flyout" id="demo-flyout">
@@ -518,14 +542,19 @@ export function renderDecisionLab(): string {
         <div class="admin-item-status" id="status-btn-decide"></div>
       </div>
       <div class="admin-item">
-        <button class="admin-btn" id="btn-market-analysis" data-path="/market-analysis" data-label="On-call AI agent advisor" data-stream="1">On-call AI agent advisor<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data -- D1 &rarr; Anthropic API (POST /market-analysis)</span></button>
-        <div class="admin-item-status" id="status-btn-market-analysis"></div>
-        <div class="admin-item-result" id="result-btn-market-analysis" hidden></div>
-      </div>
-      <div class="admin-item">
         <button class="admin-btn" id="btn-trigger-backtest" data-path="/trigger-backtest" data-label="Run backtest harness" data-stream="0">Run backtest harness<span class="admin-btn-sub">Starts the backtest.yml GitHub Actions workflow on demand -- runs remotely on GitHub, not here; check the Actions tab for progress (POST /trigger-backtest)</span></button>
         <div class="admin-item-status" id="status-btn-trigger-backtest"></div>
       </div>
+    </div>
+  </section>
+
+  <section class="advisor-panel reference-flyout" id="advisor-flyout">
+    <h2>Market advisor</h2>
+    <p class="sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data -- D1 &rarr; Anthropic API (POST /market-analysis). Billed separately against your Anthropic Console spend limit, not Cloudflare. Uses the same admin token saved under Run &amp; Update.</p>
+    <div class="admin-item">
+      <button class="admin-btn" id="btn-market-analysis" data-path="/market-analysis" data-label="On-call AI agent advisor" data-stream="1">Run market analysis<span class="admin-btn-stop-hint">(click to stop)</span></button>
+      <div class="admin-item-status" id="status-btn-market-analysis"></div>
+      <div class="admin-item-result" id="result-btn-market-analysis" hidden></div>
     </div>
   </section>
 
@@ -1910,6 +1939,8 @@ export function renderDecisionLab(): string {
   var weightFlyout = document.getElementById("weight-flyout");
   var adminTab = document.getElementById("admin-tab");
   var adminFlyout = document.getElementById("admin-flyout");
+  var advisorTab = document.getElementById("advisor-tab");
+  var advisorFlyout = document.getElementById("advisor-flyout");
   var methodTabs = document.querySelectorAll("#method-tabs .tab");
   var methodSections = document.querySelectorAll(".method-section");
 
@@ -1929,6 +1960,10 @@ export function renderDecisionLab(): string {
     adminFlyout.classList.remove("open");
     adminTab.setAttribute("aria-expanded", "false");
   }
+  function closeAdvisorFlyout() {
+    advisorFlyout.classList.remove("open");
+    advisorTab.setAttribute("aria-expanded", "false");
+  }
   function closeAllFlyoutsExcept(keep) {
     // Demo, the reference tabs, Weight Tuning, and Run & Update are all
     // single-flyout UIs sharing the same sidebar -- opening one always
@@ -1939,6 +1974,7 @@ export function renderDecisionLab(): string {
     if (keep !== "reference") closeReferenceFlyout();
     if (keep !== "weight") closeWeightFlyout();
     if (keep !== "admin") closeAdminFlyout();
+    if (keep !== "advisor") closeAdvisorFlyout();
   }
 
   demoTab.addEventListener("click", function (ev) {
@@ -1963,6 +1999,14 @@ export function renderDecisionLab(): string {
     closeAllFlyoutsExcept(null);
     adminFlyout.classList.toggle("open", open);
     adminTab.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  advisorTab.addEventListener("click", function (ev) {
+    ev.stopPropagation();
+    var open = !advisorFlyout.classList.contains("open");
+    closeAllFlyoutsExcept(null);
+    advisorFlyout.classList.toggle("open", open);
+    advisorTab.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
   methodTabs.forEach(function (tab) {
@@ -1992,7 +2036,8 @@ export function renderDecisionLab(): string {
     var insideReferenceFlyout = t.closest && t.closest("#reference-panel");
     var insideWeightFlyout = t.closest && t.closest("#weight-flyout");
     var insideAdminFlyout = t.closest && t.closest("#admin-flyout");
-    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout || insideAdminFlyout) return;
+    var insideAdvisorFlyout = t.closest && t.closest("#advisor-flyout");
+    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout || insideAdminFlyout || insideAdvisorFlyout) return;
     closeAllFlyoutsExcept(null);
   });
 
@@ -2028,17 +2073,35 @@ export function renderDecisionLab(): string {
     }
     var s = result.synthesis;
     container.appendChild(el("p", { class: "market-context", text: s.marketContext }));
-    var list = el("div", { class: "analyst-picks" });
-    (s.picks || []).forEach(function (p) {
-      var head = el("div", { class: "analyst-pick-head" }, [
-        el("span", { class: "analyst-pick-ticker", text: p.ticker }),
-        el("span", { class: "analyst-pick-stance " + p.stance, text: p.stance }),
-        el("span", { class: "analyst-pick-horizon", text: p.horizon }),
+    // Grouped by stance (Enter / Watch / Avoid) instead of one flat vertical
+    // list -- a run across the whole tracked universe can return a dozen-plus
+    // picks, and scanning three short, labeled columns is far easier to
+    // follow than scrolling a single undifferentiated stack of cards.
+    var STANCES = [
+      { key: "enter", label: "Enter" },
+      { key: "watch", label: "Watch" },
+      { key: "avoid", label: "Avoid" },
+    ];
+    var cols = el("div", { class: "advisor-stance-cols" });
+    STANCES.forEach(function (stance) {
+      var picks = (s.picks || []).filter(function (p) { return p.stance === stance.key; });
+      var col = el("div", { class: "advisor-stance-col " + stance.key }, [
+        el("h3", { text: stance.label + " (" + picks.length + ")" }),
       ]);
-      var card = el("div", { class: "analyst-pick" }, [head, el("p", { text: p.rationale })]);
-      list.appendChild(card);
+      if (!picks.length) {
+        col.appendChild(el("p", { class: "advisor-empty-col", text: "No picks this run." }));
+      } else {
+        picks.forEach(function (p) {
+          var head = el("div", { class: "analyst-pick-head" }, [
+            el("span", { class: "analyst-pick-ticker", text: p.ticker }),
+            el("span", { class: "analyst-pick-horizon", text: p.horizon }),
+          ]);
+          col.appendChild(el("div", { class: "analyst-pick" }, [head, el("p", { text: p.rationale })]));
+        });
+      }
+      cols.appendChild(col);
     });
-    container.appendChild(list);
+    container.appendChild(cols);
     if (s.warnings && s.warnings.length) {
       var w = el("ul", { class: "analyst-warnings" });
       s.warnings.forEach(function (x) { w.appendChild(el("li", { text: x })); });
