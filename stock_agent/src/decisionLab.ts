@@ -50,7 +50,17 @@
 // -- it cannot run inside this Worker itself, Python + up to ~180
 // minutes, so that button only asks the existing backtest.yml workflow
 // to start, the same one that already runs weekly on its own schedule).
-// All are ADMIN_TOKEN-gated via window.prompt. Every button except the
+// All are ADMIN_TOKEN-gated. The token comes from a persistent
+// password-type input (#admin-token-input, in a small form at the top
+// of this flyout) rather than window.prompt() on every click -- a
+// native prompt() dialog is invisible to Chrome's password manager, so
+// typing it there could never be offered for autofill. Submitting that
+// form (getAdminToken() / the admin-token-form submit handler, near
+// the Save/Recompute weight-tuning handlers below) is enough to
+// trigger Chrome's own "Save password?" prompt; once saved, Chrome
+// autofills the field on future page loads and nothing below needs a
+// retyped token. Falls back to window.prompt() the first time, before
+// anything has been saved yet. Every button except the
 // backtest dispatch (data-stream="1") reads its response as NDJSON (see
 // index.ts's streamingNdjson()): one { type: "progress" } line per
 // ticker/step, updating that button's own status line live with where
@@ -293,6 +303,11 @@ export function renderDecisionLab(): string {
   .methodology-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 36px; }
   .admin-panel { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 28px; }
   .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; margin-top: 12px; }
+  .admin-token-form { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 10px 0 2px; }
+  .admin-token-form input[type="password"] { font: inherit; font-size: 13px; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); min-width: 220px; box-sizing: border-box; }
+  .admin-token-save-btn { font: inherit; font-size: 12px; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); cursor: pointer; }
+  .admin-token-save-btn:hover { background: var(--page); }
+  .admin-token-status { font-size: 11px; color: var(--text-secondary); }
   .admin-item { display: flex; flex-direction: column; gap: 6px; }
   .admin-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; font: inherit; font-size: 13px; font-weight: 600; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--page); color: var(--text-primary); cursor: pointer; width: 100%; }
   .admin-btn:hover { background: color-mix(in srgb, var(--text-primary) 5%, var(--page)); }
@@ -460,6 +475,12 @@ export function renderDecisionLab(): string {
   <section class="admin-panel reference-flyout" id="admin-flyout">
     <h2>Run &amp; update</h2>
     <p class="sub">Manual triggers -- everything here also runs on its own schedule automatically; use these to run something early or check on demand. All require the admin token (<code>wrangler secret put ADMIN_TOKEN</code>). Click a running task again to stop it.</p>
+    <form class="admin-token-form" id="admin-token-form" autocomplete="on">
+      <input type="text" id="admin-token-user" name="username" autocomplete="username" value="stock-agent-admin" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none" tabindex="-1" aria-hidden="true" />
+      <input type="password" id="admin-token-input" name="password" autocomplete="current-password" placeholder="Admin token (saved for every action below)" />
+      <button type="submit" class="admin-token-save-btn">Remember in browser</button>
+      <span class="admin-token-status" id="admin-token-status"></span>
+    </form>
     <div class="admin-grid">
       <div class="admin-item">
         <button class="admin-btn" id="btn-ingest" data-path="/ingest" data-label="Update prices &amp; tickers" data-stream="1">Update prices &amp; tickers<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-fetch price/fundamentals data for the tracked universe -- Yahoo Finance &rarr; D1 (POST /ingest)</span></button>
@@ -1808,8 +1829,32 @@ export function renderDecisionLab(): string {
     setStatus("Reset to last saved weights.", true);
   });
 
+  function getAdminToken() {
+    var input = document.getElementById("admin-token-input");
+    var v = input ? input.value.trim() : "";
+    if (v) return v;
+    var typed = window.prompt("Admin token (set via wrangler secret ADMIN_TOKEN):");
+    if (typed && input) input.value = typed;
+    return typed;
+  }
+
+  var adminTokenForm = document.getElementById("admin-token-form");
+  if (adminTokenForm) {
+    adminTokenForm.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var input = document.getElementById("admin-token-input");
+      var statusEl = document.getElementById("admin-token-status");
+      if (!statusEl) return;
+      if (input && input.value.trim()) {
+        statusEl.textContent = "Saved for this page -- accept Chrome's 'Save password?' prompt to keep it next time too.";
+      } else {
+        statusEl.textContent = "Enter a token first.";
+      }
+    });
+  }
+
   document.getElementById("save-btn").addEventListener("click", function () {
-    var token = window.prompt("Admin token (set via wrangler secret ADMIN_TOKEN) -- required to save weights:");
+    var token = getAdminToken();
     if (!token) return;
     var note = window.prompt("Optional note for this change (e.g. why you're adjusting it):") || undefined;
     fetch("/weights", {
@@ -1827,7 +1872,7 @@ export function renderDecisionLab(): string {
   });
 
   document.getElementById("recompute-btn").addEventListener("click", function () {
-    var token = window.prompt("Admin token -- required to trigger a manual recompute:");
+    var token = getAdminToken();
     if (!token) return;
     setStatus("Recomputing…", true);
     fetch("/decide", { method: "POST", headers: { authorization: "Bearer " + token } })
@@ -2046,7 +2091,7 @@ export function renderDecisionLab(): string {
         adminRunning[btn.id].abort();
         return;
       }
-      var token = window.prompt("Admin token -- required for " + path + ":");
+      var token = getAdminToken();
       if (!token) return;
       if (streams) {
         runStreamingAdminAction(btn, path, token);
