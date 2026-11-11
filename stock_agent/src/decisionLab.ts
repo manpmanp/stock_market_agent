@@ -318,6 +318,21 @@ export function renderDecisionLab(): string {
   .admin-item-status { font-size: 11px; color: var(--text-secondary); min-height: 14px; line-height: 1.4; }
   .admin-item-status.ok { color: var(--status-good); }
   .admin-item-status.bad { color: var(--status-bad); }
+  .admin-item-result { margin-top: 8px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--page); font-size: 12px; color: var(--text-primary); }
+  .admin-item-result[hidden] { display: none; }
+  .admin-item-result .market-context { margin: 0 0 10px; line-height: 1.5; }
+  .admin-item-result .analyst-picks { display: flex; flex-direction: column; gap: 8px; }
+  .admin-item-result .analyst-pick { border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; background: var(--surface-1); }
+  .admin-item-result .analyst-pick-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .admin-item-result .analyst-pick-ticker { font-weight: 700; }
+  .admin-item-result .analyst-pick-horizon { font-size: 11px; color: var(--text-secondary); }
+  .admin-item-result .analyst-pick-stance { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; padding: 2px 7px; border-radius: 999px; color: #fff; }
+  .admin-item-result .analyst-pick-stance.enter { background: var(--status-good); }
+  .admin-item-result .analyst-pick-stance.watch { background: var(--status-warn); }
+  .admin-item-result .analyst-pick-stance.avoid { background: var(--status-bad); }
+  .admin-item-result .analyst-pick p { margin: 0; line-height: 1.4; }
+  .admin-item-result .analyst-warnings { margin: 10px 0 0; padding-left: 18px; color: var(--status-warn); }
+  .admin-item-result .analyst-meta { margin: 10px 0 0; color: var(--text-secondary); }
   .method-section { display: none; }
   .method-section.active { display: block; }
   .method-body { font-size: 13px; color: var(--text-secondary); }
@@ -505,6 +520,7 @@ export function renderDecisionLab(): string {
       <div class="admin-item">
         <button class="admin-btn" id="btn-market-analysis" data-path="/market-analysis" data-label="On-call AI agent advisor" data-stream="1">On-call AI agent advisor<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data -- D1 &rarr; Anthropic API (POST /market-analysis)</span></button>
         <div class="admin-item-status" id="status-btn-market-analysis"></div>
+        <div class="admin-item-result" id="result-btn-market-analysis" hidden></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-trigger-backtest" data-path="/trigger-backtest" data-label="Run backtest harness" data-stream="0">Run backtest harness<span class="admin-btn-sub">Starts the backtest.yml GitHub Actions workflow on demand -- runs remotely on GitHub, not here; check the Actions tab for progress (POST /trigger-backtest)</span></button>
@@ -1995,6 +2011,51 @@ export function renderDecisionLab(): string {
     btn.classList.toggle("running", running);
   }
 
+  // /market-analysis's "done" event carries the full MarketAnalysisResult
+  // (see src/analyst/run.ts) as event.summary -- every other streamed
+  // admin action's summary is just row/byte counters, but this one is the
+  // actual LLM synthesis. describeDone() below only ever renders byte/row/
+  // cost counters, so without this the advisor's real output -- the only
+  // reason to run it -- was computed, billed, and sent to the browser,
+  // then silently thrown away with nothing ever shown for it anywhere.
+  function renderMarketAnalysisResult(container, result) {
+    container.innerHTML = "";
+    if (!result) { container.hidden = true; return; }
+    container.hidden = false;
+    if (!result.ok || !result.synthesis) {
+      container.appendChild(el("p", { text: "No analysis available: " + (result.error || "unknown error") }));
+      return;
+    }
+    var s = result.synthesis;
+    container.appendChild(el("p", { class: "market-context", text: s.marketContext }));
+    var list = el("div", { class: "analyst-picks" });
+    (s.picks || []).forEach(function (p) {
+      var head = el("div", { class: "analyst-pick-head" }, [
+        el("span", { class: "analyst-pick-ticker", text: p.ticker }),
+        el("span", { class: "analyst-pick-stance " + p.stance, text: p.stance }),
+        el("span", { class: "analyst-pick-horizon", text: p.horizon }),
+      ]);
+      var card = el("div", { class: "analyst-pick" }, [head, el("p", { text: p.rationale })]);
+      list.appendChild(card);
+    });
+    container.appendChild(list);
+    if (s.warnings && s.warnings.length) {
+      var w = el("ul", { class: "analyst-warnings" });
+      s.warnings.forEach(function (x) { w.appendChild(el("li", { text: x })); });
+      container.appendChild(w);
+    }
+    if (result.groundingWarnings && result.groundingWarnings.length) {
+      var gw = el("ul", { class: "analyst-warnings" });
+      gw.appendChild(el("li", { text: "Grounding check flagged " + result.groundingWarnings.length + " issue(s) after " + result.attempts + " attempt(s) -- treat these picks with extra caution:" }));
+      result.groundingWarnings.forEach(function (x) { gw.appendChild(el("li", { text: x })); });
+      container.appendChild(gw);
+    }
+    container.appendChild(el("p", {
+      class: "analyst-meta",
+      text: "As of " + result.asOf + " \u2014 " + result.tickersConsidered + " tickers, " + result.benchmarksConsidered + " benchmarks considered, fully grounded: " + (result.fullyGrounded ? "yes" : "no") + ".",
+    }));
+  }
+
   function describeDone(path, event) {
     var bits = [];
     if (event.downloadedLabel) bits.push(event.downloadedLabel + " downloaded");
@@ -2015,6 +2076,10 @@ export function renderDecisionLab(): string {
     adminRunning[btn.id] = controller;
     setRunning(btn, true);
     setItemStatus(btn, "Starting\u2026", null);
+    if (path === "/market-analysis") {
+      var prevResult = document.getElementById("result-btn-market-analysis");
+      if (prevResult) prevResult.hidden = true;
+    }
     fetch(path, { method: "POST", headers: { authorization: "Bearer " + token }, signal: controller.signal })
       .then(function (r) {
         if (!r.ok || !r.body) {
@@ -2035,12 +2100,14 @@ export function renderDecisionLab(): string {
               if (!line.trim()) return;
               var event;
               try { event = JSON.parse(line); } catch (e) { return; }
+              var resultEl = path === "/market-analysis" ? document.getElementById("result-btn-market-analysis") : null;
               if (event.type === "progress") {
                 var bytesBit = event.downloadedLabel ? ", " + event.downloadedLabel + " so far" : "";
                 setItemStatus(btn, (event.step || "") + " (" + event.index + "/" + event.total + ")" + bytesBit, null);
               } else if (event.type === "done") {
                 setItemStatus(btn, describeDone(path, event), "ok");
                 if (path === "/decide") loadDecisions();
+                if (resultEl) renderMarketAnalysisResult(resultEl, event.summary);
               } else if (event.type === "error") {
                 setItemStatus(btn, "Failed: " + event.error, "bad");
               }
