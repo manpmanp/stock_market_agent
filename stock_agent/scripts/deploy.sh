@@ -20,8 +20,18 @@
 # Requires ~/.cloudflare_stock_agent_token to exist for --recompute (same
 # token file scripts/ingest.sh and scripts/score.sh already use). Not
 # needed for the rest of the pipeline -- `wrangler deploy` and the D1
-# migration commands use your `wrangler login` / CLOUDFLARE_API_TOKEN auth,
-# not this file.
+# migration commands use your `wrangler login` / CLOUDFLARE_API_TOKEN auth.
+#
+# If a `wrangler login` OAuth session isn't accepted for the D1 migration
+# check (seen in practice as "[code: 7403] The given account is not valid
+# or is not authorized", even though `wrangler whoami` shows the right
+# account and a d1 scope -- an OAuth-session-vs-permission-group gap, not
+# a config problem), create a Cloudflare API token instead (Account - D1 -
+# Edit, Account - Workers Scripts - Edit, Account - Workers R2 Storage -
+# Edit) and save it to ~/.cloudflare_stock_agent_cf_api_token (chmod 600,
+# token value only, no surrounding quotes/newline issues). This script
+# picks it up automatically below if CLOUDFLARE_API_TOKEN isn't already
+# set in your shell -- no need to `export` it by hand each time.
 
 set -euo pipefail
 
@@ -30,7 +40,19 @@ cd "$DIR"
 
 WORKER_URL="https://stock-agent.manp-dev.workers.dev"
 TOKEN_FILE="$HOME/.cloudflare_stock_agent_token"
+CF_API_TOKEN_FILE="$HOME/.cloudflare_stock_agent_cf_api_token"
 DB_NAME="stock-agent-db"
+
+# Load a Cloudflare API token from file rather than requiring it typed/
+# exported by hand every session -- see the header comment above for when
+# this is actually needed (it isn't, for a normal `wrangler login` session
+# that works). A pre-existing CLOUDFLARE_API_TOKEN in the environment
+# always wins, so this never silently overrides one you've deliberately
+# exported yourself for this shell.
+if [ -z "${CLOUDFLARE_API_TOKEN:-}" ] && [ -f "$CF_API_TOKEN_FILE" ]; then
+  export CLOUDFLARE_API_TOKEN="$(cat "$CF_API_TOKEN_FILE")"
+  echo "Using Cloudflare API token from $CF_API_TOKEN_FILE"
+fi
 
 TARGET="remote"
 RUN_CHECKS=1
@@ -44,7 +66,7 @@ for arg in "$@"; do
     --recompute) DO_RECOMPUTE=1 ;;
     --yes) ASSUME_YES=1 ;;
     -h|--help)
-      sed -n '2,24p' "${BASH_SOURCE[0]}"
+      sed -n '2,34p' "${BASH_SOURCE[0]}"
       exit 0
       ;;
     *)
