@@ -2074,7 +2074,24 @@ export function renderDecisionLab(): string {
       .then(function (res) {
         btn.disabled = false;
         if (res.status < 200 || res.status >= 300) {
-          setItemStatus(btn, "Failed: " + (res.data.error || res.status), "bad");
+          // res.data.detail is GitHub's own raw error body (see /trigger-backtest
+          // in index.ts) -- without it, a 403/404/etc shows only the HTTP status,
+          // which hides the actual reason (bad/expired token, missing "Actions:
+          // write" permission, repo not in the token's access list, ...).
+          var reason = res.data.error || res.status;
+          var detail = (res.data.detail || "").toString().trim();
+          if (detail) {
+            // GitHub error bodies are JSON ({"message": "...", "documentation_url": "..."});
+            // try to pull just the message out so the status line stays short,
+            // falling back to the raw text (truncated) if it isn't JSON.
+            var detailMsg = detail;
+            try {
+              var parsed = JSON.parse(detail);
+              if (parsed && parsed.message) detailMsg = parsed.message;
+            } catch (e) { /* not JSON -- use the raw text as-is */ }
+            reason += ": " + detailMsg.slice(0, 300);
+          }
+          setItemStatus(btn, "Failed: " + reason, "bad");
           return;
         }
         setItemStatus(btn, res.data.note || "Dispatched.", "ok");
