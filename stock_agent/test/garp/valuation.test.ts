@@ -141,8 +141,9 @@ describe("regions and top-N", () => {
       ...[72, 78, 84].map((p, i) => mk(`G${i}`, p)),
     ];
     const rows = computeAll(files);
-    const shown = shownRows(rows, 5);
+    const shown = shownRows(rows, { nordic: 5, global: 10 });
     expect(shown.filter((r) => r.region === "nordic").map((r) => r.ticker)).toEqual(["N0.ST", "N1.ST", "N2.ST", "N3.ST", "N4.ST"]);
     expect(shown.filter((r) => r.region === "global")).toHaveLength(3);
+    expect(shownRows(rows, { nordic: 2, global: 1 }).map((r) => r.ticker)).toEqual(["N0.ST", "G0", "N1.ST"]);
   });
 });

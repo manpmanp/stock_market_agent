@@ -43,4 +43,4 @@ Runs the GARP tests, then computes and renders, and writes `config/garp/latest.j
 Artifact slug `534ba7e6-4201-47aa-9285-1c68dea418d1` (private to Masoud). Refresh runs republish this same artifact.
 
 ## Status (2026-11-13, phase 2)
-20 stocks researched (12 Nordic, 8 global); the report and dashboard show the top 5 per region (`TOP_N` in `src/garp/valuation.ts`), the rest stay in the data. The 10 shown stocks passed an independent fact check (`config/garp/checks/2026-11-13.md`); prices refreshed to 2026-11-12 closes. Open gaps: historical multiple ranges unverified; Wolters Kluwer 52-week range conflicts between sources; Roche price from a single provider line.
+20 stocks researched (12 Nordic, 8 global); the report and dashboard show the top 5 Nordic and top 10 global (`TOP_N` in `src/garp/valuation.ts`; global was changed from 5 to 10 on 2026-11-13), the rest stay in the data. The 10 shown stocks passed an independent fact check (`config/garp/checks/2026-11-13.md`); prices refreshed to 2026-11-12 closes. Open gaps: historical multiple ranges unverified; Wolters Kluwer 52-week range conflicts between sources; Roche price from a single provider line.

@@ -185,7 +185,7 @@ export function composite(val: ValuationInput, mos: number, ret5: number, reds: 
 }
 
 /** Report shows this many stocks per region; the rest stay in the data. */
-export const TOP_N = 5;
+export const TOP_N: Record<Region, number> = { nordic: 5, global: 10 };
 const NORDIC_SUFFIX = /\.(ST|CO|OL|HE|IC)$/i;
 
 export function regionOf(r: ResearchFile): Region {
@@ -237,7 +237,7 @@ export function computeAll(files: ResearchFile[]): Computed[] {
   return rows.map((r, i) => ({ ...r, rank: i + 1, regionRank: ++seen[r.region] }));
 }
 
-/** The stocks the report shows: top TOP_N per region, in rank order. */
-export function shownRows(rows: Computed[], n = TOP_N): Computed[] {
-  return rows.filter((r) => r.regionRank <= n);
+/** The stocks the report shows: top TOP_N[region] per region, in rank order. */
+export function shownRows(rows: Computed[], n: Record<Region, number> = TOP_N): Computed[] {
+  return rows.filter((r) => r.regionRank <= n[r.region]);
 }

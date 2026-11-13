@@ -122,7 +122,7 @@ ${gaps.length ? `<p class="mut"><b>Data gaps:</b> ${esc(gaps.join("; "))}</p>` :
 
 export function renderReport(files: ResearchFile[], allRows: Computed[], conclusion: Conclusion | null, runAt: string, title: string): string {
   const byTicker = new Map(files.map((f) => [f.ticker, f]));
-  // Only the top TOP_N per region are shown; the rest stay in the research data.
+  // Only the top TOP_N[region] per region are shown; the rest stay in the research data.
   const rows = shownRows(allRows);
   const hiddenCount = allRows.length - rows.length;
   const row = (r: Computed) => {
@@ -136,7 +136,7 @@ export function renderReport(files: ResearchFile[], allRows: Computed[], conclus
   };
   const overview = REGIONS.map((g) => {
     const rs = rows.filter((r) => r.region === g);
-    return rs.length ? `<tr class="grp"><th colspan="12">Top ${TOP_N} ${REGION_LABEL[g]}</th></tr>${rs.map(row).join("")}` : "";
+    return rs.length ? `<tr class="grp"><th colspan="12">Top ${TOP_N[g]} ${REGION_LABEL[g]}</th></tr>${rs.map(row).join("")}` : "";
   }).join("");
   const cards = REGIONS.map((g) => {
     const rs = rows.filter((r) => r.region === g);
@@ -184,7 +184,7 @@ svg{width:100%;height:auto}.grid{stroke:var(--grid)}.axis{stroke:var(--mut)}.tic
 <div class="charts" style="margin-top:10px"><div>${mosChart(rows)}</div><div>${returnChart(rows)}</div></div></section>
 <section><h2>B. Ranked stock comparison</h2>${cards}</section>
 ${concl}
-<footer>${hiddenCount > 0 ? `<p>${hiddenCount} other researched stock(s) ranked below the top ${TOP_N} of their region and are not shown; their data is kept for future refreshes.</p>` : ""}<b>Method.</b> Fair value = probability-weighted bear/base/bull values. Margin of safety = 1 − price/fair value. Entry price = fair value × (1 − required MoS: 20% tier A, 30% B, 40% C). Return = scenario EPS growth and exit multiple over 5 years plus constant dividend yield, probability-weighted. Score = quality 20%, financial strength 15%, growth 15%, risk 15%, valuation 20%, expected return 15%, minus 5 per red value-trap check. Banks and holding companies use P/B, ROE and NAV in place of EV/EBIT and FCF.
+<footer>${hiddenCount > 0 ? `<p>${hiddenCount} other researched stock(s) ranked below the top ${TOP_N.nordic} Nordic / top ${TOP_N.global} global and are not shown; their data is kept for future refreshes.</p>` : ""}<b>Method.</b> Fair value = probability-weighted bear/base/bull values. Margin of safety = 1 − price/fair value. Entry price = fair value × (1 − required MoS: 20% tier A, 30% B, 40% C). Return = scenario EPS growth and exit multiple over 5 years plus constant dividend yield, probability-weighted. Score = quality 20%, financial strength 15%, growth 15%, risk 15%, valuation 20%, expected return 15%, minus 5 per red value-trap check. Banks and holding companies use P/B, ROE and NAV in place of EV/EBIT and FCF.
 <ul>${sources}</ul></footer>
 </main></body></html>`;
 }

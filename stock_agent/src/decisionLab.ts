@@ -2041,7 +2041,7 @@ export function renderDecisionLab(): string {
       return r.json();
     }).then(function (d) {
       garpFrame.srcdoc = d.html;
-      document.getElementById("garp-meta").textContent = d.title + " -- run " + d.runAt + ". Top 5 Nordic and top 5 global of " + d.researched + " researched stocks. Independent of the decision engine.";
+      document.getElementById("garp-meta").textContent = d.title + " -- run " + d.runAt + ". Top " + d.topN.nordic + " Nordic and top " + d.topN.global + " global of " + d.researched + " researched stocks. Independent of the decision engine.";
     }).catch(function (err) {
       garpLoaded = false;
       garpFrame.srcdoc = "<p style='font:13px Arial;color:#eb6834;padding:16px'>Could not load GARP report: " + String(err.message || err) + "</p>";

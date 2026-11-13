@@ -154,7 +154,7 @@ export interface Computed {
   composite: number; // 0-100
   rank: number; // across all researched stocks
   region: Region;
-  regionRank: number; // within its region; the report shows regionRank <= TOP_N
+  regionRank: number; // within its region; the report shows regionRank <= TOP_N[region]
 }
 
 export interface Conclusion {
