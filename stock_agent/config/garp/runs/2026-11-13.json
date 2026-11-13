@@ -1,0 +1,917 @@
+{
+  "runAt": "2026-11-12T23:27:03Z",
+  "rows": [
+    {
+      "ticker": "ORK.OL",
+      "name": "Orkla ASA",
+      "currency": "NOK",
+      "price": 104.9,
+      "weightedFairValue": 119.91499999999999,
+      "marginOfSafety": 0.12521369303256458,
+      "upside": 0.1431363203050522,
+      "bearDownside": -0.08989513822688278,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 83.94049999999999,
+      "accumulateLow": 71.949,
+      "accumulateHigh": 83.94049999999999,
+      "entryStatus": "BELOW FAIR VALUE",
+      "return5y": {
+        "capital": 0.06081040699495768,
+        "dividend": 0.057,
+        "total": 0.11781040699495768,
+        "byScenario": {
+          "bear": 0.05401167487129505,
+          "base": 0.1231922434891542,
+          "bull": 0.17084546613022727
+        }
+      },
+      "return10y": {
+        "capital": 0.04302845186085874,
+        "dividend": 0.057,
+        "total": 0.10002845186085874
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 15.8 → 14.3"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 9.1%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "amber",
+          "detail": "9.9% vs avg 11.0%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "1.40x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 71.8% over 5 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "amber",
+          "detail": "9.2% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "6 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 62.680003357569035,
+      "rank": 1
+    },
+    {
+      "ticker": "INVE-B.ST",
+      "name": "Investor AB (B)",
+      "currency": "SEK",
+      "price": 435.25,
+      "weightedFairValue": 419.0175,
+      "marginOfSafety": -0.038739432123956696,
+      "upside": -0.03729465824238942,
+      "bearDownside": -0.19735784032165415,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 335.214,
+      "accumulateLow": 293.31225,
+      "accumulateHigh": 335.214,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.047199994876451906,
+        "dividend": 0.013,
+        "total": 0.060199994876451904,
+        "byScenario": {
+          "bear": -0.019013923860070184,
+          "base": 0.06979094876047452,
+          "bull": 0.12023200584492875
+        }
+      },
+      "return10y": {
+        "capital": 0.06339856976111236,
+        "dividend": 0.013,
+        "total": 0.07639856976111235
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "n/a for sector"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "n/a for sector"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "n/a for sector"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "na",
+          "detail": "n/a for holding co."
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 62.234587141246436,
+      "rank": 2
+    },
+    {
+      "ticker": "SWEC-B.ST",
+      "name": "Sweco AB (B)",
+      "currency": "SEK",
+      "price": 138.2,
+      "weightedFairValue": 152.85,
+      "marginOfSafety": 0.09584560026169453,
+      "upside": 0.1060057887120116,
+      "bearDownside": -0.12575976845151948,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 106.99499999999999,
+      "accumulateLow": 91.71,
+      "accumulateHigh": 106.99499999999999,
+      "entryStatus": "BELOW FAIR VALUE",
+      "return5y": {
+        "capital": 0.06170150466026855,
+        "dividend": 0.027,
+        "total": 0.08870150466026855,
+        "byScenario": {
+          "bear": 0.0237705968827546,
+          "base": 0.09669012447740885,
+          "bull": 0.1376551728035019
+        }
+      },
+      "return10y": {
+        "capital": 0.05276139166739208,
+        "dividend": 0.027,
+        "total": 0.07976139166739207
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 21.0 → 19.1"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 8.7%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "10.2% vs avg 10.0%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "0.80x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 111.1% over 3 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "17.2% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "5 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 60.18002475921813,
+      "rank": 3
+    },
+    {
+      "ticker": "ASSA-B.ST",
+      "name": "Assa Abloy AB",
+      "currency": "SEK",
+      "price": 392.5,
+      "weightedFairValue": 379.54999999999995,
+      "marginOfSafety": -0.034119351864049685,
+      "upside": -0.032993630573248556,
+      "bearDownside": -0.21462420382165603,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 303.64,
+      "accumulateLow": 265.685,
+      "accumulateHigh": 303.64,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.03613706930615193,
+        "dividend": 0.017,
+        "total": 0.05313706930615193,
+        "byScenario": {
+          "bear": -0.010376344960323816,
+          "base": 0.058658354232987805,
+          "bull": 0.10560791371895593
+        }
+      },
+      "return10y": {
+        "capital": 0.040552772926356895,
+        "dividend": 0.017,
+        "total": 0.057552772926356896
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 9.8%, 1 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "16.6% vs avg 15.6%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "amber",
+          "detail": "2.10x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 79.8% over 6 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "amber",
+          "detail": "10.7% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 57.91029687735663,
+      "rank": 4
+    },
+    {
+      "ticker": "LIFCO-B.ST",
+      "name": "Lifco AB (B shares)",
+      "currency": "SEK",
+      "price": 288.2,
+      "weightedFairValue": 275.995,
+      "marginOfSafety": -0.04422181561260152,
+      "upside": -0.04234906315058984,
+      "bearDownside": -0.2623525329632199,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 220.79600000000002,
+      "accumulateLow": 193.19650000000001,
+      "accumulateHigh": 220.79600000000002,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.03260166714618598,
+        "dividend": 0.009,
+        "total": 0.04160166714618598,
+        "byScenario": {
+          "bear": -0.044146790054476755,
+          "base": 0.050876534252768495,
+          "bull": 0.10880039013368369
+        }
+      },
+      "return10y": {
+        "capital": 0.03654639490913508,
+        "dividend": 0.009,
+        "total": 0.045546394909135084
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 33.3 → 30.4"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 10.9%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "18.8% vs avg 18.5%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "1.60x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 84.0% over 6 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "20.5% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "5 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 56.46811483997284,
+      "rank": 5
+    },
+    {
+      "ticker": "ATCO-A.ST",
+      "name": "Atlas Copco AB (A shares)",
+      "currency": "SEK",
+      "price": 194.65,
+      "weightedFairValue": 166.1225,
+      "marginOfSafety": -0.17172568435943347,
+      "upside": -0.14655792447983562,
+      "bearDownside": -0.3480606216285641,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 132.898,
+      "accumulateLow": 116.28575000000001,
+      "accumulateHigh": 132.898,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.01397322604238116,
+        "dividend": 0.016,
+        "total": 0.02997322604238116,
+        "byScenario": {
+          "bear": -0.044041921779036666,
+          "base": 0.035072656512409525,
+          "bull": 0.09378951292374225
+        }
+      },
+      "return10y": {
+        "capital": 0.024903902191892674,
+        "dividend": 0.016,
+        "total": 0.040903902191892674
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 8.9%, 1 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "21.0% vs avg 21.5%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "0.30x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 75.0% over 6 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "24.0% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 55.412303051111444,
+      "rank": 6
+    },
+    {
+      "ticker": "ADDT-B.ST",
+      "name": "Addtech AB (B shares)",
+      "currency": "SEK",
+      "price": 334.8,
+      "weightedFairValue": 291.51,
+      "marginOfSafety": -0.1485026242667491,
+      "upside": -0.1293010752688173,
+      "bearDownside": -0.3290322580645162,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 233.208,
+      "accumulateLow": 204.05700000000002,
+      "accumulateHigh": 233.208,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.020661530759163133,
+        "dividend": 0.011,
+        "total": 0.03166153075916313,
+        "byScenario": {
+          "bear": -0.05271236600094943,
+          "base": 0.04079200609562893,
+          "bull": 0.09777447684634409
+        }
+      },
+      "return10y": {
+        "capital": 0.030612036538993387,
+        "dividend": 0.011,
+        "total": 0.04161203653899338
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 10.4%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "13.7% vs avg 12.1%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "1.50x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 90.5% over 6 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "22.0% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 52.494649525437765,
+      "rank": 7
+    },
+    {
+      "ticker": "INDT.ST",
+      "name": "Indutrade AB",
+      "currency": "SEK",
+      "price": 268.2,
+      "weightedFairValue": 239.52,
+      "marginOfSafety": -0.11973947895791581,
+      "upside": -0.10693512304250552,
+      "bearDownside": -0.31752423564504106,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 167.664,
+      "accumulateLow": 143.712,
+      "accumulateHigh": 167.664,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.028974545061577345,
+        "dividend": 0.012,
+        "total": 0.04097454506157734,
+        "byScenario": {
+          "bear": -0.03203032008962227,
+          "base": 0.04797055126334569,
+          "bull": 0.09998739780924025
+        }
+      },
+      "return10y": {
+        "capital": 0.037257653848774,
+        "dividend": 0.012,
+        "total": 0.049257653848773994
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 35.1 → 27.3"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 8.8%, 1 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "12.1% vs avg 12.7%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "1.69x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 85.4% over 6 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "18.0% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 45.497755107360135,
+      "rank": 8
+    },
+    {
+      "ticker": "NDA-SE.ST",
+      "name": "Nordea Bank Abp",
+      "currency": "SEK",
+      "price": 187.45,
+      "weightedFairValue": 175.4,
+      "marginOfSafety": -0.06870011402508536,
+      "upside": -0.06428380901573749,
+      "bearDownside": -0.26785809549213113,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 122.78,
+      "accumulateLow": 105.24,
+      "accumulateHigh": 122.78,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": -0.01646991765681738,
+        "dividend": 0.05,
+        "total": 0.033530082343182624,
+        "byScenario": {
+          "bear": -0.05582744510788955,
+          "base": 0.04777638737402208,
+          "bull": 0.09439499973257588
+        }
+      },
+      "return10y": {
+        "capital": -0.0006218035218805984,
+        "dividend": 0.05,
+        "total": 0.049378196478119404
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 5.1%, 1 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "n/a for sector"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "n/a for sector"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "n/a for sector"
+        },
+        {
+          "indicator": "ROE vs cost of equity",
+          "light": "green",
+          "detail": "15.1% vs 10.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "5 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 42.46157640503011,
+      "rank": 9
+    },
+    {
+      "ticker": "AXFO.ST",
+      "name": "Axfood AB",
+      "currency": "SEK",
+      "price": 273.5,
+      "weightedFairValue": 255.355,
+      "marginOfSafety": -0.07105793894773949,
+      "upside": -0.06634369287020114,
+      "bearDownside": -0.2222669104204753,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 178.74849999999998,
+      "accumulateLow": 153.213,
+      "accumulateHigh": 178.74849999999998,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.005473607810050823,
+        "dividend": 0.033,
+        "total": 0.038473607810050825,
+        "byScenario": {
+          "bear": -0.008434970358013577,
+          "base": 0.041056895346497674,
+          "bull": 0.08021561090522153
+        }
+      },
+      "return10y": {
+        "capital": 0.00842757268248473,
+        "dividend": 0.033,
+        "total": 0.04142757268248473
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 24.0 → 23.4"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 11.4%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "4.0% vs avg 4.3%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "amber",
+          "detail": "2.10x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 127.0% over 5 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "15.9% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "5 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "red",
+          "detail": "weakening"
+        }
+      ],
+      "trapReds": 2,
+      "composite": 41.63856252535538,
+      "rank": 10
+    },
+    {
+      "ticker": "NOVO-B.CO",
+      "name": "Novo Nordisk A/S (B)",
+      "currency": "DKK",
+      "price": 272.7,
+      "weightedFairValue": 292.278,
+      "marginOfSafety": 0.0669841726027961,
+      "upside": 0.07179317931793183,
+      "bearDownside": -0.27612761276127606,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 204.5946,
+      "accumulateLow": 175.3668,
+      "accumulateHigh": 204.5946,
+      "entryStatus": "BELOW FAIR VALUE",
+      "return5y": {
+        "capital": 0.018403606065775714,
+        "dividend": 0.043,
+        "total": 0.06140360606577571,
+        "byScenario": {
+          "bear": -0.06485656302398694,
+          "base": 0.08860984375457955,
+          "bull": 0.18277826547841008
+        }
+      },
+      "return10y": {
+        "capital": 0.03178041629957096,
+        "dividend": 0.043,
+        "total": 0.07478041629957095
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "amber",
+          "detail": "P/E 10.7 → 12.2"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 21.7%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "amber",
+          "detail": "41.3% vs avg 43.1%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "0.48x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "red",
+          "detail": "FCF/EBIT 34.3% over 5 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "39.2% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "7 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "red",
+          "detail": "weakening"
+        }
+      ],
+      "trapReds": 3,
+      "composite": 39.125622680943174,
+      "rank": 11
+    },
+    {
+      "ticker": "EKTA-B.ST",
+      "name": "Elekta AB (B)",
+      "currency": "SEK",
+      "price": 58.35,
+      "weightedFairValue": 52.6295,
+      "marginOfSafety": -0.10869379340483953,
+      "upside": -0.09803770351328189,
+      "bearDownside": -0.34018851756640966,
+      "requiredMarginOfSafety": 0.4,
+      "entryPrice": 31.5777,
+      "accumulateLow": 26.31475,
+      "accumulateHigh": 31.5777,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.007574396285568347,
+        "dividend": 0.041,
+        "total": 0.04857439628556835,
+        "byScenario": {
+          "bear": -0.03879630283785499,
+          "base": 0.06461563120386868,
+          "bull": 0.16538034118538344
+        }
+      },
+      "return10y": {
+        "capital": 0.018536659921535317,
+        "dividend": 0.041,
+        "total": 0.05953665992153532
+      },
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "amber",
+          "detail": "CAGR 2.7%, 3 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "red",
+          "detail": "2.5% vs avg 8.2%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "1.30x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 217.5% over 3 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "5 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "red",
+          "detail": "weakening"
+        }
+      ],
+      "trapReds": 3,
+      "composite": 20.32333124556142,
+      "rank": 12
+    }
+  ]
+}

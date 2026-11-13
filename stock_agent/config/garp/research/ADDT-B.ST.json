@@ -1,0 +1,319 @@
+{
+  "ticker": "ADDT-B.ST",
+  "name": "Addtech AB (B shares)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Industrials (Technology trading and niche manufacturing; Components, Energy, Industry, Infrastructure, Safety)",
+  "businessSummary": "Swedish technology solutions group with decentralised subsidiaries; acquisition-led; fiscal year ends 31 March.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 334.8,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "high52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable; stockanalysis 52w change -3.22%"
+    },
+    "low52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 270.08,
+      "period": "latest",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-23",
+      "note": "millions A+B (B class 257.21m)"
+    },
+    "marketCap": {
+      "value": 81080,
+      "period": "2026-10-23",
+      "source": "https://stockanalysis.com/quote/sto/ADDT.B/statistics/",
+      "asOf": "2026-10-23",
+      "note": "SEK m; 334.8 x 270.08m = ~90,400 at 2026-11-12 price"
+    },
+    "netDebt": {
+      "value": 6230,
+      "period": "30 Sep 2026",
+      "source": "Addtech Q2 2026/27 interim report (mb.cision.com)",
+      "asOf": "2026-10-22",
+      "note": "net debt excl. pensions SEK 6,230m (5,411m); excludes pension liabilities; lease treatment not stated; stockanalysis total debt 7.70bn less cash 1.47bn matches"
+    },
+    "enterpriseValue": {
+      "value": 87820,
+      "period": "2026-10-23",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-23",
+      "note": "SEK m"
+    },
+    "peTrailing": {
+      "value": 39.16,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "reported TTM EPS 8.55 to Sep 2026 (company): 334.8/8.55 = 39.2"
+    },
+    "peForward": {
+      "value": null,
+      "period": "fwd",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Agent value 31.13 rejected: implies forward EPS about 10.8 vs rolling 8.55 (+26%), no consensus evidence; unavailable."
+    },
+    "evEbitTrailing": {
+      "value": 27.79,
+      "period": "TTM",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-23",
+      "note": "EBIT (operating profit after amortisation of acquired intangibles); on EBITA basis lower"
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 24.922,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "fcfTTM": {
+      "value": 2980,
+      "period": "TTM to Jun 2026",
+      "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/cash-flow-statement",
+      "asOf": "2026-06-30",
+      "note": "SEK m; company op CF H1 FY26/27 1,322m (1,336); Q2 717m (859) lower on working capital; rolling 12m op CF/share 11.05 (10.55)"
+    },
+    "fcfYield": {
+      "value": 0.033,
+      "period": "TTM / current",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "2,980 / (334.8 x 270.08m = 90.4bn)"
+    },
+    "dividendPerShare": {
+      "value": 3.6,
+      "period": "FY2025/26 (paid Q2 FY26/27)",
+      "source": "Addtech Q2 2026/27 report",
+      "asOf": "2026-10-22",
+      "note": "up from 3.20; total 972m"
+    },
+    "dividendYield": {
+      "value": 0.0108,
+      "period": "current",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "3.60/334.8"
+    },
+    "payoutRatio": {
+      "value": 0.4211,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "netDebtToEbitda": {
+      "value": 1.5,
+      "period": "30 Sep 2026",
+      "source": "Addtech Q2 2026/27 report",
+      "asOf": "2026-10-22",
+      "note": "company 'financial debt/EBITDA' 1.5x (1.5x); agent metric 1.60; net debt excl pensions/equity 0.7x"
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.22,
+      "period": "rolling 12m to Sep 2026",
+      "source": "Addtech Q2 2026/27 report",
+      "asOf": "2026-10-22",
+      "note": "company-reported return on capital employed 22% (22%); ROE 29%; return on working capital 82%; stockanalysis ROIC 16.7%"
+    },
+    "roe": {
+      "value": 0.29,
+      "period": "rolling 12m to Sep 2026",
+      "source": "Addtech Q2 2026/27 report",
+      "asOf": "2026-10-22",
+      "note": ""
+    },
+    "beta5y": {
+      "value": 1.116,
+      "period": "5y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "stockanalysis 1.08"
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2021/22 (Mar-22)",
+        "revenue": 14038,
+        "ebit": 1480,
+        "ebitMargin": 0.1054,
+        "eps": 3.95,
+        "fcf": 1026,
+        "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+      },
+      {
+        "period": "FY2022/23 (Mar-23)",
+        "revenue": 18714,
+        "ebit": 2134,
+        "ebitMargin": 0.114,
+        "eps": 5.55,
+        "fcf": 1793,
+        "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+      },
+      {
+        "period": "FY2023/24 (Mar-24)",
+        "revenue": 20019,
+        "ebit": 2490,
+        "ebitMargin": 0.1244,
+        "eps": 6.05,
+        "fcf": 2424,
+        "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+      },
+      {
+        "period": "FY2024/25 (Mar-25)",
+        "revenue": 21796,
+        "ebit": 2769,
+        "ebitMargin": 0.127,
+        "eps": 7.0,
+        "fcf": 2538,
+        "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+      },
+      {
+        "period": "FY2025/26 (Mar-26)",
+        "revenue": 22703,
+        "ebit": 3033,
+        "ebitMargin": 0.1336,
+        "eps": 7.95,
+        "fcf": 2863,
+        "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+      },
+      {
+        "period": "TTM Jun-2026",
+        "revenue": 23036,
+        "ebit": 3144,
+        "ebitMargin": 0.1365,
+        "eps": 8.24,
+        "fcf": 2980,
+        "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "no source retrieved"
+    },
+    "consensus": {
+      "rating": "none (1 strong buy, 5 buy, 1 hold)",
+      "analysts": 7,
+      "buy": 6,
+      "hold": 1,
+      "sell": 0,
+      "targetAvg": 381.71,
+      "targetHigh": 417,
+      "targetLow": 340,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; no post-Q2 consensus found; pre-report FactSet Q2 EBITA 936m (placera 2026-10-19)"
+    },
+    "recentEvents": [
+      "Q2 FY2026/27 (Jul-Sep 2026, reported ~22 Oct 2026): net sales SEK 5,907m (+8%; organic +2%, acquired +5%, FX +1%); EBITA 987m (+17%), margin 16.7% (15.5%), includes one-off ~SEK 55m positive in Safety (ex one-off EBITA ~932m, ~15.8%, vs FactSet 936m); operating profit 826m, margin 14.0% (13.0%); EPS 2.10 (1.80); op CF 717m (859).",
+      "H1 FY26/27: sales 12,079m (+7%, organic +1%); EBITA 2,013m, margin 16.7% (15.6%); EPS 4.40 (3.80); rolling 12m EPS 8.55 (7.40); op CF 1,322m.",
+      "Acquisitions: four this FY (~SEK 500m annual sales), RTL Materials (28 Aug) and 82% of Mechanical Power Transmission (2 Oct).",
+      "Outlook: favourable conditions in coming quarters, noting uncertainty, cost inflation and supply chain risk.",
+      "Operating profit is EBIT (history) vs EBITA (company headline); EPS reported."
+    ],
+    "valueTrapFlags": [
+      "Organic growth only 1-2% (H1 +1%); growth is acquisition-driven.",
+      "Margin improvement in Q2 partly one-off (~55m, ~0.9pp); underlying EBITA margin ~15.8%, still up YoY.",
+      "Op cash flow down in Q2 (717 vs 859) on working capital; net debt up to 6,230m from 5,411m.",
+      "Very high multiples: trailing P/E ~39, EV/EBIT ~28."
+    ],
+    "dataGaps": [
+      "Post-Q2 consensus and estimate changes",
+      "Historical P/E range",
+      "52w high/low",
+      "FY2020/21 history and FY EBITA history (stockanalysis operating income = EBIT)",
+      "Share-price reaction to Q2 report (affarsvarlden fetch failed)",
+      "FCF TTM through Sep 2026"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E per scenario. Basis FY2026/27E EPS 9.0 (rolling 12m 8.55, H1 4.40; lead estimate). Historical P/E range not verified by agents; justified multiples are lead estimates, not sourced.",
+    "metricBasis": "EPS reported, FY2026/27E (lead estimate)",
+    "basisValue": 9.0,
+    "forwardDividendYield": 0.011,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "scores": {
+      "quality": 5,
+      "growth": 4,
+      "financialStrength": 4,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 224.64,
+        "epsCagr5y": 0.04,
+        "exitPe5y": 22,
+        "note": "Organic growth stays near zero, M&A multiples rise. Justified multiple 24x on next-12m 9.36.",
+        "epsCagr10y": 0.04,
+        "exitPe10y": 20
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 294.3,
+        "epsCagr5y": 0.09,
+        "exitPe5y": 28,
+        "note": "About 9% EPS growth from M&A and modest organic growth. Justified multiple 30x on next-12m 9.81.",
+        "epsCagr10y": 0.08,
+        "exitPe10y": 25
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 352.8,
+        "epsCagr5y": 0.12,
+        "exitPe5y": 32,
+        "note": "Electrification and defence niches lift organic growth. Justified multiple 35x on next-12m 10.08.",
+        "epsCagr10y": 0.1,
+        "exitPe10y": 28
+      }
+    },
+    "whyItFits": "High ROE (about 29%) technology-trading acquirer with rising EBITA margins (10.5% to 13.7% over five years) and solid cash conversion.",
+    "growthDrivers": "Acquisitions (four this year), electrification, energy and defence niches.",
+    "saturation": "Trailing P/E 39 and EV/EBIT 28: priced for continued double-digit growth while organic growth is 1-2%.",
+    "principalRisk": "Multiple compression if growth slows to its organic rate; Q2 margin partly a one-off."
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "ticker": "ORK.OL",
+  "name": "Orkla ASA",
+  "exchange": "Oslo Bors",
+  "currency": "NOK",
+  "sector": "Consumer Defensive / Packaged foods and branded consumer goods",
+  "businessSummary": "Nordic branded consumer goods group (Orkla Foods, Snacks, Care, Health, Orkla India, Food Ingredients, House Care) plus a 42.7% stake in paint maker Jotun (associate). Hydro Power sold in 2025.",
+  "retrievedAt": "2026-11-13T09:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 104.9,
+      "period": "close, run 2026-11-12",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "NOK. After Q3 beat on 6 Nov 2026."
+    },
+    "high52w": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable; stockanalysis shows 52-week price change -10.18% as of 2026-10-16"
+    },
+    "low52w": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 961.73,
+      "period": "2026-10-16 (m)",
+      "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+      "asOf": "2026-10-16",
+      "note": "Provider figure; buybacks ongoing."
+    },
+    "marketCap": {
+      "value": 100885,
+      "period": "price 2026-11-12 x 961.73m",
+      "source": "https://stockanalysis.com/quote/osl/ORK/statistics/ ; stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Derived: ~NOK 100.9bn (stockanalysis NOK 90.79bn on 2026-10-16 at ~94.4)."
+    },
+    "netDebt": {
+      "value": 21220,
+      "period": "Q3 2026 (provider, NOK m)",
+      "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+      "asOf": "2026-10-16",
+      "note": "Provider: total debt 22.67bn less cash 1.45bn; lease treatment not stated. Company NIBD at FY2025: NOK 14,167m incl. leases / 11,879m excl. leases. Rise vs FY2025 not reconciled (buybacks, acquisition, special dividend)."
+    },
+    "enterpriseValue": {
+      "value": 122105,
+      "period": "derived price 2026-11-12",
+      "source": "derived",
+      "asOf": "2026-11-12",
+      "note": "Derived: market cap ~100.9bn + net debt 21.2bn = ~NOK 122.1bn (provider EV 115.52bn at lower price). Excludes value of Jotun stake adjustment."
+    },
+    "peTrailing": {
+      "value": 15.85,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure; stockanalysis showed 14.38 at ~94.4 on 2026-10-16 (TTM EPS 7.10). FY2025 adjusted diluted EPS 6.83 gives 15.4x at 104.90."
+    },
+    "peForward": {
+      "value": 14.28,
+      "period": "forward, price ~94.4",
+      "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+      "asOf": "2026-10-16",
+      "note": "Provider figure at 2026-10-16 price; would be ~15.9x at 104.90 if estimates unchanged."
+    },
+    "evEbitTrailing": {
+      "value": 12.16,
+      "period": "TTM, price ~94.4",
+      "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+      "asOf": "2026-10-16",
+      "note": "Provider figure; implied EBIT (~9.5bn) exceeds reported EBIT (TTM 7.3bn), so likely includes associates/Jotun. Company EBIT (adj.) FY2025 7,647m is EBIT (adj.), not EBITA. Derived on company numbers: EV 122.1bn / 7,647m = ~16.0x (FY2025 EBIT (adj.), current price)."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 13.697,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure; stockanalysis showed 9.62 on 2026-10-16. Large conflict between providers, not reconciled."
+    },
+    "fcfTTM": {
+      "value": 6658,
+      "period": "TTM to Sep 2026 (NOK m)",
+      "source": "https://stockanalysis.com/quote/osl/ORK/financials/",
+      "asOf": "2026-11-13",
+      "note": "Provider definition. Company cash flow before capital allocation FY2025 6,945m (FY2024 6,970m); provider FY2025 FCF 6,720m."
+    },
+    "fcfYield": {
+      "value": 0.066,
+      "period": "TTM FCF / market cap 2026-11-12",
+      "source": "derived",
+      "asOf": "2026-11-12",
+      "note": "Derived: 6,658 / ~100,880 = ~6.6% (provider showed 7.29% at the lower Oct price). Dividend NOK 6.00 x 962m = ~5.8bn, covered ~1.15x."
+    },
+    "dividendPerShare": {
+      "value": 6.0,
+      "period": "FY2025 (NOK): 4.00 ordinary + 2.00 additional",
+      "source": "https://storage.mfn.se/ff70d0ac-55a8-424c-b15b-61c4759f69e3/q4-2025-external-report-final.pdf",
+      "asOf": "2026-02-12",
+      "note": "Intention to propose; May 2025 payment was NOK 10.00 incl. NOK 6.00 additional."
+    },
+    "dividendYield": {
+      "value": 0.0572,
+      "period": "FY2025 DPS / price 2026-11-12",
+      "source": "https://storage.mfn.se/ff70d0ac-55a8-424c-b15b-61c4759f69e3/q4-2025-external-report-final.pdf",
+      "asOf": "2026-11-12",
+      "note": "Derived: 6.00 / 104.90 (provider 6.36% at lower price)."
+    },
+    "payoutRatio": {
+      "value": 0.6144,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Agent figure; stockanalysis 86.4% (2026-10-16). Conflict: bases differ. On FY2025 adjusted EPS 6.83 dividend 6.00 = 88%."
+    },
+    "netDebtToEbitda": {
+      "value": 1.4,
+      "period": "FY2025 (rolling 12m, incl. leases)",
+      "source": "https://storage.mfn.se/ff70d0ac-55a8-424c-b15b-61c4759f69e3/q4-2025-external-report-final.pdf",
+      "asOf": "2025-12-31",
+      "note": "Company: NIBD 14,167m incl. leases. Agent shows 2.45 (2026-11-12); provider-implied ~1.8 (21.2bn / ~12.0bn EBITDA). Conflict unresolved; latest company figure is FY2025. Q3 2026 company figure not retrieved."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "Provider value 9.22 is identical to its ROIC value and is treated as unreliable."
+    },
+    "roic": {
+      "value": 0.0922,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+      "asOf": "2026-10-16",
+      "note": "Provider figure."
+    },
+    "roe": {
+      "value": 0.1506,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+      "asOf": "2026-10-16",
+      "note": "Provider figure."
+    },
+    "beta5y": {
+      "value": 0.198,
+      "period": "5y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure (0.20)."
+    },
+    "sectorMetrics": {
+      "operatingProfitDefinition": "Company headline measure is EBIT (adj.), not EBITA. EPS: company reports diluted EPS and adjusted diluted EPS.",
+      "q3_2026": {
+        "organicGrowth": 0.031,
+        "volumeMix": 0.027,
+        "operatingRevenues_NOKm": 17541,
+        "revenueGrowthReported": -0.023,
+        "ebitAdj_NOKm": 2078,
+        "ebitAdjGrowth": 0.019,
+        "ebitAdjMargin": 0.118,
+        "ebitAdjVsConsensus_NOKm": 1951,
+        "underlyingEbitAdjGrowth": 0.081,
+        "reportedEbit_NOKm": 1588,
+        "reportedEbitGrowth": -0.031,
+        "netProfit_NOKm": 1799,
+        "adjustedEps": 1.94,
+        "adjustedEpsGrowth": 0.049,
+        "jotunProfit_NOKm": 563,
+        "jotunProfitGrowth": -0.066,
+        "source": "https://www.inderes.se/en/releases/orkla-reports-results-for-the-third-quarter ; https://www.placera.se/telegram/orkla-orklas-justerade-resultat-hogre-an-vantat-uppdatering-20261106"
+      },
+      "fy2025": {
+        "operatingRevenues_NOKm": 71547,
+        "ebitAdj_NOKm": 7647,
+        "ebitAdjGrowth": 0.071,
+        "reportedEbit_NOKm": 7086,
+        "adjustedDilutedEps": 6.83,
+        "dilutedEpsIncludingDiscontinued": 11.48,
+        "dilutedEpsContinuing": 6.38,
+        "discontinuedHydroPowerProfit_NOKm": 5120,
+        "niBD_NOKm_inclLeases": 14167,
+        "niBD_NOKm_exclLeases": 11879,
+        "niBDtoEbitda": 1.4,
+        "equityRatio": 0.588,
+        "associatesProfit_NOKm": 2181,
+        "impairments_NOKm": 484,
+        "source": "https://storage.mfn.se/ff70d0ac-55a8-424c-b15b-61c4759f69e3/q4-2025-external-report-final.pdf"
+      },
+      "portfolioChanges": [
+        "Hydro Power sold 2025 (~NOK 5.5bn proceeds), reported as discontinued; FY2025 EPS 11.48 includes a NOK 5,120m discontinued profit; 2024 restated.",
+        "Pierre Robert Group sold Q1 2025 (accounting loss NOK 47m); Lilleborg divested; 2024 revenue not comparable.",
+        "Orkla India IPO Nov 2025: 15% sold (net NOK 1.5bn), Orkla owns 75%.",
+        "Two Icelandic Orkla Food Ingredients businesses sold (NOK 432m).",
+        "Acquisitions FY2025 NOK 592m (Eurohansa Torun, Le Vesuve, Decorgel); Sept 2026 Orkla Snacks completed The European Candy Group (for BUBS).",
+        "Capital Markets Day 1 Dec 2026 will set 2030 targets."
+      ],
+      "buybacks": "Up to NOK 4bn programme started Sep 2026 running to 31 Dec 2027 at the latest (Q3 2026 release); the earlier NOK 4bn programme (from 17 Nov 2025, to 31 Dec 2026) had NOK 841m executed in 2025 (NOK 1.2bn total buybacks in 2025).",
+      "forexNote": "Stronger NOK reduced reported Q3 revenue and EBIT; underlying growth strips FX and portfolio effects."
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 50441,
+        "ebit": 6099,
+        "ebitMargin": 0.1209,
+        "eps": 4.82,
+        "fcf": 3666,
+        "source": "stockanalysis.com (NOK m; reported operating income, EPS, FCF). Not restated for later divestments/Hydro Power."
+      },
+      {
+        "period": "FY2022",
+        "revenue": 58391,
+        "ebit": 7365,
+        "ebitMargin": 0.1261,
+        "eps": 5.03,
+        "fcf": 2407,
+        "source": "stockanalysis.com. Not restated."
+      },
+      {
+        "period": "FY2023",
+        "revenue": 67797,
+        "ebit": 6754,
+        "ebitMargin": 0.0996,
+        "eps": 5.21,
+        "fcf": 4328,
+        "source": "stockanalysis.com. Not restated."
+      },
+      {
+        "period": "FY2024",
+        "revenue": 69254,
+        "ebit": 6558,
+        "ebitMargin": 0.0947,
+        "eps": 6.06,
+        "fcf": 6970,
+        "source": "Orkla Q4 2025 report: revenue, reported EBIT (restated for Hydro Power as discontinued), adjusted diluted EPS 6.06 (reported diluted 6.06 incl. disc. ops; continuing 5.70), cash flow before capital allocation 6,970. EBIT (adj.) 7,142. Provider shows op. income 6,979, FCF 7,616."
+      },
+      {
+        "period": "FY2025",
+        "revenue": 71547,
+        "ebit": 7086,
+        "ebitMargin": 0.099,
+        "eps": 6.83,
+        "fcf": 6945,
+        "source": "Orkla Q4 2025 report: reported EBIT 7,086 (EBIT adj. 7,647); EPS = adjusted diluted 6.83 (reported diluted 11.48 incl. Hydro Power gain; continuing 6.38); cash flow before capital allocation 6,945. Provider op. income 7,463, FCF 6,720."
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "hold",
+      "analysts": 8,
+      "buy": 1,
+      "hold": 6,
+      "sell": 1,
+      "targetAvg": 110.25,
+      "targetHigh": 140,
+      "targetLow": 89,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; provider forward P/E 14.28 on 2026-10-16"
+    },
+    "recentEvents": [
+      "6 Nov 2026 Q3: organic growth 3.1% (volume/mix 2.7%), EBIT (adj.) NOK 2,078m (+1.9%, ~6.5% above consensus 1,951m), margin 11.8%, adjusted EPS NOK 1.94 (+4.9%); underlying EBIT (adj.) +8.1%.",
+      "Reported Q3 operating revenues NOK 17.5bn, -2.3% YoY (stronger NOK, portfolio changes) despite +3.1% organic.",
+      "Jotun Q3 profit NOK 563m, -6.6% (sales +13%, operating profit +1.3% adjusted for FX).",
+      "New share buyback up to NOK 4bn from Sep 2026 to 31 Dec 2027.",
+      "Orkla Snacks completed The European Candy Group acquisition (Sep 2026).",
+      "Capital Markets Day on 1 Dec 2026: new targets to 2030."
+    ],
+    "valueTrapFlags": [
+      "Reported revenue declined 2.3% in Q3 and reported EBIT -3.1% while adjusted metrics rose; gap from FX, comparability and other income/expense items.",
+      "Organic growth only 3.1% (volume/mix 2.7%); EBIT (adj.) +1.9% reported, with the beat driven by margin (11.8% vs 11.4%).",
+      "Jotun earnings (a large share of profit before tax: NOK 2,181m associate profit in FY2025) fell 6.6% in Q3.",
+      "Leverage drifting up: company NIBD/EBITDA 1.4x at FY2025, but provider net debt NOK 21.2bn at Q3 2026 vs NOK 14.2bn at FY2025 and agent ND/EBITDA 2.45; unreconciled.",
+      "Dividend NOK 6.00 is ~88% of FY2025 adjusted EPS (payout 61% to 86% depending on source) and the FY2025 EPS includes a one-off Hydro Power gain.",
+      "After the 11% run since mid-October the stock trades at ~15.9x trailing P/E near consensus mean target 110.25 (analyst rating hold)."
+    ],
+    "dataGaps": [
+      "Q3 2026 net debt, NIBD/EBITDA, cash flow and YTD figures (full Q3 report PDF not accessed); no explicit guidance.",
+      "52-week range, historical multiples, forward consensus EPS not retrieved.",
+      "FY2021-2023 figures not restated for Hydro Power/Pierre Robert/Lilleborg; EBIT definitions differ between company (EBIT adj.) and provider.",
+      "Provider vs agent conflicts: EV/EBITDA 13.7 vs 9.6; payout 61% vs 86%; ND/EBITDA 2.45 vs 1.4 vs ~1.8."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E adjusted EPS NOK 7.2 (FY2025 continuing 6.83, Q3 EBIT adj. beat; lead estimate). Portfolio changes reduce history comparability. Capital Markets Day 1 Dec 2026.",
+    "metricBasis": "EPS adjusted, 2026E (lead estimate)",
+    "basisValue": 7.2,
+    "forwardDividendYield": 0.057,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+      "quality": 3,
+      "growth": 3,
+      "financialStrength": 4,
+      "risk": 5
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 95.47,
+        "epsCagr5y": 0.02,
+        "exitPe5y": 13,
+        "note": "Branded volumes stall, Jotun weakens. Justified multiple 13x on next-12m 7.34.",
+        "epsCagr10y": 0.02,
+        "exitPe10y": 12
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 122.11,
+        "epsCagr5y": 0.06,
+        "exitPe5y": 15,
+        "note": "Organic 3%, margin gains from portfolio focus, buybacks. Justified multiple 16x on next-12m 7.63.",
+        "epsCagr10y": 0.05,
+        "exitPe10y": 14
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 139.97,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 17,
+        "note": "New 2030 targets credible, Jotun and India grow. Justified multiple 18x on next-12m 7.78.",
+        "epsCagr10y": 0.07,
+        "exitPe10y": 16
+      }
+    },
+    "whyItFits": "Nordic branded consumer goods: beta 0.2, 5.7% dividend, about 6.6% FCF yield, NOK 4bn buyback, ND/EBITDA 1.4x.",
+    "growthDrivers": "Portfolio-company model, price/mix, Jotun stake, Orkla India listing value, buybacks.",
+    "saturation": "P/E 16 trailing: reasonably valued for a defensive staples group; consensus target slightly above price (analyst opinion).",
+    "principalRisk": "Low ROIC (about 9%, near cost of capital) and reported revenue declines from FX and divestments."
+  }
+}

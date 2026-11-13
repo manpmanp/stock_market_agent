@@ -1,0 +1,365 @@
+{
+  "ticker": "INDT.ST",
+  "name": "Indutrade AB",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Industrials / technical trading and niche industrial companies",
+  "businessSummary": "Acquisitive group of about 200 niche technology and industrial companies in five business areas (Flow Technology, Industrial & Engineering, Process Energy & Water, Life Science, Infrastructure & Safety), mostly Europe.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 268.2,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (currentPrice)",
+      "asOf": "2026-11-12",
+      "note": "Agent price. stockanalysis showed 255.80 on 2026-10-01."
+    },
+    "high52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "low52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 364.32,
+      "period": "current (millions)",
+      "source": "stockanalysis.com/quote/sto/INDT/statistics",
+      "asOf": "2026-10-01",
+      "note": ""
+    },
+    "marketCap": {
+      "value": 97708,
+      "period": "2026-11-12",
+      "source": "derived: 268.20 x 364.32m",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "netDebt": {
+      "value": 9500,
+      "period": "balance sheet, date not stated (likely 30 Jun 2026)",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-01",
+      "note": "Aggregator figure, probably includes IFRS 16 leases and pension. Company-reported interest-bearing net debt at 31 Dec 2025 was 7,556 (ND/EBITDA 1.4x). Q3 2026 net debt not read (report page lacked it)."
+    },
+    "enterpriseValue": {
+      "value": 107208,
+      "period": "derived",
+      "source": "derived: mcap 97,708 + net debt 9,500",
+      "asOf": "2026-11-12",
+      "note": "Stockanalysis EV 103,210 at its Oct 1 price."
+    },
+    "peTrailing": {
+      "value": 35.15,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Stockanalysis 34.96 at 255.80. Reported EPS FY2025 7.03; Q3 2026 EPS 2.21 (1.85)."
+    },
+    "peForward": {
+      "value": 27.31,
+      "period": "forward, period not stated",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-01",
+      "note": "Computed on 255.80 price; at 268.20 about 28.6 if EPS estimate unchanged (derived)."
+    },
+    "evEbitTrailing": {
+      "value": 26.8,
+      "period": "TTM Jun 2026",
+      "source": "derived: EV 107,208 / TTM EBIT 4,003 (stockanalysis, to 30 Jun 2026)",
+      "asOf": "2026-11-12",
+      "note": "Operating profit is EBIT after acquisition amortisation (EBITA is higher). Stockanalysis shows 25.78 at older price. Agent evToEbit null."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 19.53,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Agent evToEbitda."
+    },
+    "fcfTTM": {
+      "value": 3667,
+      "period": "TTM to 30 Jun 2026",
+      "source": "stockanalysis.com/financials/cash-flow-statement",
+      "asOf": "2026-11-12",
+      "note": "Operating cash flow 4,131 less capex 464, before lease payments and acquisitions. Company 'free operating cash flow' FY2025 3,500."
+    },
+    "fcfYield": {
+      "value": 0.0375,
+      "period": "TTM Jun 2026",
+      "source": "derived: 3,667 / mcap 97,708",
+      "asOf": "2026-11-12",
+      "note": "Pre-lease FCF."
+    },
+    "dividendPerShare": {
+      "value": 3.1,
+      "period": "FY2025 (paid 2026)",
+      "source": "Indutrade year-end report 2025",
+      "asOf": "2026-01",
+      "note": "Proposed/paid; up from 3.00."
+    },
+    "dividendYield": {
+      "value": 0.0116,
+      "period": "FY2025 dividend",
+      "source": "derived: 3.10 / 268.20",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "payoutRatio": {
+      "value": 0.4016,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Policy 30-50% of net profit."
+    },
+    "netDebtToEbitda": {
+      "value": 1.69,
+      "period": "latest",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Agent figure; company reported 1.4x at 31 Dec 2025 (net debt 7,556), 1.8x at 2022 year-end. Lease treatment of agent figure unverified. Rising from 1.4x with acquisition pace."
+    },
+    "interestCoverage": {
+      "value": 9.84,
+      "period": "latest",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-01",
+      "note": "Agent value null."
+    },
+    "roic": {
+      "value": 0.18,
+      "period": "FY2025 (ROCE, as reported)",
+      "source": "Indutrade year-end report 2025",
+      "asOf": "2026-01",
+      "note": "Company reports ROCE not ROIC. ROCE 23% (2022), 21% (2023), 19% (2024), 18% (2025); target at least 20%. Stockanalysis ROIC 11.52% (different definition)."
+    },
+    "roe": {
+      "value": 0.1569,
+      "period": "TTM",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-01",
+      "note": ""
+    },
+    "beta5y": {
+      "value": 1.179,
+      "period": "5y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "sectorMetrics": {
+      "organicGrowthQ3_2026": {
+        "value": 0.05,
+        "period": "Q3 2026",
+        "source": "Indutrade Q3 2026 report (inderes.se, 2026-10-23)",
+        "asOf": "2026-10-23",
+        "note": "Total sales +13%; acquisitions contributed about 8 points (period of the 8% unclear). Order intake +16%, organic +6%."
+      },
+      "organicGrowthFY2025": {
+        "value": -0.02,
+        "period": "FY2025",
+        "source": "Indutrade year-end report 2025",
+        "asOf": "2026-01",
+        "note": "Q4 2025 organic 0%, organic order intake +3%."
+      },
+      "ebitaTTM": {
+        "value": null,
+        "period": "TTM Sep 2026",
+        "source": "n/a",
+        "asOf": "2026-11-13",
+        "note": "unavailable"
+      },
+      "ebitaMarginQ3_2026": {
+        "value": 0.153,
+        "period": "Q3 2026",
+        "source": "Indutrade Q3 2026 report (inderes.se, 2026-10-23)",
+        "asOf": "2026-10-23",
+        "note": "EBITA 1,358 (1,143), margin 14.6% a year earlier. Consensus (FactSet, 10 est.) EBITA 1,345 per Placera 2026-10-21; slight beat."
+      },
+      "targets": "Margin target >=14% EBITA (FY2025 13.8%, missed); ROCE >=20% (18%, missed); growth >=10% p.a.; net debt/equity <=100% (44%)."
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 21715,
+        "ebit": 2840,
+        "ebitMargin": 0.1308,
+        "eps": 5.75,
+        "fcf": 2514,
+        "ebita": null,
+        "ebitaMargin": null,
+        "source": "stockanalysis.com (EBITA 2021 not in the 2025 report multi-year table; unverified)"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 27016,
+        "ebit": 3620,
+        "ebitMargin": 0.134,
+        "eps": 7.36,
+        "fcf": 1861,
+        "ebita": 4098,
+        "ebitaMargin": 0.152,
+        "organicGrowth": null,
+        "roce": 0.23,
+        "source": "Indutrade year-end report 2025 (EBIT, EBITA, ROCE); stockanalysis FCF (OCF less capex)"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 31835,
+        "ebit": 4158,
+        "ebitMargin": 0.1306,
+        "eps": 7.86,
+        "fcf": 3972,
+        "ebita": 4769,
+        "ebitaMargin": 0.15,
+        "roce": 0.21,
+        "source": "same"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 32544,
+        "ebit": 4033,
+        "ebitMargin": 0.1239,
+        "eps": 7.55,
+        "fcf": 3649,
+        "ebita": 4689,
+        "ebitaMargin": 0.144,
+        "roce": 0.19,
+        "source": "same; company free operating cash flow 3,677"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 32229,
+        "ebit": 3769,
+        "ebitMargin": 0.117,
+        "eps": 7.03,
+        "fcf": 3488,
+        "ebita": 4446,
+        "ebitaMargin": 0.138,
+        "organicGrowth": -0.02,
+        "roce": 0.18,
+        "source": "same; company free operating cash flow 3,500"
+      },
+      {
+        "period": "TTM Jun 2026",
+        "revenue": 33123,
+        "ebit": 4003,
+        "ebitMargin": 0.1208,
+        "eps": 7.36,
+        "fcf": 3667,
+        "ebita": null,
+        "ebitaMargin": null,
+        "source": "stockanalysis.com (EBIT may differ slightly from company definition)"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "not found in accessible sources"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 8,
+      "buy": 4,
+      "hold": 3,
+      "sell": 0,
+      "targetAvg": 285.75,
+      "targetHigh": 322,
+      "targetLow": 260,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (MarketScreener 2026-10: 7 analysts, avg 282.62, outperform)",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; implied forward EPS about 9.4 from stockanalysis fwd PE 27.31 at 255.80 (derived)"
+    },
+    "recentEvents": [
+      "Q3 2026 (23 Oct 2026): sales 8,871 (+13%, organic +5%), EBITA 1,358 (+19%), margin 15.3%, EPS 2.21, OCF 1,216; all five business areas grew organically.",
+      "13 acquisitions signed YTD with annual sales of 2.1bn; Euromed/Sinmed and Schraner announced after quarter-end.",
+      "Broker target raises in Sep-Oct 2026 (SEB 288, Handelsbanken 290, Goldman 211 to 261) per MarketScreener."
+    ],
+    "valueTrapFlags": [
+      "Margin and ROCE below company targets in FY2025 (13.8% vs 14%, 18% vs 20%) and ROCE has fallen four years running (23% to 18%); Q3 2026 margin 15.3% shows recovery but one quarter.",
+      "Growth is mostly acquired: Q3 total +13% vs organic +5%; FY2025 organic -2%.",
+      "Net debt/EBITDA up (agent 1.69x vs 1.4x at YE2025) as acquisitions continue.",
+      "Trailing P/E about 35 and EV/EBIT about 27 leave little room for a miss (valuation context only)."
+    ],
+    "dataGaps": [
+      "52-week high/low",
+      "EBITA FY2021 and TTM Sep 2026",
+      "Q3 2026 net debt, ND/EBITDA and ROCE (report page lacked them; PDF not read)",
+      "Historical P/E range",
+      "Forward EPS consensus after Q3 and estimate revision direction (only broker target changes seen)",
+      "Quarterly organic growth Q1-Q3 2025 and Q1-Q2 2026"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E EPS 8.0 (TTM 7.36, Q3 EPS 2.21, recovery under way; lead estimate). Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 8.0,
+    "forwardDividendYield": 0.012,
+    "qualityTier": "B",
+    "role": null,
+    "scores": {
+      "quality": 4,
+      "growth": 3,
+      "financialStrength": 4,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 183.04,
+        "epsCagr5y": 0.04,
+        "exitPe5y": 22,
+        "note": "Industrial demand stalls, margin stays near 12%. Justified multiple 22x on next-12m 8.32.",
+        "epsCagr10y": 0.04,
+        "exitPe10y": 20
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 244.16,
+        "epsCagr5y": 0.09,
+        "exitPe5y": 26,
+        "note": "Organic about 4% plus acquisitions, EBITA margin back toward 14%. Justified multiple 28x on next-12m 8.72.",
+        "epsCagr10y": 0.08,
+        "exitPe10y": 24
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 286.72,
+        "epsCagr5y": 0.12,
+        "exitPe5y": 29,
+        "note": "Margin recovery to target and strong M&A year. Justified multiple 32x on next-12m 8.96.",
+        "epsCagr10y": 0.1,
+        "exitPe10y": 26
+      }
+    },
+    "whyItFits": "Decentralised technical-trading acquirer; Q3 2026 organic +5% across all five areas suggests the 2024-25 margin slide is reversing.",
+    "growthDrivers": "Organic recovery, 13 acquisitions YTD (SEK 2.1bn sales), margin return toward the 14% target.",
+    "saturation": "P/E 35 on depressed earnings: recovery already priced; brokers lifted targets in Sep-Oct (analyst opinion).",
+    "principalRisk": "Margins and ROCE stayed below targets in FY2025; a renewed industrial slowdown would leave a 35x multiple unsupported."
+  }
+}

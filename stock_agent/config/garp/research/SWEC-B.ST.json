@@ -1,0 +1,355 @@
+{
+  "ticker": "SWEC-B.ST",
+  "name": "Sweco AB (B)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Industrials / engineering and architecture consulting",
+  "businessSummary": "Europe's largest engineering and architecture consultancy, about 21,700 employees, mainly Sweden, Norway, Finland, Denmark, Germany and the UK; growth via organic expansion and acquisitions.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 138.2,
+      "period": "close",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-23",
+      "note": "Latest found; Q3 report came 2026-10-29 so post-report reaction not captured. Close 136.80 on 2026-10-22. Agent data lacks SWEC-B."
+    },
+    "high52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "low52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 361.24,
+      "period": "current (millions)",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-23",
+      "note": ""
+    },
+    "marketCap": {
+      "value": 49930,
+      "period": "2026-10-23",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-23",
+      "note": ""
+    },
+    "netDebt": {
+      "value": 3160,
+      "period": "30 Sep 2026 (company)",
+      "source": "Sweco Q3 2026 report via securities.io (2026-10-29)",
+      "asOf": "2026-10-29",
+      "note": "Company net debt/EBITDA 0.8x. Whether it includes IFRS 16 leases is unverified. Stockanalysis net debt 6,490 (likely incl. leases; its EV 56,430)."
+    },
+    "enterpriseValue": {
+      "value": 53090,
+      "period": "derived",
+      "source": "derived: 49,930 + 3,160",
+      "asOf": "2026-10-23",
+      "note": "With stockanalysis net debt: 56,430."
+    },
+    "peTrailing": {
+      "value": 21.0,
+      "period": "TTM Sep 2026",
+      "source": "derived: 138.20 / EPS 6.58",
+      "asOf": "2026-10-23",
+      "note": "EPS TTM = FY2025 6.18 + 9M26 4.74 - 9M25 4.34 (reported). Stockanalysis 21.94."
+    },
+    "peForward": {
+      "value": 19.1,
+      "period": "FY2026E",
+      "source": "derived: 138.20 / consensus EPS 7.22",
+      "asOf": "2026-10-23",
+      "note": "Consensus EPS is non-GAAP (FY2025 base 6.65 vs reported 6.18), so not like-for-like. FY2027E 8.14 -> 17.0x. Stockanalysis fwd PE 17.97."
+    },
+    "evEbitTrailing": {
+      "value": 15.7,
+      "period": "TTM Sep 2026",
+      "source": "derived: EV 53,090 / EBIT 3,382",
+      "asOf": "2026-10-23",
+      "note": "EBIT TTM = FY2025 3,203 + 9M26 2,433 - 9M25 2,254. EBITA basis: 53,090 / 3,499 = 15.2 (EV 56,430: 16.1)."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": null,
+      "period": "TTM",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "fcfTTM": {
+      "value": 2337,
+      "period": "TTM Sep 2026 after lease payments",
+      "source": "derived: OCF 3,779 - capex 431 - leases 1,011 (stockanalysis.com)",
+      "asOf": "2026-10-29",
+      "note": "Pre-lease FCF 3,348. FY2025 after leases 2,739 (OCF 4,011)."
+    },
+    "fcfYield": {
+      "value": 0.0468,
+      "period": "TTM Sep 2026 after leases",
+      "source": "derived: 2,337 / 49,930",
+      "asOf": "2026-10-23",
+      "note": "Pre-lease yield 6.7%. 9M26 operating cash flow 1,121 vs 1,353 (working capital)."
+    },
+    "dividendPerShare": {
+      "value": 3.7,
+      "period": "FY2025",
+      "source": "Sweco year-end report 2025",
+      "asOf": "2026-02",
+      "note": "3.30 prior year; cap 1,344 total."
+    },
+    "dividendYield": {
+      "value": 0.0268,
+      "period": "FY2025",
+      "source": "derived: 3.70/138.20",
+      "asOf": "2026-10-23",
+      "note": ""
+    },
+    "payoutRatio": {
+      "value": 0.6,
+      "period": "FY2025",
+      "source": "derived: 3.70 / EPS 6.18",
+      "asOf": "2026-10-23",
+      "note": "Stockanalysis 58.6%."
+    },
+    "netDebtToEbitda": {
+      "value": 0.8,
+      "period": "30 Sep 2026",
+      "source": "Sweco Q3 2026 report via securities.io (2026-10-29)",
+      "asOf": "2026-10-29",
+      "note": "0.9x a year earlier; 0.4x at YE2025 (seasonal). IFRS 16 treatment unverified."
+    },
+    "interestCoverage": {
+      "value": 15.17,
+      "period": "latest",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-23",
+      "note": ""
+    },
+    "roic": {
+      "value": 0.172,
+      "period": "FY2025 (ROCE, as reported)",
+      "source": "Sweco year-end report 2025",
+      "asOf": "2026-02",
+      "note": "Company reports ROCE not ROIC; 17.1% in 2024. Stockanalysis ROIC 14.07%. Q3 2026 ROCE not read."
+    },
+    "roe": {
+      "value": 0.187,
+      "period": "rolling 12m to Sep 2026",
+      "source": "Sweco Q3 2026 report via securities.io (2026-10-29)",
+      "asOf": "2026-10-29",
+      "note": "18.3% FY2025."
+    },
+    "beta5y": {
+      "value": 0.87,
+      "period": "5y",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-23",
+      "note": ""
+    },
+    "sectorMetrics": {
+      "organicGrowth": {
+        "Q3_2026": 0.02,
+        "9M_2026": 0.03,
+        "FY2025": 0.03,
+        "FY2025_calendar_adj": 0.04,
+        "FY2024": 0.05,
+        "source": "Sweco Q3 2026 and year-end 2025 reports",
+        "note": "Q3 2026 total +7% (organic 2, acquired 3, FX 1)."
+      },
+      "ebitaMargin": {
+        "Q3_2026": 0.103,
+        "9M_2026": 0.103,
+        "TTM_Sep2026": 0.106,
+        "FY2025": 0.105,
+        "FY2024": 0.1,
+        "note": "Operating profit metric is EBITA (before acquisition-related amortisation); EBIT margin Q3 2026 9.9%. Q3 EBITA 786 (+10% calendar adjusted), billing ratio 75.1% (74.0%)."
+      },
+      "restructuringCosts9M2026": 62
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 21803,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 4.17,
+        "fcf": 1970,
+        "ebita": null,
+        "ebitaMargin": null,
+        "source": "stockanalysis.com (EBIT in aggregator does not reconcile with company reports; left null). FCF = OCF - capex, pre-lease"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 24296,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 4.6,
+        "fcf": 2241,
+        "ebita": null,
+        "ebitaMargin": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 28523,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 4.64,
+        "fcf": 2168,
+        "ebita": null,
+        "ebitaMargin": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 30676,
+        "ebit": 3015,
+        "ebitMargin": 0.098,
+        "eps": 5.76,
+        "fcf": 3699,
+        "ebita": 3076,
+        "ebitaMargin": 0.1,
+        "organicGrowth": 0.05,
+        "roce": 0.171,
+        "source": "Sweco year-end report 2025; stockanalysis FCF (lease payments 921)"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 31586,
+        "ebit": 3203,
+        "ebitMargin": 0.101,
+        "eps": 6.18,
+        "fcf": 3617,
+        "ebita": 3332,
+        "ebitaMargin": 0.105,
+        "organicGrowth": 0.03,
+        "roce": 0.172,
+        "source": "Sweco year-end report 2025; FCF after leases 2,739"
+      },
+      {
+        "period": "TTM Sep 2026",
+        "revenue": 33055,
+        "ebit": 3382,
+        "ebitMargin": 0.102,
+        "eps": 6.58,
+        "fcf": 3348,
+        "ebita": 3499,
+        "ebitaMargin": 0.106,
+        "source": "Sweco Q3 2026 (revenue, EBITA); EBIT/EPS derived; FCF pre-lease, after leases 2,337"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "not found"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 6,
+      "buy": 5,
+      "hold": 1,
+      "sell": 0,
+      "targetAvg": 170.5,
+      "targetHigh": 200,
+      "targetLow": 133,
+      "source": "stockanalysis.com/forecast (rating counts Aug 2026: 4 strong buy, 1 buy, 1 hold; targets as of 2026-10-02, before Q3 report)",
+      "asOf": "2026-10-02"
+    },
+    "forwardEstimates": {
+      "epsNextFY": 7.22,
+      "epsFY2": 8.14,
+      "revenueGrowthNextFY": 0.0759,
+      "source": "stockanalysis.com/forecast 2026-10-02 (non-GAAP EPS; revenue 2026E 33.98bn, 2027E 36.10bn +6.2%); pre-Q3"
+    },
+    "recentEvents": [
+      "Q3 2026 (29 Oct): sales 7,606 (+7%, organic +2%), EBITA 786, margin 10.3% (9.8%), EPS 1.44 (1.18); 9M OCF 1,121 vs 1,353.",
+      "CEO Asa Bergman resignation announced 2 Oct 2026; stays until successor found.",
+      "Restructuring costs 9M 62 (32); integration costs 10 in Q3 (33).",
+      "Price down 11.5% over 52 weeks per stockanalysis."
+    ],
+    "valueTrapFlags": [
+      "Organic growth decelerating: 5% (2024), 3% (2025), 2% in Q3 2026; growth increasingly acquired.",
+      "CEO departure with no successor named.",
+      "Rising restructuring costs (62 vs 32 for 9M).",
+      "Operating cash flow down y/y in 9M (working capital); FCF after leases about 2.3bn.",
+      "Margin gains modest (10.3% vs 10.2% 9M) and calendar-aided; EPS consensus basis non-GAAP."
+    ],
+    "dataGaps": [
+      "52-week high/low",
+      "EBIT/EBITA FY2021-2023 (not reconciled)",
+      "Post-Q3 price and consensus/estimate changes",
+      "Historical P/E range",
+      "EV/EBITDA TTM (EBITDA not read)",
+      "Net debt lease treatment",
+      "Source for Q3 report is secondary (securities.io); primary PDF not read"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E EPS 6.9 (TTM 6.58; 9M EPS growth; lead estimate). Price is the 2026-10-23 close (stale). Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 6.9,
+    "forwardDividendYield": 0.027,
+    "qualityTier": "B",
+    "role": "Value Recovery",
+    "scores": {
+      "quality": 4,
+      "growth": 3,
+      "financialStrength": 4,
+      "risk": 4
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 120.82,
+        "epsCagr5y": 0.03,
+        "exitPe5y": 17,
+        "note": "Organic growth fades to 0-2%, leadership transition disrupts. Justified multiple 17x on next-12m 7.11.",
+        "epsCagr10y": 0.03,
+        "exitPe10y": 16
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 155.04,
+        "epsCagr5y": 0.07,
+        "exitPe5y": 20,
+        "note": "Organic 3-4%, EBITA margin 10-11%, bolt-ons. Justified multiple 21x on next-12m 7.38.",
+        "epsCagr10y": 0.065,
+        "exitPe10y": 19
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 180.5,
+        "epsCagr5y": 0.09,
+        "exitPe5y": 22,
+        "note": "Infrastructure and energy-transition demand lift growth. Justified multiple 24x on next-12m 7.52.",
+        "epsCagr10y": 0.08,
+        "exitPe10y": 21
+      }
+    },
+    "whyItFits": "Northern Europe's largest engineering consultancy: asset-light, net debt/EBITDA 0.8x, ROCE 17%, FCF yield 4.7% after leases, beta 0.87; de-rated from above 20x EV/EBITA.",
+    "growthDrivers": "Infrastructure, energy transition and defence-related building programmes; margin improvement (Q3 EBITA 10.3% vs 9.8%).",
+    "saturation": "P/E 21 is below the premium it held through 2024 (Handelsbanken upgrade cites forward EV/EBITA falling from above 20x to about 14x); moderately valued.",
+    "principalRisk": "Slowing organic growth (5% to 3% to 2%) plus CEO departure (announced 2 Oct 2026)."
+  }
+}

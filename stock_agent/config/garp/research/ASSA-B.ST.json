@@ -1,0 +1,319 @@
+{
+  "ticker": "ASSA-B.ST",
+  "name": "Assa Abloy AB",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Industrials (Building products / access solutions)",
+  "businessSummary": "Global lock and access-solutions group: Americas, EMEIA, Asia Pacific, Global Technologies, Entrance Systems divisions.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 392.5,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "high52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable: not shown on stockanalysis (only 52w price change +3.37% as of 2026-10-20)"
+    },
+    "low52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 1110,
+      "period": "latest",
+      "source": "stockanalysis.com/statistics (1.11B)",
+      "asOf": "2026-10-20",
+      "note": "millions; rounded to 3 digits by source"
+    },
+    "marketCap": {
+      "value": 390100,
+      "period": "2026-10-20",
+      "source": "https://stockanalysis.com/quote/sto/ASSA.B/statistics/",
+      "asOf": "2026-10-20",
+      "note": "SEK m at 2026-10-20 price; price 392.5 on 2026-11-12 implies ~435,700 (price x 1,110m)"
+    },
+    "netDebt": {
+      "value": 67520,
+      "period": "latest (likely Q3 2026 or Q2 2026)",
+      "source": "https://stockanalysis.com/quote/sto/ASSA.B/statistics/",
+      "asOf": "2026-10-20",
+      "note": "total debt 71.39B less cash 3.87B; includes leases (stockanalysis convention); Q3 2026 company net debt not retrieved"
+    },
+    "enterpriseValue": {
+      "value": 457800,
+      "period": "2026-10-20",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": "SEK m, at 2026-10-20 price"
+    },
+    "peTrailing": {
+      "value": 25.98,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "stockanalysis showed 24.17 on 2026-10-20 at lower price"
+    },
+    "peForward": {
+      "value": null,
+      "period": "fwd",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Agent value 20.45 rejected: implies forward EPS about 19.2 vs TTM 14.76 (+30%), inconsistent with guidance and history; unavailable."
+    },
+    "evEbitTrailing": {
+      "value": 18.39,
+      "period": "TTM",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": "EV/EBIT, EBIT as reported incl. IAC; agent evToEbit null"
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 16.667,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "fcfTTM": {
+      "value": 21594,
+      "period": "TTM to Jun 2026",
+      "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/cash-flow-statement",
+      "asOf": "2026-06-30",
+      "note": "SEK m, stockanalysis definition (op CF minus capex); company Q3 2026 operating cash flow SEK 7,405m, 9M 16,847m vs 14,845m"
+    },
+    "fcfYield": {
+      "value": 0.0496,
+      "period": "TTM / current",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "21,594 / (392.5 x 1,110m = 435.7bn); 5.5% on 2026-10-20 market cap 390.1bn; FCF is stale Jun-26 TTM"
+    },
+    "dividendPerShare": {
+      "value": 6.4,
+      "period": "FY2025 (paid 2026)",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": ""
+    },
+    "dividendYield": {
+      "value": 0.0163,
+      "period": "current",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "6.40/392.5; stockanalysis showed 1.82% at lower price"
+    },
+    "payoutRatio": {
+      "value": 0.4028,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "netDebtToEbitda": {
+      "value": 2.095,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "agent metric; stockanalysis-based net debt 67.5bn / implied EBITDA (EV 457.8bn / 16.667 = 27.5bn) = ~2.4x; basis (leases) differs, company-reported Q3 2026 figure not retrieved"
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.1071,
+      "period": "TTM",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": "stockanalysis-computed; company-reported ROCE for Q3 2026 not retrieved (unavailable)"
+    },
+    "roe": {
+      "value": 0.1557,
+      "period": "TTM",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": ""
+    },
+    "beta5y": {
+      "value": 0.837,
+      "period": "5y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "stockanalysis 0.82"
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 95007,
+        "ebit": 14458,
+        "ebitMargin": 0.1522,
+        "eps": 9.81,
+        "fcf": 11036,
+        "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 120793,
+        "ebit": 18997,
+        "ebitMargin": 0.1573,
+        "eps": 11.97,
+        "fcf": 12645,
+        "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 140716,
+        "ebit": 21440,
+        "ebitMargin": 0.1524,
+        "eps": 12.27,
+        "fcf": 18927,
+        "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 150162,
+        "ebit": 24466,
+        "ebitMargin": 0.1629,
+        "eps": 14.08,
+        "fcf": 19107,
+        "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 152409,
+        "ebit": 23601,
+        "ebitMargin": 0.1549,
+        "eps": 13.23,
+        "fcf": 19011,
+        "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+      },
+      {
+        "period": "TTM Jun-2026",
+        "revenue": 151464,
+        "ebit": 25198,
+        "ebitMargin": 0.1664,
+        "eps": 14.76,
+        "fcf": 21594,
+        "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "no source retrieved"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 22,
+      "buy": 13,
+      "hold": 9,
+      "sell": 0,
+      "targetAvg": 415,
+      "targetHigh": 500,
+      "targetLow": 345,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; no post-Q3 2026 consensus found"
+    },
+    "recentEvents": [
+      "Q3 2026 (27 Oct 2026): sales SEK 40,771m (+7%, organic +4% vs +3%, acq +2%, FX +1%); EBIT 7,102m vs 6,416m, margin 17.4% vs 16.8% (EBITA margin 18.7% vs 17.9%); EPS 4.24 vs 3.73 (reported); op CF 7,405m; cash conversion 117%. EBIT beat FactSet 6,924m, sales in line 40,706m. Seventh consecutive quarter of organic growth.",
+      "9M 2026: sales 115,781m, organic +3%, EBIT 19,242m (16.6% vs 16.0%), EPS 11.41 vs 10.49, op CF 16,847m vs 14,845m.",
+      "Q3 organic by division: Americas +6%, EMEIA +5%, Global Technologies +4%, Entrance Systems +3%, Asia Pacific -1% (weak Greater China).",
+      "Three small acquisitions (~SEK 350m sales) and one divestment in Q3; Gunnebo Entrance Control signed; Rometal (Brazil) agreed 12 Nov 2026; 11th footprint programme from Q4.",
+      "Last known estimate revision (after Q1, FactSet 12 May 2026): sales -0.3%/-0.6%, adj EBIT -1.0%/-1.4% for 2026/2027; after Q3 revisions not found (marketscreener/borsvarlden/simplywall hits were stale or from other years)."
+    ],
+    "valueTrapFlags": [
+      "Organic growth modest (3% 9M) with Asia Pacific/China negative; growth leans on M&A and price.",
+      "Net debt/EBITDA ~2.1x (agent) to ~2.4x (derived incl. leases); M&A continues.",
+      "Trailing P/E ~26 (historical range not verified).",
+      "No evidence of estimate cuts after Q3 2026 (EBIT beat) but post-report consensus not verified."
+    ],
+    "dataGaps": [
+      "Company-reported net debt, net debt/EBITDA and ROCE for Q3 2026 not retrieved (stockanalysis page lacked them)",
+      "52w high/low",
+      "Historical P/E range",
+      "Post-Q3 consensus EPS and estimate changes",
+      "FY EBIT history is stockanalysis operating income (reported EBIT incl. items affecting comparability); company EBITA not retrieved",
+      "FY2025 EPS reported, not adjusted; stockanalysis FY2025 EPS 13.23"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E per scenario. Basis 2026E EPS 15.6 = 9M 11.41 + Q4 about 4.2 (lead estimate). Historical P/E range not verified by agents; justified multiples are lead estimates, not sourced.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 15.6,
+    "forwardDividendYield": 0.017,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+      "quality": 5,
+      "growth": 3,
+      "financialStrength": 4,
+      "risk": 4
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 308.26,
+        "epsCagr5y": 0.04,
+        "exitPe5y": 18,
+        "note": "Construction slowdown, China weak, multiple de-rates. Justified multiple 19x on next-12m 16.22.",
+        "epsCagr10y": 0.04,
+        "exitPe10y": 17
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 383.92,
+        "epsCagr5y": 0.07,
+        "exitPe5y": 22,
+        "note": "Organic 3-4% plus bolt-on M&A, gradual margin gains. Justified multiple 23x on next-12m 16.69.",
+        "epsCagr10y": 0.065,
+        "exitPe10y": 21
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 442.1,
+        "epsCagr5y": 0.09,
+        "exitPe5y": 25,
+        "note": "Organic 5%+, EBIT margin toward 18%, continued M&A. Justified multiple 26x on next-12m 17.00.",
+        "epsCagr10y": 0.08,
+        "exitPe10y": 23
+      }
+    },
+    "whyItFits": "Global leader in locks and access with large installed base and aftermarket; steady FCF (TTM SEK 21.6bn, about 5% yield), beta 0.84, margins 15-17% for five years.",
+    "growthDrivers": "Electromechanical and digital access, Americas strength, steady bolt-on acquisitions, footprint programmes lifting margin (Q3 EBIT margin 17.4%).",
+    "saturation": "Trailing P/E 26 for 7% EPS growth: fully priced versus its own growth; no verified historical range.",
+    "principalRisk": "Residential/commercial construction downturn plus acquisition-driven leverage (ND/EBITDA 2.1-2.4x)."
+  }
+}

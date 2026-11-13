@@ -1,0 +1,318 @@
+{
+  "ticker": "ATCO-A.ST",
+  "name": "Atlas Copco AB (A shares)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Industrials (Compressors, vacuum, industrial tools)",
+  "businessSummary": "Global industrial group: Compressor Technique, Vacuum Technique, Industrial Technique, Power Technique; large aftermarket share.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 194.65,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "A share; B share trades lower, so market cap derived from A price overstates"
+    },
+    "high52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "low52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 4880,
+      "period": "latest",
+      "source": "stockanalysis.com/statistics (4.88B, A+B)",
+      "asOf": "2026-10-20",
+      "note": "millions"
+    },
+    "marketCap": {
+      "value": 861500,
+      "period": "2026-10-20",
+      "source": "https://stockanalysis.com/quote/sto/ATCO.A/statistics/",
+      "asOf": "2026-10-20",
+      "note": "SEK m at 2026-10-20 price"
+    },
+    "netDebt": {
+      "value": 13230,
+      "period": "latest (Q2/Q3 2026)",
+      "source": "https://stockanalysis.com/quote/sto/ATCO.A/statistics/",
+      "asOf": "2026-10-20",
+      "note": "SEK m, stockanalysis; leases inclusion not stated; company Q3 net debt not retrieved"
+    },
+    "enterpriseValue": {
+      "value": 874950,
+      "period": "2026-10-20",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": ""
+    },
+    "peTrailing": {
+      "value": 35.2,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "stockanalysis 24.11 forward on 2026-10-20"
+    },
+    "peForward": {
+      "value": null,
+      "period": "fwd",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Agent value 24.11 rejected: implies forward EPS about 8.1 vs TTM 5.46 (+48%), not supported by consensus EBIT; unavailable."
+    },
+    "evEbitTrailing": {
+      "value": 23.62,
+      "period": "TTM",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": ""
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 21.947,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "fcfTTM": {
+      "value": 26906,
+      "period": "TTM to Jun 2026",
+      "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/cash-flow-statement",
+      "asOf": "2026-06-30",
+      "note": "SEK m; Q3 2026 operating cash flow 8,728m vs 7,330m (company); TTM FCF through Sep not retrieved"
+    },
+    "fcfYield": {
+      "value": 0.0312,
+      "period": "TTM / 2026-10-20 mcap",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "26,906 / 861,500"
+    },
+    "dividendPerShare": {
+      "value": 3.0,
+      "period": "FY2025",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": ""
+    },
+    "dividendYield": {
+      "value": 0.0154,
+      "period": "current",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "3.00/194.65; stockanalysis 1.63% at lower price"
+    },
+    "payoutRatio": {
+      "value": 0.5291,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "netDebtToEbitda": {
+      "value": 0.301,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "net debt ~13.2bn per stockanalysis consistent"
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.24,
+      "period": "rolling 12m to Q3 2026",
+      "source": "Atlas Copco Q3 2026 report via borskollen.se",
+      "asOf": "2026-10-27",
+      "note": "company-reported ROCE (24% vs 25% a year earlier); stockanalysis ROIC 22.3%"
+    },
+    "roe": {
+      "value": 0.2454,
+      "period": "TTM",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": ""
+    },
+    "beta5y": {
+      "value": 1.074,
+      "period": "5y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "stockanalysis 1.07"
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 110912,
+        "ebit": 23225,
+        "ebitMargin": 0.2094,
+        "eps": 3.71,
+        "fcf": 21182,
+        "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 141325,
+        "ebit": 30847,
+        "ebitMargin": 0.2183,
+        "eps": 4.81,
+        "fcf": 17717,
+        "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 172664,
+        "ebit": 38127,
+        "ebitMargin": 0.2208,
+        "eps": 5.75,
+        "fcf": 24097,
+        "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 176771,
+        "ebit": 38210,
+        "ebitMargin": 0.2162,
+        "eps": 6.1,
+        "fcf": 32651,
+        "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 168343,
+        "ebit": 35204,
+        "ebitMargin": 0.2091,
+        "eps": 5.42,
+        "fcf": 28282,
+        "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+      },
+      {
+        "period": "TTM Jun-2026",
+        "revenue": 169917,
+        "ebit": 35616,
+        "ebitMargin": 0.2096,
+        "eps": 5.46,
+        "fcf": 26906,
+        "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "no source retrieved"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 20,
+      "buy": 16,
+      "hold": 4,
+      "sell": 1,
+      "targetAvg": 225.35,
+      "targetHigh": 260,
+      "targetLow": 165,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; FactSet May 2026: adj EBIT 2026 37,357m, 2027 42,068m, sales 175.2bn/190.1bn (pre-Q3)"
+    },
+    "recentEvents": [
+      "Q3 2026 (27 Oct 2026): orders MSEK 52,338 vs 40,517, +29% reported, +25% organic (vs consensus ~50.6bn); revenues 47,920 (41,621), +11% organic; adjusted operating profit 10,195 (8,862), margin 21.3% (21.3%); reported operating profit 9,950 (8,546), 20.8% (20.5%); EPS 1.58 (1.37); op CF 8,728 (7,330); ROCE 24% (25%). Adjusted EBIT 10.2bn vs ~10.3bn expected, revenue 47.9bn vs 47.7bn.",
+      "Outlook unchanged: customer activity expected to stay at current level.",
+      "Q1 2026 report (Apr): shares fell 5.5% on report day; post-Q1 FactSet adj EBIT estimates -0.4%/-0.3%.",
+      "Atlas Copco is an A share price in agent data; analyst post-Q3 estimate revisions not found (borsvarlden/marketscreener hits were 2022 articles)."
+    ],
+    "valueTrapFlags": [
+      "Valuation is demanding: trailing P/E ~35, EV/EBIT ~24, FCF yield ~3%.",
+      "Adjusted margin flat YoY at 21.3% despite +11% organic revenue growth; EBIT margin history peaked at ~22.1% in FY2023 and is ~21% now.",
+      "Orders +25% organic may include large-order or one-off effects; unverified.",
+      "TTM FCF (Jun-26) down about 15% vs prior year per stockanalysis."
+    ],
+    "dataGaps": [
+      "Company net debt and net debt/EBITDA for Q3 2026 (full PDF report not readable)",
+      "Historical P/E range",
+      "Post-Q3 consensus EPS and estimate changes",
+      "52w high/low",
+      "FY history is stockanalysis operating income (reported, not adjusted)",
+      "TTM FCF through Sep 2026"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E per scenario. Basis 2026E EPS 5.6 (TTM 5.46, Q3 orders +25% organic; lead estimate). Historical P/E range not verified by agents; justified multiples are lead estimates, not sourced.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 5.6,
+    "forwardDividendYield": 0.016,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "scores": {
+      "quality": 5,
+      "growth": 4,
+      "financialStrength": 5,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 126.9,
+        "epsCagr5y": 0.03,
+        "exitPe5y": 22,
+        "note": "Semiconductor/industrial capex cycle turns; orders surge proves one-off. Justified multiple 22x on next-12m 5.77.",
+        "epsCagr10y": 0.03,
+        "exitPe10y": 20
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 169.34,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 26,
+        "note": "Orders convert, service growth, margins about 21%. Justified multiple 28x on next-12m 6.05.",
+        "epsCagr10y": 0.07,
+        "exitPe10y": 24
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 198.91,
+        "epsCagr5y": 0.11,
+        "exitPe5y": 30,
+        "note": "Vacuum upcycle plus compressor strength, margin back toward 22%. Justified multiple 32x on next-12m 6.22.",
+        "epsCagr10y": 0.09,
+        "exitPe10y": 27
+      }
+    },
+    "whyItFits": "Exceptional returns (ROCE about 24%), net debt/EBITDA 0.3x, about 40% service revenue; strongest balance sheet in the set.",
+    "growthDrivers": "Q3 2026 orders +25% organic (vacuum/semiconductor), energy-efficiency demand, service base, acquisitions.",
+    "saturation": "Trailing P/E 35 at a cyclical earnings level; much of the order recovery already priced. Two fresh Buy ratings (Pareto 250, Nordea 235) are analyst opinion.",
+    "principalRisk": "Cyclicality: semiconductor and industrial capex reversal while the stock trades at 35x trailing earnings."
+  }
+}

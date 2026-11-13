@@ -1,0 +1,320 @@
+{
+  "ticker": "LIFCO-B.ST",
+  "name": "Lifco AB (B shares)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Industrials (Serial acquirer: Dental, Demolition & Tools, Systems Solutions)",
+  "businessSummary": "Swedish serial acquirer of niche businesses in Dental, Demolition & Tools and Systems Solutions; decentralised, EBITA-focused.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 288.2,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "report-day drop -12.0% on 23 Oct from 318.80 (22 Oct); 274.60 on 2 Nov"
+    },
+    "high52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable; stockanalysis 52w change -17.92%"
+    },
+    "low52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 454.22,
+      "period": "latest",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": "millions A+B (B class 423.84m)"
+    },
+    "marketCap": {
+      "value": 127360,
+      "period": "2026-10-20",
+      "source": "https://stockanalysis.com/quote/sto/LIFCO.B/statistics/",
+      "asOf": "2026-10-20",
+      "note": "SEK m; price x 454.22m at 288.2 = ~130,900"
+    },
+    "netDebt": {
+      "value": 12321,
+      "period": "30 Sep 2026",
+      "source": "Lifco interim report Jan-Sep 2026 (finanznachrichten.de)",
+      "asOf": "2026-10-23",
+      "note": "company net debt incl. SEK 2,718m put/call option liabilities; interest-bearing net debt 7,979m; IFRS 16 treatment not stated in extract; stockanalysis shows 9.60B (older)"
+    },
+    "enterpriseValue": {
+      "value": 138040,
+      "period": "2026-10-20",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": "stockanalysis, uses its net debt 9.60bn"
+    },
+    "peTrailing": {
+      "value": 33.28,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "peForward": {
+      "value": 30.39,
+      "period": "next FY",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": "pre-drop price basis; consensus 2027 EBITA cut ~3.8% since"
+    },
+    "evEbitTrailing": {
+      "value": 27.62,
+      "period": "TTM",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": "EBIT, pre-drop price"
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 19.218,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "fcfTTM": {
+      "value": 5052,
+      "period": "TTM to Sep 2026",
+      "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/cash-flow-statement/",
+      "asOf": "2026-09-30",
+      "note": "SEK m; company 9M operating cash flow 3,514m (+12%)"
+    },
+    "fcfYield": {
+      "value": 0.0386,
+      "period": "TTM / current",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "5,052 / (288.2 x 454.22m = 130.9bn)"
+    },
+    "dividendPerShare": {
+      "value": 2.7,
+      "period": "FY2025",
+      "source": "stockanalysis.com/statistics",
+      "asOf": "2026-10-20",
+      "note": ""
+    },
+    "dividendYield": {
+      "value": 0.0094,
+      "period": "current",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "2.70/288.2"
+    },
+    "payoutRatio": {
+      "value": 0.3114,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "netDebtToEbitda": {
+      "value": 1.6,
+      "period": "30 Sep 2026",
+      "source": "Lifco interim report Jan-Sep 2026",
+      "asOf": "2026-10-23",
+      "note": "company: 1.6x incl. option liabilities (1.7x YE2025); interest-bearing 1.0x; agent metric 1.31"
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "n/a",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.205,
+      "period": "rolling 12m to Sep 2026",
+      "source": "Lifco interim report Jan-Sep 2026",
+      "asOf": "2026-10-23",
+      "note": "company-reported ROCE 20.5% (unchanged); excl. goodwill 127% (131%); stockanalysis ROIC 13.6%"
+    },
+    "roe": {
+      "value": 0.193,
+      "period": "rolling 12m to Sep 2026",
+      "source": "Lifco interim report Jan-Sep 2026",
+      "asOf": "2026-10-23",
+      "note": "company-reported; stockanalysis 19.46%"
+    },
+    "beta5y": {
+      "value": 1.161,
+      "period": "5y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "stockanalysis 1.13"
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 17480,
+        "ebit": 3132,
+        "ebitMargin": 0.1792,
+        "eps": 5.26,
+        "fcf": 2657,
+        "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 21552,
+        "ebit": 3921,
+        "ebitMargin": 0.1819,
+        "eps": 6.13,
+        "fcf": 2790,
+        "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 24454,
+        "ebit": 4734,
+        "ebitMargin": 0.1936,
+        "eps": 7.21,
+        "fcf": 4029,
+        "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 26137,
+        "ebit": 4863,
+        "ebitMargin": 0.1861,
+        "eps": 7.27,
+        "fcf": 4132,
+        "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 28251,
+        "ebit": 5225,
+        "ebitMargin": 0.1849,
+        "eps": 8.0,
+        "fcf": 4622,
+        "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+      },
+      {
+        "period": "TTM Jun-2026",
+        "revenue": 29257,
+        "ebit": 5498,
+        "ebitMargin": 0.1879,
+        "eps": 8.48,
+        "fcf": 4765,
+        "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "no source retrieved"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 8,
+      "buy": 3,
+      "hold": 4,
+      "sell": 0,
+      "targetAvg": 324.125,
+      "targetHigh": 350,
+      "targetLow": 300,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": 0.052,
+      "source": "placera/Finwire 2026-11-02 FactSet: 2027 sales growth 5.2% (was 9.0%), 2027 adj EBITA 7,404m (was 7,700m, -3.8%), 2026 adj EBITA 6,976m; no EPS"
+    },
+    "recentEvents": [
+      "Q3 2026 (23 Oct 2026): sales SEK 7,407m (+8.3%), organic +1.6%; EBITA 1,708m (+10.7%), margin 23.1% (22.6%); EPS 2.15 (1.96); op CF 1,662m (+19%). Sales 1.3% below consensus, adj EBITA 0.8% above.",
+      "9M 2026: sales 22,288m (+7.6%), organic +2.5%; EBITA 5,072m, margin 22.8% (+0.6pp); EPS 6.38 (5.71); op CF 3,514m.",
+      "A Systems Solutions (contract manufacturing) customer, ~5% of group revenue, will shift purchases outside Europe from Jan 2027; negative effect on 2027 sales and earnings.",
+      "Shares fell 12.0% on report day; after the report FactSet 2027 adj EBITA cut 3.8%, average target cut 8.6% to 332.36; consensus rating Overweight (5 positive, 5 neutral of 10).",
+      "Dental margin up; Demolition & Tools margin down on weak demolition robot demand. Micronova and Hega Medical to be consolidated in Q4."
+    ],
+    "valueTrapFlags": [
+      "Estimate cuts after the latest report: 2027 sales -3.8%, adj EBITA -3.8%, target -8.6%.",
+      "Known loss of a ~5% of revenue customer from Jan 2027.",
+      "Organic growth weak (Q3 +1.6%, 9M +2.5%); growth driven by acquisitions.",
+      "Leverage 1.6x incl. option liabilities (1.0x interest-bearing); slightly falling. Cash conversion improving, not weak.",
+      "Premium multiple (trailing P/E ~33)."
+    ],
+    "dataGaps": [
+      "Historical P/E range",
+      "52w high/low",
+      "EPS consensus",
+      "FY EBITA history (stockanalysis operating income is EBIT; company EBITA not retrieved)",
+      "IFRS 16 treatment in company net debt not stated",
+      "Net debt/EBITDA differs between agent (1.31) and company (1.6)"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E per scenario. Basis 2026E EPS 8.6 = 9M 6.38 + Q4 about 2.2 (lead estimate). 2027 growth reduced for the lost 5% customer. Historical P/E range not verified by agents; justified multiples are lead estimates, not sourced.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 8.6,
+    "forwardDividendYield": 0.009,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+      "quality": 5,
+      "growth": 3,
+      "financialStrength": 4,
+      "risk": 4
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 212.59,
+        "epsCagr5y": 0.03,
+        "exitPe5y": 22,
+        "note": "Customer loss plus weak organic growth; multiple compresses. Justified multiple 24x on next-12m 8.86.",
+        "epsCagr10y": 0.04,
+        "exitPe10y": 20
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 278.64,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 28,
+        "note": "Acquisitions offset lost customer; EBITA margin about 23%. Justified multiple 30x on next-12m 9.29.",
+        "epsCagr10y": 0.075,
+        "exitPe10y": 25
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 334.11,
+        "epsCagr5y": 0.11,
+        "exitPe5y": 32,
+        "note": "Acquisition pace rises, dental recovers. Justified multiple 35x on next-12m 9.55.",
+        "epsCagr10y": 0.09,
+        "exitPe10y": 28
+      }
+    },
+    "whyItFits": "Decentralised acquirer with EBITA margin about 23%, ROIC about 20% and rising cash conversion; niche dental and tools businesses are resilient.",
+    "growthDrivers": "Steady bolt-on acquisitions, dental consumables, demolition robots; reinvestment at high returns.",
+    "saturation": "Trailing P/E 33 after a 12% drop on the Q3 report; still a premium multiple with estimates being cut.",
+    "principalRisk": "Loss of a customer worth about 5% of sales from 2027 and estimate cuts (2027 EBITA -3.8%) while the multiple stays high."
+  }
+}

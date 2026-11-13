@@ -1,0 +1,338 @@
+{
+  "ticker": "AXFO.ST",
+  "name": "Axfood AB",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Consumer Staples / food retail and wholesale",
+  "businessSummary": "Swedish food retailer: Willys, Hemkop, City Gross (retail) and Dagab, Snabbgross (wholesale). Roughly 90bn SEK sales; operating margin about 4%.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 273.5,
+      "period": "close",
+      "source": "stockanalysis.com/history",
+      "asOf": "2026-10-19",
+      "note": "Latest price retrievable; stale versus 2026-11-13. Agent data did not contain AXFO."
+    },
+    "high52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "low52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 215.88,
+      "period": "current (millions)",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-11",
+      "note": ""
+    },
+    "marketCap": {
+      "value": 59040,
+      "period": "2026-10-19",
+      "source": "derived: 273.50 x 215.88m",
+      "asOf": "2026-10-19",
+      "note": ""
+    },
+    "netDebt": {
+      "value": 16294,
+      "period": "30 Sep 2026 incl. IFRS 16 leases",
+      "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+      "asOf": "2026-10-22",
+      "note": "Excluding leases: 2,970 (31 Dec 2025: 14,598 incl / 1,896 excl)."
+    },
+    "enterpriseValue": {
+      "value": 75334,
+      "period": "30 Sep 2026 incl. leases",
+      "source": "derived: mcap 59,040 + net debt incl. leases 16,294",
+      "asOf": "2026-10-19",
+      "note": "EV excl. leases = 62,010 (59,040 + 2,970)."
+    },
+    "peTrailing": {
+      "value": 24.0,
+      "period": "TTM Sep 2026",
+      "source": "derived: 273.50 / EPS 11.38",
+      "asOf": "2026-10-19",
+      "note": "EPS TTM = FY2025 10.79 + 9M26 8.83 - 9M25 8.24 = 11.38 (reported, before dilution)."
+    },
+    "peForward": {
+      "value": 23.4,
+      "period": "FY2026E",
+      "source": "derived: 273.50 / consensus EPS 11.67",
+      "asOf": "2026-10-19",
+      "note": "Consensus EPS 2026 11.67, 2027 12.99 (stockanalysis, S&P, page updated 2026-07-10, before Q3). FY2027E P/E 21.1."
+    },
+    "evEbitTrailing": {
+      "value": 19.9,
+      "period": "TTM Sep 2026",
+      "source": "derived: EV incl. leases 75,334 / EBIT 3,787",
+      "asOf": "2026-10-19",
+      "note": "EBIT TTM = FY2025 3,611 + 9M26 2,888 - 9M25 2,712. Operating profit is EBIT (reported); adjusted 9M26 2,903. Using EV excl. leases (62,010) gives 16.4 but is inconsistent with IFRS 16 EBIT."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 9.56,
+      "period": "TTM Sep 2026",
+      "source": "derived: 75,334 / EBITDA 7,884 (company, incl. IFRS 16)",
+      "asOf": "2026-10-19",
+      "note": "EV excl. leases / EBITDA excl. IFRS 16 (4,944) = 12.5."
+    },
+    "fcfTTM": {
+      "value": 1899,
+      "period": "TTM Jun 2026 after lease payments",
+      "source": "derived: OCF 5,903 - capex 1,535 - lease payments 2,469 (stockanalysis.com)",
+      "asOf": "2026-10-19",
+      "note": "Pre-lease FCF 4,368 (stockanalysis shows this as FCF, yield 7.8%, which overstates cash available to equity because IFRS 16 lease payments of ~2.5bn are financing outflows). FY2025: OCF 6,751, capex 1,379, leases 2,478 -> 2,894 after leases."
+    },
+    "fcfYield": {
+      "value": 0.0322,
+      "period": "TTM Jun 2026 after leases",
+      "source": "derived: 1,899 / 59,040",
+      "asOf": "2026-10-19",
+      "note": "Pre-lease yield 7.4%. Dividends paid 9M26 1,943."
+    },
+    "dividendPerShare": {
+      "value": 9.0,
+      "period": "FY2025 (paid 2026 in two instalments)",
+      "source": "Axfood Q1 2026 / Q3 2026 reports",
+      "asOf": "2026-10-22",
+      "note": "Up from 8.75."
+    },
+    "dividendYield": {
+      "value": 0.0329,
+      "period": "FY2025 dividend",
+      "source": "derived: 9.00 / 273.50",
+      "asOf": "2026-10-19",
+      "note": ""
+    },
+    "payoutRatio": {
+      "value": 0.834,
+      "period": "FY2025",
+      "source": "derived: 9.00 / EPS 10.79",
+      "asOf": "2026-10-19",
+      "note": "Policy at least 50%. Stockanalysis shows 79.8% on TTM. Dividends (1,943 in 9M26) exceed FCF after leases (about 1.9bn TTM)."
+    },
+    "netDebtToEbitda": {
+      "value": 2.1,
+      "period": "30 Sep 2026 incl. IFRS 16",
+      "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+      "asOf": "2026-10-22",
+      "note": "Excl. IFRS 16: 0.6x. Year-end 2025: 1.9x incl / 0.4x excl. Up over 9M (seasonal/VAT-related working capital)."
+    },
+    "interestCoverage": {
+      "value": 7.1,
+      "period": "latest",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-11",
+      "note": ""
+    },
+    "roic": {
+      "value": 0.159,
+      "period": "rolling 12m to 30 Sep 2026 (ROCE, as reported)",
+      "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+      "asOf": "2026-10-22",
+      "note": "Company reports ROCE not ROIC; 15.5% at YE2025. Stockanalysis ROIC 13.0%."
+    },
+    "roe": {
+      "value": 0.341,
+      "period": "rolling 12m to 30 Sep 2026",
+      "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+      "asOf": "2026-10-22",
+      "note": "32.1% at YE2025. Inflated by low equity/high payout."
+    },
+    "beta5y": {
+      "value": 0.56,
+      "period": "5y",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-11",
+      "note": ""
+    },
+    "sectorMetrics": {
+      "likeForLike": {
+        "group_Q3_2026": 0.016,
+        "group_9M_2026": 0.017,
+        "willys_Q3": 0.003,
+        "hemkop_Q3": 0.048,
+        "citygross_Q3": 0.006,
+        "snabbgross_Q3": -0.003,
+        "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+        "note": "Market retail growth 4.0% in Q3; Axfood retail sales +2.9% (Willys +2.1%, Hemkop +7.1%): losing share at Willys."
+      },
+      "operatingMarginQ3_2026": {
+        "value": 0.049,
+        "period": "Q3 2026 (EBIT, reported; adjusted also 4.9%)",
+        "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+        "asOf": "2026-10-22",
+        "note": "Op profit 1,118 (1,059); IAC -1 (-39). 9M26 margin 4.3% (4.1%)."
+      },
+      "investmentGuidance2026": "2,000-2,100 (cut from 2,200-2,300; about 270 shifted to 2027 due to Kungsbacka automation delay)"
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 57891,
+        "ebit": 2652,
+        "ebitMargin": 0.0458,
+        "eps": 10.24,
+        "fcf": 3074,
+        "source": "stockanalysis.com (EBIT = operating profit; FCF pre-lease, lease payments 1,578)"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 73474,
+        "ebit": 2975,
+        "ebitMargin": 0.0405,
+        "eps": 10.99,
+        "fcf": 3707,
+        "source": "stockanalysis.com (lease payments 1,707)"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 81111,
+        "ebit": 3649,
+        "ebitMargin": 0.045,
+        "eps": 10.87,
+        "fcf": 4284,
+        "source": "stockanalysis.com (lease payments 1,969)"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 84057,
+        "ebit": 3480,
+        "ebitMargin": 0.0414,
+        "eps": 10.11,
+        "fcf": 4350,
+        "source": "stockanalysis.com (lease payments 2,294)"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 89152,
+        "ebit": 3611,
+        "ebitMargin": 0.0405,
+        "eps": 10.79,
+        "fcf": 5372,
+        "source": "stockanalysis.com (lease payments 2,478; FCF after leases 2,894)"
+      },
+      {
+        "period": "TTM Sep 2026",
+        "revenue": null,
+        "ebit": 3787,
+        "ebitMargin": null,
+        "eps": 11.38,
+        "fcf": null,
+        "source": "derived from reports; 9M26 net sales 67,504 (66,321), op profit 2,888 (2,712). TTM Jun 2026 per stockanalysis: revenue 89,911, EBIT 3,714, margin 4.13%, FCF 4,368 pre-lease"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "not found"
+    },
+    "consensus": {
+      "rating": "buy (mixed)",
+      "analysts": 7,
+      "buy": 3,
+      "hold": 3,
+      "sell": 1,
+      "targetAvg": 257.86,
+      "targetHigh": 295,
+      "targetLow": 215,
+      "source": "stockanalysis.com/forecast (rating counts Oct 2026, targets page updated 2026-07-10; may be stale). Avg target is below the 273.50 price.",
+      "asOf": "2026-10-11"
+    },
+    "forwardEstimates": {
+      "epsNextFY": 11.67,
+      "epsFY2": 12.99,
+      "revenueGrowthNextFY": 0.0229,
+      "source": "stockanalysis.com/forecast, pre-Q3 2026 (2026 revenue 91.2bn; 2027 94.8bn, +3.9%)"
+    },
+    "recentEvents": [
+      "Q3 2026 (22 Oct): net sales 22,711 (+1.9%), op profit 1,118 (1,059), adj 1,119 (1,099), EPS 3.47 (3.30); LFL +1.6%; City Gross turned profitable.",
+      "2026 investment guidance cut to 2,000-2,100; City Gross structural costs now about 25 (was 50).",
+      "Q1 2026 (23 Apr): CEO said growth lower than desired; Kepler cut target 340 to 315; Bernstein Sell 235 (10 Jul).",
+      "Dividend 9.00 paid in two instalments of 4.50."
+    ],
+    "valueTrapFlags": [
+      "Like-for-like growth only +1.6% in Q3 vs market growth 4.0%; Willys LFL +0.3% (share loss).",
+      "EBIT margin stuck about 4.0-4.5% for 5 years with no expansion; 9M26 4.3% only modestly up.",
+      "FCF after IFRS 16 lease payments is thin (about 1.9bn TTM) versus 1.9bn dividends paid in 9M26; payout above 80% of EPS.",
+      "Leverage incl. leases rose to 2.1x from 1.9x at YE2025 (0.6x excl. leases).",
+      "Price above average analyst target; consensus not cut after Q3 but sources stale."
+    ],
+    "dataGaps": [
+      "52-week high/low",
+      "Prices are 2026-10-19, not 2026-11-13; agent data lacks AXFO",
+      "Consensus EPS after Q3 report and revision direction",
+      "Historical P/E range",
+      "TTM Sep 2026 revenue and lease payments",
+      "Q3 operating cash flow was 1,956 (1,352); 9M 4,270 (4,513) per report, lease payments 9M not read"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "weakening",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E EPS 11.7 (consensus 11.67 pre-Q3, TTM 11.38). Price is the 2026-10-19 close (stale). Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS reported, 2026E consensus",
+    "basisValue": 11.7,
+    "forwardDividendYield": 0.033,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+      "quality": 4,
+      "growth": 2,
+      "financialStrength": 3,
+      "risk": 5
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 212.71,
+        "epsCagr5y": 0.01,
+        "exitPe5y": 18,
+        "note": "Continued market-share loss, margin pressure. Justified multiple 18x on next-12m 11.82.",
+        "epsCagr10y": 0.01,
+        "exitPe10y": 16
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 255.53,
+        "epsCagr5y": 0.04,
+        "exitPe5y": 20,
+        "note": "Low-single-digit growth, stable 4% margin. Justified multiple 21x on next-12m 12.17.",
+        "epsCagr10y": 0.035,
+        "exitPe10y": 19
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 297.65,
+        "epsCagr5y": 0.06,
+        "exitPe5y": 22,
+        "note": "Willys regains share, City Gross profitable. Justified multiple 24x on next-12m 12.40.",
+        "epsCagr10y": 0.05,
+        "exitPe10y": 20
+      }
+    },
+    "whyItFits": "Swedish grocery leader (Willys, Hemköp): low beta 0.56, non-cyclical demand, 3.3% dividend.",
+    "growthDrivers": "Willys discount format, City Gross turnaround, logistics investments.",
+    "saturation": "P/E 24 for 4% growth and consensus target below the price: fully valued.",
+    "principalRisk": "Losing share (like-for-like +1.6% vs market +4.0%) while dividends roughly equal FCF after leases."
+  }
+}

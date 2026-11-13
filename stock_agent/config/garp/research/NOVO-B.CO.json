@@ -1,0 +1,367 @@
+{
+  "ticker": "NOVO-B.CO",
+  "name": "Novo Nordisk A/S (B)",
+  "exchange": "Nasdaq Copenhagen",
+  "currency": "DKK",
+  "sector": "Healthcare / Pharmaceuticals (diabetes and obesity)",
+  "businessSummary": "Danish pharmaceutical group focused on diabetes and obesity care (semaglutide: Ozempic, Wegovy, Rybelsus, Wegovy pill) plus rare disease. Reports adjusted figures in 2026 that exclude a one-off US 340B provision reversal.",
+  "retrievedAt": "2026-11-13T09:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 272.7,
+      "period": "close, run 2026-11-12",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "DKK. Stockanalysis showed 260.15 on 2026-10-23."
+    },
+    "high52w": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable. Context: share fell ~17-18% on 4 Feb 2026 on guidance for a 2026 sales decline."
+    },
+    "low52w": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 4420,
+      "period": "2026-10-23 (m)",
+      "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+      "asOf": "2026-10-23",
+      "note": "Provider figure 4.42bn (A+B)."
+    },
+    "marketCap": {
+      "value": 1205334,
+      "period": "price 2026-11-12 x 4,420m shares",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 ; stockanalysis",
+      "asOf": "2026-11-12",
+      "note": "Derived: 272.70 x 4,420m = ~DKK 1,205bn (stockanalysis DKK 1.15T on 2026-10-23 at DKK 260.15)."
+    },
+    "netDebt": {
+      "value": 95424,
+      "period": "FY2025 (31 Dec 2025)",
+      "source": "https://annualreport.novonordisk.com/2025/introducing-novo-nordisk/five-year-overview.html",
+      "asOf": "2025-12-31",
+      "note": "Annual report five-year table lists net debt as (95,424); sign is ambiguous in the extracted table. Stockanalysis EV 1.25T minus market cap 1.15T (2026-10-23) implies net debt ~DKK 100bn, and agent ND/EBITDA is +0.49, so treated as net debt (not net cash). Includes leases? Not verified. Q3 2026 net debt not retrieved."
+    },
+    "enterpriseValue": {
+      "value": 1250000,
+      "period": "2026-10-23",
+      "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+      "asOf": "2026-10-23",
+      "note": "Provider figure DKK 1.25T at DKK 260.15; at DKK 272.70 roughly DKK 1.30T (market cap + ~100bn net debt)."
+    },
+    "peTrailing": {
+      "value": 10.7,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Flattered: reported TTM earnings include a one-off US 340B provision reversal (~USD 4.2bn) that Novo excludes from adjusted guidance. FY2025 diluted EPS DKK 23.03 gives 11.8x at 272.70."
+    },
+    "peForward": {
+      "value": 12.19,
+      "period": "forward, price 260.15",
+      "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+      "asOf": "2026-10-23",
+      "note": "Provider figure at DKK 260.15 on 2026-10-23, roughly 12.8x at 272.70 if estimates unchanged. Consensus EPS not retrieved."
+    },
+    "evEbitTrailing": {
+      "value": 7.72,
+      "period": "TTM, price 260.15",
+      "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+      "asOf": "2026-10-23",
+      "note": "Provider figure; TTM EBIT includes the one-off 340B reversal, so understates the multiple on adjusted earnings. Provider EBIT TTM (Jun 2026) DKK 161.4bn differs from company-defined operating profit (FY2025: 127.7bn vs provider 140.6bn)."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 7.108,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure (stockanalysis 7.11 on 2026-10-23)."
+    },
+    "fcfTTM": {
+      "value": 75838,
+      "period": "TTM to Jun 2026 (DKK m)",
+      "source": "https://stockanalysis.com/quote/cph/NOVO.B/financials/",
+      "asOf": "2026-08-04",
+      "note": "Provider definition (operating cash flow less capex). Company-defined FCF FY2025 was DKK 28,295m (FY2024 -14,707m, includes Catalent acquisition); provider shows FY2025 58,962m. Large definitional conflict; TTM may include the 340B reversal."
+    },
+    "fcfYield": {
+      "value": 0.0629,
+      "period": "TTM provider FCF / market cap 2026-11-12",
+      "source": "derived",
+      "asOf": "2026-11-12",
+      "note": "Derived: 75,838 / ~1,205,000 = ~6.3% (provider shows 6.59% at 260.15). On company-defined FY2025 FCF 28,295 the yield is ~2.3%."
+    },
+    "dividendPerShare": {
+      "value": 11.7,
+      "period": "FY2025 (DKK)",
+      "source": "https://annualreport.novonordisk.com/2025/introducing-novo-nordisk/five-year-overview.html",
+      "asOf": "2026-02-04",
+      "note": "FY2024 DKK 11.40."
+    },
+    "dividendYield": {
+      "value": 0.0429,
+      "period": "FY2025 DPS / price 2026-11-12",
+      "source": "https://annualreport.novonordisk.com/2025/introducing-novo-nordisk/five-year-overview.html",
+      "asOf": "2026-11-12",
+      "note": "Derived: 11.70 / 272.70."
+    },
+    "payoutRatio": {
+      "value": 0.459,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure (stockanalysis 44.6%)."
+    },
+    "netDebtToEbitda": {
+      "value": 0.485,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure; lease treatment not stated."
+    },
+    "interestCoverage": {
+      "value": 1566.84,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+      "asOf": "2026-10-23",
+      "note": "Provider figure; not meaningful (net financial income)."
+    },
+    "roic": {
+      "value": 0.3922,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+      "asOf": "2026-10-23",
+      "note": "Provider figure."
+    },
+    "roe": {
+      "value": 0.5982,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+      "asOf": "2026-10-23",
+      "note": "Provider figure."
+    },
+    "beta5y": {
+      "value": 0.368,
+      "period": "5y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure (stockanalysis 0.38)."
+    },
+    "sectorMetrics": {
+      "guidance2026": {
+        "basis": "Adjusted sales growth and adjusted operating profit growth, constant exchange rates (CER); adjusted excludes the US 340B provision reversal",
+        "original_2026-02-04": "-5% to -13% for both (shares fell ~17-18% on the day)",
+        "2026-05-06": "-4% to -12% for both (raised)",
+        "2026-08-04": "0% to -6% for both (raised, on higher GLP-1 expectations)",
+        "2026-11-04": "-2% to +2% for both (raised again; third raise in 2026 per press; Q3 report)",
+        "reportedNote": "Excluding adjustments the Aug midpoints implied +5% sales and +12% operating profit growth; the Nov reported-basis range not retrieved.",
+        "sources": [
+          "https://via.ritzau.dk/pressemeddelelse/15268956/novo-nordisk-as?lang=en",
+          "https://www.biospace.com/press-releases/novo-nordisk-raises-adjusted-sales-and-adjusted-operating-profit-outlook-for-2026",
+          "https://rallies.ai/news/novo-nordisk-guides-2026-sales-down-5-13-excluding-42-b-rebate-reversal",
+          "https://www.timeslive.co.za/news/world/2026-11-04-novo-nordisk-lifts-2026-outlook-as-wegovy-pill-surges/"
+        ],
+        "note": "Even the raised range implies adjusted sales and operating profit roughly flat in 2026 after +10% sales in 2025; the raises are from a deeply cut base."
+      },
+      "q3_2026": {
+        "adjustedSales_DKKm": 79195,
+        "adjustedSalesVsConsensus": "consensus 73.22bn (Reuters via Finimize/Time)",
+        "adjustedOperatingProfit_DKKm": 31720,
+        "adjustedOpProfitGrowthCER": 0.27,
+        "adjustedOpProfitConsensus_DKKm": 28390,
+        "reportedOperatingProfit_DKKm": 23011,
+        "reportedOperatingProfitGrowthCER": -0.09,
+        "impairments_DKKm": 8700,
+        "impairmentDetail": "DKK 4.6bn ziltivekimab, DKK 4.1bn manufacturing network right-sizing (non-cash)",
+        "wegovyPillSales_DKKm": 5394,
+        "wegovyPillQoQ": 0.53,
+        "usInjectableWegovyGrowthCER": -0.13,
+        "usTotalWegovyGrowth": 0.21,
+        "source": "https://via.ritzau.dk/pressemeddelelse/15268956/novo-nordisk-as?lang=en"
+      },
+      "nineMonths2026": {
+        "adjustedSales_DKKm": 227746,
+        "adjustedSalesGrowthCER": 0.02,
+        "adjustedOperatingProfit_DKKm": 97967,
+        "adjustedOpProfitGrowthCER": 0.08,
+        "reportedSales_DKKm": 254506,
+        "reportedOperatingProfit_DKKm": 109690,
+        "reportedOpProfitGrowthCER": 0.18,
+        "source": "https://via.ritzau.dk/pressemeddelelse/15268956/novo-nordisk-as?lang=en"
+      },
+      "q2_2026": {
+        "adjustedSales_DKKm": 78488,
+        "adjustedSalesGrowthCER": 0.07,
+        "adjustedOperatingProfit_DKKm": 33389,
+        "adjustedOpProfitGrowthCER": 0.11,
+        "impairments_DKKm": 6300,
+        "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000117184326005184/f6k_080426.htm"
+      },
+      "pricingPressure": "US realised prices lower under the Most Favoured Nation agreement; IRA maximum fair price for Wegovy/Ozempic/Rybelsus effective 2027 (company said it would have been a negative low-single-digit impact on global sales growth if applied in 2025); reduced Medicaid obesity coverage; semaglutide patent expiry in key international markets; compounded semaglutide. Cited as reasons for the Feb 2026 guide. Q3 2026 US injectable Wegovy -13% CER.",
+      "competition": "Lilly: Foundayo (oral GLP-1) 'winning a growing share of new prescriptions'; Lilly raised its own outlook the week before Novo's Q3. Novo estimates ~80% of US new-to-brand pill prescriptions for the Wegovy pill (company claim, via Finimize). Zepbound/Mounjaro outsold Wegovy/Ozempic (Q3 2025).",
+      "estimateRevisions": "Guidance raised three times since Feb (May, Aug, Nov), Q3 adjusted sales and operating profit beat consensus (79.2bn vs 73.2bn; 31.7bn vs 28.4bn). Post-Q3 consensus EPS revisions not retrieved. Agent consensus: 24 analysts, hold; mean target DKK 299.9 vs price 272.7 (low 221, high 448).",
+      "rdPipeline": "Impairments in 2026: monlunabant (DKK 4.0bn, Q2), ziltivekimab (DKK 4.6bn, Q3)."
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 140800,
+        "ebit": 58644,
+        "ebitMargin": 0.4165,
+        "eps": 10.37,
+        "fcf": 29319,
+        "source": "Novo annual report 2025 five-year overview (DKK m; EPS = diluted EPS/ADR basis per table). Provider (stockanalysis) shows op. income 59,217 and FCF 48,665."
+      },
+      {
+        "period": "FY2022",
+        "revenue": 176954,
+        "ebit": 74809,
+        "ebitMargin": 0.4228,
+        "eps": 12.22,
+        "fcf": 57362,
+        "source": "Novo annual report 2025 five-year overview. Provider op. income 75,618, FCF 66,741."
+      },
+      {
+        "period": "FY2023",
+        "revenue": 232261,
+        "ebit": 102574,
+        "ebitMargin": 0.4416,
+        "eps": 18.62,
+        "fcf": 68326,
+        "source": "Novo annual report 2025 five-year overview. Provider op. income 104,698, FCF 83,102."
+      },
+      {
+        "period": "FY2024",
+        "revenue": 290403,
+        "ebit": 128339,
+        "ebitMargin": 0.4419,
+        "eps": 22.63,
+        "fcf": -14707,
+        "source": "Novo annual report 2025 five-year overview; FCF negative on Catalent acquisition. Provider op. income 138,901, FCF 73,804."
+      },
+      {
+        "period": "FY2025",
+        "revenue": 309064,
+        "ebit": 127658,
+        "ebitMargin": 0.413,
+        "eps": 23.03,
+        "fcf": 28295,
+        "source": "Novo annual report 2025 five-year overview; operating profit -0.5% YoY. Provider op. income 140,618, FCF 58,962. Company FCF is after acquisitions."
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "hold",
+      "analysts": 24,
+      "buy": 5,
+      "hold": 15,
+      "sell": 6,
+      "targetAvg": 299.91,
+      "targetHigh": 448,
+      "targetLow": 221,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable (consensus not retrieved); provider forward P/E 12.19 implies EPS ~DKK 21.3 at 260.15"
+    },
+    "recentEvents": [
+      "4 Nov 2026 Q3: adjusted sales DKK 79.2bn (consensus 73.2bn), adjusted operating profit DKK 31.7bn (+27% CER; consensus 28.4bn); reported operating profit DKK 23.0bn (-9% CER) after DKK 8.7bn impairments; 2026 outlook raised to -2% to +2% adjusted (third raise).",
+      "Wegovy pill Q3 sales DKK 5.39bn (+53% QoQ, vs consensus 4.62bn); ~3.6m US prescriptions in Q3; sold in 8 markets.",
+      "US injectable Wegovy sales -13% CER in Q3; combined US Wegovy +21% (pill included).",
+      "4 Aug 2026: outlook raised to 0% to -6%; 6 May 2026 raised to -4% to -12%; 4 Feb 2026 original -5% to -13% (shares -17/-18%).",
+      "Q3 2025 context: guidance cut, CEO change (Mike Doustdar), layoffs, shareholder board dispute.",
+      "9M 2026 adjusted sales +2% CER; adjusted operating profit +8% CER."
+    ],
+    "valueTrapFlags": [
+      "Low trailing P/E (10.7x) is flattered by the one-off 340B reversal; adjusted sales are flat to slightly down for 2026 even after three guidance raises.",
+      "Adjusted sales guidance -2% to +2% follows +10% in 2025; FY2025 operating profit fell 0.5% and EPS barely grew (22.63 to 23.03).",
+      "US pricing reset (MFN, 2027 IRA price), patent expiries and compounders structurally compress price/margin; US injectable Wegovy -13% in Q3.",
+      "Competition from Lilly Foundayo/tirzepatide gaining new prescriptions; the Wegovy pill (~6% of expected sales) must carry the recovery.",
+      "Q3 adjusted operating profit +27% benefited from an easy comparison base and a stronger beat than the guidance range implies; reported Q3 operating profit -9% CER; recurring impairments (DKK 6.3bn Q2, 8.7bn Q3).",
+      "Free cash flow weaker than earnings under company definition (FY2025 DKK 28.3bn vs operating profit 127.7bn, after Catalent); net debt ~DKK 95bn at FY2025 after prior net cash.",
+      "Positive: estimates/guidance moving up since February, consensus sits above price (mean 299.9), ROIC high; but consensus is hold (5 buy, 15 hold, 6 sell)."
+    ],
+    "dataGaps": [
+      "Q3 2026 free cash flow, net debt, diluted EPS and buyback not found (company full report PDF not accessed).",
+      "Consensus EPS/revenue estimates and post-Q3 revision direction not retrieved.",
+      "52-week high/low unavailable; historical multiples unavailable.",
+      "Reported (unadjusted) 2026 guidance range not retrieved; Nov guidance read from a Ritzau copy of the company announcement and press reports.",
+      "Net debt sign in annual report table ambiguous; EBIT and FCF differ materially between company and provider definitions."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "weakening",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis DKK 21.0 = provider forward EPS about 21.3 (derived), trimmed for US price resets in 2027. Trailing P/E 10.7 flattered by a one-off 340B reversal, not used.",
+    "metricBasis": "EPS adjusted, forward (provider-derived, trimmed)",
+    "basisValue": 21.0,
+    "forwardDividendYield": 0.043,
+    "qualityTier": "B",
+    "role": "Value Recovery",
+    "scores": {
+      "quality": 4,
+      "growth": 2,
+      "financialStrength": 5,
+      "risk": 2
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 197.4,
+        "epsCagr5y": -0.06,
+        "exitPe5y": 10,
+        "note": "Lilly takes share, US IRA/MFN pricing cuts margins. Justified multiple 10x on next-12m 19.74.",
+        "epsCagr10y": -0.01,
+        "exitPe10y": 10
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 302.82,
+        "epsCagr5y": 0.03,
+        "exitPe5y": 14,
+        "note": "Volume growth offsets price cuts; oral Wegovy holds share. Justified multiple 14x on next-12m 21.63.",
+        "epsCagr10y": 0.04,
+        "exitPe10y": 14
+      },
+      "bull": {
+        "prob": 0.2,
+        "fairValue": 408.24,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 17,
+        "note": "Obesity market expansion, pill success, new indications. Justified multiple 18x on next-12m 22.68.",
+        "epsCagr10y": 0.07,
+        "exitPe10y": 16
+      }
+    },
+    "whyItFits": "Diabetes/obesity leader with ROIC about 39%, low leverage (ND/EBITDA 0.5x), 4.3% yield; guidance raised three times in 2026 and Q3 adjusted profit beat by 12%.",
+    "growthDrivers": "Wegovy pill, global obesity volume growth, CagriSema pipeline, international markets.",
+    "saturation": "Deeply de-rated: P/E about 12-13 on adjusted earnings versus 30x+ in 2023; pessimism priced, but the earnings base is resetting.",
+    "principalRisk": "US price resets (MFN, IRA 2027) and Lilly's share gains shrink the earnings base faster than volumes grow."
+  }
+}

@@ -1,0 +1,384 @@
+{
+  "ticker": "NDA-SE.ST",
+  "name": "Nordea Bank Abp",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Financial Services / Banks",
+  "businessSummary": "Largest Nordic financial services group (Finland, Sweden, Denmark, Norway): retail and business banking, large corporates and institutions, asset and wealth management. Reports in EUR; the Stockholm line is quoted in SEK.",
+  "retrievedAt": "2026-11-13T09:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 187.45,
+      "period": "close, run 2026-11-12",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "SEK, Stockholm line. Company reports in EUR."
+    },
+    "high52w": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "low52w": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable: latest count not retrieved (buybacks ongoing; stockanalysis page showing 3.50bn was stale/undated)"
+    },
+    "marketCap": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "netDebt": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "enterpriseValue": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "peTrailing": {
+      "value": 12.81,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure on SEK price; consistent with price/EPS only if SEK/EUR conversion is correct. Cross-check: YTD 9M 2026 diluted EPS EUR 1.03 (EUR 1.07 excl. EUR 190m Q1 restructuring)."
+    },
+    "peForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "2026-27 consensus EPS not retrieved; Inderes Oct 2025 estimate (EPS 2026e EUR 1.41) is stale"
+    },
+    "evEbitTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "evEbitdaTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "fcfTTM": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "fcfYield": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "dividendPerShare": {
+      "value": 0.96,
+      "period": "FY2025 (EUR)",
+      "source": "https://www.nordea.com/en/press/2026-01-29/fourth-quarter-and-full-year-results-2025",
+      "asOf": "2026-01-29",
+      "note": "EUR 0.96 for FY2025 (EUR 0.94 FY2024), ~68% payout. Board also proposed mid-year 2026 dividend of ~50% of H1 2026 net profit, capped at EUR 3bn."
+    },
+    "dividendYield": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable: EUR dividend vs SEK price; no verified EURSEK rate retrieved"
+    },
+    "payoutRatio": {
+      "value": 0.956,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure (appears to include buybacks or a different basis). Company policy: 60-70% payout; FY2025 dividend ~68% of net profit."
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "roic": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (bank)"
+    },
+    "roe": {
+      "value": 0.151,
+      "period": "Q3 2026 (with amortised regulatory fees)",
+      "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+      "asOf": "2026-10-22",
+      "note": "Q3 2025: 15.8%. YTD 14.9% incl. / 15.5% excl. EUR 190m restructuring cost. FY2025 15.5%, FY2024 16.7%."
+    },
+    "beta5y": {
+      "value": 0.717,
+      "period": "5y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure."
+    },
+    "sectorMetrics": {
+      "priceToBook": {
+        "value": null,
+        "period": "",
+        "source": "",
+        "asOf": "2026-11-13",
+        "note": "unavailable. Agent priceToBook 20.32 is a currency artifact (SEK price vs EUR book value) and is rejected. Book value per share not retrieved (not on short-facts page)."
+      },
+      "roe": {
+        "value": 0.151,
+        "period": "Q3 2026",
+        "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+        "asOf": "2026-10-22",
+        "note": "2026 outlook: ROE above 15%. Q3 2025 15.8%."
+      },
+      "cet1": {
+        "value": 0.158,
+        "period": "30 Sep 2026",
+        "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+        "asOf": "2026-10-22",
+        "note": "1.9pp above regulatory requirement; includes interim profit net of 70% dividend deduction (subject to ECB approval). 15.7% at 31 Dec 2025, 15.8% at 31 Dec 2024. Release table also shows 15.9% in one spot; footnote notes Q3 2025 regulatory CET1 was 15.7%."
+      },
+      "costIncomeRatio": {
+        "value": 0.45,
+        "period": "Q3 2026 excl. regulatory fees",
+        "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+        "asOf": "2026-10-22",
+        "note": "45.6% incl. fees (Q3 2025: 45.1% excl., 45.8% incl.). YTD 44.8% excl. restructuring, 48.1% incl. 2026 guidance 44-45%. FY2025 45.0%."
+      },
+      "dividendPerShare": {
+        "value": 0.96,
+        "period": "FY2025 (EUR)",
+        "source": "https://www.nordea.com/en/press/2026-01-29/fourth-quarter-and-full-year-results-2025",
+        "asOf": "2026-01-29",
+        "note": "See facts.dividendPerShare."
+      },
+      "buybacks": {
+        "value": 750,
+        "period": "Q4 2025 (EUR m)",
+        "source": "https://www.nordea.com/en/press/2026-01-29/fourth-quarter-and-full-year-results-2025",
+        "asOf": "2026-01-29",
+        "note": "EUR 250m programme launched and completed plus EUR 500m programme launched in Q4 2025; completion date not stated. Q3 2026 release gives no new programme size; says it 'will continuously assess' buybacks."
+      },
+      "netInterestIncome": {
+        "value": 1799,
+        "period": "Q3 2026 (EUR m)",
+        "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+        "asOf": "2026-10-22",
+        "note": "+1% YoY and QoQ; YTD EUR 5,337m (-1%)."
+      },
+      "operatingProfit": {
+        "value": 1541,
+        "period": "Q3 2026 (EUR m)",
+        "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+        "asOf": "2026-10-22",
+        "note": "-4% YoY; YTD EUR 4,593m incl. / 4,783m excl. EUR 190m restructuring (Q1 2026)."
+      },
+      "netProfitDilutedEps": {
+        "value": 0.35,
+        "period": "Q3 2026 (EUR)",
+        "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+        "asOf": "2026-10-22",
+        "note": "Net profit EUR 1,181m (-4%); EPS -3% YoY; YTD EPS 1.03 incl. / 1.07 excl. restructuring."
+      },
+      "loansAndDeposits": {
+        "loansToPublic_EURbn": 399.6,
+        "loansExclRepos_EURbn": 358.1,
+        "loansGrowthYoY": 0.06,
+        "depositsFromPublic_EURbn": 259.0,
+        "depositsGrowthYoY": 0.15,
+        "period": "30 Sep 2026",
+        "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm"
+      },
+      "reportingCurrencyNote": "Company figures are in EUR; SEK conversions not performed (no verified FX rate)."
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 9620,
+        "ebit": 4936,
+        "ebitMargin": 0.5131,
+        "eps": 0.95,
+        "fcf": null,
+        "source": "EUR m / EUR; Nordea Q4 2022 release (total operating income, operating profit, diluted EPS). FCF not applicable (bank)."
+      },
+      {
+        "period": "FY2022",
+        "revenue": 9796,
+        "ebit": 4768,
+        "ebitMargin": 0.4867,
+        "eps": 0.95,
+        "fcf": null,
+        "source": "EUR; reported (EPS 1.10 excl. items affecting comparability, mainly Russia-related Q1 charge). Q4 2023 release restates FY2022 income 9,721 / op profit 4,762 / EPS 0.94 (reported) and 10,258 / 5,375 / 1.10 (excl.)."
+      },
+      {
+        "period": "FY2023",
+        "revenue": 11743,
+        "ebit": 6338,
+        "ebitMargin": 0.5397,
+        "eps": 1.37,
+        "fcf": null,
+        "source": "EUR; Nordea Q4 2023 release. Income figure 11,743 equals the FY2025 income figure in a separate source; verify."
+      },
+      {
+        "period": "FY2024",
+        "revenue": 12084,
+        "ebit": 6548,
+        "ebitMargin": 0.5419,
+        "eps": 1.44,
+        "fcf": null,
+        "source": "EUR; Nordea Q4 2025 release comparatives."
+      },
+      {
+        "period": "FY2025",
+        "revenue": 11743,
+        "ebit": 6316,
+        "ebitMargin": 0.5379,
+        "eps": 1.39,
+        "fcf": null,
+        "source": "EUR; Nordea Q4 2025 release. Net profit EUR 4,840m; net loan loss ratio 1bp."
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 10,
+      "buy": 6,
+      "hold": 3,
+      "sell": 1,
+      "targetAvg": 202.8,
+      "targetHigh": 233.25,
+      "targetLow": 157.03,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable (consensus EPS not retrieved)"
+    },
+    "recentEvents": [
+      "Q3 2026 (22 Oct 2026 approx.): operating profit EUR 1,541m (-4%), net profit EUR 1,181m (-4%), EPS EUR 0.35, ROE 15.1%, C/I 45.0% excl. fees, CET1 15.8%; 2026 guidance unchanged (ROE above 15%, C/I 44-45%).",
+      "Q1 2026 included EUR 190m restructuring cost.",
+      "Q4 2025: EUR 750m buybacks (EUR 250m completed, EUR 500m launched); FY2025 dividend EUR 0.96 plus planned mid-year 2026 dividend of ~50% of H1 net profit (cap EUR 3bn).",
+      "Loans +6% YoY (corporate +8%, mortgage +2%), deposits +15% (retail +4%) at 30 Sep 2026.",
+      "2030 targets: ROE above 15% throughout, C/I 40-42% excl. fees, net loan loss ratio ~10bp."
+    ],
+    "valueTrapFlags": [
+      "Earnings drifting down: Q3 operating profit -4% YoY, net profit -4%; net interest income YTD -1%; FY2025 EPS 1.39 below FY2024 1.44 and FY2023 1.37 roughly flat.",
+      "Net loan loss ratio was only 1bp in FY2025 (target ~10bp over time), so credit costs are a likely headwind.",
+      "ROE has slipped from 16.9% (2023) / 16.7% (2024) to ~15%, near the guidance floor.",
+      "Capital return (high payout and buybacks) holds EPS up; CET1 15.8% leaves 1.9pp buffer.",
+      "No P/B or forward P/E verified; do not rely on agent P/B (20.3, currency artifact)."
+    ],
+    "dataGaps": [
+      "P/B and book value per share unavailable; forward P/E and consensus EPS unavailable.",
+      "52-week range, shares outstanding, market cap, SEK dividend yield unavailable.",
+      "Current buyback programme size/timing for 2026 not disclosed in Q3 release.",
+      "Q3 2026 release read via finanznachrichten.de copy of the Nordea release, not the nordea.com PDF.",
+      "FY2021-2023 income/operating profit taken from different release vintages (2022 restated); FY2023 and FY2025 income figures identical (11,743) in separate sources, unverified."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "bank",
+    "competitive": "stable",
+    "method": "Bank: next-12m EPS x justified P/E. Basis SEK 14.6 = price 187.45 / agent trailing P/E 12.81 (derived; company reports in EUR). Dividend yield assumed from 65% payout policy x 7.8% earnings yield (estimate, FX unverified). Buybacks not included.",
+    "metricBasis": "EPS SEK-equivalent, TTM (derived from agent P/E)",
+    "basisValue": 14.6,
+    "forwardDividendYield": 0.05,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+      "quality": 4,
+      "growth": 2,
+      "financialStrength": 4,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 137.24,
+        "epsCagr5y": -0.06,
+        "exitPe5y": 10,
+        "note": "Rate cuts compress net interest income, credit losses normalise. Justified multiple 10x on next-12m 13.72.",
+        "epsCagr10y": -0.02,
+        "exitPe10y": 10
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 178.7,
+        "epsCagr5y": 0.02,
+        "exitPe5y": 11.5,
+        "note": "ROE about 15%, flat-ish earnings plus capital return. Justified multiple 12x on next-12m 14.89.",
+        "epsCagr10y": 0.02,
+        "exitPe10y": 11
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 206.96,
+        "epsCagr5y": 0.05,
+        "exitPe5y": 12.5,
+        "note": "Volume growth and cost efficiency keep ROE near 16%. Justified multiple 13.5x on next-12m 15.33.",
+        "epsCagr10y": 0.04,
+        "exitPe10y": 12
+      }
+    },
+    "whyItFits": "Largest Nordic bank: ROE 15.1%, CET1 15.8%, cost/income 45%, about 5% dividend plus buybacks; beta 0.72.",
+    "growthDrivers": "Capital return (dividend and buybacks), lending volume, cost efficiency.",
+    "saturation": "P/E 12.8 near the top of what Nordic banks earned at peak rates; UBS says much upside is priced in (analyst opinion).",
+    "principalRisk": "Falling interest rates and normalising loan losses (currently 1bp) reduce earnings; Q3 operating profit -4%."
+  }
+}

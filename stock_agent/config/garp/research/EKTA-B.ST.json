@@ -1,0 +1,366 @@
+{
+  "ticker": "EKTA-B.ST",
+  "name": "Elekta AB (B)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Health Care / radiation therapy equipment and software",
+  "businessSummary": "Maker of radiotherapy and radiosurgery systems (Versa HD, Unity MR-linac, Leksell Gamma Knife), oncology software and services; fiscal year ends 30 April.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 58.35,
+      "period": "close",
+      "source": "stockanalysis.com/history",
+      "asOf": "2026-10-26",
+      "note": "Latest found, stale versus 2026-11-13. Stockanalysis showed 51.60 on 2026-10-02 and 51.75 on 2026-10-05. Agent data lacks EKTA-B."
+    },
+    "high52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "low52w": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 397.06,
+      "period": "current (millions)",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-02",
+      "note": ""
+    },
+    "marketCap": {
+      "value": 23170,
+      "period": "2026-10-26",
+      "source": "derived: 58.35 x 397.06m",
+      "asOf": "2026-10-26",
+      "note": ""
+    },
+    "netDebt": {
+      "value": 3576,
+      "period": "31 Jul 2026 (company)",
+      "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27)",
+      "asOf": "2026-08-27",
+      "note": "3,863 a year earlier. Lease treatment unverified. Stockanalysis shows 4,530 (probably incl. leases)."
+    },
+    "enterpriseValue": {
+      "value": 26746,
+      "period": "derived",
+      "source": "derived: 23,170 + 3,576",
+      "asOf": "2026-10-26",
+      "note": ""
+    },
+    "peTrailing": {
+      "value": null,
+      "period": "TTM Jul 2026",
+      "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27)",
+      "asOf": "2026-08-27",
+      "note": "Not meaningful: reported EPS TTM -0.95 (FY2025/26 -1.36 after 1,363 Q4 impairments and IACs; Q1 0.69 vs 0.28)."
+    },
+    "peForward": {
+      "value": 14.9,
+      "period": "FY2026/27E",
+      "source": "derived: 58.35 / consensus adjusted EPS 3.91",
+      "asOf": "2026-10-26",
+      "note": "Consensus EPS FY2026/27 is adjusted (range 3.24-4.43; stockanalysis, S&P, 2026-10-05). FY2025/26 adjusted EPS 2.43."
+    },
+    "evEbitTrailing": {
+      "value": 12.1,
+      "period": "TTM Jul 2026 adjusted EBIT",
+      "source": "derived: EV 26,746 / 2,211",
+      "asOf": "2026-10-26",
+      "note": "Adjusted EBIT TTM = FY25/26 2,051 + Q1 395 - Q1 prior 235. On reported EBIT (234 + 395 - 219 = 410) the multiple is about 65 (impairments). Stockanalysis EBIT 1,531 does not reconcile with the company (conflict recorded). Adjusted EBIT is EBIT, not EBITA; company also reports adjusted EBITC."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 9.7,
+      "period": "TTM Jul 2026",
+      "source": "derived: EV 26,746 / EBITDA 2,751",
+      "asOf": "2026-10-26",
+      "note": "EBITDA implied = net debt 3,576 / reported ND/EBITDA 1.30 (derived; definition adjusted vs reported not stated). Stockanalysis 12.13 on different basis."
+    },
+    "fcfTTM": {
+      "value": 1312,
+      "period": "TTM Jul 2026 (before dividend and M&A)",
+      "source": "derived: FY25/26 1,158 - Q1 -266 + prior Q1 -420 -> 1,158 - 266 + 420",
+      "asOf": "2026-08-27",
+      "note": "Company definition (after capitalised R&D). Stockanalysis shows 2,435 as OCF - capex only, excluding 890 capitalised intangibles; conflict recorded."
+    },
+    "fcfYield": {
+      "value": 0.0566,
+      "period": "TTM Jul 2026",
+      "source": "derived: 1,312 / 23,170",
+      "asOf": "2026-10-26",
+      "note": "Company mid-term target FCF about 10% of sales; TTM about 7.9% of sales 16,608."
+    },
+    "dividendPerShare": {
+      "value": 2.4,
+      "period": "FY2025/26 (proposed, unchanged)",
+      "source": "Elekta Q4 2025/26 report (borsvarlden 2026-05-28)",
+      "asOf": "2026-05-28",
+      "note": ""
+    },
+    "dividendYield": {
+      "value": 0.0411,
+      "period": "FY2025/26",
+      "source": "derived: 2.40 / 58.35",
+      "asOf": "2026-10-26",
+      "note": ""
+    },
+    "payoutRatio": {
+      "value": null,
+      "period": "FY2025/26",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "Not meaningful: EPS negative; dividend about 953 vs company FCF 1,158 (derived 2.40 x 397.06)."
+    },
+    "netDebtToEbitda": {
+      "value": 1.3,
+      "period": "31 Jul 2026",
+      "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27)",
+      "asOf": "2026-08-27",
+      "note": "1.17 a year earlier; 1.24 at 30 Apr 2026; 1.06 at 30 Apr 2025. Rising."
+    },
+    "interestCoverage": {
+      "value": 5.93,
+      "period": "LTM",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-02",
+      "note": "Aggregator basis, unverified."
+    },
+    "roic": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "Not reported by company (ROCE not in Q1 report). Stockanalysis ROIC -71.7% judged a data artifact; another page quoted ROCE 12.45% (unverified)."
+    },
+    "roe": {
+      "value": -0.05,
+      "period": "rolling 12m to 31 Jul 2026",
+      "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27)",
+      "asOf": "2026-08-27",
+      "note": "3% a year earlier."
+    },
+    "beta5y": {
+      "value": 0.96,
+      "period": "5y",
+      "source": "stockanalysis.com statistics",
+      "asOf": "2026-10-02",
+      "note": ""
+    },
+    "sectorMetrics": {
+      "orderIntake": {
+        "Q1_2026_27": {
+          "gross": 3910,
+          "prior": 3838,
+          "change_cc": 0.03,
+          "bookToBill": 1.11,
+          "prior_bookToBill": 1.05
+        },
+        "rolling12mBookToBill": 1.05,
+        "Q4_2025_26": {
+          "gross": 4567,
+          "change_cc": -0.15,
+          "consensus": 5833,
+          "bookToBill_conflict": "0.96 (EFN/Direkt) vs 1.04 (Borsvarlden); company report not read"
+        },
+        "note": "Q4 cited weak Middle East and Southeast Asia and stricter booking criteria. Order backlog not disclosed in Q1 report."
+      },
+      "organicGrowth": {
+        "Q1_2026_27": -0.02,
+        "Q4_2025_26": -0.01,
+        "FY2025_26_sales_change_reported": -0.072,
+        "note": "Q1: Solutions -9%, Services +5%."
+      },
+      "adjEbitMargin": {
+        "Q1_2026_27": 0.112,
+        "Q1_2025_26": 0.065,
+        "Q4_2025_26": 0.189,
+        "FY2025_26": 0.123,
+        "FY2024_25": 0.116,
+        "note": "Q1 gross margin 42.6% incl. about 150bp from a 53 US tariff refund (one-off)."
+      },
+      "targets": {
+        "FY2026_27_guidance": "sales +2-4% cc; adjusted EBIT margin 12.5-13.5% (set 2026-06-17, reiterated 2026-08-27)",
+        "midTerm_FY2028_29": "mid-single-digit sales CAGR cc FY25/26-FY28/29; adjusted EBIT margin 14-16%; FCF about 10% of sales",
+        "status": "Q1 below both guidance ranges (sales -2% cc, margin 11.2%) though Q1 is seasonally weak. Prior (pre-June 2026) targets and whether they were cut could not be verified."
+      }
+    },
+    "history": [
+      {
+        "period": "FY2021/22 (Apr 2022)",
+        "revenue": 14548,
+        "ebit": 1489,
+        "ebitMargin": 0.1023,
+        "eps": 3.02,
+        "fcf": null,
+        "source": "stockanalysis.com (not reconciled to company definitions)"
+      },
+      {
+        "period": "FY2022/23 (Apr 2023)",
+        "revenue": 16869,
+        "ebit": 1985,
+        "ebitMargin": 0.1177,
+        "eps": 2.47,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023/24 (Apr 2024)",
+        "revenue": 18119,
+        "ebit": 2260,
+        "ebitMargin": 0.1247,
+        "eps": 3.41,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024/25 (Apr 2025)",
+        "revenue": 18016,
+        "ebit": 890,
+        "ebitMargin": 0.049,
+        "eps": 0.62,
+        "fcf": 866,
+        "adjEbit": 2097,
+        "adjEbitMargin": 0.116,
+        "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27) comparatives (reported EBIT 890; stockanalysis 1,006 conflict)"
+      },
+      {
+        "period": "FY2025/26 (Apr 2026)",
+        "revenue": 16718,
+        "ebit": 234,
+        "ebitMargin": 0.014,
+        "eps": -1.36,
+        "fcf": 1158,
+        "adjEbit": 2051,
+        "adjEbitMargin": 0.123,
+        "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27) comparatives (stockanalysis EBIT 1,366 conflicts); includes 1,363 Q4 impairments/IACs"
+      },
+      {
+        "period": "TTM Jul 2026",
+        "revenue": 16608,
+        "ebit": 410,
+        "ebitMargin": 0.025,
+        "eps": -0.95,
+        "fcf": 1312,
+        "adjEbit": 2211,
+        "adjEbitMargin": 0.133,
+        "source": "derived from company FY and Q1 figures"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "not found"
+    },
+    "consensus": {
+      "rating": "hold",
+      "analysts": 14,
+      "buy": 5,
+      "hold": 3,
+      "sell": 6,
+      "targetAvg": 58.26,
+      "targetHigh": 90,
+      "targetLow": 41,
+      "source": "stockanalysis.com/forecast (rating counts Sep 2026, targets 2026-09-02; price at that time lower, stale)",
+      "asOf": "2026-10-05"
+    },
+    "forwardEstimates": {
+      "epsNextFY": 3.91,
+      "epsFY2": null,
+      "revenueGrowthNextFY": 0.0311,
+      "source": "stockanalysis.com/forecast 2026-10-05 (adjusted EPS FY2026/27E 3.91 from 2.43; revenue 17.24bn)"
+    },
+    "recentEvents": [
+      "Latest report is Q1 FY2026/27 (May-Jul), published 2026-08-27, NOT Q2: Q2 (Aug-Oct 2026) is due around late November 2026 (last year 2025-11-26). Q2 figures could not be used.",
+      "Q1: sales 3,536 (-3%; cons 3,635), adj EBIT 395 vs 235 (cons 318), orders 3,910, FCF -266, tariff refund 53 helped gross margin.",
+      "Q4 FY25/26 (2026-05-28): orders 4,567 vs consensus 5,833; impairments 1,096 non-cash; reported EBIT -461; dividend held at 2.40.",
+      "CMD 2026-06-17: new targets to FY2028/29. A headline mentions a SEK 500m cost-saving plan (Stockopedia) but page content and date not verified; not mentioned in Q1 report."
+    ],
+    "valueTrapFlags": [
+      "Sales declining: FY2025/26 -7% reported, Q1 organic -2% (Solutions -9%); Q4 FY25/26 orders missed consensus by 22%.",
+      "Profit recovery is cost/mix driven: adjusted EBIT margin 11.2% in Q1 (up from 6.5%) but helped by a one-off tariff refund (about 150bp gross margin); reported EPS still negative TTM after large impairments.",
+      "Q1 below FY2026/27 guidance on both sales (-2% vs +2-4%) and margin (11.2% vs 12.5-13.5%).",
+      "Net debt/EBITDA up to 1.30x from 1.17x; Q1 operating cash flow 0 and FCF -266.",
+      "Quality of adjusted figures: large IACs (1,363 in Q4) while valuation uses adjusted EBIT/EPS; broker rating split 5 buy / 6 sell."
+    ],
+    "dataGaps": [
+      "Q2 FY2026/27 report not yet published as of 2026-11-13",
+      "52-week high/low",
+      "Prices dated 2026-10-26 or earlier",
+      "Prior financial targets and whether they were met/cut",
+      "Estimate revisions after Q1 (not found)",
+      "FY2021/22-FY2023/24 company-reported EBIT and FCF (stockanalysis only)",
+      "Historical P/E range",
+      "Order backlog (not disclosed)",
+      "Company ROCE",
+      "Net debt lease treatment"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "weakening",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis 3.5 = consensus FY2026/27E adjusted EPS 3.91 cut about 10% because Q1 ran below guidance (lead judgement). Price is the 2026-10-26 close (stale). Q2 report due late Nov 2026. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS adjusted, FY2026/27E (consensus haircut)",
+    "basisValue": 3.5,
+    "forwardDividendYield": 0.041,
+    "qualityTier": "C",
+    "role": "Value Recovery",
+    "scores": {
+      "quality": 3,
+      "growth": 2,
+      "financialStrength": 3,
+      "risk": 2
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.35,
+        "fairValue": 38.5,
+        "epsCagr5y": 0.0,
+        "exitPe5y": 11,
+        "note": "Orders stay weak, guidance missed, dividend cut. Justified multiple 11x on next-12m 3.50.",
+        "epsCagr10y": 0.01,
+        "exitPe10y": 11
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 55.65,
+        "epsCagr5y": 0.06,
+        "exitPe5y": 14,
+        "note": "Margin recovers toward 12-13% over two years. Justified multiple 15x on next-12m 3.71.",
+        "epsCagr10y": 0.05,
+        "exitPe10y": 14
+      },
+      "bull": {
+        "prob": 0.2,
+        "fairValue": 70.56,
+        "epsCagr5y": 0.12,
+        "exitPe5y": 17,
+        "note": "Order recovery and cost programme deliver. Justified multiple 18x on next-12m 3.92.",
+        "epsCagr10y": 0.08,
+        "exitPe10y": 16
+      }
+    },
+    "whyItFits": "Wide-moat radiotherapy duopoly position (Morningstar view, analyst opinion) at EV/adjusted EBIT 12; included as the value-recovery test case.",
+    "growthDrivers": "Replacement cycle of linear accelerators, Evo platform, emerging-market cancer care, cost savings.",
+    "saturation": "Near multi-year lows on depressed earnings; consensus target equals the price.",
+    "principalRisk": "Earnings recovery keeps slipping: Q1 below guidance, order intake volatile, reported loss after 1.1bn impairments; the 4% dividend depends on recovery."
+  }
+}

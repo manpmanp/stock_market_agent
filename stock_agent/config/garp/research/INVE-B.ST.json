@@ -1,0 +1,356 @@
+{
+  "ticker": "INVE-B.ST",
+  "name": "Investor AB (B)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Financial Services / Investment holding company",
+  "businessSummary": "Wallenberg-sphere investment holding company: listed core holdings (ABB, Atlas Copco, AstraZeneca, SEB, Ericsson, Epiroc, etc.), Patricia Industries (wholly/majority-owned, e.g. Mölnlycke, Permobil, Sarnova) and partner-owned investments (EQT, Wallenberg Investments).",
+  "retrievedAt": "2026-11-13T09:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 435.25,
+      "period": "close, run 2026-11-12",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "Investor B"
+    },
+    "high52w": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable (Yahoo blocked; stockanalysis page gave only 52w price change)"
+    },
+    "low52w": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 3061,
+      "period": "30 Sep 2026 (derived)",
+      "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe",
+      "asOf": "2026-09-30",
+      "note": "Derived: adjusted NAV SEK 1,258.0bn / SEK 411 per share = ~3,061m shares (A+B). Not an exact reported count."
+    },
+    "marketCap": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable: A and B shares trade at different prices; not computed"
+    },
+    "netDebt": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "Investor reports 'leverage' (net debt / total assets), not a net debt amount, in the interim statement; gross cash SEK 29,460m at 30 Sep 2026"
+    },
+    "enterpriseValue": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not meaningful for a holding company"
+    },
+    "peTrailing": {
+      "value": null,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Agent P/E 6.3 not meaningful for a holding company (includes unrealised gains); excluded."
+    },
+    "peForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not meaningful for a holding company"
+    },
+    "evEbitTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (holding company)"
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (holding company)"
+    },
+    "evEbitdaTrailing": {
+      "value": 6.402,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure; not meaningful for a holding company."
+    },
+    "fcfTTM": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (holding company)"
+    },
+    "fcfYield": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (holding company)"
+    },
+    "dividendPerShare": {
+      "value": 5.6,
+      "period": "FY2025 (paid SEK 4.00 May 2026 + SEK 1.60 Nov 2026)",
+      "source": "https://mfn.se/cis/a/investor/investor-year-end-report-2025-2ca46124.iframe",
+      "asOf": "2026-01-22",
+      "note": "Proposed at year-end report 2025 (prior year SEK 5.20). Check AGM approval was as proposed."
+    },
+    "dividendYield": {
+      "value": 0.0129,
+      "period": "FY2025 DPS / price 2026-11-12",
+      "source": "https://mfn.se/cis/a/investor/investor-year-end-report-2025-2ca46124.iframe ; stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Derived: 5.60 / 435.25."
+    },
+    "payoutRatio": {
+      "value": 0.0778,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure vs consolidated EPS; not meaningful for a holding company."
+    },
+    "netDebtToEbitda": {
+      "value": 0.489,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure; not meaningful for a holding company. See sectorMetrics.loanToValue."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (holding company)"
+    },
+    "roe": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "not applicable (holding company); see NAV total return"
+    },
+    "beta5y": {
+      "value": 0.811,
+      "period": "5y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Provider figure (stockanalysis showed 0.77 on an undated page)."
+    },
+    "sectorMetrics": {
+      "navPerShare": {
+        "value": 411,
+        "period": "30 Sep 2026",
+        "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe",
+        "asOf": "2026-09-30",
+        "note": "Reported adjusted NAV SEK 1,258.0bn (SEK 411/share). Quarter +SEK 43.3bn (+4%); nine-month adjusted NAV growth 17%. Patricia Industries at estimated market values (company-adjusted)."
+      },
+      "navPerSharePrior": {
+        "value": 397,
+        "period": "30 Jun 2026",
+        "source": "https://www.placera.se/pressmeddelanden/interim-report-january-june-2026-20260716",
+        "asOf": "2026-06-30",
+        "note": "Adjusted NAV SEK 1,214.7bn."
+      },
+      "discountToNav": {
+        "value": 0.059,
+        "period": "price 2026-11-12 vs NAV 2026-09-30",
+        "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe ; stock-agent /decisions 2026-11-12 23:05:18",
+        "asOf": "2026-11-12",
+        "note": "Derived: 435.25 / 411 - 1 = +5.9%, i.e. a PREMIUM to adjusted NAV, not a discount. Price is 6 weeks later than NAV date; B-share price vs per-share NAV of all classes."
+      },
+      "loanToValue": {
+        "value": 0.018,
+        "period": "30 Sep 2026",
+        "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe",
+        "asOf": "2026-09-30",
+        "note": "Investor's 'leverage' (net debt as share of total assets); 2.1% at 31 Dec 2025, 1.9% at 30 Jun 2026, 1.2% at 31 Dec 2024. Gross cash SEK 29,460m; average debt maturity 8.4 years."
+      },
+      "navPerShareHistory": {
+        "2021": 248,
+        "2022": 220,
+        "2023": 267,
+        "2024": 317,
+        "2025": 355,
+        "Sep-2026": 411,
+        "source": "Investor year-end reports 2021-2025 (cision/marketscreener/inderes/mfn) and Q3 2026 interim statement",
+        "note": "Adjusted NAV per share at 31 Dec each year. Ten-month 2026 YTD NAV/share +15.8% before dividends (355 to 411)."
+      },
+      "totalShareholderReturn": {
+        "value": 0.24,
+        "period": "Jan-Sep 2026",
+        "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe",
+        "asOf": "2026-09-30",
+        "note": "Nine-month TSR 24% vs SIXRX 11%; Q3 TSR 1% vs SIXRX 2%."
+      },
+      "navPeerNote": "Analyst targets (mean 416) sit below the price, consistent with trading above NAV."
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": null,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 248,
+        "fcf": null,
+        "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2021, Investor year-end report 2021"
+      },
+      {
+        "period": "FY2022",
+        "revenue": null,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 220,
+        "fcf": null,
+        "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2022 (NAV growth -10% incl. dividend), Investor YE report 2022"
+      },
+      {
+        "period": "FY2023",
+        "revenue": null,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 267,
+        "fcf": null,
+        "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2023, Investor YE report 2023"
+      },
+      {
+        "period": "FY2024",
+        "revenue": null,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 317,
+        "fcf": null,
+        "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2024, Investor YE report 2024"
+      },
+      {
+        "period": "FY2025",
+        "revenue": null,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 355,
+        "fcf": null,
+        "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2025, Investor YE report 2025 (adjusted NAV SEK 1,087.1bn)"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable; for a holding company use history of premium/discount to NAV (not retrieved)"
+    },
+    "consensus": {
+      "rating": "none (hold-leaning)",
+      "analysts": 4,
+      "buy": 1,
+      "hold": 3,
+      "sell": 1,
+      "targetAvg": 416,
+      "targetHigh": 465,
+      "targetLow": 337,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; not meaningful for holding company"
+    },
+    "recentEvents": [
+      "Q3 2026 interim management statement 16 Oct 2026: adjusted NAV SEK 411/share (+4% in quarter, +17% in nine months); TSR 24% YTD vs SIXRX 11%.",
+      "Listed Companies total return 1% in Q3; Patricia Industries total return 15% (16% excl. cash) YTD per statement; EQT value change 7% (period as stated in statement).",
+      "Sold 2.0m SEB shares for SEK 376m in Q3 and agreed to sell 2.0m more settling Q4 to keep ownership level.",
+      "Moelnlycke announced plan to separate its businesses into two standalone companies; Moelnlycke organic sales +5% CER, underlying margin unchanged.",
+      "FY2025 dividend SEK 5.60 (SEK 4.00 May 2026 + SEK 1.60 Nov 2026)."
+    ],
+    "valueTrapFlags": [
+      "Trades at a ~6% PREMIUM to reported adjusted NAV (435.25 vs 411), not a discount; consensus targets (mean 416) are below price.",
+      "Dividend yield only ~1.3%; low cash return relative to NAV growth.",
+      "Patricia Industries NAV marks are company estimates (unlisted), so NAV is partly model-based.",
+      "No leverage concern: leverage 1.8% (net debt / total assets)."
+    ],
+    "dataGaps": [
+      "52-week high/low unavailable.",
+      "Net debt in SEK, exact share count and market cap not retrieved (shares derived from NAV).",
+      "Historical premium/discount-to-NAV series not retrieved.",
+      "Dividend history before FY2021 and AGM confirmation of SEK 5.60 not checked (YE reports: FY2021 SEK 4.00, FY2022 4.40, FY2023 4.80, FY2024 5.20).",
+      "Agent PE/EV/EBITDA/payout fields shown but not meaningful for a holding company; stockanalysis.com statistics page for INVE-B undated and stale (PE 37.96), ignored."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "holding",
+    "competitive": "stable",
+    "method": "Holding company: fair value = next-12m NAV per share x justified price/NAV. Basis reported adjusted NAV SEK 411 (30 Sep 2026). NAV CAGR FY2021-25 about 9.4% (248 to 355, verified). Long-run P/NAV mostly at a discount; current premium noted.",
+    "metricBasis": "Adjusted NAV per share (30 Sep 2026)",
+    "basisValue": 411,
+    "forwardDividendYield": 0.013,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+      "quality": 5,
+      "growth": 3,
+      "financialStrength": 5,
+      "risk": 4
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 349.35,
+        "epsCagr5y": 0.0,
+        "exitPe5y": 0.9,
+        "note": "Equity market fall, premium reverts to a discount. Justified multiple 0.85x on next-12m 411.00.",
+        "epsCagr10y": 0.04,
+        "exitPe10y": 0.9
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 421.69,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 0.95,
+        "note": "NAV compounds about 8-9%, price trades near NAV. Justified multiple 0.95x on next-12m 443.88.",
+        "epsCagr10y": 0.08,
+        "exitPe10y": 0.95
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 483.34,
+        "epsCagr5y": 0.12,
+        "exitPe5y": 1.0,
+        "note": "Strong listed holdings and Patricia Industries growth. Justified multiple 1.05x on next-12m 460.32.",
+        "epsCagr10y": 0.1,
+        "exitPe10y": 1.0
+      }
+    },
+    "whyItFits": "Owner of high-quality Nordic franchises (Atlas Copco, ABB, AstraZeneca, Patricia Industries) with loan-to-value 1.8% and a long NAV-compounding record.",
+    "growthDrivers": "NAV growth from listed holdings and Patricia Industries; rising dividend.",
+    "saturation": "Trades at about 6% PREMIUM to NAV versus a historical discount: fully valued.",
+    "principalRisk": "Paying a premium to NAV: returns depend on equity markets and the premium persisting."
+  }
+}
