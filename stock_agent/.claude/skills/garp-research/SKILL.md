@@ -38,4 +38,4 @@ The deployed Worker exposes `https://stock-agent.manp-dev.workers.dev/decisions?
 7. **Conclusion**: top three, best defensive, best risk-adjusted growth, most undervalued, best 2-5y, best 5-10y, watch-but-not-buy. Leave a category empty if evidence is insufficient.
 
 ## Delivery
-Commit only new files under the paths above. Do not touch existing agent files. If wiring into `/dashboard` is requested, it is two additive changes (a sidebar bookmark and a read-only JSON endpoint) and needs Masoud's explicit go; `/dashboard` stays the only page address.
+Commit only files under the paths above. The engine also writes `config/garp/latest.json`, which the Worker serves at `GET /garp.json` for the dashboard's "GARP Checker" flyout. To make a run live, commit and have Masoud run `bash scripts/deploy.sh`. `/dashboard` stays the only page address.

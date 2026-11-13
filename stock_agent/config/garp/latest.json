@@ -1,0 +1,4247 @@
+{
+ "runAt": "2026-11-13T13:34:35Z",
+ "title": "Defensive GARP research: Nordic (phase 1)",
+ "files": [
+  {
+   "ticker": "ADDT-B.ST",
+   "name": "Addtech AB (B shares)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Industrials (Technology trading and niche manufacturing; Components, Energy, Industry, Infrastructure, Safety)",
+   "businessSummary": "Swedish technology solutions group with decentralised subsidiaries; acquisition-led; fiscal year ends 31 March.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 334.8,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "high52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable; stockanalysis 52w change -3.22%"
+    },
+    "low52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 270.08,
+     "period": "latest",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-23",
+     "note": "millions A+B (B class 257.21m)"
+    },
+    "marketCap": {
+     "value": 81080,
+     "period": "2026-10-23",
+     "source": "https://stockanalysis.com/quote/sto/ADDT.B/statistics/",
+     "asOf": "2026-10-23",
+     "note": "SEK m; 334.8 x 270.08m = ~90,400 at 2026-11-12 price"
+    },
+    "netDebt": {
+     "value": 6230,
+     "period": "30 Sep 2026",
+     "source": "Addtech Q2 2026/27 interim report (mb.cision.com)",
+     "asOf": "2026-10-22",
+     "note": "net debt excl. pensions SEK 6,230m (5,411m); excludes pension liabilities; lease treatment not stated; stockanalysis total debt 7.70bn less cash 1.47bn matches"
+    },
+    "enterpriseValue": {
+     "value": 87820,
+     "period": "2026-10-23",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-23",
+     "note": "SEK m"
+    },
+    "peTrailing": {
+     "value": 39.16,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "reported TTM EPS 8.55 to Sep 2026 (company): 334.8/8.55 = 39.2"
+    },
+    "peForward": {
+     "value": null,
+     "period": "fwd",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Agent value 31.13 rejected: implies forward EPS about 10.8 vs rolling 8.55 (+26%), no consensus evidence; unavailable."
+    },
+    "evEbitTrailing": {
+     "value": 27.79,
+     "period": "TTM",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-23",
+     "note": "EBIT (operating profit after amortisation of acquired intangibles); on EBITA basis lower"
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 24.922,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "fcfTTM": {
+     "value": 2980,
+     "period": "TTM to Jun 2026",
+     "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/cash-flow-statement",
+     "asOf": "2026-06-30",
+     "note": "SEK m; company op CF H1 FY26/27 1,322m (1,336); Q2 717m (859) lower on working capital; rolling 12m op CF/share 11.05 (10.55)"
+    },
+    "fcfYield": {
+     "value": 0.033,
+     "period": "TTM / current",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "2,980 / (334.8 x 270.08m = 90.4bn)"
+    },
+    "dividendPerShare": {
+     "value": 3.6,
+     "period": "FY2025/26 (paid Q2 FY26/27)",
+     "source": "Addtech Q2 2026/27 report",
+     "asOf": "2026-10-22",
+     "note": "up from 3.20; total 972m"
+    },
+    "dividendYield": {
+     "value": 0.0108,
+     "period": "current",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "3.60/334.8"
+    },
+    "payoutRatio": {
+     "value": 0.4211,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "netDebtToEbitda": {
+     "value": 1.5,
+     "period": "30 Sep 2026",
+     "source": "Addtech Q2 2026/27 report",
+     "asOf": "2026-10-22",
+     "note": "company 'financial debt/EBITDA' 1.5x (1.5x); agent metric 1.60; net debt excl pensions/equity 0.7x"
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.22,
+     "period": "rolling 12m to Sep 2026",
+     "source": "Addtech Q2 2026/27 report",
+     "asOf": "2026-10-22",
+     "note": "company-reported return on capital employed 22% (22%); ROE 29%; return on working capital 82%; stockanalysis ROIC 16.7%"
+    },
+    "roe": {
+     "value": 0.29,
+     "period": "rolling 12m to Sep 2026",
+     "source": "Addtech Q2 2026/27 report",
+     "asOf": "2026-10-22",
+     "note": ""
+    },
+    "beta5y": {
+     "value": 1.116,
+     "period": "5y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "stockanalysis 1.08"
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2021/22 (Mar-22)",
+      "revenue": 14038,
+      "ebit": 1480,
+      "ebitMargin": 0.1054,
+      "eps": 3.95,
+      "fcf": 1026,
+      "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+     },
+     {
+      "period": "FY2022/23 (Mar-23)",
+      "revenue": 18714,
+      "ebit": 2134,
+      "ebitMargin": 0.114,
+      "eps": 5.55,
+      "fcf": 1793,
+      "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+     },
+     {
+      "period": "FY2023/24 (Mar-24)",
+      "revenue": 20019,
+      "ebit": 2490,
+      "ebitMargin": 0.1244,
+      "eps": 6.05,
+      "fcf": 2424,
+      "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+     },
+     {
+      "period": "FY2024/25 (Mar-25)",
+      "revenue": 21796,
+      "ebit": 2769,
+      "ebitMargin": 0.127,
+      "eps": 7,
+      "fcf": 2538,
+      "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+     },
+     {
+      "period": "FY2025/26 (Mar-26)",
+      "revenue": 22703,
+      "ebit": 3033,
+      "ebitMargin": 0.1336,
+      "eps": 7.95,
+      "fcf": 2863,
+      "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+     },
+     {
+      "period": "TTM Jun-2026",
+      "revenue": 23036,
+      "ebit": 3144,
+      "ebitMargin": 0.1365,
+      "eps": 8.24,
+      "fcf": 2980,
+      "source": "https://stockanalysis.com/quote/sto/ADDT.B/financials/"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "no source retrieved"
+    },
+    "consensus": {
+     "rating": "none (1 strong buy, 5 buy, 1 hold)",
+     "analysts": 7,
+     "buy": 6,
+     "hold": 1,
+     "sell": 0,
+     "targetAvg": 381.71,
+     "targetHigh": 417,
+     "targetLow": 340,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; no post-Q2 consensus found; pre-report FactSet Q2 EBITA 936m (placera 2026-10-19)"
+    },
+    "recentEvents": [
+     "Q2 FY2026/27 (Jul-Sep 2026, reported ~22 Oct 2026): net sales SEK 5,907m (+8%; organic +2%, acquired +5%, FX +1%); EBITA 987m (+17%), margin 16.7% (15.5%), includes one-off ~SEK 55m positive in Safety (ex one-off EBITA ~932m, ~15.8%, vs FactSet 936m); operating profit 826m, margin 14.0% (13.0%); EPS 2.10 (1.80); op CF 717m (859).",
+     "H1 FY26/27: sales 12,079m (+7%, organic +1%); EBITA 2,013m, margin 16.7% (15.6%); EPS 4.40 (3.80); rolling 12m EPS 8.55 (7.40); op CF 1,322m.",
+     "Acquisitions: four this FY (~SEK 500m annual sales), RTL Materials (28 Aug) and 82% of Mechanical Power Transmission (2 Oct).",
+     "Outlook: favourable conditions in coming quarters, noting uncertainty, cost inflation and supply chain risk.",
+     "Operating profit is EBIT (history) vs EBITA (company headline); EPS reported."
+    ],
+    "valueTrapFlags": [
+     "Organic growth only 1-2% (H1 +1%); growth is acquisition-driven.",
+     "Margin improvement in Q2 partly one-off (~55m, ~0.9pp); underlying EBITA margin ~15.8%, still up YoY.",
+     "Op cash flow down in Q2 (717 vs 859) on working capital; net debt up to 6,230m from 5,411m.",
+     "Very high multiples: trailing P/E ~39, EV/EBIT ~28."
+    ],
+    "dataGaps": [
+     "Post-Q2 consensus and estimate changes",
+     "Historical P/E range",
+     "52w high/low",
+     "FY2020/21 history and FY EBITA history (stockanalysis operating income = EBIT)",
+     "Share-price reaction to Q2 report (affarsvarlden fetch failed)",
+     "FCF TTM through Sep 2026"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E per scenario. Basis FY2026/27E EPS 9.0 (rolling 12m 8.55, H1 4.40; lead estimate). Historical P/E range not verified by agents; justified multiples are lead estimates, not sourced.",
+    "metricBasis": "EPS reported, FY2026/27E (lead estimate)",
+    "basisValue": 9,
+    "forwardDividendYield": 0.011,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "scores": {
+     "quality": 5,
+     "growth": 4,
+     "financialStrength": 4,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 224.64,
+      "epsCagr5y": 0.04,
+      "exitPe5y": 22,
+      "note": "Organic growth stays near zero, M&A multiples rise. Justified multiple 24x on next-12m 9.36.",
+      "epsCagr10y": 0.04,
+      "exitPe10y": 20
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 294.3,
+      "epsCagr5y": 0.09,
+      "exitPe5y": 28,
+      "note": "About 9% EPS growth from M&A and modest organic growth. Justified multiple 30x on next-12m 9.81.",
+      "epsCagr10y": 0.08,
+      "exitPe10y": 25
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 352.8,
+      "epsCagr5y": 0.12,
+      "exitPe5y": 32,
+      "note": "Electrification and defence niches lift organic growth. Justified multiple 35x on next-12m 10.08.",
+      "epsCagr10y": 0.1,
+      "exitPe10y": 28
+     }
+    },
+    "whyItFits": "High ROE (about 29%) technology-trading acquirer with rising EBITA margins (10.5% to 13.7% over five years) and solid cash conversion.",
+    "growthDrivers": "Acquisitions (four this year), electrification, energy and defence niches.",
+    "saturation": "Trailing P/E 39 and EV/EBIT 28: priced for continued double-digit growth while organic growth is 1-2%.",
+    "principalRisk": "Multiple compression if growth slows to its organic rate; Q2 margin partly a one-off."
+   }
+  },
+  {
+   "ticker": "ASSA-B.ST",
+   "name": "Assa Abloy AB",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Industrials (Building products / access solutions)",
+   "businessSummary": "Global lock and access-solutions group: Americas, EMEIA, Asia Pacific, Global Technologies, Entrance Systems divisions.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 392.5,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "high52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable: not shown on stockanalysis (only 52w price change +3.37% as of 2026-10-20)"
+    },
+    "low52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 1110,
+     "period": "latest",
+     "source": "stockanalysis.com/statistics (1.11B)",
+     "asOf": "2026-10-20",
+     "note": "millions; rounded to 3 digits by source"
+    },
+    "marketCap": {
+     "value": 390100,
+     "period": "2026-10-20",
+     "source": "https://stockanalysis.com/quote/sto/ASSA.B/statistics/",
+     "asOf": "2026-10-20",
+     "note": "SEK m at 2026-10-20 price; price 392.5 on 2026-11-12 implies ~435,700 (price x 1,110m)"
+    },
+    "netDebt": {
+     "value": 67520,
+     "period": "latest (likely Q3 2026 or Q2 2026)",
+     "source": "https://stockanalysis.com/quote/sto/ASSA.B/statistics/",
+     "asOf": "2026-10-20",
+     "note": "total debt 71.39B less cash 3.87B; includes leases (stockanalysis convention); Q3 2026 company net debt not retrieved"
+    },
+    "enterpriseValue": {
+     "value": 457800,
+     "period": "2026-10-20",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": "SEK m, at 2026-10-20 price"
+    },
+    "peTrailing": {
+     "value": 25.98,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "stockanalysis showed 24.17 on 2026-10-20 at lower price"
+    },
+    "peForward": {
+     "value": null,
+     "period": "fwd",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Agent value 20.45 rejected: implies forward EPS about 19.2 vs TTM 14.76 (+30%), inconsistent with guidance and history; unavailable."
+    },
+    "evEbitTrailing": {
+     "value": 18.39,
+     "period": "TTM",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": "EV/EBIT, EBIT as reported incl. IAC; agent evToEbit null"
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 16.667,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "fcfTTM": {
+     "value": 21594,
+     "period": "TTM to Jun 2026",
+     "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/cash-flow-statement",
+     "asOf": "2026-06-30",
+     "note": "SEK m, stockanalysis definition (op CF minus capex); company Q3 2026 operating cash flow SEK 7,405m, 9M 16,847m vs 14,845m"
+    },
+    "fcfYield": {
+     "value": 0.0496,
+     "period": "TTM / current",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "21,594 / (392.5 x 1,110m = 435.7bn); 5.5% on 2026-10-20 market cap 390.1bn; FCF is stale Jun-26 TTM"
+    },
+    "dividendPerShare": {
+     "value": 6.4,
+     "period": "FY2025 (paid 2026)",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": ""
+    },
+    "dividendYield": {
+     "value": 0.0163,
+     "period": "current",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "6.40/392.5; stockanalysis showed 1.82% at lower price"
+    },
+    "payoutRatio": {
+     "value": 0.4028,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "netDebtToEbitda": {
+     "value": 2.095,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "agent metric; stockanalysis-based net debt 67.5bn / implied EBITDA (EV 457.8bn / 16.667 = 27.5bn) = ~2.4x; basis (leases) differs, company-reported Q3 2026 figure not retrieved"
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.1071,
+     "period": "TTM",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": "stockanalysis-computed; company-reported ROCE for Q3 2026 not retrieved (unavailable)"
+    },
+    "roe": {
+     "value": 0.1557,
+     "period": "TTM",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": ""
+    },
+    "beta5y": {
+     "value": 0.837,
+     "period": "5y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "stockanalysis 0.82"
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 95007,
+      "ebit": 14458,
+      "ebitMargin": 0.1522,
+      "eps": 9.81,
+      "fcf": 11036,
+      "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 120793,
+      "ebit": 18997,
+      "ebitMargin": 0.1573,
+      "eps": 11.97,
+      "fcf": 12645,
+      "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 140716,
+      "ebit": 21440,
+      "ebitMargin": 0.1524,
+      "eps": 12.27,
+      "fcf": 18927,
+      "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 150162,
+      "ebit": 24466,
+      "ebitMargin": 0.1629,
+      "eps": 14.08,
+      "fcf": 19107,
+      "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 152409,
+      "ebit": 23601,
+      "ebitMargin": 0.1549,
+      "eps": 13.23,
+      "fcf": 19011,
+      "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+     },
+     {
+      "period": "TTM Jun-2026",
+      "revenue": 151464,
+      "ebit": 25198,
+      "ebitMargin": 0.1664,
+      "eps": 14.76,
+      "fcf": 21594,
+      "source": "https://stockanalysis.com/quote/sto/ASSA.B/financials/"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "no source retrieved"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 22,
+     "buy": 13,
+     "hold": 9,
+     "sell": 0,
+     "targetAvg": 415,
+     "targetHigh": 500,
+     "targetLow": 345,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; no post-Q3 2026 consensus found"
+    },
+    "recentEvents": [
+     "Q3 2026 (27 Oct 2026): sales SEK 40,771m (+7%, organic +4% vs +3%, acq +2%, FX +1%); EBIT 7,102m vs 6,416m, margin 17.4% vs 16.8% (EBITA margin 18.7% vs 17.9%); EPS 4.24 vs 3.73 (reported); op CF 7,405m; cash conversion 117%. EBIT beat FactSet 6,924m, sales in line 40,706m. Seventh consecutive quarter of organic growth.",
+     "9M 2026: sales 115,781m, organic +3%, EBIT 19,242m (16.6% vs 16.0%), EPS 11.41 vs 10.49, op CF 16,847m vs 14,845m.",
+     "Q3 organic by division: Americas +6%, EMEIA +5%, Global Technologies +4%, Entrance Systems +3%, Asia Pacific -1% (weak Greater China).",
+     "Three small acquisitions (~SEK 350m sales) and one divestment in Q3; Gunnebo Entrance Control signed; Rometal (Brazil) agreed 12 Nov 2026; 11th footprint programme from Q4.",
+     "Last known estimate revision (after Q1, FactSet 12 May 2026): sales -0.3%/-0.6%, adj EBIT -1.0%/-1.4% for 2026/2027; after Q3 revisions not found (marketscreener/borsvarlden/simplywall hits were stale or from other years)."
+    ],
+    "valueTrapFlags": [
+     "Organic growth modest (3% 9M) with Asia Pacific/China negative; growth leans on M&A and price.",
+     "Net debt/EBITDA ~2.1x (agent) to ~2.4x (derived incl. leases); M&A continues.",
+     "Trailing P/E ~26 (historical range not verified).",
+     "No evidence of estimate cuts after Q3 2026 (EBIT beat) but post-report consensus not verified."
+    ],
+    "dataGaps": [
+     "Company-reported net debt, net debt/EBITDA and ROCE for Q3 2026 not retrieved (stockanalysis page lacked them)",
+     "52w high/low",
+     "Historical P/E range",
+     "Post-Q3 consensus EPS and estimate changes",
+     "FY EBIT history is stockanalysis operating income (reported EBIT incl. items affecting comparability); company EBITA not retrieved",
+     "FY2025 EPS reported, not adjusted; stockanalysis FY2025 EPS 13.23"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E per scenario. Basis 2026E EPS 15.6 = 9M 11.41 + Q4 about 4.2 (lead estimate). Historical P/E range not verified by agents; justified multiples are lead estimates, not sourced.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 15.6,
+    "forwardDividendYield": 0.017,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+     "quality": 5,
+     "growth": 3,
+     "financialStrength": 4,
+     "risk": 4
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 308.26,
+      "epsCagr5y": 0.04,
+      "exitPe5y": 18,
+      "note": "Construction slowdown, China weak, multiple de-rates. Justified multiple 19x on next-12m 16.22.",
+      "epsCagr10y": 0.04,
+      "exitPe10y": 17
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 383.92,
+      "epsCagr5y": 0.07,
+      "exitPe5y": 22,
+      "note": "Organic 3-4% plus bolt-on M&A, gradual margin gains. Justified multiple 23x on next-12m 16.69.",
+      "epsCagr10y": 0.065,
+      "exitPe10y": 21
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 442.1,
+      "epsCagr5y": 0.09,
+      "exitPe5y": 25,
+      "note": "Organic 5%+, EBIT margin toward 18%, continued M&A. Justified multiple 26x on next-12m 17.00.",
+      "epsCagr10y": 0.08,
+      "exitPe10y": 23
+     }
+    },
+    "whyItFits": "Global leader in locks and access with large installed base and aftermarket; steady FCF (TTM SEK 21.6bn, about 5% yield), beta 0.84, margins 15-17% for five years.",
+    "growthDrivers": "Electromechanical and digital access, Americas strength, steady bolt-on acquisitions, footprint programmes lifting margin (Q3 EBIT margin 17.4%).",
+    "saturation": "Trailing P/E 26 for 7% EPS growth: fully priced versus its own growth; no verified historical range.",
+    "principalRisk": "Residential/commercial construction downturn plus acquisition-driven leverage (ND/EBITDA 2.1-2.4x)."
+   }
+  },
+  {
+   "ticker": "ATCO-A.ST",
+   "name": "Atlas Copco AB (A shares)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Industrials (Compressors, vacuum, industrial tools)",
+   "businessSummary": "Global industrial group: Compressor Technique, Vacuum Technique, Industrial Technique, Power Technique; large aftermarket share.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 194.65,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "A share; B share trades lower, so market cap derived from A price overstates"
+    },
+    "high52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "low52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 4880,
+     "period": "latest",
+     "source": "stockanalysis.com/statistics (4.88B, A+B)",
+     "asOf": "2026-10-20",
+     "note": "millions"
+    },
+    "marketCap": {
+     "value": 861500,
+     "period": "2026-10-20",
+     "source": "https://stockanalysis.com/quote/sto/ATCO.A/statistics/",
+     "asOf": "2026-10-20",
+     "note": "SEK m at 2026-10-20 price"
+    },
+    "netDebt": {
+     "value": 13230,
+     "period": "latest (Q2/Q3 2026)",
+     "source": "https://stockanalysis.com/quote/sto/ATCO.A/statistics/",
+     "asOf": "2026-10-20",
+     "note": "SEK m, stockanalysis; leases inclusion not stated; company Q3 net debt not retrieved"
+    },
+    "enterpriseValue": {
+     "value": 874950,
+     "period": "2026-10-20",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": ""
+    },
+    "peTrailing": {
+     "value": 35.2,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "stockanalysis 24.11 forward on 2026-10-20"
+    },
+    "peForward": {
+     "value": null,
+     "period": "fwd",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Agent value 24.11 rejected: implies forward EPS about 8.1 vs TTM 5.46 (+48%), not supported by consensus EBIT; unavailable."
+    },
+    "evEbitTrailing": {
+     "value": 23.62,
+     "period": "TTM",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": ""
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 21.947,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "fcfTTM": {
+     "value": 26906,
+     "period": "TTM to Jun 2026",
+     "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/cash-flow-statement",
+     "asOf": "2026-06-30",
+     "note": "SEK m; Q3 2026 operating cash flow 8,728m vs 7,330m (company); TTM FCF through Sep not retrieved"
+    },
+    "fcfYield": {
+     "value": 0.0312,
+     "period": "TTM / 2026-10-20 mcap",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "26,906 / 861,500"
+    },
+    "dividendPerShare": {
+     "value": 3,
+     "period": "FY2025",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": ""
+    },
+    "dividendYield": {
+     "value": 0.0154,
+     "period": "current",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "3.00/194.65; stockanalysis 1.63% at lower price"
+    },
+    "payoutRatio": {
+     "value": 0.5291,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "netDebtToEbitda": {
+     "value": 0.301,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "net debt ~13.2bn per stockanalysis consistent"
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.24,
+     "period": "rolling 12m to Q3 2026",
+     "source": "Atlas Copco Q3 2026 report via borskollen.se",
+     "asOf": "2026-10-27",
+     "note": "company-reported ROCE (24% vs 25% a year earlier); stockanalysis ROIC 22.3%"
+    },
+    "roe": {
+     "value": 0.2454,
+     "period": "TTM",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": ""
+    },
+    "beta5y": {
+     "value": 1.074,
+     "period": "5y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "stockanalysis 1.07"
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 110912,
+      "ebit": 23225,
+      "ebitMargin": 0.2094,
+      "eps": 3.71,
+      "fcf": 21182,
+      "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 141325,
+      "ebit": 30847,
+      "ebitMargin": 0.2183,
+      "eps": 4.81,
+      "fcf": 17717,
+      "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 172664,
+      "ebit": 38127,
+      "ebitMargin": 0.2208,
+      "eps": 5.75,
+      "fcf": 24097,
+      "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 176771,
+      "ebit": 38210,
+      "ebitMargin": 0.2162,
+      "eps": 6.1,
+      "fcf": 32651,
+      "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 168343,
+      "ebit": 35204,
+      "ebitMargin": 0.2091,
+      "eps": 5.42,
+      "fcf": 28282,
+      "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+     },
+     {
+      "period": "TTM Jun-2026",
+      "revenue": 169917,
+      "ebit": 35616,
+      "ebitMargin": 0.2096,
+      "eps": 5.46,
+      "fcf": 26906,
+      "source": "https://stockanalysis.com/quote/sto/ATCO.A/financials/"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "no source retrieved"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 20,
+     "buy": 16,
+     "hold": 4,
+     "sell": 1,
+     "targetAvg": 225.35,
+     "targetHigh": 260,
+     "targetLow": 165,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; FactSet May 2026: adj EBIT 2026 37,357m, 2027 42,068m, sales 175.2bn/190.1bn (pre-Q3)"
+    },
+    "recentEvents": [
+     "Q3 2026 (27 Oct 2026): orders MSEK 52,338 vs 40,517, +29% reported, +25% organic (vs consensus ~50.6bn); revenues 47,920 (41,621), +11% organic; adjusted operating profit 10,195 (8,862), margin 21.3% (21.3%); reported operating profit 9,950 (8,546), 20.8% (20.5%); EPS 1.58 (1.37); op CF 8,728 (7,330); ROCE 24% (25%). Adjusted EBIT 10.2bn vs ~10.3bn expected, revenue 47.9bn vs 47.7bn.",
+     "Outlook unchanged: customer activity expected to stay at current level.",
+     "Q1 2026 report (Apr): shares fell 5.5% on report day; post-Q1 FactSet adj EBIT estimates -0.4%/-0.3%.",
+     "Atlas Copco is an A share price in agent data; analyst post-Q3 estimate revisions not found (borsvarlden/marketscreener hits were 2022 articles)."
+    ],
+    "valueTrapFlags": [
+     "Valuation is demanding: trailing P/E ~35, EV/EBIT ~24, FCF yield ~3%.",
+     "Adjusted margin flat YoY at 21.3% despite +11% organic revenue growth; EBIT margin history peaked at ~22.1% in FY2023 and is ~21% now.",
+     "Orders +25% organic may include large-order or one-off effects; unverified.",
+     "TTM FCF (Jun-26) down about 15% vs prior year per stockanalysis."
+    ],
+    "dataGaps": [
+     "Company net debt and net debt/EBITDA for Q3 2026 (full PDF report not readable)",
+     "Historical P/E range",
+     "Post-Q3 consensus EPS and estimate changes",
+     "52w high/low",
+     "FY history is stockanalysis operating income (reported, not adjusted)",
+     "TTM FCF through Sep 2026"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E per scenario. Basis 2026E EPS 5.6 (TTM 5.46, Q3 orders +25% organic; lead estimate). Historical P/E range not verified by agents; justified multiples are lead estimates, not sourced.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 5.6,
+    "forwardDividendYield": 0.016,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "scores": {
+     "quality": 5,
+     "growth": 4,
+     "financialStrength": 5,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 126.9,
+      "epsCagr5y": 0.03,
+      "exitPe5y": 22,
+      "note": "Semiconductor/industrial capex cycle turns; orders surge proves one-off. Justified multiple 22x on next-12m 5.77.",
+      "epsCagr10y": 0.03,
+      "exitPe10y": 20
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 169.34,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 26,
+      "note": "Orders convert, service growth, margins about 21%. Justified multiple 28x on next-12m 6.05.",
+      "epsCagr10y": 0.07,
+      "exitPe10y": 24
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 198.91,
+      "epsCagr5y": 0.11,
+      "exitPe5y": 30,
+      "note": "Vacuum upcycle plus compressor strength, margin back toward 22%. Justified multiple 32x on next-12m 6.22.",
+      "epsCagr10y": 0.09,
+      "exitPe10y": 27
+     }
+    },
+    "whyItFits": "Exceptional returns (ROCE about 24%), net debt/EBITDA 0.3x, about 40% service revenue; strongest balance sheet in the set.",
+    "growthDrivers": "Q3 2026 orders +25% organic (vacuum/semiconductor), energy-efficiency demand, service base, acquisitions.",
+    "saturation": "Trailing P/E 35 at a cyclical earnings level; much of the order recovery already priced. Two fresh Buy ratings (Pareto 250, Nordea 235) are analyst opinion.",
+    "principalRisk": "Cyclicality: semiconductor and industrial capex reversal while the stock trades at 35x trailing earnings."
+   }
+  },
+  {
+   "ticker": "AXFO.ST",
+   "name": "Axfood AB",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Consumer Staples / food retail and wholesale",
+   "businessSummary": "Swedish food retailer: Willys, Hemkop, City Gross (retail) and Dagab, Snabbgross (wholesale). Roughly 90bn SEK sales; operating margin about 4%.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 273.5,
+     "period": "close",
+     "source": "stockanalysis.com/history",
+     "asOf": "2026-10-19",
+     "note": "Latest price retrievable; stale versus 2026-11-13. Agent data did not contain AXFO."
+    },
+    "high52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "low52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 215.88,
+     "period": "current (millions)",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-11",
+     "note": ""
+    },
+    "marketCap": {
+     "value": 59040,
+     "period": "2026-10-19",
+     "source": "derived: 273.50 x 215.88m",
+     "asOf": "2026-10-19",
+     "note": ""
+    },
+    "netDebt": {
+     "value": 16294,
+     "period": "30 Sep 2026 incl. IFRS 16 leases",
+     "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+     "asOf": "2026-10-22",
+     "note": "Excluding leases: 2,970 (31 Dec 2025: 14,598 incl / 1,896 excl)."
+    },
+    "enterpriseValue": {
+     "value": 75334,
+     "period": "30 Sep 2026 incl. leases",
+     "source": "derived: mcap 59,040 + net debt incl. leases 16,294",
+     "asOf": "2026-10-19",
+     "note": "EV excl. leases = 62,010 (59,040 + 2,970)."
+    },
+    "peTrailing": {
+     "value": 24,
+     "period": "TTM Sep 2026",
+     "source": "derived: 273.50 / EPS 11.38",
+     "asOf": "2026-10-19",
+     "note": "EPS TTM = FY2025 10.79 + 9M26 8.83 - 9M25 8.24 = 11.38 (reported, before dilution)."
+    },
+    "peForward": {
+     "value": 23.4,
+     "period": "FY2026E",
+     "source": "derived: 273.50 / consensus EPS 11.67",
+     "asOf": "2026-10-19",
+     "note": "Consensus EPS 2026 11.67, 2027 12.99 (stockanalysis, S&P, page updated 2026-07-10, before Q3). FY2027E P/E 21.1."
+    },
+    "evEbitTrailing": {
+     "value": 19.9,
+     "period": "TTM Sep 2026",
+     "source": "derived: EV incl. leases 75,334 / EBIT 3,787",
+     "asOf": "2026-10-19",
+     "note": "EBIT TTM = FY2025 3,611 + 9M26 2,888 - 9M25 2,712. Operating profit is EBIT (reported); adjusted 9M26 2,903. Using EV excl. leases (62,010) gives 16.4 but is inconsistent with IFRS 16 EBIT."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 9.56,
+     "period": "TTM Sep 2026",
+     "source": "derived: 75,334 / EBITDA 7,884 (company, incl. IFRS 16)",
+     "asOf": "2026-10-19",
+     "note": "EV excl. leases / EBITDA excl. IFRS 16 (4,944) = 12.5."
+    },
+    "fcfTTM": {
+     "value": 1899,
+     "period": "TTM Jun 2026 after lease payments",
+     "source": "derived: OCF 5,903 - capex 1,535 - lease payments 2,469 (stockanalysis.com)",
+     "asOf": "2026-10-19",
+     "note": "Pre-lease FCF 4,368 (stockanalysis shows this as FCF, yield 7.8%, which overstates cash available to equity because IFRS 16 lease payments of ~2.5bn are financing outflows). FY2025: OCF 6,751, capex 1,379, leases 2,478 -> 2,894 after leases."
+    },
+    "fcfYield": {
+     "value": 0.0322,
+     "period": "TTM Jun 2026 after leases",
+     "source": "derived: 1,899 / 59,040",
+     "asOf": "2026-10-19",
+     "note": "Pre-lease yield 7.4%. Dividends paid 9M26 1,943."
+    },
+    "dividendPerShare": {
+     "value": 9,
+     "period": "FY2025 (paid 2026 in two instalments)",
+     "source": "Axfood Q1 2026 / Q3 2026 reports",
+     "asOf": "2026-10-22",
+     "note": "Up from 8.75."
+    },
+    "dividendYield": {
+     "value": 0.0329,
+     "period": "FY2025 dividend",
+     "source": "derived: 9.00 / 273.50",
+     "asOf": "2026-10-19",
+     "note": ""
+    },
+    "payoutRatio": {
+     "value": 0.834,
+     "period": "FY2025",
+     "source": "derived: 9.00 / EPS 10.79",
+     "asOf": "2026-10-19",
+     "note": "Policy at least 50%. Stockanalysis shows 79.8% on TTM. Dividends (1,943 in 9M26) exceed FCF after leases (about 1.9bn TTM)."
+    },
+    "netDebtToEbitda": {
+     "value": 2.1,
+     "period": "30 Sep 2026 incl. IFRS 16",
+     "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+     "asOf": "2026-10-22",
+     "note": "Excl. IFRS 16: 0.6x. Year-end 2025: 1.9x incl / 0.4x excl. Up over 9M (seasonal/VAT-related working capital)."
+    },
+    "interestCoverage": {
+     "value": 7.1,
+     "period": "latest",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-11",
+     "note": ""
+    },
+    "roic": {
+     "value": 0.159,
+     "period": "rolling 12m to 30 Sep 2026 (ROCE, as reported)",
+     "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+     "asOf": "2026-10-22",
+     "note": "Company reports ROCE not ROIC; 15.5% at YE2025. Stockanalysis ROIC 13.0%."
+    },
+    "roe": {
+     "value": 0.341,
+     "period": "rolling 12m to 30 Sep 2026",
+     "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+     "asOf": "2026-10-22",
+     "note": "32.1% at YE2025. Inflated by low equity/high payout."
+    },
+    "beta5y": {
+     "value": 0.56,
+     "period": "5y",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-11",
+     "note": ""
+    },
+    "sectorMetrics": {
+     "likeForLike": {
+      "group_Q3_2026": 0.016,
+      "group_9M_2026": 0.017,
+      "willys_Q3": 0.003,
+      "hemkop_Q3": 0.048,
+      "citygross_Q3": 0.006,
+      "snabbgross_Q3": -0.003,
+      "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+      "note": "Market retail growth 4.0% in Q3; Axfood retail sales +2.9% (Willys +2.1%, Hemkop +7.1%): losing share at Willys."
+     },
+     "operatingMarginQ3_2026": {
+      "value": 0.049,
+      "period": "Q3 2026 (EBIT, reported; adjusted also 4.9%)",
+      "source": "Axfood Q3 2026 report (axfood.com 2026-10-22; PDF mb.cision.com/Main/1306/4413480/4331170.pdf)",
+      "asOf": "2026-10-22",
+      "note": "Op profit 1,118 (1,059); IAC -1 (-39). 9M26 margin 4.3% (4.1%)."
+     },
+     "investmentGuidance2026": "2,000-2,100 (cut from 2,200-2,300; about 270 shifted to 2027 due to Kungsbacka automation delay)"
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 57891,
+      "ebit": 2652,
+      "ebitMargin": 0.0458,
+      "eps": 10.24,
+      "fcf": 3074,
+      "source": "stockanalysis.com (EBIT = operating profit; FCF pre-lease, lease payments 1,578)"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 73474,
+      "ebit": 2975,
+      "ebitMargin": 0.0405,
+      "eps": 10.99,
+      "fcf": 3707,
+      "source": "stockanalysis.com (lease payments 1,707)"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 81111,
+      "ebit": 3649,
+      "ebitMargin": 0.045,
+      "eps": 10.87,
+      "fcf": 4284,
+      "source": "stockanalysis.com (lease payments 1,969)"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 84057,
+      "ebit": 3480,
+      "ebitMargin": 0.0414,
+      "eps": 10.11,
+      "fcf": 4350,
+      "source": "stockanalysis.com (lease payments 2,294)"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 89152,
+      "ebit": 3611,
+      "ebitMargin": 0.0405,
+      "eps": 10.79,
+      "fcf": 5372,
+      "source": "stockanalysis.com (lease payments 2,478; FCF after leases 2,894)"
+     },
+     {
+      "period": "TTM Sep 2026",
+      "revenue": null,
+      "ebit": 3787,
+      "ebitMargin": null,
+      "eps": 11.38,
+      "fcf": null,
+      "source": "derived from reports; 9M26 net sales 67,504 (66,321), op profit 2,888 (2,712). TTM Jun 2026 per stockanalysis: revenue 89,911, EBIT 3,714, margin 4.13%, FCF 4,368 pre-lease"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "not found"
+    },
+    "consensus": {
+     "rating": "buy (mixed)",
+     "analysts": 7,
+     "buy": 3,
+     "hold": 3,
+     "sell": 1,
+     "targetAvg": 257.86,
+     "targetHigh": 295,
+     "targetLow": 215,
+     "source": "stockanalysis.com/forecast (rating counts Oct 2026, targets page updated 2026-07-10; may be stale). Avg target is below the 273.50 price.",
+     "asOf": "2026-10-11"
+    },
+    "forwardEstimates": {
+     "epsNextFY": 11.67,
+     "epsFY2": 12.99,
+     "revenueGrowthNextFY": 0.0229,
+     "source": "stockanalysis.com/forecast, pre-Q3 2026 (2026 revenue 91.2bn; 2027 94.8bn, +3.9%)"
+    },
+    "recentEvents": [
+     "Q3 2026 (22 Oct): net sales 22,711 (+1.9%), op profit 1,118 (1,059), adj 1,119 (1,099), EPS 3.47 (3.30); LFL +1.6%; City Gross turned profitable.",
+     "2026 investment guidance cut to 2,000-2,100; City Gross structural costs now about 25 (was 50).",
+     "Q1 2026 (23 Apr): CEO said growth lower than desired; Kepler cut target 340 to 315; Bernstein Sell 235 (10 Jul).",
+     "Dividend 9.00 paid in two instalments of 4.50."
+    ],
+    "valueTrapFlags": [
+     "Like-for-like growth only +1.6% in Q3 vs market growth 4.0%; Willys LFL +0.3% (share loss).",
+     "EBIT margin stuck about 4.0-4.5% for 5 years with no expansion; 9M26 4.3% only modestly up.",
+     "FCF after IFRS 16 lease payments is thin (about 1.9bn TTM) versus 1.9bn dividends paid in 9M26; payout above 80% of EPS.",
+     "Leverage incl. leases rose to 2.1x from 1.9x at YE2025 (0.6x excl. leases).",
+     "Price above average analyst target; consensus not cut after Q3 but sources stale."
+    ],
+    "dataGaps": [
+     "52-week high/low",
+     "Prices are 2026-10-19, not 2026-11-13; agent data lacks AXFO",
+     "Consensus EPS after Q3 report and revision direction",
+     "Historical P/E range",
+     "TTM Sep 2026 revenue and lease payments",
+     "Q3 operating cash flow was 1,956 (1,352); 9M 4,270 (4,513) per report, lease payments 9M not read"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "weakening",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E EPS 11.7 (consensus 11.67 pre-Q3, TTM 11.38). Price is the 2026-10-19 close (stale). Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS reported, 2026E consensus",
+    "basisValue": 11.7,
+    "forwardDividendYield": 0.033,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+     "quality": 4,
+     "growth": 2,
+     "financialStrength": 3,
+     "risk": 5
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 212.71,
+      "epsCagr5y": 0.01,
+      "exitPe5y": 18,
+      "note": "Continued market-share loss, margin pressure. Justified multiple 18x on next-12m 11.82.",
+      "epsCagr10y": 0.01,
+      "exitPe10y": 16
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 255.53,
+      "epsCagr5y": 0.04,
+      "exitPe5y": 20,
+      "note": "Low-single-digit growth, stable 4% margin. Justified multiple 21x on next-12m 12.17.",
+      "epsCagr10y": 0.035,
+      "exitPe10y": 19
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 297.65,
+      "epsCagr5y": 0.06,
+      "exitPe5y": 22,
+      "note": "Willys regains share, City Gross profitable. Justified multiple 24x on next-12m 12.40.",
+      "epsCagr10y": 0.05,
+      "exitPe10y": 20
+     }
+    },
+    "whyItFits": "Swedish grocery leader (Willys, Hemköp): low beta 0.56, non-cyclical demand, 3.3% dividend.",
+    "growthDrivers": "Willys discount format, City Gross turnaround, logistics investments.",
+    "saturation": "P/E 24 for 4% growth and consensus target below the price: fully valued.",
+    "principalRisk": "Losing share (like-for-like +1.6% vs market +4.0%) while dividends roughly equal FCF after leases."
+   }
+  },
+  {
+   "ticker": "EKTA-B.ST",
+   "name": "Elekta AB (B)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Health Care / radiation therapy equipment and software",
+   "businessSummary": "Maker of radiotherapy and radiosurgery systems (Versa HD, Unity MR-linac, Leksell Gamma Knife), oncology software and services; fiscal year ends 30 April.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 58.35,
+     "period": "close",
+     "source": "stockanalysis.com/history",
+     "asOf": "2026-10-26",
+     "note": "Latest found, stale versus 2026-11-13. Stockanalysis showed 51.60 on 2026-10-02 and 51.75 on 2026-10-05. Agent data lacks EKTA-B."
+    },
+    "high52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "low52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 397.06,
+     "period": "current (millions)",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-02",
+     "note": ""
+    },
+    "marketCap": {
+     "value": 23170,
+     "period": "2026-10-26",
+     "source": "derived: 58.35 x 397.06m",
+     "asOf": "2026-10-26",
+     "note": ""
+    },
+    "netDebt": {
+     "value": 3576,
+     "period": "31 Jul 2026 (company)",
+     "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27)",
+     "asOf": "2026-08-27",
+     "note": "3,863 a year earlier. Lease treatment unverified. Stockanalysis shows 4,530 (probably incl. leases)."
+    },
+    "enterpriseValue": {
+     "value": 26746,
+     "period": "derived",
+     "source": "derived: 23,170 + 3,576",
+     "asOf": "2026-10-26",
+     "note": ""
+    },
+    "peTrailing": {
+     "value": null,
+     "period": "TTM Jul 2026",
+     "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27)",
+     "asOf": "2026-08-27",
+     "note": "Not meaningful: reported EPS TTM -0.95 (FY2025/26 -1.36 after 1,363 Q4 impairments and IACs; Q1 0.69 vs 0.28)."
+    },
+    "peForward": {
+     "value": 14.9,
+     "period": "FY2026/27E",
+     "source": "derived: 58.35 / consensus adjusted EPS 3.91",
+     "asOf": "2026-10-26",
+     "note": "Consensus EPS FY2026/27 is adjusted (range 3.24-4.43; stockanalysis, S&P, 2026-10-05). FY2025/26 adjusted EPS 2.43."
+    },
+    "evEbitTrailing": {
+     "value": 12.1,
+     "period": "TTM Jul 2026 adjusted EBIT",
+     "source": "derived: EV 26,746 / 2,211",
+     "asOf": "2026-10-26",
+     "note": "Adjusted EBIT TTM = FY25/26 2,051 + Q1 395 - Q1 prior 235. On reported EBIT (234 + 395 - 219 = 410) the multiple is about 65 (impairments). Stockanalysis EBIT 1,531 does not reconcile with the company (conflict recorded). Adjusted EBIT is EBIT, not EBITA; company also reports adjusted EBITC."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 9.7,
+     "period": "TTM Jul 2026",
+     "source": "derived: EV 26,746 / EBITDA 2,751",
+     "asOf": "2026-10-26",
+     "note": "EBITDA implied = net debt 3,576 / reported ND/EBITDA 1.30 (derived; definition adjusted vs reported not stated). Stockanalysis 12.13 on different basis."
+    },
+    "fcfTTM": {
+     "value": 1312,
+     "period": "TTM Jul 2026 (before dividend and M&A)",
+     "source": "derived: FY25/26 1,158 - Q1 -266 + prior Q1 -420 -> 1,158 - 266 + 420",
+     "asOf": "2026-08-27",
+     "note": "Company definition (after capitalised R&D). Stockanalysis shows 2,435 as OCF - capex only, excluding 890 capitalised intangibles; conflict recorded."
+    },
+    "fcfYield": {
+     "value": 0.0566,
+     "period": "TTM Jul 2026",
+     "source": "derived: 1,312 / 23,170",
+     "asOf": "2026-10-26",
+     "note": "Company mid-term target FCF about 10% of sales; TTM about 7.9% of sales 16,608."
+    },
+    "dividendPerShare": {
+     "value": 2.4,
+     "period": "FY2025/26 (proposed, unchanged)",
+     "source": "Elekta Q4 2025/26 report (borsvarlden 2026-05-28)",
+     "asOf": "2026-05-28",
+     "note": ""
+    },
+    "dividendYield": {
+     "value": 0.0411,
+     "period": "FY2025/26",
+     "source": "derived: 2.40 / 58.35",
+     "asOf": "2026-10-26",
+     "note": ""
+    },
+    "payoutRatio": {
+     "value": null,
+     "period": "FY2025/26",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "Not meaningful: EPS negative; dividend about 953 vs company FCF 1,158 (derived 2.40 x 397.06)."
+    },
+    "netDebtToEbitda": {
+     "value": 1.3,
+     "period": "31 Jul 2026",
+     "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27)",
+     "asOf": "2026-08-27",
+     "note": "1.17 a year earlier; 1.24 at 30 Apr 2026; 1.06 at 30 Apr 2025. Rising."
+    },
+    "interestCoverage": {
+     "value": 5.93,
+     "period": "LTM",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-02",
+     "note": "Aggregator basis, unverified."
+    },
+    "roic": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "Not reported by company (ROCE not in Q1 report). Stockanalysis ROIC -71.7% judged a data artifact; another page quoted ROCE 12.45% (unverified)."
+    },
+    "roe": {
+     "value": -0.05,
+     "period": "rolling 12m to 31 Jul 2026",
+     "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27)",
+     "asOf": "2026-08-27",
+     "note": "3% a year earlier."
+    },
+    "beta5y": {
+     "value": 0.96,
+     "period": "5y",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-02",
+     "note": ""
+    },
+    "sectorMetrics": {
+     "orderIntake": {
+      "Q1_2026_27": {
+       "gross": 3910,
+       "prior": 3838,
+       "change_cc": 0.03,
+       "bookToBill": 1.11,
+       "prior_bookToBill": 1.05
+      },
+      "rolling12mBookToBill": 1.05,
+      "Q4_2025_26": {
+       "gross": 4567,
+       "change_cc": -0.15,
+       "consensus": 5833,
+       "bookToBill_conflict": "0.96 (EFN/Direkt) vs 1.04 (Borsvarlden); company report not read"
+      },
+      "note": "Q4 cited weak Middle East and Southeast Asia and stricter booking criteria. Order backlog not disclosed in Q1 report."
+     },
+     "organicGrowth": {
+      "Q1_2026_27": -0.02,
+      "Q4_2025_26": -0.01,
+      "FY2025_26_sales_change_reported": -0.072,
+      "note": "Q1: Solutions -9%, Services +5%."
+     },
+     "adjEbitMargin": {
+      "Q1_2026_27": 0.112,
+      "Q1_2025_26": 0.065,
+      "Q4_2025_26": 0.189,
+      "FY2025_26": 0.123,
+      "FY2024_25": 0.116,
+      "note": "Q1 gross margin 42.6% incl. about 150bp from a 53 US tariff refund (one-off)."
+     },
+     "targets": {
+      "FY2026_27_guidance": "sales +2-4% cc; adjusted EBIT margin 12.5-13.5% (set 2026-06-17, reiterated 2026-08-27)",
+      "midTerm_FY2028_29": "mid-single-digit sales CAGR cc FY25/26-FY28/29; adjusted EBIT margin 14-16%; FCF about 10% of sales",
+      "status": "Q1 below both guidance ranges (sales -2% cc, margin 11.2%) though Q1 is seasonally weak. Prior (pre-June 2026) targets and whether they were cut could not be verified."
+     }
+    },
+    "history": [
+     {
+      "period": "FY2021/22 (Apr 2022)",
+      "revenue": 14548,
+      "ebit": 1489,
+      "ebitMargin": 0.1023,
+      "eps": 3.02,
+      "fcf": null,
+      "source": "stockanalysis.com (not reconciled to company definitions)"
+     },
+     {
+      "period": "FY2022/23 (Apr 2023)",
+      "revenue": 16869,
+      "ebit": 1985,
+      "ebitMargin": 0.1177,
+      "eps": 2.47,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023/24 (Apr 2024)",
+      "revenue": 18119,
+      "ebit": 2260,
+      "ebitMargin": 0.1247,
+      "eps": 3.41,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024/25 (Apr 2025)",
+      "revenue": 18016,
+      "ebit": 890,
+      "ebitMargin": 0.049,
+      "eps": 0.62,
+      "fcf": 866,
+      "adjEbit": 2097,
+      "adjEbitMargin": 0.116,
+      "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27) comparatives (reported EBIT 890; stockanalysis 1,006 conflict)"
+     },
+     {
+      "period": "FY2025/26 (Apr 2026)",
+      "revenue": 16718,
+      "ebit": 234,
+      "ebitMargin": 0.014,
+      "eps": -1.36,
+      "fcf": 1158,
+      "adjEbit": 2051,
+      "adjEbitMargin": 0.123,
+      "source": "Elekta Q1 2026/27 report (storage.mfn.se, 2026-08-27) comparatives (stockanalysis EBIT 1,366 conflicts); includes 1,363 Q4 impairments/IACs"
+     },
+     {
+      "period": "TTM Jul 2026",
+      "revenue": 16608,
+      "ebit": 410,
+      "ebitMargin": 0.025,
+      "eps": -0.95,
+      "fcf": 1312,
+      "adjEbit": 2211,
+      "adjEbitMargin": 0.133,
+      "source": "derived from company FY and Q1 figures"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "not found"
+    },
+    "consensus": {
+     "rating": "hold",
+     "analysts": 14,
+     "buy": 5,
+     "hold": 3,
+     "sell": 6,
+     "targetAvg": 58.26,
+     "targetHigh": 90,
+     "targetLow": 41,
+     "source": "stockanalysis.com/forecast (rating counts Sep 2026, targets 2026-09-02; price at that time lower, stale)",
+     "asOf": "2026-10-05"
+    },
+    "forwardEstimates": {
+     "epsNextFY": 3.91,
+     "epsFY2": null,
+     "revenueGrowthNextFY": 0.0311,
+     "source": "stockanalysis.com/forecast 2026-10-05 (adjusted EPS FY2026/27E 3.91 from 2.43; revenue 17.24bn)"
+    },
+    "recentEvents": [
+     "Latest report is Q1 FY2026/27 (May-Jul), published 2026-08-27, NOT Q2: Q2 (Aug-Oct 2026) is due around late November 2026 (last year 2025-11-26). Q2 figures could not be used.",
+     "Q1: sales 3,536 (-3%; cons 3,635), adj EBIT 395 vs 235 (cons 318), orders 3,910, FCF -266, tariff refund 53 helped gross margin.",
+     "Q4 FY25/26 (2026-05-28): orders 4,567 vs consensus 5,833; impairments 1,096 non-cash; reported EBIT -461; dividend held at 2.40.",
+     "CMD 2026-06-17: new targets to FY2028/29. A headline mentions a SEK 500m cost-saving plan (Stockopedia) but page content and date not verified; not mentioned in Q1 report."
+    ],
+    "valueTrapFlags": [
+     "Sales declining: FY2025/26 -7% reported, Q1 organic -2% (Solutions -9%); Q4 FY25/26 orders missed consensus by 22%.",
+     "Profit recovery is cost/mix driven: adjusted EBIT margin 11.2% in Q1 (up from 6.5%) but helped by a one-off tariff refund (about 150bp gross margin); reported EPS still negative TTM after large impairments.",
+     "Q1 below FY2026/27 guidance on both sales (-2% vs +2-4%) and margin (11.2% vs 12.5-13.5%).",
+     "Net debt/EBITDA up to 1.30x from 1.17x; Q1 operating cash flow 0 and FCF -266.",
+     "Quality of adjusted figures: large IACs (1,363 in Q4) while valuation uses adjusted EBIT/EPS; broker rating split 5 buy / 6 sell."
+    ],
+    "dataGaps": [
+     "Q2 FY2026/27 report not yet published as of 2026-11-13",
+     "52-week high/low",
+     "Prices dated 2026-10-26 or earlier",
+     "Prior financial targets and whether they were met/cut",
+     "Estimate revisions after Q1 (not found)",
+     "FY2021/22-FY2023/24 company-reported EBIT and FCF (stockanalysis only)",
+     "Historical P/E range",
+     "Order backlog (not disclosed)",
+     "Company ROCE",
+     "Net debt lease treatment"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "weakening",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis 3.5 = consensus FY2026/27E adjusted EPS 3.91 cut about 10% because Q1 ran below guidance (lead judgement). Price is the 2026-10-26 close (stale). Q2 report due late Nov 2026. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS adjusted, FY2026/27E (consensus haircut)",
+    "basisValue": 3.5,
+    "forwardDividendYield": 0.041,
+    "qualityTier": "C",
+    "role": "Value Recovery",
+    "scores": {
+     "quality": 3,
+     "growth": 2,
+     "financialStrength": 3,
+     "risk": 2
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.35,
+      "fairValue": 38.5,
+      "epsCagr5y": 0,
+      "exitPe5y": 11,
+      "note": "Orders stay weak, guidance missed, dividend cut. Justified multiple 11x on next-12m 3.50.",
+      "epsCagr10y": 0.01,
+      "exitPe10y": 11
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 55.65,
+      "epsCagr5y": 0.06,
+      "exitPe5y": 14,
+      "note": "Margin recovers toward 12-13% over two years. Justified multiple 15x on next-12m 3.71.",
+      "epsCagr10y": 0.05,
+      "exitPe10y": 14
+     },
+     "bull": {
+      "prob": 0.2,
+      "fairValue": 70.56,
+      "epsCagr5y": 0.12,
+      "exitPe5y": 17,
+      "note": "Order recovery and cost programme deliver. Justified multiple 18x on next-12m 3.92.",
+      "epsCagr10y": 0.08,
+      "exitPe10y": 16
+     }
+    },
+    "whyItFits": "Wide-moat radiotherapy duopoly position (Morningstar view, analyst opinion) at EV/adjusted EBIT 12; included as the value-recovery test case.",
+    "growthDrivers": "Replacement cycle of linear accelerators, Evo platform, emerging-market cancer care, cost savings.",
+    "saturation": "Near multi-year lows on depressed earnings; consensus target equals the price.",
+    "principalRisk": "Earnings recovery keeps slipping: Q1 below guidance, order intake volatile, reported loss after 1.1bn impairments; the 4% dividend depends on recovery."
+   }
+  },
+  {
+   "ticker": "INDT.ST",
+   "name": "Indutrade AB",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Industrials / technical trading and niche industrial companies",
+   "businessSummary": "Acquisitive group of about 200 niche technology and industrial companies in five business areas (Flow Technology, Industrial & Engineering, Process Energy & Water, Life Science, Infrastructure & Safety), mostly Europe.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 268.2,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (currentPrice)",
+     "asOf": "2026-11-12",
+     "note": "Agent price. stockanalysis showed 255.80 on 2026-10-01."
+    },
+    "high52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "low52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 364.32,
+     "period": "current (millions)",
+     "source": "stockanalysis.com/quote/sto/INDT/statistics",
+     "asOf": "2026-10-01",
+     "note": ""
+    },
+    "marketCap": {
+     "value": 97708,
+     "period": "2026-11-12",
+     "source": "derived: 268.20 x 364.32m",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "netDebt": {
+     "value": 9500,
+     "period": "balance sheet, date not stated (likely 30 Jun 2026)",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-01",
+     "note": "Aggregator figure, probably includes IFRS 16 leases and pension. Company-reported interest-bearing net debt at 31 Dec 2025 was 7,556 (ND/EBITDA 1.4x). Q3 2026 net debt not read (report page lacked it)."
+    },
+    "enterpriseValue": {
+     "value": 107208,
+     "period": "derived",
+     "source": "derived: mcap 97,708 + net debt 9,500",
+     "asOf": "2026-11-12",
+     "note": "Stockanalysis EV 103,210 at its Oct 1 price."
+    },
+    "peTrailing": {
+     "value": 35.15,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Stockanalysis 34.96 at 255.80. Reported EPS FY2025 7.03; Q3 2026 EPS 2.21 (1.85)."
+    },
+    "peForward": {
+     "value": 27.31,
+     "period": "forward, period not stated",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-01",
+     "note": "Computed on 255.80 price; at 268.20 about 28.6 if EPS estimate unchanged (derived)."
+    },
+    "evEbitTrailing": {
+     "value": 26.8,
+     "period": "TTM Jun 2026",
+     "source": "derived: EV 107,208 / TTM EBIT 4,003 (stockanalysis, to 30 Jun 2026)",
+     "asOf": "2026-11-12",
+     "note": "Operating profit is EBIT after acquisition amortisation (EBITA is higher). Stockanalysis shows 25.78 at older price. Agent evToEbit null."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 19.53,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Agent evToEbitda."
+    },
+    "fcfTTM": {
+     "value": 3667,
+     "period": "TTM to 30 Jun 2026",
+     "source": "stockanalysis.com/financials/cash-flow-statement",
+     "asOf": "2026-11-12",
+     "note": "Operating cash flow 4,131 less capex 464, before lease payments and acquisitions. Company 'free operating cash flow' FY2025 3,500."
+    },
+    "fcfYield": {
+     "value": 0.0375,
+     "period": "TTM Jun 2026",
+     "source": "derived: 3,667 / mcap 97,708",
+     "asOf": "2026-11-12",
+     "note": "Pre-lease FCF."
+    },
+    "dividendPerShare": {
+     "value": 3.1,
+     "period": "FY2025 (paid 2026)",
+     "source": "Indutrade year-end report 2025",
+     "asOf": "2026-01",
+     "note": "Proposed/paid; up from 3.00."
+    },
+    "dividendYield": {
+     "value": 0.0116,
+     "period": "FY2025 dividend",
+     "source": "derived: 3.10 / 268.20",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "payoutRatio": {
+     "value": 0.4016,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Policy 30-50% of net profit."
+    },
+    "netDebtToEbitda": {
+     "value": 1.69,
+     "period": "latest",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Agent figure; company reported 1.4x at 31 Dec 2025 (net debt 7,556), 1.8x at 2022 year-end. Lease treatment of agent figure unverified. Rising from 1.4x with acquisition pace."
+    },
+    "interestCoverage": {
+     "value": 9.84,
+     "period": "latest",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-01",
+     "note": "Agent value null."
+    },
+    "roic": {
+     "value": 0.18,
+     "period": "FY2025 (ROCE, as reported)",
+     "source": "Indutrade year-end report 2025",
+     "asOf": "2026-01",
+     "note": "Company reports ROCE not ROIC. ROCE 23% (2022), 21% (2023), 19% (2024), 18% (2025); target at least 20%. Stockanalysis ROIC 11.52% (different definition)."
+    },
+    "roe": {
+     "value": 0.1569,
+     "period": "TTM",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-01",
+     "note": ""
+    },
+    "beta5y": {
+     "value": 1.179,
+     "period": "5y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "sectorMetrics": {
+     "organicGrowthQ3_2026": {
+      "value": 0.05,
+      "period": "Q3 2026",
+      "source": "Indutrade Q3 2026 report (inderes.se, 2026-10-23)",
+      "asOf": "2026-10-23",
+      "note": "Total sales +13%; acquisitions contributed about 8 points (period of the 8% unclear). Order intake +16%, organic +6%."
+     },
+     "organicGrowthFY2025": {
+      "value": -0.02,
+      "period": "FY2025",
+      "source": "Indutrade year-end report 2025",
+      "asOf": "2026-01",
+      "note": "Q4 2025 organic 0%, organic order intake +3%."
+     },
+     "ebitaTTM": {
+      "value": null,
+      "period": "TTM Sep 2026",
+      "source": "n/a",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+     },
+     "ebitaMarginQ3_2026": {
+      "value": 0.153,
+      "period": "Q3 2026",
+      "source": "Indutrade Q3 2026 report (inderes.se, 2026-10-23)",
+      "asOf": "2026-10-23",
+      "note": "EBITA 1,358 (1,143), margin 14.6% a year earlier. Consensus (FactSet, 10 est.) EBITA 1,345 per Placera 2026-10-21; slight beat."
+     },
+     "targets": "Margin target >=14% EBITA (FY2025 13.8%, missed); ROCE >=20% (18%, missed); growth >=10% p.a.; net debt/equity <=100% (44%)."
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 21715,
+      "ebit": 2840,
+      "ebitMargin": 0.1308,
+      "eps": 5.75,
+      "fcf": 2514,
+      "ebita": null,
+      "ebitaMargin": null,
+      "source": "stockanalysis.com (EBITA 2021 not in the 2025 report multi-year table; unverified)"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 27016,
+      "ebit": 3620,
+      "ebitMargin": 0.134,
+      "eps": 7.36,
+      "fcf": 1861,
+      "ebita": 4098,
+      "ebitaMargin": 0.152,
+      "organicGrowth": null,
+      "roce": 0.23,
+      "source": "Indutrade year-end report 2025 (EBIT, EBITA, ROCE); stockanalysis FCF (OCF less capex)"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 31835,
+      "ebit": 4158,
+      "ebitMargin": 0.1306,
+      "eps": 7.86,
+      "fcf": 3972,
+      "ebita": 4769,
+      "ebitaMargin": 0.15,
+      "roce": 0.21,
+      "source": "same"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 32544,
+      "ebit": 4033,
+      "ebitMargin": 0.1239,
+      "eps": 7.55,
+      "fcf": 3649,
+      "ebita": 4689,
+      "ebitaMargin": 0.144,
+      "roce": 0.19,
+      "source": "same; company free operating cash flow 3,677"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 32229,
+      "ebit": 3769,
+      "ebitMargin": 0.117,
+      "eps": 7.03,
+      "fcf": 3488,
+      "ebita": 4446,
+      "ebitaMargin": 0.138,
+      "organicGrowth": -0.02,
+      "roce": 0.18,
+      "source": "same; company free operating cash flow 3,500"
+     },
+     {
+      "period": "TTM Jun 2026",
+      "revenue": 33123,
+      "ebit": 4003,
+      "ebitMargin": 0.1208,
+      "eps": 7.36,
+      "fcf": 3667,
+      "ebita": null,
+      "ebitaMargin": null,
+      "source": "stockanalysis.com (EBIT may differ slightly from company definition)"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "not found in accessible sources"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 8,
+     "buy": 4,
+     "hold": 3,
+     "sell": 0,
+     "targetAvg": 285.75,
+     "targetHigh": 322,
+     "targetLow": 260,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (MarketScreener 2026-10: 7 analysts, avg 282.62, outperform)",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; implied forward EPS about 9.4 from stockanalysis fwd PE 27.31 at 255.80 (derived)"
+    },
+    "recentEvents": [
+     "Q3 2026 (23 Oct 2026): sales 8,871 (+13%, organic +5%), EBITA 1,358 (+19%), margin 15.3%, EPS 2.21, OCF 1,216; all five business areas grew organically.",
+     "13 acquisitions signed YTD with annual sales of 2.1bn; Euromed/Sinmed and Schraner announced after quarter-end.",
+     "Broker target raises in Sep-Oct 2026 (SEB 288, Handelsbanken 290, Goldman 211 to 261) per MarketScreener."
+    ],
+    "valueTrapFlags": [
+     "Margin and ROCE below company targets in FY2025 (13.8% vs 14%, 18% vs 20%) and ROCE has fallen four years running (23% to 18%); Q3 2026 margin 15.3% shows recovery but one quarter.",
+     "Growth is mostly acquired: Q3 total +13% vs organic +5%; FY2025 organic -2%.",
+     "Net debt/EBITDA up (agent 1.69x vs 1.4x at YE2025) as acquisitions continue.",
+     "Trailing P/E about 35 and EV/EBIT about 27 leave little room for a miss (valuation context only)."
+    ],
+    "dataGaps": [
+     "52-week high/low",
+     "EBITA FY2021 and TTM Sep 2026",
+     "Q3 2026 net debt, ND/EBITDA and ROCE (report page lacked them; PDF not read)",
+     "Historical P/E range",
+     "Forward EPS consensus after Q3 and estimate revision direction (only broker target changes seen)",
+     "Quarterly organic growth Q1-Q3 2025 and Q1-Q2 2026"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E EPS 8.0 (TTM 7.36, Q3 EPS 2.21, recovery under way; lead estimate). Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 8,
+    "forwardDividendYield": 0.012,
+    "qualityTier": "B",
+    "role": null,
+    "scores": {
+     "quality": 4,
+     "growth": 3,
+     "financialStrength": 4,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 183.04,
+      "epsCagr5y": 0.04,
+      "exitPe5y": 22,
+      "note": "Industrial demand stalls, margin stays near 12%. Justified multiple 22x on next-12m 8.32.",
+      "epsCagr10y": 0.04,
+      "exitPe10y": 20
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 244.16,
+      "epsCagr5y": 0.09,
+      "exitPe5y": 26,
+      "note": "Organic about 4% plus acquisitions, EBITA margin back toward 14%. Justified multiple 28x on next-12m 8.72.",
+      "epsCagr10y": 0.08,
+      "exitPe10y": 24
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 286.72,
+      "epsCagr5y": 0.12,
+      "exitPe5y": 29,
+      "note": "Margin recovery to target and strong M&A year. Justified multiple 32x on next-12m 8.96.",
+      "epsCagr10y": 0.1,
+      "exitPe10y": 26
+     }
+    },
+    "whyItFits": "Decentralised technical-trading acquirer; Q3 2026 organic +5% across all five areas suggests the 2024-25 margin slide is reversing.",
+    "growthDrivers": "Organic recovery, 13 acquisitions YTD (SEK 2.1bn sales), margin return toward the 14% target.",
+    "saturation": "P/E 35 on depressed earnings: recovery already priced; brokers lifted targets in Sep-Oct (analyst opinion).",
+    "principalRisk": "Margins and ROCE stayed below targets in FY2025; a renewed industrial slowdown would leave a 35x multiple unsupported."
+   }
+  },
+  {
+   "ticker": "INVE-B.ST",
+   "name": "Investor AB (B)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Financial Services / Investment holding company",
+   "businessSummary": "Wallenberg-sphere investment holding company: listed core holdings (ABB, Atlas Copco, AstraZeneca, SEB, Ericsson, Epiroc, etc.), Patricia Industries (wholly/majority-owned, e.g. Mölnlycke, Permobil, Sarnova) and partner-owned investments (EQT, Wallenberg Investments).",
+   "retrievedAt": "2026-11-13T09:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 435.25,
+     "period": "close, run 2026-11-12",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "Investor B"
+    },
+    "high52w": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable (Yahoo blocked; stockanalysis page gave only 52w price change)"
+    },
+    "low52w": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 3061,
+     "period": "30 Sep 2026 (derived)",
+     "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe",
+     "asOf": "2026-09-30",
+     "note": "Derived: adjusted NAV SEK 1,258.0bn / SEK 411 per share = ~3,061m shares (A+B). Not an exact reported count."
+    },
+    "marketCap": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable: A and B shares trade at different prices; not computed"
+    },
+    "netDebt": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "Investor reports 'leverage' (net debt / total assets), not a net debt amount, in the interim statement; gross cash SEK 29,460m at 30 Sep 2026"
+    },
+    "enterpriseValue": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not meaningful for a holding company"
+    },
+    "peTrailing": {
+     "value": null,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Agent P/E 6.3 not meaningful for a holding company (includes unrealised gains); excluded."
+    },
+    "peForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not meaningful for a holding company"
+    },
+    "evEbitTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (holding company)"
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (holding company)"
+    },
+    "evEbitdaTrailing": {
+     "value": 6.402,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure; not meaningful for a holding company."
+    },
+    "fcfTTM": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (holding company)"
+    },
+    "fcfYield": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (holding company)"
+    },
+    "dividendPerShare": {
+     "value": 5.6,
+     "period": "FY2025 (paid SEK 4.00 May 2026 + SEK 1.60 Nov 2026)",
+     "source": "https://mfn.se/cis/a/investor/investor-year-end-report-2025-2ca46124.iframe",
+     "asOf": "2026-01-22",
+     "note": "Proposed at year-end report 2025 (prior year SEK 5.20). Check AGM approval was as proposed."
+    },
+    "dividendYield": {
+     "value": 0.0129,
+     "period": "FY2025 DPS / price 2026-11-12",
+     "source": "https://mfn.se/cis/a/investor/investor-year-end-report-2025-2ca46124.iframe ; stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Derived: 5.60 / 435.25."
+    },
+    "payoutRatio": {
+     "value": 0.0778,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure vs consolidated EPS; not meaningful for a holding company."
+    },
+    "netDebtToEbitda": {
+     "value": 0.489,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure; not meaningful for a holding company. See sectorMetrics.loanToValue."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (holding company)"
+    },
+    "roe": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (holding company); see NAV total return"
+    },
+    "beta5y": {
+     "value": 0.811,
+     "period": "5y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure (stockanalysis showed 0.77 on an undated page)."
+    },
+    "sectorMetrics": {
+     "navPerShare": {
+      "value": 411,
+      "period": "30 Sep 2026",
+      "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe",
+      "asOf": "2026-09-30",
+      "note": "Reported adjusted NAV SEK 1,258.0bn (SEK 411/share). Quarter +SEK 43.3bn (+4%); nine-month adjusted NAV growth 17%. Patricia Industries at estimated market values (company-adjusted)."
+     },
+     "navPerSharePrior": {
+      "value": 397,
+      "period": "30 Jun 2026",
+      "source": "https://www.placera.se/pressmeddelanden/interim-report-january-june-2026-20260716",
+      "asOf": "2026-06-30",
+      "note": "Adjusted NAV SEK 1,214.7bn."
+     },
+     "discountToNav": {
+      "value": 0.059,
+      "period": "price 2026-11-12 vs NAV 2026-09-30",
+      "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe ; stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Derived: 435.25 / 411 - 1 = +5.9%, i.e. a PREMIUM to adjusted NAV, not a discount. Price is 6 weeks later than NAV date; B-share price vs per-share NAV of all classes."
+     },
+     "loanToValue": {
+      "value": 0.018,
+      "period": "30 Sep 2026",
+      "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe",
+      "asOf": "2026-09-30",
+      "note": "Investor's 'leverage' (net debt as share of total assets); 2.1% at 31 Dec 2025, 1.9% at 30 Jun 2026, 1.2% at 31 Dec 2024. Gross cash SEK 29,460m; average debt maturity 8.4 years."
+     },
+     "navPerShareHistory": {
+      "2021": 248,
+      "2022": 220,
+      "2023": 267,
+      "2024": 317,
+      "2025": 355,
+      "Sep-2026": 411,
+      "source": "Investor year-end reports 2021-2025 (cision/marketscreener/inderes/mfn) and Q3 2026 interim statement",
+      "note": "Adjusted NAV per share at 31 Dec each year. Ten-month 2026 YTD NAV/share +15.8% before dividends (355 to 411)."
+     },
+     "totalShareholderReturn": {
+      "value": 0.24,
+      "period": "Jan-Sep 2026",
+      "source": "https://mfn.se/cis/a/investor/investor-interim-management-statement-january-september-2026-d67100a4.iframe",
+      "asOf": "2026-09-30",
+      "note": "Nine-month TSR 24% vs SIXRX 11%; Q3 TSR 1% vs SIXRX 2%."
+     },
+     "navPeerNote": "Analyst targets (mean 416) sit below the price, consistent with trading above NAV."
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": null,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 248,
+      "fcf": null,
+      "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2021, Investor year-end report 2021"
+     },
+     {
+      "period": "FY2022",
+      "revenue": null,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 220,
+      "fcf": null,
+      "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2022 (NAV growth -10% incl. dividend), Investor YE report 2022"
+     },
+     {
+      "period": "FY2023",
+      "revenue": null,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 267,
+      "fcf": null,
+      "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2023, Investor YE report 2023"
+     },
+     {
+      "period": "FY2024",
+      "revenue": null,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 317,
+      "fcf": null,
+      "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2024, Investor YE report 2024"
+     },
+     {
+      "period": "FY2025",
+      "revenue": null,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 355,
+      "fcf": null,
+      "source": "EPS field = adjusted NAV per share (SEK), 31 Dec 2025, Investor YE report 2025 (adjusted NAV SEK 1,087.1bn)"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable; for a holding company use history of premium/discount to NAV (not retrieved)"
+    },
+    "consensus": {
+     "rating": "none (hold-leaning)",
+     "analysts": 4,
+     "buy": 1,
+     "hold": 3,
+     "sell": 1,
+     "targetAvg": 416,
+     "targetHigh": 465,
+     "targetLow": 337,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; not meaningful for holding company"
+    },
+    "recentEvents": [
+     "Q3 2026 interim management statement 16 Oct 2026: adjusted NAV SEK 411/share (+4% in quarter, +17% in nine months); TSR 24% YTD vs SIXRX 11%.",
+     "Listed Companies total return 1% in Q3; Patricia Industries total return 15% (16% excl. cash) YTD per statement; EQT value change 7% (period as stated in statement).",
+     "Sold 2.0m SEB shares for SEK 376m in Q3 and agreed to sell 2.0m more settling Q4 to keep ownership level.",
+     "Moelnlycke announced plan to separate its businesses into two standalone companies; Moelnlycke organic sales +5% CER, underlying margin unchanged.",
+     "FY2025 dividend SEK 5.60 (SEK 4.00 May 2026 + SEK 1.60 Nov 2026)."
+    ],
+    "valueTrapFlags": [
+     "Trades at a ~6% PREMIUM to reported adjusted NAV (435.25 vs 411), not a discount; consensus targets (mean 416) are below price.",
+     "Dividend yield only ~1.3%; low cash return relative to NAV growth.",
+     "Patricia Industries NAV marks are company estimates (unlisted), so NAV is partly model-based.",
+     "No leverage concern: leverage 1.8% (net debt / total assets)."
+    ],
+    "dataGaps": [
+     "52-week high/low unavailable.",
+     "Net debt in SEK, exact share count and market cap not retrieved (shares derived from NAV).",
+     "Historical premium/discount-to-NAV series not retrieved.",
+     "Dividend history before FY2021 and AGM confirmation of SEK 5.60 not checked (YE reports: FY2021 SEK 4.00, FY2022 4.40, FY2023 4.80, FY2024 5.20).",
+     "Agent PE/EV/EBITDA/payout fields shown but not meaningful for a holding company; stockanalysis.com statistics page for INVE-B undated and stale (PE 37.96), ignored."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "holding",
+    "competitive": "stable",
+    "method": "Holding company: fair value = next-12m NAV per share x justified price/NAV. Basis reported adjusted NAV SEK 411 (30 Sep 2026). NAV CAGR FY2021-25 about 9.4% (248 to 355, verified). Long-run P/NAV mostly at a discount; current premium noted.",
+    "metricBasis": "Adjusted NAV per share (30 Sep 2026)",
+    "basisValue": 411,
+    "forwardDividendYield": 0.013,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+     "quality": 5,
+     "growth": 3,
+     "financialStrength": 5,
+     "risk": 4
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 349.35,
+      "epsCagr5y": 0,
+      "exitPe5y": 0.9,
+      "note": "Equity market fall, premium reverts to a discount. Justified multiple 0.85x on next-12m 411.00.",
+      "epsCagr10y": 0.04,
+      "exitPe10y": 0.9
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 421.69,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 0.95,
+      "note": "NAV compounds about 8-9%, price trades near NAV. Justified multiple 0.95x on next-12m 443.88.",
+      "epsCagr10y": 0.08,
+      "exitPe10y": 0.95
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 483.34,
+      "epsCagr5y": 0.12,
+      "exitPe5y": 1,
+      "note": "Strong listed holdings and Patricia Industries growth. Justified multiple 1.05x on next-12m 460.32.",
+      "epsCagr10y": 0.1,
+      "exitPe10y": 1
+     }
+    },
+    "whyItFits": "Owner of high-quality Nordic franchises (Atlas Copco, ABB, AstraZeneca, Patricia Industries) with loan-to-value 1.8% and a long NAV-compounding record.",
+    "growthDrivers": "NAV growth from listed holdings and Patricia Industries; rising dividend.",
+    "saturation": "Trades at about 6% PREMIUM to NAV versus a historical discount: fully valued.",
+    "principalRisk": "Paying a premium to NAV: returns depend on equity markets and the premium persisting."
+   }
+  },
+  {
+   "ticker": "LIFCO-B.ST",
+   "name": "Lifco AB (B shares)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Industrials (Serial acquirer: Dental, Demolition & Tools, Systems Solutions)",
+   "businessSummary": "Swedish serial acquirer of niche businesses in Dental, Demolition & Tools and Systems Solutions; decentralised, EBITA-focused.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 288.2,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "report-day drop -12.0% on 23 Oct from 318.80 (22 Oct); 274.60 on 2 Nov"
+    },
+    "high52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable; stockanalysis 52w change -17.92%"
+    },
+    "low52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 454.22,
+     "period": "latest",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": "millions A+B (B class 423.84m)"
+    },
+    "marketCap": {
+     "value": 127360,
+     "period": "2026-10-20",
+     "source": "https://stockanalysis.com/quote/sto/LIFCO.B/statistics/",
+     "asOf": "2026-10-20",
+     "note": "SEK m; price x 454.22m at 288.2 = ~130,900"
+    },
+    "netDebt": {
+     "value": 12321,
+     "period": "30 Sep 2026",
+     "source": "Lifco interim report Jan-Sep 2026 (finanznachrichten.de)",
+     "asOf": "2026-10-23",
+     "note": "company net debt incl. SEK 2,718m put/call option liabilities; interest-bearing net debt 7,979m; IFRS 16 treatment not stated in extract; stockanalysis shows 9.60B (older)"
+    },
+    "enterpriseValue": {
+     "value": 138040,
+     "period": "2026-10-20",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": "stockanalysis, uses its net debt 9.60bn"
+    },
+    "peTrailing": {
+     "value": 33.28,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "peForward": {
+     "value": 30.39,
+     "period": "next FY",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": "pre-drop price basis; consensus 2027 EBITA cut ~3.8% since"
+    },
+    "evEbitTrailing": {
+     "value": 27.62,
+     "period": "TTM",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": "EBIT, pre-drop price"
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 19.218,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "fcfTTM": {
+     "value": 5052,
+     "period": "TTM to Sep 2026",
+     "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/cash-flow-statement/",
+     "asOf": "2026-09-30",
+     "note": "SEK m; company 9M operating cash flow 3,514m (+12%)"
+    },
+    "fcfYield": {
+     "value": 0.0386,
+     "period": "TTM / current",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "5,052 / (288.2 x 454.22m = 130.9bn)"
+    },
+    "dividendPerShare": {
+     "value": 2.7,
+     "period": "FY2025",
+     "source": "stockanalysis.com/statistics",
+     "asOf": "2026-10-20",
+     "note": ""
+    },
+    "dividendYield": {
+     "value": 0.0094,
+     "period": "current",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "2.70/288.2"
+    },
+    "payoutRatio": {
+     "value": 0.3114,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "netDebtToEbitda": {
+     "value": 1.6,
+     "period": "30 Sep 2026",
+     "source": "Lifco interim report Jan-Sep 2026",
+     "asOf": "2026-10-23",
+     "note": "company: 1.6x incl. option liabilities (1.7x YE2025); interest-bearing 1.0x; agent metric 1.31"
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "n/a",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.205,
+     "period": "rolling 12m to Sep 2026",
+     "source": "Lifco interim report Jan-Sep 2026",
+     "asOf": "2026-10-23",
+     "note": "company-reported ROCE 20.5% (unchanged); excl. goodwill 127% (131%); stockanalysis ROIC 13.6%"
+    },
+    "roe": {
+     "value": 0.193,
+     "period": "rolling 12m to Sep 2026",
+     "source": "Lifco interim report Jan-Sep 2026",
+     "asOf": "2026-10-23",
+     "note": "company-reported; stockanalysis 19.46%"
+    },
+    "beta5y": {
+     "value": 1.161,
+     "period": "5y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "stockanalysis 1.13"
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 17480,
+      "ebit": 3132,
+      "ebitMargin": 0.1792,
+      "eps": 5.26,
+      "fcf": 2657,
+      "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 21552,
+      "ebit": 3921,
+      "ebitMargin": 0.1819,
+      "eps": 6.13,
+      "fcf": 2790,
+      "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 24454,
+      "ebit": 4734,
+      "ebitMargin": 0.1936,
+      "eps": 7.21,
+      "fcf": 4029,
+      "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 26137,
+      "ebit": 4863,
+      "ebitMargin": 0.1861,
+      "eps": 7.27,
+      "fcf": 4132,
+      "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 28251,
+      "ebit": 5225,
+      "ebitMargin": 0.1849,
+      "eps": 8,
+      "fcf": 4622,
+      "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+     },
+     {
+      "period": "TTM Jun-2026",
+      "revenue": 29257,
+      "ebit": 5498,
+      "ebitMargin": 0.1879,
+      "eps": 8.48,
+      "fcf": 4765,
+      "source": "https://stockanalysis.com/quote/sto/LIFCO.B/financials/"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "no source retrieved"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 8,
+     "buy": 3,
+     "hold": 4,
+     "sell": 0,
+     "targetAvg": 324.125,
+     "targetHigh": 350,
+     "targetLow": 300,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": 0.052,
+     "source": "placera/Finwire 2026-11-02 FactSet: 2027 sales growth 5.2% (was 9.0%), 2027 adj EBITA 7,404m (was 7,700m, -3.8%), 2026 adj EBITA 6,976m; no EPS"
+    },
+    "recentEvents": [
+     "Q3 2026 (23 Oct 2026): sales SEK 7,407m (+8.3%), organic +1.6%; EBITA 1,708m (+10.7%), margin 23.1% (22.6%); EPS 2.15 (1.96); op CF 1,662m (+19%). Sales 1.3% below consensus, adj EBITA 0.8% above.",
+     "9M 2026: sales 22,288m (+7.6%), organic +2.5%; EBITA 5,072m, margin 22.8% (+0.6pp); EPS 6.38 (5.71); op CF 3,514m.",
+     "A Systems Solutions (contract manufacturing) customer, ~5% of group revenue, will shift purchases outside Europe from Jan 2027; negative effect on 2027 sales and earnings.",
+     "Shares fell 12.0% on report day; after the report FactSet 2027 adj EBITA cut 3.8%, average target cut 8.6% to 332.36; consensus rating Overweight (5 positive, 5 neutral of 10).",
+     "Dental margin up; Demolition & Tools margin down on weak demolition robot demand. Micronova and Hega Medical to be consolidated in Q4."
+    ],
+    "valueTrapFlags": [
+     "Estimate cuts after the latest report: 2027 sales -3.8%, adj EBITA -3.8%, target -8.6%.",
+     "Known loss of a ~5% of revenue customer from Jan 2027.",
+     "Organic growth weak (Q3 +1.6%, 9M +2.5%); growth driven by acquisitions.",
+     "Leverage 1.6x incl. option liabilities (1.0x interest-bearing); slightly falling. Cash conversion improving, not weak.",
+     "Premium multiple (trailing P/E ~33)."
+    ],
+    "dataGaps": [
+     "Historical P/E range",
+     "52w high/low",
+     "EPS consensus",
+     "FY EBITA history (stockanalysis operating income is EBIT; company EBITA not retrieved)",
+     "IFRS 16 treatment in company net debt not stated",
+     "Net debt/EBITDA differs between agent (1.31) and company (1.6)"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E per scenario. Basis 2026E EPS 8.6 = 9M 6.38 + Q4 about 2.2 (lead estimate). 2027 growth reduced for the lost 5% customer. Historical P/E range not verified by agents; justified multiples are lead estimates, not sourced.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 8.6,
+    "forwardDividendYield": 0.009,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+     "quality": 5,
+     "growth": 3,
+     "financialStrength": 4,
+     "risk": 4
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 212.59,
+      "epsCagr5y": 0.03,
+      "exitPe5y": 22,
+      "note": "Customer loss plus weak organic growth; multiple compresses. Justified multiple 24x on next-12m 8.86.",
+      "epsCagr10y": 0.04,
+      "exitPe10y": 20
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 278.64,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 28,
+      "note": "Acquisitions offset lost customer; EBITA margin about 23%. Justified multiple 30x on next-12m 9.29.",
+      "epsCagr10y": 0.075,
+      "exitPe10y": 25
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 334.11,
+      "epsCagr5y": 0.11,
+      "exitPe5y": 32,
+      "note": "Acquisition pace rises, dental recovers. Justified multiple 35x on next-12m 9.55.",
+      "epsCagr10y": 0.09,
+      "exitPe10y": 28
+     }
+    },
+    "whyItFits": "Decentralised acquirer with EBITA margin about 23%, ROIC about 20% and rising cash conversion; niche dental and tools businesses are resilient.",
+    "growthDrivers": "Steady bolt-on acquisitions, dental consumables, demolition robots; reinvestment at high returns.",
+    "saturation": "Trailing P/E 33 after a 12% drop on the Q3 report; still a premium multiple with estimates being cut.",
+    "principalRisk": "Loss of a customer worth about 5% of sales from 2027 and estimate cuts (2027 EBITA -3.8%) while the multiple stays high."
+   }
+  },
+  {
+   "ticker": "NDA-SE.ST",
+   "name": "Nordea Bank Abp",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Financial Services / Banks",
+   "businessSummary": "Largest Nordic financial services group (Finland, Sweden, Denmark, Norway): retail and business banking, large corporates and institutions, asset and wealth management. Reports in EUR; the Stockholm line is quoted in SEK.",
+   "retrievedAt": "2026-11-13T09:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 187.45,
+     "period": "close, run 2026-11-12",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "SEK, Stockholm line. Company reports in EUR."
+    },
+    "high52w": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "low52w": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable: latest count not retrieved (buybacks ongoing; stockanalysis page showing 3.50bn was stale/undated)"
+    },
+    "marketCap": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "netDebt": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "enterpriseValue": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "peTrailing": {
+     "value": 12.81,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure on SEK price; consistent with price/EPS only if SEK/EUR conversion is correct. Cross-check: YTD 9M 2026 diluted EPS EUR 1.03 (EUR 1.07 excl. EUR 190m Q1 restructuring)."
+    },
+    "peForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "2026-27 consensus EPS not retrieved; Inderes Oct 2025 estimate (EPS 2026e EUR 1.41) is stale"
+    },
+    "evEbitTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "evEbitdaTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "fcfTTM": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "fcfYield": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "dividendPerShare": {
+     "value": 0.96,
+     "period": "FY2025 (EUR)",
+     "source": "https://www.nordea.com/en/press/2026-01-29/fourth-quarter-and-full-year-results-2025",
+     "asOf": "2026-01-29",
+     "note": "EUR 0.96 for FY2025 (EUR 0.94 FY2024), ~68% payout. Board also proposed mid-year 2026 dividend of ~50% of H1 2026 net profit, capped at EUR 3bn."
+    },
+    "dividendYield": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable: EUR dividend vs SEK price; no verified EURSEK rate retrieved"
+    },
+    "payoutRatio": {
+     "value": 0.956,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure (appears to include buybacks or a different basis). Company policy: 60-70% payout; FY2025 dividend ~68% of net profit."
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "roic": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "not applicable (bank)"
+    },
+    "roe": {
+     "value": 0.151,
+     "period": "Q3 2026 (with amortised regulatory fees)",
+     "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+     "asOf": "2026-10-22",
+     "note": "Q3 2025: 15.8%. YTD 14.9% incl. / 15.5% excl. EUR 190m restructuring cost. FY2025 15.5%, FY2024 16.7%."
+    },
+    "beta5y": {
+     "value": 0.717,
+     "period": "5y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure."
+    },
+    "sectorMetrics": {
+     "priceToBook": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable. Agent priceToBook 20.32 is a currency artifact (SEK price vs EUR book value) and is rejected. Book value per share not retrieved (not on short-facts page)."
+     },
+     "roe": {
+      "value": 0.151,
+      "period": "Q3 2026",
+      "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+      "asOf": "2026-10-22",
+      "note": "2026 outlook: ROE above 15%. Q3 2025 15.8%."
+     },
+     "cet1": {
+      "value": 0.158,
+      "period": "30 Sep 2026",
+      "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+      "asOf": "2026-10-22",
+      "note": "1.9pp above regulatory requirement; includes interim profit net of 70% dividend deduction (subject to ECB approval). 15.7% at 31 Dec 2025, 15.8% at 31 Dec 2024. Release table also shows 15.9% in one spot; footnote notes Q3 2025 regulatory CET1 was 15.7%."
+     },
+     "costIncomeRatio": {
+      "value": 0.45,
+      "period": "Q3 2026 excl. regulatory fees",
+      "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+      "asOf": "2026-10-22",
+      "note": "45.6% incl. fees (Q3 2025: 45.1% excl., 45.8% incl.). YTD 44.8% excl. restructuring, 48.1% incl. 2026 guidance 44-45%. FY2025 45.0%."
+     },
+     "dividendPerShare": {
+      "value": 0.96,
+      "period": "FY2025 (EUR)",
+      "source": "https://www.nordea.com/en/press/2026-01-29/fourth-quarter-and-full-year-results-2025",
+      "asOf": "2026-01-29",
+      "note": "See facts.dividendPerShare."
+     },
+     "buybacks": {
+      "value": 750,
+      "period": "Q4 2025 (EUR m)",
+      "source": "https://www.nordea.com/en/press/2026-01-29/fourth-quarter-and-full-year-results-2025",
+      "asOf": "2026-01-29",
+      "note": "EUR 250m programme launched and completed plus EUR 500m programme launched in Q4 2025; completion date not stated. Q3 2026 release gives no new programme size; says it 'will continuously assess' buybacks."
+     },
+     "netInterestIncome": {
+      "value": 1799,
+      "period": "Q3 2026 (EUR m)",
+      "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+      "asOf": "2026-10-22",
+      "note": "+1% YoY and QoQ; YTD EUR 5,337m (-1%)."
+     },
+     "operatingProfit": {
+      "value": 1541,
+      "period": "Q3 2026 (EUR m)",
+      "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+      "asOf": "2026-10-22",
+      "note": "-4% YoY; YTD EUR 4,593m incl. / 4,783m excl. EUR 190m restructuring (Q1 2026)."
+     },
+     "netProfitDilutedEps": {
+      "value": 0.35,
+      "period": "Q3 2026 (EUR)",
+      "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm",
+      "asOf": "2026-10-22",
+      "note": "Net profit EUR 1,181m (-4%); EPS -3% YoY; YTD EPS 1.03 incl. / 1.07 excl. restructuring."
+     },
+     "loansAndDeposits": {
+      "loansToPublic_EURbn": 399.6,
+      "loansExclRepos_EURbn": 358.1,
+      "loansGrowthYoY": 0.06,
+      "depositsFromPublic_EURbn": 259,
+      "depositsGrowthYoY": 0.15,
+      "period": "30 Sep 2026",
+      "source": "https://www.finanznachrichten.de/nachrichten-2026-10/69842506-nordea-bank-abp-third-quarter-results-2026-008.htm"
+     },
+     "reportingCurrencyNote": "Company figures are in EUR; SEK conversions not performed (no verified FX rate)."
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 9620,
+      "ebit": 4936,
+      "ebitMargin": 0.5131,
+      "eps": 0.95,
+      "fcf": null,
+      "source": "EUR m / EUR; Nordea Q4 2022 release (total operating income, operating profit, diluted EPS). FCF not applicable (bank)."
+     },
+     {
+      "period": "FY2022",
+      "revenue": 9796,
+      "ebit": 4768,
+      "ebitMargin": 0.4867,
+      "eps": 0.95,
+      "fcf": null,
+      "source": "EUR; reported (EPS 1.10 excl. items affecting comparability, mainly Russia-related Q1 charge). Q4 2023 release restates FY2022 income 9,721 / op profit 4,762 / EPS 0.94 (reported) and 10,258 / 5,375 / 1.10 (excl.)."
+     },
+     {
+      "period": "FY2023",
+      "revenue": 11743,
+      "ebit": 6338,
+      "ebitMargin": 0.5397,
+      "eps": 1.37,
+      "fcf": null,
+      "source": "EUR; Nordea Q4 2023 release. Income figure 11,743 equals the FY2025 income figure in a separate source; verify."
+     },
+     {
+      "period": "FY2024",
+      "revenue": 12084,
+      "ebit": 6548,
+      "ebitMargin": 0.5419,
+      "eps": 1.44,
+      "fcf": null,
+      "source": "EUR; Nordea Q4 2025 release comparatives."
+     },
+     {
+      "period": "FY2025",
+      "revenue": 11743,
+      "ebit": 6316,
+      "ebitMargin": 0.5379,
+      "eps": 1.39,
+      "fcf": null,
+      "source": "EUR; Nordea Q4 2025 release. Net profit EUR 4,840m; net loan loss ratio 1bp."
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 10,
+     "buy": 6,
+     "hold": 3,
+     "sell": 1,
+     "targetAvg": 202.8,
+     "targetHigh": 233.25,
+     "targetLow": 157.03,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable (consensus EPS not retrieved)"
+    },
+    "recentEvents": [
+     "Q3 2026 (22 Oct 2026 approx.): operating profit EUR 1,541m (-4%), net profit EUR 1,181m (-4%), EPS EUR 0.35, ROE 15.1%, C/I 45.0% excl. fees, CET1 15.8%; 2026 guidance unchanged (ROE above 15%, C/I 44-45%).",
+     "Q1 2026 included EUR 190m restructuring cost.",
+     "Q4 2025: EUR 750m buybacks (EUR 250m completed, EUR 500m launched); FY2025 dividend EUR 0.96 plus planned mid-year 2026 dividend of ~50% of H1 net profit (cap EUR 3bn).",
+     "Loans +6% YoY (corporate +8%, mortgage +2%), deposits +15% (retail +4%) at 30 Sep 2026.",
+     "2030 targets: ROE above 15% throughout, C/I 40-42% excl. fees, net loan loss ratio ~10bp."
+    ],
+    "valueTrapFlags": [
+     "Earnings drifting down: Q3 operating profit -4% YoY, net profit -4%; net interest income YTD -1%; FY2025 EPS 1.39 below FY2024 1.44 and FY2023 1.37 roughly flat.",
+     "Net loan loss ratio was only 1bp in FY2025 (target ~10bp over time), so credit costs are a likely headwind.",
+     "ROE has slipped from 16.9% (2023) / 16.7% (2024) to ~15%, near the guidance floor.",
+     "Capital return (high payout and buybacks) holds EPS up; CET1 15.8% leaves 1.9pp buffer.",
+     "No P/B or forward P/E verified; do not rely on agent P/B (20.3, currency artifact)."
+    ],
+    "dataGaps": [
+     "P/B and book value per share unavailable; forward P/E and consensus EPS unavailable.",
+     "52-week range, shares outstanding, market cap, SEK dividend yield unavailable.",
+     "Current buyback programme size/timing for 2026 not disclosed in Q3 release.",
+     "Q3 2026 release read via finanznachrichten.de copy of the Nordea release, not the nordea.com PDF.",
+     "FY2021-2023 income/operating profit taken from different release vintages (2022 restated); FY2023 and FY2025 income figures identical (11,743) in separate sources, unverified."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "bank",
+    "competitive": "stable",
+    "method": "Bank: next-12m EPS x justified P/E. Basis SEK 14.6 = price 187.45 / agent trailing P/E 12.81 (derived; company reports in EUR). Dividend yield assumed from 65% payout policy x 7.8% earnings yield (estimate, FX unverified). Buybacks not included.",
+    "metricBasis": "EPS SEK-equivalent, TTM (derived from agent P/E)",
+    "basisValue": 14.6,
+    "forwardDividendYield": 0.05,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+     "quality": 4,
+     "growth": 2,
+     "financialStrength": 4,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 137.24,
+      "epsCagr5y": -0.06,
+      "exitPe5y": 10,
+      "note": "Rate cuts compress net interest income, credit losses normalise. Justified multiple 10x on next-12m 13.72.",
+      "epsCagr10y": -0.02,
+      "exitPe10y": 10
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 178.7,
+      "epsCagr5y": 0.02,
+      "exitPe5y": 11.5,
+      "note": "ROE about 15%, flat-ish earnings plus capital return. Justified multiple 12x on next-12m 14.89.",
+      "epsCagr10y": 0.02,
+      "exitPe10y": 11
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 206.96,
+      "epsCagr5y": 0.05,
+      "exitPe5y": 12.5,
+      "note": "Volume growth and cost efficiency keep ROE near 16%. Justified multiple 13.5x on next-12m 15.33.",
+      "epsCagr10y": 0.04,
+      "exitPe10y": 12
+     }
+    },
+    "whyItFits": "Largest Nordic bank: ROE 15.1%, CET1 15.8%, cost/income 45%, about 5% dividend plus buybacks; beta 0.72.",
+    "growthDrivers": "Capital return (dividend and buybacks), lending volume, cost efficiency.",
+    "saturation": "P/E 12.8 near the top of what Nordic banks earned at peak rates; UBS says much upside is priced in (analyst opinion).",
+    "principalRisk": "Falling interest rates and normalising loan losses (currently 1bp) reduce earnings; Q3 operating profit -4%."
+   }
+  },
+  {
+   "ticker": "NOVO-B.CO",
+   "name": "Novo Nordisk A/S (B)",
+   "exchange": "Nasdaq Copenhagen",
+   "currency": "DKK",
+   "sector": "Healthcare / Pharmaceuticals (diabetes and obesity)",
+   "businessSummary": "Danish pharmaceutical group focused on diabetes and obesity care (semaglutide: Ozempic, Wegovy, Rybelsus, Wegovy pill) plus rare disease. Reports adjusted figures in 2026 that exclude a one-off US 340B provision reversal.",
+   "retrievedAt": "2026-11-13T09:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 272.7,
+     "period": "close, run 2026-11-12",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "DKK. Stockanalysis showed 260.15 on 2026-10-23."
+    },
+    "high52w": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable. Context: share fell ~17-18% on 4 Feb 2026 on guidance for a 2026 sales decline."
+    },
+    "low52w": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 4420,
+     "period": "2026-10-23 (m)",
+     "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+     "asOf": "2026-10-23",
+     "note": "Provider figure 4.42bn (A+B)."
+    },
+    "marketCap": {
+     "value": 1205334,
+     "period": "price 2026-11-12 x 4,420m shares",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 ; stockanalysis",
+     "asOf": "2026-11-12",
+     "note": "Derived: 272.70 x 4,420m = ~DKK 1,205bn (stockanalysis DKK 1.15T on 2026-10-23 at DKK 260.15)."
+    },
+    "netDebt": {
+     "value": 95424,
+     "period": "FY2025 (31 Dec 2025)",
+     "source": "https://annualreport.novonordisk.com/2025/introducing-novo-nordisk/five-year-overview.html",
+     "asOf": "2025-12-31",
+     "note": "Annual report five-year table lists net debt as (95,424); sign is ambiguous in the extracted table. Stockanalysis EV 1.25T minus market cap 1.15T (2026-10-23) implies net debt ~DKK 100bn, and agent ND/EBITDA is +0.49, so treated as net debt (not net cash). Includes leases? Not verified. Q3 2026 net debt not retrieved."
+    },
+    "enterpriseValue": {
+     "value": 1250000,
+     "period": "2026-10-23",
+     "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+     "asOf": "2026-10-23",
+     "note": "Provider figure DKK 1.25T at DKK 260.15; at DKK 272.70 roughly DKK 1.30T (market cap + ~100bn net debt)."
+    },
+    "peTrailing": {
+     "value": 10.7,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Flattered: reported TTM earnings include a one-off US 340B provision reversal (~USD 4.2bn) that Novo excludes from adjusted guidance. FY2025 diluted EPS DKK 23.03 gives 11.8x at 272.70."
+    },
+    "peForward": {
+     "value": 12.19,
+     "period": "forward, price 260.15",
+     "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+     "asOf": "2026-10-23",
+     "note": "Provider figure at DKK 260.15 on 2026-10-23, roughly 12.8x at 272.70 if estimates unchanged. Consensus EPS not retrieved."
+    },
+    "evEbitTrailing": {
+     "value": 7.72,
+     "period": "TTM, price 260.15",
+     "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+     "asOf": "2026-10-23",
+     "note": "Provider figure; TTM EBIT includes the one-off 340B reversal, so understates the multiple on adjusted earnings. Provider EBIT TTM (Jun 2026) DKK 161.4bn differs from company-defined operating profit (FY2025: 127.7bn vs provider 140.6bn)."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 7.108,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure (stockanalysis 7.11 on 2026-10-23)."
+    },
+    "fcfTTM": {
+     "value": 75838,
+     "period": "TTM to Jun 2026 (DKK m)",
+     "source": "https://stockanalysis.com/quote/cph/NOVO.B/financials/",
+     "asOf": "2026-08-04",
+     "note": "Provider definition (operating cash flow less capex). Company-defined FCF FY2025 was DKK 28,295m (FY2024 -14,707m, includes Catalent acquisition); provider shows FY2025 58,962m. Large definitional conflict; TTM may include the 340B reversal."
+    },
+    "fcfYield": {
+     "value": 0.0629,
+     "period": "TTM provider FCF / market cap 2026-11-12",
+     "source": "derived",
+     "asOf": "2026-11-12",
+     "note": "Derived: 75,838 / ~1,205,000 = ~6.3% (provider shows 6.59% at 260.15). On company-defined FY2025 FCF 28,295 the yield is ~2.3%."
+    },
+    "dividendPerShare": {
+     "value": 11.7,
+     "period": "FY2025 (DKK)",
+     "source": "https://annualreport.novonordisk.com/2025/introducing-novo-nordisk/five-year-overview.html",
+     "asOf": "2026-02-04",
+     "note": "FY2024 DKK 11.40."
+    },
+    "dividendYield": {
+     "value": 0.0429,
+     "period": "FY2025 DPS / price 2026-11-12",
+     "source": "https://annualreport.novonordisk.com/2025/introducing-novo-nordisk/five-year-overview.html",
+     "asOf": "2026-11-12",
+     "note": "Derived: 11.70 / 272.70."
+    },
+    "payoutRatio": {
+     "value": 0.459,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure (stockanalysis 44.6%)."
+    },
+    "netDebtToEbitda": {
+     "value": 0.485,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure; lease treatment not stated."
+    },
+    "interestCoverage": {
+     "value": 1566.84,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+     "asOf": "2026-10-23",
+     "note": "Provider figure; not meaningful (net financial income)."
+    },
+    "roic": {
+     "value": 0.3922,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+     "asOf": "2026-10-23",
+     "note": "Provider figure."
+    },
+    "roe": {
+     "value": 0.5982,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/cph/NOVO.B/statistics/",
+     "asOf": "2026-10-23",
+     "note": "Provider figure."
+    },
+    "beta5y": {
+     "value": 0.368,
+     "period": "5y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure (stockanalysis 0.38)."
+    },
+    "sectorMetrics": {
+     "guidance2026": {
+      "basis": "Adjusted sales growth and adjusted operating profit growth, constant exchange rates (CER); adjusted excludes the US 340B provision reversal",
+      "original_2026-02-04": "-5% to -13% for both (shares fell ~17-18% on the day)",
+      "2026-05-06": "-4% to -12% for both (raised)",
+      "2026-08-04": "0% to -6% for both (raised, on higher GLP-1 expectations)",
+      "2026-11-04": "-2% to +2% for both (raised again; third raise in 2026 per press; Q3 report)",
+      "reportedNote": "Excluding adjustments the Aug midpoints implied +5% sales and +12% operating profit growth; the Nov reported-basis range not retrieved.",
+      "sources": [
+       "https://via.ritzau.dk/pressemeddelelse/15268956/novo-nordisk-as?lang=en",
+       "https://www.biospace.com/press-releases/novo-nordisk-raises-adjusted-sales-and-adjusted-operating-profit-outlook-for-2026",
+       "https://rallies.ai/news/novo-nordisk-guides-2026-sales-down-5-13-excluding-42-b-rebate-reversal",
+       "https://www.timeslive.co.za/news/world/2026-11-04-novo-nordisk-lifts-2026-outlook-as-wegovy-pill-surges/"
+      ],
+      "note": "Even the raised range implies adjusted sales and operating profit roughly flat in 2026 after +10% sales in 2025; the raises are from a deeply cut base."
+     },
+     "q3_2026": {
+      "adjustedSales_DKKm": 79195,
+      "adjustedSalesVsConsensus": "consensus 73.22bn (Reuters via Finimize/Time)",
+      "adjustedOperatingProfit_DKKm": 31720,
+      "adjustedOpProfitGrowthCER": 0.27,
+      "adjustedOpProfitConsensus_DKKm": 28390,
+      "reportedOperatingProfit_DKKm": 23011,
+      "reportedOperatingProfitGrowthCER": -0.09,
+      "impairments_DKKm": 8700,
+      "impairmentDetail": "DKK 4.6bn ziltivekimab, DKK 4.1bn manufacturing network right-sizing (non-cash)",
+      "wegovyPillSales_DKKm": 5394,
+      "wegovyPillQoQ": 0.53,
+      "usInjectableWegovyGrowthCER": -0.13,
+      "usTotalWegovyGrowth": 0.21,
+      "source": "https://via.ritzau.dk/pressemeddelelse/15268956/novo-nordisk-as?lang=en"
+     },
+     "nineMonths2026": {
+      "adjustedSales_DKKm": 227746,
+      "adjustedSalesGrowthCER": 0.02,
+      "adjustedOperatingProfit_DKKm": 97967,
+      "adjustedOpProfitGrowthCER": 0.08,
+      "reportedSales_DKKm": 254506,
+      "reportedOperatingProfit_DKKm": 109690,
+      "reportedOpProfitGrowthCER": 0.18,
+      "source": "https://via.ritzau.dk/pressemeddelelse/15268956/novo-nordisk-as?lang=en"
+     },
+     "q2_2026": {
+      "adjustedSales_DKKm": 78488,
+      "adjustedSalesGrowthCER": 0.07,
+      "adjustedOperatingProfit_DKKm": 33389,
+      "adjustedOpProfitGrowthCER": 0.11,
+      "impairments_DKKm": 6300,
+      "source": "https://www.sec.gov/Archives/edgar/data/0000353278/000117184326005184/f6k_080426.htm"
+     },
+     "pricingPressure": "US realised prices lower under the Most Favoured Nation agreement; IRA maximum fair price for Wegovy/Ozempic/Rybelsus effective 2027 (company said it would have been a negative low-single-digit impact on global sales growth if applied in 2025); reduced Medicaid obesity coverage; semaglutide patent expiry in key international markets; compounded semaglutide. Cited as reasons for the Feb 2026 guide. Q3 2026 US injectable Wegovy -13% CER.",
+     "competition": "Lilly: Foundayo (oral GLP-1) 'winning a growing share of new prescriptions'; Lilly raised its own outlook the week before Novo's Q3. Novo estimates ~80% of US new-to-brand pill prescriptions for the Wegovy pill (company claim, via Finimize). Zepbound/Mounjaro outsold Wegovy/Ozempic (Q3 2025).",
+     "estimateRevisions": "Guidance raised three times since Feb (May, Aug, Nov), Q3 adjusted sales and operating profit beat consensus (79.2bn vs 73.2bn; 31.7bn vs 28.4bn). Post-Q3 consensus EPS revisions not retrieved. Agent consensus: 24 analysts, hold; mean target DKK 299.9 vs price 272.7 (low 221, high 448).",
+     "rdPipeline": "Impairments in 2026: monlunabant (DKK 4.0bn, Q2), ziltivekimab (DKK 4.6bn, Q3)."
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 140800,
+      "ebit": 58644,
+      "ebitMargin": 0.4165,
+      "eps": 10.37,
+      "fcf": 29319,
+      "source": "Novo annual report 2025 five-year overview (DKK m; EPS = diluted EPS/ADR basis per table). Provider (stockanalysis) shows op. income 59,217 and FCF 48,665."
+     },
+     {
+      "period": "FY2022",
+      "revenue": 176954,
+      "ebit": 74809,
+      "ebitMargin": 0.4228,
+      "eps": 12.22,
+      "fcf": 57362,
+      "source": "Novo annual report 2025 five-year overview. Provider op. income 75,618, FCF 66,741."
+     },
+     {
+      "period": "FY2023",
+      "revenue": 232261,
+      "ebit": 102574,
+      "ebitMargin": 0.4416,
+      "eps": 18.62,
+      "fcf": 68326,
+      "source": "Novo annual report 2025 five-year overview. Provider op. income 104,698, FCF 83,102."
+     },
+     {
+      "period": "FY2024",
+      "revenue": 290403,
+      "ebit": 128339,
+      "ebitMargin": 0.4419,
+      "eps": 22.63,
+      "fcf": -14707,
+      "source": "Novo annual report 2025 five-year overview; FCF negative on Catalent acquisition. Provider op. income 138,901, FCF 73,804."
+     },
+     {
+      "period": "FY2025",
+      "revenue": 309064,
+      "ebit": 127658,
+      "ebitMargin": 0.413,
+      "eps": 23.03,
+      "fcf": 28295,
+      "source": "Novo annual report 2025 five-year overview; operating profit -0.5% YoY. Provider op. income 140,618, FCF 58,962. Company FCF is after acquisitions."
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "hold",
+     "analysts": 24,
+     "buy": 5,
+     "hold": 15,
+     "sell": 6,
+     "targetAvg": 299.91,
+     "targetHigh": 448,
+     "targetLow": 221,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable (consensus not retrieved); provider forward P/E 12.19 implies EPS ~DKK 21.3 at 260.15"
+    },
+    "recentEvents": [
+     "4 Nov 2026 Q3: adjusted sales DKK 79.2bn (consensus 73.2bn), adjusted operating profit DKK 31.7bn (+27% CER; consensus 28.4bn); reported operating profit DKK 23.0bn (-9% CER) after DKK 8.7bn impairments; 2026 outlook raised to -2% to +2% adjusted (third raise).",
+     "Wegovy pill Q3 sales DKK 5.39bn (+53% QoQ, vs consensus 4.62bn); ~3.6m US prescriptions in Q3; sold in 8 markets.",
+     "US injectable Wegovy sales -13% CER in Q3; combined US Wegovy +21% (pill included).",
+     "4 Aug 2026: outlook raised to 0% to -6%; 6 May 2026 raised to -4% to -12%; 4 Feb 2026 original -5% to -13% (shares -17/-18%).",
+     "Q3 2025 context: guidance cut, CEO change (Mike Doustdar), layoffs, shareholder board dispute.",
+     "9M 2026 adjusted sales +2% CER; adjusted operating profit +8% CER."
+    ],
+    "valueTrapFlags": [
+     "Low trailing P/E (10.7x) is flattered by the one-off 340B reversal; adjusted sales are flat to slightly down for 2026 even after three guidance raises.",
+     "Adjusted sales guidance -2% to +2% follows +10% in 2025; FY2025 operating profit fell 0.5% and EPS barely grew (22.63 to 23.03).",
+     "US pricing reset (MFN, 2027 IRA price), patent expiries and compounders structurally compress price/margin; US injectable Wegovy -13% in Q3.",
+     "Competition from Lilly Foundayo/tirzepatide gaining new prescriptions; the Wegovy pill (~6% of expected sales) must carry the recovery.",
+     "Q3 adjusted operating profit +27% benefited from an easy comparison base and a stronger beat than the guidance range implies; reported Q3 operating profit -9% CER; recurring impairments (DKK 6.3bn Q2, 8.7bn Q3).",
+     "Free cash flow weaker than earnings under company definition (FY2025 DKK 28.3bn vs operating profit 127.7bn, after Catalent); net debt ~DKK 95bn at FY2025 after prior net cash.",
+     "Positive: estimates/guidance moving up since February, consensus sits above price (mean 299.9), ROIC high; but consensus is hold (5 buy, 15 hold, 6 sell)."
+    ],
+    "dataGaps": [
+     "Q3 2026 free cash flow, net debt, diluted EPS and buyback not found (company full report PDF not accessed).",
+     "Consensus EPS/revenue estimates and post-Q3 revision direction not retrieved.",
+     "52-week high/low unavailable; historical multiples unavailable.",
+     "Reported (unadjusted) 2026 guidance range not retrieved; Nov guidance read from a Ritzau copy of the company announcement and press reports.",
+     "Net debt sign in annual report table ambiguous; EBIT and FCF differ materially between company and provider definitions."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "weakening",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis DKK 21.0 = provider forward EPS about 21.3 (derived), trimmed for US price resets in 2027. Trailing P/E 10.7 flattered by a one-off 340B reversal, not used.",
+    "metricBasis": "EPS adjusted, forward (provider-derived, trimmed)",
+    "basisValue": 21,
+    "forwardDividendYield": 0.043,
+    "qualityTier": "B",
+    "role": "Value Recovery",
+    "scores": {
+     "quality": 4,
+     "growth": 2,
+     "financialStrength": 5,
+     "risk": 2
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 197.4,
+      "epsCagr5y": -0.06,
+      "exitPe5y": 10,
+      "note": "Lilly takes share, US IRA/MFN pricing cuts margins. Justified multiple 10x on next-12m 19.74.",
+      "epsCagr10y": -0.01,
+      "exitPe10y": 10
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 302.82,
+      "epsCagr5y": 0.03,
+      "exitPe5y": 14,
+      "note": "Volume growth offsets price cuts; oral Wegovy holds share. Justified multiple 14x on next-12m 21.63.",
+      "epsCagr10y": 0.04,
+      "exitPe10y": 14
+     },
+     "bull": {
+      "prob": 0.2,
+      "fairValue": 408.24,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 17,
+      "note": "Obesity market expansion, pill success, new indications. Justified multiple 18x on next-12m 22.68.",
+      "epsCagr10y": 0.07,
+      "exitPe10y": 16
+     }
+    },
+    "whyItFits": "Diabetes/obesity leader with ROIC about 39%, low leverage (ND/EBITDA 0.5x), 4.3% yield; guidance raised three times in 2026 and Q3 adjusted profit beat by 12%.",
+    "growthDrivers": "Wegovy pill, global obesity volume growth, CagriSema pipeline, international markets.",
+    "saturation": "Deeply de-rated: P/E about 12-13 on adjusted earnings versus 30x+ in 2023; pessimism priced, but the earnings base is resetting.",
+    "principalRisk": "US price resets (MFN, IRA 2027) and Lilly's share gains shrink the earnings base faster than volumes grow."
+   }
+  },
+  {
+   "ticker": "ORK.OL",
+   "name": "Orkla ASA",
+   "exchange": "Oslo Bors",
+   "currency": "NOK",
+   "sector": "Consumer Defensive / Packaged foods and branded consumer goods",
+   "businessSummary": "Nordic branded consumer goods group (Orkla Foods, Snacks, Care, Health, Orkla India, Food Ingredients, House Care) plus a 42.7% stake in paint maker Jotun (associate). Hydro Power sold in 2025.",
+   "retrievedAt": "2026-11-13T09:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 104.9,
+     "period": "close, run 2026-11-12",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "NOK. After Q3 beat on 6 Nov 2026."
+    },
+    "high52w": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable; stockanalysis shows 52-week price change -10.18% as of 2026-10-16"
+    },
+    "low52w": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 961.73,
+     "period": "2026-10-16 (m)",
+     "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+     "asOf": "2026-10-16",
+     "note": "Provider figure; buybacks ongoing."
+    },
+    "marketCap": {
+     "value": 100885,
+     "period": "price 2026-11-12 x 961.73m",
+     "source": "https://stockanalysis.com/quote/osl/ORK/statistics/ ; stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Derived: ~NOK 100.9bn (stockanalysis NOK 90.79bn on 2026-10-16 at ~94.4)."
+    },
+    "netDebt": {
+     "value": 21220,
+     "period": "Q3 2026 (provider, NOK m)",
+     "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+     "asOf": "2026-10-16",
+     "note": "Provider: total debt 22.67bn less cash 1.45bn; lease treatment not stated. Company NIBD at FY2025: NOK 14,167m incl. leases / 11,879m excl. leases. Rise vs FY2025 not reconciled (buybacks, acquisition, special dividend)."
+    },
+    "enterpriseValue": {
+     "value": 122105,
+     "period": "derived price 2026-11-12",
+     "source": "derived",
+     "asOf": "2026-11-12",
+     "note": "Derived: market cap ~100.9bn + net debt 21.2bn = ~NOK 122.1bn (provider EV 115.52bn at lower price). Excludes value of Jotun stake adjustment."
+    },
+    "peTrailing": {
+     "value": 15.85,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure; stockanalysis showed 14.38 at ~94.4 on 2026-10-16 (TTM EPS 7.10). FY2025 adjusted diluted EPS 6.83 gives 15.4x at 104.90."
+    },
+    "peForward": {
+     "value": 14.28,
+     "period": "forward, price ~94.4",
+     "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+     "asOf": "2026-10-16",
+     "note": "Provider figure at 2026-10-16 price; would be ~15.9x at 104.90 if estimates unchanged."
+    },
+    "evEbitTrailing": {
+     "value": 12.16,
+     "period": "TTM, price ~94.4",
+     "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+     "asOf": "2026-10-16",
+     "note": "Provider figure; implied EBIT (~9.5bn) exceeds reported EBIT (TTM 7.3bn), so likely includes associates/Jotun. Company EBIT (adj.) FY2025 7,647m is EBIT (adj.), not EBITA. Derived on company numbers: EV 122.1bn / 7,647m = ~16.0x (FY2025 EBIT (adj.), current price)."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 13.697,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure; stockanalysis showed 9.62 on 2026-10-16. Large conflict between providers, not reconciled."
+    },
+    "fcfTTM": {
+     "value": 6658,
+     "period": "TTM to Sep 2026 (NOK m)",
+     "source": "https://stockanalysis.com/quote/osl/ORK/financials/",
+     "asOf": "2026-11-13",
+     "note": "Provider definition. Company cash flow before capital allocation FY2025 6,945m (FY2024 6,970m); provider FY2025 FCF 6,720m."
+    },
+    "fcfYield": {
+     "value": 0.066,
+     "period": "TTM FCF / market cap 2026-11-12",
+     "source": "derived",
+     "asOf": "2026-11-12",
+     "note": "Derived: 6,658 / ~100,880 = ~6.6% (provider showed 7.29% at the lower Oct price). Dividend NOK 6.00 x 962m = ~5.8bn, covered ~1.15x."
+    },
+    "dividendPerShare": {
+     "value": 6,
+     "period": "FY2025 (NOK): 4.00 ordinary + 2.00 additional",
+     "source": "https://storage.mfn.se/ff70d0ac-55a8-424c-b15b-61c4759f69e3/q4-2025-external-report-final.pdf",
+     "asOf": "2026-02-12",
+     "note": "Intention to propose; May 2025 payment was NOK 10.00 incl. NOK 6.00 additional."
+    },
+    "dividendYield": {
+     "value": 0.0572,
+     "period": "FY2025 DPS / price 2026-11-12",
+     "source": "https://storage.mfn.se/ff70d0ac-55a8-424c-b15b-61c4759f69e3/q4-2025-external-report-final.pdf",
+     "asOf": "2026-11-12",
+     "note": "Derived: 6.00 / 104.90 (provider 6.36% at lower price)."
+    },
+    "payoutRatio": {
+     "value": 0.6144,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Agent figure; stockanalysis 86.4% (2026-10-16). Conflict: bases differ. On FY2025 adjusted EPS 6.83 dividend 6.00 = 88%."
+    },
+    "netDebtToEbitda": {
+     "value": 1.4,
+     "period": "FY2025 (rolling 12m, incl. leases)",
+     "source": "https://storage.mfn.se/ff70d0ac-55a8-424c-b15b-61c4759f69e3/q4-2025-external-report-final.pdf",
+     "asOf": "2025-12-31",
+     "note": "Company: NIBD 14,167m incl. leases. Agent shows 2.45 (2026-11-12); provider-implied ~1.8 (21.2bn / ~12.0bn EBITDA). Conflict unresolved; latest company figure is FY2025. Q3 2026 company figure not retrieved."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "Provider value 9.22 is identical to its ROIC value and is treated as unreliable."
+    },
+    "roic": {
+     "value": 0.0922,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+     "asOf": "2026-10-16",
+     "note": "Provider figure."
+    },
+    "roe": {
+     "value": 0.1506,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/osl/ORK/statistics/",
+     "asOf": "2026-10-16",
+     "note": "Provider figure."
+    },
+    "beta5y": {
+     "value": 0.198,
+     "period": "5y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Provider figure (0.20)."
+    },
+    "sectorMetrics": {
+     "operatingProfitDefinition": "Company headline measure is EBIT (adj.), not EBITA. EPS: company reports diluted EPS and adjusted diluted EPS.",
+     "q3_2026": {
+      "organicGrowth": 0.031,
+      "volumeMix": 0.027,
+      "operatingRevenues_NOKm": 17541,
+      "revenueGrowthReported": -0.023,
+      "ebitAdj_NOKm": 2078,
+      "ebitAdjGrowth": 0.019,
+      "ebitAdjMargin": 0.118,
+      "ebitAdjVsConsensus_NOKm": 1951,
+      "underlyingEbitAdjGrowth": 0.081,
+      "reportedEbit_NOKm": 1588,
+      "reportedEbitGrowth": -0.031,
+      "netProfit_NOKm": 1799,
+      "adjustedEps": 1.94,
+      "adjustedEpsGrowth": 0.049,
+      "jotunProfit_NOKm": 563,
+      "jotunProfitGrowth": -0.066,
+      "source": "https://www.inderes.se/en/releases/orkla-reports-results-for-the-third-quarter ; https://www.placera.se/telegram/orkla-orklas-justerade-resultat-hogre-an-vantat-uppdatering-20261106"
+     },
+     "fy2025": {
+      "operatingRevenues_NOKm": 71547,
+      "ebitAdj_NOKm": 7647,
+      "ebitAdjGrowth": 0.071,
+      "reportedEbit_NOKm": 7086,
+      "adjustedDilutedEps": 6.83,
+      "dilutedEpsIncludingDiscontinued": 11.48,
+      "dilutedEpsContinuing": 6.38,
+      "discontinuedHydroPowerProfit_NOKm": 5120,
+      "niBD_NOKm_inclLeases": 14167,
+      "niBD_NOKm_exclLeases": 11879,
+      "niBDtoEbitda": 1.4,
+      "equityRatio": 0.588,
+      "associatesProfit_NOKm": 2181,
+      "impairments_NOKm": 484,
+      "source": "https://storage.mfn.se/ff70d0ac-55a8-424c-b15b-61c4759f69e3/q4-2025-external-report-final.pdf"
+     },
+     "portfolioChanges": [
+      "Hydro Power sold 2025 (~NOK 5.5bn proceeds), reported as discontinued; FY2025 EPS 11.48 includes a NOK 5,120m discontinued profit; 2024 restated.",
+      "Pierre Robert Group sold Q1 2025 (accounting loss NOK 47m); Lilleborg divested; 2024 revenue not comparable.",
+      "Orkla India IPO Nov 2025: 15% sold (net NOK 1.5bn), Orkla owns 75%.",
+      "Two Icelandic Orkla Food Ingredients businesses sold (NOK 432m).",
+      "Acquisitions FY2025 NOK 592m (Eurohansa Torun, Le Vesuve, Decorgel); Sept 2026 Orkla Snacks completed The European Candy Group (for BUBS).",
+      "Capital Markets Day 1 Dec 2026 will set 2030 targets."
+     ],
+     "buybacks": "Up to NOK 4bn programme started Sep 2026 running to 31 Dec 2027 at the latest (Q3 2026 release); the earlier NOK 4bn programme (from 17 Nov 2025, to 31 Dec 2026) had NOK 841m executed in 2025 (NOK 1.2bn total buybacks in 2025).",
+     "forexNote": "Stronger NOK reduced reported Q3 revenue and EBIT; underlying growth strips FX and portfolio effects."
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 50441,
+      "ebit": 6099,
+      "ebitMargin": 0.1209,
+      "eps": 4.82,
+      "fcf": 3666,
+      "source": "stockanalysis.com (NOK m; reported operating income, EPS, FCF). Not restated for later divestments/Hydro Power."
+     },
+     {
+      "period": "FY2022",
+      "revenue": 58391,
+      "ebit": 7365,
+      "ebitMargin": 0.1261,
+      "eps": 5.03,
+      "fcf": 2407,
+      "source": "stockanalysis.com. Not restated."
+     },
+     {
+      "period": "FY2023",
+      "revenue": 67797,
+      "ebit": 6754,
+      "ebitMargin": 0.0996,
+      "eps": 5.21,
+      "fcf": 4328,
+      "source": "stockanalysis.com. Not restated."
+     },
+     {
+      "period": "FY2024",
+      "revenue": 69254,
+      "ebit": 6558,
+      "ebitMargin": 0.0947,
+      "eps": 6.06,
+      "fcf": 6970,
+      "source": "Orkla Q4 2025 report: revenue, reported EBIT (restated for Hydro Power as discontinued), adjusted diluted EPS 6.06 (reported diluted 6.06 incl. disc. ops; continuing 5.70), cash flow before capital allocation 6,970. EBIT (adj.) 7,142. Provider shows op. income 6,979, FCF 7,616."
+     },
+     {
+      "period": "FY2025",
+      "revenue": 71547,
+      "ebit": 7086,
+      "ebitMargin": 0.099,
+      "eps": 6.83,
+      "fcf": 6945,
+      "source": "Orkla Q4 2025 report: reported EBIT 7,086 (EBIT adj. 7,647); EPS = adjusted diluted 6.83 (reported diluted 11.48 incl. Hydro Power gain; continuing 6.38); cash flow before capital allocation 6,945. Provider op. income 7,463, FCF 6,720."
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "hold",
+     "analysts": 8,
+     "buy": 1,
+     "hold": 6,
+     "sell": 1,
+     "targetAvg": 110.25,
+     "targetHigh": 140,
+     "targetLow": 89,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; provider forward P/E 14.28 on 2026-10-16"
+    },
+    "recentEvents": [
+     "6 Nov 2026 Q3: organic growth 3.1% (volume/mix 2.7%), EBIT (adj.) NOK 2,078m (+1.9%, ~6.5% above consensus 1,951m), margin 11.8%, adjusted EPS NOK 1.94 (+4.9%); underlying EBIT (adj.) +8.1%.",
+     "Reported Q3 operating revenues NOK 17.5bn, -2.3% YoY (stronger NOK, portfolio changes) despite +3.1% organic.",
+     "Jotun Q3 profit NOK 563m, -6.6% (sales +13%, operating profit +1.3% adjusted for FX).",
+     "New share buyback up to NOK 4bn from Sep 2026 to 31 Dec 2027.",
+     "Orkla Snacks completed The European Candy Group acquisition (Sep 2026).",
+     "Capital Markets Day on 1 Dec 2026: new targets to 2030."
+    ],
+    "valueTrapFlags": [
+     "Reported revenue declined 2.3% in Q3 and reported EBIT -3.1% while adjusted metrics rose; gap from FX, comparability and other income/expense items.",
+     "Organic growth only 3.1% (volume/mix 2.7%); EBIT (adj.) +1.9% reported, with the beat driven by margin (11.8% vs 11.4%).",
+     "Jotun earnings (a large share of profit before tax: NOK 2,181m associate profit in FY2025) fell 6.6% in Q3.",
+     "Leverage drifting up: company NIBD/EBITDA 1.4x at FY2025, but provider net debt NOK 21.2bn at Q3 2026 vs NOK 14.2bn at FY2025 and agent ND/EBITDA 2.45; unreconciled.",
+     "Dividend NOK 6.00 is ~88% of FY2025 adjusted EPS (payout 61% to 86% depending on source) and the FY2025 EPS includes a one-off Hydro Power gain.",
+     "After the 11% run since mid-October the stock trades at ~15.9x trailing P/E near consensus mean target 110.25 (analyst rating hold)."
+    ],
+    "dataGaps": [
+     "Q3 2026 net debt, NIBD/EBITDA, cash flow and YTD figures (full Q3 report PDF not accessed); no explicit guidance.",
+     "52-week range, historical multiples, forward consensus EPS not retrieved.",
+     "FY2021-2023 figures not restated for Hydro Power/Pierre Robert/Lilleborg; EBIT definitions differ between company (EBIT adj.) and provider.",
+     "Provider vs agent conflicts: EV/EBITDA 13.7 vs 9.6; payout 61% vs 86%; ND/EBITDA 2.45 vs 1.4 vs ~1.8."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E adjusted EPS NOK 7.2 (FY2025 continuing 6.83, Q3 EBIT adj. beat; lead estimate). Portfolio changes reduce history comparability. Capital Markets Day 1 Dec 2026.",
+    "metricBasis": "EPS adjusted, 2026E (lead estimate)",
+    "basisValue": 7.2,
+    "forwardDividendYield": 0.057,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+     "quality": 3,
+     "growth": 3,
+     "financialStrength": 4,
+     "risk": 5
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 95.47,
+      "epsCagr5y": 0.02,
+      "exitPe5y": 13,
+      "note": "Branded volumes stall, Jotun weakens. Justified multiple 13x on next-12m 7.34.",
+      "epsCagr10y": 0.02,
+      "exitPe10y": 12
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 122.11,
+      "epsCagr5y": 0.06,
+      "exitPe5y": 15,
+      "note": "Organic 3%, margin gains from portfolio focus, buybacks. Justified multiple 16x on next-12m 7.63.",
+      "epsCagr10y": 0.05,
+      "exitPe10y": 14
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 139.97,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 17,
+      "note": "New 2030 targets credible, Jotun and India grow. Justified multiple 18x on next-12m 7.78.",
+      "epsCagr10y": 0.07,
+      "exitPe10y": 16
+     }
+    },
+    "whyItFits": "Nordic branded consumer goods: beta 0.2, 5.7% dividend, about 6.6% FCF yield, NOK 4bn buyback, ND/EBITDA 1.4x.",
+    "growthDrivers": "Portfolio-company model, price/mix, Jotun stake, Orkla India listing value, buybacks.",
+    "saturation": "P/E 16 trailing: reasonably valued for a defensive staples group; consensus target slightly above price (analyst opinion).",
+    "principalRisk": "Low ROIC (about 9%, near cost of capital) and reported revenue declines from FX and divestments."
+   }
+  },
+  {
+   "ticker": "SWEC-B.ST",
+   "name": "Sweco AB (B)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Industrials / engineering and architecture consulting",
+   "businessSummary": "Europe's largest engineering and architecture consultancy, about 21,700 employees, mainly Sweden, Norway, Finland, Denmark, Germany and the UK; growth via organic expansion and acquisitions.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 138.2,
+     "period": "close",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-23",
+     "note": "Latest found; Q3 report came 2026-10-29 so post-report reaction not captured. Close 136.80 on 2026-10-22. Agent data lacks SWEC-B."
+    },
+    "high52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "low52w": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 361.24,
+     "period": "current (millions)",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-23",
+     "note": ""
+    },
+    "marketCap": {
+     "value": 49930,
+     "period": "2026-10-23",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-23",
+     "note": ""
+    },
+    "netDebt": {
+     "value": 3160,
+     "period": "30 Sep 2026 (company)",
+     "source": "Sweco Q3 2026 report via securities.io (2026-10-29)",
+     "asOf": "2026-10-29",
+     "note": "Company net debt/EBITDA 0.8x. Whether it includes IFRS 16 leases is unverified. Stockanalysis net debt 6,490 (likely incl. leases; its EV 56,430)."
+    },
+    "enterpriseValue": {
+     "value": 53090,
+     "period": "derived",
+     "source": "derived: 49,930 + 3,160",
+     "asOf": "2026-10-23",
+     "note": "With stockanalysis net debt: 56,430."
+    },
+    "peTrailing": {
+     "value": 21,
+     "period": "TTM Sep 2026",
+     "source": "derived: 138.20 / EPS 6.58",
+     "asOf": "2026-10-23",
+     "note": "EPS TTM = FY2025 6.18 + 9M26 4.74 - 9M25 4.34 (reported). Stockanalysis 21.94."
+    },
+    "peForward": {
+     "value": 19.1,
+     "period": "FY2026E",
+     "source": "derived: 138.20 / consensus EPS 7.22",
+     "asOf": "2026-10-23",
+     "note": "Consensus EPS is non-GAAP (FY2025 base 6.65 vs reported 6.18), so not like-for-like. FY2027E 8.14 -> 17.0x. Stockanalysis fwd PE 17.97."
+    },
+    "evEbitTrailing": {
+     "value": 15.7,
+     "period": "TTM Sep 2026",
+     "source": "derived: EV 53,090 / EBIT 3,382",
+     "asOf": "2026-10-23",
+     "note": "EBIT TTM = FY2025 3,203 + 9M26 2,433 - 9M25 2,254. EBITA basis: 53,090 / 3,499 = 15.2 (EV 56,430: 16.1)."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": null,
+     "period": "TTM",
+     "source": "n/a",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "fcfTTM": {
+     "value": 2337,
+     "period": "TTM Sep 2026 after lease payments",
+     "source": "derived: OCF 3,779 - capex 431 - leases 1,011 (stockanalysis.com)",
+     "asOf": "2026-10-29",
+     "note": "Pre-lease FCF 3,348. FY2025 after leases 2,739 (OCF 4,011)."
+    },
+    "fcfYield": {
+     "value": 0.0468,
+     "period": "TTM Sep 2026 after leases",
+     "source": "derived: 2,337 / 49,930",
+     "asOf": "2026-10-23",
+     "note": "Pre-lease yield 6.7%. 9M26 operating cash flow 1,121 vs 1,353 (working capital)."
+    },
+    "dividendPerShare": {
+     "value": 3.7,
+     "period": "FY2025",
+     "source": "Sweco year-end report 2025",
+     "asOf": "2026-02",
+     "note": "3.30 prior year; cap 1,344 total."
+    },
+    "dividendYield": {
+     "value": 0.0268,
+     "period": "FY2025",
+     "source": "derived: 3.70/138.20",
+     "asOf": "2026-10-23",
+     "note": ""
+    },
+    "payoutRatio": {
+     "value": 0.6,
+     "period": "FY2025",
+     "source": "derived: 3.70 / EPS 6.18",
+     "asOf": "2026-10-23",
+     "note": "Stockanalysis 58.6%."
+    },
+    "netDebtToEbitda": {
+     "value": 0.8,
+     "period": "30 Sep 2026",
+     "source": "Sweco Q3 2026 report via securities.io (2026-10-29)",
+     "asOf": "2026-10-29",
+     "note": "0.9x a year earlier; 0.4x at YE2025 (seasonal). IFRS 16 treatment unverified."
+    },
+    "interestCoverage": {
+     "value": 15.17,
+     "period": "latest",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-23",
+     "note": ""
+    },
+    "roic": {
+     "value": 0.172,
+     "period": "FY2025 (ROCE, as reported)",
+     "source": "Sweco year-end report 2025",
+     "asOf": "2026-02",
+     "note": "Company reports ROCE not ROIC; 17.1% in 2024. Stockanalysis ROIC 14.07%. Q3 2026 ROCE not read."
+    },
+    "roe": {
+     "value": 0.187,
+     "period": "rolling 12m to Sep 2026",
+     "source": "Sweco Q3 2026 report via securities.io (2026-10-29)",
+     "asOf": "2026-10-29",
+     "note": "18.3% FY2025."
+    },
+    "beta5y": {
+     "value": 0.87,
+     "period": "5y",
+     "source": "stockanalysis.com statistics",
+     "asOf": "2026-10-23",
+     "note": ""
+    },
+    "sectorMetrics": {
+     "organicGrowth": {
+      "Q3_2026": 0.02,
+      "9M_2026": 0.03,
+      "FY2025": 0.03,
+      "FY2025_calendar_adj": 0.04,
+      "FY2024": 0.05,
+      "source": "Sweco Q3 2026 and year-end 2025 reports",
+      "note": "Q3 2026 total +7% (organic 2, acquired 3, FX 1)."
+     },
+     "ebitaMargin": {
+      "Q3_2026": 0.103,
+      "9M_2026": 0.103,
+      "TTM_Sep2026": 0.106,
+      "FY2025": 0.105,
+      "FY2024": 0.1,
+      "note": "Operating profit metric is EBITA (before acquisition-related amortisation); EBIT margin Q3 2026 9.9%. Q3 EBITA 786 (+10% calendar adjusted), billing ratio 75.1% (74.0%)."
+     },
+     "restructuringCosts9M2026": 62
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 21803,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 4.17,
+      "fcf": 1970,
+      "ebita": null,
+      "ebitaMargin": null,
+      "source": "stockanalysis.com (EBIT in aggregator does not reconcile with company reports; left null). FCF = OCF - capex, pre-lease"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 24296,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 4.6,
+      "fcf": 2241,
+      "ebita": null,
+      "ebitaMargin": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 28523,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 4.64,
+      "fcf": 2168,
+      "ebita": null,
+      "ebitaMargin": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 30676,
+      "ebit": 3015,
+      "ebitMargin": 0.098,
+      "eps": 5.76,
+      "fcf": 3699,
+      "ebita": 3076,
+      "ebitaMargin": 0.1,
+      "organicGrowth": 0.05,
+      "roce": 0.171,
+      "source": "Sweco year-end report 2025; stockanalysis FCF (lease payments 921)"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 31586,
+      "ebit": 3203,
+      "ebitMargin": 0.101,
+      "eps": 6.18,
+      "fcf": 3617,
+      "ebita": 3332,
+      "ebitaMargin": 0.105,
+      "organicGrowth": 0.03,
+      "roce": 0.172,
+      "source": "Sweco year-end report 2025; FCF after leases 2,739"
+     },
+     {
+      "period": "TTM Sep 2026",
+      "revenue": 33055,
+      "ebit": 3382,
+      "ebitMargin": 0.102,
+      "eps": 6.58,
+      "fcf": 3348,
+      "ebita": 3499,
+      "ebitaMargin": 0.106,
+      "source": "Sweco Q3 2026 (revenue, EBITA); EBIT/EPS derived; FCF pre-lease, after leases 2,337"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "not found"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 6,
+     "buy": 5,
+     "hold": 1,
+     "sell": 0,
+     "targetAvg": 170.5,
+     "targetHigh": 200,
+     "targetLow": 133,
+     "source": "stockanalysis.com/forecast (rating counts Aug 2026: 4 strong buy, 1 buy, 1 hold; targets as of 2026-10-02, before Q3 report)",
+     "asOf": "2026-10-02"
+    },
+    "forwardEstimates": {
+     "epsNextFY": 7.22,
+     "epsFY2": 8.14,
+     "revenueGrowthNextFY": 0.0759,
+     "source": "stockanalysis.com/forecast 2026-10-02 (non-GAAP EPS; revenue 2026E 33.98bn, 2027E 36.10bn +6.2%); pre-Q3"
+    },
+    "recentEvents": [
+     "Q3 2026 (29 Oct): sales 7,606 (+7%, organic +2%), EBITA 786, margin 10.3% (9.8%), EPS 1.44 (1.18); 9M OCF 1,121 vs 1,353.",
+     "CEO Asa Bergman resignation announced 2 Oct 2026; stays until successor found.",
+     "Restructuring costs 9M 62 (32); integration costs 10 in Q3 (33).",
+     "Price down 11.5% over 52 weeks per stockanalysis."
+    ],
+    "valueTrapFlags": [
+     "Organic growth decelerating: 5% (2024), 3% (2025), 2% in Q3 2026; growth increasingly acquired.",
+     "CEO departure with no successor named.",
+     "Rising restructuring costs (62 vs 32 for 9M).",
+     "Operating cash flow down y/y in 9M (working capital); FCF after leases about 2.3bn.",
+     "Margin gains modest (10.3% vs 10.2% 9M) and calendar-aided; EPS consensus basis non-GAAP."
+    ],
+    "dataGaps": [
+     "52-week high/low",
+     "EBIT/EBITA FY2021-2023 (not reconciled)",
+     "Post-Q3 price and consensus/estimate changes",
+     "Historical P/E range",
+     "EV/EBITDA TTM (EBITDA not read)",
+     "Net debt lease treatment",
+     "Source for Q3 report is secondary (securities.io); primary PDF not read"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E EPS 6.9 (TTM 6.58; 9M EPS growth; lead estimate). Price is the 2026-10-23 close (stale). Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS reported, 2026E (lead estimate)",
+    "basisValue": 6.9,
+    "forwardDividendYield": 0.027,
+    "qualityTier": "B",
+    "role": "Value Recovery",
+    "scores": {
+     "quality": 4,
+     "growth": 3,
+     "financialStrength": 4,
+     "risk": 4
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 120.82,
+      "epsCagr5y": 0.03,
+      "exitPe5y": 17,
+      "note": "Organic growth fades to 0-2%, leadership transition disrupts. Justified multiple 17x on next-12m 7.11.",
+      "epsCagr10y": 0.03,
+      "exitPe10y": 16
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 155.04,
+      "epsCagr5y": 0.07,
+      "exitPe5y": 20,
+      "note": "Organic 3-4%, EBITA margin 10-11%, bolt-ons. Justified multiple 21x on next-12m 7.38.",
+      "epsCagr10y": 0.065,
+      "exitPe10y": 19
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 180.5,
+      "epsCagr5y": 0.09,
+      "exitPe5y": 22,
+      "note": "Infrastructure and energy-transition demand lift growth. Justified multiple 24x on next-12m 7.52.",
+      "epsCagr10y": 0.08,
+      "exitPe10y": 21
+     }
+    },
+    "whyItFits": "Northern Europe's largest engineering consultancy: asset-light, net debt/EBITDA 0.8x, ROCE 17%, FCF yield 4.7% after leases, beta 0.87; de-rated from above 20x EV/EBITA.",
+    "growthDrivers": "Infrastructure, energy transition and defence-related building programmes; margin improvement (Q3 EBITA 10.3% vs 9.8%).",
+    "saturation": "P/E 21 is below the premium it held through 2024 (Handelsbanken upgrade cites forward EV/EBITA falling from above 20x to about 14x); moderately valued.",
+    "principalRisk": "Slowing organic growth (5% to 3% to 2%) plus CEO departure (announced 2 Oct 2026)."
+   }
+  }
+ ],
+ "conclusion": {
+  "asOf": "2026-11-13",
+  "picks": [
+   {
+    "category": "Top three overall",
+    "ticker": "ORK.OL",
+    "why": "Ranks first: 13% below scenario-weighted fair value, beta 0.2, 5.7% dividend plus NOK 4bn buyback. Not yet at its NOK 84 entry; accumulate on weakness.",
+    "risk": "ROIC about 9%, close to cost of capital; 1 Dec Capital Markets Day can reset expectations."
+   },
+   {
+    "category": "Top three overall",
+    "ticker": "INVE-B.ST",
+    "why": "Highest-quality compounder in the set (LTV 1.8%, NAV CAGR about 9%), but at a 6% premium to NAV it is a buy only near SEK 335.",
+    "risk": "Premium to NAV can revert to the historical discount."
+   },
+   {
+    "category": "Top three overall",
+    "ticker": "SWEC-B.ST",
+    "why": "De-rated, asset-light consultancy 10% below fair value with 8.9%/yr expected return; entry SEK 107 under a strict 30% margin of safety.",
+    "risk": "Slowing organic growth and CEO transition."
+   },
+   {
+    "category": "Best defensive investment",
+    "ticker": "ORK.OL",
+    "why": "Lowest beta and most stable demand with the highest sustainable yield in the set.",
+    "risk": "Low growth; reported revenue hit by FX and divestments."
+   },
+   {
+    "category": "Best risk-adjusted growth",
+    "ticker": "ASSA-B.ST",
+    "why": "About 7% EPS growth with rising margins and beta 0.84; only 3% above fair value. Entry SEK 304.",
+    "risk": "Construction downturn; leverage 2.1-2.4x from acquisitions."
+   },
+   {
+    "category": "Most attractive undervalued company",
+    "ticker": "SWEC-B.ST",
+    "why": "Largest discount among names without a red value-trap check (Orkla is similar; Novo is cheaper on paper but fails the trap checklist).",
+    "risk": "Price used is the 23 Oct close; verify before acting."
+   },
+   {
+    "category": "Best for 2-5 years",
+    "ticker": "SWEC-B.ST",
+    "why": "Re-rating potential as margins rise, plus a 2.7% dividend.",
+    "risk": "Organic growth must stabilise near 3%."
+   },
+   {
+    "category": "Best for 5-10 years",
+    "ticker": "INVE-B.ST",
+    "why": "Long NAV compounding record across diversified Nordic franchises with almost no debt; best bought on a market setback.",
+    "risk": "Equity-market dependence."
+   }
+  ],
+  "watchNotBuy": [
+   {
+    "ticker": "ATCO-A.ST",
+    "why": "Best business economics in the set, but 17% above fair value at 35x trailing earnings; entry about SEK 133."
+   },
+   {
+    "ticker": "ADDT-B.ST",
+    "why": "15% above fair value; priced for double-digit growth with 1-2% organic; entry about SEK 233."
+   },
+   {
+    "ticker": "LIFCO-B.ST",
+    "why": "Near fair value but estimates are being cut for the 2027 customer loss; entry about SEK 221."
+   },
+   {
+    "ticker": "NOVO-B.CO",
+    "why": "7% below fair value but fails three value-trap checks (FCF, competition, forward earnings); entry about DKK 205 for a 30% margin."
+   },
+   {
+    "ticker": "EKTA-B.ST",
+    "why": "Excluded as a value trap for now: Q1 below guidance, weakening orders; revisit after the late-Nov Q2 report."
+   }
+  ]
+ }
+}

@@ -9,3 +9,4 @@ cd "$(dirname "$0")/.."
 
 npx vitest run test/garp --reporter=dot
 npx --yes tsx scripts/garp/report.ts
+echo "To show this run in the dashboard GARP Checker tab: commit, then run bash scripts/deploy.sh"

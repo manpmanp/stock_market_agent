@@ -6,7 +6,8 @@ Defensive GARP research (Masoud's master prompt, `master-prompt.md`) as an inter
 - Reads the agent's data (the deployed `/decisions` output: price, multiples, beta, analyst consensus) as one input source.
 - Writes only its own paths: `src/garp/`, `scripts/garp*`, `config/garp/`, `test/garp/`, `docs/garp/`, `reports/`.
 - Never edits `src/scoring/*`, `src/decision/*`, `src/index.ts`, `src/decisionLab.ts`, `src/dashboard.ts`, migrations or D1 tables. The agent never reads GARP files, so neither can change the other's results.
-- Not routed yet. Later integration is additive: a "GARP Checker" sidebar bookmark in `/dashboard` (still the only page address) plus a read-only JSON endpoint serving `config/garp/runs/<latest>.json`.
+- Dashboard access: a "GARP Checker" sidebar flyout in `/dashboard` (still the only page address) loads `GET /garp.json` on first open and shows the report in a sandboxed iframe, so its styles never touch the dashboard. `/garp.json` (src/garp/serve.ts) reads only the bundled `config/garp/latest.json`; no D1, no network.
+- The only agent files touched are additive hooks: one import + route in `src/index.ts`, and the tab, flyout, CSS and open/close wiring in `src/decisionLab.ts`.
 
 ## Files
 | Path | Written by | Content |
@@ -17,6 +18,7 @@ Defensive GARP research (Masoud's master prompt, `master-prompt.md`) as an inter
 | `config/garp/checks/<date>.md` | Fact-check agent | Discrepancies |
 | `config/garp/runs/<date>.json` | Engine | Computed rows |
 | `reports/garp-<date>.html` | Engine | Report page |
+| `config/garp/latest.json` | Engine | Bundle served by the Worker at `/garp.json` |
 | `src/garp/valuation.ts` | Code | Margin of safety, weighted fair value, return, entry zones, value-trap checklist, composite score |
 | `src/garp/render.ts` | Code | Report HTML |
 
@@ -25,7 +27,7 @@ From `stock_agent/`:
 ```
 bash scripts/garp-report.sh
 ```
-Runs the GARP tests, then computes and renders. Local only; no credentials, no D1, no network.
+Runs the GARP tests, then computes and renders, and writes `config/garp/latest.json`. Local only; no credentials, no D1, no network. To put a new run on the live dashboard, commit and deploy with `bash scripts/deploy.sh` (the Worker bundles `latest.json`).
 
 ## Skills
 `garp-research` (full run), `garp-verify-stock` (verifier instructions, mirrored in `verify-stock.md`), `garp-refresh` (cheap update).

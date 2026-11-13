@@ -376,6 +376,10 @@ export function renderDecisionLab(): string {
   .demo-flyout.open { opacity: 1; pointer-events: auto; }
   .reference-flyout { position: fixed; top: 20px; left: 238px; z-index: 39; width: 760px; max-width: calc(100vw - 260px); max-height: calc(100vh - 40px); overflow-y: auto; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px 26px 26px; box-shadow: 0 10px 30px rgba(11,11,11,0.18); opacity: 0; pointer-events: none; transform: translateX(-16px); transition: opacity 0.2s ease, transform 0.2s ease; }
   .reference-flyout.open { opacity: 1; pointer-events: auto; transform: translateX(0); }
+  #garp-flyout { width: 1200px; padding: 12px; }
+  #garp-flyout .garp-head { display: flex; align-items: baseline; gap: 12px; margin: 0 6px 8px; }
+  #garp-flyout .garp-head h2 { margin: 0; }
+  #garp-frame { width: 100%; height: calc(100vh - 110px); border: 0; border-radius: 8px; background: var(--surface-1); }
   .ref-tab[aria-expanded="true"] { color: var(--text-primary); font-weight: 700; border-left-width: 8px; background-color: color-mix(in srgb, var(--tab-accent) 16%, var(--surface-1)); }
   .demo-card { background: var(--page); border: 1px solid var(--border); border-radius: 10px; padding: 10px; width: 210px; flex: 0 0 210px; transform: translateX(-36px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; }
   .demo-flyout.open .demo-card { transform: translateX(0); opacity: 1; }
@@ -397,6 +401,7 @@ export function renderDecisionLab(): string {
     .demo-flyout.open { display: flex; }
     .reference-flyout { position: static; width: 100%; max-width: 100%; transform: none; opacity: 1; pointer-events: auto; max-height: none; margin: 0 0 18px; display: none; }
     .reference-flyout.open { display: block; }
+    #garp-frame { height: 80vh; }
   }
   .method-body ul { margin: 0 0 8px; padding-left: 18px; }
   .method-body li { margin-bottom: 4px; }
@@ -485,6 +490,7 @@ export function renderDecisionLab(): string {
     <button class="ref-tab weight-tab" id="weight-tab" type="button" aria-expanded="false" aria-controls="weight-flyout" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
     <button class="ref-tab admin-tab" id="admin-tab" type="button" aria-expanded="false" aria-controls="admin-flyout" style="--tab-accent:var(--text-primary)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.8 1.3 2.6 9.1h3.4L5.2 14.7l6.2-7.8H8z" fill="currentColor" stroke="none"></path></svg><span>Run &amp; Update</span></button>
     <button class="ref-tab advisor-tab" id="advisor-tab" type="button" aria-expanded="false" aria-controls="advisor-flyout" style="--tab-accent:var(--seq-400)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5 9.6 5.9 14 7.5 9.6 9.1 8 13.5 6.4 9.1 2 7.5 6.4 5.9z"></path><circle cx="12.5" cy="2.8" r="1" fill="currentColor" stroke="none"></circle></svg><span>Market Advisor</span></button>
+    <button class="ref-tab garp-tab" id="garp-tab" type="button" aria-expanded="false" aria-controls="garp-flyout" style="--tab-accent:var(--status-good)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.6 13.6 4v4.1c0 3.1-2.3 5.6-5.6 6.3-3.3-.7-5.6-3.2-5.6-6.3V4z"></path><path d="M5.4 8.2l1.8 1.8 3.4-3.6"></path></svg><span>GARP Checker</span></button>
   </div>
 
   <div class="demo-flyout" id="demo-flyout">
@@ -556,6 +562,11 @@ export function renderDecisionLab(): string {
       <div class="admin-item-status" id="status-btn-market-analysis"></div>
       <div class="admin-item-result" id="result-btn-market-analysis" hidden></div>
     </div>
+  </section>
+
+  <section class="garp-panel reference-flyout" id="garp-flyout">
+    <div class="garp-head"><h2>GARP checker</h2><span class="sub" id="garp-meta">Defensive growth-at-a-reasonable-price research (src/garp). Independent of the decision engine: its own verified data, valuations and report, loaded on first open from GET /garp.json.</span></div>
+    <iframe id="garp-frame" title="GARP research report" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
   </section>
 
   <section class="weights-panel reference-flyout" id="weight-flyout">
@@ -1941,6 +1952,10 @@ export function renderDecisionLab(): string {
   var adminFlyout = document.getElementById("admin-flyout");
   var advisorTab = document.getElementById("advisor-tab");
   var advisorFlyout = document.getElementById("advisor-flyout");
+  var garpTab = document.getElementById("garp-tab");
+  var garpFlyout = document.getElementById("garp-flyout");
+  var garpFrame = document.getElementById("garp-frame");
+  var garpLoaded = false;
   var methodTabs = document.querySelectorAll("#method-tabs .tab");
   var methodSections = document.querySelectorAll(".method-section");
 
@@ -1964,6 +1979,27 @@ export function renderDecisionLab(): string {
     advisorFlyout.classList.remove("open");
     advisorTab.setAttribute("aria-expanded", "false");
   }
+  function closeGarpFlyout() {
+    garpFlyout.classList.remove("open");
+    garpTab.setAttribute("aria-expanded", "false");
+  }
+  function loadGarp() {
+    // GARP report is fetched once, on first open, and shown in a sandboxed
+    // iframe so its own styles never touch the dashboard's.
+    if (garpLoaded) return;
+    garpLoaded = true;
+    garpFrame.srcdoc = "<p style='font:13px Arial;color:#898781;padding:16px'>Loading GARP report...</p>";
+    fetch("/garp.json").then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).then(function (d) {
+      garpFrame.srcdoc = d.html;
+      document.getElementById("garp-meta").textContent = d.title + " -- run " + d.runAt + ", " + d.rows.length + " stocks. Independent of the decision engine.";
+    }).catch(function (err) {
+      garpLoaded = false;
+      garpFrame.srcdoc = "<p style='font:13px Arial;color:#eb6834;padding:16px'>Could not load GARP report: " + String(err.message || err) + "</p>";
+    });
+  }
   function closeAllFlyoutsExcept(keep) {
     // Demo, the reference tabs, Weight Tuning, and Run & Update are all
     // single-flyout UIs sharing the same sidebar -- opening one always
@@ -1975,6 +2011,7 @@ export function renderDecisionLab(): string {
     if (keep !== "weight") closeWeightFlyout();
     if (keep !== "admin") closeAdminFlyout();
     if (keep !== "advisor") closeAdvisorFlyout();
+    if (keep !== "garp") closeGarpFlyout();
   }
 
   demoTab.addEventListener("click", function (ev) {
@@ -2009,6 +2046,15 @@ export function renderDecisionLab(): string {
     advisorTab.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
+  garpTab.addEventListener("click", function (ev) {
+    ev.stopPropagation();
+    var open = !garpFlyout.classList.contains("open");
+    closeAllFlyoutsExcept(null);
+    garpFlyout.classList.toggle("open", open);
+    garpTab.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open) loadGarp();
+  });
+
   methodTabs.forEach(function (tab) {
     tab.addEventListener("click", function (ev) {
       ev.stopPropagation(); // keep this click from also tripping the outside-click closer below
@@ -2037,7 +2083,8 @@ export function renderDecisionLab(): string {
     var insideWeightFlyout = t.closest && t.closest("#weight-flyout");
     var insideAdminFlyout = t.closest && t.closest("#admin-flyout");
     var insideAdvisorFlyout = t.closest && t.closest("#advisor-flyout");
-    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout || insideAdminFlyout || insideAdvisorFlyout) return;
+    var insideGarpFlyout = t.closest && t.closest("#garp-flyout");
+    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout || insideAdminFlyout || insideAdvisorFlyout || insideGarpFlyout) return;
     closeAllFlyoutsExcept(null);
   });
 

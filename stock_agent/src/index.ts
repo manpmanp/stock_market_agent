@@ -13,6 +13,7 @@ import {
   pruneOldSnapshots,
 } from "./lib/db.js";
 import { renderDecisionLab } from "./decisionLab.js";
+import { garpPayload } from "./garp/serve.js";
 import { CHART_RANGES, fetchChartSeries, isChartRange } from "./lib/chart.js";
 import { runDecisions } from "./decision/run.js";
 import { getAllActiveWeights, getWeightHistory, setActiveWeights } from "./decision/weights.js";
@@ -364,6 +365,12 @@ export default {
       });
     }
 
+    if (url.pathname === "/garp.json") {
+      // GARP checker (src/garp): read-only, bundled research data rendered by
+      // its own deterministic engine. Shares nothing with scoring/decisions.
+      return json(garpPayload());
+    }
+
     if (url.pathname.startsWith("/assets/")) {
       const key = decodeURIComponent(url.pathname.slice("/assets/".length));
       return serveAsset(env, key);
@@ -387,6 +394,7 @@ export default {
           "POST /score": "manually trigger v1 rescoring against current data -- streams NDJSON progress",
           "POST /market-analysis": "on-demand LLM synthesis across tracked tickers + benchmarks (ADMIN_TOKEN-gated, requires ANTHROPIC_API_KEY/ANTHROPIC_MODEL secrets) -- never sizing/orders, every claim grounded against real decision-engine data, see docs/agentic-architecture-proposal.md section 3",
           "POST /trigger-backtest": "manually dispatch the backtest.yml GitHub Actions workflow (ADMIN_TOKEN + GITHUB_TOKEN secrets required) -- does not run the harness itself here, just asks GitHub to start it; see Actions tab for progress",
+          "GET /garp.json": "GARP checker (defensive growth-at-a-reasonable-price research, src/garp) -- bundled research, computed valuations and rendered report HTML for the dashboard's GARP Checker flyout; independent of scoring/decisions",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
           "GET /decisions?horizon=short|medium|long": "latest decision-engine output (JSON)",
           "GET /weights[?horizon=]": "active (or per-horizon history of) decision-engine weight vectors",

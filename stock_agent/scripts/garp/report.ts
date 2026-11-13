@@ -1,6 +1,7 @@
 // GARP report CLI: reads config/garp/research/*.json (+ optional
 // config/garp/conclusion.json), runs the deterministic engine, writes
-// config/garp/runs/<date>.json and reports/garp-<date>.html.
+// config/garp/runs/<date>.json, reports/garp-<date>.html and
+// config/garp/latest.json (the bundle the Worker serves at /garp.json).
 // Run via scripts/garp-report.sh. Touches no agent files, D1 or network.
 
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
@@ -33,6 +34,9 @@ mkdirSync(join(root, "config/garp/runs"), { recursive: true });
 mkdirSync(join(root, "reports"), { recursive: true });
 writeFileSync(join(root, `config/garp/runs/${date}.json`), JSON.stringify({ runAt, rows }, null, 2));
 writeFileSync(join(root, `reports/garp-${date}.html`), renderReport(files, rows, conclusion, runAt, title));
+// Bundle read by the Worker (src/garp/serve.ts) for the dashboard's GARP
+// Checker flyout. Inputs only; the Worker re-renders with the same engine.
+writeFileSync(join(root, "config/garp/latest.json"), JSON.stringify({ runAt, title, files, conclusion }, null, 1));
 
 for (const r of rows)
   console.log(
