@@ -1,0 +1,289 @@
+{
+  "ticker": "WM",
+  "name": "Waste Management, Inc.",
+  "region": "global",
+  "exchange": "NYSE",
+  "currency": "USD",
+  "sector": "Industrials / Waste management (solid waste collection, landfill, recycling, renewable energy, healthcare solutions via Stericycle)",
+  "businessSummary": "North America's largest collector and landfill operator of solid waste, plus recycling, renewable gas and (since the Nov 2024 Stericycle acquisition) medical and secure-information waste services.",
+  "facts": {
+    "price": {
+      "value": 236.26,
+      "period": "close 2026-11-06",
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06",
+      "note": "USD. Not refreshed to 2026-11-12: WM not found in the visible part of the stock-agent /decisions page; a later-dated quote was not retrievable."
+    },
+    "high52w": {
+      "value": 248.13,
+      "period": "52 weeks to 2026-11-06",
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06",
+      "note": "USD."
+    },
+    "low52w": {
+      "value": 197.47,
+      "period": "52 weeks to 2026-11-06",
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06",
+      "note": "USD."
+    },
+    "sharesOutstanding": {
+      "value": 397.7,
+      "period": "derived (m)",
+      "source": "derived: market cap 93.95bn / 236.26",
+      "asOf": "2026-11-06",
+      "note": "Period-end count not disclosed in release; Q3 2026 weighted-average basic 398.9m, diluted 399.8m."
+    },
+    "marketCap": {
+      "value": 93950,
+      "period": "2026-11-06 (USD m)",
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06",
+      "note": ""
+    },
+    "netDebt": {
+      "value": 23123,
+      "period": "2026-09-30 (USD m)",
+      "source": "derived from https://www.sec.gov/Archives/edgar/data/0000823768/000110465926119188/tm2628322d1_ex99-1.htm",
+      "asOf": "2026-09-30",
+      "note": "Total debt 23,370 (1,524 current + 21,846 long-term) less cash 247. Debt includes finance leases; operating lease liabilities NOT included. Total debt up from 22,907 at 2025-12-31 (net 22,706)."
+    },
+    "enterpriseValue": {
+      "value": 117073,
+      "period": "derived (USD m)",
+      "source": "derived",
+      "asOf": "2026-11-06",
+      "note": "Market cap 93,950 + net debt 23,123; excludes non-controlling interests and operating leases."
+    },
+    "peTrailing": {
+      "value": 31.01,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06",
+      "note": "TTM EPS USD 7.62 (reported GAAP basis presumed). On FY2025 adjusted EPS 7.50: 31.5x."
+    },
+    "peForward": {
+      "value": 27.52,
+      "period": "next FY consensus (provider)",
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06",
+      "note": ""
+    },
+    "evEbitTrailing": {
+      "value": 24.8,
+      "period": "FY2025 adjusted income from operations",
+      "source": "derived: EV 117,073 / 4,719 (https://wastemanagement.gcs-web.com/node/30236/pdf)",
+      "asOf": "2026-11-06",
+      "note": "EBIT here is ADJUSTED income from operations (FY2025 reported 4,308 gives 27.2x). Uses FY2025 rather than TTM because 9M 2025 adjusted operating income was not retrieved."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable; guidance gives EBITDA only, no operating income guidance"
+    },
+    "evEbitdaTrailing": {
+      "value": 15.4,
+      "period": "FY2025 adjusted operating EBITDA",
+      "source": "derived: EV 117,073 / 7,582",
+      "asOf": "2026-11-06",
+      "note": "On FY2026 guidance midpoint adjusted operating EBITDA 8,200 (8,150-8,250) the multiple is 14.3x."
+    },
+    "fcfTTM": {
+      "value": 3832,
+      "period": "TTM to Q3 2026 (USD m)",
+      "source": "derived: FY2025 2,937 + 9M 2026 3,009 - 9M 2025 2,114 (https://www.sec.gov/Archives/edgar/data/0000823768/000110465926119188/tm2628322d1_ex99-1.htm)",
+      "asOf": "2026-09-30",
+      "note": "Company FCF definition = operating cash flow - capex + divestiture proceeds. FY2026 guidance FCF 3.75-3.85bn, expected at high end. 9M FCF/adjusted operating EBITDA conversion only 50%."
+    },
+    "fcfYield": {
+      "value": 0.0408,
+      "period": "TTM",
+      "source": "derived: 3,832 / 93,950",
+      "asOf": "2026-11-06",
+      "note": "On FY2026 guidance 3,850: 4.1%."
+    },
+    "dividendPerShare": {
+      "value": 3.78,
+      "period": "annualised (USD)",
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06",
+      "note": "Provider; 9M 2026 dividends paid USD 1,141m."
+    },
+    "dividendYield": {
+      "value": 0.016,
+      "period": "annualised",
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06",
+      "note": ""
+    },
+    "payoutRatio": {
+      "value": 0.496,
+      "period": "annualised dividend / TTM EPS",
+      "source": "derived: 3.78 / 7.62",
+      "asOf": "2026-11-06",
+      "note": "On FY2025 adjusted EPS 7.50: 50.4%."
+    },
+    "netDebtToEbitda": {
+      "value": 2.82,
+      "period": "net debt 2026-09-30 / FY2026 guidance midpoint adjusted operating EBITDA",
+      "source": "derived: 23,123 / 8,200",
+      "asOf": "2026-09-30",
+      "note": "Includes finance leases, excludes operating leases. On FY2025 adjusted EBITDA 7,582 (pre-Stericycle full-year effect understated? Stericycle was consolidated from Nov 2024) it is 3.05x. Leverage not falling: total debt up 463 YTD."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable; interest expense not retrieved."
+    },
+    "roic": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "roe": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable"
+    },
+    "beta5y": {
+      "value": 0.39,
+      "period": "5Y",
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06",
+      "note": ""
+    },
+    "sectorMetrics": {
+      "value": null,
+      "period": "Q3 2026",
+      "source": "https://www.sec.gov/Archives/edgar/data/0000823768/000110465926119188/tm2628322d1_ex99-1.htm",
+      "asOf": "2026-10-28",
+      "note": "VERIFIED FROM THE RELEASE (resolves conflicting AI-summary margins): Q3 2026 revenue USD 6,846m (+6.3% vs 6,443m). Operating EBITDA 2,071m = 30.3% reported (Q3 2025: 27.2%); adjusted operating EBITDA 2,121m = 31.0% (Q3 2025: 31.1%, so adjusted margin flat to -10bp). Income from operations 1,279m reported / 1,329m adjusted (Q3 2025: 989m / 1,241m). Diluted EPS 2.05 reported / 2.15 adjusted (Q3 2025: 1.49 / 1.98); adjusted EPS reported as below consensus by Zacks headline. Q3 FCF 985m (+20%); 9M FCF 3,009m (+42%). Q3 buybacks 580m, dividends 377m; 2026 buyback expectation 2,000m. 2026 guidance: revenue 26.275-26.475bn (high end), adjusted operating EBITDA 8.15-8.25bn, FCF 3.75-3.85bn (high end)."
+    },
+    "history": [
+      {
+        "period": "FY2024",
+        "revenue": 22063,
+        "ebit": 4296,
+        "ebitMargin": 0.1947,
+        "eps": 7.23,
+        "fcf": 2317,
+        "source": "https://wastemanagement.gcs-web.com/node/30236/pdf ; EBIT = ADJUSTED income from operations (reported 4,063); EPS = ADJUSTED diluted (reported 6.81); adjusted EBITDA 6,563 (29.7%)."
+      },
+      {
+        "period": "FY2025",
+        "revenue": 25204,
+        "ebit": 4719,
+        "ebitMargin": 0.1872,
+        "eps": 7.5,
+        "fcf": 2937,
+        "source": "https://wastemanagement.gcs-web.com/node/30236/pdf ; EBIT = ADJUSTED income from operations (reported 4,308); EPS = ADJUSTED diluted (reported 6.70); adjusted EBITDA 7,582 (30.1%). Includes Stericycle."
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 28,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 255.6,
+      "targetHigh": null,
+      "targetLow": null,
+      "source": "https://stockanalysis.com/stocks/wm/",
+      "asOf": "2026-11-06"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; forward P/E 27.52 implies EPS ~8.58 at 236.26 (derived, provider basis unclear)"
+    },
+    "recentEvents": [
+      "2026-10-28 (approx) Q3 2026: revenue 6,846m (+6.3%), adjusted EPS 2.15, FCF 985m; 2026 guidance reaffirmed with revenue and FCF expected at high end.",
+      "Stericycle integration ongoing (healthcare solutions); 2025 total revenue +14.2% largely from the acquisition.",
+      "2026 capital return: ~USD 2.0bn buyback plus dividends (3.78/share annualised)."
+    ],
+    "valueTrapFlags": [
+      "Adjusted operating EBITDA margin flat y/y in Q3 2026 (31.0% vs 31.1%); FY2025 adjusted operating margin (18.7%) below FY2024 (19.5%) after the Stericycle deal.",
+      "Leverage elevated and not falling: net debt/EBITDA ~2.8x on guidance, total debt up USD 463m YTD while funding buybacks.",
+      "Weak cash conversion: 9M FCF only 50% of adjusted operating EBITDA (heavy capex incl. sustainability growth).",
+      "Premium multiple (~31x trailing, ~28x forward) for ~6% revenue growth; EPS missed consensus in Q3 per Zacks."
+    ],
+    "dataGaps": [
+      "Price is 2026-11-06, not 2026-11-12.",
+      "Interest coverage, ROIC, ROE unavailable.",
+      "No analyst buy/hold/sell split or target range.",
+      "TTM adjusted EBIT/EBITDA not computed (9M 2025 adjusted figures not retrieved); trailing multiples use FY2025.",
+      "FY2021-2023 history not retrieved.",
+      "Historical multiples unavailable.",
+      "Stock-agent /decisions had no WM entry in the portion of the page checked (first ~190k of 486k characters)."
+    ]
+  },
+  "retrievedAt": "2026-11-13T18:16:46+01:00",
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis 2026E adjusted EPS 8.1 (FY2025 7.50; lead estimate). Price is the 2026-11-06 close. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS adjusted, 2026E (lead estimate)",
+    "basisValue": 8.1,
+    "forwardDividendYield": 0.016,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+      "quality": 5,
+      "growth": 3,
+      "financialStrength": 3,
+      "risk": 5
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 187.11,
+        "epsCagr5y": 0.05,
+        "exitPe5y": 22,
+        "note": "Volumes soft, healthcare-waste integration drags, multiple compresses. Justified multiple 22x on next-12m 8.51.",
+        "epsCagr10y": 0.05,
+        "exitPe10y": 20
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 236.2,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 25,
+        "note": "Core price about 5-6%, steady margin, FCF growth. Justified multiple 27x on next-12m 8.75.",
+        "epsCagr10y": 0.075,
+        "exitPe10y": 23
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 267.3,
+        "epsCagr5y": 0.1,
+        "exitPe5y": 27,
+        "note": "Renewable-energy and recycling investments pay off. Justified multiple 30x on next-12m 8.91.",
+        "epsCagr10y": 0.09,
+        "exitPe10y": 25
+      }
+    },
+    "whyItFits": "North American waste leader: beta 0.39, pricing power (core price +5.8%), adjusted operating EBITDA margin about 31%.",
+    "growthDrivers": "Pricing, landfill gas/renewable natural gas, recycling automation, healthcare waste (Stericycle).",
+    "saturation": "Trailing P/E 31: fairly to fully valued; about 5% below the 52-week high.",
+    "principalRisk": "Paying 31x for 8% EPS growth with leverage about 2.8x; FCF only about half of adjusted EBITDA."
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "ticker": "REL.L",
+  "name": "RELX PLC",
+  "region": "global",
+  "exchange": "London Stock Exchange",
+  "currency": "GBp",
+  "sector": "Industrials / Information services (risk analytics, legal, scientific-technical-medical publishing, exhibitions)",
+  "businessSummary": "Global information-based analytics and decision tools: Risk (LexisNexis Risk Solutions), Scientific, Technical & Medical (Elsevier), Legal (LexisNexis Legal & Professional) and Exhibitions (RX). All price and per-share figures in pence (GBp); monetary amounts in GBP millions.",
+  "facts": {
+    "price": {
+      "value": 3072,
+      "period": "close",
+      "source": "AJ Bell quote",
+      "asOf": "2026-11-12",
+      "note": "Refreshed by fact check; pence (was 3019; fact check config/garp/checks/2026-11-13.md)"
+    },
+    "high52w": {
+      "value": 3448.5,
+      "period": "52w",
+      "source": "AJ Bell",
+      "asOf": "2026-11-12",
+      "note": "Confirmed; fool.com 3,210p rejected (was 3450; fact check config/garp/checks/2026-11-13.md)"
+    },
+    "low52w": {
+      "value": 1991,
+      "period": "52 weeks to 2026-11-13",
+      "source": "https://www.fool.com/quote/lse/rel/",
+      "asOf": "2026-11-13",
+      "note": "PENCE. twelvedata shows '1.99K', consistent. Low followed the Feb 2026 AI-driven sell-off (RELX fell ~11% on 2026-02-03 per City AM)."
+    },
+    "sharesOutstanding": {
+      "value": 1740,
+      "period": "2026-10-23 (m)",
+      "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+      "asOf": "2026-10-23",
+      "note": "Provider figure, millions; buyback of GBP 2.25bn planned for 2026 so count is falling."
+    },
+    "marketCap": {
+      "value": 52500,
+      "period": "derived: 3,019p x 1,740m (GBP m)",
+      "source": "derived",
+      "asOf": "2026-11-12",
+      "note": "GBP m. Provider: GBP 52.87bn at 3,039p (2026-10-23); fool.com GBP 52.37bn."
+    },
+    "netDebt": {
+      "value": 8690,
+      "period": "provider latest balance sheet (GBP m)",
+      "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+      "asOf": "2026-10-24",
+      "note": "Provider: total debt 8.91bn less cash 0.22bn; lease treatment not stated. CONFLICT/BASIS: company-reported net debt at FY2025 GBP 7,201m (2.0x EBITDA, FY2024 6,563m). Higher provider figure probably reflects H1 2026 (buybacks, dividend, acquisitions); not reconciled."
+    },
+    "enterpriseValue": {
+      "value": 61200,
+      "period": "derived (GBP m)",
+      "source": "derived",
+      "asOf": "2026-11-12",
+      "note": "Market cap 52.5bn + provider net debt 8.69bn. Provider EV GBP 61.57bn at 3,039p."
+    },
+    "peTrailing": {
+      "value": 24.19,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "Provider trailing P/E, basis (reported vs adjusted EPS) not stated. On FY2025 ADJUSTED EPS 128.5p the P/E is 3,019/128.5 = 23.5x; on FY2025 reported EPS 112.6p it is 26.8x."
+    },
+    "peForward": {
+      "value": 20.33,
+      "period": "next FY consensus (provider)",
+      "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+      "asOf": "2026-10-24",
+      "note": "Provider forward P/E at 3,039p. CONFLICT: 19.17 on twelvedata at 3,016p (2026-11-06). Likely on adjusted EPS; underlying EPS estimate not retrievable."
+    },
+    "evEbitTrailing": {
+      "value": 18.3,
+      "period": "FY2025 adjusted operating profit",
+      "source": "derived: EV 61.2bn / adjusted operating profit GBP 3,342m (https://www.relx.com/media/press-releases/year-2026/relx-2025-results)",
+      "asOf": "2026-11-12",
+      "note": "ADJUSTED operating profit (RELX definition: excludes amortisation of acquired intangibles, so closer to EBITA than reported EBIT). Provider EV/EBIT 19.70 on a reported basis. Net debt basis per above."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable; no verified forward adjusted operating profit estimate"
+    },
+    "evEbitdaTrailing": {
+      "value": 18.26,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+      "asOf": "2026-10-24",
+      "note": "Provider figure at 3,039p; stock-agent shows 18.59 at 3,019p."
+    },
+    "fcfTTM": {
+      "value": 2860,
+      "period": "TTM (GBP m)",
+      "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+      "asOf": "2026-10-24",
+      "note": "Provider FCF. Company does not publish FCF; reports adjusted cash flow conversion 99% of adjusted operating profit in FY2025 (FY2024 97%)."
+    },
+    "fcfYield": {
+      "value": 0.0545,
+      "period": "TTM",
+      "source": "derived: 2,860 / 52,500",
+      "asOf": "2026-11-12",
+      "note": "Provider shows 5.41% at 3,039p."
+    },
+    "dividendPerShare": {
+      "value": 67.5,
+      "period": "FY2025 (pence)",
+      "source": "https://www.relx.com/media/press-releases/year-2026/relx-2025-results",
+      "asOf": "2026-02-12",
+      "note": "Pence; FY2024 63.0p (+7%). Provider shows 0.68 GBP annual."
+    },
+    "dividendYield": {
+      "value": 0.0224,
+      "period": "FY2025 dividend / price",
+      "source": "derived: 67.5 / 3,019",
+      "asOf": "2026-11-12",
+      "note": "Provider 2.22% at 3,039p."
+    },
+    "payoutRatio": {
+      "value": 0.5409,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "Provider 53.4%; basis (reported EPS) not stated. On adjusted EPS 128.5p: 67.5/128.5 = 52.5%."
+    },
+    "netDebtToEbitda": {
+      "value": 2.0,
+      "period": "FY2025 (company)",
+      "source": "https://www.relx.com/media/press-releases/year-2026/relx-2025-results",
+      "asOf": "2026-02-12",
+      "note": "Company-reported 2.0x at FY2025 (FY2024 1.8x). Providers show 2.64-2.68x (higher net debt, different EBITDA definition). Rising: +0.2x y/y, driven by GBP 1.5bn buybacks in 2025 and GBP 2.25bn planned in 2026."
+    },
+    "interestCoverage": {
+      "value": 18.91,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+      "asOf": "2026-10-24",
+      "note": "Provider figure; EBIT/interest basis not stated."
+    },
+    "roic": {
+      "value": 0.2358,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+      "asOf": "2026-10-24",
+      "note": "Provider figure."
+    },
+    "roe": {
+      "value": 1.3186,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+      "asOf": "2026-10-24",
+      "note": "Provider figure; not meaningful because equity is very small after buybacks (price/book 4,237x on stock-agent)."
+    },
+    "beta5y": {
+      "value": 0.27,
+      "period": "5Y monthly",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "stockanalysis 0.28; fool.com shows ~0."
+    },
+    "sectorMetrics": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "Not applicable. Reporting: adjusted operating profit, adjusted EPS (pence) and underlying revenue growth at constant currency are the company KPIs."
+    },
+    "history": [
+      {
+        "period": "FY2024",
+        "revenue": 9434,
+        "ebit": 3199,
+        "ebitMargin": 0.339,
+        "eps": 120.1,
+        "fcf": null,
+        "source": "RELX 2025 results release. EBIT = ADJUSTED operating profit; EPS = ADJUSTED, pence (reported 103.6p). FCF not published (cash conversion 97%)."
+      },
+      {
+        "period": "FY2025",
+        "revenue": 9590,
+        "ebit": 3342,
+        "ebitMargin": 0.348,
+        "eps": 128.5,
+        "fcf": null,
+        "source": "RELX 2025 results release. EBIT = ADJUSTED operating profit; EPS = ADJUSTED, pence (reported 112.6p). FCF not published (cash conversion 99%)."
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 17,
+      "buy": 14,
+      "hold": 2,
+      "sell": 1,
+      "targetAvg": 3509.1,
+      "targetHigh": 5070,
+      "targetLow": 2200,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long) (targets in pence; buy = 2 strong buy + 12 buy; sell = 1 strong sell)",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; company outlook: another year of strong underlying growth in revenue and adjusted operating profit, strong adjusted EPS growth at constant currency"
+    },
+    "recentEvents": [
+      "2026-10-22/23 Q3 trading update: 9M underlying revenue growth +7% (Risk +8%, STM +6%, Legal +10%, Exhibitions +4%); 2026 outlook reaffirmed (https://www.ariva.de/news/trading-update-october-2026-12177481).",
+      "FY2025 (2026-02-12): revenue GBP 9,590m, adjusted operating profit GBP 3,342m (34.8% margin), adjusted EPS 128.5p (+7%), dividend 67.5p (+7%), GBP 1.5bn buybacks; GBP 2.25bn planned for 2026.",
+      "2026-02-03: shares fell ~11% (Wolters Kluwer ~9%) after Anthropic released a legal productivity tool for in-house lawyers, sparking AI-disruption fears for data and legal-software businesses (City AM)."
+    ],
+    "valueTrapFlags": [
+      "No operating deterioration found: underlying growth 7% 9M 2026, margin up ~90bp in FY2025, cash conversion 99%.",
+      "Valuation reflects AI-disruption fear rather than reported weakness: shares about 13% lower y/y (stockanalysis, 2026-10-23) after the Feb 2026 sell-off; Legal division (+10%) is the segment most exposed to the narrative.",
+      "Leverage drifting up (2.0x vs 1.8x) because buybacks exceed free cash flow after dividends; provider net debt GBP 8.69bn is above company FY2025 GBP 7.2bn."
+    ],
+    "dataGaps": [
+      "No FY2021-2023 history retrieved.",
+      "No forward EPS or adjusted operating profit consensus; forward P/E is provider-only.",
+      "52w high approximate (conflict 3,450p vs 3,210p).",
+      "H1 2026 company net debt not retrieved; Q3 trading update has no net debt.",
+      "Historical multiples unavailable."
+    ]
+  },
+  "retrievedAt": "2026-11-13T18:16:46+01:00",
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis 2026E adjusted EPS 139p (FY2025 128.5p plus guided strong constant-currency growth; lead estimate). Bear weighted 30% for AI disruption of information services. Prices in pence. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS adjusted (GBp), 2026E (lead estimate)",
+    "basisValue": 139,
+    "forwardDividendYield": 0.022,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+      "quality": 5,
+      "growth": 4,
+      "financialStrength": 4,
+      "risk": 4
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 2919.0,
+        "epsCagr5y": 0.05,
+        "exitPe5y": 20,
+        "note": "Generative AI erodes pricing in legal and risk data; multiple stays compressed. Justified multiple 20x on next-12m 145.95.",
+        "epsCagr10y": 0.05,
+        "exitPe10y": 18
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 3939.26,
+        "epsCagr5y": 0.09,
+        "exitPe5y": 24,
+        "note": "Underlying growth about 7%, margin gains, buybacks: high-single-digit EPS growth. Justified multiple 26x on next-12m 151.51.",
+        "epsCagr10y": 0.08,
+        "exitPe10y": 22
+      },
+      "bull": {
+        "prob": 0.2,
+        "fairValue": 4474.41,
+        "epsCagr5y": 0.11,
+        "exitPe5y": 27,
+        "note": "AI tools lift pricing and usage; multiple returns to pre-2026 levels. Justified multiple 29x on next-12m 154.29.",
+        "epsCagr10y": 0.1,
+        "exitPe10y": 24
+      }
+    },
+    "whyItFits": "Subscription-heavy information and analytics group: adjusted operating margin about 35%, ROIC about 24%, beta 0.27, 9M underlying revenue growth +7% with outlook reaffirmed.",
+    "growthDrivers": "Analytics and decision tools (Risk, LexisNexis Legal, Elsevier), generative-AI products layered on proprietary data, steady buybacks.",
+    "saturation": "De-rated on AI-disruption fears (shares -11% on 2026-02-03), not on results; about 13% below the 52-week high. Consensus target 3,509p (analyst opinion).",
+    "principalRisk": "AI tools commoditising legal and scientific information faster than RELX can monetise its own; 52-week high conflicts between sources."
+  }
+}

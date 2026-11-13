@@ -3,6 +3,7 @@
 // follow docs/garp/master-prompt.md sections 4-5.
 
 import type {
+  Region,
   Computed, EntryStatus, Facts, Light, QualityTier, ResearchFile, Scenario, TrapCheck, ValuationInput,
 } from "./types.js";
 
@@ -183,7 +184,15 @@ export function composite(val: ValuationInput, mos: number, ret5: number, reds: 
   return clamp(raw - TRAP_RED_PENALTY * reds);
 }
 
-export function computeOne(r: ResearchFile): Omit<Computed, "rank"> {
+/** Report shows this many stocks per region; the rest stay in the data. */
+export const TOP_N = 5;
+const NORDIC_SUFFIX = /\.(ST|CO|OL|HE|IC)$/i;
+
+export function regionOf(r: ResearchFile): Region {
+  return r.region ?? (NORDIC_SUFFIX.test(r.ticker) ? "nordic" : "global");
+}
+
+export function computeOne(r: ResearchFile): Omit<Computed, "rank" | "regionRank"> {
   const val = r.valuation;
   if (!val) throw new Error(`${r.ticker}: no valuation block`);
   const price = r.facts.price.value;
@@ -217,11 +226,18 @@ export function computeOne(r: ResearchFile): Omit<Computed, "rank"> {
     trap,
     trapReds: reds,
     composite: composite(val, mos, r5.total, reds),
+    region: regionOf(r),
   };
 }
 
 export function computeAll(files: ResearchFile[]): Computed[] {
   const rows = files.filter((f) => f.valuation).map(computeOne);
   rows.sort((a, b) => b.composite - a.composite);
-  return rows.map((r, i) => ({ ...r, rank: i + 1 }));
+  const seen: Record<Region, number> = { nordic: 0, global: 0 };
+  return rows.map((r, i) => ({ ...r, rank: i + 1, regionRank: ++seen[r.region] }));
+}
+
+/** The stocks the report shows: top TOP_N per region, in rank order. */
+export function shownRows(rows: Computed[], n = TOP_N): Computed[] {
+  return rows.filter((r) => r.regionRank <= n);
 }

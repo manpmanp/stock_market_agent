@@ -8,25 +8,25 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 138.2,
+      "value": 140.5,
       "period": "close",
-      "source": "stockanalysis.com statistics",
-      "asOf": "2026-10-23",
-      "note": "Latest found; Q3 report came 2026-10-29 so post-report reaction not captured. Close 136.80 on 2026-10-22. Agent data lacks SWEC-B."
+      "source": "fact check quote",
+      "asOf": "2026-11-12",
+      "note": "Stale 23 Oct price replaced (was 138.2; fact check config/garp/checks/2026-11-13.md)"
     },
     "high52w": {
-      "value": null,
-      "period": "n/a",
-      "source": "n/a",
-      "asOf": "2026-11-13",
-      "note": "unavailable"
+      "value": 179.8,
+      "period": "52w",
+      "source": "fact check",
+      "asOf": "2026-10",
+      "note": "As of early Oct (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "low52w": {
-      "value": null,
-      "period": "n/a",
-      "source": "n/a",
-      "asOf": "2026-11-13",
-      "note": "unavailable"
+      "value": 122.0,
+      "period": "52w",
+      "source": "fact check",
+      "asOf": "2026-10",
+      "note": "As of early Oct (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "sharesOutstanding": {
       "value": 361.24,

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  regionOf, shownRows,
   capitalCagr, computeAll, entryStatus, marginOfSafety, scenarioReturns, trapChecklist, upside, weightedFairValue,
 } from "../../src/garp/valuation.js";
 import type { Facts, ResearchFile, ValuationInput } from "../../src/garp/types.js";
@@ -120,5 +121,28 @@ describe("ranking", () => {
     expect(rows[0]!.ticker).toBe("CHEAP");
     expect(rows[0]!.rank).toBe(1);
     expect(() => computeAll([mk("NOPRICE", 0)])).toThrow();
+  });
+});
+
+describe("regions and top-N", () => {
+  const mk = (t: string, price: number): ResearchFile => ({
+    ticker: t, name: t, exchange: "X", currency: "SEK", sector: "", businessSummary: "", retrievedAt: "",
+    facts: facts({ price: f(price) }), valuation: val(),
+  });
+  it("derives region from the exchange suffix", () => {
+    expect(regionOf(mk("ASSA-B.ST", 1))).toBe("nordic");
+    expect(regionOf(mk("ORK.OL", 1))).toBe("nordic");
+    expect(regionOf(mk("NESN.SW", 1))).toBe("global");
+    expect(regionOf(mk("MSFT", 1))).toBe("global");
+  });
+  it("ranks within region and shows only the top N of each", () => {
+    const files = [
+      ...[70, 75, 80, 85, 90, 95, 99].map((p, i) => mk(`N${i}.ST`, p)),
+      ...[72, 78, 84].map((p, i) => mk(`G${i}`, p)),
+    ];
+    const rows = computeAll(files);
+    const shown = shownRows(rows, 5);
+    expect(shown.filter((r) => r.region === "nordic").map((r) => r.ticker)).toEqual(["N0.ST", "N1.ST", "N2.ST", "N3.ST", "N4.ST"]);
+    expect(shown.filter((r) => r.region === "global")).toHaveLength(3);
   });
 });

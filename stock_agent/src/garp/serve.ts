@@ -3,7 +3,7 @@
 // config/garp/latest.json (written by scripts/garp-report.sh); no D1, no
 // network, nothing shared with scoring or decisions.
 import latest from "../../config/garp/latest.json";
-import { computeAll } from "./valuation.js";
+import { computeAll, shownRows } from "./valuation.js";
 import { renderReport } from "./render.js";
 import type { Conclusion, ResearchFile } from "./types.js";
 
@@ -16,12 +16,14 @@ interface Bundle {
 
 export function garpPayload() {
   const b = latest as unknown as Bundle;
-  const rows = computeAll(b.files);
+  const all = computeAll(b.files);
+  const rows = shownRows(all); // top 5 per region; the rest stay in the bundle only
   return {
     runAt: b.runAt,
     title: b.title,
+    researched: all.length,
     rows,
     conclusion: b.conclusion,
-    html: renderReport(b.files, rows, b.conclusion, b.runAt, b.title),
+    html: renderReport(b.files, all, b.conclusion, b.runAt, b.title),
   };
 }

@@ -1,0 +1,301 @@
+{
+  "region": "global",
+  "ticker": "SAN.PA",
+  "name": "Sanofi",
+  "exchange": "Euronext Paris",
+  "currency": "EUR",
+  "sector": "Healthcare / Pharmaceuticals and Vaccines",
+  "businessSummary": "French biopharma focused on Immunology (Dupixent), Rare diseases and Vaccines (Beyfortus, flu, others). Pipeline rebuilding via BD and M&A after tolebrutinib setback.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 86.61,
+      "period": "close 2026-11-11/12",
+      "source": "stock-agent /decisions 2026-11-12 23:05; twelvedata.com SAN statistics (update 11 Nov 17:30 CET)",
+      "asOf": "2026-11-12",
+      "note": "EUR."
+    },
+    "high52w": {
+      "value": 90.79,
+      "period": "52 weeks",
+      "source": "twelvedata.com/markets/390210/stock/euronext/san/statistics",
+      "asOf": "2026-11-11",
+      "note": "EUR."
+    },
+    "low52w": {
+      "value": 69.75,
+      "period": "52 weeks",
+      "source": "twelvedata.com",
+      "asOf": "2026-11-11",
+      "note": "EUR."
+    },
+    "sharesOutstanding": {
+      "value": 1210,
+      "period": "latest",
+      "source": "twelvedata.com",
+      "asOf": "2026-11-11",
+      "note": "Million; 1,210m x 86.61 consistent with cap."
+    },
+    "marketCap": {
+      "value": 103760,
+      "period": "2026-11-11",
+      "source": "twelvedata.com",
+      "asOf": "2026-11-11",
+      "note": "EUR m."
+    },
+    "netDebt": {
+      "value": 14410,
+      "period": "latest",
+      "source": "derived: EV 118,170 - market cap 103,760 (twelvedata)",
+      "asOf": "2026-11-11",
+      "note": "EUR m; implied only, definition (IFRS 16, minorities) unknown. Company Q3 net debt figure not retrieved."
+    },
+    "enterpriseValue": {
+      "value": 118170,
+      "period": "2026-11-11",
+      "source": "twelvedata.com",
+      "asOf": "2026-11-11",
+      "note": "EUR m."
+    },
+    "peTrailing": {
+      "value": 25.03,
+      "period": "TTM IFRS",
+      "source": "stock-agent /decisions 2026-11-12",
+      "asOf": "2026-11-12",
+      "note": "twelvedata 25.70. Inflated by IFRS impairments (tolebrutinib EUR 2.24bn). On business EPS FY2025 EUR 7.83: 86.61/7.83 = 11.1."
+    },
+    "peForward": {
+      "value": 9.35,
+      "period": "next FY (provider)",
+      "source": "twelvedata.com",
+      "asOf": "2026-11-11",
+      "note": "Consistent with business EPS about 9; 2026 guidance business EPS growth mid-teens CER, FX -1pp."
+    },
+    "evEbitTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "stock-agent evToEbit null"
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 8.0,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 (7.999); twelvedata 8.00",
+      "asOf": "2026-11-12",
+      "note": "EBITDA about EUR 12.6bn (twelvedata)."
+    },
+    "fcfTTM": {
+      "value": 8100,
+      "period": "FY2025",
+      "source": "Sanofi FY2025 results via hl.co.uk",
+      "asOf": "2026-01-29",
+      "note": "EUR m assumed (article gives '8.1bn', +35.8%); TTM to Q3 2026 not retrieved."
+    },
+    "fcfYield": {
+      "value": 0.078,
+      "period": "FY2025 FCF / current cap",
+      "source": "derived: 8,100 / 103,760",
+      "asOf": "2026-11-11",
+      "note": "Uses FY2025 FCF, not TTM."
+    },
+    "dividendPerShare": {
+      "value": 4.12,
+      "period": "FY2025 (paid May 2026)",
+      "source": "twelvedata.com trailing annual dividend rate",
+      "asOf": "2026-11-11",
+      "note": "EUR; ex-date 2026-05-05."
+    },
+    "dividendYield": {
+      "value": 0.0476,
+      "period": "trailing",
+      "source": "derived: 4.12 / 86.61",
+      "asOf": "2026-11-11",
+      "note": "twelvedata shows 'forward rate 16.48' which is a data error."
+    },
+    "payoutRatio": {
+      "value": 1.19,
+      "period": "TTM IFRS",
+      "source": "stock-agent /decisions 2026-11-12",
+      "asOf": "2026-11-12",
+      "note": "IFRS-earnings basis, depressed by impairments; payout on business EPS about 53% (4.12/7.83, derived)."
+    },
+    "netDebtToEbitda": {
+      "value": 0.94,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12",
+      "asOf": "2026-11-12",
+      "note": "Provider definition unknown regarding leases."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roe": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "stock-agent returnOnAssets 5.46% only"
+    },
+    "beta5y": {
+      "value": 0.26,
+      "period": "5y",
+      "source": "stock-agent /decisions (0.256); twelvedata 0.26",
+      "asOf": "2026-11-12",
+      "note": ""
+    },
+    "sectorMetrics": {
+      "businessEPS": {
+        "value": 7.83,
+        "period": "FY2025",
+        "source": "hl.co.uk Sanofi FY2025 article",
+        "asOf": "2026-01-29",
+        "note": "EUR, +15.0% (CER); Q4 2025 1.53. Q3 2026 business EPS 3.55 (+19.6% CER); Q3 2025 was 2.91."
+      },
+      "sales": {
+        "value": 14444,
+        "period": "Q3 2026",
+        "source": "quartr.com Sanofi Q3 2026 summary",
+        "asOf": "2026-10-30",
+        "note": "EUR m, +14.3% CER (+16.2% reported). 9M IFRS net income 4,979 (Q3 3,021). IFRS EPS and business operating income not retrieved."
+      },
+      "guidance2026": {
+        "value": null,
+        "period": "FY2026",
+        "source": "quartr.com Sanofi Q3 2026 summary",
+        "asOf": "2026-10-30",
+        "note": "Upgraded (also upgraded at Q2): sales growth low-teens CER (initial guidance high single-digit); business EPS growth mid-teens CER (initial: slightly faster than sales); vaccine sales low single-digit decline; tax about 21%; FX about -1% sales and EPS. New EUR 1bn buyback announced with FY2025."
+      },
+      "dupixent": {
+        "value": 4200,
+        "period": "Q4 2025",
+        "source": "hl.co.uk",
+        "asOf": "2026-01-29",
+        "note": "EUR m, +32.2%; 2030 ambition about EUR 25bn at CER. Dupixent patent expiry year not verified in retrieved sources (no figure stated)."
+      }
+    },
+    "history": [
+      {
+        "period": "FY2025",
+        "revenue": 43600,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 7.83,
+        "fcf": 8100,
+        "source": "hl.co.uk FY2025 article; revenue +9.9% CER (currency assumed EUR); eps = business EPS; business operating income not retrieved"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 23,
+      "buy": 12,
+      "hold": 12,
+      "sell": 0,
+      "targetAvg": 95.7,
+      "targetHigh": 110,
+      "targetLow": 78,
+      "source": "stock-agent /decisions 2026-11-12 23:05",
+      "asOf": "2026-11-12",
+      "note": "3 strong buy + 9 buy, 12 hold, 0 sell (sums to 24 vs 23 stated)."
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; 2027 early view: demand-led growth, slightly negative pricing, about EUR 1.3bn sales impact from Cheplapharm and Medley divestments (subject to closing)"
+    },
+    "recentEvents": [
+      "Q3 2026 (30 Oct): sales +14.3% CER, business EPS +19.6% CER; guidance upgraded.",
+      "Pharma launches EUR 2.176bn (15% of sales); vaccines declined (seasonal phasing, lower Beyfortus).",
+      "Tolebrutinib PPMS trial failed (FY2025), EUR 2.24bn impairment; four-antibody collaboration with 50/50 profit share; Cheplapharm and Medley divestments."
+    ],
+    "valueTrapFlags": [
+      "Vaccines declining; US vaccine weakness and lower Beyfortus.",
+      "Concentration in Dupixent; pipeline setbacks.",
+      "IFRS P/E and payout ratio distorted by impairments (P/E 25, payout 119%)."
+    ],
+    "dataGaps": [
+      "EBIT/business operating income and multi-year history not retrieved",
+      "Company-reported net debt and TTM FCF not retrieved",
+      "evEbit, ROIC, interest coverage unavailable",
+      "Sanofi press release URL was blocked (permission); Q3 data from Quartr summary",
+      "Dupixent LOE date not verified"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m business EPS x justified P/E. Basis EUR 9.0 (provider forward P/E 9.35 implies about 9.26; trailing IFRS EPS distorted by impairments; lead estimate). Bear weighted 30% for Dupixent concentration. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS business (adjusted), forward (lead estimate)",
+    "basisValue": 9.0,
+    "forwardDividendYield": 0.048,
+    "qualityTier": "B",
+    "role": "Value Recovery",
+    "scores": {
+      "quality": 4,
+      "growth": 3,
+      "financialStrength": 4,
+      "risk": 4
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 81.0,
+        "epsCagr5y": 0.0,
+        "exitPe5y": 9,
+        "note": "Vaccines keep declining, pipeline disappoints, Dupixent peaks. Justified multiple 9x on next-12m 9.00.",
+        "epsCagr10y": 0.0,
+        "exitPe10y": 9
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 114.48,
+        "epsCagr5y": 0.06,
+        "exitPe5y": 11,
+        "note": "Dupixent and launches drive mid-single-digit growth to 2030. Justified multiple 12x on next-12m 9.54.",
+        "epsCagr10y": 0.05,
+        "exitPe10y": 11
+      },
+      "bull": {
+        "prob": 0.2,
+        "fairValue": 137.34,
+        "epsCagr5y": 0.09,
+        "exitPe5y": 13,
+        "note": "Immunology pipeline (amlitelimab, tolebrutinib) succeeds. Justified multiple 14x on next-12m 9.81.",
+        "epsCagr10y": 0.07,
+        "exitPe10y": 12
+      }
+    },
+    "whyItFits": "Low beta (0.26), 4.8% dividend, net debt/EBITDA 0.9x, forward P/E about 9-10; guidance upgraded and BNP upgrade to Outperform (2026-11-09).",
+    "growthDrivers": "Dupixent indications, Beyfortus, immunology pipeline, buybacks.",
+    "saturation": "Low multiple versus pharma peers; consensus target 95.70 (analyst opinion). Undervalued if Dupixent growth holds.",
+    "principalRisk": "Heavy Dupixent dependence and declining vaccines; Q3 data from a summary because the company release was blocked."
+  }
+}

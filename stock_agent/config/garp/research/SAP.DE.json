@@ -1,0 +1,279 @@
+{
+  "ticker": "SAP.DE",
+  "name": "SAP SE",
+  "region": "global",
+  "exchange": "Xetra (Deutsche Boerse)",
+  "currency": "EUR",
+  "sector": "Technology / Enterprise application software",
+  "businessSummary": "Enterprise resource planning and business applications (S/4HANA Cloud, Business Technology Platform, SuccessFactors, Ariba, Concur). Cloud now the large majority of revenue; 113,076 FTE at 2026-09-30.",
+  "facts": {
+    "price": {
+      "value": 210.95,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "asOf": "2026-11-12",
+      "note": "Sources conflicted (212.55 twelvedata, 209.4 HL undated); agent's own feed used (was 212.55; fact check config/garp/checks/2026-11-13.md)"
+    },
+    "high52w": {
+      "value": 219.65,
+      "period": "52 weeks to 2026-11-12",
+      "source": "https://twelvedata.com/markets/927671/stock/xetr/sap/statistics",
+      "asOf": "2026-11-12",
+      "note": "EUR; single source."
+    },
+    "low52w": {
+      "value": 127.5,
+      "period": "52 weeks to 2026-11-12",
+      "source": "https://twelvedata.com/markets/927671/stock/xetr/sap/statistics",
+      "asOf": "2026-11-12",
+      "note": "EUR; single source. Price is ~67% above the low after the 2026-01-29 drop (-16% in a day) and the Q3 rebound."
+    },
+    "sharesOutstanding": {
+      "value": 1150,
+      "period": "Q3 2026 weighted average basic (m)",
+      "source": "https://www.sec.gov/Archives/edgar/data/0001000184/000110465926118617/tm2628113d1_ex99-1.htm",
+      "asOf": "2026-09-30",
+      "note": "Weighted-average basic shares; period-end count not disclosed. 25.2m shares repurchased to date under the up-to-EUR 10bn programme."
+    },
+    "marketCap": {
+      "value": 244400,
+      "period": "derived: 212.55 x 1,150m (EUR m)",
+      "source": "derived",
+      "asOf": "2026-11-12",
+      "note": "Twelvedata EUR 245.33bn."
+    },
+    "netDebt": {
+      "value": 1224,
+      "period": "2026-09-30 (EUR m)",
+      "source": "derived from https://www.sec.gov/Archives/edgar/data/0001000184/000110465926118617/tm2628113d1_ex99-1.htm",
+      "asOf": "2026-09-30",
+      "note": "DERIVED, not an SAP figure: financial liabilities 2,053 + 8,535 = 10,588 less cash 9,364. Excludes other financial assets (1,633 current + 8,300 non-current, mostly loans/investments/hedges). CONFLICT: stockanalysis shows net CASH of USD 464m; stock-agent netDebtToEbitda -0.03. Practically net-debt neutral. Lease liabilities: not confirmed whether included in financial liabilities."
+    },
+    "enterpriseValue": {
+      "value": 245600,
+      "period": "derived (EUR m)",
+      "source": "derived",
+      "asOf": "2026-11-12",
+      "note": "Market cap 244.4bn + net debt 1.2bn. Provider EV USD 274.1bn vs market cap USD 274.0bn."
+    },
+    "peTrailing": {
+      "value": 30.48,
+      "period": "TTM",
+      "source": "https://twelvedata.com/markets/927671/stock/xetr/sap/statistics",
+      "asOf": "2026-11-12",
+      "note": "Provider, IFRS EPS basis presumed. stock-agent 30.66; stockanalysis ADR 30.73."
+    },
+    "peForward": {
+      "value": 24.82,
+      "period": "next FY consensus (provider)",
+      "source": "https://twelvedata.com/markets/927671/stock/xetr/sap/statistics",
+      "asOf": "2026-11-12",
+      "note": "Provider; stockanalysis ADR 26.47 on 2026-10-26."
+    },
+    "evEbitTrailing": {
+      "value": 21.4,
+      "period": "TTM non-IFRS operating profit approx",
+      "source": "derived: EV 245.6bn / (FY2025 10,420 + 9M 2026 8,639 - 9M 2025 ~7,578)",
+      "asOf": "2026-11-12",
+      "note": "APPROXIMATE, non-IFRS operating profit (excludes share-based comp and acquisition-related charges; closer to adjusted EBIT). 9M 2025 back-solved from reported +14% growth, so +/-1%. TTM approx EUR 11,480m. Provider EV/EBIT 21.04 (ADR). On IFRS operating profit the multiple is slightly higher."
+    },
+    "evEbitForward": {
+      "value": 20.5,
+      "period": "FY2026 guidance midpoint non-IFRS operating profit",
+      "source": "derived: EV 245.6bn / EUR 12.0bn (guidance EUR 11.8-12.2bn)",
+      "asOf": "2026-11-12",
+      "note": "Guidance midpoint at constant currencies, not consensus."
+    },
+    "evEbitdaTrailing": {
+      "value": 19.805,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "Provider; stockanalysis ADR 19.70."
+    },
+    "fcfTTM": {
+      "value": 9030,
+      "period": "TTM approx (EUR m)",
+      "source": "derived: FY2025 8,240 + 9M 2026 7,968 - 9M 2025 ~7,178 (back-solved from +11%)",
+      "asOf": "2026-09-30",
+      "note": "APPROXIMATE (+/-60). Stockanalysis TTM USD 10.26bn is consistent. FY2026 guidance ~EUR 10bn at actual currencies. Q3 FCF 1,718 (+36%)."
+    },
+    "fcfYield": {
+      "value": 0.037,
+      "period": "TTM",
+      "source": "derived: 9,030 / 244,400",
+      "asOf": "2026-11-12",
+      "note": "Provider 3.74%. On FY2026 guidance (~10bn): 4.1%."
+    },
+    "dividendPerShare": {
+      "value": 2.35,
+      "period": "FY2024 (EUR)",
+      "source": "https://www.sec.gov/Archives/edgar/data/1000184/000110465925021471/tm251055d2_ex99-1.htm",
+      "asOf": "2025-05-01",
+      "note": "Most recent dividend verified is FY2024 EUR 2.35 (payout 51.9% per annual report); FY2025 dividend not retrieved (stockanalysis ADR: USD 2.14 annual, ~EUR 1.85 equivalent, which does not match; unresolved)."
+    },
+    "dividendYield": {
+      "value": 0.011,
+      "period": "FY2024 dividend / price",
+      "source": "derived: 2.35 / 212.55",
+      "asOf": "2026-11-12",
+      "note": "Based on FY2024 dividend; FY2025 dividend unverified."
+    },
+    "payoutRatio": {
+      "value": 0.3618,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "Provider; stockanalysis ADR shows 28.6%. Company-reported FY2024 payout 51.9%. Provider ratios conflict, treat as unreliable."
+    },
+    "netDebtToEbitda": {
+      "value": 0.03,
+      "period": "2026-09-30 derived",
+      "source": "derived: net debt 1,224 / TTM EBITDA (EV/EBITDA basis ~EUR 12.4bn)",
+      "asOf": "2026-11-12",
+      "note": "About 0.1x or less; stock-agent shows -0.03x (net cash). Effectively unlevered."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable as a clean figure. Finance costs 9M 2026 EUR 902m vs non-IFRS operating profit 8,639m (about 9.6x) but SAP carries large financial income; not an EBIT/interest ratio from the provider."
+    },
+    "roic": {
+      "value": 0.1846,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/stocks/sap/statistics/",
+      "asOf": "2026-10-26",
+      "note": "Provider (ADR page)."
+    },
+    "roe": {
+      "value": 0.1818,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/stocks/sap/statistics/",
+      "asOf": "2026-10-26",
+      "note": "Provider (ADR page)."
+    },
+    "beta5y": {
+      "value": 0.7,
+      "period": "5Y",
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "asOf": "2026-11-12",
+      "note": "twelvedata 0.70; stockanalysis 0.76."
+    },
+    "sectorMetrics": {
+      "value": null,
+      "period": "Q3 2026",
+      "source": "Q3 2026 quarterly statement: https://www.sec.gov/Archives/edgar/data/0001000184/000110465926118617/tm2628113d1_ex99-1.htm",
+      "asOf": "2026-10-21",
+      "note": "Current cloud backlog EUR 24,144m, +28% reported / +26% constant currency (FY2025: EUR 21.05bn, +25% cc; Q4 2025 growth had slowed to 16% reported). Cloud revenue Q3 +26% cc-ish; cloud gross margin non-IFRS 74.3% vs 75.1% (-0.8pp). Cloud and software revenue Q3 EUR 9,249m (+15%); total revenue EUR 10,270m (+13%). IFRS operating profit Q3 EUR 2,930m (+18%) vs non-IFRS 3,030m (+18%); 9M 8,313m vs 8,639m (+14% each). EPS 9M: IFRS 5.50 (+17%), non-IFRS 5.20 (+15%). 9M FCF EUR 7,968m (+11%). Buyback up to EUR 10bn to end-2027, ~EUR 4.2bn done (avg EUR 164.79)."
+    },
+    "history": [
+      {
+        "period": "FY2025",
+        "revenue": 36800,
+        "ebit": 10420,
+        "ebitMargin": 0.283,
+        "eps": null,
+        "fcf": 8240,
+        "source": "Revenue EUR 36.8bn (rallies.ai, 2026-01-29), non-IFRS operating profit EUR 10.42bn and FCF EUR 8.24bn as quoted in Q3 2026 outlook comparatives. EBIT = NON-IFRS operating profit. Margin derived and approximate (revenue rounded). EPS not retrieved."
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "buy",
+      "analysts": 27,
+      "buy": 24,
+      "hold": 5,
+      "sell": 0,
+      "targetAvg": 243.36,
+      "targetHigh": 290,
+      "targetLow": 198.84,
+      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long) (buy = 6 strong buy + 18 buy; counts sum to 29 vs 27 analysts, provider inconsistency)",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; company 2026 outlook (Q3 2026): non-IFRS operating profit EUR 11.8-12.2bn cc (+13-17%), cloud revenue toward upper end of EUR 25.8-26.2bn (+23-25% cc), cloud and software revenue toward upper end of EUR 36.3-36.8bn, FCF ~EUR 10bn, current cloud backlog growth slightly decelerating from 25%, total revenue growth similar to 2025's 10.6%, non-IFRS tax ~29%."
+    },
+    "recentEvents": [
+      "2026-10-21 Q3 2026: revenue EUR 10.27bn (+13%), non-IFRS operating profit EUR 3.03bn (+18%), current cloud backlog +28% reported (+26% cc); cloud and software revenue outlook raised to upper end; operating profit and FCF outlook unchanged.",
+      "2026-01-29: Q4 2025 report; backlog growth slowed to 16% (25% cc) and 2026 backlog guide cut to 23-25%; shares fell >16% in a day, the largest since 2020; EUR 10bn buyback announced.",
+      "Early 2026: software sell-off on AI-disruption fears; 52-week low EUR 127.50."
+    ],
+    "valueTrapFlags": [
+      "Cloud gross margin compressing (non-IFRS 74.3% vs 75.1% Q3 y/y; cost of cloud +29% IFRS vs cloud revenue +26%).",
+      "Current cloud backlog growth guided to decelerate slightly; large transformation deals have longer ramp-up and termination clauses (Jan 2026 explanation).",
+      "Share price has rebounded ~67% from the low and sits near the 52w high (219.65), at ~30x trailing and ~25x forward P/E; limited valuation cushion vs the AI narrative.",
+      "No estimate cuts after the latest report: operating profit outlook unchanged, revenue outlook raised toward upper end."
+    ],
+    "dataGaps": [
+      "FY2021-2024 history not retrieved (only FY2025 partial).",
+      "FY2025 EPS and FY2025 dividend not verified.",
+      "Net debt is derived; lease treatment and other financial assets unresolved.",
+      "TTM figures partly back-solved from reported growth rates.",
+      "Historical multiples and forward EPS unavailable.",
+      "Beta/consensus counts inconsistent between providers."
+    ]
+  },
+  "retrievedAt": "2026-11-13T18:16:46+01:00",
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m non-IFRS EPS x justified P/E. Basis 2026E non-IFRS EPS 8.0 (trailing P/E 30.5 implies about 7.0; guided non-IFRS operating profit +13-17%; lead estimate). Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS non-IFRS, 2026E (lead estimate)",
+    "basisValue": 8.0,
+    "forwardDividendYield": 0.011,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "scores": {
+      "quality": 5,
+      "growth": 5,
+      "financialStrength": 5,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 172.8,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 20,
+        "note": "Cloud growth slows, AI pressure on application software multiples. Justified multiple 20x on next-12m 8.64.",
+        "epsCagr10y": 0.07,
+        "exitPe10y": 18
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 237.12,
+        "epsCagr5y": 0.14,
+        "exitPe5y": 24,
+        "note": "Current cloud backlog +26% cc converts; margins expand. Justified multiple 26x on next-12m 9.12.",
+        "epsCagr10y": 0.11,
+        "exitPe10y": 21
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 280.8,
+        "epsCagr5y": 0.17,
+        "exitPe5y": 27,
+        "note": "Business AI monetises, margins beat targets. Justified multiple 30x on next-12m 9.36.",
+        "epsCagr10y": 0.13,
+        "exitPe10y": 23
+      }
+    },
+    "whyItFits": "Mission-critical ERP with rising recurring cloud revenue: current cloud backlog +26% cc, non-IFRS operating profit +18% in Q3, net debt about zero, beta 0.7.",
+    "growthDrivers": "S/4HANA cloud migrations (RISE), Business AI, operating leverage; cloud revenue outlook raised in Q3.",
+    "saturation": "Near its 52-week high (EUR 219.65) after a JPM upgrade; trailing P/E 30, forward about 25: growth largely priced.",
+    "principalRisk": "AI agents reducing the value of application seats; cloud gross margin slipped 0.8pp."
+  }
+}

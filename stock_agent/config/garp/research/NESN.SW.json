@@ -1,0 +1,338 @@
+{
+  "region": "global",
+  "ticker": "NESN.SW",
+  "name": "Nestle S.A.",
+  "exchange": "SIX Swiss Exchange",
+  "currency": "CHF",
+  "sector": "Consumer Defensive / Packaged Foods",
+  "businessSummary": "World's largest food and beverage company: coffee (Nescafe, Nespresso), pet care, nutrition, prepared foods, confectionery, waters. CEO Philipp Navratil. Reports in CHF.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 87.72,
+      "period": "close 2026-11-12/13",
+      "source": "marketscreener.com NESTLE-S-A-15227721 valuation page",
+      "asOf": "2026-11-13",
+      "note": "CHF. halo showed 86.57 on 2026-11-12."
+    },
+    "high52w": {
+      "value": 87.54,
+      "period": "52 weeks",
+      "source": "halo-technologies.com/markets/shares/swx/nesn; twelvedata.com",
+      "asOf": "2026-11-12",
+      "note": "CHF; price 87.72 is slightly above, so the true high is at least the current price."
+    },
+    "low52w": {
+      "value": 70.29,
+      "period": "52 weeks",
+      "source": "halo-technologies.com; twelvedata.com",
+      "asOf": "2026-11-12",
+      "note": "CHF."
+    },
+    "sharesOutstanding": {
+      "value": 2570,
+      "period": "latest",
+      "source": "stockanalysis.com; twelvedata.com",
+      "asOf": "2026-10-23",
+      "note": "Million."
+    },
+    "marketCap": {
+      "value": 222678,
+      "period": "2026E basis",
+      "source": "marketscreener.com valuation",
+      "asOf": "2026-11-13",
+      "note": "CHF m. halo 221,350; stockanalysis 215,300 (2026-10-23)."
+    },
+    "netDebt": {
+      "value": 56710,
+      "period": "latest (cached)",
+      "source": "stockanalysis.com NESN statistics",
+      "asOf": "2026-10-23",
+      "note": "CHF m. marketscreener 2026E: 51,143. IFRS 16 lease treatment not stated."
+    },
+    "enterpriseValue": {
+      "value": 273820,
+      "period": "2026E",
+      "source": "marketscreener.com",
+      "asOf": "2026-11-13",
+      "note": "CHF m; stockanalysis 272,280."
+    },
+    "peTrailing": {
+      "value": 28.95,
+      "period": "TTM IFRS",
+      "source": "stockanalysis.com NESN statistics",
+      "asOf": "2026-10-23",
+      "note": "Reported (IFRS) EPS basis; halo shows 22.40. Reported EPS depressed by impairments/disposals."
+    },
+    "peForward": {
+      "value": 22.6,
+      "period": "FY2026E",
+      "source": "marketscreener.com",
+      "asOf": "2026-11-13",
+      "note": "EPS est. 3.827 (2026E), 4.35 (2027E), 4.698 (2028E); 2027E P/E 19.9x. stockanalysis forward 17.74 differs (basis unknown)."
+    },
+    "evEbitTrailing": {
+      "value": 18.53,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": ""
+    },
+    "evEbitForward": {
+      "value": 18.5,
+      "period": "FY2026E",
+      "source": "marketscreener.com",
+      "asOf": "2026-11-13",
+      "note": "2027E 17.4x."
+    },
+    "evEbitdaTrailing": {
+      "value": 15.08,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "twelvedata EBITDA 17.91bn."
+    },
+    "fcfTTM": {
+      "value": 12520,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "CHF m."
+    },
+    "fcfYield": {
+      "value": 0.0566,
+      "period": "TTM FCF / market cap",
+      "source": "derived: 12,520 / 221,350",
+      "asOf": "2026-11-12",
+      "note": "stockanalysis showed 5.81%; marketscreener 2026E FCF yield 3.72% (conflict)."
+    },
+    "dividendPerShare": {
+      "value": 3.1,
+      "period": "FY2025 (paid 2026)",
+      "source": "stockanalysis.com; halo last payment 3.10",
+      "asOf": "2026-10-23",
+      "note": "CHF; marketscreener 2026E 3.139."
+    },
+    "dividendYield": {
+      "value": 0.0353,
+      "period": "FY2025 div / price",
+      "source": "derived: 3.10 / 87.72",
+      "asOf": "2026-11-13",
+      "note": "marketscreener 3.63% (2026E)."
+    },
+    "payoutRatio": {
+      "value": 1.072,
+      "period": "TTM reported EPS",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "Reported-EPS basis; halo shows 88%."
+    },
+    "netDebtToEbitda": {
+      "value": 3.17,
+      "period": "latest",
+      "source": "derived: 56,710 / 17,910 (twelvedata EBITDA TTM)",
+      "asOf": "2026-11-12",
+      "note": "Net debt per stockanalysis (lease treatment unstated); stockanalysis itself says about 3.45 (Debt/EBITDA 3.67 gross). Range 3.1-3.5."
+    },
+    "interestCoverage": {
+      "value": 8.51,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": ""
+    },
+    "roic": {
+      "value": 0.123,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": ""
+    },
+    "roe": {
+      "value": 0.2624,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": ""
+    },
+    "beta5y": {
+      "value": 0.5,
+      "period": "5y",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "twelvedata 0.48."
+    },
+    "sectorMetrics": {
+      "organicGrowth9M": {
+        "value": 0.037,
+        "period": "9M 2026",
+        "source": "vermoegenszentrum.ch (Nestle Q3 2026 release)",
+        "asOf": "2026-10-22",
+        "note": "Q3 4.0%; RIG Q3 2.8% (Q2 1.8%), 9M 1.9%; pricing Q3 1.1%, 9M 1.8%. FY2025 RIG 0.8%. Q3 RIG by zone: Americas 2.4%, AOA 5.0%, Europe 1.0%. 9M sales CHF 65.87bn, flat reported (FX)."
+      },
+      "tradingMargin": {
+        "value": 0.161,
+        "period": "FY2025 underlying trading operating profit",
+        "source": "Nestle FY2026 guidance text",
+        "asOf": "2026-10-22",
+        "note": "EBIT-type (underlying trading operating profit, pre-restructuring/impairment). 2026 guidance: margin to improve vs 16.1%; H2 margin similar to H1 excluding US tariff refunds."
+      },
+      "guidance2026": {
+        "value": null,
+        "period": "FY2026",
+        "source": "vermoegenszentrum.ch",
+        "asOf": "2026-10-22",
+        "note": "Maintained: organic growth 3-4%, RIG accelerating from 0.8%, margin improving vs 16.1%. No change at Q3."
+      },
+      "reportedOperatingMargin": {
+        "value": 0.1547,
+        "period": "FY2025",
+        "source": "derived from stockanalysis operating income 13,906 / revenue 89,885",
+        "asOf": "2026-10-23",
+        "note": "Reported (IFRS) operating income, includes impairments; vs 16.96% in FY2024."
+      }
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 87470,
+        "ebit": 14640,
+        "ebitMargin": 0.1674,
+        "eps": 6.06,
+        "fcf": null,
+        "source": "stockanalysis.com/quote/swx/NESN/financials (CHF m; ebit = reported operating income; eps = reported EPS, includes disposal gains)"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 94780,
+        "ebit": 15648,
+        "ebitMargin": 0.1651,
+        "eps": 3.42,
+        "fcf": null,
+        "source": "stockanalysis.com/quote/swx/NESN/financials (reported)"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 93351,
+        "ebit": 15658,
+        "ebitMargin": 0.1677,
+        "eps": 4.23,
+        "fcf": null,
+        "source": "stockanalysis.com/quote/swx/NESN/financials (reported)"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 91720,
+        "ebit": 15556,
+        "ebitMargin": 0.1696,
+        "eps": 4.19,
+        "fcf": null,
+        "source": "stockanalysis.com/quote/swx/NESN/financials (reported)"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 89885,
+        "ebit": 13906,
+        "ebitMargin": 0.1547,
+        "eps": 3.51,
+        "fcf": null,
+        "source": "stockanalysis.com/quote/swx/NESN/financials (reported; underlying trading margin 16.1%)"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "",
+      "analysts": null,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": null,
+      "targetHigh": null,
+      "targetLow": null,
+      "source": "unavailable",
+      "asOf": ""
+    },
+    "forwardEstimates": {
+      "epsNextFY": 3.827,
+      "epsFY2": 4.35,
+      "revenueGrowthNextFY": null,
+      "source": "marketscreener.com 2026E/2027E EPS (basis likely underlying/adjusted, not stated)"
+    },
+    "recentEvents": [
+      "Q3/9M 2026 sales (22 Oct): Q3 sales CHF 22.76bn +5.2%, OG 4.0%, RIG 2.8% (accelerating); shares +1.8% to 84.99 on the day.",
+      "Early Sept: agreed sale of mainstream vitamins/minerals/supplements to Yellow Wood Partners for USD 1bn.",
+      "FY2026 guidance maintained; potential US tariff refunds excluded from H2 margin view.",
+      "H1 2026 results mentioned a Peranel joint venture."
+    ],
+    "valueTrapFlags": [
+      "FY2025 RIG only 0.8%; 2026 recovery (9M 1.9%) still modest, volume-light growth.",
+      "Reported EPS fell from 4.19 (FY2024) to 3.51 (FY2025); payout above 100% on reported EPS.",
+      "Net debt/EBITDA about 3.1-3.5 with CHF 56.7bn net debt.",
+      "Reported sales flat in CHF for 9M due to FX; stock near 52-week high."
+    ],
+    "dataGaps": [
+      "Analyst consensus rating/targets unavailable",
+      "Net debt/EBITDA is derived from mixed sources (range 3.1-3.5)",
+      "EPS history is reported not underlying (underlying EPS not retrieved)",
+      "FCF history not retrieved; estimate revisions after Q3 not available",
+      "stockanalysis data dated 2026-10-23 (cached)"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E EPS CHF 3.83 (MarketScreener consensus, basis not stated). Reported EPS fell in FY2025. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS 2026E consensus (MarketScreener)",
+    "basisValue": 3.83,
+    "forwardDividendYield": 0.035,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+      "quality": 4,
+      "growth": 2,
+      "financialStrength": 3,
+      "risk": 5
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 65.76,
+        "epsCagr5y": 0.01,
+        "exitPe5y": 17,
+        "note": "Volumes stay weak, margin pressure, leverage limits buybacks. Justified multiple 17x on next-12m 3.87.",
+        "epsCagr10y": 0.02,
+        "exitPe10y": 16
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 84.45,
+        "epsCagr5y": 0.05,
+        "exitPe5y": 19,
+        "note": "Organic growth about 3-4% with gradual margin recovery. Justified multiple 21x on next-12m 4.02.",
+        "epsCagr10y": 0.05,
+        "exitPe10y": 18
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 98.35,
+        "epsCagr5y": 0.07,
+        "exitPe5y": 21,
+        "note": "Turnaround restores real internal growth above 3%. Justified multiple 24x on next-12m 4.10.",
+        "epsCagr10y": 0.06,
+        "exitPe10y": 20
+      }
+    },
+    "whyItFits": "Global staples leader with beta 0.5 and a 3.5% dividend; organic growth recovering (Q3 RIG +2.8%).",
+    "growthDrivers": "Coffee, pet care, nutrition; cost programme and portfolio pruning.",
+    "saturation": "Near its 52-week high after a recovery; forward P/E about 23: no longer cheap.",
+    "principalRisk": "Weak volume growth (9M RIG 1.9%) with net debt/EBITDA about 3.2x; consensus unavailable."
+  }
+}

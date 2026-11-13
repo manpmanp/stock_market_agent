@@ -9,24 +9,24 @@
   "facts": {
     "price": {
       "value": 435.25,
-      "period": "close, run 2026-11-12",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-      "asOf": "2026-11-12",
-      "note": "Investor B"
+      "period": "close",
+      "source": "stock-agent /decisions",
+      "asOf": "2026-11-11",
+      "note": "Value confirmed; date corrected to 11 Nov close (was 435.25; fact check config/garp/checks/2026-11-13.md)"
     },
     "high52w": {
-      "value": null,
-      "period": "",
-      "source": "",
-      "asOf": "2026-11-13",
-      "note": "unavailable (Yahoo blocked; stockanalysis page gave only 52w price change)"
+      "value": 439.6,
+      "period": "52w",
+      "source": "fact check",
+      "asOf": "2026-11-12",
+      "note": " (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "low52w": {
-      "value": null,
-      "period": "",
-      "source": "",
-      "asOf": "2026-11-13",
-      "note": "unavailable"
+      "value": 306.7,
+      "period": "52w",
+      "source": "fact check",
+      "asOf": "2026-11-12",
+      "note": " (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "sharesOutstanding": {
       "value": 3061,

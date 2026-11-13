@@ -8,25 +8,25 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 392.5,
+      "value": 395.5,
       "period": "close",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
+      "source": "AJ Bell / Nordnet",
       "asOf": "2026-11-12",
-      "note": ""
+      "note": "Refreshed (was 392.5; fact check config/garp/checks/2026-11-13.md)"
     },
     "high52w": {
-      "value": null,
-      "period": "n/a",
-      "source": "",
-      "asOf": "2026-11-13",
-      "note": "unavailable: not shown on stockanalysis (only 52w price change +3.37% as of 2026-10-20)"
+      "value": 403.9,
+      "period": "52w",
+      "source": "fact check",
+      "asOf": "2026-11-12",
+      "note": " (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "low52w": {
-      "value": null,
-      "period": "n/a",
-      "source": "",
-      "asOf": "2026-11-13",
-      "note": "unavailable"
+      "value": 314.2,
+      "period": "52w",
+      "source": "fact check",
+      "asOf": "2026-11-12",
+      "note": " (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "sharesOutstanding": {
       "value": 1110,

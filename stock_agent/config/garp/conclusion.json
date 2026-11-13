@@ -1,20 +1,20 @@
 {
   "asOf": "2026-11-13",
   "picks": [
-    { "category": "Top three overall", "ticker": "ORK.OL", "why": "Ranks first: 13% below scenario-weighted fair value, beta 0.2, 5.7% dividend plus NOK 4bn buyback. Not yet at its NOK 84 entry; accumulate on weakness.", "risk": "ROIC about 9%, close to cost of capital; 1 Dec Capital Markets Day can reset expectations." },
-    { "category": "Top three overall", "ticker": "INVE-B.ST", "why": "Highest-quality compounder in the set (LTV 1.8%, NAV CAGR about 9%), but at a 6% premium to NAV it is a buy only near SEK 335.", "risk": "Premium to NAV can revert to the historical discount." },
-    { "category": "Top three overall", "ticker": "SWEC-B.ST", "why": "De-rated, asset-light consultancy 10% below fair value with 8.9%/yr expected return; entry SEK 107 under a strict 30% margin of safety.", "risk": "Slowing organic growth and CEO transition." },
-    { "category": "Best defensive investment", "ticker": "ORK.OL", "why": "Lowest beta and most stable demand with the highest sustainable yield in the set.", "risk": "Low growth; reported revenue hit by FX and divestments." },
-    { "category": "Best risk-adjusted growth", "ticker": "ASSA-B.ST", "why": "About 7% EPS growth with rising margins and beta 0.84; only 3% above fair value. Entry SEK 304.", "risk": "Construction downturn; leverage 2.1-2.4x from acquisitions." },
-    { "category": "Most attractive undervalued company", "ticker": "SWEC-B.ST", "why": "Largest discount among names without a red value-trap check (Orkla is similar; Novo is cheaper on paper but fails the trap checklist).", "risk": "Price used is the 23 Oct close; verify before acting." },
-    { "category": "Best for 2-5 years", "ticker": "SWEC-B.ST", "why": "Re-rating potential as margins rise, plus a 2.7% dividend.", "risk": "Organic growth must stabilise near 3%." },
-    { "category": "Best for 5-10 years", "ticker": "INVE-B.ST", "why": "Long NAV compounding record across diversified Nordic franchises with almost no debt; best bought on a market setback.", "risk": "Equity-market dependence." }
+    { "category": "Top three overall", "ticker": "WKL.AS", "why": "Only stock in the buy zone: 28% below fair value, 85% recurring revenue, 7% FCF yield, guidance confirmed. Entry at or below EUR 99.", "risk": "AI disruption of professional information; same risk as RELX, so do not treat the two as diversification." },
+    { "category": "Top three overall", "ticker": "REL.L", "why": "Near entry (18% below fair value, entry 2,992p) with +7% underlying growth and a 0.27 beta.", "risk": "AI pricing pressure on legal and scientific data." },
+    { "category": "Top three overall", "ticker": "SAN.PA", "why": "Near entry (21% below fair value; strict entry EUR 76 under a 30% margin) with a 4.8% dividend and guidance upgraded.", "risk": "Dupixent concentration and declining vaccines." },
+    { "category": "Best defensive investment", "ticker": "ORK.OL", "why": "Beta 0.2, 5.7% dividend plus buyback, 13% below fair value. Entry NOK 84.", "risk": "Low ROIC; Capital Markets Day 1 Dec 2026." },
+    { "category": "Best risk-adjusted growth", "ticker": "SAP.DE", "why": "Cloud backlog +26% cc, net cash, 12%/yr expected return; 9% below fair value. Entry EUR 186.", "risk": "Near its 52-week high; AI agents could reduce application seats." },
+    { "category": "Most attractive undervalued company", "ticker": "WKL.AS", "why": "Largest discount among names with clean results and no red value-trap checks on fundamentals.", "risk": "52-week range conflicts between sources; verify the price before acting." },
+    { "category": "Best for 2-5 years", "ticker": "SAN.PA", "why": "Low multiple (about 9-10x forward) with re-rating potential as launches grow, plus dividend.", "risk": "Pipeline readouts." },
+    { "category": "Best for 5-10 years", "ticker": "REL.L", "why": "Long compounding record of high-margin subscription data; AI can widen its moat if it monetises its proprietary content.", "risk": "AI disruption scenario." }
   ],
   "watchNotBuy": [
-    { "ticker": "ATCO-A.ST", "why": "Best business economics in the set, but 17% above fair value at 35x trailing earnings; entry about SEK 133." },
-    { "ticker": "ADDT-B.ST", "why": "15% above fair value; priced for double-digit growth with 1-2% organic; entry about SEK 233." },
-    { "ticker": "LIFCO-B.ST", "why": "Near fair value but estimates are being cut for the 2027 customer loss; entry about SEK 221." },
-    { "ticker": "NOVO-B.CO", "why": "7% below fair value but fails three value-trap checks (FCF, competition, forward earnings); entry about DKK 205 for a 30% margin." },
-    { "ticker": "EKTA-B.ST", "why": "Excluded as a value trap for now: Q1 below guidance, weakening orders; revisit after the late-Nov Q2 report." }
+    { "ticker": "ROG.SW", "why": "Top-quality defensive, but at its 52-week high and 6% above fair value; entry about CHF 313." },
+    { "ticker": "INVE-B.ST", "why": "Trades at a premium to NAV; entry about SEK 335." },
+    { "ticker": "SWEC-B.ST", "why": "8% below fair value but needs SEK 107 for a 30% margin; organic growth slowing." },
+    { "ticker": "ASSA-B.ST", "why": "Quality compounder slightly above fair value; entry about SEK 304." },
+    { "ticker": "LIFCO-B.ST", "why": "Estimates being cut for the 2027 customer loss; entry about SEK 221." }
   ]
 }

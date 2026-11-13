@@ -1,36 +1,426 @@
 {
-  "runAt": "2026-11-13T13:34:35Z",
+  "runAt": "2026-11-13T17:24:30Z",
   "rows": [
+    {
+      "ticker": "WKL.AS",
+      "name": "Wolters Kluwer N.V.",
+      "currency": "EUR",
+      "price": 89.5,
+      "weightedFairValue": 123.739,
+      "marginOfSafety": 0.27670338373511993,
+      "upside": 0.38255865921787713,
+      "bearDownside": 0.0022346368715084886,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 98.9912,
+      "accumulateLow": 86.61730000000001,
+      "accumulateHigh": 98.9912,
+      "entryStatus": "BUY ZONE",
+      "return5y": {
+        "capital": 0.11935764897642878,
+        "dividend": 0.028,
+        "total": 0.14735764897642878,
+        "byScenario": {
+          "bear": 0.07374620620026737,
+          "base": 0.16353027191277933,
+          "bull": 0.2173432557997945
+        }
+      },
+      "return10y": {
+        "capital": 0.08484831118070646,
+        "dividend": 0.028,
+        "total": 0.11284831118070646
+      },
+      "pctOf52wHigh": 0.9584493467551939,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 16.5 → 14.9"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "amber",
+          "detail": "2.00x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 79.8% over 2 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "18.0% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 79.96300443293202,
+      "region": "global",
+      "rank": 1,
+      "regionRank": 1
+    },
+    {
+      "ticker": "REL.L",
+      "name": "RELX PLC",
+      "currency": "GBp",
+      "price": 3072,
+      "weightedFairValue": 3740.212,
+      "marginOfSafety": 0.1786561831254485,
+      "upside": 0.21751692708333326,
+      "bearDownside": -0.0498046875,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 2992.1696,
+      "accumulateLow": 2618.1484,
+      "accumulateHigh": 2992.1696,
+      "entryStatus": "NEAR ENTRY",
+      "return5y": {
+        "capital": 0.09390144720215604,
+        "dividend": 0.022,
+        "total": 0.11590144720215603,
+        "byScenario": {
+          "bear": 0.05123374310917892,
+          "base": 0.13012171135243042,
+          "bull": 0.1773523429659358
+        }
+      },
+      "return10y": {
+        "capital": 0.07017554022706918,
+        "dividend": 0.022,
+        "total": 0.09217554022706917
+      },
+      "pctOf52wHigh": 0.8908220965637234,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 24.2 → 20.3"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "amber",
+          "detail": "2.00x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "23.6% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 79.01603566665699,
+      "region": "global",
+      "rank": 2,
+      "regionRank": 2
+    },
+    {
+      "ticker": "SAP.DE",
+      "name": "SAP SE",
+      "currency": "EUR",
+      "price": 210.95,
+      "weightedFairValue": 231.95999999999998,
+      "marginOfSafety": 0.09057596137265045,
+      "upside": 0.09959706091490861,
+      "bearDownside": -0.1808485423086038,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 185.56799999999998,
+      "accumulateLow": 162.372,
+      "accumulateHigh": 185.56799999999998,
+      "entryStatus": "BELOW FAIR VALUE",
+      "return5y": {
+        "capital": 0.1087342890596259,
+        "dividend": 0.011,
+        "total": 0.1197342890596259,
+        "byScenario": {
+          "bear": 0.03290811068162279,
+          "base": 0.12974006385588888,
+          "bull": 0.18654891784510308
+        }
+      },
+      "return10y": {
+        "capital": 0.0786518316836482,
+        "dividend": 0.011,
+        "total": 0.0896518316836482
+      },
+      "pctOf52wHigh": 0.9603915319826997,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "EV/EBIT 21.4 → 20.5"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "0.03x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "18.5% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 75.63274208803831,
+      "region": "global",
+      "rank": 3,
+      "regionRank": 3
+    },
+    {
+      "ticker": "SAN.PA",
+      "name": "Sanofi",
+      "currency": "EUR",
+      "price": 86.61,
+      "weightedFairValue": 109.00800000000001,
+      "marginOfSafety": 0.20547115808014094,
+      "upside": 0.2586075510910981,
+      "bearDownside": -0.06477312088673359,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 76.3056,
+      "accumulateLow": 65.40480000000001,
+      "accumulateHigh": 76.3056,
+      "entryStatus": "NEAR ENTRY",
+      "return5y": {
+        "capital": 0.07188819172499844,
+        "dividend": 0.048,
+        "total": 0.11988819172499844,
+        "byScenario": {
+          "bear": 0.03469606463868176,
+          "base": 0.13672775978405766,
+          "bull": 0.20557746220682532
+        }
+      },
+      "return10y": {
+        "capital": 0.04884018687779883,
+        "dividend": 0.048,
+        "total": 0.09684018687779883
+      },
+      "pctOf52wHigh": 0.9539596871902191,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 25.0 → 9.3"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "0.94x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 71.43085226050388,
+      "region": "global",
+      "rank": 4,
+      "regionRank": 4
+    },
+    {
+      "ticker": "ROG.SW",
+      "name": "Roche Holding AG (Genussschein)",
+      "currency": "CHF",
+      "price": 415.8,
+      "weightedFairValue": 391.29999999999995,
+      "marginOfSafety": -0.06261180679785339,
+      "upside": -0.05892255892255904,
+      "bearDownside": -0.2640692640692641,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 313.03999999999996,
+      "accumulateLow": 273.90999999999997,
+      "accumulateHigh": 313.03999999999996,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.013156203939737099,
+        "dividend": 0.024,
+        "total": 0.0371562039397371,
+        "byScenario": {
+          "bear": -0.02046296176648956,
+          "base": 0.04218044471509284,
+          "bull": 0.08472688809525228
+        }
+      },
+      "return10y": {
+        "capital": 0.025054672944580525,
+        "dividend": 0.024,
+        "total": 0.049054672944580525
+      },
+      "pctOf52wHigh": 1,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "amber",
+          "detail": "P/E 20.7 → 21.8"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "17.9% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 64.24814019974933,
+      "region": "global",
+      "rank": 5,
+      "regionRank": 5
+    },
     {
       "ticker": "ORK.OL",
       "name": "Orkla ASA",
       "currency": "NOK",
-      "price": 104.9,
+      "price": 104.6,
       "weightedFairValue": 119.91499999999999,
-      "marginOfSafety": 0.12521369303256458,
-      "upside": 0.1431363203050522,
-      "bearDownside": -0.08989513822688278,
+      "marginOfSafety": 0.12771546512112741,
+      "upside": 0.14641491395793493,
+      "bearDownside": -0.08728489483747603,
       "requiredMarginOfSafety": 0.3,
       "entryPrice": 83.94049999999999,
       "accumulateLow": 71.949,
       "accumulateHigh": 83.94049999999999,
       "entryStatus": "BELOW FAIR VALUE",
       "return5y": {
-        "capital": 0.06081040699495768,
+        "capital": 0.061418205564445855,
         "dividend": 0.057,
-        "total": 0.11781040699495768,
+        "total": 0.11841820556444585,
         "byScenario": {
-          "bear": 0.05401167487129505,
-          "base": 0.1231922434891542,
-          "bull": 0.17084546613022727
+          "bear": 0.054582919521379565,
+          "base": 0.123803125618627,
+          "bull": 0.17148365149914985
         }
       },
       "return10y": {
-        "capital": 0.04302845186085874,
+        "capital": 0.043327214210913845,
         "dividend": 0.057,
-        "total": 0.10002845186085874
+        "total": 0.10032721421091384
       },
-      "pctOf52wHigh": null,
+      "pctOf52wHigh": 0.7972560975609756,
       "trap": [
         {
           "indicator": "Forward vs trailing",
@@ -74,8 +464,10 @@
         }
       ],
       "trapReds": 1,
-      "composite": 62.680003357569035,
-      "rank": 1
+      "composite": 62.81226241704823,
+      "region": "nordic",
+      "rank": 6,
+      "regionRank": 1
     },
     {
       "ticker": "INVE-B.ST",
@@ -106,7 +498,7 @@
         "dividend": 0.013,
         "total": 0.07639856976111235
       },
-      "pctOf52wHigh": null,
+      "pctOf52wHigh": 0.9901046405823475,
       "trap": [
         {
           "indicator": "Forward vs trailing",
@@ -151,38 +543,40 @@
       ],
       "trapReds": 1,
       "composite": 62.234587141246436,
-      "rank": 2
+      "region": "nordic",
+      "rank": 7,
+      "regionRank": 2
     },
     {
       "ticker": "SWEC-B.ST",
       "name": "Sweco AB (B)",
       "currency": "SEK",
-      "price": 138.2,
+      "price": 140.5,
       "weightedFairValue": 152.85,
-      "marginOfSafety": 0.09584560026169453,
-      "upside": 0.1060057887120116,
-      "bearDownside": -0.12575976845151948,
+      "marginOfSafety": 0.080798168138698,
+      "upside": 0.08790035587188605,
+      "bearDownside": -0.14007117437722427,
       "requiredMarginOfSafety": 0.3,
       "entryPrice": 106.99499999999999,
       "accumulateLow": 91.71,
       "accumulateHigh": 106.99499999999999,
       "entryStatus": "BELOW FAIR VALUE",
       "return5y": {
-        "capital": 0.06170150466026855,
+        "capital": 0.05820248389288446,
         "dividend": 0.027,
-        "total": 0.08870150466026855,
+        "total": 0.08520248389288446,
         "byScenario": {
-          "bear": 0.0237705968827546,
-          "base": 0.09669012447740885,
-          "bull": 0.1376551728035019
+          "bear": 0.020485567141813908,
+          "base": 0.09316477583300817,
+          "bull": 0.13399481676370759
         }
       },
       "return10y": {
-        "capital": 0.05276139166739208,
+        "capital": 0.051025181451544444,
         "dividend": 0.027,
-        "total": 0.07976139166739207
+        "total": 0.07802518145154444
       },
-      "pctOf52wHigh": null,
+      "pctOf52wHigh": 0.7814238042269187,
       "trap": [
         {
           "indicator": "Forward vs trailing",
@@ -226,39 +620,119 @@
         }
       ],
       "trapReds": 1,
-      "composite": 60.18002475921813,
-      "rank": 3
+      "composite": 59.4001960503941,
+      "region": "nordic",
+      "rank": 8,
+      "regionRank": 3
+    },
+    {
+      "ticker": "WM",
+      "name": "Waste Management, Inc.",
+      "currency": "USD",
+      "price": 236.26,
+      "weightedFairValue": 231.7025,
+      "marginOfSafety": -0.019669619447351794,
+      "upside": -0.019290188775078376,
+      "bearDownside": -0.2080335223905866,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 185.362,
+      "accumulateLow": 162.19175,
+      "accumulateHigh": 185.362,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.042489643543925204,
+        "dividend": 0.016,
+        "total": 0.058489643543925204,
+        "byScenario": {
+          "bear": 0.008413809974434625,
+          "base": 0.06320262232593564,
+          "bull": 0.09913951954939491
+        }
+      },
+      "return10y": {
+        "capital": 0.045990790479517374,
+        "dividend": 0.016,
+        "total": 0.061990790479517374
+      },
+      "pctOf52wHigh": 0.9521621730544473,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 31.0 → 27.5"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "amber",
+          "detail": "2.82x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "amber",
+          "detail": "FCF/EBIT 58.3% over 2 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 58.8584037987539,
+      "region": "global",
+      "rank": 9,
+      "regionRank": 6
     },
     {
       "ticker": "ASSA-B.ST",
       "name": "Assa Abloy AB",
       "currency": "SEK",
-      "price": 392.5,
+      "price": 395.5,
       "weightedFairValue": 379.54999999999995,
-      "marginOfSafety": -0.034119351864049685,
-      "upside": -0.032993630573248556,
-      "bearDownside": -0.21462420382165603,
+      "marginOfSafety": -0.04202344882097231,
+      "upside": -0.040328697850821826,
+      "bearDownside": -0.22058154235145389,
       "requiredMarginOfSafety": 0.2,
       "entryPrice": 303.64,
       "accumulateLow": 265.685,
       "accumulateHigh": 303.64,
       "entryStatus": "ABOVE FAIR VALUE",
       "return5y": {
-        "capital": 0.03613706930615193,
+        "capital": 0.034560388801870345,
         "dividend": 0.017,
-        "total": 0.05313706930615193,
+        "total": 0.05156038880187035,
         "byScenario": {
-          "bear": -0.010376344960323816,
-          "base": 0.058658354232987805,
-          "bull": 0.10560791371895593
+          "bear": -0.01185637767060145,
+          "base": 0.05707327203885214,
+          "bull": 0.10395138880037856
         }
       },
       "return10y": {
-        "capital": 0.040552772926356895,
+        "capital": 0.03976077159583741,
         "dividend": 0.017,
-        "total": 0.057552772926356896
+        "total": 0.05676077159583741
       },
-      "pctOf52wHigh": null,
+      "pctOf52wHigh": 0.9792027729636049,
       "trap": [
         {
           "indicator": "Forward vs trailing",
@@ -302,39 +776,41 @@
         }
       ],
       "trapReds": 1,
-      "composite": 57.91029687735663,
-      "rank": 4
+      "composite": 57.52679748530211,
+      "region": "nordic",
+      "rank": 10,
+      "regionRank": 4
     },
     {
       "ticker": "LIFCO-B.ST",
       "name": "Lifco AB (B shares)",
       "currency": "SEK",
-      "price": 288.2,
+      "price": 287.8,
       "weightedFairValue": 275.995,
-      "marginOfSafety": -0.04422181561260152,
-      "upside": -0.04234906315058984,
-      "bearDownside": -0.2623525329632199,
+      "marginOfSafety": -0.04277251399481874,
+      "upside": -0.04101806810284925,
+      "bearDownside": -0.26132731063238357,
       "requiredMarginOfSafety": 0.2,
       "entryPrice": 220.79600000000002,
       "accumulateLow": 193.19650000000001,
       "accumulateHigh": 220.79600000000002,
       "entryStatus": "ABOVE FAIR VALUE",
       "return5y": {
-        "capital": 0.03260166714618598,
+        "capital": 0.03288854083045337,
         "dividend": 0.009,
-        "total": 0.04160166714618598,
+        "total": 0.04188854083045337,
         "byScenario": {
-          "bear": -0.044146790054476755,
-          "base": 0.050876534252768495,
-          "bull": 0.10880039013368369
+          "bear": -0.043883738698431436,
+          "base": 0.05116598464728394,
+          "bull": 0.10910593272567702
         }
       },
       "return10y": {
-        "capital": 0.03654639490913508,
+        "capital": 0.03669036970736833,
         "dividend": 0.009,
-        "total": 0.045546394909135084
+        "total": 0.04569036970736833
       },
-      "pctOf52wHigh": null,
+      "pctOf52wHigh": 0.7413704276146317,
       "trap": [
         {
           "indicator": "Forward vs trailing",
@@ -378,8 +854,10 @@
         }
       ],
       "trapReds": 1,
-      "composite": 56.46811483997284,
-      "rank": 5
+      "composite": 56.538210826050516,
+      "region": "nordic",
+      "rank": 11,
+      "regionRank": 5
     },
     {
       "ticker": "ATCO-A.ST",
@@ -455,7 +933,9 @@
       ],
       "trapReds": 1,
       "composite": 55.412303051111444,
-      "rank": 6
+      "region": "nordic",
+      "rank": 12,
+      "regionRank": 6
     },
     {
       "ticker": "ADDT-B.ST",
@@ -531,7 +1011,165 @@
       ],
       "trapReds": 1,
       "composite": 52.494649525437765,
-      "rank": 7
+      "region": "nordic",
+      "rank": 13,
+      "regionRank": 7
+    },
+    {
+      "ticker": "NOVN.SW",
+      "name": "Novartis AG",
+      "currency": "CHF",
+      "price": 134.22,
+      "weightedFairValue": 135.3825,
+      "marginOfSafety": 0.008586781895739803,
+      "upside": 0.00866115333035311,
+      "bearDownside": -0.2057815526747132,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 94.76774999999999,
+      "accumulateLow": 81.22949999999999,
+      "accumulateHigh": 94.76774999999999,
+      "entryStatus": "BELOW FAIR VALUE",
+      "return5y": {
+        "capital": 0.026707624941943425,
+        "dividend": 0.028,
+        "total": 0.05470762494194342,
+        "byScenario": {
+          "bear": -0.017033814135190586,
+          "base": 0.059826967961636085,
+          "bull": 0.11621037797969211
+        }
+      },
+      "return10y": {
+        "capital": 0.03095596628418948,
+        "dividend": 0.028,
+        "total": 0.058955966284189476
+      },
+      "pctOf52wHigh": 0.99260464428339,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 32.2 → 16.4"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "green",
+          "detail": "FCF/EBIT 105.2% over 2 yrs"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "14.8% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 50.53752769121549,
+      "region": "global",
+      "rank": 14,
+      "regionRank": 7
+    },
+    {
+      "ticker": "NESN.SW",
+      "name": "Nestle S.A.",
+      "currency": "CHF",
+      "price": 87.72,
+      "weightedFairValue": 83.2525,
+      "marginOfSafety": -0.05366205219062503,
+      "upside": -0.050929092567259526,
+      "bearDownside": -0.25034199726402184,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 58.27674999999999,
+      "accumulateLow": 49.951499999999996,
+      "accumulateHigh": 58.27674999999999,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.006528706994156308,
+        "dividend": 0.035,
+        "total": 0.04152870699415631,
+        "byScenario": {
+          "bear": -0.013450931936113714,
+          "base": 0.04648640381752331,
+          "bull": 0.08659295227769234
+        }
+      },
+      "return10y": {
+        "capital": 0.01995061495780115,
+        "dividend": 0.035,
+        "total": 0.05495061495780115
+      },
+      "pctOf52wHigh": 1.002056202878684,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "EV/EBIT 18.5 → 18.5"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "amber",
+          "detail": "CAGR 0.7%, 3 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "amber",
+          "detail": "15.5% vs avg 16.7%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "amber",
+          "detail": "3.17x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "12.3% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 47.44109777968349,
+      "region": "global",
+      "rank": 15,
+      "regionRank": 8
     },
     {
       "ticker": "INDT.ST",
@@ -607,7 +1245,9 @@
       ],
       "trapReds": 1,
       "composite": 45.497755107360135,
-      "rank": 8
+      "region": "nordic",
+      "rank": 16,
+      "regionRank": 8
     },
     {
       "ticker": "NDA-SE.ST",
@@ -683,7 +1323,9 @@
       ],
       "trapReds": 1,
       "composite": 42.46157640503011,
-      "rank": 9
+      "region": "nordic",
+      "rank": 17,
+      "regionRank": 9
     },
     {
       "ticker": "AXFO.ST",
@@ -759,7 +1401,9 @@
       ],
       "trapReds": 2,
       "composite": 41.63856252535538,
-      "rank": 10
+      "region": "nordic",
+      "rank": 18,
+      "regionRank": 10
     },
     {
       "ticker": "NOVO-B.CO",
@@ -835,7 +1479,9 @@
       ],
       "trapReds": 3,
       "composite": 39.125622680943174,
-      "rank": 11
+      "region": "nordic",
+      "rank": 19,
+      "regionRank": 11
     },
     {
       "ticker": "EKTA-B.ST",
@@ -911,7 +1557,9 @@
       ],
       "trapReds": 3,
       "composite": 20.32333124556142,
-      "rank": 12
+      "region": "nordic",
+      "rank": 20,
+      "regionRank": 12
     }
   ]
 }

@@ -1,0 +1,290 @@
+{
+  "ticker": "WKL.AS",
+  "name": "Wolters Kluwer N.V.",
+  "region": "global",
+  "exchange": "Euronext Amsterdam",
+  "currency": "EUR",
+  "sector": "Industrials / Professional information, software and services (Health, Tax & Accounting, Legal & Regulatory, Financial & Corporate Compliance, Corporate Performance & ESG)",
+  "businessSummary": "Dutch professional-information and expert-solutions group: UpToDate and clinical decision support, CCH tax software, legal and regulatory content/software, compliance (CT Corporation), and CCH Tagetik/ESG. 85% recurring revenue; North America 63% of revenue.",
+  "facts": {
+    "price": {
+      "value": 89.5,
+      "period": "close 2026-11-12",
+      "source": "https://www.debelegger.nl/en/stock/WKL.AS",
+      "asOf": "2026-11-12",
+      "note": "EUR."
+    },
+    "high52w": {
+      "value": 93.38,
+      "period": "52 weeks to 2026-11-12",
+      "source": "https://www.debelegger.nl/en/stock/WKL.AS",
+      "asOf": "2026-11-12",
+      "note": "EUR; single source. SANITY FLAG: stockanalysis shows 52-week price change of -21.79% on 2026-10-23 at 88.18, implying ~112.7 a year earlier, which would exceed 93.38 unless the share price fell sharply between 2025-10-23 and 2025-11-12; not reconciled. Conflicts with 95.84 (halo); unresolved in fact check."
+    },
+    "low52w": {
+      "value": 53.7,
+      "period": "52 weeks to 2026-11-12",
+      "source": "https://www.debelegger.nl/en/stock/WKL.AS",
+      "asOf": "2026-11-12",
+      "note": "EUR; single source. Shares have rebounded ~67% from the low. Consistent with 2026 buyback average price EUR 67.97."
+    },
+    "sharesOutstanding": {
+      "value": 222.9,
+      "period": "2026-10-23 (m)",
+      "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+      "asOf": "2026-10-23",
+      "note": "Provider figure; buyback ongoing (3.9m shares bought in 2026 to 9M)."
+    },
+    "marketCap": {
+      "value": 19950,
+      "period": "derived: 89.50 x 222.9m (EUR m)",
+      "source": "derived",
+      "asOf": "2026-11-12",
+      "note": "debelegger EUR 19.67bn; stockanalysis EUR 19.66bn at 88.18."
+    },
+    "netDebt": {
+      "value": 4070,
+      "period": "2026-09-30 (EUR m)",
+      "source": "https://www.ideal-investisseur.fr/en/stock-news/wolters-kluwer-6-organic-growth-over-nine-months-annual-targets-confirmed/28591.html",
+      "asOf": "2026-11-04",
+      "note": "Company-reported (Nov 4, 2026 release); EUR 4,024m at 2025-12-31. Lease treatment not stated in the release (Wolters Kluwer's definition normally includes lease liabilities; not confirmed). Net debt/EBITDA 2.0x."
+    },
+    "enterpriseValue": {
+      "value": 24020,
+      "period": "derived (EUR m)",
+      "source": "derived",
+      "asOf": "2026-11-12",
+      "note": "Market cap 19,950 + net debt 4,070. Provider EV EUR 23.71bn at 88.18."
+    },
+    "peTrailing": {
+      "value": 16.5,
+      "period": "TTM adjusted diluted EPS to H1 2026 (5.42)",
+      "source": "derived: 89.50 / (FY2025 5.29 + H1 2026 2.83 - H1 2025 2.70)",
+      "asOf": "2026-11-12",
+      "note": "ADJUSTED diluted EPS basis. Provider trailing P/E 15.03 (stockanalysis 2026-10-23) / 15.1 (debelegger); basis differs."
+    },
+    "peForward": {
+      "value": 14.94,
+      "period": "next FY consensus (provider)",
+      "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+      "asOf": "2026-10-23",
+      "note": "Provider forward P/E at 88.18; debelegger 13.8 at 89.50. Guidance (high-single-digit adjusted EPS growth at cc on 5.29, FX headwind) implies EPS ~5.6-5.7 and ~15.8x."
+    },
+    "evEbitTrailing": {
+      "value": 14.2,
+      "period": "FY2025 adjusted operating profit",
+      "source": "derived: EV 24,020 / 1,687 (https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html)",
+      "asOf": "2026-11-12",
+      "note": "ADJUSTED operating profit (before amortisation of acquired intangibles, so EBITA-like). Provider EV/EBIT 15.20 on a reported basis."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "2026-11-13",
+      "note": "unavailable; guidance gives margin ~28.0% but no revenue consensus retrieved"
+    },
+    "evEbitdaTrailing": {
+      "value": 11.84,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+      "asOf": "2026-10-23",
+      "note": "Provider at 88.18."
+    },
+    "fcfTTM": {
+      "value": 1390,
+      "period": "TTM (EUR m)",
+      "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+      "asOf": "2026-10-23",
+      "note": "Provider. Company ADJUSTED FCF FY2025 EUR 1,348m; 2026 guidance 1,300-1,350m; 9M 2026 adjusted FCF +3% cc."
+    },
+    "fcfYield": {
+      "value": 0.0697,
+      "period": "TTM",
+      "source": "derived: 1,390 / 19,950",
+      "asOf": "2026-11-12",
+      "note": "On 2026 guidance midpoint (1,325): 6.6%. Provider 7.08%."
+    },
+    "dividendPerShare": {
+      "value": 2.52,
+      "period": "FY2025 (EUR)",
+      "source": "https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html",
+      "asOf": "2026-02-25",
+      "note": "Company: EUR 2.52 total for 2025 (+8%). CONFLICT: debelegger shows 2.60 per year (possibly interim plus final cumulative / forward)."
+    },
+    "dividendYield": {
+      "value": 0.0282,
+      "period": "FY2025 dividend / price",
+      "source": "derived: 2.52 / 89.50",
+      "asOf": "2026-11-12",
+      "note": "Provider 2.86%; debelegger 2.97% on 2.60."
+    },
+    "payoutRatio": {
+      "value": 0.476,
+      "period": "FY2025 dividend / adjusted EPS",
+      "source": "derived: 2.52 / 5.29",
+      "asOf": "2026-11-12",
+      "note": "CONFLICT: provider 42.6% (stockanalysis), debelegger 79.4% (likely on reported EPS)."
+    },
+    "netDebtToEbitda": {
+      "value": 2.0,
+      "period": "2026-09-30 (company)",
+      "source": "https://www.ideal-investisseur.fr/en/stock-news/wolters-kluwer-6-organic-growth-over-nine-months-annual-targets-confirmed/28591.html",
+      "asOf": "2026-11-04",
+      "note": "Company-reported, stable vs 2025-12-31 (2.0x); FY2024 1.6x. Providers show 2.77x (different net debt/EBITDA basis)."
+    },
+    "interestCoverage": {
+      "value": 11.73,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+      "asOf": "2026-10-23",
+      "note": "Provider figure."
+    },
+    "roic": {
+      "value": 0.18,
+      "period": "FY2025 (company)",
+      "source": "https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html",
+      "asOf": "2026-02-25",
+      "note": "Company ROIC 18.0% (FY2024 18.1%); 2026 guidance 18-19%. Provider 24.79% on a different definition."
+    },
+    "roe": {
+      "value": 1.4614,
+      "period": "TTM",
+      "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+      "asOf": "2026-10-23",
+      "note": "Provider; not meaningful given very low book equity after buybacks."
+    },
+    "beta5y": {
+      "value": 0.18,
+      "period": "5Y",
+      "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+      "asOf": "2026-10-23",
+      "note": "Provider."
+    },
+    "sectorMetrics": {
+      "value": null,
+      "period": "9M 2026",
+      "source": "https://www.ideal-investisseur.fr/en/stock-news/wolters-kluwer-6-organic-growth-over-nine-months-annual-targets-confirmed/28591.html",
+      "asOf": "2026-11-04",
+      "note": "9M 2026: organic growth +6% (H1 +5%, so Q3 accelerated); reported revenue +2%, constant currency +4%; recurring revenue 85% of total (+7% organic); recurring cloud software 24% of revenue (+15% organic); print drag ~100bp; adjusted operating profit +10% cc; adjusted FCF +3% cc. H1 2026 adjusted operating margin 29.4% (H1 2025 28.4%), FY2026 guide ~28.0% because product development and restructuring spend step up in Q4 (R&D 12-13% of revenue; 11% in 9M). Divisions (organic): Tax & Accounting +6% (cloud +17%), Health +5%, Legal & Regulatory +5%, Corporate Performance & ESG +7%, Financial & Corporate Compliance +4% (-4% cc after FRR divestment)."
+    },
+    "history": [
+      {
+        "period": "FY2024",
+        "revenue": 5916,
+        "ebit": 1600,
+        "ebitMargin": 0.271,
+        "eps": 4.97,
+        "fcf": 1276,
+        "source": "https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html ; EBIT = ADJUSTED operating profit; EPS = ADJUSTED diluted; FCF = ADJUSTED free cash flow."
+      },
+      {
+        "period": "FY2025",
+        "revenue": 6125,
+        "ebit": 1687,
+        "ebitMargin": 0.275,
+        "eps": 5.29,
+        "fcf": 1348,
+        "source": "https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html ; EBIT = ADJUSTED operating profit; EPS = ADJUSTED diluted; FCF = ADJUSTED free cash flow. Organic growth +6%, recurring revenue 83%."
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": 22,
+      "evEbitMedian": null,
+      "years": "5-year median P/E ~22x (debelegger, unaudited text)",
+      "source": "https://www.debelegger.nl/en/stock/WKL.AS"
+    },
+    "consensus": {
+      "rating": "",
+      "analysts": null,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 96.31,
+      "targetHigh": null,
+      "targetLow": null,
+      "source": "https://www.debelegger.nl/en/stock/WKL.AS (page labels forecast years 2017-2019, treat date with caution); KBC Securities Buy, target EUR 98 (2026-11-04); Bernstein Outperform, EUR 140 (2025-09-08, stale)",
+      "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable; company guidance for 2026 (confirmed 2026-11-04): adjusted diluted EPS growth high single digit at cc, adjusted margin ~28.0%, adjusted FCF EUR 1,300-1,350m, ROIC 18-19%"
+    },
+    "recentEvents": [
+      "2026-11-04 9M update: organic +6%, adjusted operating profit +10% cc, all 2026 guidance confirmed; shares +4.6% on the day (Borse Global/KBC). KBC noted AI investment appears shifted into Q4, so no guidance raise.",
+      "2026 buyback up to EUR 500m: EUR 264m done (3.9m shares at avg EUR 67.97) at 2026-11-04; new mandate up to EUR 75m for 2027-01-04 to 2027-02-22. 2025 buyback was EUR 1.1bn at avg EUR 128.45.",
+      "Net debt EUR 4,070m (2.0x EBITDA); small German consumer tax sale (EUR 40m) and Financial Reporting & Regulation (FRR) divestment.",
+      "H1 2026 (2026-08-05): revenue EUR 3,033m, adjusted operating margin 29.4%, adjusted EPS EUR 2.83 (+14% cc), AI product roll-outs (UpToDate Expert AI, CCH Axcess agentic modules, Libra, expanded OpenAI partnership)."
+    ],
+    "valueTrapFlags": [
+      "WHY IT DE-RATED: AI-disruption fears for professional information. Sep 2025: sector sell-off (Clinical Solutions/OpenEvidence concerns, CEO transition) removed ~3 P/E turns (Bernstein). 2026-02-03: shares fell almost 9% after Anthropic launched a legal tool aimed at in-house lawyers (City AM). 52-week price change -21.8% at 2026-10-23; fell to a 52w low of EUR 53.70, now ~67% above it. Not driven by reported results, which stayed solid (organic +6%).",
+      "Reported revenue growth only +2% (cc +4%) vs organic +6%: divestments and a ~2pp FX drag; print drag ~100bp; Legal & Regulatory and Health organic growth only +5%.",
+      "FY2026 adjusted margin guided to ~28.0% against 29.4% in H1: heavy Q4 AI/product-development and restructuring spend; Morningstar sees slower growth in key AI-related segments and AI monetisation as an open question.",
+      "Buybacks (FY2025 EUR 1.1bn, 2026 EUR 500m) plus dividends exceed adjusted FCF; net debt/EBITDA rose from 1.6x (FY2024) to 2.0x. Adjusted FCF growth only +3% cc in 9M 2026."
+    ],
+    "dataGaps": [
+      "52w high/low single-source (conflict with y/y price change).",
+      "Analyst buy/hold/sell counts and target range unavailable; target-average page date suspect.",
+      "Forward EPS, forward EBIT consensus unavailable.",
+      "Lease treatment of net debt unconfirmed.",
+      "FY2021-2023 history not retrieved.",
+      "Dividend conflict 2.52 (company) vs 2.60 (debelegger).",
+      "52-week range conflicts between sources (93.38/53.70 vs 95.84/54.64)."
+    ]
+  },
+  "retrievedAt": "2026-11-13T18:16:46+01:00",
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis 2026E adjusted EPS 5.75 (FY2025 5.29, guidance high-single-digit growth). Bear weighted 30% for AI disruption. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS adjusted, 2026E (guidance-based lead estimate)",
+    "basisValue": 5.75,
+    "forwardDividendYield": 0.028,
+    "qualityTier": "A",
+    "role": "Value Recovery",
+    "scores": {
+      "quality": 5,
+      "growth": 4,
+      "financialStrength": 4,
+      "risk": 4
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 89.7,
+        "epsCagr5y": 0.04,
+        "exitPe5y": 16,
+        "note": "AI legal/tax tools take share; multiple stays low. Justified multiple 15x on next-12m 5.98.",
+        "epsCagr10y": 0.04,
+        "exitPe10y": 15
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 130.41,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 20,
+        "note": "Organic 6%, margin 28%, buybacks: high-single-digit EPS growth; partial re-rating. Justified multiple 21x on next-12m 6.21.",
+        "epsCagr10y": 0.075,
+        "exitPe10y": 19
+      },
+      "bull": {
+        "prob": 0.2,
+        "fairValue": 158.12,
+        "epsCagr5y": 0.1,
+        "exitPe5y": 23,
+        "note": "Expert-solutions AI products accelerate growth; multiple recovers toward history. Justified multiple 25x on next-12m 6.33.",
+        "epsCagr10y": 0.09,
+        "exitPe10y": 22
+      }
+    },
+    "whyItFits": "85% recurring revenue, adjusted margin about 28%, ROIC about 18%, FCF yield about 7%, beta 0.18; 9M organic growth +6% and 2026 guidance confirmed.",
+    "growthDrivers": "Cloud expert solutions (health, tax, legal, compliance), AI features on proprietary content, EUR 500m buyback.",
+    "saturation": "De-rated on AI fears (Sept 2025 sector sell-off, -9% on 2026-02-03) while reported results held up; P/E about 16 versus a much higher history (not verified).",
+    "principalRisk": "AI disruption of professional information; 52-week range comes from a single source and looks inconsistent."
+  }
+}

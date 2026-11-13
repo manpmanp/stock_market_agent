@@ -3,7 +3,11 @@
 // /dashboard tab without changes. Colour tokens copied from the dashboard's
 // validated palette (src/decisionLab.ts) for visual family; nothing imported.
 
-import type { Computed, Conclusion, EntryStatus, Light, ResearchFile } from "./types.js";
+import type { Computed, Conclusion, EntryStatus, Light, Region, ResearchFile } from "./types.js";
+import { TOP_N, shownRows } from "./valuation.js";
+
+const REGION_LABEL: Record<Region, string> = { nordic: "Nordic", global: "Global" };
+const REGIONS: Region[] = ["nordic", "global"];
 
 const esc = (s: unknown) =>
   String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -53,7 +57,7 @@ function mosChart(rows: Computed[]): string {
 }
 
 function returnChart(rows: Computed[]): string {
-  const W = 640, rowH = 24, left = 150, right = 20, top = 24;
+  const W = 640, rowH = 24, left = 150, right = 48, top = 24;
   const H = top + rows.length * rowH + 24;
   const vals = rows.flatMap((r) => [r.return5y.byScenario.bear, r.return5y.byScenario.bull]);
   const lo = Math.min(-0.1, ...vals), hi = Math.max(0.2, ...vals);
@@ -98,7 +102,7 @@ function card(r: Computed, f: ResearchFile): string {
     .join("");
   const gaps = fa.dataGaps.filter(Boolean);
   return `<details class="card">
-<summary><span class="rk">${r.rank}</span><b>${esc(f.name)}</b> <span class="mut">${esc(f.ticker)} · ${esc(f.exchange)}</span>
+<summary><span class="rk">${r.regionRank}</span><b>${esc(f.name)}</b> <span class="mut">${esc(f.ticker)} · ${esc(f.exchange)}</span>
 <span class="pill ${STATUS_CLASS[r.entryStatus]}">${STATUS_ICON[r.entryStatus]} ${r.entryStatus}</span>
 <span class="mut">Score ${r.composite.toFixed(0)}${E}</span></summary>
 <div class="cols">
@@ -116,19 +120,28 @@ ${gaps.length ? `<p class="mut"><b>Data gaps:</b> ${esc(gaps.join("; "))}</p>` :
 </details>`;
 }
 
-export function renderReport(files: ResearchFile[], rows: Computed[], conclusion: Conclusion | null, runAt: string, title: string): string {
+export function renderReport(files: ResearchFile[], allRows: Computed[], conclusion: Conclusion | null, runAt: string, title: string): string {
   const byTicker = new Map(files.map((f) => [f.ticker, f]));
-  const overview = rows
-    .map((r) => {
+  // Only the top TOP_N per region are shown; the rest stay in the research data.
+  const rows = shownRows(allRows);
+  const hiddenCount = allRows.length - rows.length;
+  const row = (r: Computed) => {
       const f = byTicker.get(r.ticker)!, fa = f.facts;
-      return `<tr><td>${r.rank}</td><td><b>${esc(f.name)}</b><br><span class="mut">${esc(f.ticker)}</span></td>
+      return `<tr><td>${r.regionRank}</td><td><b>${esc(f.name)}</b><br><span class="mut">${esc(f.ticker)}</span></td>
 <td>${price(r.price)} ${esc(f.currency)}<br><span class="mut">${esc(fa.price.asOf ?? "")}</span></td>
 <td>${pct(r.pctOf52wHigh)}</td><td>${num(fa.peTrailing.value)} / ${num(fa.peForward.value)}</td>
 <td>${num(fa.evEbitTrailing.value)} / ${num(fa.evEbitForward.value)}</td><td>${pct(fa.dividendYield.value, 1)}</td><td>${num(fa.beta5y.value, 2)}</td>
 <td>${price(r.weightedFairValue)}${E}</td><td>${signed(r.upside)}${E}</td><td>${pct(r.return5y.total, 1)}${E}</td>
 <td><span class="pill ${STATUS_CLASS[r.entryStatus]}">${STATUS_ICON[r.entryStatus]} ${r.entryStatus}</span></td></tr>`;
-    })
-    .join("");
+  };
+  const overview = REGIONS.map((g) => {
+    const rs = rows.filter((r) => r.region === g);
+    return rs.length ? `<tr class="grp"><th colspan="12">Top ${TOP_N} ${REGION_LABEL[g]}</th></tr>${rs.map(row).join("")}` : "";
+  }).join("");
+  const cards = REGIONS.map((g) => {
+    const rs = rows.filter((r) => r.region === g);
+    return rs.length ? `<h3 class="grp-h">${REGION_LABEL[g]}</h3>${rs.map((r) => card(r, byTicker.get(r.ticker)!)).join("")}` : "";
+  }).join("");
   const concl = conclusion
     ? `<section><h2>C. Investment conclusion</h2><table class="concl"><tbody>${conclusion.picks
         .map((p) => `<tr><th>${esc(p.category)}</th><td><b>${esc(p.ticker ? byTicker.get(p.ticker)?.name ?? p.ticker : "None: insufficient evidence")}</b> ${esc(p.why)}<br><span class="mut">Risk: ${esc(p.risk)}</span></td></tr>`)
@@ -162,16 +175,16 @@ svg{width:100%;height:auto}.grid{stroke:var(--grid)}.axis{stroke:var(--mut)}.tic
 .card{background:var(--surface);border:1px solid var(--grid);border-radius:6px;margin:6px 0;padding:6px 10px}.card summary{cursor:pointer;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .rk{display:inline-block;min-width:22px;text-align:center;font-weight:bold;color:var(--head)}.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .traps{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0}.lt{font-size:11px;border:1px solid var(--grid);border-radius:10px;padding:0 6px}.lt.green{color:var(--good)}.lt.amber{color:var(--warn)}.lt.red{color:var(--bad)}.lt.na{color:var(--mut)}
-.risk{color:var(--ink2)}.concl th{width:230px;white-space:normal}footer{font-size:11px;color:var(--mut);margin-top:14px}footer a{color:var(--pos)}
+.grp th{background:var(--page);color:var(--head);font-size:12.5px;font-weight:bold;padding-top:8px}.grp-h{font-size:13px;color:var(--head);margin:10px 0 4px}.risk{color:var(--ink2)}.concl th{width:230px;white-space:normal}footer{font-size:11px;color:var(--mut);margin-top:14px}footer a{color:var(--pos)}
 @media (max-width:760px){.charts,.cols{grid-template-columns:1fr}.concl th{width:auto}}
 </style></head><body><main>
 <h1>${esc(title)}</h1>
 <div class="legend">Run ${esc(runAt)} · Prices are latest verified closes (date per row) · Unmarked figures are verified facts; ${E} independent estimate; ${A} analyst opinion · Not investment advice.</div>
 <section><h2>A. Market and valuation overview</h2><div class="wrap"><table class="ov"><thead><tr><th>#</th><th>Stock</th><th>Price</th><th>% of 52w high</th><th>P/E ttm / fwd</th><th>EV/EBIT ttm / fwd</th><th>Div. yield</th><th>Beta</th><th>Fair value</th><th>Upside</th><th>Return 2–5y/yr</th><th>Entry status</th></tr></thead><tbody>${overview}</tbody></table></div>
 <div class="charts" style="margin-top:10px"><div>${mosChart(rows)}</div><div>${returnChart(rows)}</div></div></section>
-<section><h2>B. Ranked stock comparison</h2>${rows.map((r) => card(r, byTicker.get(r.ticker)!)).join("")}</section>
+<section><h2>B. Ranked stock comparison</h2>${cards}</section>
 ${concl}
-<footer><b>Method.</b> Fair value = probability-weighted bear/base/bull values. Margin of safety = 1 − price/fair value. Entry price = fair value × (1 − required MoS: 20% tier A, 30% B, 40% C). Return = scenario EPS growth and exit multiple over 5 years plus constant dividend yield, probability-weighted. Score = quality 20%, financial strength 15%, growth 15%, risk 15%, valuation 20%, expected return 15%, minus 5 per red value-trap check. Banks and holding companies use P/B, ROE and NAV in place of EV/EBIT and FCF.
+<footer>${hiddenCount > 0 ? `<p>${hiddenCount} other researched stock(s) ranked below the top ${TOP_N} of their region and are not shown; their data is kept for future refreshes.</p>` : ""}<b>Method.</b> Fair value = probability-weighted bear/base/bull values. Margin of safety = 1 − price/fair value. Entry price = fair value × (1 − required MoS: 20% tier A, 30% B, 40% C). Return = scenario EPS growth and exit multiple over 5 years plus constant dividend yield, probability-weighted. Score = quality 20%, financial strength 15%, growth 15%, risk 15%, valuation 20%, expected return 15%, minus 5 per red value-trap check. Banks and holding companies use P/B, ROE and NAV in place of EV/EBIT and FCF.
 <ul>${sources}</ul></footer>
 </main></body></html>`;
 }

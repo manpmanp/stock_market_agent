@@ -1,0 +1,311 @@
+{
+  "region": "global",
+  "ticker": "NOVN.SW",
+  "name": "Novartis AG",
+  "exchange": "SIX Swiss Exchange",
+  "currency": "CHF",
+  "sector": "Healthcare / Pharmaceuticals",
+  "businessSummary": "Pure-play innovative medicines company (Innovative Medicines US/International) after the Sandoz spin-off. Key brands Cosentyx, Kisqali, Pluvicto, Kesimpta, Leqvio, Fabhalta, Rhapsido; Entresto in generic erosion. Reports in USD; shares trade in CHF.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 134.22,
+      "period": "close 2026-11-12",
+      "source": "halo-technologies.com/markets/shares/swx/novn; valueray.com/symbol/SW/NOVN",
+      "asOf": "2026-11-12",
+      "note": "CHF. Both pages agree on 134.22."
+    },
+    "high52w": {
+      "value": 135.22,
+      "period": "52 weeks to 2026-11-12",
+      "source": "halo-technologies.com/markets/shares/swx/novn; twelvedata.com NOVN statistics",
+      "asOf": "2026-11-12",
+      "note": "CHF. Price is within 1% of the 52w high (all-time high per halo). investing.com showed 132.68 (stale, pre-Q3)."
+    },
+    "low52w": {
+      "value": 99.45,
+      "period": "52 weeks to 2026-11-12",
+      "source": "halo-technologies.com; twelvedata.com",
+      "asOf": "2026-11-12",
+      "note": "CHF. investing.com showed 97.05 (stale)."
+    },
+    "sharesOutstanding": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable; implied about 2,012m from halo market cap / price, not verified"
+    },
+    "marketCap": {
+      "value": 270100,
+      "period": "2026-11-12",
+      "source": "halo-technologies.com/markets/shares/swx/novn",
+      "asOf": "2026-11-12",
+      "note": "CHF m. valueray shows about 253bn (cap quoted in USD/other, inconsistent); halo used."
+    },
+    "netDebt": {
+      "value": 37400,
+      "period": "2026-09-30",
+      "source": "Novartis Q3 2026 release",
+      "asOf": "2026-10-27",
+      "note": "USD m, company-defined net debt (includes leases per Novartis definition not confirmed). Up from 21,900 at 2025-12-31 (M&A/intangibles 16.7bn, dividend 9.1bn, buybacks 4.8bn, offset by 9M FCF 14.0bn)."
+    },
+    "enterpriseValue": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable in CHF; valueray quotes EV about USD 346bn (provider figure, unverified)"
+    },
+    "peTrailing": {
+      "value": 32.16,
+      "period": "TTM IFRS",
+      "source": "valueray.com/symbol/SW/NOVN",
+      "asOf": "2026-11-13",
+      "note": "IFRS-based; inflated by Q3 2026 USD 1.9bn IPR&D impairment. halo shows 18.30 (likely stale/different basis). On core EPS: FY2025 core EPS USD 8.98; 9M26 core 6.85 vs 6.94."
+    },
+    "peForward": {
+      "value": 16.45,
+      "period": "next FY (provider)",
+      "source": "valueray.com/symbol/SW/NOVN",
+      "asOf": "2026-11-13",
+      "note": "Provider forward P/E; consensus basis not stated."
+    },
+    "evEbitTrailing": {
+      "value": 20.1,
+      "period": "TTM IFRS",
+      "source": "valueray.com (derived: EV USD 346bn / EBIT TTM USD 17.2bn)",
+      "asOf": "2026-11-13",
+      "note": "Derived by provider-page inputs, IFRS EBIT incl. impairments; EV likely includes net debt at older level. Low confidence."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "fcfTTM": {
+      "value": 15657,
+      "period": "TTM to Q3 2026",
+      "source": "Novartis FY2025 and Q3 2026 releases (derived: 17,596 + 14,002 - 15,941)",
+      "asOf": "2026-10-27",
+      "note": "USD m, company-defined free cash flow."
+    },
+    "fcfYield": {
+      "value": 0.0444,
+      "period": "TTM",
+      "source": "valueray.com/symbol/SW/NOVN",
+      "asOf": "2026-11-13",
+      "note": "Provider figure (FCF margin 27.9%, EV/FCF 22.5x)."
+    },
+    "dividendPerShare": {
+      "value": 3.7,
+      "period": "FY2025 (paid Mar 2026)",
+      "source": "Novartis FY2025 release",
+      "asOf": "2026-02-05",
+      "note": "CHF; FY2024 was 3.50 (+5.7%)."
+    },
+    "dividendYield": {
+      "value": 0.0276,
+      "period": "FY2025 dividend / price",
+      "source": "derived: 3.70 / 134.22",
+      "asOf": "2026-11-12",
+      "note": "halo shows 3.4% (stale)."
+    },
+    "payoutRatio": {
+      "value": 0.62,
+      "period": "TTM",
+      "source": "halo-technologies.com",
+      "asOf": "2026-11-12",
+      "note": "Provider figure; basis not stated."
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable; provider Debt/EBITDA (gross) 1.85 per valueray; net debt USD 37.4bn at Q3 2026 vs 21.9bn at FY2025, so leverage rising"
+    },
+    "interestCoverage": {
+      "value": 10.98,
+      "period": "TTM",
+      "source": "valueray.com/symbol/SW/NOVN",
+      "asOf": "2026-11-13",
+      "note": "Provider figure."
+    },
+    "roic": {
+      "value": 0.1475,
+      "period": "TTM",
+      "source": "valueray.com",
+      "asOf": "2026-11-13",
+      "note": "Provider figure."
+    },
+    "roe": {
+      "value": 0.2424,
+      "period": "TTM",
+      "source": "valueray.com",
+      "asOf": "2026-11-13",
+      "note": "Provider figure."
+    },
+    "beta5y": {
+      "value": 0.45,
+      "period": "5y",
+      "source": "twelvedata.com NOVN statistics",
+      "asOf": "2026-11-13",
+      "note": "Conflict: valueray shows TTM beta -0.218 (short window). twelvedata page appears partly stale."
+    },
+    "sectorMetrics": {
+      "coreOperatingMargin": {
+        "value": 0.401,
+        "period": "9M 2026",
+        "source": "Novartis Q3 2026 release",
+        "asOf": "2026-10-27",
+        "note": "Q3 2026 41.6% (+2.3pp); 9M 40.1% vs 41.2%."
+      },
+      "coreEPS": {
+        "value": 6.85,
+        "period": "9M 2026",
+        "source": "Novartis Q3 2026 release",
+        "asOf": "2026-10-27",
+        "note": "USD; 9M25 6.94 (-1% USD, -3% cc). Q3 core EPS 2.46 (+9%). IFRS EPS 9M 4.01 vs 5.94 (-32%); Q3 IFRS 0.63 vs 2.04 after USD 1.9bn del-desiran IPR&D impairment."
+      },
+      "entresto": {
+        "value": 3651,
+        "period": "9M 2026",
+        "source": "Novartis Q3 2026 release",
+        "asOf": "2026-10-27",
+        "note": "USD m, -44% (-45% cc); Q3 1,165 (-38%). Generic erosion; FY2025 Entresto 7,748. Q3 sales drivers: volume +14pp, generics -9pp, pricing -1pp."
+      },
+      "guidance2026": {
+        "value": null,
+        "period": "FY2026",
+        "source": "Novartis Q3 2026 release",
+        "asOf": "2026-10-27",
+        "note": "Net sales low single-digit growth cc (unchanged). Core operating income now in line to low single-digit growth (RAISED from low single-digit decline). FX +1pp. FY2025 release called 2026 'the largest patent expiry in Novartis history' (Entresto, others); no specific dates given in releases."
+      }
+    },
+    "history": [
+      {
+        "period": "FY2024",
+        "revenue": 50317,
+        "ebit": 14544,
+        "ebitMargin": 0.289,
+        "eps": 7.81,
+        "fcf": 16253,
+        "source": "Novartis FY2025 release. USD m; ebit = IFRS operating income (core op income 19,494); eps = core EPS USD (IFRS 5.92)."
+      },
+      {
+        "period": "FY2025",
+        "revenue": 54532,
+        "ebit": 17644,
+        "ebitMargin": 0.3236,
+        "eps": 8.98,
+        "fcf": 17596,
+        "source": "Novartis FY2025 release. USD m; ebit = IFRS operating income (core 21,889, 40.1% margin); eps = core EPS USD (IFRS 7.21)."
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Neutral/Hold",
+      "analysts": 22,
+      "buy": 8,
+      "hold": 13,
+      "sell": 2,
+      "targetAvg": 124.14,
+      "targetHigh": 149.31,
+      "targetLow": 100.12,
+      "source": "de.investing.com/equities/novartis-consensus-estimates",
+      "asOf": "about 2026-10-06 (pre-Q3; price now above this average)"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable"
+    },
+    "recentEvents": [
+      "Q3 2026 (27 Oct): sales USD 14,522m +4%; core op income 6,036 (+11%); core EPS 2.46 (+9%); FCF 5,111 (-18%).",
+      "FY2026 core operating income guidance raised; sales guidance unchanged.",
+      "Post-Q3 target raises: UBS 116->130 (Neutral), DZ 130->134 (Hold), Oddo 121->128, RBC 120->130 (Sector Perform), LBBW 120->130; JPMorgan 145 (Overweight), Citi 150 (Buy) per goldesel.de headlines. Deutsche Bank earlier Sell, target 115.",
+      "Pipeline: del-desiran Ph3 HARBOR and pelacarsen Ph3 HORIZON missed primary endpoints; remibrutinib gMG Ph3 discontinued; Rhapsido, Pluvicto, Fabhalta approvals. USD 16.7bn of M&A/acquisitions in 9M.",
+      "Next: Q4/FY2026 results 2027-02-03."
+    ],
+    "valueTrapFlags": [
+      "Net debt up to USD 37.4bn from 21.9bn in nine months (M&A, buybacks).",
+      "9M FCF -12%, 9M core EPS -1% (Entresto erosion -44%); Q3 rebound is a single quarter.",
+      "Two failed Ph3 trials (del-desiran, pelacarsen) and USD 1.9bn IPR&D impairment.",
+      "Price at 52-week/all-time high and above the pre-Q3 consensus average target (124); consensus is Neutral/Hold."
+    ],
+    "dataGaps": [
+      "FY2021-FY2023 history not retrieved",
+      "Net debt/EBITDA, EV, shares outstanding, forward EPS consensus, historical multiples unavailable",
+      "stockanalysis.com and tipranks fetches were blocked (permission), so multiples come from valueray/halo/twelvedata with some stale-page conflicts",
+      "Reporting currency USD, trading currency CHF: history in USD m"
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m core EPS x justified P/E. Basis CHF 8.2 = price / provider forward P/E 16.45 (derived; company reports in USD, FY2025 core EPS USD 8.98). Entresto loss of exclusivity in the bear case. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS core, forward, CHF (derived from provider forward P/E)",
+    "basisValue": 8.2,
+    "forwardDividendYield": 0.028,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+      "quality": 4,
+      "growth": 3,
+      "financialStrength": 3,
+      "risk": 4
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 106.6,
+        "epsCagr5y": 0.0,
+        "exitPe5y": 13,
+        "note": "Entresto erosion and pipeline misses offset growth drivers. Justified multiple 13x on next-12m 8.20.",
+        "epsCagr10y": 0.02,
+        "exitPe10y": 12
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 137.76,
+        "epsCagr5y": 0.05,
+        "exitPe5y": 15,
+        "note": "Kisqali, Pluvicto, Leqvio growth offsets generics; margins hold. Justified multiple 16x on next-12m 8.61.",
+        "epsCagr10y": 0.05,
+        "exitPe10y": 14
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 159.41,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 17,
+        "note": "Pipeline wins and margin expansion continue. Justified multiple 18x on next-12m 8.86.",
+        "epsCagr10y": 0.07,
+        "exitPe10y": 16
+      }
+    },
+    "whyItFits": "Focused innovative-medicines company: core margin 41.6% in Q3, FY guidance raised, beta 0.45, 2.8% dividend.",
+    "growthDrivers": "Kisqali, Pluvicto, Leqvio, Scemblix, radioligand platform; cost efficiency.",
+    "saturation": "At its 52-week high (CHF 135.22) and above the pre-Q3 consensus target of 124; forward P/E about 16.5.",
+    "principalRisk": "Entresto sales down 44% in 9M, two Phase III misses and net debt up USD 15.5bn in nine months (acquisitions)."
+  }
+}

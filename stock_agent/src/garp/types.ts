@@ -107,8 +107,11 @@ export interface ValuationInput {
   principalRisk: string;
 }
 
+export type Region = "nordic" | "global";
+
 export interface ResearchFile {
   ticker: string;
+  region?: Region; // optional; derived from the exchange suffix when absent
   name: string;
   exchange: string;
   currency: string;
@@ -149,7 +152,9 @@ export interface Computed {
   trap: TrapCheck[];
   trapReds: number;
   composite: number; // 0-100
-  rank: number;
+  rank: number; // across all researched stocks
+  region: Region;
+  regionRank: number; // within its region; the report shows regionRank <= TOP_N
 }
 
 export interface Conclusion {

@@ -1,6 +1,6 @@
 {
- "runAt": "2026-11-13T13:34:35Z",
- "title": "Defensive GARP research: Nordic (phase 1)",
+ "runAt": "2026-11-13T17:24:30Z",
+ "title": "Defensive GARP research: top 5 Nordic and top 5 global",
  "files": [
   {
    "ticker": "ADDT-B.ST",
@@ -331,25 +331,25 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 392.5,
+     "value": 395.5,
      "period": "close",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "source": "AJ Bell / Nordnet",
      "asOf": "2026-11-12",
-     "note": ""
+     "note": "Refreshed (was 392.5; fact check config/garp/checks/2026-11-13.md)"
     },
     "high52w": {
-     "value": null,
-     "period": "n/a",
-     "source": "",
-     "asOf": "2026-11-13",
-     "note": "unavailable: not shown on stockanalysis (only 52w price change +3.37% as of 2026-10-20)"
+     "value": 403.9,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "2026-11-12",
+     "note": " (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "low52w": {
-     "value": null,
-     "period": "n/a",
-     "source": "",
-     "asOf": "2026-11-13",
-     "note": "unavailable"
+     "value": 314.2,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "2026-11-12",
+     "note": " (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "sharesOutstanding": {
      "value": 1110,
@@ -2038,24 +2038,24 @@
    "facts": {
     "price": {
      "value": 435.25,
-     "period": "close, run 2026-11-12",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-     "asOf": "2026-11-12",
-     "note": "Investor B"
+     "period": "close",
+     "source": "stock-agent /decisions",
+     "asOf": "2026-11-11",
+     "note": "Value confirmed; date corrected to 11 Nov close (was 435.25; fact check config/garp/checks/2026-11-13.md)"
     },
     "high52w": {
-     "value": null,
-     "period": "",
-     "source": "",
-     "asOf": "2026-11-13",
-     "note": "unavailable (Yahoo blocked; stockanalysis page gave only 52w price change)"
+     "value": 439.6,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "2026-11-12",
+     "note": " (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "low52w": {
-     "value": null,
-     "period": "",
-     "source": "",
-     "asOf": "2026-11-13",
-     "note": "unavailable"
+     "value": 306.7,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "2026-11-12",
+     "note": " (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "sharesOutstanding": {
      "value": 3061,
@@ -2393,25 +2393,25 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 288.2,
+     "value": 287.8,
      "period": "close",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "source": "fact check quote",
      "asOf": "2026-11-12",
-     "note": "report-day drop -12.0% on 23 Oct from 318.80 (22 Oct); 274.60 on 2 Nov"
+     "note": "Refreshed (was 288.2; fact check config/garp/checks/2026-11-13.md)"
     },
     "high52w": {
-     "value": null,
-     "period": "n/a",
-     "source": "",
-     "asOf": "2026-11-13",
-     "note": "unavailable; stockanalysis 52w change -17.92%"
+     "value": 388.2,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "undated",
+     "note": "Undated source (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "low52w": {
-     "value": null,
-     "period": "n/a",
-     "source": "",
-     "asOf": "2026-11-13",
-     "note": "unavailable"
+     "value": 268.2,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "undated",
+     "note": "Undated source (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "sharesOutstanding": {
      "value": 454.22,
@@ -2697,7 +2697,7 @@
       "exitPe10y": 28
      }
     },
-    "whyItFits": "Decentralised acquirer with EBITA margin about 23%, ROIC about 20% and rising cash conversion; niche dental and tools businesses are resilient.",
+    "whyItFits": "Decentralised acquirer with EBITA margin about 22-23% (Q3 22.4% per fact check), ROIC about 20% and rising cash conversion; niche dental and tools businesses are resilient.",
     "growthDrivers": "Steady bolt-on acquisitions, dental consumables, demolition robots; reinvestment at high returns.",
     "saturation": "Trailing P/E 33 after a 12% drop on the Q3 report; still a premium multiple with estimates being cut.",
     "principalRisk": "Loss of a customer worth about 5% of sales from 2027 and estimate cuts (2027 EBITA -3.8%) while the multiple stays high."
@@ -3088,6 +3088,655 @@
    }
   },
   {
+   "region": "global",
+   "ticker": "NESN.SW",
+   "name": "Nestle S.A.",
+   "exchange": "SIX Swiss Exchange",
+   "currency": "CHF",
+   "sector": "Consumer Defensive / Packaged Foods",
+   "businessSummary": "World's largest food and beverage company: coffee (Nescafe, Nespresso), pet care, nutrition, prepared foods, confectionery, waters. CEO Philipp Navratil. Reports in CHF.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 87.72,
+     "period": "close 2026-11-12/13",
+     "source": "marketscreener.com NESTLE-S-A-15227721 valuation page",
+     "asOf": "2026-11-13",
+     "note": "CHF. halo showed 86.57 on 2026-11-12."
+    },
+    "high52w": {
+     "value": 87.54,
+     "period": "52 weeks",
+     "source": "halo-technologies.com/markets/shares/swx/nesn; twelvedata.com",
+     "asOf": "2026-11-12",
+     "note": "CHF; price 87.72 is slightly above, so the true high is at least the current price."
+    },
+    "low52w": {
+     "value": 70.29,
+     "period": "52 weeks",
+     "source": "halo-technologies.com; twelvedata.com",
+     "asOf": "2026-11-12",
+     "note": "CHF."
+    },
+    "sharesOutstanding": {
+     "value": 2570,
+     "period": "latest",
+     "source": "stockanalysis.com; twelvedata.com",
+     "asOf": "2026-10-23",
+     "note": "Million."
+    },
+    "marketCap": {
+     "value": 222678,
+     "period": "2026E basis",
+     "source": "marketscreener.com valuation",
+     "asOf": "2026-11-13",
+     "note": "CHF m. halo 221,350; stockanalysis 215,300 (2026-10-23)."
+    },
+    "netDebt": {
+     "value": 56710,
+     "period": "latest (cached)",
+     "source": "stockanalysis.com NESN statistics",
+     "asOf": "2026-10-23",
+     "note": "CHF m. marketscreener 2026E: 51,143. IFRS 16 lease treatment not stated."
+    },
+    "enterpriseValue": {
+     "value": 273820,
+     "period": "2026E",
+     "source": "marketscreener.com",
+     "asOf": "2026-11-13",
+     "note": "CHF m; stockanalysis 272,280."
+    },
+    "peTrailing": {
+     "value": 28.95,
+     "period": "TTM IFRS",
+     "source": "stockanalysis.com NESN statistics",
+     "asOf": "2026-10-23",
+     "note": "Reported (IFRS) EPS basis; halo shows 22.40. Reported EPS depressed by impairments/disposals."
+    },
+    "peForward": {
+     "value": 22.6,
+     "period": "FY2026E",
+     "source": "marketscreener.com",
+     "asOf": "2026-11-13",
+     "note": "EPS est. 3.827 (2026E), 4.35 (2027E), 4.698 (2028E); 2027E P/E 19.9x. stockanalysis forward 17.74 differs (basis unknown)."
+    },
+    "evEbitTrailing": {
+     "value": 18.53,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": ""
+    },
+    "evEbitForward": {
+     "value": 18.5,
+     "period": "FY2026E",
+     "source": "marketscreener.com",
+     "asOf": "2026-11-13",
+     "note": "2027E 17.4x."
+    },
+    "evEbitdaTrailing": {
+     "value": 15.08,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "twelvedata EBITDA 17.91bn."
+    },
+    "fcfTTM": {
+     "value": 12520,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "CHF m."
+    },
+    "fcfYield": {
+     "value": 0.0566,
+     "period": "TTM FCF / market cap",
+     "source": "derived: 12,520 / 221,350",
+     "asOf": "2026-11-12",
+     "note": "stockanalysis showed 5.81%; marketscreener 2026E FCF yield 3.72% (conflict)."
+    },
+    "dividendPerShare": {
+     "value": 3.1,
+     "period": "FY2025 (paid 2026)",
+     "source": "stockanalysis.com; halo last payment 3.10",
+     "asOf": "2026-10-23",
+     "note": "CHF; marketscreener 2026E 3.139."
+    },
+    "dividendYield": {
+     "value": 0.0353,
+     "period": "FY2025 div / price",
+     "source": "derived: 3.10 / 87.72",
+     "asOf": "2026-11-13",
+     "note": "marketscreener 3.63% (2026E)."
+    },
+    "payoutRatio": {
+     "value": 1.072,
+     "period": "TTM reported EPS",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "Reported-EPS basis; halo shows 88%."
+    },
+    "netDebtToEbitda": {
+     "value": 3.17,
+     "period": "latest",
+     "source": "derived: 56,710 / 17,910 (twelvedata EBITDA TTM)",
+     "asOf": "2026-11-12",
+     "note": "Net debt per stockanalysis (lease treatment unstated); stockanalysis itself says about 3.45 (Debt/EBITDA 3.67 gross). Range 3.1-3.5."
+    },
+    "interestCoverage": {
+     "value": 8.51,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": ""
+    },
+    "roic": {
+     "value": 0.123,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": ""
+    },
+    "roe": {
+     "value": 0.2624,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": ""
+    },
+    "beta5y": {
+     "value": 0.5,
+     "period": "5y",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "twelvedata 0.48."
+    },
+    "sectorMetrics": {
+     "organicGrowth9M": {
+      "value": 0.037,
+      "period": "9M 2026",
+      "source": "vermoegenszentrum.ch (Nestle Q3 2026 release)",
+      "asOf": "2026-10-22",
+      "note": "Q3 4.0%; RIG Q3 2.8% (Q2 1.8%), 9M 1.9%; pricing Q3 1.1%, 9M 1.8%. FY2025 RIG 0.8%. Q3 RIG by zone: Americas 2.4%, AOA 5.0%, Europe 1.0%. 9M sales CHF 65.87bn, flat reported (FX)."
+     },
+     "tradingMargin": {
+      "value": 0.161,
+      "period": "FY2025 underlying trading operating profit",
+      "source": "Nestle FY2026 guidance text",
+      "asOf": "2026-10-22",
+      "note": "EBIT-type (underlying trading operating profit, pre-restructuring/impairment). 2026 guidance: margin to improve vs 16.1%; H2 margin similar to H1 excluding US tariff refunds."
+     },
+     "guidance2026": {
+      "value": null,
+      "period": "FY2026",
+      "source": "vermoegenszentrum.ch",
+      "asOf": "2026-10-22",
+      "note": "Maintained: organic growth 3-4%, RIG accelerating from 0.8%, margin improving vs 16.1%. No change at Q3."
+     },
+     "reportedOperatingMargin": {
+      "value": 0.1547,
+      "period": "FY2025",
+      "source": "derived from stockanalysis operating income 13,906 / revenue 89,885",
+      "asOf": "2026-10-23",
+      "note": "Reported (IFRS) operating income, includes impairments; vs 16.96% in FY2024."
+     }
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 87470,
+      "ebit": 14640,
+      "ebitMargin": 0.1674,
+      "eps": 6.06,
+      "fcf": null,
+      "source": "stockanalysis.com/quote/swx/NESN/financials (CHF m; ebit = reported operating income; eps = reported EPS, includes disposal gains)"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 94780,
+      "ebit": 15648,
+      "ebitMargin": 0.1651,
+      "eps": 3.42,
+      "fcf": null,
+      "source": "stockanalysis.com/quote/swx/NESN/financials (reported)"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 93351,
+      "ebit": 15658,
+      "ebitMargin": 0.1677,
+      "eps": 4.23,
+      "fcf": null,
+      "source": "stockanalysis.com/quote/swx/NESN/financials (reported)"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 91720,
+      "ebit": 15556,
+      "ebitMargin": 0.1696,
+      "eps": 4.19,
+      "fcf": null,
+      "source": "stockanalysis.com/quote/swx/NESN/financials (reported)"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 89885,
+      "ebit": 13906,
+      "ebitMargin": 0.1547,
+      "eps": 3.51,
+      "fcf": null,
+      "source": "stockanalysis.com/quote/swx/NESN/financials (reported; underlying trading margin 16.1%)"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "",
+     "analysts": null,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": null,
+     "targetHigh": null,
+     "targetLow": null,
+     "source": "unavailable",
+     "asOf": ""
+    },
+    "forwardEstimates": {
+     "epsNextFY": 3.827,
+     "epsFY2": 4.35,
+     "revenueGrowthNextFY": null,
+     "source": "marketscreener.com 2026E/2027E EPS (basis likely underlying/adjusted, not stated)"
+    },
+    "recentEvents": [
+     "Q3/9M 2026 sales (22 Oct): Q3 sales CHF 22.76bn +5.2%, OG 4.0%, RIG 2.8% (accelerating); shares +1.8% to 84.99 on the day.",
+     "Early Sept: agreed sale of mainstream vitamins/minerals/supplements to Yellow Wood Partners for USD 1bn.",
+     "FY2026 guidance maintained; potential US tariff refunds excluded from H2 margin view.",
+     "H1 2026 results mentioned a Peranel joint venture."
+    ],
+    "valueTrapFlags": [
+     "FY2025 RIG only 0.8%; 2026 recovery (9M 1.9%) still modest, volume-light growth.",
+     "Reported EPS fell from 4.19 (FY2024) to 3.51 (FY2025); payout above 100% on reported EPS.",
+     "Net debt/EBITDA about 3.1-3.5 with CHF 56.7bn net debt.",
+     "Reported sales flat in CHF for 9M due to FX; stock near 52-week high."
+    ],
+    "dataGaps": [
+     "Analyst consensus rating/targets unavailable",
+     "Net debt/EBITDA is derived from mixed sources (range 3.1-3.5)",
+     "EPS history is reported not underlying (underlying EPS not retrieved)",
+     "FCF history not retrieved; estimate revisions after Q3 not available",
+     "stockanalysis data dated 2026-10-23 (cached)"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m EPS x justified P/E. Basis 2026E EPS CHF 3.83 (MarketScreener consensus, basis not stated). Reported EPS fell in FY2025. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS 2026E consensus (MarketScreener)",
+    "basisValue": 3.83,
+    "forwardDividendYield": 0.035,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+     "quality": 4,
+     "growth": 2,
+     "financialStrength": 3,
+     "risk": 5
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 65.76,
+      "epsCagr5y": 0.01,
+      "exitPe5y": 17,
+      "note": "Volumes stay weak, margin pressure, leverage limits buybacks. Justified multiple 17x on next-12m 3.87.",
+      "epsCagr10y": 0.02,
+      "exitPe10y": 16
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 84.45,
+      "epsCagr5y": 0.05,
+      "exitPe5y": 19,
+      "note": "Organic growth about 3-4% with gradual margin recovery. Justified multiple 21x on next-12m 4.02.",
+      "epsCagr10y": 0.05,
+      "exitPe10y": 18
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 98.35,
+      "epsCagr5y": 0.07,
+      "exitPe5y": 21,
+      "note": "Turnaround restores real internal growth above 3%. Justified multiple 24x on next-12m 4.10.",
+      "epsCagr10y": 0.06,
+      "exitPe10y": 20
+     }
+    },
+    "whyItFits": "Global staples leader with beta 0.5 and a 3.5% dividend; organic growth recovering (Q3 RIG +2.8%).",
+    "growthDrivers": "Coffee, pet care, nutrition; cost programme and portfolio pruning.",
+    "saturation": "Near its 52-week high after a recovery; forward P/E about 23: no longer cheap.",
+    "principalRisk": "Weak volume growth (9M RIG 1.9%) with net debt/EBITDA about 3.2x; consensus unavailable."
+   }
+  },
+  {
+   "region": "global",
+   "ticker": "NOVN.SW",
+   "name": "Novartis AG",
+   "exchange": "SIX Swiss Exchange",
+   "currency": "CHF",
+   "sector": "Healthcare / Pharmaceuticals",
+   "businessSummary": "Pure-play innovative medicines company (Innovative Medicines US/International) after the Sandoz spin-off. Key brands Cosentyx, Kisqali, Pluvicto, Kesimpta, Leqvio, Fabhalta, Rhapsido; Entresto in generic erosion. Reports in USD; shares trade in CHF.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 134.22,
+     "period": "close 2026-11-12",
+     "source": "halo-technologies.com/markets/shares/swx/novn; valueray.com/symbol/SW/NOVN",
+     "asOf": "2026-11-12",
+     "note": "CHF. Both pages agree on 134.22."
+    },
+    "high52w": {
+     "value": 135.22,
+     "period": "52 weeks to 2026-11-12",
+     "source": "halo-technologies.com/markets/shares/swx/novn; twelvedata.com NOVN statistics",
+     "asOf": "2026-11-12",
+     "note": "CHF. Price is within 1% of the 52w high (all-time high per halo). investing.com showed 132.68 (stale, pre-Q3)."
+    },
+    "low52w": {
+     "value": 99.45,
+     "period": "52 weeks to 2026-11-12",
+     "source": "halo-technologies.com; twelvedata.com",
+     "asOf": "2026-11-12",
+     "note": "CHF. investing.com showed 97.05 (stale)."
+    },
+    "sharesOutstanding": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable; implied about 2,012m from halo market cap / price, not verified"
+    },
+    "marketCap": {
+     "value": 270100,
+     "period": "2026-11-12",
+     "source": "halo-technologies.com/markets/shares/swx/novn",
+     "asOf": "2026-11-12",
+     "note": "CHF m. valueray shows about 253bn (cap quoted in USD/other, inconsistent); halo used."
+    },
+    "netDebt": {
+     "value": 37400,
+     "period": "2026-09-30",
+     "source": "Novartis Q3 2026 release",
+     "asOf": "2026-10-27",
+     "note": "USD m, company-defined net debt (includes leases per Novartis definition not confirmed). Up from 21,900 at 2025-12-31 (M&A/intangibles 16.7bn, dividend 9.1bn, buybacks 4.8bn, offset by 9M FCF 14.0bn)."
+    },
+    "enterpriseValue": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable in CHF; valueray quotes EV about USD 346bn (provider figure, unverified)"
+    },
+    "peTrailing": {
+     "value": 32.16,
+     "period": "TTM IFRS",
+     "source": "valueray.com/symbol/SW/NOVN",
+     "asOf": "2026-11-13",
+     "note": "IFRS-based; inflated by Q3 2026 USD 1.9bn IPR&D impairment. halo shows 18.30 (likely stale/different basis). On core EPS: FY2025 core EPS USD 8.98; 9M26 core 6.85 vs 6.94."
+    },
+    "peForward": {
+     "value": 16.45,
+     "period": "next FY (provider)",
+     "source": "valueray.com/symbol/SW/NOVN",
+     "asOf": "2026-11-13",
+     "note": "Provider forward P/E; consensus basis not stated."
+    },
+    "evEbitTrailing": {
+     "value": 20.1,
+     "period": "TTM IFRS",
+     "source": "valueray.com (derived: EV USD 346bn / EBIT TTM USD 17.2bn)",
+     "asOf": "2026-11-13",
+     "note": "Derived by provider-page inputs, IFRS EBIT incl. impairments; EV likely includes net debt at older level. Low confidence."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "fcfTTM": {
+     "value": 15657,
+     "period": "TTM to Q3 2026",
+     "source": "Novartis FY2025 and Q3 2026 releases (derived: 17,596 + 14,002 - 15,941)",
+     "asOf": "2026-10-27",
+     "note": "USD m, company-defined free cash flow."
+    },
+    "fcfYield": {
+     "value": 0.0444,
+     "period": "TTM",
+     "source": "valueray.com/symbol/SW/NOVN",
+     "asOf": "2026-11-13",
+     "note": "Provider figure (FCF margin 27.9%, EV/FCF 22.5x)."
+    },
+    "dividendPerShare": {
+     "value": 3.7,
+     "period": "FY2025 (paid Mar 2026)",
+     "source": "Novartis FY2025 release",
+     "asOf": "2026-02-05",
+     "note": "CHF; FY2024 was 3.50 (+5.7%)."
+    },
+    "dividendYield": {
+     "value": 0.0276,
+     "period": "FY2025 dividend / price",
+     "source": "derived: 3.70 / 134.22",
+     "asOf": "2026-11-12",
+     "note": "halo shows 3.4% (stale)."
+    },
+    "payoutRatio": {
+     "value": 0.62,
+     "period": "TTM",
+     "source": "halo-technologies.com",
+     "asOf": "2026-11-12",
+     "note": "Provider figure; basis not stated."
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable; provider Debt/EBITDA (gross) 1.85 per valueray; net debt USD 37.4bn at Q3 2026 vs 21.9bn at FY2025, so leverage rising"
+    },
+    "interestCoverage": {
+     "value": 10.98,
+     "period": "TTM",
+     "source": "valueray.com/symbol/SW/NOVN",
+     "asOf": "2026-11-13",
+     "note": "Provider figure."
+    },
+    "roic": {
+     "value": 0.1475,
+     "period": "TTM",
+     "source": "valueray.com",
+     "asOf": "2026-11-13",
+     "note": "Provider figure."
+    },
+    "roe": {
+     "value": 0.2424,
+     "period": "TTM",
+     "source": "valueray.com",
+     "asOf": "2026-11-13",
+     "note": "Provider figure."
+    },
+    "beta5y": {
+     "value": 0.45,
+     "period": "5y",
+     "source": "twelvedata.com NOVN statistics",
+     "asOf": "2026-11-13",
+     "note": "Conflict: valueray shows TTM beta -0.218 (short window). twelvedata page appears partly stale."
+    },
+    "sectorMetrics": {
+     "coreOperatingMargin": {
+      "value": 0.401,
+      "period": "9M 2026",
+      "source": "Novartis Q3 2026 release",
+      "asOf": "2026-10-27",
+      "note": "Q3 2026 41.6% (+2.3pp); 9M 40.1% vs 41.2%."
+     },
+     "coreEPS": {
+      "value": 6.85,
+      "period": "9M 2026",
+      "source": "Novartis Q3 2026 release",
+      "asOf": "2026-10-27",
+      "note": "USD; 9M25 6.94 (-1% USD, -3% cc). Q3 core EPS 2.46 (+9%). IFRS EPS 9M 4.01 vs 5.94 (-32%); Q3 IFRS 0.63 vs 2.04 after USD 1.9bn del-desiran IPR&D impairment."
+     },
+     "entresto": {
+      "value": 3651,
+      "period": "9M 2026",
+      "source": "Novartis Q3 2026 release",
+      "asOf": "2026-10-27",
+      "note": "USD m, -44% (-45% cc); Q3 1,165 (-38%). Generic erosion; FY2025 Entresto 7,748. Q3 sales drivers: volume +14pp, generics -9pp, pricing -1pp."
+     },
+     "guidance2026": {
+      "value": null,
+      "period": "FY2026",
+      "source": "Novartis Q3 2026 release",
+      "asOf": "2026-10-27",
+      "note": "Net sales low single-digit growth cc (unchanged). Core operating income now in line to low single-digit growth (RAISED from low single-digit decline). FX +1pp. FY2025 release called 2026 'the largest patent expiry in Novartis history' (Entresto, others); no specific dates given in releases."
+     }
+    },
+    "history": [
+     {
+      "period": "FY2024",
+      "revenue": 50317,
+      "ebit": 14544,
+      "ebitMargin": 0.289,
+      "eps": 7.81,
+      "fcf": 16253,
+      "source": "Novartis FY2025 release. USD m; ebit = IFRS operating income (core op income 19,494); eps = core EPS USD (IFRS 5.92)."
+     },
+     {
+      "period": "FY2025",
+      "revenue": 54532,
+      "ebit": 17644,
+      "ebitMargin": 0.3236,
+      "eps": 8.98,
+      "fcf": 17596,
+      "source": "Novartis FY2025 release. USD m; ebit = IFRS operating income (core 21,889, 40.1% margin); eps = core EPS USD (IFRS 7.21)."
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Neutral/Hold",
+     "analysts": 22,
+     "buy": 8,
+     "hold": 13,
+     "sell": 2,
+     "targetAvg": 124.14,
+     "targetHigh": 149.31,
+     "targetLow": 100.12,
+     "source": "de.investing.com/equities/novartis-consensus-estimates",
+     "asOf": "about 2026-10-06 (pre-Q3; price now above this average)"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable"
+    },
+    "recentEvents": [
+     "Q3 2026 (27 Oct): sales USD 14,522m +4%; core op income 6,036 (+11%); core EPS 2.46 (+9%); FCF 5,111 (-18%).",
+     "FY2026 core operating income guidance raised; sales guidance unchanged.",
+     "Post-Q3 target raises: UBS 116->130 (Neutral), DZ 130->134 (Hold), Oddo 121->128, RBC 120->130 (Sector Perform), LBBW 120->130; JPMorgan 145 (Overweight), Citi 150 (Buy) per goldesel.de headlines. Deutsche Bank earlier Sell, target 115.",
+     "Pipeline: del-desiran Ph3 HARBOR and pelacarsen Ph3 HORIZON missed primary endpoints; remibrutinib gMG Ph3 discontinued; Rhapsido, Pluvicto, Fabhalta approvals. USD 16.7bn of M&A/acquisitions in 9M.",
+     "Next: Q4/FY2026 results 2027-02-03."
+    ],
+    "valueTrapFlags": [
+     "Net debt up to USD 37.4bn from 21.9bn in nine months (M&A, buybacks).",
+     "9M FCF -12%, 9M core EPS -1% (Entresto erosion -44%); Q3 rebound is a single quarter.",
+     "Two failed Ph3 trials (del-desiran, pelacarsen) and USD 1.9bn IPR&D impairment.",
+     "Price at 52-week/all-time high and above the pre-Q3 consensus average target (124); consensus is Neutral/Hold."
+    ],
+    "dataGaps": [
+     "FY2021-FY2023 history not retrieved",
+     "Net debt/EBITDA, EV, shares outstanding, forward EPS consensus, historical multiples unavailable",
+     "stockanalysis.com and tipranks fetches were blocked (permission), so multiples come from valueray/halo/twelvedata with some stale-page conflicts",
+     "Reporting currency USD, trading currency CHF: history in USD m"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m core EPS x justified P/E. Basis CHF 8.2 = price / provider forward P/E 16.45 (derived; company reports in USD, FY2025 core EPS USD 8.98). Entresto loss of exclusivity in the bear case. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS core, forward, CHF (derived from provider forward P/E)",
+    "basisValue": 8.2,
+    "forwardDividendYield": 0.028,
+    "qualityTier": "B",
+    "role": "Dividend & Stability",
+    "scores": {
+     "quality": 4,
+     "growth": 3,
+     "financialStrength": 3,
+     "risk": 4
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 106.6,
+      "epsCagr5y": 0,
+      "exitPe5y": 13,
+      "note": "Entresto erosion and pipeline misses offset growth drivers. Justified multiple 13x on next-12m 8.20.",
+      "epsCagr10y": 0.02,
+      "exitPe10y": 12
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 137.76,
+      "epsCagr5y": 0.05,
+      "exitPe5y": 15,
+      "note": "Kisqali, Pluvicto, Leqvio growth offsets generics; margins hold. Justified multiple 16x on next-12m 8.61.",
+      "epsCagr10y": 0.05,
+      "exitPe10y": 14
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 159.41,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 17,
+      "note": "Pipeline wins and margin expansion continue. Justified multiple 18x on next-12m 8.86.",
+      "epsCagr10y": 0.07,
+      "exitPe10y": 16
+     }
+    },
+    "whyItFits": "Focused innovative-medicines company: core margin 41.6% in Q3, FY guidance raised, beta 0.45, 2.8% dividend.",
+    "growthDrivers": "Kisqali, Pluvicto, Leqvio, Scemblix, radioligand platform; cost efficiency.",
+    "saturation": "At its 52-week high (CHF 135.22) and above the pre-Q3 consensus target of 124; forward P/E about 16.5.",
+    "principalRisk": "Entresto sales down 44% in 9M, two Phase III misses and net debt up USD 15.5bn in nine months (acquisitions)."
+   }
+  },
+  {
    "ticker": "NOVO-B.CO",
    "name": "Novo Nordisk A/S (B)",
    "exchange": "Nasdaq Copenhagen",
@@ -3464,25 +4113,25 @@
    "retrievedAt": "2026-11-13T09:00:00+01:00",
    "facts": {
     "price": {
-     "value": 104.9,
-     "period": "close, run 2026-11-12",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "value": 104.6,
+     "period": "close",
+     "source": "fact check quote",
      "asOf": "2026-11-12",
-     "note": "NOK. After Q3 beat on 6 Nov 2026."
+     "note": "Refreshed; prior value was the 11 Nov close (was 104.9; fact check config/garp/checks/2026-11-13.md)"
     },
     "high52w": {
-     "value": null,
-     "period": "",
-     "source": "",
-     "asOf": "2026-11-13",
-     "note": "unavailable; stockanalysis shows 52-week price change -10.18% as of 2026-10-16"
+     "value": 131.2,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "2026-11-12",
+     "note": "Single source (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "low52w": {
-     "value": null,
-     "period": "",
-     "source": "",
-     "asOf": "2026-11-13",
-     "note": "unavailable"
+     "value": 90,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "2026-11-12",
+     "note": "Single source (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "sharesOutstanding": {
      "value": 961.73,
@@ -3814,6 +4463,1174 @@
    }
   },
   {
+   "ticker": "REL.L",
+   "name": "RELX PLC",
+   "region": "global",
+   "exchange": "London Stock Exchange",
+   "currency": "GBp",
+   "sector": "Industrials / Information services (risk analytics, legal, scientific-technical-medical publishing, exhibitions)",
+   "businessSummary": "Global information-based analytics and decision tools: Risk (LexisNexis Risk Solutions), Scientific, Technical & Medical (Elsevier), Legal (LexisNexis Legal & Professional) and Exhibitions (RX). All price and per-share figures in pence (GBp); monetary amounts in GBP millions.",
+   "facts": {
+    "price": {
+     "value": 3072,
+     "period": "close",
+     "source": "AJ Bell quote",
+     "asOf": "2026-11-12",
+     "note": "Refreshed by fact check; pence (was 3019; fact check config/garp/checks/2026-11-13.md)"
+    },
+    "high52w": {
+     "value": 3448.5,
+     "period": "52w",
+     "source": "AJ Bell",
+     "asOf": "2026-11-12",
+     "note": "Confirmed; fool.com 3,210p rejected (was 3450; fact check config/garp/checks/2026-11-13.md)"
+    },
+    "low52w": {
+     "value": 1991,
+     "period": "52 weeks to 2026-11-13",
+     "source": "https://www.fool.com/quote/lse/rel/",
+     "asOf": "2026-11-13",
+     "note": "PENCE. twelvedata shows '1.99K', consistent. Low followed the Feb 2026 AI-driven sell-off (RELX fell ~11% on 2026-02-03 per City AM)."
+    },
+    "sharesOutstanding": {
+     "value": 1740,
+     "period": "2026-10-23 (m)",
+     "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+     "asOf": "2026-10-23",
+     "note": "Provider figure, millions; buyback of GBP 2.25bn planned for 2026 so count is falling."
+    },
+    "marketCap": {
+     "value": 52500,
+     "period": "derived: 3,019p x 1,740m (GBP m)",
+     "source": "derived",
+     "asOf": "2026-11-12",
+     "note": "GBP m. Provider: GBP 52.87bn at 3,039p (2026-10-23); fool.com GBP 52.37bn."
+    },
+    "netDebt": {
+     "value": 8690,
+     "period": "provider latest balance sheet (GBP m)",
+     "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+     "asOf": "2026-10-24",
+     "note": "Provider: total debt 8.91bn less cash 0.22bn; lease treatment not stated. CONFLICT/BASIS: company-reported net debt at FY2025 GBP 7,201m (2.0x EBITDA, FY2024 6,563m). Higher provider figure probably reflects H1 2026 (buybacks, dividend, acquisitions); not reconciled."
+    },
+    "enterpriseValue": {
+     "value": 61200,
+     "period": "derived (GBP m)",
+     "source": "derived",
+     "asOf": "2026-11-12",
+     "note": "Market cap 52.5bn + provider net debt 8.69bn. Provider EV GBP 61.57bn at 3,039p."
+    },
+    "peTrailing": {
+     "value": 24.19,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "Provider trailing P/E, basis (reported vs adjusted EPS) not stated. On FY2025 ADJUSTED EPS 128.5p the P/E is 3,019/128.5 = 23.5x; on FY2025 reported EPS 112.6p it is 26.8x."
+    },
+    "peForward": {
+     "value": 20.33,
+     "period": "next FY consensus (provider)",
+     "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+     "asOf": "2026-10-24",
+     "note": "Provider forward P/E at 3,039p. CONFLICT: 19.17 on twelvedata at 3,016p (2026-11-06). Likely on adjusted EPS; underlying EPS estimate not retrievable."
+    },
+    "evEbitTrailing": {
+     "value": 18.3,
+     "period": "FY2025 adjusted operating profit",
+     "source": "derived: EV 61.2bn / adjusted operating profit GBP 3,342m (https://www.relx.com/media/press-releases/year-2026/relx-2025-results)",
+     "asOf": "2026-11-12",
+     "note": "ADJUSTED operating profit (RELX definition: excludes amortisation of acquired intangibles, so closer to EBITA than reported EBIT). Provider EV/EBIT 19.70 on a reported basis. Net debt basis per above."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable; no verified forward adjusted operating profit estimate"
+    },
+    "evEbitdaTrailing": {
+     "value": 18.26,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+     "asOf": "2026-10-24",
+     "note": "Provider figure at 3,039p; stock-agent shows 18.59 at 3,019p."
+    },
+    "fcfTTM": {
+     "value": 2860,
+     "period": "TTM (GBP m)",
+     "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+     "asOf": "2026-10-24",
+     "note": "Provider FCF. Company does not publish FCF; reports adjusted cash flow conversion 99% of adjusted operating profit in FY2025 (FY2024 97%)."
+    },
+    "fcfYield": {
+     "value": 0.0545,
+     "period": "TTM",
+     "source": "derived: 2,860 / 52,500",
+     "asOf": "2026-11-12",
+     "note": "Provider shows 5.41% at 3,039p."
+    },
+    "dividendPerShare": {
+     "value": 67.5,
+     "period": "FY2025 (pence)",
+     "source": "https://www.relx.com/media/press-releases/year-2026/relx-2025-results",
+     "asOf": "2026-02-12",
+     "note": "Pence; FY2024 63.0p (+7%). Provider shows 0.68 GBP annual."
+    },
+    "dividendYield": {
+     "value": 0.0224,
+     "period": "FY2025 dividend / price",
+     "source": "derived: 67.5 / 3,019",
+     "asOf": "2026-11-12",
+     "note": "Provider 2.22% at 3,039p."
+    },
+    "payoutRatio": {
+     "value": 0.5409,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "Provider 53.4%; basis (reported EPS) not stated. On adjusted EPS 128.5p: 67.5/128.5 = 52.5%."
+    },
+    "netDebtToEbitda": {
+     "value": 2,
+     "period": "FY2025 (company)",
+     "source": "https://www.relx.com/media/press-releases/year-2026/relx-2025-results",
+     "asOf": "2026-02-12",
+     "note": "Company-reported 2.0x at FY2025 (FY2024 1.8x). Providers show 2.64-2.68x (higher net debt, different EBITDA definition). Rising: +0.2x y/y, driven by GBP 1.5bn buybacks in 2025 and GBP 2.25bn planned in 2026."
+    },
+    "interestCoverage": {
+     "value": 18.91,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+     "asOf": "2026-10-24",
+     "note": "Provider figure; EBIT/interest basis not stated."
+    },
+    "roic": {
+     "value": 0.2358,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+     "asOf": "2026-10-24",
+     "note": "Provider figure."
+    },
+    "roe": {
+     "value": 1.3186,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/lon/REL/statistics/",
+     "asOf": "2026-10-24",
+     "note": "Provider figure; not meaningful because equity is very small after buybacks (price/book 4,237x on stock-agent)."
+    },
+    "beta5y": {
+     "value": 0.27,
+     "period": "5Y monthly",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "stockanalysis 0.28; fool.com shows ~0."
+    },
+    "sectorMetrics": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "Not applicable. Reporting: adjusted operating profit, adjusted EPS (pence) and underlying revenue growth at constant currency are the company KPIs."
+    },
+    "history": [
+     {
+      "period": "FY2024",
+      "revenue": 9434,
+      "ebit": 3199,
+      "ebitMargin": 0.339,
+      "eps": 120.1,
+      "fcf": null,
+      "source": "RELX 2025 results release. EBIT = ADJUSTED operating profit; EPS = ADJUSTED, pence (reported 103.6p). FCF not published (cash conversion 97%)."
+     },
+     {
+      "period": "FY2025",
+      "revenue": 9590,
+      "ebit": 3342,
+      "ebitMargin": 0.348,
+      "eps": 128.5,
+      "fcf": null,
+      "source": "RELX 2025 results release. EBIT = ADJUSTED operating profit; EPS = ADJUSTED, pence (reported 112.6p). FCF not published (cash conversion 99%)."
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 17,
+     "buy": 14,
+     "hold": 2,
+     "sell": 1,
+     "targetAvg": 3509.1,
+     "targetHigh": 5070,
+     "targetLow": 2200,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long) (targets in pence; buy = 2 strong buy + 12 buy; sell = 1 strong sell)",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; company outlook: another year of strong underlying growth in revenue and adjusted operating profit, strong adjusted EPS growth at constant currency"
+    },
+    "recentEvents": [
+     "2026-10-22/23 Q3 trading update: 9M underlying revenue growth +7% (Risk +8%, STM +6%, Legal +10%, Exhibitions +4%); 2026 outlook reaffirmed (https://www.ariva.de/news/trading-update-october-2026-12177481).",
+     "FY2025 (2026-02-12): revenue GBP 9,590m, adjusted operating profit GBP 3,342m (34.8% margin), adjusted EPS 128.5p (+7%), dividend 67.5p (+7%), GBP 1.5bn buybacks; GBP 2.25bn planned for 2026.",
+     "2026-02-03: shares fell ~11% (Wolters Kluwer ~9%) after Anthropic released a legal productivity tool for in-house lawyers, sparking AI-disruption fears for data and legal-software businesses (City AM)."
+    ],
+    "valueTrapFlags": [
+     "No operating deterioration found: underlying growth 7% 9M 2026, margin up ~90bp in FY2025, cash conversion 99%.",
+     "Valuation reflects AI-disruption fear rather than reported weakness: shares about 13% lower y/y (stockanalysis, 2026-10-23) after the Feb 2026 sell-off; Legal division (+10%) is the segment most exposed to the narrative.",
+     "Leverage drifting up (2.0x vs 1.8x) because buybacks exceed free cash flow after dividends; provider net debt GBP 8.69bn is above company FY2025 GBP 7.2bn."
+    ],
+    "dataGaps": [
+     "No FY2021-2023 history retrieved.",
+     "No forward EPS or adjusted operating profit consensus; forward P/E is provider-only.",
+     "52w high approximate (conflict 3,450p vs 3,210p).",
+     "H1 2026 company net debt not retrieved; Q3 trading update has no net debt.",
+     "Historical multiples unavailable."
+    ]
+   },
+   "retrievedAt": "2026-11-13T18:16:46+01:00",
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis 2026E adjusted EPS 139p (FY2025 128.5p plus guided strong constant-currency growth; lead estimate). Bear weighted 30% for AI disruption of information services. Prices in pence. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS adjusted (GBp), 2026E (lead estimate)",
+    "basisValue": 139,
+    "forwardDividendYield": 0.022,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+     "quality": 5,
+     "growth": 4,
+     "financialStrength": 4,
+     "risk": 4
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 2919,
+      "epsCagr5y": 0.05,
+      "exitPe5y": 20,
+      "note": "Generative AI erodes pricing in legal and risk data; multiple stays compressed. Justified multiple 20x on next-12m 145.95.",
+      "epsCagr10y": 0.05,
+      "exitPe10y": 18
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 3939.26,
+      "epsCagr5y": 0.09,
+      "exitPe5y": 24,
+      "note": "Underlying growth about 7%, margin gains, buybacks: high-single-digit EPS growth. Justified multiple 26x on next-12m 151.51.",
+      "epsCagr10y": 0.08,
+      "exitPe10y": 22
+     },
+     "bull": {
+      "prob": 0.2,
+      "fairValue": 4474.41,
+      "epsCagr5y": 0.11,
+      "exitPe5y": 27,
+      "note": "AI tools lift pricing and usage; multiple returns to pre-2026 levels. Justified multiple 29x on next-12m 154.29.",
+      "epsCagr10y": 0.1,
+      "exitPe10y": 24
+     }
+    },
+    "whyItFits": "Subscription-heavy information and analytics group: adjusted operating margin about 35%, ROIC about 24%, beta 0.27, 9M underlying revenue growth +7% with outlook reaffirmed.",
+    "growthDrivers": "Analytics and decision tools (Risk, LexisNexis Legal, Elsevier), generative-AI products layered on proprietary data, steady buybacks.",
+    "saturation": "De-rated on AI-disruption fears (shares -11% on 2026-02-03), not on results; about 13% below the 52-week high. Consensus target 3,509p (analyst opinion).",
+    "principalRisk": "AI tools commoditising legal and scientific information faster than RELX can monetise its own; 52-week high conflicts between sources."
+   }
+  },
+  {
+   "region": "global",
+   "ticker": "ROG.SW",
+   "name": "Roche Holding AG (Genussschein)",
+   "exchange": "SIX Swiss Exchange",
+   "currency": "CHF",
+   "sector": "Healthcare / Pharmaceuticals and Diagnostics",
+   "businessSummary": "Swiss pharma and diagnostics group. 2025 sales CHF 61.5bn: Pharmaceuticals about 47.7bn, Diagnostics about 13.8bn. Growth drivers Xolair, Hemlibra, Ocrevus, Phesgo, Vabysmo; pipeline includes giredestrant, fenebrutinib, obesity assets.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 415.8,
+     "period": "close 2026-11-12",
+     "source": "halo-technologies.com/markets/shares/swx/ro",
+     "asOf": "2026-11-12",
+     "note": "CHF. Cross-check: cash.ch 2026-10-20 quoted 385.50 (intraday 396.50); marketscreener market cap CHF 325bn consistent with about 410. Halo page is for ticker 'RO' (Roche Holding Ltd) with about 784m-share market cap, i.e. Genussschein-equivalent; not separately confirmed for ROG line."
+    },
+    "high52w": {
+     "value": 415.8,
+     "period": "52 weeks to 2026-11-12",
+     "source": "halo-technologies.com",
+     "asOf": "2026-11-12",
+     "note": "Halo states 415.60 but its own price is 415.80; recorded as price (at the high). Highest since 2022 per cash.ch on 20 Oct; Oddo target 440 implies new all-time high."
+    },
+    "low52w": {
+     "value": 297.2,
+     "period": "52 weeks to 2026-11-12",
+     "source": "halo-technologies.com",
+     "asOf": "2026-11-12",
+     "note": "CHF."
+    },
+    "sharesOutstanding": {
+     "value": 795.4,
+     "period": "latest",
+     "source": "stockanalysis.com/quote/swx/ROG/statistics (cached, undated)",
+     "asOf": "2026-11-13",
+     "note": "Million Genussscheine equivalent; page was stale (market cap 206.7bn at lower price)."
+    },
+    "marketCap": {
+     "value": 326250,
+     "period": "2026-11-12",
+     "source": "halo-technologies.com",
+     "asOf": "2026-11-12",
+     "note": "CHF m. marketscreener: about 325,000. stockanalysis 206,730 and tipranks 212,290 are stale (pre-rally)."
+    },
+    "netDebt": {
+     "value": 19050,
+     "period": "cached, undated (probably FY2025/H1 2026)",
+     "source": "stockanalysis.com ROG statistics",
+     "asOf": "2026-11-13",
+     "note": "CHF m. marketscreener estimates 11,720 for FY2026E. Lease treatment unstated."
+    },
+    "enterpriseValue": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "not stated; indicatively market cap 326,250 + net debt 19,050 = about 345,300 (mixed dates, not verified)"
+    },
+    "peTrailing": {
+     "value": 20.7,
+     "period": "TTM",
+     "source": "halo-technologies.com",
+     "asOf": "2026-11-12",
+     "note": "Derived check on core EPS: 415.80 / 19.46 (FY2025 core EPS) = 21.4. stockanalysis showed 24.99 at the older, lower price."
+    },
+    "peForward": {
+     "value": 21.8,
+     "period": "FY2026E",
+     "source": "uk.marketscreener.com ROCHE-HOLDING",
+     "asOf": "2026-11-13",
+     "note": "MarketScreener 2026E P/E 21.8x, 2027E 19.7x (net income est. 14.99bn / 16.59bn CHF)."
+    },
+    "evEbitTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "stockanalysis EV/EBIT 11.76 is based on the stale lower price; not usable"
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "stockanalysis 10.01 stale; not usable"
+    },
+    "fcfTTM": {
+     "value": 16570,
+     "period": "TTM (undated cache)",
+     "source": "stockanalysis.com ROG statistics",
+     "asOf": "2026-11-13",
+     "note": "CHF m."
+    },
+    "fcfYield": {
+     "value": 0.0508,
+     "period": "TTM FCF / current cap",
+     "source": "derived: 16,570 / 326,250",
+     "asOf": "2026-11-12",
+     "note": "Mixed dates; stockanalysis stale figure was 8.01% at lower price."
+    },
+    "dividendPerShare": {
+     "value": 9.8,
+     "period": "FY2025 (paid 2026)",
+     "source": "Roche FY2025 results via rallies.ai; halo last payment 9.80",
+     "asOf": "2026-11-12",
+     "note": "CHF; FY2024 9.70. Seventh consecutive increase. 2026 outlook: further increase."
+    },
+    "dividendYield": {
+     "value": 0.0236,
+     "period": "FY2025 div / price",
+     "source": "derived: 9.80 / 415.80",
+     "asOf": "2026-11-12",
+     "note": "halo displays 2.9%; marketscreener 2.47% 2026E."
+    },
+    "payoutRatio": {
+     "value": 0.61,
+     "period": "TTM",
+     "source": "halo-technologies.com",
+     "asOf": "2026-11-12",
+     "note": "stockanalysis showed 92.4% on IFRS basis (stale). Core payout lower."
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable; stockanalysis Debt/EBITDA (gross) 1.58 stale"
+    },
+    "interestCoverage": {
+     "value": 15.72,
+     "period": "TTM (stale cache)",
+     "source": "stockanalysis.com ROG statistics",
+     "asOf": "2026-11-13",
+     "note": ""
+    },
+    "roic": {
+     "value": 0.1794,
+     "period": "TTM (stale cache)",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": ""
+    },
+    "roe": {
+     "value": 0.2647,
+     "period": "TTM (stale cache)",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": ""
+    },
+    "beta5y": {
+     "value": 0.17,
+     "period": "5y",
+     "source": "stockanalysis.com ROG statistics",
+     "asOf": "2026-11-13",
+     "note": "Conflict: tipranks shows 1.20."
+    },
+    "sectorMetrics": {
+     "coreEPS": {
+      "value": 19.46,
+      "period": "FY2025",
+      "source": "Roche FY2025 results via rallies.ai",
+      "asOf": "2026-01-29",
+      "note": "CHF, +11% CER. Core operating profit +13%. IFRS net income +58% (low 2024 base after impairments); IFRS EPS not retrieved."
+     },
+     "sales9M2026": {
+      "value": 46493,
+      "period": "9M 2026",
+      "source": "roche.com med-cor-2026-10-22",
+      "asOf": "2026-10-22",
+      "note": "CHF m, +6% CER, +1% CHF; Q3 +7% CER (+8% CHF). Pharma 36,212 (+7% CER), Diagnostics 10,281 (+4% CER)."
+     },
+     "guidance2026": {
+      "value": null,
+      "period": "FY2026",
+      "source": "roche.com Q3 2026 release",
+      "asOf": "2026-10-22",
+      "note": "Confirmed, unchanged: sales mid single-digit growth CER, core EPS high single-digit growth CER, further CHF dividend increase. FX about -3pp sales, -5pp core EPS (end-Sep rates)."
+     },
+     "patentExpiry": {
+      "value": null,
+      "period": "2026",
+      "source": "roche.com Q3 2026 release; Quartr",
+      "asOf": "2026-10-22",
+      "note": "Loss-of-exclusivity impact CHF 355m YTD, about CHF 600m expected FY2026, larger Actemra impact in Q4 (biosimilars). Perjeta-to-Phesgo conversion weighs on Perjeta. Q3 boosted by about CHF 180m Japan shipment timing, to reverse in Q4."
+     }
+    },
+    "history": [
+     {
+      "period": "FY2025",
+      "revenue": 61500,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 19.46,
+      "fcf": null,
+      "source": "Roche FY2025 via rallies.ai; sales approximate CHF 61.5bn; eps = core EPS CHF; EBIT, FCF not retrieved"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Buy/Hold mix (Bloomberg)",
+     "analysts": 27,
+     "buy": 15,
+     "hold": 9,
+     "sell": 3,
+     "targetAvg": 385.5,
+     "targetHigh": null,
+     "targetLow": null,
+     "source": "cash.ch 2026-10-20 (Bloomberg consensus); Oddo BHF target 440 (upgrade Underperform->Outperform from 300)",
+     "asOf": "2026-10-20",
+     "note": "Article says average target equals the then price of 385.50, which looks like a coincidence or error; price is now 415.80, above that average."
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "marketscreener net income est. only (2026E 14.99bn, 2027E 16.59bn CHF); per-share unavailable"
+    },
+    "recentEvents": [
+     "Q3 2026 (22 Oct): sales +7% CER; beat consensus by about 2%; guidance confirmed.",
+     "Giredestrant FDA PDUFA dates 30 Nov 2026 (early breast cancer) and 18 Dec 2026 (advanced); fenebrutinib FDA priority review.",
+     "Oddo BHF double upgrade 20 Oct; stock at highest level since 2022.",
+     "Positive Ph3: sefaxersen (IgAN), Lunsumio; Elecsys pTau217 FDA clearance; 2027 outlook: similar sales momentum with margin expansion."
+    ],
+    "valueTrapFlags": [
+     "Price at 52-week high after about 40% rise from low; consensus target average (385.50) below price.",
+     "Currency: about -5pp core EPS drag in 2026; CHF sales growth only +1% 9M.",
+     "Biosimilar/LOE erosion rising (Actemra) and Q4 timing reversal of Japan shipments."
+    ],
+    "dataGaps": [
+     "FY2021-FY2024 history, EBIT and FCF by year not retrieved",
+     "Reliable EV, EV/EBIT, ND/EBITDA at current price unavailable (stockanalysis data stale, fetch of fresh page blocked)",
+     "Halo page labelled ticker RO; confirm Genussschein line",
+     "Consensus high/low targets unavailable",
+     "Price and 52-week range from a single provider line (RO); share class unconfirmed by fact check."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m core EPS x justified P/E. Basis CHF 20.0 (FY2025 core EPS 19.46, about 5pp currency drag in 2026; lead estimate). Price/range from a single provider line (RO), consistent with market cap. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS core, 2026E (lead estimate)",
+    "basisValue": 20,
+    "forwardDividendYield": 0.024,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+     "quality": 5,
+     "growth": 3,
+     "financialStrength": 4,
+     "risk": 5
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 306,
+      "epsCagr5y": 0.02,
+      "exitPe5y": 15,
+      "note": "Biosimilar erosion and a weak USD offset growth. Justified multiple 15x on next-12m 20.40.",
+      "epsCagr10y": 0.03,
+      "exitPe10y": 14
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 402.8,
+      "epsCagr5y": 0.06,
+      "exitPe5y": 17,
+      "note": "Mid-single-digit sales growth, stable core margin, diagnostics recovery. Justified multiple 19x on next-12m 21.20.",
+      "epsCagr10y": 0.055,
+      "exitPe10y": 16
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 453.6,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 19,
+      "note": "Obesity and neurology pipeline readouts succeed. Justified multiple 21x on next-12m 21.60.",
+      "epsCagr10y": 0.07,
+      "exitPe10y": 18
+     }
+    },
+    "whyItFits": "Pharma plus diagnostics leader: Q3 sales +7% CER, beta 0.17, 2.4% dividend, strong balance sheet.",
+    "growthDrivers": "Vabysmo, Ocrevus, Xolair, Polivy, diagnostics, giredestrant and obesity pipeline.",
+    "saturation": "At its 52-week high and above the average analyst target (385.50): fully valued after the rally.",
+    "principalRisk": "Loss-of-exclusivity erosion and CHF strength cutting reported EPS while the shares sit at their high."
+   }
+  },
+  {
+   "region": "global",
+   "ticker": "SAN.PA",
+   "name": "Sanofi",
+   "exchange": "Euronext Paris",
+   "currency": "EUR",
+   "sector": "Healthcare / Pharmaceuticals and Vaccines",
+   "businessSummary": "French biopharma focused on Immunology (Dupixent), Rare diseases and Vaccines (Beyfortus, flu, others). Pipeline rebuilding via BD and M&A after tolebrutinib setback.",
+   "retrievedAt": "2026-11-13T12:00:00+01:00",
+   "facts": {
+    "price": {
+     "value": 86.61,
+     "period": "close 2026-11-11/12",
+     "source": "stock-agent /decisions 2026-11-12 23:05; twelvedata.com SAN statistics (update 11 Nov 17:30 CET)",
+     "asOf": "2026-11-12",
+     "note": "EUR."
+    },
+    "high52w": {
+     "value": 90.79,
+     "period": "52 weeks",
+     "source": "twelvedata.com/markets/390210/stock/euronext/san/statistics",
+     "asOf": "2026-11-11",
+     "note": "EUR."
+    },
+    "low52w": {
+     "value": 69.75,
+     "period": "52 weeks",
+     "source": "twelvedata.com",
+     "asOf": "2026-11-11",
+     "note": "EUR."
+    },
+    "sharesOutstanding": {
+     "value": 1210,
+     "period": "latest",
+     "source": "twelvedata.com",
+     "asOf": "2026-11-11",
+     "note": "Million; 1,210m x 86.61 consistent with cap."
+    },
+    "marketCap": {
+     "value": 103760,
+     "period": "2026-11-11",
+     "source": "twelvedata.com",
+     "asOf": "2026-11-11",
+     "note": "EUR m."
+    },
+    "netDebt": {
+     "value": 14410,
+     "period": "latest",
+     "source": "derived: EV 118,170 - market cap 103,760 (twelvedata)",
+     "asOf": "2026-11-11",
+     "note": "EUR m; implied only, definition (IFRS 16, minorities) unknown. Company Q3 net debt figure not retrieved."
+    },
+    "enterpriseValue": {
+     "value": 118170,
+     "period": "2026-11-11",
+     "source": "twelvedata.com",
+     "asOf": "2026-11-11",
+     "note": "EUR m."
+    },
+    "peTrailing": {
+     "value": 25.03,
+     "period": "TTM IFRS",
+     "source": "stock-agent /decisions 2026-11-12",
+     "asOf": "2026-11-12",
+     "note": "twelvedata 25.70. Inflated by IFRS impairments (tolebrutinib EUR 2.24bn). On business EPS FY2025 EUR 7.83: 86.61/7.83 = 11.1."
+    },
+    "peForward": {
+     "value": 9.35,
+     "period": "next FY (provider)",
+     "source": "twelvedata.com",
+     "asOf": "2026-11-11",
+     "note": "Consistent with business EPS about 9; 2026 guidance business EPS growth mid-teens CER, FX -1pp."
+    },
+    "evEbitTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "stock-agent evToEbit null"
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 8,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 (7.999); twelvedata 8.00",
+     "asOf": "2026-11-12",
+     "note": "EBITDA about EUR 12.6bn (twelvedata)."
+    },
+    "fcfTTM": {
+     "value": 8100,
+     "period": "FY2025",
+     "source": "Sanofi FY2025 results via hl.co.uk",
+     "asOf": "2026-01-29",
+     "note": "EUR m assumed (article gives '8.1bn', +35.8%); TTM to Q3 2026 not retrieved."
+    },
+    "fcfYield": {
+     "value": 0.078,
+     "period": "FY2025 FCF / current cap",
+     "source": "derived: 8,100 / 103,760",
+     "asOf": "2026-11-11",
+     "note": "Uses FY2025 FCF, not TTM."
+    },
+    "dividendPerShare": {
+     "value": 4.12,
+     "period": "FY2025 (paid May 2026)",
+     "source": "twelvedata.com trailing annual dividend rate",
+     "asOf": "2026-11-11",
+     "note": "EUR; ex-date 2026-05-05."
+    },
+    "dividendYield": {
+     "value": 0.0476,
+     "period": "trailing",
+     "source": "derived: 4.12 / 86.61",
+     "asOf": "2026-11-11",
+     "note": "twelvedata shows 'forward rate 16.48' which is a data error."
+    },
+    "payoutRatio": {
+     "value": 1.19,
+     "period": "TTM IFRS",
+     "source": "stock-agent /decisions 2026-11-12",
+     "asOf": "2026-11-12",
+     "note": "IFRS-earnings basis, depressed by impairments; payout on business EPS about 53% (4.12/7.83, derived)."
+    },
+    "netDebtToEbitda": {
+     "value": 0.94,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12",
+     "asOf": "2026-11-12",
+     "note": "Provider definition unknown regarding leases."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roe": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "stock-agent returnOnAssets 5.46% only"
+    },
+    "beta5y": {
+     "value": 0.26,
+     "period": "5y",
+     "source": "stock-agent /decisions (0.256); twelvedata 0.26",
+     "asOf": "2026-11-12",
+     "note": ""
+    },
+    "sectorMetrics": {
+     "businessEPS": {
+      "value": 7.83,
+      "period": "FY2025",
+      "source": "hl.co.uk Sanofi FY2025 article",
+      "asOf": "2026-01-29",
+      "note": "EUR, +15.0% (CER); Q4 2025 1.53. Q3 2026 business EPS 3.55 (+19.6% CER); Q3 2025 was 2.91."
+     },
+     "sales": {
+      "value": 14444,
+      "period": "Q3 2026",
+      "source": "quartr.com Sanofi Q3 2026 summary",
+      "asOf": "2026-10-30",
+      "note": "EUR m, +14.3% CER (+16.2% reported). 9M IFRS net income 4,979 (Q3 3,021). IFRS EPS and business operating income not retrieved."
+     },
+     "guidance2026": {
+      "value": null,
+      "period": "FY2026",
+      "source": "quartr.com Sanofi Q3 2026 summary",
+      "asOf": "2026-10-30",
+      "note": "Upgraded (also upgraded at Q2): sales growth low-teens CER (initial guidance high single-digit); business EPS growth mid-teens CER (initial: slightly faster than sales); vaccine sales low single-digit decline; tax about 21%; FX about -1% sales and EPS. New EUR 1bn buyback announced with FY2025."
+     },
+     "dupixent": {
+      "value": 4200,
+      "period": "Q4 2025",
+      "source": "hl.co.uk",
+      "asOf": "2026-01-29",
+      "note": "EUR m, +32.2%; 2030 ambition about EUR 25bn at CER. Dupixent patent expiry year not verified in retrieved sources (no figure stated)."
+     }
+    },
+    "history": [
+     {
+      "period": "FY2025",
+      "revenue": 43600,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 7.83,
+      "fcf": 8100,
+      "source": "hl.co.uk FY2025 article; revenue +9.9% CER (currency assumed EUR); eps = business EPS; business operating income not retrieved"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 23,
+     "buy": 12,
+     "hold": 12,
+     "sell": 0,
+     "targetAvg": 95.7,
+     "targetHigh": 110,
+     "targetLow": 78,
+     "source": "stock-agent /decisions 2026-11-12 23:05",
+     "asOf": "2026-11-12",
+     "note": "3 strong buy + 9 buy, 12 hold, 0 sell (sums to 24 vs 23 stated)."
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; 2027 early view: demand-led growth, slightly negative pricing, about EUR 1.3bn sales impact from Cheplapharm and Medley divestments (subject to closing)"
+    },
+    "recentEvents": [
+     "Q3 2026 (30 Oct): sales +14.3% CER, business EPS +19.6% CER; guidance upgraded.",
+     "Pharma launches EUR 2.176bn (15% of sales); vaccines declined (seasonal phasing, lower Beyfortus).",
+     "Tolebrutinib PPMS trial failed (FY2025), EUR 2.24bn impairment; four-antibody collaboration with 50/50 profit share; Cheplapharm and Medley divestments."
+    ],
+    "valueTrapFlags": [
+     "Vaccines declining; US vaccine weakness and lower Beyfortus.",
+     "Concentration in Dupixent; pipeline setbacks.",
+     "IFRS P/E and payout ratio distorted by impairments (P/E 25, payout 119%)."
+    ],
+    "dataGaps": [
+     "EBIT/business operating income and multi-year history not retrieved",
+     "Company-reported net debt and TTM FCF not retrieved",
+     "evEbit, ROIC, interest coverage unavailable",
+     "Sanofi press release URL was blocked (permission); Q3 data from Quartr summary",
+     "Dupixent LOE date not verified"
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m business EPS x justified P/E. Basis EUR 9.0 (provider forward P/E 9.35 implies about 9.26; trailing IFRS EPS distorted by impairments; lead estimate). Bear weighted 30% for Dupixent concentration. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS business (adjusted), forward (lead estimate)",
+    "basisValue": 9,
+    "forwardDividendYield": 0.048,
+    "qualityTier": "B",
+    "role": "Value Recovery",
+    "scores": {
+     "quality": 4,
+     "growth": 3,
+     "financialStrength": 4,
+     "risk": 4
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 81,
+      "epsCagr5y": 0,
+      "exitPe5y": 9,
+      "note": "Vaccines keep declining, pipeline disappoints, Dupixent peaks. Justified multiple 9x on next-12m 9.00.",
+      "epsCagr10y": 0,
+      "exitPe10y": 9
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 114.48,
+      "epsCagr5y": 0.06,
+      "exitPe5y": 11,
+      "note": "Dupixent and launches drive mid-single-digit growth to 2030. Justified multiple 12x on next-12m 9.54.",
+      "epsCagr10y": 0.05,
+      "exitPe10y": 11
+     },
+     "bull": {
+      "prob": 0.2,
+      "fairValue": 137.34,
+      "epsCagr5y": 0.09,
+      "exitPe5y": 13,
+      "note": "Immunology pipeline (amlitelimab, tolebrutinib) succeeds. Justified multiple 14x on next-12m 9.81.",
+      "epsCagr10y": 0.07,
+      "exitPe10y": 12
+     }
+    },
+    "whyItFits": "Low beta (0.26), 4.8% dividend, net debt/EBITDA 0.9x, forward P/E about 9-10; guidance upgraded and BNP upgrade to Outperform (2026-11-09).",
+    "growthDrivers": "Dupixent indications, Beyfortus, immunology pipeline, buybacks.",
+    "saturation": "Low multiple versus pharma peers; consensus target 95.70 (analyst opinion). Undervalued if Dupixent growth holds.",
+    "principalRisk": "Heavy Dupixent dependence and declining vaccines; Q3 data from a summary because the company release was blocked."
+   }
+  },
+  {
+   "ticker": "SAP.DE",
+   "name": "SAP SE",
+   "region": "global",
+   "exchange": "Xetra (Deutsche Boerse)",
+   "currency": "EUR",
+   "sector": "Technology / Enterprise application software",
+   "businessSummary": "Enterprise resource planning and business applications (S/4HANA Cloud, Business Technology Platform, SuccessFactors, Ariba, Concur). Cloud now the large majority of revenue; 113,076 FTE at 2026-09-30.",
+   "facts": {
+    "price": {
+     "value": 210.95,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18",
+     "asOf": "2026-11-12",
+     "note": "Sources conflicted (212.55 twelvedata, 209.4 HL undated); agent's own feed used (was 212.55; fact check config/garp/checks/2026-11-13.md)"
+    },
+    "high52w": {
+     "value": 219.65,
+     "period": "52 weeks to 2026-11-12",
+     "source": "https://twelvedata.com/markets/927671/stock/xetr/sap/statistics",
+     "asOf": "2026-11-12",
+     "note": "EUR; single source."
+    },
+    "low52w": {
+     "value": 127.5,
+     "period": "52 weeks to 2026-11-12",
+     "source": "https://twelvedata.com/markets/927671/stock/xetr/sap/statistics",
+     "asOf": "2026-11-12",
+     "note": "EUR; single source. Price is ~67% above the low after the 2026-01-29 drop (-16% in a day) and the Q3 rebound."
+    },
+    "sharesOutstanding": {
+     "value": 1150,
+     "period": "Q3 2026 weighted average basic (m)",
+     "source": "https://www.sec.gov/Archives/edgar/data/0001000184/000110465926118617/tm2628113d1_ex99-1.htm",
+     "asOf": "2026-09-30",
+     "note": "Weighted-average basic shares; period-end count not disclosed. 25.2m shares repurchased to date under the up-to-EUR 10bn programme."
+    },
+    "marketCap": {
+     "value": 244400,
+     "period": "derived: 212.55 x 1,150m (EUR m)",
+     "source": "derived",
+     "asOf": "2026-11-12",
+     "note": "Twelvedata EUR 245.33bn."
+    },
+    "netDebt": {
+     "value": 1224,
+     "period": "2026-09-30 (EUR m)",
+     "source": "derived from https://www.sec.gov/Archives/edgar/data/0001000184/000110465926118617/tm2628113d1_ex99-1.htm",
+     "asOf": "2026-09-30",
+     "note": "DERIVED, not an SAP figure: financial liabilities 2,053 + 8,535 = 10,588 less cash 9,364. Excludes other financial assets (1,633 current + 8,300 non-current, mostly loans/investments/hedges). CONFLICT: stockanalysis shows net CASH of USD 464m; stock-agent netDebtToEbitda -0.03. Practically net-debt neutral. Lease liabilities: not confirmed whether included in financial liabilities."
+    },
+    "enterpriseValue": {
+     "value": 245600,
+     "period": "derived (EUR m)",
+     "source": "derived",
+     "asOf": "2026-11-12",
+     "note": "Market cap 244.4bn + net debt 1.2bn. Provider EV USD 274.1bn vs market cap USD 274.0bn."
+    },
+    "peTrailing": {
+     "value": 30.48,
+     "period": "TTM",
+     "source": "https://twelvedata.com/markets/927671/stock/xetr/sap/statistics",
+     "asOf": "2026-11-12",
+     "note": "Provider, IFRS EPS basis presumed. stock-agent 30.66; stockanalysis ADR 30.73."
+    },
+    "peForward": {
+     "value": 24.82,
+     "period": "next FY consensus (provider)",
+     "source": "https://twelvedata.com/markets/927671/stock/xetr/sap/statistics",
+     "asOf": "2026-11-12",
+     "note": "Provider; stockanalysis ADR 26.47 on 2026-10-26."
+    },
+    "evEbitTrailing": {
+     "value": 21.4,
+     "period": "TTM non-IFRS operating profit approx",
+     "source": "derived: EV 245.6bn / (FY2025 10,420 + 9M 2026 8,639 - 9M 2025 ~7,578)",
+     "asOf": "2026-11-12",
+     "note": "APPROXIMATE, non-IFRS operating profit (excludes share-based comp and acquisition-related charges; closer to adjusted EBIT). 9M 2025 back-solved from reported +14% growth, so +/-1%. TTM approx EUR 11,480m. Provider EV/EBIT 21.04 (ADR). On IFRS operating profit the multiple is slightly higher."
+    },
+    "evEbitForward": {
+     "value": 20.5,
+     "period": "FY2026 guidance midpoint non-IFRS operating profit",
+     "source": "derived: EV 245.6bn / EUR 12.0bn (guidance EUR 11.8-12.2bn)",
+     "asOf": "2026-11-12",
+     "note": "Guidance midpoint at constant currencies, not consensus."
+    },
+    "evEbitdaTrailing": {
+     "value": 19.805,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "Provider; stockanalysis ADR 19.70."
+    },
+    "fcfTTM": {
+     "value": 9030,
+     "period": "TTM approx (EUR m)",
+     "source": "derived: FY2025 8,240 + 9M 2026 7,968 - 9M 2025 ~7,178 (back-solved from +11%)",
+     "asOf": "2026-09-30",
+     "note": "APPROXIMATE (+/-60). Stockanalysis TTM USD 10.26bn is consistent. FY2026 guidance ~EUR 10bn at actual currencies. Q3 FCF 1,718 (+36%)."
+    },
+    "fcfYield": {
+     "value": 0.037,
+     "period": "TTM",
+     "source": "derived: 9,030 / 244,400",
+     "asOf": "2026-11-12",
+     "note": "Provider 3.74%. On FY2026 guidance (~10bn): 4.1%."
+    },
+    "dividendPerShare": {
+     "value": 2.35,
+     "period": "FY2024 (EUR)",
+     "source": "https://www.sec.gov/Archives/edgar/data/1000184/000110465925021471/tm251055d2_ex99-1.htm",
+     "asOf": "2025-05-01",
+     "note": "Most recent dividend verified is FY2024 EUR 2.35 (payout 51.9% per annual report); FY2025 dividend not retrieved (stockanalysis ADR: USD 2.14 annual, ~EUR 1.85 equivalent, which does not match; unresolved)."
+    },
+    "dividendYield": {
+     "value": 0.011,
+     "period": "FY2024 dividend / price",
+     "source": "derived: 2.35 / 212.55",
+     "asOf": "2026-11-12",
+     "note": "Based on FY2024 dividend; FY2025 dividend unverified."
+    },
+    "payoutRatio": {
+     "value": 0.3618,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "Provider; stockanalysis ADR shows 28.6%. Company-reported FY2024 payout 51.9%. Provider ratios conflict, treat as unreliable."
+    },
+    "netDebtToEbitda": {
+     "value": 0.03,
+     "period": "2026-09-30 derived",
+     "source": "derived: net debt 1,224 / TTM EBITDA (EV/EBITDA basis ~EUR 12.4bn)",
+     "asOf": "2026-11-12",
+     "note": "About 0.1x or less; stock-agent shows -0.03x (net cash). Effectively unlevered."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable as a clean figure. Finance costs 9M 2026 EUR 902m vs non-IFRS operating profit 8,639m (about 9.6x) but SAP carries large financial income; not an EBIT/interest ratio from the provider."
+    },
+    "roic": {
+     "value": 0.1846,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/stocks/sap/statistics/",
+     "asOf": "2026-10-26",
+     "note": "Provider (ADR page)."
+    },
+    "roe": {
+     "value": 0.1818,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/stocks/sap/statistics/",
+     "asOf": "2026-10-26",
+     "note": "Provider (ADR page)."
+    },
+    "beta5y": {
+     "value": 0.7,
+     "period": "5Y",
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+     "asOf": "2026-11-12",
+     "note": "twelvedata 0.70; stockanalysis 0.76."
+    },
+    "sectorMetrics": {
+     "value": null,
+     "period": "Q3 2026",
+     "source": "Q3 2026 quarterly statement: https://www.sec.gov/Archives/edgar/data/0001000184/000110465926118617/tm2628113d1_ex99-1.htm",
+     "asOf": "2026-10-21",
+     "note": "Current cloud backlog EUR 24,144m, +28% reported / +26% constant currency (FY2025: EUR 21.05bn, +25% cc; Q4 2025 growth had slowed to 16% reported). Cloud revenue Q3 +26% cc-ish; cloud gross margin non-IFRS 74.3% vs 75.1% (-0.8pp). Cloud and software revenue Q3 EUR 9,249m (+15%); total revenue EUR 10,270m (+13%). IFRS operating profit Q3 EUR 2,930m (+18%) vs non-IFRS 3,030m (+18%); 9M 8,313m vs 8,639m (+14% each). EPS 9M: IFRS 5.50 (+17%), non-IFRS 5.20 (+15%). 9M FCF EUR 7,968m (+11%). Buyback up to EUR 10bn to end-2027, ~EUR 4.2bn done (avg EUR 164.79)."
+    },
+    "history": [
+     {
+      "period": "FY2025",
+      "revenue": 36800,
+      "ebit": 10420,
+      "ebitMargin": 0.283,
+      "eps": null,
+      "fcf": 8240,
+      "source": "Revenue EUR 36.8bn (rallies.ai, 2026-01-29), non-IFRS operating profit EUR 10.42bn and FCF EUR 8.24bn as quoted in Q3 2026 outlook comparatives. EBIT = NON-IFRS operating profit. Margin derived and approximate (revenue rounded). EPS not retrieved."
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 27,
+     "buy": 24,
+     "hold": 5,
+     "sell": 0,
+     "targetAvg": 243.36,
+     "targetHigh": 290,
+     "targetLow": 198.84,
+     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long) (buy = 6 strong buy + 18 buy; counts sum to 29 vs 27 analysts, provider inconsistency)",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; company 2026 outlook (Q3 2026): non-IFRS operating profit EUR 11.8-12.2bn cc (+13-17%), cloud revenue toward upper end of EUR 25.8-26.2bn (+23-25% cc), cloud and software revenue toward upper end of EUR 36.3-36.8bn, FCF ~EUR 10bn, current cloud backlog growth slightly decelerating from 25%, total revenue growth similar to 2025's 10.6%, non-IFRS tax ~29%."
+    },
+    "recentEvents": [
+     "2026-10-21 Q3 2026: revenue EUR 10.27bn (+13%), non-IFRS operating profit EUR 3.03bn (+18%), current cloud backlog +28% reported (+26% cc); cloud and software revenue outlook raised to upper end; operating profit and FCF outlook unchanged.",
+     "2026-01-29: Q4 2025 report; backlog growth slowed to 16% (25% cc) and 2026 backlog guide cut to 23-25%; shares fell >16% in a day, the largest since 2020; EUR 10bn buyback announced.",
+     "Early 2026: software sell-off on AI-disruption fears; 52-week low EUR 127.50."
+    ],
+    "valueTrapFlags": [
+     "Cloud gross margin compressing (non-IFRS 74.3% vs 75.1% Q3 y/y; cost of cloud +29% IFRS vs cloud revenue +26%).",
+     "Current cloud backlog growth guided to decelerate slightly; large transformation deals have longer ramp-up and termination clauses (Jan 2026 explanation).",
+     "Share price has rebounded ~67% from the low and sits near the 52w high (219.65), at ~30x trailing and ~25x forward P/E; limited valuation cushion vs the AI narrative.",
+     "No estimate cuts after the latest report: operating profit outlook unchanged, revenue outlook raised toward upper end."
+    ],
+    "dataGaps": [
+     "FY2021-2024 history not retrieved (only FY2025 partial).",
+     "FY2025 EPS and FY2025 dividend not verified.",
+     "Net debt is derived; lease treatment and other financial assets unresolved.",
+     "TTM figures partly back-solved from reported growth rates.",
+     "Historical multiples and forward EPS unavailable.",
+     "Beta/consensus counts inconsistent between providers."
+    ]
+   },
+   "retrievedAt": "2026-11-13T18:16:46+01:00",
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m non-IFRS EPS x justified P/E. Basis 2026E non-IFRS EPS 8.0 (trailing P/E 30.5 implies about 7.0; guided non-IFRS operating profit +13-17%; lead estimate). Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS non-IFRS, 2026E (lead estimate)",
+    "basisValue": 8,
+    "forwardDividendYield": 0.011,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "scores": {
+     "quality": 5,
+     "growth": 5,
+     "financialStrength": 5,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 172.8,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 20,
+      "note": "Cloud growth slows, AI pressure on application software multiples. Justified multiple 20x on next-12m 8.64.",
+      "epsCagr10y": 0.07,
+      "exitPe10y": 18
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 237.12,
+      "epsCagr5y": 0.14,
+      "exitPe5y": 24,
+      "note": "Current cloud backlog +26% cc converts; margins expand. Justified multiple 26x on next-12m 9.12.",
+      "epsCagr10y": 0.11,
+      "exitPe10y": 21
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 280.8,
+      "epsCagr5y": 0.17,
+      "exitPe5y": 27,
+      "note": "Business AI monetises, margins beat targets. Justified multiple 30x on next-12m 9.36.",
+      "epsCagr10y": 0.13,
+      "exitPe10y": 23
+     }
+    },
+    "whyItFits": "Mission-critical ERP with rising recurring cloud revenue: current cloud backlog +26% cc, non-IFRS operating profit +18% in Q3, net debt about zero, beta 0.7.",
+    "growthDrivers": "S/4HANA cloud migrations (RISE), Business AI, operating leverage; cloud revenue outlook raised in Q3.",
+    "saturation": "Near its 52-week high (EUR 219.65) after a JPM upgrade; trailing P/E 30, forward about 25: growth largely priced.",
+    "principalRisk": "AI agents reducing the value of application seats; cloud gross margin slipped 0.8pp."
+   }
+  },
+  {
    "ticker": "SWEC-B.ST",
    "name": "Sweco AB (B)",
    "exchange": "Nasdaq Stockholm",
@@ -3823,25 +5640,25 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 138.2,
+     "value": 140.5,
      "period": "close",
-     "source": "stockanalysis.com statistics",
-     "asOf": "2026-10-23",
-     "note": "Latest found; Q3 report came 2026-10-29 so post-report reaction not captured. Close 136.80 on 2026-10-22. Agent data lacks SWEC-B."
+     "source": "fact check quote",
+     "asOf": "2026-11-12",
+     "note": "Stale 23 Oct price replaced (was 138.2; fact check config/garp/checks/2026-11-13.md)"
     },
     "high52w": {
-     "value": null,
-     "period": "n/a",
-     "source": "n/a",
-     "asOf": "2026-11-13",
-     "note": "unavailable"
+     "value": 179.8,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "2026-10",
+     "note": "As of early Oct (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "low52w": {
-     "value": null,
-     "period": "n/a",
-     "source": "n/a",
-     "asOf": "2026-11-13",
-     "note": "unavailable"
+     "value": 122,
+     "period": "52w",
+     "source": "fact check",
+     "asOf": "2026-10",
+     "note": "As of early Oct (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "sharesOutstanding": {
      "value": 361.24,
@@ -4167,6 +5984,585 @@
     "saturation": "P/E 21 is below the premium it held through 2024 (Handelsbanken upgrade cites forward EV/EBITA falling from above 20x to about 14x); moderately valued.",
     "principalRisk": "Slowing organic growth (5% to 3% to 2%) plus CEO departure (announced 2 Oct 2026)."
    }
+  },
+  {
+   "ticker": "WKL.AS",
+   "name": "Wolters Kluwer N.V.",
+   "region": "global",
+   "exchange": "Euronext Amsterdam",
+   "currency": "EUR",
+   "sector": "Industrials / Professional information, software and services (Health, Tax & Accounting, Legal & Regulatory, Financial & Corporate Compliance, Corporate Performance & ESG)",
+   "businessSummary": "Dutch professional-information and expert-solutions group: UpToDate and clinical decision support, CCH tax software, legal and regulatory content/software, compliance (CT Corporation), and CCH Tagetik/ESG. 85% recurring revenue; North America 63% of revenue.",
+   "facts": {
+    "price": {
+     "value": 89.5,
+     "period": "close 2026-11-12",
+     "source": "https://www.debelegger.nl/en/stock/WKL.AS",
+     "asOf": "2026-11-12",
+     "note": "EUR."
+    },
+    "high52w": {
+     "value": 93.38,
+     "period": "52 weeks to 2026-11-12",
+     "source": "https://www.debelegger.nl/en/stock/WKL.AS",
+     "asOf": "2026-11-12",
+     "note": "EUR; single source. SANITY FLAG: stockanalysis shows 52-week price change of -21.79% on 2026-10-23 at 88.18, implying ~112.7 a year earlier, which would exceed 93.38 unless the share price fell sharply between 2025-10-23 and 2025-11-12; not reconciled. Conflicts with 95.84 (halo); unresolved in fact check."
+    },
+    "low52w": {
+     "value": 53.7,
+     "period": "52 weeks to 2026-11-12",
+     "source": "https://www.debelegger.nl/en/stock/WKL.AS",
+     "asOf": "2026-11-12",
+     "note": "EUR; single source. Shares have rebounded ~67% from the low. Consistent with 2026 buyback average price EUR 67.97."
+    },
+    "sharesOutstanding": {
+     "value": 222.9,
+     "period": "2026-10-23 (m)",
+     "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+     "asOf": "2026-10-23",
+     "note": "Provider figure; buyback ongoing (3.9m shares bought in 2026 to 9M)."
+    },
+    "marketCap": {
+     "value": 19950,
+     "period": "derived: 89.50 x 222.9m (EUR m)",
+     "source": "derived",
+     "asOf": "2026-11-12",
+     "note": "debelegger EUR 19.67bn; stockanalysis EUR 19.66bn at 88.18."
+    },
+    "netDebt": {
+     "value": 4070,
+     "period": "2026-09-30 (EUR m)",
+     "source": "https://www.ideal-investisseur.fr/en/stock-news/wolters-kluwer-6-organic-growth-over-nine-months-annual-targets-confirmed/28591.html",
+     "asOf": "2026-11-04",
+     "note": "Company-reported (Nov 4, 2026 release); EUR 4,024m at 2025-12-31. Lease treatment not stated in the release (Wolters Kluwer's definition normally includes lease liabilities; not confirmed). Net debt/EBITDA 2.0x."
+    },
+    "enterpriseValue": {
+     "value": 24020,
+     "period": "derived (EUR m)",
+     "source": "derived",
+     "asOf": "2026-11-12",
+     "note": "Market cap 19,950 + net debt 4,070. Provider EV EUR 23.71bn at 88.18."
+    },
+    "peTrailing": {
+     "value": 16.5,
+     "period": "TTM adjusted diluted EPS to H1 2026 (5.42)",
+     "source": "derived: 89.50 / (FY2025 5.29 + H1 2026 2.83 - H1 2025 2.70)",
+     "asOf": "2026-11-12",
+     "note": "ADJUSTED diluted EPS basis. Provider trailing P/E 15.03 (stockanalysis 2026-10-23) / 15.1 (debelegger); basis differs."
+    },
+    "peForward": {
+     "value": 14.94,
+     "period": "next FY consensus (provider)",
+     "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+     "asOf": "2026-10-23",
+     "note": "Provider forward P/E at 88.18; debelegger 13.8 at 89.50. Guidance (high-single-digit adjusted EPS growth at cc on 5.29, FX headwind) implies EPS ~5.6-5.7 and ~15.8x."
+    },
+    "evEbitTrailing": {
+     "value": 14.2,
+     "period": "FY2025 adjusted operating profit",
+     "source": "derived: EV 24,020 / 1,687 (https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html)",
+     "asOf": "2026-11-12",
+     "note": "ADJUSTED operating profit (before amortisation of acquired intangibles, so EBITA-like). Provider EV/EBIT 15.20 on a reported basis."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable; guidance gives margin ~28.0% but no revenue consensus retrieved"
+    },
+    "evEbitdaTrailing": {
+     "value": 11.84,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+     "asOf": "2026-10-23",
+     "note": "Provider at 88.18."
+    },
+    "fcfTTM": {
+     "value": 1390,
+     "period": "TTM (EUR m)",
+     "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+     "asOf": "2026-10-23",
+     "note": "Provider. Company ADJUSTED FCF FY2025 EUR 1,348m; 2026 guidance 1,300-1,350m; 9M 2026 adjusted FCF +3% cc."
+    },
+    "fcfYield": {
+     "value": 0.0697,
+     "period": "TTM",
+     "source": "derived: 1,390 / 19,950",
+     "asOf": "2026-11-12",
+     "note": "On 2026 guidance midpoint (1,325): 6.6%. Provider 7.08%."
+    },
+    "dividendPerShare": {
+     "value": 2.52,
+     "period": "FY2025 (EUR)",
+     "source": "https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html",
+     "asOf": "2026-02-25",
+     "note": "Company: EUR 2.52 total for 2025 (+8%). CONFLICT: debelegger shows 2.60 per year (possibly interim plus final cumulative / forward)."
+    },
+    "dividendYield": {
+     "value": 0.0282,
+     "period": "FY2025 dividend / price",
+     "source": "derived: 2.52 / 89.50",
+     "asOf": "2026-11-12",
+     "note": "Provider 2.86%; debelegger 2.97% on 2.60."
+    },
+    "payoutRatio": {
+     "value": 0.476,
+     "period": "FY2025 dividend / adjusted EPS",
+     "source": "derived: 2.52 / 5.29",
+     "asOf": "2026-11-12",
+     "note": "CONFLICT: provider 42.6% (stockanalysis), debelegger 79.4% (likely on reported EPS)."
+    },
+    "netDebtToEbitda": {
+     "value": 2,
+     "period": "2026-09-30 (company)",
+     "source": "https://www.ideal-investisseur.fr/en/stock-news/wolters-kluwer-6-organic-growth-over-nine-months-annual-targets-confirmed/28591.html",
+     "asOf": "2026-11-04",
+     "note": "Company-reported, stable vs 2025-12-31 (2.0x); FY2024 1.6x. Providers show 2.77x (different net debt/EBITDA basis)."
+    },
+    "interestCoverage": {
+     "value": 11.73,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+     "asOf": "2026-10-23",
+     "note": "Provider figure."
+    },
+    "roic": {
+     "value": 0.18,
+     "period": "FY2025 (company)",
+     "source": "https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html",
+     "asOf": "2026-02-25",
+     "note": "Company ROIC 18.0% (FY2024 18.1%); 2026 guidance 18-19%. Provider 24.79% on a different definition."
+    },
+    "roe": {
+     "value": 1.4614,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+     "asOf": "2026-10-23",
+     "note": "Provider; not meaningful given very low book equity after buybacks."
+    },
+    "beta5y": {
+     "value": 0.18,
+     "period": "5Y",
+     "source": "https://stockanalysis.com/quote/ams/WKL/statistics",
+     "asOf": "2026-10-23",
+     "note": "Provider."
+    },
+    "sectorMetrics": {
+     "value": null,
+     "period": "9M 2026",
+     "source": "https://www.ideal-investisseur.fr/en/stock-news/wolters-kluwer-6-organic-growth-over-nine-months-annual-targets-confirmed/28591.html",
+     "asOf": "2026-11-04",
+     "note": "9M 2026: organic growth +6% (H1 +5%, so Q3 accelerated); reported revenue +2%, constant currency +4%; recurring revenue 85% of total (+7% organic); recurring cloud software 24% of revenue (+15% organic); print drag ~100bp; adjusted operating profit +10% cc; adjusted FCF +3% cc. H1 2026 adjusted operating margin 29.4% (H1 2025 28.4%), FY2026 guide ~28.0% because product development and restructuring spend step up in Q4 (R&D 12-13% of revenue; 11% in 9M). Divisions (organic): Tax & Accounting +6% (cloud +17%), Health +5%, Legal & Regulatory +5%, Corporate Performance & ESG +7%, Financial & Corporate Compliance +4% (-4% cc after FRR divestment)."
+    },
+    "history": [
+     {
+      "period": "FY2024",
+      "revenue": 5916,
+      "ebit": 1600,
+      "ebitMargin": 0.271,
+      "eps": 4.97,
+      "fcf": 1276,
+      "source": "https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html ; EBIT = ADJUSTED operating profit; EPS = ADJUSTED diluted; FCF = ADJUSTED free cash flow."
+     },
+     {
+      "period": "FY2025",
+      "revenue": 6125,
+      "ebit": 1687,
+      "ebitMargin": 0.275,
+      "eps": 5.29,
+      "fcf": 1348,
+      "source": "https://www.globenewswire.com/news-release/2026/02/25/3244280/0/en/wolters-kluwer-2025-full-year-report.html ; EBIT = ADJUSTED operating profit; EPS = ADJUSTED diluted; FCF = ADJUSTED free cash flow. Organic growth +6%, recurring revenue 83%."
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": 22,
+     "evEbitMedian": null,
+     "years": "5-year median P/E ~22x (debelegger, unaudited text)",
+     "source": "https://www.debelegger.nl/en/stock/WKL.AS"
+    },
+    "consensus": {
+     "rating": "",
+     "analysts": null,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 96.31,
+     "targetHigh": null,
+     "targetLow": null,
+     "source": "https://www.debelegger.nl/en/stock/WKL.AS (page labels forecast years 2017-2019, treat date with caution); KBC Securities Buy, target EUR 98 (2026-11-04); Bernstein Outperform, EUR 140 (2025-09-08, stale)",
+     "asOf": "2026-11-12"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; company guidance for 2026 (confirmed 2026-11-04): adjusted diluted EPS growth high single digit at cc, adjusted margin ~28.0%, adjusted FCF EUR 1,300-1,350m, ROIC 18-19%"
+    },
+    "recentEvents": [
+     "2026-11-04 9M update: organic +6%, adjusted operating profit +10% cc, all 2026 guidance confirmed; shares +4.6% on the day (Borse Global/KBC). KBC noted AI investment appears shifted into Q4, so no guidance raise.",
+     "2026 buyback up to EUR 500m: EUR 264m done (3.9m shares at avg EUR 67.97) at 2026-11-04; new mandate up to EUR 75m for 2027-01-04 to 2027-02-22. 2025 buyback was EUR 1.1bn at avg EUR 128.45.",
+     "Net debt EUR 4,070m (2.0x EBITDA); small German consumer tax sale (EUR 40m) and Financial Reporting & Regulation (FRR) divestment.",
+     "H1 2026 (2026-08-05): revenue EUR 3,033m, adjusted operating margin 29.4%, adjusted EPS EUR 2.83 (+14% cc), AI product roll-outs (UpToDate Expert AI, CCH Axcess agentic modules, Libra, expanded OpenAI partnership)."
+    ],
+    "valueTrapFlags": [
+     "WHY IT DE-RATED: AI-disruption fears for professional information. Sep 2025: sector sell-off (Clinical Solutions/OpenEvidence concerns, CEO transition) removed ~3 P/E turns (Bernstein). 2026-02-03: shares fell almost 9% after Anthropic launched a legal tool aimed at in-house lawyers (City AM). 52-week price change -21.8% at 2026-10-23; fell to a 52w low of EUR 53.70, now ~67% above it. Not driven by reported results, which stayed solid (organic +6%).",
+     "Reported revenue growth only +2% (cc +4%) vs organic +6%: divestments and a ~2pp FX drag; print drag ~100bp; Legal & Regulatory and Health organic growth only +5%.",
+     "FY2026 adjusted margin guided to ~28.0% against 29.4% in H1: heavy Q4 AI/product-development and restructuring spend; Morningstar sees slower growth in key AI-related segments and AI monetisation as an open question.",
+     "Buybacks (FY2025 EUR 1.1bn, 2026 EUR 500m) plus dividends exceed adjusted FCF; net debt/EBITDA rose from 1.6x (FY2024) to 2.0x. Adjusted FCF growth only +3% cc in 9M 2026."
+    ],
+    "dataGaps": [
+     "52w high/low single-source (conflict with y/y price change).",
+     "Analyst buy/hold/sell counts and target range unavailable; target-average page date suspect.",
+     "Forward EPS, forward EBIT consensus unavailable.",
+     "Lease treatment of net debt unconfirmed.",
+     "FY2021-2023 history not retrieved.",
+     "Dividend conflict 2.52 (company) vs 2.60 (debelegger).",
+     "52-week range conflicts between sources (93.38/53.70 vs 95.84/54.64)."
+    ]
+   },
+   "retrievedAt": "2026-11-13T18:16:46+01:00",
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis 2026E adjusted EPS 5.75 (FY2025 5.29, guidance high-single-digit growth). Bear weighted 30% for AI disruption. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS adjusted, 2026E (guidance-based lead estimate)",
+    "basisValue": 5.75,
+    "forwardDividendYield": 0.028,
+    "qualityTier": "A",
+    "role": "Value Recovery",
+    "scores": {
+     "quality": 5,
+     "growth": 4,
+     "financialStrength": 4,
+     "risk": 4
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 89.7,
+      "epsCagr5y": 0.04,
+      "exitPe5y": 16,
+      "note": "AI legal/tax tools take share; multiple stays low. Justified multiple 15x on next-12m 5.98.",
+      "epsCagr10y": 0.04,
+      "exitPe10y": 15
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 130.41,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 20,
+      "note": "Organic 6%, margin 28%, buybacks: high-single-digit EPS growth; partial re-rating. Justified multiple 21x on next-12m 6.21.",
+      "epsCagr10y": 0.075,
+      "exitPe10y": 19
+     },
+     "bull": {
+      "prob": 0.2,
+      "fairValue": 158.12,
+      "epsCagr5y": 0.1,
+      "exitPe5y": 23,
+      "note": "Expert-solutions AI products accelerate growth; multiple recovers toward history. Justified multiple 25x on next-12m 6.33.",
+      "epsCagr10y": 0.09,
+      "exitPe10y": 22
+     }
+    },
+    "whyItFits": "85% recurring revenue, adjusted margin about 28%, ROIC about 18%, FCF yield about 7%, beta 0.18; 9M organic growth +6% and 2026 guidance confirmed.",
+    "growthDrivers": "Cloud expert solutions (health, tax, legal, compliance), AI features on proprietary content, EUR 500m buyback.",
+    "saturation": "De-rated on AI fears (Sept 2025 sector sell-off, -9% on 2026-02-03) while reported results held up; P/E about 16 versus a much higher history (not verified).",
+    "principalRisk": "AI disruption of professional information; 52-week range comes from a single source and looks inconsistent."
+   }
+  },
+  {
+   "ticker": "WM",
+   "name": "Waste Management, Inc.",
+   "region": "global",
+   "exchange": "NYSE",
+   "currency": "USD",
+   "sector": "Industrials / Waste management (solid waste collection, landfill, recycling, renewable energy, healthcare solutions via Stericycle)",
+   "businessSummary": "North America's largest collector and landfill operator of solid waste, plus recycling, renewable gas and (since the Nov 2024 Stericycle acquisition) medical and secure-information waste services.",
+   "facts": {
+    "price": {
+     "value": 236.26,
+     "period": "close 2026-11-06",
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06",
+     "note": "USD. Not refreshed to 2026-11-12: WM not found in the visible part of the stock-agent /decisions page; a later-dated quote was not retrievable."
+    },
+    "high52w": {
+     "value": 248.13,
+     "period": "52 weeks to 2026-11-06",
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06",
+     "note": "USD."
+    },
+    "low52w": {
+     "value": 197.47,
+     "period": "52 weeks to 2026-11-06",
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06",
+     "note": "USD."
+    },
+    "sharesOutstanding": {
+     "value": 397.7,
+     "period": "derived (m)",
+     "source": "derived: market cap 93.95bn / 236.26",
+     "asOf": "2026-11-06",
+     "note": "Period-end count not disclosed in release; Q3 2026 weighted-average basic 398.9m, diluted 399.8m."
+    },
+    "marketCap": {
+     "value": 93950,
+     "period": "2026-11-06 (USD m)",
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06",
+     "note": ""
+    },
+    "netDebt": {
+     "value": 23123,
+     "period": "2026-09-30 (USD m)",
+     "source": "derived from https://www.sec.gov/Archives/edgar/data/0000823768/000110465926119188/tm2628322d1_ex99-1.htm",
+     "asOf": "2026-09-30",
+     "note": "Total debt 23,370 (1,524 current + 21,846 long-term) less cash 247. Debt includes finance leases; operating lease liabilities NOT included. Total debt up from 22,907 at 2025-12-31 (net 22,706)."
+    },
+    "enterpriseValue": {
+     "value": 117073,
+     "period": "derived (USD m)",
+     "source": "derived",
+     "asOf": "2026-11-06",
+     "note": "Market cap 93,950 + net debt 23,123; excludes non-controlling interests and operating leases."
+    },
+    "peTrailing": {
+     "value": 31.01,
+     "period": "TTM",
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06",
+     "note": "TTM EPS USD 7.62 (reported GAAP basis presumed). On FY2025 adjusted EPS 7.50: 31.5x."
+    },
+    "peForward": {
+     "value": 27.52,
+     "period": "next FY consensus (provider)",
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06",
+     "note": ""
+    },
+    "evEbitTrailing": {
+     "value": 24.8,
+     "period": "FY2025 adjusted income from operations",
+     "source": "derived: EV 117,073 / 4,719 (https://wastemanagement.gcs-web.com/node/30236/pdf)",
+     "asOf": "2026-11-06",
+     "note": "EBIT here is ADJUSTED income from operations (FY2025 reported 4,308 gives 27.2x). Uses FY2025 rather than TTM because 9M 2025 adjusted operating income was not retrieved."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable; guidance gives EBITDA only, no operating income guidance"
+    },
+    "evEbitdaTrailing": {
+     "value": 15.4,
+     "period": "FY2025 adjusted operating EBITDA",
+     "source": "derived: EV 117,073 / 7,582",
+     "asOf": "2026-11-06",
+     "note": "On FY2026 guidance midpoint adjusted operating EBITDA 8,200 (8,150-8,250) the multiple is 14.3x."
+    },
+    "fcfTTM": {
+     "value": 3832,
+     "period": "TTM to Q3 2026 (USD m)",
+     "source": "derived: FY2025 2,937 + 9M 2026 3,009 - 9M 2025 2,114 (https://www.sec.gov/Archives/edgar/data/0000823768/000110465926119188/tm2628322d1_ex99-1.htm)",
+     "asOf": "2026-09-30",
+     "note": "Company FCF definition = operating cash flow - capex + divestiture proceeds. FY2026 guidance FCF 3.75-3.85bn, expected at high end. 9M FCF/adjusted operating EBITDA conversion only 50%."
+    },
+    "fcfYield": {
+     "value": 0.0408,
+     "period": "TTM",
+     "source": "derived: 3,832 / 93,950",
+     "asOf": "2026-11-06",
+     "note": "On FY2026 guidance 3,850: 4.1%."
+    },
+    "dividendPerShare": {
+     "value": 3.78,
+     "period": "annualised (USD)",
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06",
+     "note": "Provider; 9M 2026 dividends paid USD 1,141m."
+    },
+    "dividendYield": {
+     "value": 0.016,
+     "period": "annualised",
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06",
+     "note": ""
+    },
+    "payoutRatio": {
+     "value": 0.496,
+     "period": "annualised dividend / TTM EPS",
+     "source": "derived: 3.78 / 7.62",
+     "asOf": "2026-11-06",
+     "note": "On FY2025 adjusted EPS 7.50: 50.4%."
+    },
+    "netDebtToEbitda": {
+     "value": 2.82,
+     "period": "net debt 2026-09-30 / FY2026 guidance midpoint adjusted operating EBITDA",
+     "source": "derived: 23,123 / 8,200",
+     "asOf": "2026-09-30",
+     "note": "Includes finance leases, excludes operating leases. On FY2025 adjusted EBITDA 7,582 (pre-Stericycle full-year effect understated? Stericycle was consolidated from Nov 2024) it is 3.05x. Leverage not falling: total debt up 463 YTD."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable; interest expense not retrieved."
+    },
+    "roic": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "roe": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "2026-11-13",
+     "note": "unavailable"
+    },
+    "beta5y": {
+     "value": 0.39,
+     "period": "5Y",
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06",
+     "note": ""
+    },
+    "sectorMetrics": {
+     "value": null,
+     "period": "Q3 2026",
+     "source": "https://www.sec.gov/Archives/edgar/data/0000823768/000110465926119188/tm2628322d1_ex99-1.htm",
+     "asOf": "2026-10-28",
+     "note": "VERIFIED FROM THE RELEASE (resolves conflicting AI-summary margins): Q3 2026 revenue USD 6,846m (+6.3% vs 6,443m). Operating EBITDA 2,071m = 30.3% reported (Q3 2025: 27.2%); adjusted operating EBITDA 2,121m = 31.0% (Q3 2025: 31.1%, so adjusted margin flat to -10bp). Income from operations 1,279m reported / 1,329m adjusted (Q3 2025: 989m / 1,241m). Diluted EPS 2.05 reported / 2.15 adjusted (Q3 2025: 1.49 / 1.98); adjusted EPS reported as below consensus by Zacks headline. Q3 FCF 985m (+20%); 9M FCF 3,009m (+42%). Q3 buybacks 580m, dividends 377m; 2026 buyback expectation 2,000m. 2026 guidance: revenue 26.275-26.475bn (high end), adjusted operating EBITDA 8.15-8.25bn, FCF 3.75-3.85bn (high end)."
+    },
+    "history": [
+     {
+      "period": "FY2024",
+      "revenue": 22063,
+      "ebit": 4296,
+      "ebitMargin": 0.1947,
+      "eps": 7.23,
+      "fcf": 2317,
+      "source": "https://wastemanagement.gcs-web.com/node/30236/pdf ; EBIT = ADJUSTED income from operations (reported 4,063); EPS = ADJUSTED diluted (reported 6.81); adjusted EBITDA 6,563 (29.7%)."
+     },
+     {
+      "period": "FY2025",
+      "revenue": 25204,
+      "ebit": 4719,
+      "ebitMargin": 0.1872,
+      "eps": 7.5,
+      "fcf": 2937,
+      "source": "https://wastemanagement.gcs-web.com/node/30236/pdf ; EBIT = ADJUSTED income from operations (reported 4,308); EPS = ADJUSTED diluted (reported 6.70); adjusted EBITDA 7,582 (30.1%). Includes Stericycle."
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "buy",
+     "analysts": 28,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 255.6,
+     "targetHigh": null,
+     "targetLow": null,
+     "source": "https://stockanalysis.com/stocks/wm/",
+     "asOf": "2026-11-06"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable; forward P/E 27.52 implies EPS ~8.58 at 236.26 (derived, provider basis unclear)"
+    },
+    "recentEvents": [
+     "2026-10-28 (approx) Q3 2026: revenue 6,846m (+6.3%), adjusted EPS 2.15, FCF 985m; 2026 guidance reaffirmed with revenue and FCF expected at high end.",
+     "Stericycle integration ongoing (healthcare solutions); 2025 total revenue +14.2% largely from the acquisition.",
+     "2026 capital return: ~USD 2.0bn buyback plus dividends (3.78/share annualised)."
+    ],
+    "valueTrapFlags": [
+     "Adjusted operating EBITDA margin flat y/y in Q3 2026 (31.0% vs 31.1%); FY2025 adjusted operating margin (18.7%) below FY2024 (19.5%) after the Stericycle deal.",
+     "Leverage elevated and not falling: net debt/EBITDA ~2.8x on guidance, total debt up USD 463m YTD while funding buybacks.",
+     "Weak cash conversion: 9M FCF only 50% of adjusted operating EBITDA (heavy capex incl. sustainability growth).",
+     "Premium multiple (~31x trailing, ~28x forward) for ~6% revenue growth; EPS missed consensus in Q3 per Zacks."
+    ],
+    "dataGaps": [
+     "Price is 2026-11-06, not 2026-11-12.",
+     "Interest coverage, ROIC, ROE unavailable.",
+     "No analyst buy/hold/sell split or target range.",
+     "TTM adjusted EBIT/EBITDA not computed (9M 2025 adjusted figures not retrieved); trailing multiples use FY2025.",
+     "FY2021-2023 history not retrieved.",
+     "Historical multiples unavailable.",
+     "Stock-agent /decisions had no WM entry in the portion of the page checked (first ~190k of 486k characters)."
+    ]
+   },
+   "retrievedAt": "2026-11-13T18:16:46+01:00",
+   "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m adjusted EPS x justified P/E. Basis 2026E adjusted EPS 8.1 (FY2025 7.50; lead estimate). Price is the 2026-11-06 close. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS adjusted, 2026E (lead estimate)",
+    "basisValue": 8.1,
+    "forwardDividendYield": 0.016,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+     "quality": 5,
+     "growth": 3,
+     "financialStrength": 3,
+     "risk": 5
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.25,
+      "fairValue": 187.11,
+      "epsCagr5y": 0.05,
+      "exitPe5y": 22,
+      "note": "Volumes soft, healthcare-waste integration drags, multiple compresses. Justified multiple 22x on next-12m 8.51.",
+      "epsCagr10y": 0.05,
+      "exitPe10y": 20
+     },
+     "base": {
+      "prob": 0.5,
+      "fairValue": 236.2,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 25,
+      "note": "Core price about 5-6%, steady margin, FCF growth. Justified multiple 27x on next-12m 8.75.",
+      "epsCagr10y": 0.075,
+      "exitPe10y": 23
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 267.3,
+      "epsCagr5y": 0.1,
+      "exitPe5y": 27,
+      "note": "Renewable-energy and recycling investments pay off. Justified multiple 30x on next-12m 8.91.",
+      "epsCagr10y": 0.09,
+      "exitPe10y": 25
+     }
+    },
+    "whyItFits": "North American waste leader: beta 0.39, pricing power (core price +5.8%), adjusted operating EBITDA margin about 31%.",
+    "growthDrivers": "Pricing, landfill gas/renewable natural gas, recycling automation, healthcare waste (Stericycle).",
+    "saturation": "Trailing P/E 31: fairly to fully valued; about 5% below the 52-week high.",
+    "principalRisk": "Paying 31x for 8% EPS growth with leverage about 2.8x; FCF only about half of adjusted EBITDA."
+   }
   }
  ],
  "conclusion": {
@@ -4174,73 +6570,73 @@
   "picks": [
    {
     "category": "Top three overall",
-    "ticker": "ORK.OL",
-    "why": "Ranks first: 13% below scenario-weighted fair value, beta 0.2, 5.7% dividend plus NOK 4bn buyback. Not yet at its NOK 84 entry; accumulate on weakness.",
-    "risk": "ROIC about 9%, close to cost of capital; 1 Dec Capital Markets Day can reset expectations."
+    "ticker": "WKL.AS",
+    "why": "Only stock in the buy zone: 28% below fair value, 85% recurring revenue, 7% FCF yield, guidance confirmed. Entry at or below EUR 99.",
+    "risk": "AI disruption of professional information; same risk as RELX, so do not treat the two as diversification."
    },
    {
     "category": "Top three overall",
-    "ticker": "INVE-B.ST",
-    "why": "Highest-quality compounder in the set (LTV 1.8%, NAV CAGR about 9%), but at a 6% premium to NAV it is a buy only near SEK 335.",
-    "risk": "Premium to NAV can revert to the historical discount."
+    "ticker": "REL.L",
+    "why": "Near entry (18% below fair value, entry 2,992p) with +7% underlying growth and a 0.27 beta.",
+    "risk": "AI pricing pressure on legal and scientific data."
    },
    {
     "category": "Top three overall",
-    "ticker": "SWEC-B.ST",
-    "why": "De-rated, asset-light consultancy 10% below fair value with 8.9%/yr expected return; entry SEK 107 under a strict 30% margin of safety.",
-    "risk": "Slowing organic growth and CEO transition."
+    "ticker": "SAN.PA",
+    "why": "Near entry (21% below fair value; strict entry EUR 76 under a 30% margin) with a 4.8% dividend and guidance upgraded.",
+    "risk": "Dupixent concentration and declining vaccines."
    },
    {
     "category": "Best defensive investment",
     "ticker": "ORK.OL",
-    "why": "Lowest beta and most stable demand with the highest sustainable yield in the set.",
-    "risk": "Low growth; reported revenue hit by FX and divestments."
+    "why": "Beta 0.2, 5.7% dividend plus buyback, 13% below fair value. Entry NOK 84.",
+    "risk": "Low ROIC; Capital Markets Day 1 Dec 2026."
    },
    {
     "category": "Best risk-adjusted growth",
-    "ticker": "ASSA-B.ST",
-    "why": "About 7% EPS growth with rising margins and beta 0.84; only 3% above fair value. Entry SEK 304.",
-    "risk": "Construction downturn; leverage 2.1-2.4x from acquisitions."
+    "ticker": "SAP.DE",
+    "why": "Cloud backlog +26% cc, net cash, 12%/yr expected return; 9% below fair value. Entry EUR 186.",
+    "risk": "Near its 52-week high; AI agents could reduce application seats."
    },
    {
     "category": "Most attractive undervalued company",
-    "ticker": "SWEC-B.ST",
-    "why": "Largest discount among names without a red value-trap check (Orkla is similar; Novo is cheaper on paper but fails the trap checklist).",
-    "risk": "Price used is the 23 Oct close; verify before acting."
+    "ticker": "WKL.AS",
+    "why": "Largest discount among names with clean results and no red value-trap checks on fundamentals.",
+    "risk": "52-week range conflicts between sources; verify the price before acting."
    },
    {
     "category": "Best for 2-5 years",
-    "ticker": "SWEC-B.ST",
-    "why": "Re-rating potential as margins rise, plus a 2.7% dividend.",
-    "risk": "Organic growth must stabilise near 3%."
+    "ticker": "SAN.PA",
+    "why": "Low multiple (about 9-10x forward) with re-rating potential as launches grow, plus dividend.",
+    "risk": "Pipeline readouts."
    },
    {
     "category": "Best for 5-10 years",
-    "ticker": "INVE-B.ST",
-    "why": "Long NAV compounding record across diversified Nordic franchises with almost no debt; best bought on a market setback.",
-    "risk": "Equity-market dependence."
+    "ticker": "REL.L",
+    "why": "Long compounding record of high-margin subscription data; AI can widen its moat if it monetises its proprietary content.",
+    "risk": "AI disruption scenario."
    }
   ],
   "watchNotBuy": [
    {
-    "ticker": "ATCO-A.ST",
-    "why": "Best business economics in the set, but 17% above fair value at 35x trailing earnings; entry about SEK 133."
+    "ticker": "ROG.SW",
+    "why": "Top-quality defensive, but at its 52-week high and 6% above fair value; entry about CHF 313."
    },
    {
-    "ticker": "ADDT-B.ST",
-    "why": "15% above fair value; priced for double-digit growth with 1-2% organic; entry about SEK 233."
+    "ticker": "INVE-B.ST",
+    "why": "Trades at a premium to NAV; entry about SEK 335."
+   },
+   {
+    "ticker": "SWEC-B.ST",
+    "why": "8% below fair value but needs SEK 107 for a 30% margin; organic growth slowing."
+   },
+   {
+    "ticker": "ASSA-B.ST",
+    "why": "Quality compounder slightly above fair value; entry about SEK 304."
    },
    {
     "ticker": "LIFCO-B.ST",
-    "why": "Near fair value but estimates are being cut for the 2027 customer loss; entry about SEK 221."
-   },
-   {
-    "ticker": "NOVO-B.CO",
-    "why": "7% below fair value but fails three value-trap checks (FCF, competition, forward earnings); entry about DKK 205 for a 30% margin."
-   },
-   {
-    "ticker": "EKTA-B.ST",
-    "why": "Excluded as a value trap for now: Q1 below guidance, weakening orders; revisit after the late-Nov Q2 report."
+    "why": "Estimates being cut for the 2027 customer loss; entry about SEK 221."
    }
   ]
  }

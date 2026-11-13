@@ -29,7 +29,7 @@ if (conclusion) {
 
 const runAt = new Date().toISOString().replace(/\.\d+Z$/, "Z");
 const date = new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Stockholm" }).format(new Date());
-const title = process.env.GARP_TITLE ?? "Defensive GARP research";
+const title = process.env.GARP_TITLE ?? "Defensive GARP research: top 5 Nordic and top 5 global";
 mkdirSync(join(root, "config/garp/runs"), { recursive: true });
 mkdirSync(join(root, "reports"), { recursive: true });
 writeFileSync(join(root, `config/garp/runs/${date}.json`), JSON.stringify({ runAt, rows }, null, 2));

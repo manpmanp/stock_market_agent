@@ -8,25 +8,25 @@
   "retrievedAt": "2026-11-13T09:00:00+01:00",
   "facts": {
     "price": {
-      "value": 104.9,
-      "period": "close, run 2026-11-12",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
+      "value": 104.6,
+      "period": "close",
+      "source": "fact check quote",
       "asOf": "2026-11-12",
-      "note": "NOK. After Q3 beat on 6 Nov 2026."
+      "note": "Refreshed; prior value was the 11 Nov close (was 104.9; fact check config/garp/checks/2026-11-13.md)"
     },
     "high52w": {
-      "value": null,
-      "period": "",
-      "source": "",
-      "asOf": "2026-11-13",
-      "note": "unavailable; stockanalysis shows 52-week price change -10.18% as of 2026-10-16"
+      "value": 131.2,
+      "period": "52w",
+      "source": "fact check",
+      "asOf": "2026-11-12",
+      "note": "Single source (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "low52w": {
-      "value": null,
-      "period": "",
-      "source": "",
-      "asOf": "2026-11-13",
-      "note": "unavailable"
+      "value": 90.0,
+      "period": "52w",
+      "source": "fact check",
+      "asOf": "2026-11-12",
+      "note": "Single source (was None; fact check config/garp/checks/2026-11-13.md)"
     },
     "sharesOutstanding": {
       "value": 961.73,

@@ -1,0 +1,302 @@
+{
+  "region": "global",
+  "ticker": "ROG.SW",
+  "name": "Roche Holding AG (Genussschein)",
+  "exchange": "SIX Swiss Exchange",
+  "currency": "CHF",
+  "sector": "Healthcare / Pharmaceuticals and Diagnostics",
+  "businessSummary": "Swiss pharma and diagnostics group. 2025 sales CHF 61.5bn: Pharmaceuticals about 47.7bn, Diagnostics about 13.8bn. Growth drivers Xolair, Hemlibra, Ocrevus, Phesgo, Vabysmo; pipeline includes giredestrant, fenebrutinib, obesity assets.",
+  "retrievedAt": "2026-11-13T12:00:00+01:00",
+  "facts": {
+    "price": {
+      "value": 415.8,
+      "period": "close 2026-11-12",
+      "source": "halo-technologies.com/markets/shares/swx/ro",
+      "asOf": "2026-11-12",
+      "note": "CHF. Cross-check: cash.ch 2026-10-20 quoted 385.50 (intraday 396.50); marketscreener market cap CHF 325bn consistent with about 410. Halo page is for ticker 'RO' (Roche Holding Ltd) with about 784m-share market cap, i.e. Genussschein-equivalent; not separately confirmed for ROG line."
+    },
+    "high52w": {
+      "value": 415.8,
+      "period": "52 weeks to 2026-11-12",
+      "source": "halo-technologies.com",
+      "asOf": "2026-11-12",
+      "note": "Halo states 415.60 but its own price is 415.80; recorded as price (at the high). Highest since 2022 per cash.ch on 20 Oct; Oddo target 440 implies new all-time high."
+    },
+    "low52w": {
+      "value": 297.2,
+      "period": "52 weeks to 2026-11-12",
+      "source": "halo-technologies.com",
+      "asOf": "2026-11-12",
+      "note": "CHF."
+    },
+    "sharesOutstanding": {
+      "value": 795.4,
+      "period": "latest",
+      "source": "stockanalysis.com/quote/swx/ROG/statistics (cached, undated)",
+      "asOf": "2026-11-13",
+      "note": "Million Genussscheine equivalent; page was stale (market cap 206.7bn at lower price)."
+    },
+    "marketCap": {
+      "value": 326250,
+      "period": "2026-11-12",
+      "source": "halo-technologies.com",
+      "asOf": "2026-11-12",
+      "note": "CHF m. marketscreener: about 325,000. stockanalysis 206,730 and tipranks 212,290 are stale (pre-rally)."
+    },
+    "netDebt": {
+      "value": 19050,
+      "period": "cached, undated (probably FY2025/H1 2026)",
+      "source": "stockanalysis.com ROG statistics",
+      "asOf": "2026-11-13",
+      "note": "CHF m. marketscreener estimates 11,720 for FY2026E. Lease treatment unstated."
+    },
+    "enterpriseValue": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "not stated; indicatively market cap 326,250 + net debt 19,050 = about 345,300 (mixed dates, not verified)"
+    },
+    "peTrailing": {
+      "value": 20.7,
+      "period": "TTM",
+      "source": "halo-technologies.com",
+      "asOf": "2026-11-12",
+      "note": "Derived check on core EPS: 415.80 / 19.46 (FY2025 core EPS) = 21.4. stockanalysis showed 24.99 at the older, lower price."
+    },
+    "peForward": {
+      "value": 21.8,
+      "period": "FY2026E",
+      "source": "uk.marketscreener.com ROCHE-HOLDING",
+      "asOf": "2026-11-13",
+      "note": "MarketScreener 2026E P/E 21.8x, 2027E 19.7x (net income est. 14.99bn / 16.59bn CHF)."
+    },
+    "evEbitTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "stockanalysis EV/EBIT 11.76 is based on the stale lower price; not usable"
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "stockanalysis 10.01 stale; not usable"
+    },
+    "fcfTTM": {
+      "value": 16570,
+      "period": "TTM (undated cache)",
+      "source": "stockanalysis.com ROG statistics",
+      "asOf": "2026-11-13",
+      "note": "CHF m."
+    },
+    "fcfYield": {
+      "value": 0.0508,
+      "period": "TTM FCF / current cap",
+      "source": "derived: 16,570 / 326,250",
+      "asOf": "2026-11-12",
+      "note": "Mixed dates; stockanalysis stale figure was 8.01% at lower price."
+    },
+    "dividendPerShare": {
+      "value": 9.8,
+      "period": "FY2025 (paid 2026)",
+      "source": "Roche FY2025 results via rallies.ai; halo last payment 9.80",
+      "asOf": "2026-11-12",
+      "note": "CHF; FY2024 9.70. Seventh consecutive increase. 2026 outlook: further increase."
+    },
+    "dividendYield": {
+      "value": 0.0236,
+      "period": "FY2025 div / price",
+      "source": "derived: 9.80 / 415.80",
+      "asOf": "2026-11-12",
+      "note": "halo displays 2.9%; marketscreener 2.47% 2026E."
+    },
+    "payoutRatio": {
+      "value": 0.61,
+      "period": "TTM",
+      "source": "halo-technologies.com",
+      "asOf": "2026-11-12",
+      "note": "stockanalysis showed 92.4% on IFRS basis (stale). Core payout lower."
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable; stockanalysis Debt/EBITDA (gross) 1.58 stale"
+    },
+    "interestCoverage": {
+      "value": 15.72,
+      "period": "TTM (stale cache)",
+      "source": "stockanalysis.com ROG statistics",
+      "asOf": "2026-11-13",
+      "note": ""
+    },
+    "roic": {
+      "value": 0.1794,
+      "period": "TTM (stale cache)",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": ""
+    },
+    "roe": {
+      "value": 0.2647,
+      "period": "TTM (stale cache)",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": ""
+    },
+    "beta5y": {
+      "value": 0.17,
+      "period": "5y",
+      "source": "stockanalysis.com ROG statistics",
+      "asOf": "2026-11-13",
+      "note": "Conflict: tipranks shows 1.20."
+    },
+    "sectorMetrics": {
+      "coreEPS": {
+        "value": 19.46,
+        "period": "FY2025",
+        "source": "Roche FY2025 results via rallies.ai",
+        "asOf": "2026-01-29",
+        "note": "CHF, +11% CER. Core operating profit +13%. IFRS net income +58% (low 2024 base after impairments); IFRS EPS not retrieved."
+      },
+      "sales9M2026": {
+        "value": 46493,
+        "period": "9M 2026",
+        "source": "roche.com med-cor-2026-10-22",
+        "asOf": "2026-10-22",
+        "note": "CHF m, +6% CER, +1% CHF; Q3 +7% CER (+8% CHF). Pharma 36,212 (+7% CER), Diagnostics 10,281 (+4% CER)."
+      },
+      "guidance2026": {
+        "value": null,
+        "period": "FY2026",
+        "source": "roche.com Q3 2026 release",
+        "asOf": "2026-10-22",
+        "note": "Confirmed, unchanged: sales mid single-digit growth CER, core EPS high single-digit growth CER, further CHF dividend increase. FX about -3pp sales, -5pp core EPS (end-Sep rates)."
+      },
+      "patentExpiry": {
+        "value": null,
+        "period": "2026",
+        "source": "roche.com Q3 2026 release; Quartr",
+        "asOf": "2026-10-22",
+        "note": "Loss-of-exclusivity impact CHF 355m YTD, about CHF 600m expected FY2026, larger Actemra impact in Q4 (biosimilars). Perjeta-to-Phesgo conversion weighs on Perjeta. Q3 boosted by about CHF 180m Japan shipment timing, to reverse in Q4."
+      }
+    },
+    "history": [
+      {
+        "period": "FY2025",
+        "revenue": 61500,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 19.46,
+        "fcf": null,
+        "source": "Roche FY2025 via rallies.ai; sales approximate CHF 61.5bn; eps = core EPS CHF; EBIT, FCF not retrieved"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Buy/Hold mix (Bloomberg)",
+      "analysts": 27,
+      "buy": 15,
+      "hold": 9,
+      "sell": 3,
+      "targetAvg": 385.5,
+      "targetHigh": null,
+      "targetLow": null,
+      "source": "cash.ch 2026-10-20 (Bloomberg consensus); Oddo BHF target 440 (upgrade Underperform->Outperform from 300)",
+      "asOf": "2026-10-20",
+      "note": "Article says average target equals the then price of 385.50, which looks like a coincidence or error; price is now 415.80, above that average."
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "marketscreener net income est. only (2026E 14.99bn, 2027E 16.59bn CHF); per-share unavailable"
+    },
+    "recentEvents": [
+      "Q3 2026 (22 Oct): sales +7% CER; beat consensus by about 2%; guidance confirmed.",
+      "Giredestrant FDA PDUFA dates 30 Nov 2026 (early breast cancer) and 18 Dec 2026 (advanced); fenebrutinib FDA priority review.",
+      "Oddo BHF double upgrade 20 Oct; stock at highest level since 2022.",
+      "Positive Ph3: sefaxersen (IgAN), Lunsumio; Elecsys pTau217 FDA clearance; 2027 outlook: similar sales momentum with margin expansion."
+    ],
+    "valueTrapFlags": [
+      "Price at 52-week high after about 40% rise from low; consensus target average (385.50) below price.",
+      "Currency: about -5pp core EPS drag in 2026; CHF sales growth only +1% 9M.",
+      "Biosimilar/LOE erosion rising (Actemra) and Q4 timing reversal of Japan shipments."
+    ],
+    "dataGaps": [
+      "FY2021-FY2024 history, EBIT and FCF by year not retrieved",
+      "Reliable EV, EV/EBIT, ND/EBITDA at current price unavailable (stockanalysis data stale, fetch of fresh page blocked)",
+      "Halo page labelled ticker RO; confirm Genussschein line",
+      "Consensus high/low targets unavailable",
+      "Price and 52-week range from a single provider line (RO); share class unconfirmed by fact check."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-13",
+    "kind": "standard",
+    "competitive": "stable",
+    "method": "Next-12m core EPS x justified P/E. Basis CHF 20.0 (FY2025 core EPS 19.46, about 5pp currency drag in 2026; lead estimate). Price/range from a single provider line (RO), consistent with market cap. Historical multiple ranges not verified by agents; justified multiples are lead estimates.",
+    "metricBasis": "EPS core, 2026E (lead estimate)",
+    "basisValue": 20.0,
+    "forwardDividendYield": 0.024,
+    "qualityTier": "A",
+    "role": "Defensive Compounder",
+    "scores": {
+      "quality": 5,
+      "growth": 3,
+      "financialStrength": 4,
+      "risk": 5
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.25,
+        "fairValue": 306.0,
+        "epsCagr5y": 0.02,
+        "exitPe5y": 15,
+        "note": "Biosimilar erosion and a weak USD offset growth. Justified multiple 15x on next-12m 20.40.",
+        "epsCagr10y": 0.03,
+        "exitPe10y": 14
+      },
+      "base": {
+        "prob": 0.5,
+        "fairValue": 402.8,
+        "epsCagr5y": 0.06,
+        "exitPe5y": 17,
+        "note": "Mid-single-digit sales growth, stable core margin, diagnostics recovery. Justified multiple 19x on next-12m 21.20.",
+        "epsCagr10y": 0.055,
+        "exitPe10y": 16
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 453.6,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 19,
+        "note": "Obesity and neurology pipeline readouts succeed. Justified multiple 21x on next-12m 21.60.",
+        "epsCagr10y": 0.07,
+        "exitPe10y": 18
+      }
+    },
+    "whyItFits": "Pharma plus diagnostics leader: Q3 sales +7% CER, beta 0.17, 2.4% dividend, strong balance sheet.",
+    "growthDrivers": "Vabysmo, Ocrevus, Xolair, Polivy, diagnostics, giredestrant and obesity pipeline.",
+    "saturation": "At its 52-week high and above the average analyst target (385.50): fully valued after the rally.",
+    "principalRisk": "Loss-of-exclusivity erosion and CHF strength cutting reported EPS while the shares sit at their high."
+  }
+}
