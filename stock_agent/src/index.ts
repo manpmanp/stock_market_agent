@@ -14,6 +14,7 @@ import {
 } from "./lib/db.js";
 import { renderDecisionLab } from "./decisionLab.js";
 import { garpPayload } from "./garp/serve.js";
+import { readVisitorKey, visitorAllowed } from "./analyst/visitorKey.js";
 import { CHART_RANGES, fetchChartSeries, isChartRange } from "./lib/chart.js";
 import { runDecisions } from "./decision/run.js";
 import { getAllActiveWeights, getWeightHistory, setActiveWeights } from "./decision/weights.js";
@@ -206,11 +207,24 @@ export default {
     }
 
     if (url.pathname === "/market-analysis" && request.method === "POST") {
-      if (!isAuthorized(request, env)) return json({ error: "unauthorized" }, 401);
+      // Owner: ADMIN_TOKEN -> runs on the Worker's own ANTHROPIC_API_KEY.
+      // Visitor: no admin token but their own Anthropic key in the
+      // x-anthropic-key header -> runs on THEIR key for this one call only
+      // (never stored or logged; see src/analyst/visitorKey.ts). Neither ->
+      // refused. The visitor key unlocks this endpoint and nothing else.
+      const owner = isAuthorized(request, env);
+      const visitorKey = owner ? null : readVisitorKey(request);
+      if (!owner && !visitorKey) return json({ error: "unauthorized: use the admin token, or enter your own Anthropic API key in the Market Advisor" }, 401);
+      if (visitorKey && !visitorAllowed(request.headers.get("cf-connecting-ip") ?? "unknown")) {
+        return json({ error: "rate limited: at most 3 own-key runs per 10 minutes" }, 429);
+      }
+      const costLabel = visitorKey
+        ? "Billed to your own Anthropic API key (not the dashboard owner's). The key was used for this run only and not stored."
+        : "Billed separately against your Anthropic Console spend limit, not Cloudflare -- see README";
       return streamingNdjson(async (emit) => {
         emit({ type: "progress", source: "D1 -> Anthropic API", step: "Calling the LLM for synthesis\u2026", index: 0, total: 1, downloadedBytes: 0, downloadedLabel: formatBytes(0) });
-        const result = await runMarketAnalysis(env);
-        emit({ type: "done", summary: result, source: "D1 -> Anthropic API", downloadedBytes: 0, downloadedLabel: formatBytes(0), rowsWritten: 0, costUsd: 0, costLabel: "Billed separately against your Anthropic Console spend limit, not Cloudflare -- see README" });
+        const result = await runMarketAnalysis(env, visitorKey ? { apiKey: visitorKey } : {});
+        emit({ type: "done", summary: result, source: "D1 -> Anthropic API", downloadedBytes: 0, downloadedLabel: formatBytes(0), rowsWritten: 0, costUsd: 0, costLabel });
       });
     }
 
@@ -392,7 +406,7 @@ export default {
           "POST /ingest-benchmarks": "manually trigger market-index benchmark ingestion (normally runs on the daily cron only, see config/benchmarks.json) -- streams NDJSON progress",
           "POST /screen-broad-universe": "manually trigger the Stage A broad valuation/momentum screen + auto-promotion over config/broad-universe.json (normally runs on the daily cron only, before ingestion) -- streams NDJSON progress",
           "POST /score": "manually trigger v1 rescoring against current data -- streams NDJSON progress",
-          "POST /market-analysis": "on-demand LLM synthesis across tracked tickers + benchmarks (ADMIN_TOKEN-gated, requires ANTHROPIC_API_KEY/ANTHROPIC_MODEL secrets) -- never sizing/orders, every claim grounded against real decision-engine data, see docs/agentic-architecture-proposal.md section 3",
+          "POST /market-analysis": "on-demand LLM synthesis across tracked tickers + benchmarks (ADMIN_TOKEN-gated on the owner key, or a visitor's own Anthropic key in the x-anthropic-key header -- used for that call only, never stored; requires ANTHROPIC_API_KEY/ANTHROPIC_MODEL secrets) -- never sizing/orders, every claim grounded against real decision-engine data, see docs/agentic-architecture-proposal.md section 3",
           "POST /trigger-backtest": "manually dispatch the backtest.yml GitHub Actions workflow (ADMIN_TOKEN + GITHUB_TOKEN secrets required) -- does not run the harness itself here, just asks GitHub to start it; see Actions tab for progress",
           "GET /garp.json": "GARP checker (defensive growth-at-a-reasonable-price research, src/garp) -- bundled research, computed valuations and rendered report HTML for the dashboard's GARP Checker flyout; independent of scoring/decisions",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",

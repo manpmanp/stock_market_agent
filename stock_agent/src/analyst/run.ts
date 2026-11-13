@@ -202,16 +202,33 @@ interface AnthropicCallResult {
   error?: string;
 }
 
-async function callAnalyst(env: Env, userContent: string): Promise<AnthropicCallResult> {
-  if (!env.ANTHROPIC_API_KEY || !env.ANTHROPIC_MODEL) {
-    return { ok: false, synthesis: null, error: "ANTHROPIC_API_KEY and/or ANTHROPIC_MODEL not configured (set both with `wrangler secret put`)" };
+/**
+ * Bring-your-own-key: a visitor may supply their own Anthropic API key for one
+ * /market-analysis run. It is used for this call only -- never stored, never
+ * logged, never written to D1 -- and it replaces the owner's key, so the
+ * visitor's own Anthropic account is billed.
+ */
+export interface AnalystKeyOptions {
+  apiKey?: string;
+}
+
+/** Remove a key from any text before it can reach a response or log. */
+export function redactKey(text: string, key: string | undefined): string {
+  if (!key) return text;
+  return text.split(key).join("[redacted-key]");
+}
+
+async function callAnalyst(env: Env, userContent: string, opts: AnalystKeyOptions = {}): Promise<AnthropicCallResult> {
+  const apiKey = opts.apiKey ?? env.ANTHROPIC_API_KEY;
+  if (!apiKey || !env.ANTHROPIC_MODEL) {
+    return { ok: false, synthesis: null, error: opts.apiKey ? "ANTHROPIC_MODEL not configured on this Worker" : "ANTHROPIC_API_KEY and/or ANTHROPIC_MODEL not configured (set both with `wrangler secret put`)" };
   }
   try {
     const resp = await fetch(ANTHROPIC_API_URL, {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "x-api-key": env.ANTHROPIC_API_KEY,
+        "x-api-key": apiKey,
         "anthropic-version": ANTHROPIC_VERSION,
       },
       body: JSON.stringify({
@@ -243,7 +260,7 @@ async function callAnalyst(env: Env, userContent: string): Promise<AnthropicCall
     });
     if (!resp.ok) {
       const text = await resp.text().catch(() => "");
-      return { ok: false, synthesis: null, error: `Anthropic API HTTP ${resp.status}: ${text.slice(0, 500)}` };
+      return { ok: false, synthesis: null, error: redactKey(`Anthropic API HTTP ${resp.status}: ${text.slice(0, 500)}`, apiKey) };
     }
     const body = (await resp.json()) as { content?: Array<{ type: string; text?: string }>; stop_reason?: string };
     if (body.stop_reason === "refusal") {
@@ -267,7 +284,7 @@ async function callAnalyst(env: Env, userContent: string): Promise<AnthropicCall
     }
     return { ok: true, synthesis: parsed as AnalystSynthesis };
   } catch (err) {
-    return { ok: false, synthesis: null, error: `Anthropic API call threw: ${(err as Error).message}` };
+    return { ok: false, synthesis: null, error: redactKey(`Anthropic API call threw: ${(err as Error).message}`, apiKey) };
   }
 }
 
@@ -342,7 +359,7 @@ export interface MarketAnalysisResult {
   error?: string;
 }
 
-export async function runMarketAnalysis(env: Env): Promise<MarketAnalysisResult> {
+export async function runMarketAnalysis(env: Env, opts: AnalystKeyOptions = {}): Promise<MarketAnalysisResult> {
   const bundle = await buildDataBundle(env);
   const tickersConsidered = Object.keys(bundle.tickers).length;
   const benchmarksConsidered = Object.keys(bundle.benchmarks).length;
@@ -372,9 +389,9 @@ export async function runMarketAnalysis(env: Env): Promise<MarketAnalysisResult>
         ? `Here is the current data:\n\n${dataJson}`
         : `Here is the current data:\n\n${dataJson}\n\nYour previous attempt had these grounding violations -- each one means a cited (ticker, metric, value) didn't match the real data above, or a required field was missing. Fix every one of them and re-emit a corrected, fully-grounded call:\n${violations.map((v) => `- ${v}`).join("\n")}`;
 
-    const result = await callAnalyst(env, userContent);
+    const result = await callAnalyst(env, userContent, opts);
     if (!result.ok || !result.synthesis) {
-      await logSource(env, { source: "anthropic_market_analysis", status: "error", error: result.error ?? "unknown error" });
+      await logSource(env, { source: opts.apiKey ? "anthropic_market_analysis_visitor_key" : "anthropic_market_analysis", status: "error", error: result.error ?? "unknown error" });
       return {
         ok: false,
         asOf: bundle.asOf,
@@ -391,7 +408,7 @@ export async function runMarketAnalysis(env: Env): Promise<MarketAnalysisResult>
 
     violations = checkGrounding(result.synthesis, lookup, bundle);
     if (violations.length === 0) {
-      await logSource(env, { source: "anthropic_market_analysis", status: "ok" });
+      await logSource(env, { source: opts.apiKey ? "anthropic_market_analysis_visitor_key" : "anthropic_market_analysis", status: "ok" });
       return {
         ok: true,
         asOf: bundle.asOf,
@@ -405,7 +422,7 @@ export async function runMarketAnalysis(env: Env): Promise<MarketAnalysisResult>
       };
     }
     if (attempt === MAX_ATTEMPTS) {
-      await logSource(env, { source: "anthropic_market_analysis", status: "ok", error: `returned after ${attempt} attempts with unresolved grounding violations` });
+      await logSource(env, { source: opts.apiKey ? "anthropic_market_analysis_visitor_key" : "anthropic_market_analysis", status: "ok", error: `returned after ${attempt} attempts with unresolved grounding violations` });
       return {
         ok: true,
         asOf: bundle.asOf,

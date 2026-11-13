@@ -97,6 +97,13 @@ npx wrangler secret put ANTHROPIC_API_KEY
 npx wrangler secret put ANTHROPIC_MODEL
 ```
 
+Visitors can also run it on their own Anthropic account ("bring your own
+key"): the Market Advisor flyout has an optional key field, sent as the
+`x-anthropic-key` header with that one request. The Worker uses it for
+that call only (never stored or logged; errors are redacted), it unlocks
+no other endpoint, and it is rate-limited to 3 runs per visitor per 10
+minutes (src/analyst/visitorKey.ts). `ANTHROPIC_MODEL` must still be set.
+
 ### `/trigger-backtest`'s extra secret
 
 `/trigger-backtest` dispatches the existing `.github/workflows/backtest.yml`
