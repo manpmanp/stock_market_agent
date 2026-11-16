@@ -6,7 +6,7 @@ Defensive GARP research (Masoud's master prompt, `master-prompt.md`) as an inter
 - Reads the agent's data (the deployed `/decisions` output: price, multiples, beta, analyst consensus) as one input source.
 - Writes only its own paths: `src/garp/`, `scripts/garp*`, `config/garp/`, `test/garp/`, `docs/garp/`, `reports/`.
 - Never edits `src/scoring/*`, `src/decision/*`, `src/index.ts`, `src/decisionLab.ts`, `src/dashboard.ts`, migrations or D1 tables. The agent never reads GARP files, so neither can change the other's results.
-- Dashboard access: a "GARP Checker" sidebar flyout in `/dashboard` (still the only page address) loads `GET /garp.json` on first open and shows the report in a sandboxed iframe, so its styles never touch the dashboard. `/garp.json` (src/garp/serve.ts) reads only the bundled `config/garp/latest.json`; no D1, no network.
+- Dashboard access: a "GARP Checker" sidebar flyout in `/dashboard` (still the only page address) loads `GET /garp.json` on first open and shows the report in a sandboxed iframe, so its styles never touch the dashboard. `/garp.json` (src/garp/serve.ts) reads the bundled `config/garp/latest.json` and, read-only, the agent's latest closes from D1 `price_history` (src/garp/livePrices.ts): price, 52-week range, margin of safety, upside, returns and entry status are recomputed on every page load for stocks the agent tracks. Fair values and all other facts stay as researched. A live close older than the researched one, or more than 40% away from it (unit/currency mismatch), is ignored. Nothing is written.
 - The only agent files touched are additive hooks: one import + route in `src/index.ts`, and the tab, flyout, CSS and open/close wiring in `src/decisionLab.ts`.
 
 ## Files

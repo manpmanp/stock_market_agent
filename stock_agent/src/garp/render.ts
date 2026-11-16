@@ -120,7 +120,7 @@ ${gaps.length ? `<p class="mut"><b>Data gaps:</b> ${esc(gaps.join("; "))}</p>` :
 </details>`;
 }
 
-export function renderReport(files: ResearchFile[], allRows: Computed[], conclusion: Conclusion | null, runAt: string, title: string): string {
+export function renderReport(files: ResearchFile[], allRows: Computed[], conclusion: Conclusion | null, runAt: string, title: string, priceNote = "Prices are latest verified closes (date per row)."): string {
   const byTicker = new Map(files.map((f) => [f.ticker, f]));
   // Only the top TOP_N[region] per region are shown; the rest stay in the research data.
   const rows = shownRows(allRows);
@@ -179,7 +179,7 @@ svg{width:100%;height:auto}.grid{stroke:var(--grid)}.axis{stroke:var(--mut)}.tic
 @media (max-width:760px){.charts,.cols{grid-template-columns:1fr}.concl th{width:auto}}
 </style></head><body><main>
 <h1>${esc(title)}</h1>
-<div class="legend">Run ${esc(runAt)} · Prices are latest verified closes (date per row) · Unmarked figures are verified facts; ${E} independent estimate; ${A} analyst opinion · Not investment advice.</div>
+<div class="legend">Research run ${esc(runAt)} · ${esc(priceNote)} · Unmarked figures are verified facts; ${E} independent estimate; ${A} analyst opinion · Not investment advice.</div>
 <section><h2>A. Market and valuation overview</h2><div class="wrap"><table class="ov"><thead><tr><th>#</th><th>Stock</th><th>Price</th><th>% of 52w high</th><th>P/E ttm / fwd</th><th>EV/EBIT ttm / fwd</th><th>Div. yield</th><th>Beta</th><th>Fair value</th><th>Upside</th><th>Return 2–5y/yr</th><th>Entry status</th></tr></thead><tbody>${overview}</tbody></table></div>
 <div class="charts" style="margin-top:10px"><div>${mosChart(rows)}</div><div>${returnChart(rows)}</div></div></section>
 <section><h2>B. Ranked stock comparison</h2>${cards}</section>

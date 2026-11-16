@@ -380,9 +380,10 @@ export default {
     }
 
     if (url.pathname === "/garp.json") {
-      // GARP checker (src/garp): read-only, bundled research data rendered by
-      // its own deterministic engine. Shares nothing with scoring/decisions.
-      return json(garpPayload());
+      // GARP checker (src/garp): bundled research data plus the agent's latest
+      // closes read from D1 (read-only) so buy-zone status stays current.
+      // Writes nothing; shares nothing with scoring/decisions.
+      return json(await garpPayload(env.DB));
     }
 
     if (url.pathname.startsWith("/assets/")) {
