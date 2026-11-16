@@ -376,15 +376,6 @@ export function renderDecisionLab(): string {
   .demo-flyout.open { opacity: 1; pointer-events: auto; }
   .reference-flyout { position: fixed; top: 20px; left: 238px; z-index: 39; width: 760px; max-width: calc(100vw - 260px); max-height: calc(100vh - 40px); overflow-y: auto; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px 26px 26px; box-shadow: 0 10px 30px rgba(11,11,11,0.18); opacity: 0; pointer-events: none; transform: translateX(-16px); transition: opacity 0.2s ease, transform 0.2s ease; }
   .reference-flyout.open { opacity: 1; pointer-events: auto; transform: translateX(0); }
-  #garp-flyout { width: 1200px; padding: 12px; }
-  .own-key { margin: 6px 0 12px; padding: 10px 12px; border: 1px solid var(--border, #e1e0d9); border-radius: 8px; }
-  .own-key-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 6px; }
-  .own-key-row input[type=password] { flex: 1 1 260px; font: 13px "Courier New", monospace; padding: 6px 8px; border: 1px solid var(--border, #e1e0d9); border-radius: 6px; }
-  .own-key-remember { font-size: 12.5px; white-space: nowrap; }
-  .own-key-forget { font-size: 12.5px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border, #e1e0d9); background: transparent; cursor: pointer; }
-  #garp-flyout .garp-head { display: flex; align-items: baseline; gap: 12px; margin: 0 6px 8px; }
-  #garp-flyout .garp-head h2 { margin: 0; }
-  #garp-frame { width: 100%; height: calc(100vh - 110px); border: 0; border-radius: 8px; background: var(--surface-1); }
   .ref-tab[aria-expanded="true"] { color: var(--text-primary); font-weight: 700; border-left-width: 8px; background-color: color-mix(in srgb, var(--tab-accent) 16%, var(--surface-1)); }
   .demo-card { background: var(--page); border: 1px solid var(--border); border-radius: 10px; padding: 10px; width: 210px; flex: 0 0 210px; transform: translateX(-36px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; }
   .demo-flyout.open .demo-card { transform: translateX(0); opacity: 1; }
@@ -406,7 +397,6 @@ export function renderDecisionLab(): string {
     .demo-flyout.open { display: flex; }
     .reference-flyout { position: static; width: 100%; max-width: 100%; transform: none; opacity: 1; pointer-events: auto; max-height: none; margin: 0 0 18px; display: none; }
     .reference-flyout.open { display: block; }
-    #garp-frame { height: 80vh; }
   }
   .method-body ul { margin: 0 0 8px; padding-left: 18px; }
   .method-body li { margin-bottom: 4px; }
@@ -495,7 +485,6 @@ export function renderDecisionLab(): string {
     <button class="ref-tab weight-tab" id="weight-tab" type="button" aria-expanded="false" aria-controls="weight-flyout" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
     <button class="ref-tab admin-tab" id="admin-tab" type="button" aria-expanded="false" aria-controls="admin-flyout" style="--tab-accent:var(--text-primary)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.8 1.3 2.6 9.1h3.4L5.2 14.7l6.2-7.8H8z" fill="currentColor" stroke="none"></path></svg><span>Run &amp; Update</span></button>
     <button class="ref-tab advisor-tab" id="advisor-tab" type="button" aria-expanded="false" aria-controls="advisor-flyout" style="--tab-accent:var(--seq-400)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5 9.6 5.9 14 7.5 9.6 9.1 8 13.5 6.4 9.1 2 7.5 6.4 5.9z"></path><circle cx="12.5" cy="2.8" r="1" fill="currentColor" stroke="none"></circle></svg><span>Market Advisor</span></button>
-    <button class="ref-tab garp-tab" id="garp-tab" type="button" aria-expanded="false" aria-controls="garp-flyout" style="--tab-accent:var(--status-good)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.6 13.6 4v4.1c0 3.1-2.3 5.6-5.6 6.3-3.3-.7-5.6-3.2-5.6-6.3V4z"></path><path d="M5.4 8.2l1.8 1.8 3.4-3.6"></path></svg><span>GARP Checker</span></button>
   </div>
 
   <div class="demo-flyout" id="demo-flyout">
@@ -516,8 +505,8 @@ export function renderDecisionLab(): string {
         <video controls preload="none" poster="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/6xaJSlACEQAAAAEAABZ/anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFllqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjNjZTlmMWVjLTIzZmUtNDAyZC1hM2VlLWFhYzVhNmQzY2RkNQAAAAOUanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuWp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNo2DxCrh4ED7qKfFe7RHMLUwAAAG1jYm9yo2lkYzpmb3JtYXRqaW1hZ2UvanBlZ2ppbnN0YW5jZUlEeCx4bXA6aWlkOjEzMjFhZGQ0LTQ5ODktNDdiOS1iNDRmLTQwNWIxY2ZkNDg4ZmxyZWxhdGlvbnNoaXBocGFyZW50T2YAAAHianVtYgAAAEFqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmFjdGlvbnMudjIAAAAAGGMyc2jQ4yEKOvyibSMWFuJiqIb1AAABmWNib3KiZ2FjdGlvbnOComZhY3Rpb25rYzJwYS5vcGVuZWRqcGFyYW1ldGVyc6FraW5ncmVkaWVudHOBomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBExidt3Qxfv2kZUz0F4INVolvmZ00KwXgLu2S5v7DeqKRmYWN0aW9ueB1jb20uYW50aHJvcGljLmNsYXVkZS5wcm92aWRlZGpwYXJhbWV0ZXJzoXgfY29tLmFudGhyb3BpYy5vcmlnaW4tY29uZmlkZW5jZWd1bmtub3dua2Rlc2NyaXB0aW9ueGZDbGF1ZGUgcHJvdmlkZWQgdGhpcyBmaWxlIGF0IHRoZSByZXF1ZXN0IG9mIGEgdXNlciBhbmQgbWF5IGhhdmUgY3JlYXRlZCBvciBtb2RpZmllZCB0aGUgZmlsZSBjb250ZW50cy5tc29mdHdhcmVBZ2VudKFkbmFtZWZDbGF1ZGVyYWxsQWN0aW9uc0luY2x1ZGVk9QAAAMhqdW1iAAAAQGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaGFzaC5kYXRhAAAAABhjMnNoBKexT0boO7JOdPAQ8oODNwAAAIBjYm9ypWNhbGdmc2hhMjU2Y3BhZE4AAAAAAAAAAAAAAAAAAGRoYXNoWCBiD0WC8Yl/35ovhPcJFd6dQ4fnBJbCGsrjEZ2xF0zAo2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBRmbGVuZ3RoGRaLAAACPmp1bWIAAAAnanVtZGMyY2wAEQAQgAAAqgA4m3EDYzJwYS5jbGFpbS52MgAAAAIPY2JvcqVjYWxnZnNoYTI1NmlzaWduYXR1cmV4TXNlbGYjanVtYmY9L2MycGEvdXJuOmMycGE6M2NlOWYxZWMtMjNmZS00MDJkLWEzZWUtYWFjNWE2ZDNjZGQ1L2MycGEuc2lnbmF0dXJlamluc3RhbmNlSUR4LHhtcDppaWQ6MGFkMmRhZGMtZTUyMS00NGJlLWJlZWQtOGY3OGZiYmFlYTBkcmNyZWF0ZWRfYXNzZXJ0aW9uc4OiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIETGJ23dDF+/aRlTPQXgg1WiW+ZnTQrBeAu7ZLm/sN6oomN1cmx4KnNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuYWN0aW9ucy52MmRoYXNoWCCxqmF9UKdFG0Ty7/GYQftery2HNjPNN82GhY8/DUV6mqJjdXJseClzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmhhc2guZGF0YWRoYXNoWCBhRXnmasMN4ThMjl/A1JPljjcdA79tW7WpzcglcFboPXRjbGFpbV9nZW5lcmF0b3JfaW5mb6NkbmFtZW9BbnRocm9waWMgRmlsZXNndmVyc2lvbmUxLjAuMGtzcGVjVmVyc2lvbmUyLjQuMAAAEDhqdW1iAAAAKGp1bWRjMmNzABEAEIAAAKoAOJtxA2MycGEuc2lnbmF0dXJlAAAAEAhjYm9y0oRZAhKiASYYIVkCCjCCAgYwggGNoAMCAQICFEDloAruwjnQvriD+gZCBT1nVRMAMAoGCCqGSM49BAMDMEkxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMS4wLAYDVQQDEyVBbnRocm9waWMgQ29udGVudCBDcmVkZW50aWFscyBSb290IENBMB4XDTI2MDgwNzE4NDM1NloXDTI4MDgwNjE5NDM1NlowRDEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxKTAnBgNVBAMTIEFudGhyb3BpYyBDbGF1ZGUgQ29udGVudCBTaWduaW5nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEmHoKa8tQGAUU1TS9QqU5W0Tp2N3XsvlK7BfQt6YWKwEzd2R3/dzKPEUDdCjlLjp9fT+KFjRVnuZ9v0oXvTe3k6NYMFYwDgYDVR0PAQH/BAQDAgeAMBUGA1UdJQQOMAwGCisGAQQBg+heAgEwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBTOUeIEgU5kWyP448TPmj6cwddcwjAKBggqhkjOPQQDAwNnADBkAjAxcx0UngF60stVjs5G4T2eiptsBk5mf9oCtfJPAUBl8qs/PEXa8+gk1/X5QJ2DVcYCMHBfXN31YapiSqYvlIWrDVDJKOvXMl+kkz37Wt0PBI8sw486Mq6JeOhT+lRR4b1HCaFjcGFkWQ2eAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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" src="/assets/demos/4_the_agentic_layer.mp4"></video>
       </div>
   </div>
-  <p class="sub">A 10-factor decision engine (quality, growth, financial strength, valuation, future potential, technical, entry, risk, catalyst, market regime). Weights are stored in the database and can be tuned below without redeploying. This build (v7) is also where a data-driven, self-tuning model is being developed and tested -- see Reference &amp; methodology &rarr; Model Selection &amp; Testing below for status. (The original fixed-weight formula this replaced as the primary view still runs untouched in the background as a frozen comparison baseline -- see the same tab.)</p>
-  <p class="note">Catalyst has no news/events data source wired in yet, so it's currently a flagged neutral placeholder -- a future version could add one (see Reference &amp; methodology below). Market regime is a real (if simple) live computation from a broad market-index proxy, not this ticker's own data. Data-driven research output, not investment advice.</p>
+  <p class="sub">A 10-factor decision engine for defensive/growth stocks &mdash; see Factors &amp; Inputs (what's scored) and Model Selection &amp; Testing (how the weighting works, what's experimental) in the sidebar for the full detail. Data-driven research output, not investment advice.</p>
+  <p class="note" style="margin-bottom: 14px;">Each card's <b>Decision</b> badge is the weighted average of all 10 factors. Its <b>Entry</b> and <b>Valuation</b> readings next to it are each just one factor's own score, shown separately on purpose -- they can disagree with the overall Decision, and with each other. A weak entry timing can still sit inside a Buy (the other 9 factors carried it); a good entry can still sit inside an Accumulate (something else pulled the average down). Sort/rank always follows the overall score, not either of these two.</p>
 
   <div class="stat-row" id="stats"></div>
   <div class="universe-panel" id="universePanel" hidden></div>
@@ -561,26 +550,12 @@ export function renderDecisionLab(): string {
 
   <section class="advisor-panel reference-flyout" id="advisor-flyout">
     <h2>Market advisor</h2>
-    <p class="sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data -- D1 &rarr; Anthropic API (POST /market-analysis). Billed separately against an Anthropic Console account, not Cloudflare. The owner runs it with the admin token saved under Run &amp; Update; anyone else can run it with their own Anthropic API key below.</p>
-    <form class="own-key" id="own-key-form" autocomplete="off">
-      <label for="own-key-input"><b>Use your own Anthropic API key</b> <span class="sub">(optional; from console.anthropic.com, starts with sk-ant-)</span></label>
-      <div class="own-key-row">
-        <input type="password" id="own-key-input" placeholder="sk-ant-..." autocomplete="off" spellcheck="false">
-        <label class="own-key-remember"><input type="checkbox" id="own-key-remember"> Remember on this device</label>
-        <button type="button" class="own-key-forget" id="own-key-forget">Forget</button>
-      </div>
-      <p class="sub" id="own-key-status">When filled in, "Run market analysis" uses this key: your Anthropic account is billed, not the dashboard owner's. The key is sent only with that one request, used once by the server and never stored there. "Remember" keeps it in this browser only. It cannot unlock any other action.</p>
-    </form>
+    <p class="sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data -- D1 &rarr; Anthropic API (POST /market-analysis). Billed separately against your Anthropic Console spend limit, not Cloudflare. Uses the same admin token saved under Run &amp; Update.</p>
     <div class="admin-item">
       <button class="admin-btn" id="btn-market-analysis" data-path="/market-analysis" data-label="On-call AI agent advisor" data-stream="1">Run market analysis<span class="admin-btn-stop-hint">(click to stop)</span></button>
       <div class="admin-item-status" id="status-btn-market-analysis"></div>
       <div class="admin-item-result" id="result-btn-market-analysis" hidden></div>
     </div>
-  </section>
-
-  <section class="garp-panel reference-flyout" id="garp-flyout">
-    <div class="garp-head"><h2>GARP checker</h2><span class="sub" id="garp-meta">Defensive growth-at-a-reasonable-price research (src/garp). Independent of the decision engine: its own verified data, valuations and report, loaded on first open from GET /garp.json.</span></div>
-    <iframe id="garp-frame" title="GARP research report" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
   </section>
 
   <section class="weights-panel reference-flyout" id="weight-flyout">
@@ -831,7 +806,6 @@ export function renderDecisionLab(): string {
 
   <section>
     <h2>Decisions</h2>
-    <p class="note" style="margin-bottom: 14px;">Each card's <b>Decision</b> badge is the weighted average of all 10 factors (see Reference &amp; methodology below). Its <b>Entry</b> and <b>Valuation</b> readings next to it are each just one factor's own score, shown separately on purpose -- they can disagree with the overall Decision, and with each other. A weak entry timing can still sit inside a Buy (the other 9 factors carried it); a good entry can still sit inside an Accumulate (something else pulled the average down). Sort/rank always follows the overall score, not either of these two.</p>
     <div class="tabs" id="horizon-tabs" role="tablist"></div>
     <div class="decisions-filter-bar">
       <div class="search-wrap">
@@ -1813,7 +1787,9 @@ export function renderDecisionLab(): string {
     fetch("/decisions?horizon=" + encodeURIComponent(currentHorizon))
       .then(function (r) { return r.json(); })
       .then(function (data) {
-        document.getElementById("run-at").textContent = data.runAt ? ("Last run (UTC): " + data.runAt) : "No decision run yet -- use \\"Recompute decisions now\\" below.";
+        var runAtEl = document.getElementById("run-at");
+        runAtEl.textContent = data.runAt ? "" : "No decision run yet -- use \\"Recompute decisions now\\" below.";
+        runAtEl.hidden = !!data.runAt;
         lastDecisions = data.decisions || [];
         showAllDecisions = false;
         renderDecisionsList();
@@ -1899,39 +1875,6 @@ export function renderDecisionLab(): string {
     setStatus("Reset to last saved weights.", true);
   });
 
-  // Bring-your-own-key for the market advisor (see src/analyst/visitorKey.ts).
-  // The key lives in this input (and, only if "Remember" is ticked, in this
-  // browser's localStorage); it is sent as x-anthropic-key with the one
-  // /market-analysis request and never stored server-side.
-  var OWN_KEY_STORE = "advisorOwnAnthropicKey";
-  var ownKeyInput = document.getElementById("own-key-input");
-  var ownKeyRemember = document.getElementById("own-key-remember");
-  try {
-    var savedOwnKey = window.localStorage.getItem(OWN_KEY_STORE);
-    if (savedOwnKey && ownKeyInput) { ownKeyInput.value = savedOwnKey; ownKeyRemember.checked = true; }
-  } catch (e) { /* storage unavailable: key stays in memory only */ }
-  function persistOwnKey() {
-    try {
-      var v = ownKeyInput ? ownKeyInput.value.trim() : "";
-      if (ownKeyRemember && ownKeyRemember.checked && v) window.localStorage.setItem(OWN_KEY_STORE, v);
-      else window.localStorage.removeItem(OWN_KEY_STORE);
-    } catch (e) { /* ignore */ }
-  }
-  if (ownKeyInput) ownKeyInput.addEventListener("change", persistOwnKey);
-  if (ownKeyRemember) ownKeyRemember.addEventListener("change", persistOwnKey);
-  var ownKeyForget = document.getElementById("own-key-forget");
-  if (ownKeyForget) ownKeyForget.addEventListener("click", function () {
-    if (ownKeyInput) ownKeyInput.value = "";
-    if (ownKeyRemember) ownKeyRemember.checked = false;
-    persistOwnKey();
-  });
-  var ownKeyForm = document.getElementById("own-key-form");
-  if (ownKeyForm) ownKeyForm.addEventListener("submit", function (ev) { ev.preventDefault(); });
-  function getOwnKey() {
-    var v = ownKeyInput ? ownKeyInput.value.trim() : "";
-    return /^sk-ant-/.test(v) ? v : "";
-  }
-
   function getAdminToken() {
     var input = document.getElementById("admin-token-input");
     var v = input ? input.value.trim() : "";
@@ -1999,10 +1942,6 @@ export function renderDecisionLab(): string {
   var adminFlyout = document.getElementById("admin-flyout");
   var advisorTab = document.getElementById("advisor-tab");
   var advisorFlyout = document.getElementById("advisor-flyout");
-  var garpTab = document.getElementById("garp-tab");
-  var garpFlyout = document.getElementById("garp-flyout");
-  var garpFrame = document.getElementById("garp-frame");
-  var garpLoaded = false;
   var methodTabs = document.querySelectorAll("#method-tabs .tab");
   var methodSections = document.querySelectorAll(".method-section");
 
@@ -2058,7 +1997,6 @@ export function renderDecisionLab(): string {
     if (keep !== "weight") closeWeightFlyout();
     if (keep !== "admin") closeAdminFlyout();
     if (keep !== "advisor") closeAdvisorFlyout();
-    if (keep !== "garp") closeGarpFlyout();
   }
 
   demoTab.addEventListener("click", function (ev) {
@@ -2093,15 +2031,6 @@ export function renderDecisionLab(): string {
     advisorTab.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
-  garpTab.addEventListener("click", function (ev) {
-    ev.stopPropagation();
-    var open = !garpFlyout.classList.contains("open");
-    closeAllFlyoutsExcept(null);
-    garpFlyout.classList.toggle("open", open);
-    garpTab.setAttribute("aria-expanded", open ? "true" : "false");
-    if (open) loadGarp();
-  });
-
   methodTabs.forEach(function (tab) {
     tab.addEventListener("click", function (ev) {
       ev.stopPropagation(); // keep this click from also tripping the outside-click closer below
@@ -2130,8 +2059,7 @@ export function renderDecisionLab(): string {
     var insideWeightFlyout = t.closest && t.closest("#weight-flyout");
     var insideAdminFlyout = t.closest && t.closest("#admin-flyout");
     var insideAdvisorFlyout = t.closest && t.closest("#advisor-flyout");
-    var insideGarpFlyout = t.closest && t.closest("#garp-flyout");
-    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout || insideAdminFlyout || insideAdvisorFlyout || insideGarpFlyout) return;
+    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout || insideAdminFlyout || insideAdvisorFlyout) return;
     closeAllFlyoutsExcept(null);
   });
 
@@ -2228,7 +2156,7 @@ export function renderDecisionLab(): string {
   // the fetch instead of starting a new one -- see "Stop behavior" (the
   // Worker's own execution ends when the connection closes; this does not
   // roll back any individual D1/R2 write already issued before that).
-  function runStreamingAdminAction(btn, path, token, ownKey) {
+  function runStreamingAdminAction(btn, path, token) {
     var controller = new AbortController();
     adminRunning[btn.id] = controller;
     setRunning(btn, true);
@@ -2237,8 +2165,7 @@ export function renderDecisionLab(): string {
       var prevResult = document.getElementById("result-btn-market-analysis");
       if (prevResult) prevResult.hidden = true;
     }
-    var headers = ownKey ? { "x-anthropic-key": ownKey } : { authorization: "Bearer " + token };
-    fetch(path, { method: "POST", headers: headers, signal: controller.signal })
+    fetch(path, { method: "POST", headers: { authorization: "Bearer " + token }, signal: controller.signal })
       .then(function (r) {
         if (!r.ok || !r.body) {
           return r.json().catch(function () { return {}; }).then(function (data) {
@@ -2331,10 +2258,6 @@ export function renderDecisionLab(): string {
       var streams = btn.getAttribute("data-stream") === "1";
       if (streams && adminRunning[btn.id]) {
         adminRunning[btn.id].abort();
-        return;
-      }
-      if (path === "/market-analysis" && getOwnKey()) {
-        runStreamingAdminAction(btn, path, null, getOwnKey());
         return;
       }
       var token = getAdminToken();
