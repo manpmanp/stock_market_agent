@@ -8,11 +8,11 @@
   "businessSummary": "Enterprise resource planning and business applications (S/4HANA Cloud, Business Technology Platform, SuccessFactors, Ariba, Concur). Cloud now the large majority of revenue; 113,076 FTE at 2026-09-30.",
   "facts": {
     "price": {
-      "value": 210.95,
+      "value": 214.35,
       "period": "close",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12",
-      "note": "Sources conflicted (212.55 twelvedata, 209.4 HL undated); agent's own feed used (was 212.55; fact check config/garp/checks/2026-11-13.md)"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": 219.65,
@@ -155,10 +155,10 @@
       "note": "Provider (ADR page)."
     },
     "beta5y": {
-      "value": 0.7,
+      "value": 0.702,
       "period": "5Y",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-      "asOf": "2026-11-12",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "twelvedata 0.70; stockanalysis 0.76."
     },
     "sectorMetrics": {
@@ -188,16 +188,16 @@
       "source": "unavailable"
     },
     "consensus": {
-      "rating": "buy",
+      "rating": "buy (24 buy, 5 hold, 0 sell)",
       "analysts": 27,
       "buy": 24,
       "hold": 5,
       "sell": 0,
-      "targetAvg": 243.36,
+      "targetAvg": 243.54,
       "targetHigh": 290,
       "targetLow": 198.84,
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long) (buy = 6 strong buy + 18 buy; counts sum to 29 vs 27 analysts, provider inconsistency)",
-      "asOf": "2026-11-12"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,

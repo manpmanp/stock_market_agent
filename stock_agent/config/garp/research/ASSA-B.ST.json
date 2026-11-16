@@ -8,11 +8,11 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 395.5,
+      "value": 397.3,
       "period": "close",
-      "source": "AJ Bell / Nordnet",
-      "asOf": "2026-11-12",
-      "note": "Refreshed (was 392.5; fact check config/garp/checks/2026-11-13.md)"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": 403.9,
@@ -157,8 +157,8 @@
     "beta5y": {
       "value": 0.837,
       "period": "5y",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "stockanalysis 0.82"
     },
     "sectorMetrics": {},
@@ -227,7 +227,7 @@
       "source": "no source retrieved"
     },
     "consensus": {
-      "rating": "buy",
+      "rating": "buy (13 buy, 9 hold, 0 sell)",
       "analysts": 22,
       "buy": 13,
       "hold": 9,
@@ -235,8 +235,8 @@
       "targetAvg": 415,
       "targetHigh": 500,
       "targetLow": 345,
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,

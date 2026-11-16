@@ -8,11 +8,11 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 58.35,
+      "value": 63.45,
       "period": "close",
-      "source": "stockanalysis.com/history",
-      "asOf": "2026-10-26",
-      "note": "Latest found, stale versus 2026-11-13. Stockanalysis showed 51.60 on 2026-10-02 and 51.75 on 2026-10-05. Agent data lacks EKTA-B."
+      "source": "debelegger.nl/en/stock/EKTA-B.ST",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": null,

@@ -8,11 +8,11 @@
   "businessSummary": "Global information-based analytics and decision tools: Risk (LexisNexis Risk Solutions), Scientific, Technical & Medical (Elsevier), Legal (LexisNexis Legal & Professional) and Exhibitions (RX). All price and per-share figures in pence (GBp); monetary amounts in GBP millions.",
   "facts": {
     "price": {
-      "value": 3072,
+      "value": 3085,
       "period": "close",
-      "source": "AJ Bell quote",
-      "asOf": "2026-11-12",
-      "note": "Refreshed by fact check; pence (was 3019; fact check config/garp/checks/2026-11-13.md)"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": 3448.5,
@@ -157,8 +157,8 @@
     "beta5y": {
       "value": 0.27,
       "period": "5Y monthly",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-      "asOf": "2026-11-12",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "stockanalysis 0.28; fool.com shows ~0."
     },
     "sectorMetrics": {
@@ -197,16 +197,16 @@
       "source": "unavailable"
     },
     "consensus": {
-      "rating": "buy",
+      "rating": "buy (14 buy, 2 hold, 1 sell)",
       "analysts": 17,
       "buy": 14,
       "hold": 2,
       "sell": 1,
-      "targetAvg": 3509.1,
+      "targetAvg": 3509.12,
       "targetHigh": 5070,
       "targetLow": 2200,
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long) (targets in pence; buy = 2 strong buy + 12 buy; sell = 1 strong sell)",
-      "asOf": "2026-11-12"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,

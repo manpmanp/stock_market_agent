@@ -9,11 +9,11 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 86.61,
-      "period": "close 2026-11-11/12",
-      "source": "stock-agent /decisions 2026-11-12 23:05; twelvedata.com SAN statistics (update 11 Nov 17:30 CET)",
-      "asOf": "2026-11-12",
-      "note": "EUR."
+      "value": 88.51,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": 90.79,
@@ -156,10 +156,10 @@
       "note": "stock-agent returnOnAssets 5.46% only"
     },
     "beta5y": {
-      "value": 0.26,
+      "value": 0.256,
       "period": "5y",
-      "source": "stock-agent /decisions (0.256); twelvedata 0.26",
-      "asOf": "2026-11-12",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": ""
     },
     "sectorMetrics": {
@@ -212,16 +212,16 @@
       "source": "unavailable"
     },
     "consensus": {
-      "rating": "buy",
+      "rating": "buy (12 buy, 12 hold, 0 sell)",
       "analysts": 23,
       "buy": 12,
       "hold": 12,
       "sell": 0,
-      "targetAvg": 95.7,
+      "targetAvg": 96.36,
       "targetHigh": 110,
-      "targetLow": 78,
-      "source": "stock-agent /decisions 2026-11-12 23:05",
-      "asOf": "2026-11-12",
+      "targetLow": 79,
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "3 strong buy + 9 buy, 12 hold, 0 sell (sums to 24 vs 23 stated)."
     },
     "forwardEstimates": {

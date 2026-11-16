@@ -8,11 +8,11 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 273.5,
+      "value": 286.5,
       "period": "close",
-      "source": "stockanalysis.com/history",
-      "asOf": "2026-10-19",
-      "note": "Latest price retrievable; stale versus 2026-11-13. Agent data did not contain AXFO."
+      "source": "stockanalysis.com/quote/sto/AXFO",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": null,

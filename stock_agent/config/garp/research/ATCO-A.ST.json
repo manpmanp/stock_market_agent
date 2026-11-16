@@ -8,11 +8,11 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 194.65,
+      "value": 192.15,
       "period": "close",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12",
-      "note": "A share; B share trades lower, so market cap derived from A price overstates"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": null,
@@ -157,8 +157,8 @@
     "beta5y": {
       "value": 1.074,
       "period": "5y",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "stockanalysis 1.07"
     },
     "sectorMetrics": {},
@@ -227,7 +227,7 @@
       "source": "no source retrieved"
     },
     "consensus": {
-      "rating": "buy",
+      "rating": "buy (16 buy, 4 hold, 1 sell)",
       "analysts": 20,
       "buy": 16,
       "hold": 4,
@@ -235,8 +235,8 @@
       "targetAvg": 225.35,
       "targetHigh": 260,
       "targetLow": 165,
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,

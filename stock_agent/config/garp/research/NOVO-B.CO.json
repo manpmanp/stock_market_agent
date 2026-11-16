@@ -8,11 +8,11 @@
   "retrievedAt": "2026-11-13T09:00:00+01:00",
   "facts": {
     "price": {
-      "value": 272.7,
-      "period": "close, run 2026-11-12",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-      "asOf": "2026-11-12",
-      "note": "DKK. Stockanalysis showed 260.15 on 2026-10-23."
+      "value": 285.95,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": null,
@@ -157,8 +157,8 @@
     "beta5y": {
       "value": 0.368,
       "period": "5y",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "Provider figure (stockanalysis 0.38)."
     },
     "sectorMetrics": {
@@ -272,7 +272,7 @@
       "source": "unavailable"
     },
     "consensus": {
-      "rating": "hold",
+      "rating": "hold (5 buy, 15 hold, 6 sell)",
       "analysts": 24,
       "buy": 5,
       "hold": 15,
@@ -280,8 +280,8 @@
       "targetAvg": 299.91,
       "targetHigh": 448,
       "targetLow": 221,
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,

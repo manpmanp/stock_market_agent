@@ -9,11 +9,11 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 87.72,
-      "period": "close 2026-11-12/13",
-      "source": "marketscreener.com NESTLE-S-A-15227721 valuation page",
-      "asOf": "2026-11-13",
-      "note": "CHF. halo showed 86.57 on 2026-11-12."
+      "value": 88.27,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": 87.54,
@@ -156,10 +156,10 @@
       "note": ""
     },
     "beta5y": {
-      "value": 0.5,
+      "value": 0.477,
       "period": "5y",
-      "source": "stockanalysis.com",
-      "asOf": "2026-10-23",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "twelvedata 0.48."
     },
     "sectorMetrics": {
@@ -248,16 +248,16 @@
       "source": "unavailable"
     },
     "consensus": {
-      "rating": "",
-      "analysts": null,
-      "buy": null,
-      "hold": null,
-      "sell": null,
-      "targetAvg": null,
-      "targetHigh": null,
-      "targetLow": null,
-      "source": "unavailable",
-      "asOf": ""
+      "rating": "buy (11 buy, 10 hold, 1 sell)",
+      "analysts": 22,
+      "buy": 11,
+      "hold": 10,
+      "sell": 1,
+      "targetAvg": 89.04,
+      "targetHigh": 100,
+      "targetLow": 72,
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": 3.827,

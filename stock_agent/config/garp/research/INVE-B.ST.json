@@ -8,11 +8,11 @@
   "retrievedAt": "2026-11-13T09:00:00+01:00",
   "facts": {
     "price": {
-      "value": 435.25,
+      "value": 437.05,
       "period": "close",
-      "source": "stock-agent /decisions",
-      "asOf": "2026-11-11",
-      "note": "Value confirmed; date corrected to 11 Nov close (was 435.25; fact check config/garp/checks/2026-11-13.md)"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": 439.6,
@@ -157,8 +157,8 @@
     "beta5y": {
       "value": 0.811,
       "period": "5y",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "Provider figure (stockanalysis showed 0.77 on an undated page)."
     },
     "sectorMetrics": {
@@ -265,7 +265,7 @@
       "source": "unavailable; for a holding company use history of premium/discount to NAV (not retrieved)"
     },
     "consensus": {
-      "rating": "none (hold-leaning)",
+      "rating": "none (1 buy, 3 hold, 1 sell)",
       "analysts": 4,
       "buy": 1,
       "hold": 3,
@@ -273,8 +273,8 @@
       "targetAvg": 416,
       "targetHigh": 465,
       "targetLow": 337,
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,

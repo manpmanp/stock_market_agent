@@ -1,5 +1,5 @@
 {
- "runAt": "2026-11-13T22:03:18Z",
+ "runAt": "2026-11-16T15:13:45Z",
  "title": "Defensive GARP research: top 5 Nordic and top 10 global",
  "files": [
   {
@@ -12,10 +12,10 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 334.8,
+     "value": 333.6,
      "period": "close",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": ""
     },
     "high52w": {
@@ -161,8 +161,8 @@
     "beta5y": {
      "value": 1.116,
      "period": "5y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "stockanalysis 1.08"
     },
     "sectorMetrics": {},
@@ -231,16 +231,16 @@
      "source": "no source retrieved"
     },
     "consensus": {
-     "rating": "none (1 strong buy, 5 buy, 1 hold)",
+     "rating": "strong_buy (6 buy, 1 hold, 0 sell)",
      "analysts": 7,
      "buy": 6,
      "hold": 1,
      "sell": 0,
-     "targetAvg": 381.71,
-     "targetHigh": 417,
+     "targetAvg": 382.29,
+     "targetHigh": 421,
      "targetLow": 340,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -331,11 +331,11 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 395.5,
+     "value": 397.3,
      "period": "close",
-     "source": "AJ Bell / Nordnet",
-     "asOf": "2026-11-12",
-     "note": "Refreshed (was 392.5; fact check config/garp/checks/2026-11-13.md)"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 403.9,
@@ -480,8 +480,8 @@
     "beta5y": {
      "value": 0.837,
      "period": "5y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "stockanalysis 0.82"
     },
     "sectorMetrics": {},
@@ -550,7 +550,7 @@
      "source": "no source retrieved"
     },
     "consensus": {
-     "rating": "buy",
+     "rating": "buy (13 buy, 9 hold, 0 sell)",
      "analysts": 22,
      "buy": 13,
      "hold": 9,
@@ -558,8 +558,8 @@
      "targetAvg": 415,
      "targetHigh": 500,
      "targetLow": 345,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -650,11 +650,11 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 194.65,
+     "value": 192.15,
      "period": "close",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
-     "note": "A share; B share trades lower, so market cap derived from A price overstates"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": null,
@@ -799,8 +799,8 @@
     "beta5y": {
      "value": 1.074,
      "period": "5y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "stockanalysis 1.07"
     },
     "sectorMetrics": {},
@@ -869,7 +869,7 @@
      "source": "no source retrieved"
     },
     "consensus": {
-     "rating": "buy",
+     "rating": "buy (16 buy, 4 hold, 1 sell)",
      "analysts": 20,
      "buy": 16,
      "hold": 4,
@@ -877,8 +877,8 @@
      "targetAvg": 225.35,
      "targetHigh": 260,
      "targetLow": 165,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -968,11 +968,11 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 273.5,
+     "value": 286.5,
      "period": "close",
-     "source": "stockanalysis.com/history",
-     "asOf": "2026-10-19",
-     "note": "Latest price retrievable; stale versus 2026-11-13. Agent data did not contain AXFO."
+     "source": "stockanalysis.com/quote/sto/AXFO",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": null,
@@ -1306,11 +1306,11 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 58.35,
+     "value": 63.45,
      "period": "close",
-     "source": "stockanalysis.com/history",
-     "asOf": "2026-10-26",
-     "note": "Latest found, stale versus 2026-11-13. Stockanalysis showed 51.60 on 2026-10-02 and 51.75 on 2026-10-05. Agent data lacks EKTA-B."
+     "source": "debelegger.nl/en/stock/EKTA-B.ST",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": null,
@@ -1672,11 +1672,11 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 268.2,
+     "value": 267.6,
      "period": "close",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (currentPrice)",
-     "asOf": "2026-11-12",
-     "note": "Agent price. stockanalysis showed 255.80 on 2026-10-01."
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": null,
@@ -1821,8 +1821,8 @@
     "beta5y": {
      "value": 1.179,
      "period": "5y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": ""
     },
     "sectorMetrics": {
@@ -1939,16 +1939,16 @@
      "source": "not found in accessible sources"
     },
     "consensus": {
-     "rating": "buy",
+     "rating": "buy (4 buy, 3 hold, 0 sell)",
      "analysts": 8,
      "buy": 4,
      "hold": 3,
      "sell": 0,
-     "targetAvg": 285.75,
+     "targetAvg": 285.88,
      "targetHigh": 322,
      "targetLow": 260,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (MarketScreener 2026-10: 7 analysts, avg 282.62, outperform)",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -2037,11 +2037,11 @@
    "retrievedAt": "2026-11-13T09:00:00+01:00",
    "facts": {
     "price": {
-     "value": 435.25,
+     "value": 437.05,
      "period": "close",
-     "source": "stock-agent /decisions",
-     "asOf": "2026-11-11",
-     "note": "Value confirmed; date corrected to 11 Nov close (was 435.25; fact check config/garp/checks/2026-11-13.md)"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 439.6,
@@ -2186,8 +2186,8 @@
     "beta5y": {
      "value": 0.811,
      "period": "5y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "Provider figure (stockanalysis showed 0.77 on an undated page)."
     },
     "sectorMetrics": {
@@ -2294,7 +2294,7 @@
      "source": "unavailable; for a holding company use history of premium/discount to NAV (not retrieved)"
     },
     "consensus": {
-     "rating": "none (hold-leaning)",
+     "rating": "none (1 buy, 3 hold, 1 sell)",
      "analysts": 4,
      "buy": 1,
      "hold": 3,
@@ -2302,8 +2302,8 @@
      "targetAvg": 416,
      "targetHigh": 465,
      "targetLow": 337,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -2393,11 +2393,11 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 287.8,
+     "value": 291.6,
      "period": "close",
-     "source": "fact check quote",
-     "asOf": "2026-11-12",
-     "note": "Refreshed (was 288.2; fact check config/garp/checks/2026-11-13.md)"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 388.2,
@@ -2542,8 +2542,8 @@
     "beta5y": {
      "value": 1.161,
      "period": "5y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "stockanalysis 1.13"
     },
     "sectorMetrics": {},
@@ -2612,16 +2612,16 @@
      "source": "no source retrieved"
     },
     "consensus": {
-     "rating": "buy",
+     "rating": "buy (3 buy, 4 hold, 0 sell)",
      "analysts": 8,
      "buy": 3,
      "hold": 4,
      "sell": 0,
-     "targetAvg": 324.125,
+     "targetAvg": 319.62,
      "targetHigh": 350,
      "targetLow": 300,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -2713,11 +2713,11 @@
    "retrievedAt": "2026-11-13T09:00:00+01:00",
    "facts": {
     "price": {
-     "value": 187.45,
-     "period": "close, run 2026-11-12",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-     "asOf": "2026-11-12",
-     "note": "SEK, Stockholm line. Company reports in EUR."
+     "value": 190.75,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": null,
@@ -2862,8 +2862,8 @@
     "beta5y": {
      "value": 0.717,
      "period": "5y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "Provider figure."
     },
     "sectorMetrics": {
@@ -2997,16 +2997,16 @@
      "source": "unavailable"
     },
     "consensus": {
-     "rating": "buy",
+     "rating": "buy (6 buy, 3 hold, 1 sell)",
      "analysts": 10,
      "buy": 6,
      "hold": 3,
      "sell": 1,
-     "targetAvg": 202.8,
-     "targetHigh": 233.25,
-     "targetLow": 157.03,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12"
+     "targetAvg": 203.33,
+     "targetHigh": 233.96906,
+     "targetLow": 157.5101,
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -3098,11 +3098,11 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 87.72,
-     "period": "close 2026-11-12/13",
-     "source": "marketscreener.com NESTLE-S-A-15227721 valuation page",
-     "asOf": "2026-11-13",
-     "note": "CHF. halo showed 86.57 on 2026-11-12."
+     "value": 88.27,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 87.54,
@@ -3245,10 +3245,10 @@
      "note": ""
     },
     "beta5y": {
-     "value": 0.5,
+     "value": 0.477,
      "period": "5y",
-     "source": "stockanalysis.com",
-     "asOf": "2026-10-23",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "twelvedata 0.48."
     },
     "sectorMetrics": {
@@ -3337,16 +3337,16 @@
      "source": "unavailable"
     },
     "consensus": {
-     "rating": "",
-     "analysts": null,
-     "buy": null,
-     "hold": null,
-     "sell": null,
-     "targetAvg": null,
-     "targetHigh": null,
-     "targetLow": null,
-     "source": "unavailable",
-     "asOf": ""
+     "rating": "buy (11 buy, 10 hold, 1 sell)",
+     "analysts": 22,
+     "buy": 11,
+     "hold": 10,
+     "sell": 1,
+     "targetAvg": 89.04,
+     "targetHigh": 100,
+     "targetLow": 72,
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": 3.827,
@@ -3436,11 +3436,11 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 134.22,
-     "period": "close 2026-11-12",
-     "source": "halo-technologies.com/markets/shares/swx/novn; valueray.com/symbol/SW/NOVN",
-     "asOf": "2026-11-12",
-     "note": "CHF. Both pages agree on 134.22."
+     "value": 136.02,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 135.22,
@@ -3583,10 +3583,10 @@
      "note": "Provider figure."
     },
     "beta5y": {
-     "value": 0.45,
+     "value": 0.453,
      "period": "5y",
-     "source": "twelvedata.com NOVN statistics",
-     "asOf": "2026-11-13",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "Conflict: valueray shows TTM beta -0.218 (short window). twelvedata page appears partly stale."
     },
     "sectorMetrics": {
@@ -3648,16 +3648,16 @@
      "source": "unavailable"
     },
     "consensus": {
-     "rating": "Neutral/Hold",
+     "rating": "hold (8 buy, 11 hold, 4 sell)",
      "analysts": 22,
      "buy": 8,
-     "hold": 13,
-     "sell": 2,
-     "targetAvg": 124.14,
-     "targetHigh": 149.31,
-     "targetLow": 100.12,
-     "source": "de.investing.com/equities/novartis-consensus-estimates",
-     "asOf": "about 2026-10-06 (pre-Q3; price now above this average)"
+     "hold": 11,
+     "sell": 4,
+     "targetAvg": 129.24,
+     "targetHigh": 154.44301,
+     "targetLow": 102.431915,
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -3746,11 +3746,11 @@
    "retrievedAt": "2026-11-13T09:00:00+01:00",
    "facts": {
     "price": {
-     "value": 272.7,
-     "period": "close, run 2026-11-12",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-     "asOf": "2026-11-12",
-     "note": "DKK. Stockanalysis showed 260.15 on 2026-10-23."
+     "value": 285.95,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": null,
@@ -3895,8 +3895,8 @@
     "beta5y": {
      "value": 0.368,
      "period": "5y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "Provider figure (stockanalysis 0.38)."
     },
     "sectorMetrics": {
@@ -4010,7 +4010,7 @@
      "source": "unavailable"
     },
     "consensus": {
-     "rating": "hold",
+     "rating": "hold (5 buy, 15 hold, 6 sell)",
      "analysts": 24,
      "buy": 5,
      "hold": 15,
@@ -4018,8 +4018,8 @@
      "targetAvg": 299.91,
      "targetHigh": 448,
      "targetLow": 221,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -4113,11 +4113,11 @@
    "retrievedAt": "2026-11-13T09:00:00+01:00",
    "facts": {
     "price": {
-     "value": 104.6,
+     "value": 106.7,
      "period": "close",
-     "source": "fact check quote",
-     "asOf": "2026-11-12",
-     "note": "Refreshed; prior value was the 11 Nov close (was 104.9; fact check config/garp/checks/2026-11-13.md)"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 131.2,
@@ -4262,8 +4262,8 @@
     "beta5y": {
      "value": 0.198,
      "period": "5y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "Provider figure (0.20)."
     },
     "sectorMetrics": {
@@ -4371,7 +4371,7 @@
      "source": "unavailable"
     },
     "consensus": {
-     "rating": "hold",
+     "rating": "hold (1 buy, 6 hold, 1 sell)",
      "analysts": 8,
      "buy": 1,
      "hold": 6,
@@ -4379,8 +4379,8 @@
      "targetAvg": 110.25,
      "targetHigh": 140,
      "targetLow": 89,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -4472,11 +4472,11 @@
    "businessSummary": "Global information-based analytics and decision tools: Risk (LexisNexis Risk Solutions), Scientific, Technical & Medical (Elsevier), Legal (LexisNexis Legal & Professional) and Exhibitions (RX). All price and per-share figures in pence (GBp); monetary amounts in GBP millions.",
    "facts": {
     "price": {
-     "value": 3072,
+     "value": 3085,
      "period": "close",
-     "source": "AJ Bell quote",
-     "asOf": "2026-11-12",
-     "note": "Refreshed by fact check; pence (was 3019; fact check config/garp/checks/2026-11-13.md)"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 3448.5,
@@ -4621,8 +4621,8 @@
     "beta5y": {
      "value": 0.27,
      "period": "5Y monthly",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "stockanalysis 0.28; fool.com shows ~0."
     },
     "sectorMetrics": {
@@ -4661,16 +4661,16 @@
      "source": "unavailable"
     },
     "consensus": {
-     "rating": "buy",
+     "rating": "buy (14 buy, 2 hold, 1 sell)",
      "analysts": 17,
      "buy": 14,
      "hold": 2,
      "sell": 1,
-     "targetAvg": 3509.1,
+     "targetAvg": 3509.12,
      "targetHigh": 5070,
      "targetLow": 2200,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long) (targets in pence; buy = 2 strong buy + 12 buy; sell = 1 strong sell)",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -5061,11 +5061,11 @@
    "retrievedAt": "2026-11-13T12:00:00+01:00",
    "facts": {
     "price": {
-     "value": 86.61,
-     "period": "close 2026-11-11/12",
-     "source": "stock-agent /decisions 2026-11-12 23:05; twelvedata.com SAN statistics (update 11 Nov 17:30 CET)",
-     "asOf": "2026-11-12",
-     "note": "EUR."
+     "value": 88.51,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 90.79,
@@ -5208,10 +5208,10 @@
      "note": "stock-agent returnOnAssets 5.46% only"
     },
     "beta5y": {
-     "value": 0.26,
+     "value": 0.256,
      "period": "5y",
-     "source": "stock-agent /decisions (0.256); twelvedata 0.26",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": ""
     },
     "sectorMetrics": {
@@ -5264,16 +5264,16 @@
      "source": "unavailable"
     },
     "consensus": {
-     "rating": "buy",
+     "rating": "buy (12 buy, 12 hold, 0 sell)",
      "analysts": 23,
      "buy": 12,
      "hold": 12,
      "sell": 0,
-     "targetAvg": 95.7,
+     "targetAvg": 96.36,
      "targetHigh": 110,
-     "targetLow": 78,
-     "source": "stock-agent /decisions 2026-11-12 23:05",
-     "asOf": "2026-11-12",
+     "targetLow": 79,
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "3 strong buy + 9 buy, 12 hold, 0 sell (sums to 24 vs 23 stated)."
     },
     "forwardEstimates": {
@@ -5361,11 +5361,11 @@
    "businessSummary": "Enterprise resource planning and business applications (S/4HANA Cloud, Business Technology Platform, SuccessFactors, Ariba, Concur). Cloud now the large majority of revenue; 113,076 FTE at 2026-09-30.",
    "facts": {
     "price": {
-     "value": 210.95,
+     "value": 214.35,
      "period": "close",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18",
-     "asOf": "2026-11-12",
-     "note": "Sources conflicted (212.55 twelvedata, 209.4 HL undated); agent's own feed used (was 212.55; fact check config/garp/checks/2026-11-13.md)"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 219.65,
@@ -5508,10 +5508,10 @@
      "note": "Provider (ADR page)."
     },
     "beta5y": {
-     "value": 0.7,
+     "value": 0.702,
      "period": "5Y",
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-     "asOf": "2026-11-12",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": "twelvedata 0.70; stockanalysis 0.76."
     },
     "sectorMetrics": {
@@ -5541,16 +5541,16 @@
      "source": "unavailable"
     },
     "consensus": {
-     "rating": "buy",
+     "rating": "buy (24 buy, 5 hold, 0 sell)",
      "analysts": 27,
      "buy": 24,
      "hold": 5,
      "sell": 0,
-     "targetAvg": 243.36,
+     "targetAvg": 243.54,
      "targetHigh": 290,
      "targetLow": 198.84,
-     "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long) (buy = 6 strong buy + 18 buy; counts sum to 29 vs 27 analysts, provider inconsistency)",
-     "asOf": "2026-11-12"
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,
@@ -6285,11 +6285,11 @@
    "businessSummary": "North America's largest collector and landfill operator of solid waste, plus recycling, renewable gas and (since the Nov 2024 Stericycle acquisition) medical and secure-information waste services.",
    "facts": {
     "price": {
-     "value": 236.26,
-     "period": "close 2026-11-06",
-     "source": "https://stockanalysis.com/stocks/wm/",
-     "asOf": "2026-11-06",
-     "note": "USD. Not refreshed to 2026-11-12: WM not found in the visible part of the stock-agent /decisions page; a later-dated quote was not retrievable."
+     "value": 243.83,
+     "period": "close",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
+     "note": ""
     },
     "high52w": {
      "value": 248.13,
@@ -6432,10 +6432,10 @@
      "note": "unavailable"
     },
     "beta5y": {
-     "value": 0.39,
+     "value": 0.386,
      "period": "5Y",
-     "source": "https://stockanalysis.com/stocks/wm/",
-     "asOf": "2026-11-06",
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16",
      "note": ""
     },
     "sectorMetrics": {
@@ -6474,16 +6474,16 @@
      "source": "unavailable"
     },
     "consensus": {
-     "rating": "buy",
-     "analysts": 28,
-     "buy": null,
-     "hold": null,
-     "sell": null,
+     "rating": "buy (19 buy, 9 hold, 0 sell)",
+     "analysts": 25,
+     "buy": 19,
+     "hold": 9,
+     "sell": 0,
      "targetAvg": 255.6,
-     "targetHigh": null,
-     "targetLow": null,
-     "source": "https://stockanalysis.com/stocks/wm/",
-     "asOf": "2026-11-06"
+     "targetHigh": 283,
+     "targetLow": 220,
+     "source": "stock-agent /decisions 2026-11-16 14:11:16",
+     "asOf": "2026-11-16"
     },
     "forwardEstimates": {
      "epsNextFY": null,

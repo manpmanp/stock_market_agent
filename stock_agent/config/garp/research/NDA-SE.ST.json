@@ -8,11 +8,11 @@
   "retrievedAt": "2026-11-13T09:00:00+01:00",
   "facts": {
     "price": {
-      "value": 187.45,
-      "period": "close, run 2026-11-12",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (https://stock-agent.manp-dev.workers.dev/decisions?horizon=long)",
-      "asOf": "2026-11-12",
-      "note": "SEK, Stockholm line. Company reports in EUR."
+      "value": 190.75,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": null,
@@ -157,8 +157,8 @@
     "beta5y": {
       "value": 0.717,
       "period": "5y",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "Provider figure."
     },
     "sectorMetrics": {
@@ -292,16 +292,16 @@
       "source": "unavailable"
     },
     "consensus": {
-      "rating": "buy",
+      "rating": "buy (6 buy, 3 hold, 1 sell)",
       "analysts": 10,
       "buy": 6,
       "hold": 3,
       "sell": 1,
-      "targetAvg": 202.8,
-      "targetHigh": 233.25,
-      "targetLow": 157.03,
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12"
+      "targetAvg": 203.33,
+      "targetHigh": 233.96906,
+      "targetLow": 157.5101,
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,

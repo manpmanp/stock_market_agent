@@ -8,11 +8,11 @@
   "businessSummary": "North America's largest collector and landfill operator of solid waste, plus recycling, renewable gas and (since the Nov 2024 Stericycle acquisition) medical and secure-information waste services.",
   "facts": {
     "price": {
-      "value": 236.26,
-      "period": "close 2026-11-06",
-      "source": "https://stockanalysis.com/stocks/wm/",
-      "asOf": "2026-11-06",
-      "note": "USD. Not refreshed to 2026-11-12: WM not found in the visible part of the stock-agent /decisions page; a later-dated quote was not retrievable."
+      "value": 243.83,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": 248.13,
@@ -155,10 +155,10 @@
       "note": "unavailable"
     },
     "beta5y": {
-      "value": 0.39,
+      "value": 0.386,
       "period": "5Y",
-      "source": "https://stockanalysis.com/stocks/wm/",
-      "asOf": "2026-11-06",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": ""
     },
     "sectorMetrics": {
@@ -197,16 +197,16 @@
       "source": "unavailable"
     },
     "consensus": {
-      "rating": "buy",
-      "analysts": 28,
-      "buy": null,
-      "hold": null,
-      "sell": null,
+      "rating": "buy (19 buy, 9 hold, 0 sell)",
+      "analysts": 25,
+      "buy": 19,
+      "hold": 9,
+      "sell": 0,
       "targetAvg": 255.6,
-      "targetHigh": null,
-      "targetLow": null,
-      "source": "https://stockanalysis.com/stocks/wm/",
-      "asOf": "2026-11-06"
+      "targetHigh": 283,
+      "targetLow": 220,
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,

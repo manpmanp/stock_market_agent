@@ -8,11 +8,11 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 268.2,
+      "value": 267.6,
       "period": "close",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (currentPrice)",
-      "asOf": "2026-11-12",
-      "note": "Agent price. stockanalysis showed 255.80 on 2026-10-01."
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": null,
@@ -157,8 +157,8 @@
     "beta5y": {
       "value": 1.179,
       "period": "5y",
-      "source": "stock-agent /decisions 2026-11-12 23:05:18",
-      "asOf": "2026-11-12",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": ""
     },
     "sectorMetrics": {
@@ -275,16 +275,16 @@
       "source": "not found in accessible sources"
     },
     "consensus": {
-      "rating": "buy",
+      "rating": "buy (4 buy, 3 hold, 0 sell)",
       "analysts": 8,
       "buy": 4,
       "hold": 3,
       "sell": 0,
-      "targetAvg": 285.75,
+      "targetAvg": 285.88,
       "targetHigh": 322,
       "targetLow": 260,
-      "source": "stock-agent /decisions 2026-11-12 23:05:18 (MarketScreener 2026-10: 7 analysts, avg 282.62, outperform)",
-      "asOf": "2026-11-12"
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,

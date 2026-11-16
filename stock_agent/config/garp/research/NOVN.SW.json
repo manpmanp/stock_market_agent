@@ -9,11 +9,11 @@
   "retrievedAt": "2026-11-13T12:00:00+01:00",
   "facts": {
     "price": {
-      "value": 134.22,
-      "period": "close 2026-11-12",
-      "source": "halo-technologies.com/markets/shares/swx/novn; valueray.com/symbol/SW/NOVN",
-      "asOf": "2026-11-12",
-      "note": "CHF. Both pages agree on 134.22."
+      "value": 136.02,
+      "period": "close",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
+      "note": ""
     },
     "high52w": {
       "value": 135.22,
@@ -156,10 +156,10 @@
       "note": "Provider figure."
     },
     "beta5y": {
-      "value": 0.45,
+      "value": 0.453,
       "period": "5y",
-      "source": "twelvedata.com NOVN statistics",
-      "asOf": "2026-11-13",
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16",
       "note": "Conflict: valueray shows TTM beta -0.218 (short window). twelvedata page appears partly stale."
     },
     "sectorMetrics": {
@@ -221,16 +221,16 @@
       "source": "unavailable"
     },
     "consensus": {
-      "rating": "Neutral/Hold",
+      "rating": "hold (8 buy, 11 hold, 4 sell)",
       "analysts": 22,
       "buy": 8,
-      "hold": 13,
-      "sell": 2,
-      "targetAvg": 124.14,
-      "targetHigh": 149.31,
-      "targetLow": 100.12,
-      "source": "de.investing.com/equities/novartis-consensus-estimates",
-      "asOf": "about 2026-10-06 (pre-Q3; price now above this average)"
+      "hold": 11,
+      "sell": 4,
+      "targetAvg": 129.24,
+      "targetHigh": 154.44301,
+      "targetLow": 102.431915,
+      "source": "stock-agent /decisions 2026-11-16 14:11:16",
+      "asOf": "2026-11-16"
     },
     "forwardEstimates": {
       "epsNextFY": null,
