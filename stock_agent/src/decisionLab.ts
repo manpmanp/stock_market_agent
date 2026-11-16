@@ -587,7 +587,7 @@ export function renderDecisionLab(): string {
   </section>
 
   <section class="garp-panel reference-flyout" id="garp-flyout">
-    <div class="garp-head"><h2>GARP checker</h2><span class="sub" id="garp-meta">Defensive growth-at-a-reasonable-price research (src/garp). Independent of the decision engine: its own verified data, valuations and report, loaded on first open from GET /garp.json.</span></div>
+    <div class="garp-head"><h2>GARP checker</h2><div class="sub" id="garp-meta">Defensive growth-at-a-reasonable-price (src/garp) -- loading latest run&hellip;<br>Independent of the decision engine: its own verified data, valuations and report, loaded on first open from GET /garp.json.</div></div>
     <iframe id="garp-frame" title="GARP research report" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
   </section>
 
@@ -2050,6 +2050,14 @@ export function renderDecisionLab(): string {
       return r.json();
     }).then(function (d) {
       garpFrame.srcdoc = d.html;
+      var garpLiveCount = Object.keys(d.livePrices || {}).length;
+      var garpPriceLine = garpLiveCount
+        ? "Live prices from the agent's daily data for " + garpLiveCount + " of " + d.researched + " stocks. Fair values unchanged since the run."
+        : "Prices as researched at the run.";
+      document.getElementById("garp-meta").innerHTML =
+        "Defensive growth-at-a-reasonable-price (src/garp): top " + d.topN.nordic + " Nordic and top " + d.topN.global + " global<br>" +
+        "Latest run " + d.runAt + " &middot; " + garpPriceLine + " &middot; Unmarked figures are verified facts; E independent estimate; A analyst opinion &middot; Not investment advice.<br>" +
+        "Independent of the decision engine: its own verified data, valuations and report, loaded on first open from GET /garp.json.";
     }).catch(function (err) {
       garpLoaded = false;
       garpFrame.srcdoc = "<p style='font:13px Arial;color:#eb6834;padding:16px'>Could not load GARP report: " + String(err.message || err) + "</p>";
