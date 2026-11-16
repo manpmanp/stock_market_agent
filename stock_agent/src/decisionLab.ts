@@ -376,6 +376,15 @@ export function renderDecisionLab(): string {
   .demo-flyout.open { opacity: 1; pointer-events: auto; }
   .reference-flyout { position: fixed; top: 20px; left: 238px; z-index: 39; width: 760px; max-width: calc(100vw - 260px); max-height: calc(100vh - 40px); overflow-y: auto; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px 26px 26px; box-shadow: 0 10px 30px rgba(11,11,11,0.18); opacity: 0; pointer-events: none; transform: translateX(-16px); transition: opacity 0.2s ease, transform 0.2s ease; }
   .reference-flyout.open { opacity: 1; pointer-events: auto; transform: translateX(0); }
+  #garp-flyout { width: 1200px; padding: 12px; }
+  .own-key { margin: 6px 0 12px; padding: 10px 12px; border: 1px solid var(--border, #e1e0d9); border-radius: 8px; }
+  .own-key-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 6px; }
+  .own-key-row input[type=password] { flex: 1 1 260px; font: 13px "Courier New", monospace; padding: 6px 8px; border: 1px solid var(--border, #e1e0d9); border-radius: 6px; }
+  .own-key-remember { font-size: 12.5px; white-space: nowrap; }
+  .own-key-forget { font-size: 12.5px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border, #e1e0d9); background: transparent; cursor: pointer; }
+  #garp-flyout .garp-head { display: flex; align-items: baseline; gap: 12px; margin: 0 6px 8px; }
+  #garp-flyout .garp-head h2 { margin: 0; }
+  #garp-frame { width: 100%; height: calc(100vh - 110px); border: 0; border-radius: 8px; background: var(--surface-1); }
   .ref-tab[aria-expanded="true"] { color: var(--text-primary); font-weight: 700; border-left-width: 8px; background-color: color-mix(in srgb, var(--tab-accent) 16%, var(--surface-1)); }
   .demo-card { background: var(--page); border: 1px solid var(--border); border-radius: 10px; padding: 10px; width: 210px; flex: 0 0 210px; transform: translateX(-36px); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; }
   .demo-flyout.open .demo-card { transform: translateX(0); opacity: 1; }
@@ -397,6 +406,7 @@ export function renderDecisionLab(): string {
     .demo-flyout.open { display: flex; }
     .reference-flyout { position: static; width: 100%; max-width: 100%; transform: none; opacity: 1; pointer-events: auto; max-height: none; margin: 0 0 18px; display: none; }
     .reference-flyout.open { display: block; }
+    #garp-frame { height: 80vh; }
   }
   .method-body ul { margin: 0 0 8px; padding-left: 18px; }
   .method-body li { margin-bottom: 4px; }
@@ -485,6 +495,7 @@ export function renderDecisionLab(): string {
     <button class="ref-tab weight-tab" id="weight-tab" type="button" aria-expanded="false" aria-controls="weight-flyout" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
     <button class="ref-tab admin-tab" id="admin-tab" type="button" aria-expanded="false" aria-controls="admin-flyout" style="--tab-accent:var(--text-primary)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.8 1.3 2.6 9.1h3.4L5.2 14.7l6.2-7.8H8z" fill="currentColor" stroke="none"></path></svg><span>Run &amp; Update</span></button>
     <button class="ref-tab advisor-tab" id="advisor-tab" type="button" aria-expanded="false" aria-controls="advisor-flyout" style="--tab-accent:var(--seq-400)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5 9.6 5.9 14 7.5 9.6 9.1 8 13.5 6.4 9.1 2 7.5 6.4 5.9z"></path><circle cx="12.5" cy="2.8" r="1" fill="currentColor" stroke="none"></circle></svg><span>Market Advisor</span></button>
+    <button class="ref-tab garp-tab" id="garp-tab" type="button" aria-expanded="false" aria-controls="garp-flyout" style="--tab-accent:var(--status-good)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.6 13.6 4v4.1c0 3.1-2.3 5.6-5.6 6.3-3.3-.7-5.6-3.2-5.6-6.3V4z"></path><path d="M5.4 8.2l1.8 1.8 3.4-3.6"></path></svg><span>GARP Checker</span></button>
   </div>
 
   <div class="demo-flyout" id="demo-flyout">
@@ -550,12 +561,26 @@ export function renderDecisionLab(): string {
 
   <section class="advisor-panel reference-flyout" id="advisor-flyout">
     <h2>Market advisor</h2>
-    <p class="sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data -- D1 &rarr; Anthropic API (POST /market-analysis). Billed separately against your Anthropic Console spend limit, not Cloudflare. Uses the same admin token saved under Run &amp; Update.</p>
+    <p class="sub">On-demand LLM synthesis across tracked tickers, grounded in real decision-engine data -- D1 &rarr; Anthropic API (POST /market-analysis). Billed separately against an Anthropic Console account, not Cloudflare. The owner runs it with the admin token saved under Run &amp; Update; anyone else can run it with their own Anthropic API key below.</p>
+    <form class="own-key" id="own-key-form" autocomplete="off">
+      <label for="own-key-input"><b>Use your own Anthropic API key</b> <span class="sub">(optional; from console.anthropic.com, starts with sk-ant-)</span></label>
+      <div class="own-key-row">
+        <input type="password" id="own-key-input" placeholder="sk-ant-..." autocomplete="off" spellcheck="false">
+        <label class="own-key-remember"><input type="checkbox" id="own-key-remember"> Remember on this device</label>
+        <button type="button" class="own-key-forget" id="own-key-forget">Forget</button>
+      </div>
+      <p class="sub" id="own-key-status">When filled in, "Run market analysis" uses this key: your Anthropic account is billed, not the dashboard owner's. The key is sent only with that one request, used once by the server and never stored there. "Remember" keeps it in this browser only. It cannot unlock any other action.</p>
+    </form>
     <div class="admin-item">
       <button class="admin-btn" id="btn-market-analysis" data-path="/market-analysis" data-label="On-call AI agent advisor" data-stream="1">Run market analysis<span class="admin-btn-stop-hint">(click to stop)</span></button>
       <div class="admin-item-status" id="status-btn-market-analysis"></div>
       <div class="admin-item-result" id="result-btn-market-analysis" hidden></div>
     </div>
+  </section>
+
+  <section class="garp-panel reference-flyout" id="garp-flyout">
+    <div class="garp-head"><h2>GARP checker</h2><span class="sub" id="garp-meta">Defensive growth-at-a-reasonable-price research (src/garp). Independent of the decision engine: its own verified data, valuations and report, loaded on first open from GET /garp.json.</span></div>
+    <iframe id="garp-frame" title="GARP research report" sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox" loading="lazy"></iframe>
   </section>
 
   <section class="weights-panel reference-flyout" id="weight-flyout">
@@ -1875,6 +1900,39 @@ export function renderDecisionLab(): string {
     setStatus("Reset to last saved weights.", true);
   });
 
+  // Bring-your-own-key for the market advisor (see src/analyst/visitorKey.ts).
+  // The key lives in this input (and, only if "Remember" is ticked, in this
+  // browser's localStorage); it is sent as x-anthropic-key with the one
+  // /market-analysis request and never stored server-side.
+  var OWN_KEY_STORE = "advisorOwnAnthropicKey";
+  var ownKeyInput = document.getElementById("own-key-input");
+  var ownKeyRemember = document.getElementById("own-key-remember");
+  try {
+    var savedOwnKey = window.localStorage.getItem(OWN_KEY_STORE);
+    if (savedOwnKey && ownKeyInput) { ownKeyInput.value = savedOwnKey; ownKeyRemember.checked = true; }
+  } catch (e) { /* storage unavailable: key stays in memory only */ }
+  function persistOwnKey() {
+    try {
+      var v = ownKeyInput ? ownKeyInput.value.trim() : "";
+      if (ownKeyRemember && ownKeyRemember.checked && v) window.localStorage.setItem(OWN_KEY_STORE, v);
+      else window.localStorage.removeItem(OWN_KEY_STORE);
+    } catch (e) { /* ignore */ }
+  }
+  if (ownKeyInput) ownKeyInput.addEventListener("change", persistOwnKey);
+  if (ownKeyRemember) ownKeyRemember.addEventListener("change", persistOwnKey);
+  var ownKeyForget = document.getElementById("own-key-forget");
+  if (ownKeyForget) ownKeyForget.addEventListener("click", function () {
+    if (ownKeyInput) ownKeyInput.value = "";
+    if (ownKeyRemember) ownKeyRemember.checked = false;
+    persistOwnKey();
+  });
+  var ownKeyForm = document.getElementById("own-key-form");
+  if (ownKeyForm) ownKeyForm.addEventListener("submit", function (ev) { ev.preventDefault(); });
+  function getOwnKey() {
+    var v = ownKeyInput ? ownKeyInput.value.trim() : "";
+    return /^sk-ant-/.test(v) ? v : "";
+  }
+
   function getAdminToken() {
     var input = document.getElementById("admin-token-input");
     var v = input ? input.value.trim() : "";
@@ -1942,6 +2000,10 @@ export function renderDecisionLab(): string {
   var adminFlyout = document.getElementById("admin-flyout");
   var advisorTab = document.getElementById("advisor-tab");
   var advisorFlyout = document.getElementById("advisor-flyout");
+  var garpTab = document.getElementById("garp-tab");
+  var garpFlyout = document.getElementById("garp-flyout");
+  var garpFrame = document.getElementById("garp-frame");
+  var garpLoaded = false;
   var methodTabs = document.querySelectorAll("#method-tabs .tab");
   var methodSections = document.querySelectorAll(".method-section");
 
@@ -1997,6 +2059,7 @@ export function renderDecisionLab(): string {
     if (keep !== "weight") closeWeightFlyout();
     if (keep !== "admin") closeAdminFlyout();
     if (keep !== "advisor") closeAdvisorFlyout();
+    if (keep !== "garp") closeGarpFlyout();
   }
 
   demoTab.addEventListener("click", function (ev) {
@@ -2031,6 +2094,15 @@ export function renderDecisionLab(): string {
     advisorTab.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
+  garpTab.addEventListener("click", function (ev) {
+    ev.stopPropagation();
+    var open = !garpFlyout.classList.contains("open");
+    closeAllFlyoutsExcept(null);
+    garpFlyout.classList.toggle("open", open);
+    garpTab.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open) loadGarp();
+  });
+
   methodTabs.forEach(function (tab) {
     tab.addEventListener("click", function (ev) {
       ev.stopPropagation(); // keep this click from also tripping the outside-click closer below
@@ -2059,7 +2131,8 @@ export function renderDecisionLab(): string {
     var insideWeightFlyout = t.closest && t.closest("#weight-flyout");
     var insideAdminFlyout = t.closest && t.closest("#admin-flyout");
     var insideAdvisorFlyout = t.closest && t.closest("#advisor-flyout");
-    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout || insideAdminFlyout || insideAdvisorFlyout) return;
+    var insideGarpFlyout = t.closest && t.closest("#garp-flyout");
+    if (insideSidebar || insideDemoFlyout || insideReferenceFlyout || insideWeightFlyout || insideAdminFlyout || insideAdvisorFlyout || insideGarpFlyout) return;
     closeAllFlyoutsExcept(null);
   });
 
@@ -2156,7 +2229,7 @@ export function renderDecisionLab(): string {
   // the fetch instead of starting a new one -- see "Stop behavior" (the
   // Worker's own execution ends when the connection closes; this does not
   // roll back any individual D1/R2 write already issued before that).
-  function runStreamingAdminAction(btn, path, token) {
+  function runStreamingAdminAction(btn, path, token, ownKey) {
     var controller = new AbortController();
     adminRunning[btn.id] = controller;
     setRunning(btn, true);
@@ -2165,7 +2238,8 @@ export function renderDecisionLab(): string {
       var prevResult = document.getElementById("result-btn-market-analysis");
       if (prevResult) prevResult.hidden = true;
     }
-    fetch(path, { method: "POST", headers: { authorization: "Bearer " + token }, signal: controller.signal })
+    var headers = ownKey ? { "x-anthropic-key": ownKey } : { authorization: "Bearer " + token };
+    fetch(path, { method: "POST", headers: headers, signal: controller.signal })
       .then(function (r) {
         if (!r.ok || !r.body) {
           return r.json().catch(function () { return {}; }).then(function (data) {
@@ -2258,6 +2332,10 @@ export function renderDecisionLab(): string {
       var streams = btn.getAttribute("data-stream") === "1";
       if (streams && adminRunning[btn.id]) {
         adminRunning[btn.id].abort();
+        return;
+      }
+      if (path === "/market-analysis" && getOwnKey()) {
+        runStreamingAdminAction(btn, path, null, getOwnKey());
         return;
       }
       var token = getAdminToken();
