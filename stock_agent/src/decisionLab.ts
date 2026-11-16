@@ -526,7 +526,7 @@ export function renderDecisionLab(): string {
 
   <section class="admin-panel reference-flyout" id="admin-flyout">
     <h2>Run &amp; update</h2>
-    <p class="sub">Manual triggers -- everything here also runs on its own schedule automatically; use these to run something early or check on demand. All require the admin token (<code>wrangler secret put ADMIN_TOKEN</code>). Click a running task again to stop it.</p>
+    <p class="sub">Manual triggers -- everything here also runs on its own schedule automatically (cadence noted under each one); use these to retry a failed run or get an update sooner than the next automatic one. All require the admin token (<code>wrangler secret put ADMIN_TOKEN</code>). Click a running task again to stop it.</p>
     <form class="admin-token-form" id="admin-token-form" autocomplete="on">
       <input type="text" id="admin-token-user" name="username" autocomplete="username" value="stock-agent-admin" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none" tabindex="-1" aria-hidden="true" />
       <input type="password" id="admin-token-input" name="password" autocomplete="current-password" placeholder="Admin token (saved for every action below)" />
@@ -536,32 +536,32 @@ export function renderDecisionLab(): string {
     <div class="admin-grid">
       <div class="admin-item">
         <button class="admin-btn" id="btn-ingest" data-path="/ingest" data-label="Update prices &amp; tickers" data-stream="1">Update prices &amp; tickers<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-fetch price/fundamentals data for the tracked universe -- Yahoo Finance &rarr; D1 (POST /ingest)</span></button>
-        <p class="admin-item-cadence"><b>Automatic:</b> prices every hour; fundamentals/valuation once a day (06:00 UTC). Run manually if a scheduled run failed, or to refresh fundamentals sooner than the next daily run.</p>
+        <p class="admin-item-cadence"><b>Automatic:</b> prices every hour; fundamentals/valuation once a day (06:00 UTC).</p>
         <div class="admin-item-status" id="status-btn-ingest"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-ingest-benchmarks" data-path="/ingest-benchmarks" data-label="Update benchmarks" data-stream="1">Update benchmarks<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-fetch the index/benchmark data used for regime &amp; the benchmark filter -- Yahoo Finance &rarr; D1 (POST /ingest-benchmarks)</span></button>
-        <p class="admin-item-cadence"><b>Automatic:</b> once a day (06:00 UTC) only. Run manually if a scheduled run failed, or the benchmark filter/market regime looks stale before the next daily run.</p>
+        <p class="admin-item-cadence"><b>Automatic:</b> once a day (06:00 UTC) only.</p>
         <div class="admin-item-status" id="status-btn-ingest-benchmarks"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-screen" data-path="/screen-broad-universe" data-label="Screen broad universe" data-stream="1">Screen broad universe<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-run the Stage A valuation/momentum screen and auto-promote new tickers -- Yahoo Finance &rarr; D1 (POST /screen-broad-universe)</span></button>
-        <p class="admin-item-cadence"><b>Automatic:</b> once a day (06:00 UTC), right before ingestion. Run manually to promote a new ticker today instead of waiting for tomorrow's run.</p>
+        <p class="admin-item-cadence"><b>Automatic:</b> once a day (06:00 UTC), right before ingestion. Promotes a new ticker today, rather than tomorrow, if run manually.</p>
         <div class="admin-item-status" id="status-btn-screen"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-score" data-path="/score" data-label="Rescore v1 baseline" data-stream="1">Rescore v1 baseline<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-run the frozen v1 fixed-weight scoring against current data -- D1 only, no external fetch (POST /score)</span></button>
-        <p class="admin-item-cadence"><b>Automatic:</b> every hour, same schedule as prices. Run manually only to force an immediate rescore, e.g. right after a deploy.</p>
+        <p class="admin-item-cadence"><b>Automatic:</b> every hour, same schedule as prices.</p>
         <div class="admin-item-status" id="status-btn-score"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-decide" data-path="/decide" data-label="Recompute decisions" data-stream="1">Recompute decisions<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-run the 10-factor decision engine against current data -- D1, plus one market-regime fetch (POST /decide)</span></button>
-        <p class="admin-item-cadence"><b>Automatic:</b> every hour. Run manually for an immediate recompute right after changing weights in Weight Tuning, instead of waiting up to an hour.</p>
+        <p class="admin-item-cadence"><b>Automatic:</b> every hour. Worth running manually right after changing weights in Weight Tuning.</p>
         <div class="admin-item-status" id="status-btn-decide"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-trigger-backtest" data-path="/trigger-backtest" data-label="Run backtest harness" data-stream="0">Run backtest harness<span class="admin-btn-sub">Starts the backtest.yml GitHub Actions workflow on demand -- runs remotely on GitHub, not here; check the Actions tab for progress (POST /trigger-backtest)</span></button>
-        <p class="admin-item-cadence"><b>Automatic:</b> once a week (Sundays, 08:00 UTC) on GitHub Actions. Run manually to test a scoring/weight change right away instead of waiting for Sunday.</p>
+        <p class="admin-item-cadence"><b>Automatic:</b> once a week (Sundays, 08:00 UTC) on GitHub Actions. Worth running manually to test a scoring/weight change right away.</p>
         <div class="admin-item-status" id="status-btn-trigger-backtest"></div>
       </div>
     </div>
@@ -2050,7 +2050,7 @@ export function renderDecisionLab(): string {
       return r.json();
     }).then(function (d) {
       garpFrame.srcdoc = d.html;
-      document.getElementById("garp-meta").textContent = d.title + " -- run " + d.runAt + ". Top 5 Nordic and top 5 global of " + d.researched + " researched stocks. Independent of the decision engine.";
+      document.getElementById("garp-meta").textContent = d.title + " -- run " + d.runAt + ". Top " + d.topN.nordic + " Nordic and top " + d.topN.global + " global of " + d.researched + " researched stocks. Independent of the decision engine.";
     }).catch(function (err) {
       garpLoaded = false;
       garpFrame.srcdoc = "<p style='font:13px Arial;color:#eb6834;padding:16px'>Could not load GARP report: " + String(err.message || err) + "</p>";
