@@ -14,6 +14,7 @@ import {
 } from "./lib/db.js";
 import { renderDecisionLab } from "./decisionLab.js";
 import { garpPayload } from "./garp/serve.js";
+import { garpGrowthPayload } from "./garp/serveGrowth.js";
 import { readVisitorKey, visitorAllowed } from "./analyst/visitorKey.js";
 import { CHART_RANGES, fetchChartSeries, isChartRange } from "./lib/chart.js";
 import { runDecisions } from "./decision/run.js";
@@ -386,6 +387,13 @@ export default {
       return json(await garpPayload(env.DB));
     }
 
+    if (url.pathname === "/garp-growth.json") {
+      // Growth GARP checker: same engine as /garp.json (src/garp), applied to
+      // a separate growth-stock universe (config/garp-growth). Writes nothing;
+      // shares nothing with scoring/decisions/Defensive GARP.
+      return json(await garpGrowthPayload(env.DB));
+    }
+
     if (url.pathname.startsWith("/assets/")) {
       const key = decodeURIComponent(url.pathname.slice("/assets/".length));
       return serveAsset(env, key);
@@ -410,6 +418,7 @@ export default {
           "POST /market-analysis": "on-demand LLM synthesis across tracked tickers + benchmarks (ADMIN_TOKEN-gated on the owner key, or a visitor's own Anthropic key in the x-anthropic-key header -- used for that call only, never stored; requires ANTHROPIC_API_KEY/ANTHROPIC_MODEL secrets) -- never sizing/orders, every claim grounded against real decision-engine data, see docs/agentic-architecture-proposal.md section 3",
           "POST /trigger-backtest": "manually dispatch the backtest.yml GitHub Actions workflow (ADMIN_TOKEN + GITHUB_TOKEN secrets required) -- does not run the harness itself here, just asks GitHub to start it; see Actions tab for progress",
           "GET /garp.json": "GARP checker (defensive growth-at-a-reasonable-price research, src/garp) -- bundled research, computed valuations and rendered report HTML for the dashboard's GARP Checker flyout; independent of scoring/decisions",
+          "GET /garp-growth.json": "Growth GARP checker -- same engine as /garp.json, applied to a separate growth-stock universe (config/garp-growth); bundled research, computed valuations and rendered report HTML for the dashboard's Growth GARP flyout; independent of scoring/decisions and of the Defensive GARP checker",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
           "GET /decisions?horizon=short|medium|long": "latest decision-engine output (JSON)",
           "GET /weights[?horizon=]": "active (or per-horizon history of) decision-engine weight vectors",
