@@ -192,6 +192,9 @@ export function renderDecisionLab(): string {
   h1 { font-size: 20px; margin: 0 0 4px; }
   .sub { color: var(--text-secondary); font-size: 13px; margin: 0 0 4px; max-width: 640px; }
   .note { color: var(--text-muted); font-size: 12px; margin: 0 0 28px; max-width: 640px; }
+  .note-list { color: var(--text-muted); font-size: 12px; margin: 0 0 14px; padding-left: 18px; max-width: 640px; }
+  .note-list li { margin-bottom: 6px; line-height: 1.5; }
+  .note-list li:last-child { margin-bottom: 0; }
   section { margin-bottom: 36px; }
   h2 { font-size: 15px; margin: 0 0 12px; }
   .tabs { display: flex; gap: 6px; margin-bottom: 16px; }
@@ -519,7 +522,12 @@ export function renderDecisionLab(): string {
       </div>
   </div>
   <p class="sub">A 10-factor decision engine for defensive/growth stocks &mdash; see Factors &amp; Inputs (what's scored) and Model Selection &amp; Testing (how the weighting works, what's experimental) in the sidebar for the full detail. Data-driven research output, not investment advice.</p>
-  <p class="note" style="margin-bottom: 14px;">Each card's <b>Decision</b> badge is the weighted average of all 10 factors. Its <b>Entry</b> and <b>Valuation</b> readings next to it are each just one factor's own score, shown separately on purpose -- they can disagree with the overall Decision, and with each other. A weak entry timing can still sit inside a Buy (the other 9 factors carried it); a good entry can still sit inside an Accumulate (something else pulled the average down). Sort/rank always follows the overall score, not either of these two.</p>
+  <ul class="note-list">
+    <li>Each card's <b>Decision</b> badge is the weighted average of all 10 factors.</li>
+    <li>Its <b>Entry</b> and <b>Valuation</b> readings next to it are each just one factor's own score, shown separately on purpose &mdash; they can disagree with the overall Decision, and with each other.</li>
+    <li>A weak entry timing can still sit inside a <b>Buy</b> (the other 9 factors carried it); a good entry can still sit inside an <b>Accumulate</b> (something else pulled the average down).</li>
+    <li>Sort/rank always follows the overall score, not either of these two.</li>
+  </ul>
 
   <div class="stat-row" id="stats"></div>
   <div class="universe-panel" id="universePanel" hidden></div>
