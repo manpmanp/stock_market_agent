@@ -322,6 +322,8 @@ export function renderDecisionLab(): string {
   .admin-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; font: inherit; font-size: 13px; font-weight: 600; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--page); color: var(--text-primary); cursor: pointer; width: 100%; }
   .admin-btn:hover { background: color-mix(in srgb, var(--text-primary) 5%, var(--page)); }
   .admin-btn-sub { font-size: 11px; font-weight: 400; color: var(--text-secondary); line-height: 1.35; }
+  .admin-item-cadence { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+  .admin-item-cadence b { color: var(--text-secondary); font-weight: 600; }
   .admin-btn.running { background: color-mix(in srgb, var(--seq-400) 14%, var(--page)); border-color: var(--seq-400); }
   .admin-btn.running .admin-btn-stop-hint { display: inline; }
   .admin-btn-stop-hint { display: none; font-weight: 700; color: var(--seq-400); }
@@ -534,26 +536,32 @@ export function renderDecisionLab(): string {
     <div class="admin-grid">
       <div class="admin-item">
         <button class="admin-btn" id="btn-ingest" data-path="/ingest" data-label="Update prices &amp; tickers" data-stream="1">Update prices &amp; tickers<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-fetch price/fundamentals data for the tracked universe -- Yahoo Finance &rarr; D1 (POST /ingest)</span></button>
+        <p class="admin-item-cadence"><b>Automatic:</b> prices every hour; fundamentals/valuation once a day (06:00 UTC). Run manually if a scheduled run failed, or to refresh fundamentals sooner than the next daily run.</p>
         <div class="admin-item-status" id="status-btn-ingest"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-ingest-benchmarks" data-path="/ingest-benchmarks" data-label="Update benchmarks" data-stream="1">Update benchmarks<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-fetch the index/benchmark data used for regime &amp; the benchmark filter -- Yahoo Finance &rarr; D1 (POST /ingest-benchmarks)</span></button>
+        <p class="admin-item-cadence"><b>Automatic:</b> once a day (06:00 UTC) only. Run manually if a scheduled run failed, or the benchmark filter/market regime looks stale before the next daily run.</p>
         <div class="admin-item-status" id="status-btn-ingest-benchmarks"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-screen" data-path="/screen-broad-universe" data-label="Screen broad universe" data-stream="1">Screen broad universe<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-run the Stage A valuation/momentum screen and auto-promote new tickers -- Yahoo Finance &rarr; D1 (POST /screen-broad-universe)</span></button>
+        <p class="admin-item-cadence"><b>Automatic:</b> once a day (06:00 UTC), right before ingestion. Run manually to promote a new ticker today instead of waiting for tomorrow's run.</p>
         <div class="admin-item-status" id="status-btn-screen"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-score" data-path="/score" data-label="Rescore v1 baseline" data-stream="1">Rescore v1 baseline<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-run the frozen v1 fixed-weight scoring against current data -- D1 only, no external fetch (POST /score)</span></button>
+        <p class="admin-item-cadence"><b>Automatic:</b> every hour, same schedule as prices. Run manually only to force an immediate rescore, e.g. right after a deploy.</p>
         <div class="admin-item-status" id="status-btn-score"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-decide" data-path="/decide" data-label="Recompute decisions" data-stream="1">Recompute decisions<span class="admin-btn-stop-hint">(click to stop)</span><span class="admin-btn-sub">Re-run the 10-factor decision engine against current data -- D1, plus one market-regime fetch (POST /decide)</span></button>
+        <p class="admin-item-cadence"><b>Automatic:</b> every hour. Run manually for an immediate recompute right after changing weights in Weight Tuning, instead of waiting up to an hour.</p>
         <div class="admin-item-status" id="status-btn-decide"></div>
       </div>
       <div class="admin-item">
         <button class="admin-btn" id="btn-trigger-backtest" data-path="/trigger-backtest" data-label="Run backtest harness" data-stream="0">Run backtest harness<span class="admin-btn-sub">Starts the backtest.yml GitHub Actions workflow on demand -- runs remotely on GitHub, not here; check the Actions tab for progress (POST /trigger-backtest)</span></button>
+        <p class="admin-item-cadence"><b>Automatic:</b> once a week (Sundays, 08:00 UTC) on GitHub Actions. Run manually to test a scoring/weight change right away instead of waiting for Sunday.</p>
         <div class="admin-item-status" id="status-btn-trigger-backtest"></div>
       </div>
     </div>
