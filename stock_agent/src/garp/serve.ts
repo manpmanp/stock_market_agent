@@ -47,6 +47,6 @@ export async function garpPayload(db?: D1Database) {
     liveError,
     rows,
     conclusion: b.conclusion,
-    html: renderReport(files, all, b.conclusion, b.runAt, b.title, note),
+    html: renderReport(files, all, b.conclusion, b.runAt, b.title, note, false),
   };
 }
