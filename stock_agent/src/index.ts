@@ -381,7 +381,7 @@ export default {
     }
 
     if (url.pathname === "/garp.json") {
-      // GARP checker (src/garp): bundled research data plus the agent's latest
+      // Defensive GARP checker (src/garp): bundled research data plus the agent's latest
       // closes read from D1 (read-only) so buy-zone status stays current.
       // Writes nothing; shares nothing with scoring/decisions.
       return json(await garpPayload(env.DB));
@@ -417,7 +417,7 @@ export default {
           "POST /score": "manually trigger v1 rescoring against current data -- streams NDJSON progress",
           "POST /market-analysis": "on-demand LLM synthesis across tracked tickers + benchmarks (ADMIN_TOKEN-gated on the owner key, or a visitor's own Anthropic key in the x-anthropic-key header -- used for that call only, never stored; requires ANTHROPIC_API_KEY/ANTHROPIC_MODEL secrets) -- never sizing/orders, every claim grounded against real decision-engine data, see docs/agentic-architecture-proposal.md section 3",
           "POST /trigger-backtest": "manually dispatch the backtest.yml GitHub Actions workflow (ADMIN_TOKEN + GITHUB_TOKEN secrets required) -- does not run the harness itself here, just asks GitHub to start it; see Actions tab for progress",
-          "GET /garp.json": "GARP checker (defensive growth-at-a-reasonable-price research, src/garp) -- bundled research, computed valuations and rendered report HTML for the dashboard's GARP Checker flyout; independent of scoring/decisions",
+          "GET /garp.json": "Defensive GARP checker (growth-at-a-reasonable-price research applied to defensive stocks, src/garp) -- bundled research, computed valuations and rendered report HTML for the dashboard's Defensive GARP flyout; independent of scoring/decisions",
           "GET /garp-growth.json": "Growth GARP checker -- same engine as /garp.json, applied to a separate growth-stock universe (config/garp-growth); bundled research, computed valuations and rendered report HTML for the dashboard's Growth GARP flyout; independent of scoring/decisions and of the Defensive GARP checker",
           "GET /backtest-results": "published walk-forward backtest runs (JSON), pushed by scripts/backtest.sh",
           "GET /decisions?horizon=short|medium|long": "latest decision-engine output (JSON)",

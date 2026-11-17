@@ -1,5 +1,5 @@
-// Worker-side entry for the GARP checker: serves GET /garp.json for the
-// dashboard's "GARP Checker" flyout. Reads the bundled config/garp/latest.json
+// Worker-side entry for the Defensive GARP checker: serves GET /garp.json for
+// the dashboard's "Defensive GARP" flyout. Reads the bundled config/garp/latest.json
 // (written by scripts/garp-report.sh) and, when a D1 binding is given, the
 // agent's latest closes READ-ONLY to keep prices and buy-zone status current
 // (src/garp/livePrices.ts). Writes nothing; shares nothing with scoring or
