@@ -1,0 +1,313 @@
+{
+  "ticker": "HEI",
+  "name": "HEICO Corporation",
+  "exchange": "NYSE",
+  "currency": "USD",
+  "sector": "Industrials / Aerospace & Defense",
+  "businessSummary": "Aerospace, defense and electronics products/services via Flight Support Group (jet engine/aircraft replacement parts, insulation, repair services) and Electronic Technologies Group.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 332.65,
+      "period": "close",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": "An earlier forecast-page fetch (2026-10-23) showed $297.36 -- unreconciled ~12% discrepancy; ratios below use the Oct 23 figure and may understate current valuation."
+    },
+    "high52w": {
+      "value": 376.86,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": null
+    },
+    "low52w": {
+      "value": 256.11,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": null
+    },
+    "sharesOutstanding": {
+      "value": 139.76,
+      "period": "latest",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": "millions, common HEI class"
+    },
+    "marketCap": {
+      "value": 46490,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": "Ratios page (Oct 23) cited $41,558M, reflecting the price discrepancy."
+    },
+    "netDebt": {
+      "value": 2300,
+      "period": "current",
+      "source": "derived: EV - market cap",
+      "asOf": "2026-10-23",
+      "note": "Actual net debt (not cash); FY2025 net debt ~$2,694M."
+    },
+    "enterpriseValue": {
+      "value": 43858,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": null
+    },
+    "peTrailing": {
+      "value": 55.44,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": null
+    },
+    "peForward": {
+      "value": 47.9,
+      "period": "NTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": null
+    },
+    "evEbitTrailing": {
+      "value": 34.91,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "FY2025 was 39.77x."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 29.75,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "FY2025 was 33.42x."
+    },
+    "fcfTTM": {
+      "value": 1030,
+      "period": "current ~TTM",
+      "source": "derived: mktcap x FCF yield",
+      "asOf": "2026-10-23",
+      "note": "FY2025 derived ~$863M."
+    },
+    "fcfYield": {
+      "value": 0.0248,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "FY2025 was 2.25% -- low given the multiple."
+    },
+    "dividendPerShare": {
+      "value": 0.26,
+      "period": "FY2025",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": null
+    },
+    "dividendYield": {
+      "value": 0.0008,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": "Negligible."
+    },
+    "payoutRatio": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "~4-5% of EPS implied, not independently verified."
+    },
+    "netDebtToEbitda": {
+      "value": 1.56,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "FY2025=1.70x -- highest leverage of the names reviewed."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.1306,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "FY2025=13.04%."
+    },
+    "roe": {
+      "value": 0.1773,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "FY2025=16.73%."
+    },
+    "beta5y": {
+      "value": 1.09,
+      "period": "",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-06",
+      "note": null
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 1866,
+        "ebit": 394.15,
+        "ebitMargin": 0.2113,
+        "eps": 2.21,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 2208,
+        "ebit": 489.21,
+        "ebitMargin": 0.2215,
+        "eps": 2.55,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 2968,
+        "ebit": 637.2,
+        "ebitMargin": 0.2147,
+        "eps": 2.91,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 3858,
+        "ebit": 822.07,
+        "ebitMargin": 0.2131,
+        "eps": 3.67,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 4485,
+        "ebit": 1032,
+        "ebitMargin": 0.2301,
+        "eps": 4.9,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "TTM (Jul 2026)",
+        "revenue": 5177,
+        "ebit": 1256,
+        "ebitMargin": 0.2427,
+        "eps": 6.0,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Buy",
+      "analysts": 24,
+      "buy": 14,
+      "hold": 10,
+      "sell": 0,
+      "targetAvg": 390.7,
+      "targetHigh": 491,
+      "targetLow": 294,
+      "source": "stockanalysis.com/forecast/",
+      "asOf": "2026-10-23"
+    },
+    "forwardEstimates": {
+      "epsNextFY": 6.36,
+      "epsFY2": 7.23,
+      "revenueGrowthNextFY": 0.205,
+      "source": "stockanalysis.com forecast page"
+    },
+    "recentEvents": [
+      "HEICO fiscal year ends Oct 31; TTM figures run through Jul 2026 (Q3 FY2026) per source; no FY2026 year-end results searched in this pass."
+    ],
+    "valueTrapFlags": [
+      "Extremely rich valuation: trailing P/E ~55x, forward ~48x, EV/EBIT ~35x, EV/EBITDA ~30x -- priced for flawless execution.",
+      "FCF yield low (2.5%) relative to the multiple.",
+      "Highest leverage of the names reviewed: ND/EBITDA 1.56x (actual debt).",
+      "~12% unreconciled price discrepancy between two data pulls -- ratios may understate current valuation."
+    ],
+    "growthQualityNotes": [
+      "Strong, consistent multi-year revenue growth: $1.87bn (FY2021) to $5.18bn TTM.",
+      "Operating margin expanded steadily: 21.1% to 24.3% TTM.",
+      "EPS growth has accelerated recently (33.5% FY2025, 31.3% TTM).",
+      "Solidly FCF positive already; concern is valuation/leverage, not growth quality."
+    ],
+    "dataGaps": [
+      "Not in stock-agent /decisions.",
+      "Price discrepancy unreconciled.",
+      "Absolute EBITDA/net debt back-solved.",
+      "Payout ratio, interest coverage not confirmed."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, explicitly reflecting the already-rich valuation and thin FCF yield",
+    "metricBasis": "EPS (reported, TTM to Jul 2026)",
+    "basisValue": 6.0,
+    "forwardDividendYield": 0.0008,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+      "quality": 5,
+      "growth": 4,
+      "financialStrength": 3,
+      "risk": 4
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 180.0,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 30,
+        "note": "Aerospace aftermarket demand softens, high trailing multiple compresses toward a still-rich 30x."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 258.0,
+        "epsCagr5y": 0.15,
+        "exitPe5y": 43,
+        "note": "Continued steady double-digit growth at a multiple similar to today's, consistent with HEICO's long compounding history."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 348.0,
+        "epsCagr5y": 0.22,
+        "exitPe5y": 58,
+        "note": "Aftermarket and defense-electronics demand accelerates, market keeps paying a premium multiple for the quality compounding record."
+      }
+    },
+    "whyItFits": "The highest-quality, most consistent growth-and-margin-expansion track record of the whole shortlist (steady double-digit revenue growth, margin expansion every year, strong ROIC/ROE), but it is also priced for that quality -- a genuine 'pay up for quality' GARP case, not a bargain.",
+    "growthDrivers": "Aftermarket aerospace parts demand, continued bolt-on M&A, Electronic Technologies defense-electronics growth.",
+    "saturation": "No clear saturation signal in the data, but the valuation already assumes the compounding continues without interruption.",
+    "principalRisk": "At ~55x trailing earnings with a thin FCF yield (2.5%) and the highest leverage of the shortlist, any growth disappointment would trigger an outsized multiple de-rating."
+  }
+}

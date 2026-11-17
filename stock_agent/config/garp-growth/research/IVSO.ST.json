@@ -1,0 +1,309 @@
+{
+  "ticker": "IVSO.ST",
+  "name": "Invisio Communications AB (publ)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Aerospace & Defense (communication systems)",
+  "businessSummary": "Swedish maker of hearing protection and communication systems (headsets, control units) for military and first-responder customers.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 222.5,
+      "period": "spot",
+      "source": "https://ca.marketscreener.com/quote/stock/INVISIO-AB-6498891/",
+      "asOf": "2026-11-10",
+      "note": "Cboe Europe real-time estimate; other snapshots showed 233.60 and 203-204 at different times/sources."
+    },
+    "high52w": {
+      "value": null,
+      "period": "52w",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "low52w": {
+      "value": null,
+      "period": "52w",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 46.18,
+      "period": "millions",
+      "source": "stockanalysis.com/quote/sto/IVSO/statistics/",
+      "asOf": "2026-09-09",
+      "note": null
+    },
+    "marketCap": {
+      "value": 10275,
+      "period": "spot",
+      "source": "derived: shares x price",
+      "asOf": "2026-11-10",
+      "note": null
+    },
+    "netDebt": {
+      "value": -218.3,
+      "period": "2026-06-30",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-09",
+      "note": "Net cash; IFRS16 treatment unconfirmed; stale (pre-Q3)."
+    },
+    "enterpriseValue": {
+      "value": 10056.7,
+      "period": "derived",
+      "source": "derived",
+      "asOf": "2026-11-10",
+      "note": "Uses stale net debt."
+    },
+    "peTrailing": {
+      "value": 36.4,
+      "period": "TTM to Q3 2026",
+      "source": "derived from inderes.se + stockanalysis.com",
+      "asOf": "2026-11-10",
+      "note": "Reported EPS."
+    },
+    "peForward": {
+      "value": null,
+      "period": "FY2026",
+      "source": "marketscreener.com",
+      "asOf": "2026-11-10",
+      "note": "Multiples given (FY2026 41x, FY2027 23x) without underlying EPS; left null to avoid silent derivation."
+    },
+    "evEbitTrailing": {
+      "value": 26.9,
+      "period": "TTM to Q3 2026",
+      "source": "derived",
+      "asOf": "2026-11-10",
+      "note": "Reported EBIT, not EBITA."
+    },
+    "evEbitForward": {
+      "value": 30.4,
+      "period": "FY2026",
+      "source": "marketscreener.com",
+      "asOf": "2026-11-10",
+      "note": "FY2027 16.6x, FY2028 12.6x per same source."
+    },
+    "evEbitdaTrailing": {
+      "value": 27.63,
+      "period": "pre-Q3 (2026-06-30)",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-09",
+      "note": "Stale."
+    },
+    "fcfTTM": {
+      "value": null,
+      "period": "TTM",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "fcfYield": {
+      "value": null,
+      "period": "TTM",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "dividendPerShare": {
+      "value": 3.0,
+      "period": "FY2025",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-09",
+      "note": null
+    },
+    "dividendYield": {
+      "value": 0.0132,
+      "period": "trailing",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-09",
+      "note": "Based on 233.60 price."
+    },
+    "payoutRatio": {
+      "value": 0.5562,
+      "period": "FY2025",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-09",
+      "note": null
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-17",
+      "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "n/a",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.2792,
+      "period": "TTM pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-09",
+      "note": null
+    },
+    "roe": {
+      "value": 0.2254,
+      "period": "TTM pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-09",
+      "note": null
+    },
+    "beta5y": {
+      "value": 0.87,
+      "period": "5y",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-09",
+      "note": null
+    },
+    "sectorMetrics": {
+      "orderBook": {
+        "value": 647.7,
+        "period": "2026-09-30",
+        "source": "inderes.se / Q3 2026 interim report",
+        "asOf": "2026-11-10",
+        "note": "Down 27% YoY from SEK 887.0m despite order intake growth."
+      }
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 593,
+        "ebit": 26.6,
+        "ebitMargin": 0.0449,
+        "eps": 0.32,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 775.5,
+        "ebit": 65.3,
+        "ebitMargin": 0.0842,
+        "eps": 0.99,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 1239,
+        "ebit": 242.7,
+        "ebitMargin": 0.196,
+        "eps": 3.91,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 1807,
+        "ebit": 402.4,
+        "ebitMargin": 0.2227,
+        "eps": 6.69,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 1737,
+        "ebit": 308.8,
+        "ebitMargin": 0.1778,
+        "eps": 4.7,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "not fetched"
+    },
+    "consensus": {
+      "rating": "Buy",
+      "analysts": 6,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 294.86,
+      "targetHigh": 330.0,
+      "targetLow": 220.0,
+      "source": "marketscreener.com",
+      "asOf": "2026-11-10"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "only forward multiples sourced, not EPS/revenue estimates"
+    },
+    "recentEvents": [
+      "Q3 2026: net sales SEK 408.1m (+40% YoY) vs a weak Q3 2025 base; EBIT margin recovered to 7.9% from -1.1%.",
+      "9M2026: net sales 1,351.4m (+28% YoY), EBIT margin 11.1% vs 8.0% in 9M2025.",
+      "Order book fell to SEK 647.7m from SEK 887.0m a year earlier, despite order intake growth."
+    ],
+    "valueTrapFlags": [
+      "Order book shrinking YoY (-27%) even as revenue and margin recover.",
+      "Operating margin (11.1% 9M2026) still well below the FY2024 peak of 22.27%.",
+      "Trailing P/E (~36-44x) is rich relative to current margin levels."
+    ],
+    "growthQualityNotes": [
+      "Revenue/margin recovering sequentially after a weak FY2025/Q3-2025, but order book decline is a caution flag on forward growth."
+    ],
+    "dataGaps": [
+      "Not in stock-agent /decisions.",
+      "52w high/low not found.",
+      "FCF, refreshed net debt/EV, interest coverage not verified post-Q3."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value: basis EPS x justified P/E, cross-checked against EV/EBIT multiple compression given the Q3 order-book miss",
+    "metricBasis": "EPS (reported, TTM to Q3 2026)",
+    "basisValue": 6.12,
+    "forwardDividendYield": 0.0132,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+      "quality": 4,
+      "growth": 3,
+      "financialStrength": 4,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 134.64,
+        "epsCagr5y": 0.05,
+        "exitPe5y": 20,
+        "note": "Order book keeps shrinking, growth stalls to high-single-digits, multiple de-rates to the low-20s."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 183.6,
+        "epsCagr5y": 0.15,
+        "exitPe5y": 28,
+        "note": "Order intake stabilizes, defense-spending tailwind continues, margin keeps recovering toward FY2024 peak."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 269.28,
+        "epsCagr5y": 0.25,
+        "exitPe5y": 38,
+        "note": "Order book reaccelerates on NATO defense-spending growth, margin returns to FY2024 peak and beyond."
+      }
+    },
+    "whyItFits": "Real, recovering revenue/margin growth in a structurally growing (European defense spending) niche, net cash balance sheet, but the Q3 order-book miss is a genuine growth-quality question the market hasn't fully resolved.",
+    "growthDrivers": "Rising European/NATO defense budgets, expanding communications-systems content per soldier, international program wins.",
+    "saturation": "Order book shrinking YoY despite revenue growth is an early signal that near-term demand may be flattening even as the structural tailwind (defense spending) remains intact.",
+    "principalRisk": "Order intake fails to reaccelerate, EBIT margin stalls well below the FY2024 peak, and the rich trailing multiple de-rates sharply."
+  }
+}

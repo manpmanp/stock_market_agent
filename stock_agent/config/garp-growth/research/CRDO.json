@@ -1,0 +1,309 @@
+{
+  "ticker": "CRDO",
+  "name": "Credo Technology Group Holding Ltd",
+  "exchange": "Nasdaq",
+  "currency": "USD",
+  "sector": "Semiconductors (high-speed connectivity: AEC, optical DSPs, PCIe retimers for AI/datacenter)",
+  "businessSummary": "Designs high-speed connectivity chips (Active Electrical Cables, optical DSPs, retimers, SerDes IP) primarily for hyperscaler AI/datacenter networking.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 120.71,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-16",
+      "note": "Down 8.21% on the day; ~61% below its 52-week high."
+    },
+    "high52w": {
+      "value": 308.67,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-16",
+      "note": null
+    },
+    "low52w": {
+      "value": 86.49,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-16",
+      "note": null
+    },
+    "sharesOutstanding": {
+      "value": 187.95,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-16",
+      "note": "millions"
+    },
+    "marketCap": {
+      "value": 22690,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-16",
+      "note": null
+    },
+    "netDebt": {
+      "value": -814,
+      "period": "~2025-11-01",
+      "source": "investors.credosemi.com Q2 FY26 release",
+      "asOf": "2025-11-01",
+      "note": "Net cash $813.6M, no borrowings line disclosed; not current."
+    },
+    "enterpriseValue": {
+      "value": 26945,
+      "period": "~2026-10-23",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "Stale relative to Nov 16 price decline."
+    },
+    "peTrailing": {
+      "value": 42.63,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-16",
+      "note": "GAAP."
+    },
+    "peForward": {
+      "value": 16.55,
+      "period": "NTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-16",
+      "note": null
+    },
+    "evEbitTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 49.6,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "Stale pre-decline snapshot."
+    },
+    "fcfTTM": {
+      "value": null,
+      "period": "TTM",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "Not disclosed in press releases reviewed."
+    },
+    "fcfYield": {
+      "value": 0.0158,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-23",
+      "note": "Third-party, not independently verified; stale."
+    },
+    "dividendPerShare": {
+      "value": 0,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "No dividend."
+    },
+    "dividendYield": {
+      "value": 0,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": null
+    },
+    "payoutRatio": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "n/a."
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roe": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "beta5y": {
+      "value": 3.29,
+      "period": "",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-16",
+      "note": "Very high -- consistent with realized volatility."
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "Q1 FY2026 (Aug 2025)",
+        "revenue": 223,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": 0.34,
+        "fcf": null,
+        "source": "walnutinvest.com"
+      },
+      {
+        "period": "Q2 FY2026 (Nov 1 2025)",
+        "revenue": 268,
+        "ebit": 78.8,
+        "ebitMargin": 0.294,
+        "eps": 0.44,
+        "fcf": null,
+        "source": "investors.credosemi.com Q2 FY26 release"
+      },
+      {
+        "period": "Q3 FY2026 (Jan 31 2026)",
+        "revenue": 407,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": null,
+        "fcf": null,
+        "source": "walnutinvest.com"
+      },
+      {
+        "period": "Q4 FY2026 (May 2 2026)",
+        "revenue": 437,
+        "ebit": null,
+        "ebitMargin": null,
+        "eps": null,
+        "fcf": null,
+        "source": "walnutinvest.com"
+      },
+      {
+        "period": "Q1 FY2027 (Aug 1 2026)",
+        "revenue": 479,
+        "ebit": 120.7,
+        "ebitMargin": 0.252,
+        "eps": 0.67,
+        "fcf": null,
+        "source": "walnutinvest.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Strong Buy",
+      "analysts": 20,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 277.47,
+      "targetHigh": null,
+      "targetLow": null,
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-16",
+      "note": "Stale -- implies ~130% upside, likely not reset; press reports analyst target cuts (e.g. BofA to $160)."
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "Q2 FY2027 guidance: revenue $525-535M"
+    },
+    "recentEvents": [
+      "Q2 FY2026 (reported Dec 2025): revenue $268.0M +272.1% YoY from $72.0M.",
+      "Q1 FY2027 (reported Sep 2026): revenue $479M +115% YoY -- growth decelerated sharply from +272%.",
+      "Q1 FY27 GAAP gross margin fell to 64.5% from 67.4% a year earlier.",
+      "Stock down ~61% from its 52-week high; fell 8.2% on Nov 16, 2026 alone.",
+      "Press coverage references analyst target cuts (e.g. BofA to $160) and customer-concentration concerns."
+    ],
+    "valueTrapFlags": [
+      "Trailing P/E still 42.6x even after the drawdown -- valuation not fully normalized.",
+      "Growth decelerating fast: +272% to ~+115% YoY; next guided quarter implies further deceleration.",
+      "GAAP gross margin compression (-2.9pts YoY) alongside the deceleration.",
+      "Consensus target ($277) appears stale vs. more recent analyst cuts -- don't trust at face value."
+    ],
+    "growthQualityNotes": [
+      "Growth confirmed real from primary-source quarterly releases across 5 consecutive quarters.",
+      "Gross margins remain healthy (mid-60s% GAAP) and non-GAAP operating margin strong (48.2% Q1 FY27).",
+      "Net cash balance sheet, no debt disclosed.",
+      "Key open question: whether deceleration toward 'normal' growth continues and whether that's priced in after the 61% drawdown."
+    ],
+    "dataGaps": [
+      "FCF, EV/EBIT, ROIC, ROE, interest coverage not found.",
+      "Current post-decline EV/EBITDA, FCF yield unavailable.",
+      "Customer concentration % not independently verified.",
+      "Not in stock-agent /decisions."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, explicitly built around the confirmed sharp growth deceleration and the still-rich post-drawdown multiple",
+    "metricBasis": "EPS (GAAP, TTM/Q1 FY2027)",
+    "basisValue": 2.83,
+    "forwardDividendYield": 0.0,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+      "quality": 3,
+      "growth": 4,
+      "financialStrength": 5,
+      "risk": 2
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.35,
+        "fairValue": 67.92,
+        "epsCagr5y": 0.1,
+        "exitPe5y": 18,
+        "note": "Growth decelerates further toward normal semiconductor-industry rates, multiple fully normalizes."
+      },
+      "base": {
+        "prob": 0.4,
+        "fairValue": 113.2,
+        "epsCagr5y": 0.25,
+        "exitPe5y": 30,
+        "note": "Growth settles around 40-60% YoY (down from 115%) as AI networking demand remains strong but less explosive."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 198.1,
+        "epsCagr5y": 0.4,
+        "exitPe5y": 42,
+        "note": "AI datacenter networking demand reaccelerates, Credo wins additional hyperscaler sockets."
+      }
+    },
+    "whyItFits": "Confirmed real hypergrowth from primary filings (not hype) in AI datacenter connectivity, net-cash balance sheet, healthy gross margins even as growth decelerates -- included as a higher-risk, already-partially-derated growth name rather than a clean bargain.",
+    "growthDrivers": "AI/datacenter high-speed connectivity (AEC, optical DSP, retimers) demand from hyperscaler buildouts.",
+    "saturation": "Growth has already decelerated sharply (+272% to +115% YoY) and next-quarter guidance implies further deceleration -- the hypergrowth phase looks to be ending.",
+    "principalRisk": "Customer concentration among a small number of hyperscalers, and a valuation that -- even after a 61% drawdown -- still assumes continued strong growth."
+  }
+}

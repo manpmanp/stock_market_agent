@@ -1,0 +1,300 @@
+{
+  "ticker": "AVGO",
+  "name": "Broadcom Inc",
+  "exchange": "Nasdaq",
+  "currency": "USD",
+  "sector": "Semiconductors / Infrastructure Software",
+  "businessSummary": "Designer of semiconductors (networking, custom AI ASICs, broadband) and, since the 2023 VMware acquisition, a large enterprise infrastructure software business.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 347.01,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "CONFLICT: stock-agent showed $333.40 for a nearby date, unreconciled."
+    },
+    "high52w": {
+      "value": 495.0,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "low52w": {
+      "value": 289.77,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "sharesOutstanding": {
+      "value": 4770,
+      "period": "latest",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "4.77B shares"
+    },
+    "marketCap": {
+      "value": 1660000,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "1.66T"
+    },
+    "netDebt": {
+      "value": 35444,
+      "period": "2026-08-02",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-02",
+      "note": "Total debt $59,419M less cash & investments $23,975M; lease treatment unconfirmed."
+    },
+    "enterpriseValue": {
+      "value": 1695444,
+      "period": "derived",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "Mixes Nov price with Aug balance sheet."
+    },
+    "peTrailing": {
+      "value": 44.29,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "CONFLICT: stock-agent gave 42.58."
+    },
+    "peForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitTrailing": {
+      "value": 38.9,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "Operating income basis, not EBITA."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 32.38,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "stock-agent gave 31.13, close."
+    },
+    "fcfTTM": {
+      "value": 39403,
+      "period": "TTM to 2026-08-02",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-02",
+      "note": null
+    },
+    "fcfYield": {
+      "value": 0.0237,
+      "period": "TTM/spot mktcap",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "dividendPerShare": {
+      "value": 2.6,
+      "period": "annualized",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "dividendYield": {
+      "value": 0.0075,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "payoutRatio": {
+      "value": 0.3319,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "stock-agent gave 0.3244, consistent."
+    },
+    "netDebtToEbitda": {
+      "value": 0.68,
+      "period": "TTM",
+      "source": "stock-agent /decisions",
+      "asOf": "2026-11-17",
+      "note": null
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.3068,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "roe": {
+      "value": 0.4425,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "beta5y": {
+      "value": 1.508,
+      "period": "5y",
+      "source": "stock-agent /decisions",
+      "asOf": "2026-11-17",
+      "note": "stockanalysis.com showed 1.51, consistent."
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 27450,
+        "ebit": null,
+        "ebitMargin": 0.3164,
+        "eps": 1.5,
+        "fcf": 13321,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 33203,
+        "ebit": null,
+        "ebitMargin": 0.4303,
+        "eps": 2.65,
+        "fcf": 16312,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 35819,
+        "ebit": null,
+        "ebitMargin": 0.4664,
+        "eps": 3.3,
+        "fcf": 17633,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 51574,
+        "ebit": null,
+        "ebitMargin": 0.3063,
+        "eps": 1.23,
+        "fcf": 19414,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 63887,
+        "ebit": null,
+        "ebitMargin": 0.4127,
+        "eps": 4.77,
+        "fcf": 26914,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Strong Buy",
+      "analysts": 51,
+      "buy": 40,
+      "hold": 3,
+      "sell": 0,
+      "targetAvg": 528.17,
+      "targetHigh": 660,
+      "targetLow": 398.47,
+      "source": "stock-agent /decisions + stockanalysis.com",
+      "asOf": "2026-11-17"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable within budget"
+    },
+    "recentEvents": [
+      "Q4/FY2025 results (~Dec 2025): revenue $18,015M Q4, +28% YoY; AI/custom-silicon and VMware software cited as growth drivers; shares reportedly fell post-earnings despite the beat."
+    ],
+    "valueTrapFlags": [
+      "FY2024 operating margin dipped sharply and net income collapsed -- VMware acquisition costs/amortization, not organic deterioration.",
+      "Reported negative share-price reaction to the latest beat suggests the market may price flawless execution.",
+      "Trailing P/E (~44x) and EV/EBITDA (~32x) both rich and conflicting slightly between sources."
+    ],
+    "growthQualityNotes": [
+      "Revenue growth real: $27.5B (FY2021) to $63.9B (FY2025), mixed organic/inorganic (VMware).",
+      "Margin trend distorted by the VMware deal; FY2025 recovery is partial normalization plus AI mix benefit.",
+      "Already solidly FCF positive and growing, with high ROIC (~31%) and ROE (~44%)."
+    ],
+    "dataGaps": [
+      "Forward P/E, EV/EBIT forward, interest coverage, historical multiple range, itemized forward estimates not found.",
+      "Price conflict between sources unreconciled."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, with the VMware-related FY2024 margin distortion explicitly normalized out of the growth assumption",
+    "metricBasis": "EPS (reported, TTM/FY2025)",
+    "basisValue": 4.77,
+    "forwardDividendYield": 0.0075,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+      "quality": 4,
+      "growth": 4,
+      "financialStrength": 5,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 238.5,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 28,
+        "note": "Custom AI ASIC demand slows, VMware integration synergies underwhelm, multiple compresses from today's ~44x."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 353.98,
+        "epsCagr5y": 0.15,
+        "exitPe5y": 37,
+        "note": "AI networking/custom-silicon and VMware software both grow steadily, similar to today's multiple."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 524.7,
+        "epsCagr5y": 0.25,
+        "exitPe5y": 44,
+        "note": "Custom AI silicon wins accelerate (additional hyperscaler customers), VMware software margins keep expanding."
+      }
+    },
+    "whyItFits": "Real growth (networking/custom AI ASICs plus VMware software) with high ROIC (~31%) and ROE (~44%), though the growth is a mix of organic AI demand and the VMware acquisition rather than a single clean growth driver.",
+    "growthDrivers": "Custom AI accelerator (ASIC) design wins with hyperscalers, VMware enterprise software cross-sell, networking silicon demand.",
+    "saturation": "No clear saturation yet, but the market's negative reaction to a recent earnings beat suggests high expectations are already embedded.",
+    "principalRisk": "FY2024's sharp margin/earnings dip (VMware acquisition costs) shows integration risk is real; a similar disruption from a future large acquisition, or AI-ASIC demand normalizing, would hit the growth case."
+  }
+}

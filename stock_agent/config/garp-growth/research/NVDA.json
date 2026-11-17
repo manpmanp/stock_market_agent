@@ -1,0 +1,300 @@
+{
+  "ticker": "NVDA",
+  "name": "NVIDIA Corporation",
+  "exchange": "Nasdaq",
+  "currency": "USD",
+  "sector": "Semiconductors",
+  "businessSummary": "Designer of GPUs and AI accelerator systems/software (CUDA, data-center AI infrastructure); dominant supplier of AI training/inference hardware.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 162.85,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "stock-agent /decisions showed 156.14 a few days apart."
+    },
+    "high52w": {
+      "value": 243.37,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "low52w": {
+      "value": 148.8,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "sharesOutstanding": {
+      "value": 24150,
+      "period": "latest",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "24.15B shares"
+    },
+    "marketCap": {
+      "value": 3930000,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "3.93T"
+    },
+    "netDebt": {
+      "value": -23609,
+      "period": "2026-07-26",
+      "source": "stockanalysis.com balance sheet",
+      "asOf": "2026-07-26",
+      "note": "Net cash. No material lease liabilities disclosed."
+    },
+    "enterpriseValue": {
+      "value": 3906391,
+      "period": "derived",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "Mixes Nov price with Jul balance sheet."
+    },
+    "peTrailing": {
+      "value": 20.59,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "stock-agent gave 20.60, consistent."
+    },
+    "peForward": {
+      "value": 13.46,
+      "period": "NTM consensus",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "evEbitTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable within budget."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 18.58,
+      "period": "TTM",
+      "source": "stock-agent /decisions 2026-11-17",
+      "asOf": "2026-11-17",
+      "note": "Single-source, not cross-checked."
+    },
+    "fcfTTM": {
+      "value": 127006,
+      "period": "TTM to 2026-07-26",
+      "source": "stockanalysis.com",
+      "asOf": "2026-07-26",
+      "note": null
+    },
+    "fcfYield": {
+      "value": 0.0323,
+      "period": "TTM/spot mktcap",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "dividendPerShare": {
+      "value": 1.0,
+      "period": "annualized",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "dividendYield": {
+      "value": 0.0061,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "payoutRatio": {
+      "value": 0.0354,
+      "period": "TTM",
+      "source": "stock-agent /decisions",
+      "asOf": "2026-11-17",
+      "note": null
+    },
+    "netDebtToEbitda": {
+      "value": -0.12,
+      "period": "TTM",
+      "source": "stock-agent /decisions",
+      "asOf": "2026-11-17",
+      "note": "Net cash."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roe": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "beta5y": {
+      "value": 2.247,
+      "period": "5y",
+      "source": "stock-agent /decisions",
+      "asOf": "2026-11-17",
+      "note": "stockanalysis.com showed 2.25, consistent."
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2022",
+        "revenue": 26914,
+        "ebit": null,
+        "ebitMargin": 0.3731,
+        "eps": 0.39,
+        "fcf": 8132,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 26974,
+        "ebit": null,
+        "ebitMargin": 0.2067,
+        "eps": 0.17,
+        "fcf": 3808,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 60922,
+        "ebit": null,
+        "ebitMargin": 0.5412,
+        "eps": 1.19,
+        "fcf": 27021,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 130497,
+        "ebit": null,
+        "ebitMargin": 0.6242,
+        "eps": 2.94,
+        "fcf": 60853,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2026",
+        "revenue": 215938,
+        "ebit": null,
+        "ebitMargin": 0.6038,
+        "eps": 4.9,
+        "fcf": 96676,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Buy",
+      "analysts": 61,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 273.36,
+      "targetHigh": null,
+      "targetLow": null,
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "forward P/E of 13.46 implies consensus NTM EPS ~$12.10, not itemized"
+    },
+    "recentEvents": [
+      "Q3 FY2026 (reported ~Nov 19, 2025 per press reports): revenue +62% YoY; ~$500B cumulative AI chip order backlog cited extending into 2026."
+    ],
+    "valueTrapFlags": [
+      "High customer concentration in a handful of hyperscalers.",
+      "Beta ~2.25 -- outsized volatility if AI capex narrative weakens.",
+      "EV/EBITDA figure single-source, unverified."
+    ],
+    "growthQualityNotes": [
+      "Revenue growth real and recent: $26.9B (FY2022) to $215.9B (FY2026), reported not estimated.",
+      "Gross margin expanded ~65%->~75%; operating margin ~37%->~65%.",
+      "Already solidly FCF positive and growing: $8.1B to $127B TTM.",
+      "Trailing P/E (~20.6x) moderate for the growth rate; forward (13.5x) assumes continued 60%+ growth -- a high bar."
+    ],
+    "dataGaps": [
+      "EV/EBIT, EV/EBITDA forward, ROIC, ROE, interest coverage, historical multiple range, itemized forward EPS not found within budget."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, reflecting NVIDIA's already-moderate trailing multiple relative to its growth rate",
+    "metricBasis": "EPS (reported, TTM/FY2026)",
+    "basisValue": 4.9,
+    "forwardDividendYield": 0.0061,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+      "quality": 5,
+      "growth": 5,
+      "financialStrength": 5,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 122.5,
+        "epsCagr5y": 0.12,
+        "exitPe5y": 18,
+        "note": "AI capex cycle slows materially, hyperscaler customer concentration causes a sharp multiple de-rating."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 220.5,
+        "epsCagr5y": 0.3,
+        "exitPe5y": 25,
+        "note": "AI infrastructure buildout continues at a more moderate pace than the last two years, margins stay elevated."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 318.5,
+        "epsCagr5y": 0.45,
+        "exitPe5y": 32,
+        "note": "AI demand continues to outstrip supply, NVIDIA's software/CUDA moat keeps pricing power intact."
+      }
+    },
+    "whyItFits": "Real, already-reported (not forecast) hypergrowth with genuine margin expansion and a trailing P/E (~20.6x) that looks moderate relative to the growth delivered -- the clearest case of a market leader not yet fully pricing in its own growth, if the AI capex cycle holds.",
+    "growthDrivers": "AI data-center infrastructure buildout, CUDA software ecosystem lock-in, expanding TAM into inference and edge AI.",
+    "saturation": "None evident in reported results yet; the open question is hyperscaler capex durability, not company-specific demand.",
+    "principalRisk": "Extreme customer concentration among a handful of hyperscalers; any pullback in AI infrastructure capex would hit NVIDIA harder than almost any other name on this list."
+  }
+}

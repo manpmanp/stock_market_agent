@@ -1,0 +1,311 @@
+{
+  "ticker": "MILDEF.ST",
+  "name": "MilDef Group AB (publ)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Aerospace & Defense (rugged IT/electronics)",
+  "businessSummary": "Swedish maker of rugged computers, IT and electronics for defense and demanding civilian environments.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 256.9,
+      "period": "spot",
+      "source": "affarsvarlden.se",
+      "asOf": "~2026-11-04",
+      "note": "stockanalysis.com showed 250.90 as of 2026-10-19."
+    },
+    "high52w": {
+      "value": null,
+      "period": "52w",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "low52w": {
+      "value": null,
+      "period": "52w",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 47.09,
+      "period": "millions",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": null
+    },
+    "marketCap": {
+      "value": 12097,
+      "period": "spot",
+      "source": "derived",
+      "asOf": "~2026-11-04",
+      "note": null
+    },
+    "netDebt": {
+      "value": 496.4,
+      "period": "2026-06-30",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": "Ambiguous labeling in source; treated as net debt given Q3 negative FCF; not updated for Q3 close."
+    },
+    "enterpriseValue": {
+      "value": 12593.4,
+      "period": "derived",
+      "source": "derived",
+      "asOf": "~2026-11-04",
+      "note": null
+    },
+    "peTrailing": {
+      "value": 36.5,
+      "period": "TTM to Q3 2026",
+      "source": "derived (company-disclosed TTM diluted EPS 7.03)",
+      "asOf": "~2026-11-04",
+      "note": null
+    },
+    "peForward": {
+      "value": 26.72,
+      "period": "FY2026 (stale)",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": "Not refreshed after Q3 beat; likely too high now."
+    },
+    "evEbitTrailing": {
+      "value": 26.3,
+      "period": "TTM to Q3 2026, adjusted EBIT",
+      "source": "derived",
+      "asOf": "~2026-11-04",
+      "note": "Company reports Adjusted EBITA/EBIT as primary measures."
+    },
+    "evEbitForward": {
+      "value": 32.16,
+      "period": "FY2026 (stale)",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": "Not refreshed after Q3 beat."
+    },
+    "evEbitdaTrailing": {
+      "value": 24.55,
+      "period": "stale, pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": null
+    },
+    "fcfTTM": {
+      "value": null,
+      "period": "TTM",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "Q3 2026 FCF -112m; 9M2026 FCF +55m; TTM not computable."
+    },
+    "fcfYield": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "dividendPerShare": {
+      "value": null,
+      "period": "n/a",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": "Yield given as 0.30% but per-share amount not captured."
+    },
+    "dividendYield": {
+      "value": 0.003,
+      "period": "trailing",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": null
+    },
+    "payoutRatio": {
+      "value": 0.1325,
+      "period": "FY2025",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": null
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-17",
+      "note": "EBITDA not disclosed separately from Adjusted EBITA."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "n/a",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.151,
+      "period": "stale, pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": null
+    },
+    "roe": {
+      "value": 0.1763,
+      "period": "stale, pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": null
+    },
+    "beta5y": {
+      "value": 1.07,
+      "period": "5y",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-19",
+      "note": null
+    },
+    "sectorMetrics": {
+      "orderBacklog": {
+        "value": 5654,
+        "period": "2026-09-30",
+        "source": "finanznachrichten.de (Q3 2026 interim)",
+        "asOf": "2026-10",
+        "note": "+61% YoY; Q3 order intake +130%, incl. ~SEK 553m NATO order and Bundeswehr framework extension."
+      }
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 469.6,
+        "ebit": -3.4,
+        "ebitMargin": -0.0072,
+        "eps": -0.03,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 738.8,
+        "ebit": 29.8,
+        "ebitMargin": 0.0403,
+        "eps": 0.37,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 1151,
+        "ebit": 105.9,
+        "ebitMargin": 0.092,
+        "eps": 1.71,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 1201,
+        "ebit": 120.5,
+        "ebitMargin": 0.1003,
+        "eps": -5.43,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 2045,
+        "ebit": 212.1,
+        "ebitMargin": 0.1037,
+        "eps": 3.15,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "not fetched"
+    },
+    "consensus": {
+      "rating": "Strong Buy",
+      "analysts": 5,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 356.58,
+      "targetHigh": 416.0,
+      "targetLow": 275.0,
+      "source": "stockanalysis.com",
+      "asOf": "through Sep 2026"
+    },
+    "forwardEstimates": {
+      "epsNextFY": 4.92,
+      "epsFY2": 7.74,
+      "revenueGrowthNextFY": 0.271,
+      "source": "stockanalysis.com forecast page"
+    },
+    "recentEvents": [
+      "Q3 2026: net sales SEK 829m (+54% organic YoY); order intake SEK 2,091m (+130%); adj. EBITA margin 21.8% vs 15.7%.",
+      "9M2026: net sales 2,167m (+72%), order backlog 5,654m (+61% YoY); Q3 FCF -112m on working-capital buildup.",
+      "Large new orders: ~SEK553m NATO hardware order; Bundeswehr framework extension up to ~EUR527m.",
+      "FY2024 net loss despite positive EBIT is unexplained from sourced material."
+    ],
+    "valueTrapFlags": [
+      "Negative Q3 2026 FCF despite strong profit growth -- working-capital intensity risk.",
+      "FY2024 net loss despite positive EBIT unexplained; warrants annual-report confirmation.",
+      "Current TTM P/E (~36.5x) assumes the Q3 surge is sustained."
+    ],
+    "growthQualityNotes": [
+      "Very strong, margin-accretive growth (organic +54-72%), but driven by lumpy defense orders -- less predictable than recurring revenue."
+    ],
+    "dataGaps": [
+      "Not in stock-agent /decisions.",
+      "52w high/low not found.",
+      "Net debt not refreshed for Q3 close.",
+      "TTM FCF, EV/EBITDA, ROE, ROIC not refreshed post-Q3."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value using company-disclosed TTM diluted EPS, tempered for working-capital/cash-conversion risk",
+    "metricBasis": "EPS (reported, TTM diluted to Q3 2026)",
+    "basisValue": 7.03,
+    "forwardDividendYield": 0.003,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+      "quality": 3,
+      "growth": 5,
+      "financialStrength": 3,
+      "risk": 2
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.35,
+        "fairValue": 140.6,
+        "epsCagr5y": 0.05,
+        "exitPe5y": 18,
+        "note": "Lumpy order growth fails to repeat, negative FCF persists, multiple compresses sharply."
+      },
+      "base": {
+        "prob": 0.4,
+        "fairValue": 210.9,
+        "epsCagr5y": 0.2,
+        "exitPe5y": 24,
+        "note": "Large NATO/Bundeswehr orders convert to revenue, cash conversion improves as the growth surge matures."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 316.35,
+        "epsCagr5y": 0.35,
+        "exitPe5y": 30,
+        "note": "Backlog (+61% YoY) converts fast, margin keeps expanding, defense-budget supercycle continues."
+      }
+    },
+    "whyItFits": "Very strong, real, margin-accretive order and revenue growth tied to a structural European defense-spending tailwind, but negative free cash flow and an unexplained FY2024 net loss are real quality concerns, not yet resolved.",
+    "growthDrivers": "Record order backlog (+61% YoY), NATO/Bundeswehr framework orders, rugged-IT demand from rising defense budgets.",
+    "saturation": "None evident yet -- backlog growing faster than revenue.",
+    "principalRisk": "Working-capital intensity keeps free cash flow negative even as reported profit grows, and the unexplained FY2024 loss turns out to reflect a recurring earnings-quality issue."
+  }
+}

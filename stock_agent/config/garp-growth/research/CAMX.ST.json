@@ -1,0 +1,311 @@
+{
+  "ticker": "CAMX.ST",
+  "name": "Camurus AB (publ)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Biotechnology/Pharmaceuticals",
+  "businessSummary": "Swedish biopharmaceutical company developing long-acting injectable drug products (Buvidal for opioid dependence; Brixadi royalty; pipeline incl. Oclaiz, CAM2043/SORENTO).",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 666.0,
+      "period": "spot",
+      "source": "stockanalysis.com/quote/sto/CAMX/forecast/",
+      "asOf": "~Nov 2026",
+      "note": "Conflicts with an earlier 630.00 snapshot (2026-08-20, pre-Q3)."
+    },
+    "high52w": {
+      "value": null,
+      "period": "52w",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "Only a -6.46% 52-week change found."
+    },
+    "low52w": {
+      "value": null,
+      "period": "52w",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "sharesOutstanding": {
+      "value": 59.51,
+      "period": "millions",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-20",
+      "note": null
+    },
+    "marketCap": {
+      "value": 39634,
+      "period": "spot",
+      "source": "derived",
+      "asOf": "~Nov 2026",
+      "note": null
+    },
+    "netDebt": {
+      "value": -4400,
+      "period": "2026-09-30",
+      "source": "inderes.se (Q3 2026 interim)",
+      "asOf": "2026-11",
+      "note": "Gross cash SEK4.4bn; total debt not separately confirmed -- approximate net cash."
+    },
+    "enterpriseValue": {
+      "value": 35234,
+      "period": "derived",
+      "source": "derived",
+      "asOf": "~Nov 2026",
+      "note": null
+    },
+    "peTrailing": {
+      "value": 55.8,
+      "period": "TTM, stale pre-Q3 (to 2026-06-30)",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-20",
+      "note": "Q3 EPS not disclosed in sourced content, could not refresh."
+    },
+    "peForward": {
+      "value": null,
+      "period": "FY2026",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "FY2026 consensus EPS 14.70 implies ~45x but not treated as a sourced multiple."
+    },
+    "evEbitTrailing": {
+      "value": 38.84,
+      "period": "TTM to Q3 2026",
+      "source": "derived",
+      "asOf": "~Nov 2026",
+      "note": "Reported EBIT, not EBITA."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "FY2026",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 39.97,
+      "period": "stale, pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-20",
+      "note": null
+    },
+    "fcfTTM": {
+      "value": null,
+      "period": "TTM",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "fcfYield": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "dividendPerShare": {
+      "value": null,
+      "period": "n/a",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-20",
+      "note": "No dividend."
+    },
+    "dividendYield": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-08-20",
+      "note": "No dividend."
+    },
+    "payoutRatio": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-08-20",
+      "note": "No dividend."
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-17",
+      "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "n/a",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.9277,
+      "period": "stale, pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-20",
+      "note": "Unusually high -- small invested-capital base."
+    },
+    "roe": {
+      "value": 0.1586,
+      "period": "stale, pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-20",
+      "note": null
+    },
+    "beta5y": {
+      "value": 0.52,
+      "period": "5y",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-20",
+      "note": null
+    },
+    "sectorMetrics": {
+      "pipelineCatalysts": {
+        "value": null,
+        "period": "n/a",
+        "source": "borsvarlden.com (Redeye)",
+        "asOf": "2026-11-10",
+        "note": "Oclaiz PDUFA 2026-12-18; SORENTO Phase 3 readout Q1 2027; first Brixadi USD15m milestone Q4 2026."
+      }
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 600.57,
+        "ebit": -112.36,
+        "ebitMargin": -0.1871,
+        "eps": -1.66,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 956.34,
+        "ebit": 71.26,
+        "ebitMargin": 0.0745,
+        "eps": 0.97,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 1717,
+        "ebit": 533.41,
+        "ebitMargin": 0.3107,
+        "eps": 7.5,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 1868,
+        "ebit": 463.63,
+        "ebitMargin": 0.2482,
+        "eps": 7.2,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 2265,
+        "ebit": 885.16,
+        "ebitMargin": 0.3907,
+        "eps": 12.26,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "not fetched"
+    },
+    "consensus": {
+      "rating": "Strong Buy",
+      "analysts": 7,
+      "buy": 6,
+      "hold": 1,
+      "sell": 0,
+      "targetAvg": 807.25,
+      "targetHigh": 950.0,
+      "targetLow": 650.0,
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-17"
+    },
+    "forwardEstimates": {
+      "epsNextFY": 14.7,
+      "epsFY2": 22.81,
+      "revenueGrowthNextFY": 0.2598,
+      "source": "stockanalysis.com forecast page"
+    },
+    "recentEvents": [
+      "Q3 2026: total revenue SEK724m (+28% YoY); Buvidal record sales SEK574m; EBIT SEK322m (+40%), ~44% margin.",
+      "9M2026: revenue 1,959m (+8.8%), EBIT 783m (+2.9%) -- EBIT grew slower than revenue across the 9 months.",
+      "Guides FY2026 revenue/operating result to upper half of SEK2.6-2.9bn / 0.9-1.2bn ranges.",
+      "Redeye (2026-11-10) raised fair value to SEK745 from 670, rating 'Fairly Priced'."
+    ],
+    "valueTrapFlags": [
+      "9-month EBIT growth (+2.9%) lagged revenue growth (+8.8%) despite a strong standalone Q3.",
+      "Rich trailing multiples; independent analyst (Redeye) rates it 'Fairly Priced' not a buy.",
+      "Concentrated pipeline (Buvidal, Brixadi royalty, binary catalysts) -- outsized single-event risk."
+    ],
+    "growthQualityNotes": [
+      "Strong multi-year revenue/EBIT trend since the FY2021 loss, margins expanding to ~39% by FY2025, though 9-month EBIT growth is decelerating relative to revenue."
+    ],
+    "dataGaps": [
+      "Not in stock-agent /decisions.",
+      "52w high/low not found.",
+      "Q3 2026 EPS not disclosed, so trailing P/E not refreshed.",
+      "FCF, net debt detail, refreshed EV/EBITDA/ROE/ROIC not verified."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value anchored to FY2026 consensus EPS, tempered by an independent analyst's 'Fairly Priced' call",
+    "metricBasis": "EPS (non-GAAP consensus, FY2026E)",
+    "basisValue": 14.7,
+    "forwardDividendYield": 0.0,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+      "quality": 4,
+      "growth": 4,
+      "financialStrength": 5,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 470.4,
+        "epsCagr5y": 0.05,
+        "exitPe5y": 24,
+        "note": "9-month EBIT deceleration (vs revenue) continues, a pipeline catalyst (Oclaiz/SORENTO) disappoints."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 661.5,
+        "epsCagr5y": 0.15,
+        "exitPe5y": 32,
+        "note": "Buvidal keeps compounding, Brixadi royalties ramp, margin growth resumes after the Q3 lull -- roughly matches Redeye's independent 'Fairly Priced' view."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 926.1,
+        "epsCagr5y": 0.25,
+        "exitPe5y": 42,
+        "note": "Oclaiz approval (PDUFA Dec 2026) and a positive SORENTO Phase 3 readout both land well."
+      }
+    },
+    "whyItFits": "Genuine multi-year revenue/margin growth from a commercial, cash-generative pipeline (not pre-revenue biotech), net-cash balance sheet, real pending catalysts -- but already priced close to an independent analyst's own fair value.",
+    "growthDrivers": "Buvidal international expansion, Brixadi royalty ramp, Oclaiz and SORENTO pipeline catalysts.",
+    "saturation": "9-month EBIT growth (+2.9%) lagging revenue growth (+8.8%) is an early margin-saturation signal to watch at FY2026 close.",
+    "principalRisk": "Concentrated pipeline -- a single regulatory or trial disappointment (Oclaiz, SORENTO) would hit the growth thesis directly."
+  }
+}

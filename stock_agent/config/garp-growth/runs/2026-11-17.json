@@ -1,0 +1,967 @@
+{
+  "runAt": "2026-11-17T14:49:52Z",
+  "rows": [
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "currency": "USD",
+      "price": 162.85,
+      "weightedFairValue": 215.60000000000002,
+      "marginOfSafety": 0.24466604823747695,
+      "upside": 0.32391771568928474,
+      "bearDownside": -0.2477740251765428,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 172.48000000000002,
+      "accumulateLow": 150.92000000000004,
+      "accumulateHigh": 172.48000000000002,
+      "entryStatus": "BUY ZONE",
+      "return5y": {
+        "capital": 0.2096025000143402,
+        "dividend": 0.0061,
+        "total": 0.2157025000143402,
+        "byScenario": {
+          "bear": -0.0031725705371162755,
+          "base": 0.23414142653586478,
+          "bull": 0.44516251693734366
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.6691457451616879,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 20.6 → 13.5"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 68.3%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "60.4% vs avg 43.6%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "-0.12x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "strengthening"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 88.06188709249935,
+      "region": "global",
+      "rank": 1,
+      "regionRank": 1
+    },
+    {
+      "ticker": "BONEX.ST",
+      "name": "Bonesupport Holding AB (publ)",
+      "currency": "SEK",
+      "price": 218.6,
+      "weightedFairValue": 271.19500000000005,
+      "marginOfSafety": 0.19393794133372677,
+      "upside": 0.2405992680695337,
+      "bearDownside": -0.11628545288197611,
+      "requiredMarginOfSafety": 0.4,
+      "entryPrice": 162.717,
+      "accumulateLow": 135.59750000000003,
+      "accumulateHigh": 162.717,
+      "entryStatus": "BELOW FAIR VALUE",
+      "return5y": {
+        "capital": 0.2828708395200189,
+        "dividend": 0,
+        "total": 0.2828708395200189,
+        "byScenario": {
+          "bear": 0.07313679514276528,
+          "base": 0.3014822348419848,
+          "bull": 0.5010511811931846
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.7195523370638578,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 53.3%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "23.6% vs avg -9.9%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "43.1% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "strengthening"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 77.86251260953506,
+      "region": "nordic",
+      "rank": 2,
+      "regionRank": 1
+    },
+    {
+      "ticker": "STORY-B.ST",
+      "name": "Storytel AB (publ)",
+      "currency": "SEK",
+      "price": 113.8,
+      "weightedFairValue": 414.428,
+      "marginOfSafety": 0.7254046541256864,
+      "upside": 2.6417223198594026,
+      "bearDownside": 2.108787346221441,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 290.09959999999995,
+      "accumulateLow": 248.65679999999998,
+      "accumulateHigh": 290.09959999999995,
+      "entryStatus": "BUY ZONE",
+      "return5y": {
+        "capital": 0.4113426960344657,
+        "dividend": 0.0132,
+        "total": 0.4245426960344657,
+        "byScenario": {
+          "bear": 0.2905742120110716,
+          "base": 0.41839380274736093,
+          "bull": 0.5963728847793272
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.9436152570480929,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "amber",
+          "detail": "P/E 14.7 → 16.6"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 7.8%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "12.1% vs avg 0.3%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "0.17x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "25.4% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 75,
+      "region": "nordic",
+      "rank": 3,
+      "regionRank": 2
+    },
+    {
+      "ticker": "CAMX.ST",
+      "name": "Camurus AB (publ)",
+      "currency": "SEK",
+      "price": 666,
+      "weightedFairValue": 670.3199999999999,
+      "marginOfSafety": 0.0064446831364123325,
+      "upside": 0.00648648648648642,
+      "bearDownside": -0.2936936936936937,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 469.22399999999993,
+      "accumulateLow": 402.19199999999995,
+      "accumulateHigh": 469.22399999999993,
+      "entryStatus": "BELOW FAIR VALUE",
+      "return5y": {
+        "capital": 0.06794468207039592,
+        "dividend": 0,
+        "total": 0.06794468207039592,
+        "byScenario": {
+          "bear": -0.07530146723287823,
+          "base": 0.07274489661262895,
+          "bull": 0.2311996750583054
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 39.4%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "39.1% vs avg 11.2%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "92.8% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 64.30003058236565,
+      "region": "nordic",
+      "rank": 4,
+      "regionRank": 3
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc",
+      "currency": "USD",
+      "price": 347.01,
+      "weightedFairValue": 362.016,
+      "marginOfSafety": 0.04145120657650503,
+      "upside": 0.04324371055589182,
+      "bearDownside": -0.312699922192444,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 253.4112,
+      "accumulateLow": 217.2096,
+      "accumulateHigh": 253.4112,
+      "entryStatus": "BELOW FAIR VALUE",
+      "return5y": {
+        "capital": 0.002329392076862405,
+        "dividend": 0.0075,
+        "total": 0.009829392076862405,
+        "byScenario": {
+          "bear": -0.10024161176842022,
+          "base": 0.012054406214024586,
+          "bull": 0.13790957124430964
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.701030303030303,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 23.5%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "41.3% vs avg 38.0%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "0.68x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "30.7% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "strengthening"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 59.48868796701496,
+      "region": "global",
+      "rank": 5,
+      "regionRank": 2
+    },
+    {
+      "ticker": "ASML.AS",
+      "name": "ASML Holding N.V.",
+      "currency": "EUR",
+      "price": 1338.8,
+      "weightedFairValue": 1070.529,
+      "marginOfSafety": -0.25059666762880783,
+      "upside": -0.2003816850911263,
+      "bearDownside": -0.39017777113833285,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 856.4232000000001,
+      "accumulateLow": 749.3703,
+      "accumulateHigh": 856.4232000000001,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.018970233630638145,
+        "dividend": 0.0056,
+        "total": 0.024570233630638146,
+        "byScenario": {
+          "bear": -0.09370132896504962,
+          "base": 0.03164463848657446,
+          "bull": 0.1537621800047781
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.7689833429063756,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 38.3 → 23.3"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 15.1%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "34.6% vs avg 32.6%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "-0.67x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "strengthening"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 57.61854714509787,
+      "region": "global",
+      "rank": 6,
+      "regionRank": 3
+    },
+    {
+      "ticker": "CRDO",
+      "name": "Credo Technology Group Holding Ltd",
+      "currency": "USD",
+      "price": 120.71,
+      "weightedFairValue": 118.577,
+      "marginOfSafety": -0.017988311392597156,
+      "upside": -0.017670449838455782,
+      "bearDownside": -0.4373291359456548,
+      "requiredMarginOfSafety": 0.4,
+      "entryPrice": 71.1462,
+      "accumulateLow": 59.2885,
+      "accumulateHigh": 71.1462,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.1389229855213065,
+        "dividend": 0,
+        "total": 0.1389229855213065,
+        "byScenario": {
+          "bear": -0.07433077930862952,
+          "base": 0.1650455384302676,
+          "bull": 0.3956821716288792
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.3910648913078692,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 42.6 → 16.6"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 21.1%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "na",
+          "detail": "fewer than 3 years"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 56.94977536948502,
+      "region": "global",
+      "rank": 7,
+      "regionRank": 4
+    },
+    {
+      "ticker": "IVSO.ST",
+      "name": "Invisio Communications AB (publ)",
+      "currency": "SEK",
+      "price": 222.5,
+      "weightedFairValue": 190.332,
+      "marginOfSafety": -0.16900994052497742,
+      "upside": -0.1445752808988764,
+      "bearDownside": -0.3948764044943821,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 133.23239999999998,
+      "accumulateLow": 114.19919999999999,
+      "accumulateHigh": 133.23239999999998,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.08595199933577186,
+        "dividend": 0.0132,
+        "total": 0.09915199933577186,
+        "byScenario": {
+          "bear": -0.05509252550965048,
+          "base": 0.10467483727028516,
+          "bull": 0.2743043208681547
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "amber",
+          "detail": "EV/EBIT 26.9 → 30.4"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 30.8%, 1 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "17.8% vs avg 13.7%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "27.9% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 54.90777306143497,
+      "region": "nordic",
+      "rank": 8,
+      "regionRank": 4
+    },
+    {
+      "ticker": "HEI",
+      "name": "HEICO Corporation",
+      "currency": "USD",
+      "price": 332.65,
+      "weightedFairValue": 257.1,
+      "marginOfSafety": -0.2938545313107739,
+      "upside": -0.22711558695325407,
+      "bearDownside": -0.45889072598827596,
+      "requiredMarginOfSafety": 0.2,
+      "entryPrice": 205.68000000000004,
+      "accumulateLow": 179.97000000000003,
+      "accumulateHigh": 205.68000000000004,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.08616996874072705,
+        "dividend": 0.0008,
+        "total": 0.08696996874072704,
+        "byScenario": {
+          "bear": -0.04402983002865082,
+          "base": 0.09381035395880008,
+          "bull": 0.23185703387144904
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.8826885315501777,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 55.4 → 47.9"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 22.6%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "24.3% vs avg 21.8%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "1.56x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "13.1% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "red",
+          "detail": "4 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "strengthening"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 53.87258169376488,
+      "region": "global",
+      "rank": 9,
+      "regionRank": 5
+    },
+    {
+      "ticker": "ZS",
+      "name": "Zscaler, Inc.",
+      "currency": "USD",
+      "price": 192.47,
+      "weightedFairValue": 165.68,
+      "marginOfSafety": -0.16169724770642202,
+      "upside": -0.1391905231984205,
+      "bearDownside": -0.5261599210266534,
+      "requiredMarginOfSafety": 0.4,
+      "entryPrice": 99.408,
+      "accumulateLow": 82.84,
+      "accumulateHigh": 99.408,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.13191523501129793,
+        "dividend": 0,
+        "total": 0.13191523501129793,
+        "byScenario": {
+          "bear": -0.06985616074913459,
+          "base": 0.13662178441441553,
+          "bull": 0.36556912099820527
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.607448319394035,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 34.8%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "-4.6% vs avg -16.6%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "stable"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 53.39303070951774,
+      "region": "global",
+      "rank": 10,
+      "regionRank": 6
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon.com Inc",
+      "currency": "USD",
+      "price": 266.66,
+      "weightedFairValue": 194.6655,
+      "marginOfSafety": -0.3698369767627032,
+      "upside": -0.26998612465311633,
+      "bearDownside": -0.4622365559138979,
+      "requiredMarginOfSafety": 0.3,
+      "entryPrice": 136.26585,
+      "accumulateLow": 116.7993,
+      "accumulateHigh": 136.26585,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.07461178689449173,
+        "dividend": 0,
+        "total": 0.07461178689449173,
+        "byScenario": {
+          "bear": -0.04601397927397566,
+          "base": 0.0786557163492898,
+          "bull": 0.21208363327801605
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.9284818941504179,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 11.1%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "11.2% vs avg 6.3%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "amber",
+          "detail": "11.2% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "strengthening"
+        }
+      ],
+      "trapReds": 0,
+      "composite": 48.71117868944917,
+      "region": "global",
+      "rank": 11,
+      "regionRank": 7
+    },
+    {
+      "ticker": "MILDEF.ST",
+      "name": "MilDef Group AB (publ)",
+      "currency": "SEK",
+      "price": 256.9,
+      "weightedFairValue": 212.6575,
+      "marginOfSafety": -0.2080458013472366,
+      "upside": -0.17221681588166593,
+      "bearDownside": -0.45270533281432457,
+      "requiredMarginOfSafety": 0.4,
+      "entryPrice": 127.5945,
+      "accumulateLow": 106.32875,
+      "accumulateHigh": 127.5945,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.0846991937061828,
+        "dividend": 0.003,
+        "total": 0.0876991937061828,
+        "byScenario": {
+          "bear": -0.08565661783403222,
+          "base": 0.10621901459685945,
+          "bull": 0.3007656164374012
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": null,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "red",
+          "detail": "EV/EBIT 26.3 → 32.2"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 44.5%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "10.4% vs avg 5.6%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "na",
+          "detail": "unavailable"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "15.1% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "green",
+          "detail": "strengthening"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 42.64718218926866,
+      "region": "nordic",
+      "rank": 12,
+      "regionRank": 5
+    },
+    {
+      "ticker": "GMED",
+      "name": "Globus Medical, Inc.",
+      "currency": "USD",
+      "price": 81.83,
+      "weightedFairValue": 74.28999999999999,
+      "marginOfSafety": -0.10149414456858263,
+      "upside": -0.09214224612000499,
+      "bearDownside": -0.33105218135158254,
+      "requiredMarginOfSafety": 0.4,
+      "entryPrice": 44.57399999999999,
+      "accumulateLow": 37.144999999999996,
+      "accumulateHigh": 44.57399999999999,
+      "entryStatus": "ABOVE FAIR VALUE",
+      "return5y": {
+        "capital": 0.06055025209845649,
+        "dividend": 0,
+        "total": 0.06055025209845649,
+        "byScenario": {
+          "bear": -0.049579767260815144,
+          "base": 0.06912887563553616,
+          "bull": 0.20100648154210932
+        }
+      },
+      "return10y": null,
+      "pctOf52wHigh": 0.8070019723865877,
+      "trap": [
+        {
+          "indicator": "Forward vs trailing",
+          "light": "green",
+          "detail": "P/E 20.9 → 16.1"
+        },
+        {
+          "indicator": "Revenue trend",
+          "light": "green",
+          "detail": "CAGR 26.8%, 0 down yr(s)"
+        },
+        {
+          "indicator": "Operating margin",
+          "light": "green",
+          "detail": "23.2% vs avg 19.8%"
+        },
+        {
+          "indicator": "Net debt/EBITDA",
+          "light": "green",
+          "detail": "-0.72x"
+        },
+        {
+          "indicator": "FCF conversion",
+          "light": "na",
+          "detail": "insufficient history"
+        },
+        {
+          "indicator": "ROIC vs WACC",
+          "light": "green",
+          "detail": "13.9% vs 8.0%"
+        },
+        {
+          "indicator": "Verification flags",
+          "light": "amber",
+          "detail": "3 flag(s)"
+        },
+        {
+          "indicator": "Competitive position",
+          "light": "red",
+          "detail": "weakening"
+        }
+      ],
+      "trapReds": 1,
+      "composite": 39.22662107931471,
+      "region": "global",
+      "rank": 13,
+      "regionRank": 8
+    }
+  ]
+}

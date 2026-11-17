@@ -1,0 +1,295 @@
+{
+  "ticker": "ZS",
+  "name": "Zscaler, Inc.",
+  "exchange": "Nasdaq",
+  "currency": "USD",
+  "sector": "Technology / Cybersecurity (SASE, Zero Trust)",
+  "businessSummary": "Cloud-native security platform (Zero Trust Exchange) for secure internet/app access; subscription SaaS model.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 192.47,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "high52w": {
+      "value": 316.85,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "low52w": {
+      "value": 114.63,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "sharesOutstanding": {
+      "value": 163.05,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "millions; differs slightly from GAAP/non-GAAP diluted counts reported."
+    },
+    "marketCap": {
+      "value": 31380,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "netDebt": {
+      "value": -1610,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "Net cash $1.61B; convertible notes carrying value $1,699.9M vs cash/ST investments $3,321.3M."
+    },
+    "enterpriseValue": {
+      "value": 29780,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "peTrailing": {
+      "value": null,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "GAAP net loss (TTM EPS -0.39)."
+    },
+    "peForward": {
+      "value": 39.22,
+      "period": "NTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "Likely on consensus non-GAAP EPS."
+    },
+    "evEbitTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "GAAP operating loss."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 679.06,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "Extreme multiple -- GAAP EBITDA near breakeven, not a meaningful input."
+    },
+    "fcfTTM": {
+      "value": null,
+      "period": "TTM",
+      "source": "ir.zscaler.com",
+      "asOf": "2025-10-31",
+      "note": "Only quarterly FCF confirmed: Q1 FY26 $413.3M (52% of rev) vs $291.9M (46%) a year earlier."
+    },
+    "fcfYield": {
+      "value": 0.0272,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "Inconsistent with annualizing the primary-source Q1 figure -- flagged conflict."
+    },
+    "dividendPerShare": {
+      "value": 0,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "No dividend."
+    },
+    "dividendYield": {
+      "value": 0,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": null
+    },
+    "payoutRatio": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "n/a."
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roe": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "beta5y": {
+      "value": 0.84,
+      "period": "",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2022",
+        "revenue": 1091,
+        "ebit": -327.43,
+        "ebitMargin": -0.3001,
+        "eps": null,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 1617,
+        "ebit": -228.06,
+        "ebitMargin": -0.141,
+        "eps": null,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 2168,
+        "ebit": -121.48,
+        "ebitMargin": -0.056,
+        "eps": null,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 2673,
+        "ebit": -122.22,
+        "ebitMargin": -0.0457,
+        "eps": null,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Buy",
+      "analysts": 47,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 235.19,
+      "targetHigh": null,
+      "targetLow": null,
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13"
+    },
+    "forwardEstimates": {
+      "epsNextFY": 3.8,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "company guidance: FY2026 revenue $3.282-3.301B, non-GAAP EPS $3.78-3.82"
+    },
+    "recentEvents": [
+      "Q1 FY2026 (ended Oct 31, 2025): revenue $788.1M +26% YoY, non-GAAP op margin 22%, GAAP op margin -5%, FCF $413.3M (52% of rev), GAAP net loss -$0.07 EPS, non-GAAP EPS $0.96.",
+      "Q2 FY2026 guidance: revenue $797-799M, non-GAAP EPS $0.89-0.90.",
+      "Non-GAAP tax rate lowered to 21% from 23%, flattering non-GAAP EPS comparisons."
+    ],
+    "valueTrapFlags": [
+      "Persistent GAAP net losses and operating losses every year shown, though narrowing.",
+      "Large GAAP-to-non-GAAP gap driven partly by stock-based comp add-back.",
+      "Revenue growth decelerated steadily from 62% (FY22) to 23% (FY25) before a slight reacceleration to 26% in Q1 FY26."
+    ],
+    "growthQualityNotes": [
+      "FCF margin strong and improving: 46% to 52% of revenue -- genuine cash generation despite GAAP losses.",
+      "Non-GAAP operating margin expanding (21% to 22% YoY), consistent with operating leverage.",
+      "Billings growth and net retention rate not disclosed in the release reviewed -- data gap on forward-looking SaaS signals."
+    ],
+    "dataGaps": [
+      "Calculated billings and net retention not found.",
+      "Net debt/lease-adjusted figures not separately available.",
+      "TTM FCF not independently verified.",
+      "Not in stock-agent /decisions."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "Non-GAAP EPS-based scenario fair value (GAAP basis not usable given GAAP losses), explicitly treating the GAAP/non-GAAP gap as a quality discount",
+    "metricBasis": "EPS (non-GAAP, FY2026E guidance midpoint)",
+    "basisValue": 3.8,
+    "forwardDividendYield": 0.0,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+      "quality": 3,
+      "growth": 3,
+      "financialStrength": 4,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 91.2,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 24,
+        "note": "Revenue growth decelerates further (toward the FY25 23% trough or below), non-GAAP multiple compresses."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 159.6,
+        "epsCagr5y": 0.18,
+        "exitPe5y": 42,
+        "note": "Mid-20s% revenue growth sustains as in Q1 FY26, FCF margin keeps improving."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 266.0,
+        "epsCagr5y": 0.28,
+        "exitPe5y": 70,
+        "note": "Zero Trust/SASE adoption accelerates, GAAP profitability finally arrives, re-rating toward peer SaaS multiples."
+      }
+    },
+    "whyItFits": "Strong, improving FCF generation (52% of revenue) and a real reacceleration in growth (23% to 26% YoY) inside a structurally growing cybersecurity category, but persistent GAAP losses and an inconsistent FCF-yield figure are real data-quality caveats.",
+    "growthDrivers": "Zero Trust/SASE category adoption, enterprise cloud security spend shift away from legacy perimeter security.",
+    "saturation": "Revenue growth has decelerated steadily for 3 years before this quarter's uptick -- not yet confirmed as a durable reacceleration.",
+    "principalRisk": "Still GAAP-unprofitable with an inconsistent FCF-yield data point; if the Q1 FY26 growth uptick doesn't hold, the current non-GAAP-anchored valuation has little support."
+  }
+}

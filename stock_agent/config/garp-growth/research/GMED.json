@@ -1,0 +1,316 @@
+{
+  "ticker": "GMED",
+  "name": "Globus Medical, Inc.",
+  "exchange": "NYSE",
+  "currency": "USD",
+  "sector": "Healthcare / Medical Devices (Musculoskeletal / Spine)",
+  "businessSummary": "Musculoskeletal healthcare products: spine fusion implants, motion preservation, interventional treatments, enabling technologies (robotics/navigation), and (via Nevro) neuromodulation.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 81.83,
+      "period": "close",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-26",
+      "note": "Predates the Nov 7, 2026 Q3 earnings print and guidance cut."
+    },
+    "high52w": {
+      "value": 101.4,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-26",
+      "note": null
+    },
+    "low52w": {
+      "value": 59.51,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-26",
+      "note": null
+    },
+    "sharesOutstanding": {
+      "value": 134.26,
+      "period": "latest",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-26",
+      "note": "millions"
+    },
+    "marketCap": {
+      "value": 10990,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-26",
+      "note": null
+    },
+    "netDebt": {
+      "value": -729,
+      "period": "current",
+      "source": "derived: EV - market cap",
+      "asOf": "2026-08-25",
+      "note": "Net cash ~$729M; FY2025 net cash ~$287M."
+    },
+    "enterpriseValue": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "Back-solved only via net debt."
+    },
+    "peTrailing": {
+      "value": 20.93,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-26",
+      "note": null
+    },
+    "peForward": {
+      "value": 16.05,
+      "period": "NTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-26",
+      "note": null
+    },
+    "evEbitTrailing": {
+      "value": 14.01,
+      "period": "current",
+      "source": "stockanalysis.com/financials/ratios/",
+      "asOf": "2026-10-22",
+      "note": "FY2025 was 18.99x."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 10.13,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-22",
+      "note": "FY2025 was 13.00x."
+    },
+    "fcfTTM": {
+      "value": 755,
+      "period": "current ~TTM",
+      "source": "derived: mktcap x FCF yield",
+      "asOf": "2026-10-22",
+      "note": "FY2025 derived ~$589M."
+    },
+    "fcfYield": {
+      "value": 0.0689,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-22",
+      "note": "FY2025 was 5.04%."
+    },
+    "dividendPerShare": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "No dividend."
+    },
+    "dividendYield": {
+      "value": 0.0,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-26",
+      "note": "No dividend."
+    },
+    "payoutRatio": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "n/a."
+    },
+    "netDebtToEbitda": {
+      "value": -0.72,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-22",
+      "note": "FY2025=-0.58x."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.1393,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-22",
+      "note": "FY2025=13.41%."
+    },
+    "roe": {
+      "value": 0.1181,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-22",
+      "note": "FY2025=12.29%."
+    },
+    "beta5y": {
+      "value": 0.96,
+      "period": "",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-26",
+      "note": null
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 958.1,
+        "ebit": 194.86,
+        "ebitMargin": 0.2034,
+        "eps": 1.44,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 1023,
+        "ebit": 237.15,
+        "ebitMargin": 0.2318,
+        "eps": 1.85,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 1568,
+        "ebit": 273.51,
+        "ebitMargin": 0.1744,
+        "eps": 1.07,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 2519,
+        "ebit": 441.03,
+        "ebitMargin": 0.1751,
+        "eps": 0.75,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 2939,
+        "ebit": 600.27,
+        "ebitMargin": 0.2042,
+        "eps": 3.92,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "TTM (Jun 2026)",
+        "revenue": 3145,
+        "ebit": 730.32,
+        "ebitMargin": 0.2322,
+        "eps": 3.91,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Buy",
+      "analysts": 14,
+      "buy": 10,
+      "hold": 4,
+      "sell": 0,
+      "targetAvg": 100.92,
+      "targetHigh": 125,
+      "targetLow": 84,
+      "source": "stockanalysis.com/forecast/",
+      "asOf": "~Oct 2026, pre guidance cut"
+    },
+    "forwardEstimates": {
+      "epsNextFY": 5.0,
+      "epsFY2": 5.39,
+      "revenueGrowthNextFY": 0.089,
+      "source": "stockanalysis.com forecast, pre Q3-2026 cut"
+    },
+    "recentEvents": [
+      "Q3 2026 (reported ~Nov 7, 2026): FY2026 revenue guidance cut to $3.09bn from prior $3.18-3.22bn.",
+      "US Spine revenue grew only 2% in Q3 2026 vs a tough prior-year comp; international revenue fell 5.7%.",
+      "Despite the revenue cut, FY adjusted diluted EPS guidance held at $4.95-5.05 (implying 24.4-26.9% YoY growth).",
+      "Board increased share buyback authorization by $500 million concurrent with the guidance cut.",
+      "Enabling Technologies revenue +24% and robotic/navigation deployments +73% partially offset spine softness."
+    ],
+    "valueTrapFlags": [
+      "Revenue guidance cut while EPS guidance held flat via margin discipline and a larger buyback -- EPS propped up, not organic growth.",
+      "Core US Spine growth decelerated sharply (2%) and international revenue declined (-5.7%).",
+      "Analyst consensus/targets predate the Nov 2026 guidance cut and are stale."
+    ],
+    "growthQualityNotes": [
+      "Multi-year revenue growth real but uneven (7%, 53%, 61%, 17%, now decelerating further per the cut).",
+      "Gross margin drifted down from ~75% to ~68-69%; mild compression.",
+      "Operating margin recovered to a TTM high (23.2%) via cost discipline, not revenue leverage.",
+      "FCF yield modest (6.9%) and already positive."
+    ],
+    "dataGaps": [
+      "Not in stock-agent /decisions.",
+      "Absolute EBITDA/net debt back-solved.",
+      "Interest coverage, payout ratio n/a.",
+      "Consensus pre-dates the Nov 7 guidance cut -- should be re-verified."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, explicitly discounted for the Nov 2026 guidance cut and EPS-via-buyback dynamic",
+    "metricBasis": "EPS (GAAP, TTM to Jun 2026)",
+    "basisValue": 3.91,
+    "forwardDividendYield": 0.0,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "weakening",
+    "scores": {
+      "quality": 3,
+      "growth": 2,
+      "financialStrength": 4,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.35,
+        "fairValue": 54.74,
+        "epsCagr5y": 0.03,
+        "exitPe5y": 14,
+        "note": "US Spine and international declines persist; EPS support from buybacks runs out of room."
+      },
+      "base": {
+        "prob": 0.4,
+        "fairValue": 74.29,
+        "epsCagr5y": 0.09,
+        "exitPe5y": 19,
+        "note": "Spine stabilizes, Enabling Technologies (+24%) and robotics (+73%) keep offsetting the soft core."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 101.66,
+        "epsCagr5y": 0.15,
+        "exitPe5y": 26,
+        "note": "Robotics/navigation adoption accelerates meaningfully, reversing the Spine deceleration."
+      }
+    },
+    "whyItFits": "Robotics/navigation (Enabling Technologies) is a real, fast-growing (+24%, deployments +73%) structural growth driver inside an otherwise decelerating core Spine business -- included as a flagged, lower-conviction growth name given the Nov 7 guidance cut.",
+    "growthDrivers": "Robotic/navigation surgical system adoption, Enabling Technologies segment growth, post-Nevro neuromodulation cross-sell.",
+    "saturation": "Core US Spine growth has decelerated to 2% and international revenue is now declining -- the original growth engine is clearly maturing/competing harder.",
+    "principalRisk": "EPS guidance is currently being held up by cost discipline and buybacks rather than organic growth; if that support is exhausted before Enabling Technologies scales enough, EPS could disappoint materially."
+  }
+}

@@ -1,6 +1,3986 @@
 {
- "runAt": "2026-11-16T22:01:29Z",
+ "runAt": "2026-11-17T14:49:52Z",
  "title": "Growth GARP research: top 5 Nordic and top 10 global",
- "files": [],
+ "files": [
+  {
+   "ticker": "AMZN",
+   "name": "Amazon.com Inc",
+   "exchange": "Nasdaq",
+   "currency": "USD",
+   "sector": "Internet Retail / Cloud Computing",
+   "businessSummary": "E-commerce and third-party marketplace retailer; AWS cloud computing; advertising; devices and subscriptions (Prime).",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 266.66,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "high52w": {
+     "value": 287.2,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "low52w": {
+     "value": 196,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "sharesOutstanding": {
+     "value": 10810,
+     "period": "latest",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "10.81B shares"
+    },
+    "marketCap": {
+     "value": 2880000,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "2.88T"
+    },
+    "netDebt": {
+     "value": 190615,
+     "period": "2026-09-30",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-30",
+     "note": "Total debt $304,841M less cash & investments $114,226M; fulfillment-center lease treatment unconfirmed."
+    },
+    "enterpriseValue": {
+     "value": 3070615,
+     "period": "derived",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "Mixes Nov price with Sep balance sheet."
+    },
+    "peTrailing": {
+     "value": 21.55,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "Absent from stock-agent feed."
+    },
+    "peForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitTrailing": {
+     "value": 26.41,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-30",
+     "note": null
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 15,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-30",
+     "note": null
+    },
+    "fcfTTM": {
+     "value": -46892,
+     "period": "TTM to 2026-09-30",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-30",
+     "note": "Operating CF $168,300M minus capex $215,192M; capex has roughly doubled YoY on AI/data-center buildout."
+    },
+    "fcfYield": {
+     "value": -0.0163,
+     "period": "TTM/spot mktcap",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "Negative FCF yield -- flag for a GARP screen."
+    },
+    "dividendPerShare": {
+     "value": 0,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "No dividend."
+    },
+    "dividendYield": {
+     "value": 0,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "payoutRatio": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "n/a."
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable; absent from stock-agent feed."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.1116,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-30",
+     "note": null
+    },
+    "roe": {
+     "value": 0.2742,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-30",
+     "note": null
+    },
+    "beta5y": {
+     "value": 1.5,
+     "period": "5y",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "No cross-check available."
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 469822,
+      "ebit": null,
+      "ebitMargin": 0.0529,
+      "eps": 3.24,
+      "fcf": -14726,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 513983,
+      "ebit": null,
+      "ebitMargin": 0.026,
+      "eps": -0.27,
+      "fcf": -16893,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 574785,
+      "ebit": null,
+      "ebitMargin": 0.0641,
+      "eps": 2.9,
+      "fcf": 32217,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 637959,
+      "ebit": null,
+      "ebitMargin": 0.1075,
+      "eps": 5.53,
+      "fcf": 32878,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 716924,
+      "ebit": null,
+      "ebitMargin": 0.1115,
+      "eps": 7.17,
+      "fcf": 7695,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Strong Buy",
+     "analysts": 62,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 326.29,
+     "targetHigh": null,
+     "targetLow": null,
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable within budget"
+    },
+    "recentEvents": [
+     "Q3 2025 results: AWS growth reaccelerated; retail and advertising also grew; EPS beat and AWS reacceleration cited as catalysts for a sharp stock rise."
+    ],
+    "valueTrapFlags": [
+     "TTM FCF sharply negative (-$46.9B) vs +$7.7B FY2025 and +$32.9B FY2024 -- capex more than doubled for AI/data-center buildout.",
+     "Operating cash flow growing (+21% FY2025 to TTM) but entirely outrun by capex -- FCF conversion has collapsed.",
+     "No dividend, so payout-based leverage checks n/a."
+    ],
+    "growthQualityNotes": [
+     "Revenue growth real, steady, recent: $469.8B (FY2021) to $716.9B (FY2025), ~11%/yr.",
+     "Operating margin genuinely expanding: trough 2.6% (FY2022) to 11.15% (FY2025).",
+     "Path to sustained positive FCF has REVERSED in the most recent TTM due to the AI capex supercycle -- key watch item.",
+     "AMZN absent from the stock-agent feed -- no secondary cross-check available."
+    ],
+    "dataGaps": [
+     "Forward P/E, EV/EBIT forward, ND/EBITDA, interest coverage, historical multiple range, itemized forward estimates, stock-agent cross-check unavailable."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS; the sharply negative TTM FCF (AI capex supercycle) is treated as a risk/quality flag rather than built into the basis value",
+    "metricBasis": "EPS (reported, TTM/FY2025)",
+    "basisValue": 7.17,
+    "forwardDividendYield": 0,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+     "quality": 4,
+     "growth": 4,
+     "financialStrength": 3,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 143.4,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 20,
+      "note": "AI capex keeps outrunning operating cash flow for longer than expected, margin story stalls."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 193.59,
+      "epsCagr5y": 0.15,
+      "exitPe5y": 27,
+      "note": "AWS reaccelerates as AI capex starts converting to revenue, retail/advertising margins keep expanding."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 258.12,
+      "epsCagr5y": 0.22,
+      "exitPe5y": 36,
+      "note": "AWS AI infrastructure monetizes faster than expected, FCF reinflects as capex growth moderates."
+     }
+    },
+    "whyItFits": "Genuine, steady multi-year revenue growth and real operating-margin expansion (2.6% to 11.15%) across retail, advertising and AWS, but the current AI capex supercycle has temporarily reversed free cash flow -- the central open question for this GARP case.",
+    "growthDrivers": "AWS AI infrastructure/compute demand, retail logistics efficiency, advertising growth.",
+    "saturation": "No saturation in revenue growth; the constraint right now is capital intensity (capex), not demand.",
+    "principalRisk": "If AI infrastructure capex does not convert to AWS revenue growth as expected, the current negative free cash flow becomes a structural rather than cyclical problem."
+   }
+  },
+  {
+   "ticker": "ASML.AS",
+   "name": "ASML Holding N.V.",
+   "exchange": "Euronext Amsterdam",
+   "currency": "EUR",
+   "sector": "Semiconductor Equipment",
+   "businessSummary": "Sole supplier of EUV lithography systems and a leading supplier of DUV systems to leading-edge semiconductor manufacturers (TSMC, Samsung, Intel, etc.).",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 1338.8,
+     "period": "spot",
+     "source": "stockanalysis.com/quote/ams/ASML",
+     "asOf": "2026-11-13",
+     "note": "EUR, Amsterdam listing. stock-agent showed 1,406.79 for ticker 'ASML' (presumably the Nasdaq USD ADR) -- not reconciled."
+    },
+    "high52w": {
+     "value": 1741,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "EUR"
+    },
+    "low52w": {
+     "value": 822.2,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "EUR"
+    },
+    "sharesOutstanding": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "~382M implied by market cap/price, not independently confirmed."
+    },
+    "marketCap": {
+     "value": 511950,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "EUR511.95B"
+    },
+    "netDebt": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "stock-agent ND/EBITDA of -0.67 implies net cash; underlying EUR figure not independently fetched."
+    },
+    "enterpriseValue": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable without a verified net cash figure."
+    },
+    "peTrailing": {
+     "value": 38.29,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "CONFLICT: stock-agent (ADR/USD) gave 36.79."
+    },
+    "peForward": {
+     "value": 23.29,
+     "period": "NTM consensus",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "evEbitTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "stock-agent figure (1,965.96) implausible, discarded."
+    },
+    "fcfTTM": {
+     "value": 10041,
+     "period": "TTM to 2026-06-28",
+     "source": "stockanalysis.com",
+     "asOf": "2026-06-28",
+     "note": "EUR millions."
+    },
+    "fcfYield": {
+     "value": 0.0196,
+     "period": "TTM/spot mktcap",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "dividendPerShare": {
+     "value": 7.5,
+     "period": "annualized approx",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "Q3 2025 interim EUR1.60 confirmed via asml.com press release."
+    },
+    "dividendYield": {
+     "value": 0.0056,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "payoutRatio": {
+     "value": 0.2226,
+     "period": "TTM",
+     "source": "stock-agent /decisions",
+     "asOf": "2026-11-17",
+     "note": "Not independently cross-checked."
+    },
+    "netDebtToEbitda": {
+     "value": -0.67,
+     "period": "TTM",
+     "source": "stock-agent /decisions",
+     "asOf": "2026-11-17",
+     "note": "Net cash."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roe": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "beta5y": {
+     "value": 1.333,
+     "period": "5y",
+     "source": "stock-agent /decisions",
+     "asOf": "2026-11-17",
+     "note": "stockanalysis.com showed 1.33, consistent."
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 18611,
+      "ebit": null,
+      "ebitMargin": 0.3512,
+      "eps": 14.34,
+      "fcf": 9945,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 21173,
+      "ebit": null,
+      "ebitMargin": 0.307,
+      "eps": 14.13,
+      "fcf": 7205,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 27559,
+      "ebit": null,
+      "ebitMargin": 0.3281,
+      "eps": 19.89,
+      "fcf": 3288,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 28263,
+      "ebit": null,
+      "ebitMargin": 0.3192,
+      "eps": 19.24,
+      "fcf": 9099,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 32667,
+      "ebit": null,
+      "ebitMargin": 0.3459,
+      "eps": 24.71,
+      "fcf": 11085,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Strong Buy",
+     "analysts": 41,
+     "buy": 31,
+     "hold": 2,
+     "sell": 1,
+     "targetAvg": 2113,
+     "targetHigh": 2799.79,
+     "targetLow": 852.31,
+     "source": "stockanalysis.com + stock-agent /decisions",
+     "asOf": "2026-11-17"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "company guidance: ~15% FY2025 sales growth vs 2024; does not expect 2026 below 2025"
+    },
+    "recentEvents": [
+     "Q3 2025: net sales EUR7,516M, net income EUR2,125M, gross margin 51.6%.",
+     "Q3 2025 net bookings EUR5,399M, of which EUR3.6B EUV.",
+     "Q4 2025 guidance: net sales EUR9,200-9,800M, gross margin 51-53%.",
+     "EUR12B 2022-2025 buyback program under-run (only EUR5.9B executed as of Sep 2025); new program to be announced Jan 2026."
+    ],
+    "valueTrapFlags": [
+     "Buyback materially behind its own pace/size -- capital-allocation signal to watch.",
+     "FY2023 FCF dipped sharply despite revenue growth that year -- working-capital timing issue.",
+     "Heavy dependence on a small number of leading-edge customers (TSMC, Samsung, Intel)."
+    ],
+    "growthQualityNotes": [
+     "Revenue growth real: EUR18.6B (FY2021) to EUR32.7B (FY2025), including a near-flat FY2023-24 downcycle then FY2025 reacceleration.",
+     "Operating margin range-bound (31-35%) rather than steadily expanding -- a stable-margin, not margin-expansion, story.",
+     "FCF volatile due to lumpy working capital tied to large system shipments, but TTM/FY2025 level (~EUR10-11B) suggests durable positive FCF."
+    ],
+    "dataGaps": [
+     "Shares outstanding, net debt in EUR, EV, EV/EBIT, EV/EBITDA (stock-agent figure discarded), ROIC, ROE, interest coverage, historical multiple range unavailable.",
+     "Nasdaq ADR not separately verified."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS (EUR), reflecting ASML's range-bound (not expanding) margin profile and lumpy FCF",
+    "metricBasis": "EPS (reported, FY2025)",
+    "basisValue": 24.71,
+    "forwardDividendYield": 0.0056,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+     "quality": 5,
+     "growth": 4,
+     "financialStrength": 5,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 816.43,
+      "epsCagr5y": 0.06,
+      "exitPe5y": 24,
+      "note": "Semiconductor-equipment downcycle repeats (as in FY2023-24), EUV capex delayed by customers."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 1038,
+      "epsCagr5y": 0.14,
+      "exitPe5y": 32,
+      "note": "AI-driven leading-edge capex continues at a steady pace, similar to the FY2025 reacceleration."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 1434,
+      "epsCagr5y": 0.22,
+      "exitPe5y": 40,
+      "note": "AI chip demand drives an extended leading-edge capex upcycle, High-NA EUV adoption accelerates."
+     }
+    },
+    "whyItFits": "Sole supplier of EUV lithography with effectively no credible competitor, real recent revenue reacceleration (FY2025 +15.6%) after the FY2023-24 downcycle, strong net-cash balance sheet -- the cleanest 'structural moat' growth case on the shortlist, even though margins aren't expanding, just stable.",
+    "growthDrivers": "AI/leading-edge semiconductor capex, High-NA EUV system adoption, structural industry reliance on ASML's monopoly position.",
+    "saturation": "The FY2023-24 near-flat period shows this is a cyclical-within-structural-growth business -- capex cycles will keep causing lumpiness.",
+    "principalRisk": "Heavy dependence on a small number of leading-edge customers (TSMC, Samsung, Intel); a slowdown in their capex plans would hit ASML directly, and geopolitical export restrictions remain a standing risk."
+   }
+  },
+  {
+   "ticker": "AVGO",
+   "name": "Broadcom Inc",
+   "exchange": "Nasdaq",
+   "currency": "USD",
+   "sector": "Semiconductors / Infrastructure Software",
+   "businessSummary": "Designer of semiconductors (networking, custom AI ASICs, broadband) and, since the 2023 VMware acquisition, a large enterprise infrastructure software business.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 347.01,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "CONFLICT: stock-agent showed $333.40 for a nearby date, unreconciled."
+    },
+    "high52w": {
+     "value": 495,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "low52w": {
+     "value": 289.77,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "sharesOutstanding": {
+     "value": 4770,
+     "period": "latest",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "4.77B shares"
+    },
+    "marketCap": {
+     "value": 1660000,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "1.66T"
+    },
+    "netDebt": {
+     "value": 35444,
+     "period": "2026-08-02",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-02",
+     "note": "Total debt $59,419M less cash & investments $23,975M; lease treatment unconfirmed."
+    },
+    "enterpriseValue": {
+     "value": 1695444,
+     "period": "derived",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "Mixes Nov price with Aug balance sheet."
+    },
+    "peTrailing": {
+     "value": 44.29,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "CONFLICT: stock-agent gave 42.58."
+    },
+    "peForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitTrailing": {
+     "value": 38.9,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "Operating income basis, not EBITA."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 32.38,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "stock-agent gave 31.13, close."
+    },
+    "fcfTTM": {
+     "value": 39403,
+     "period": "TTM to 2026-08-02",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-02",
+     "note": null
+    },
+    "fcfYield": {
+     "value": 0.0237,
+     "period": "TTM/spot mktcap",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "dividendPerShare": {
+     "value": 2.6,
+     "period": "annualized",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "dividendYield": {
+     "value": 0.0075,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "payoutRatio": {
+     "value": 0.3319,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "stock-agent gave 0.3244, consistent."
+    },
+    "netDebtToEbitda": {
+     "value": 0.68,
+     "period": "TTM",
+     "source": "stock-agent /decisions",
+     "asOf": "2026-11-17",
+     "note": null
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.3068,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "roe": {
+     "value": 0.4425,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "beta5y": {
+     "value": 1.508,
+     "period": "5y",
+     "source": "stock-agent /decisions",
+     "asOf": "2026-11-17",
+     "note": "stockanalysis.com showed 1.51, consistent."
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 27450,
+      "ebit": null,
+      "ebitMargin": 0.3164,
+      "eps": 1.5,
+      "fcf": 13321,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 33203,
+      "ebit": null,
+      "ebitMargin": 0.4303,
+      "eps": 2.65,
+      "fcf": 16312,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 35819,
+      "ebit": null,
+      "ebitMargin": 0.4664,
+      "eps": 3.3,
+      "fcf": 17633,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 51574,
+      "ebit": null,
+      "ebitMargin": 0.3063,
+      "eps": 1.23,
+      "fcf": 19414,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 63887,
+      "ebit": null,
+      "ebitMargin": 0.4127,
+      "eps": 4.77,
+      "fcf": 26914,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Strong Buy",
+     "analysts": 51,
+     "buy": 40,
+     "hold": 3,
+     "sell": 0,
+     "targetAvg": 528.17,
+     "targetHigh": 660,
+     "targetLow": 398.47,
+     "source": "stock-agent /decisions + stockanalysis.com",
+     "asOf": "2026-11-17"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "unavailable within budget"
+    },
+    "recentEvents": [
+     "Q4/FY2025 results (~Dec 2025): revenue $18,015M Q4, +28% YoY; AI/custom-silicon and VMware software cited as growth drivers; shares reportedly fell post-earnings despite the beat."
+    ],
+    "valueTrapFlags": [
+     "FY2024 operating margin dipped sharply and net income collapsed -- VMware acquisition costs/amortization, not organic deterioration.",
+     "Reported negative share-price reaction to the latest beat suggests the market may price flawless execution.",
+     "Trailing P/E (~44x) and EV/EBITDA (~32x) both rich and conflicting slightly between sources."
+    ],
+    "growthQualityNotes": [
+     "Revenue growth real: $27.5B (FY2021) to $63.9B (FY2025), mixed organic/inorganic (VMware).",
+     "Margin trend distorted by the VMware deal; FY2025 recovery is partial normalization plus AI mix benefit.",
+     "Already solidly FCF positive and growing, with high ROIC (~31%) and ROE (~44%)."
+    ],
+    "dataGaps": [
+     "Forward P/E, EV/EBIT forward, interest coverage, historical multiple range, itemized forward estimates not found.",
+     "Price conflict between sources unreconciled."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, with the VMware-related FY2024 margin distortion explicitly normalized out of the growth assumption",
+    "metricBasis": "EPS (reported, TTM/FY2025)",
+    "basisValue": 4.77,
+    "forwardDividendYield": 0.0075,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+     "quality": 4,
+     "growth": 4,
+     "financialStrength": 5,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 238.5,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 28,
+      "note": "Custom AI ASIC demand slows, VMware integration synergies underwhelm, multiple compresses from today's ~44x."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 353.98,
+      "epsCagr5y": 0.15,
+      "exitPe5y": 37,
+      "note": "AI networking/custom-silicon and VMware software both grow steadily, similar to today's multiple."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 524.7,
+      "epsCagr5y": 0.25,
+      "exitPe5y": 44,
+      "note": "Custom AI silicon wins accelerate (additional hyperscaler customers), VMware software margins keep expanding."
+     }
+    },
+    "whyItFits": "Real growth (networking/custom AI ASICs plus VMware software) with high ROIC (~31%) and ROE (~44%), though the growth is a mix of organic AI demand and the VMware acquisition rather than a single clean growth driver.",
+    "growthDrivers": "Custom AI accelerator (ASIC) design wins with hyperscalers, VMware enterprise software cross-sell, networking silicon demand.",
+    "saturation": "No clear saturation yet, but the market's negative reaction to a recent earnings beat suggests high expectations are already embedded.",
+    "principalRisk": "FY2024's sharp margin/earnings dip (VMware acquisition costs) shows integration risk is real; a similar disruption from a future large acquisition, or AI-ASIC demand normalizing, would hit the growth case."
+   }
+  },
+  {
+   "ticker": "BONEX.ST",
+   "name": "Bonesupport Holding AB (publ)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Medical Devices/Biotechnology (orthobiologics)",
+   "businessSummary": "Swedish orthobiologics company commercializing CERAMENT bone-graft substitute products, including the US launch of CERAMENT G.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 218.6,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-21",
+     "note": "Stale -- predates Q3 2026 report. A later marketscreener.com fetch was internally inconsistent and discarded."
+    },
+    "high52w": {
+     "value": 303.8,
+     "period": "52w (as sourced)",
+     "source": "ca.marketscreener.com",
+     "asOf": "internally inconsistent, treat cautiously",
+     "note": null
+    },
+    "low52w": {
+     "value": 167.55,
+     "period": "52w (as sourced)",
+     "source": "ca.marketscreener.com",
+     "asOf": "internally inconsistent, treat cautiously",
+     "note": null
+    },
+    "sharesOutstanding": {
+     "value": 65.86,
+     "period": "millions",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-21",
+     "note": null
+    },
+    "marketCap": {
+     "value": 14398,
+     "period": "spot",
+     "source": "derived",
+     "asOf": "2026-08-21",
+     "note": "Uses stale price."
+    },
+    "netDebt": {
+     "value": -424.18,
+     "period": "2026-06-30",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-21",
+     "note": "Net cash; not updated for Q3 close."
+    },
+    "enterpriseValue": {
+     "value": 13973.8,
+     "period": "derived",
+     "source": "derived",
+     "asOf": "2026-08-21",
+     "note": "Uses stale price and net cash."
+    },
+    "peTrailing": {
+     "value": 68.13,
+     "period": "TTM, stale pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-21",
+     "note": "Not refreshed."
+    },
+    "peForward": {
+     "value": null,
+     "period": "FY2026",
+     "source": "stockanalysis.com",
+     "asOf": "2026-07-21",
+     "note": "Pre-Q3-beat estimate; likely stale."
+    },
+    "evEbitTrailing": {
+     "value": 38.03,
+     "period": "TTM to Q3 2026",
+     "source": "derived",
+     "asOf": "mixed-date, approximate",
+     "note": "Mixes stale EV with fresher EBIT."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "FY2026",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 43.68,
+     "period": "stale, pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-21",
+     "note": null
+    },
+    "fcfTTM": {
+     "value": null,
+     "period": "TTM",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "fcfYield": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "dividendPerShare": {
+     "value": null,
+     "period": "n/a",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-21",
+     "note": "No dividend."
+    },
+    "dividendYield": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-08-21",
+     "note": "No dividend."
+    },
+    "payoutRatio": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-08-21",
+     "note": "No dividend."
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-17",
+     "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "n/a",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.4307,
+     "period": "stale, pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-21",
+     "note": null
+    },
+    "roe": {
+     "value": 0.245,
+     "period": "stale, pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-21",
+     "note": null
+    },
+    "beta5y": {
+     "value": 0.49,
+     "period": "5y",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-21",
+     "note": null
+    },
+    "sectorMetrics": {
+     "grossMargin": {
+      "value": 0.92,
+      "period": "Q3 2026",
+      "source": "inderes.se (Q3 2026 interim)",
+      "asOf": "2026-11",
+      "note": "92.0% vs 92.9% Q3 2025 -- stable, high-margin."
+     }
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 212.89,
+      "ebit": -83.3,
+      "ebitMargin": -0.3913,
+      "eps": -1.34,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 328.82,
+      "ebit": -67.61,
+      "ebitMargin": -0.2056,
+      "eps": -1.06,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 591.08,
+      "ebit": 22.64,
+      "ebitMargin": 0.0383,
+      "eps": 3.74,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 898.73,
+      "ebit": 147.71,
+      "ebitMargin": 0.1644,
+      "eps": 2.01,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 1175,
+      "ebit": 277.56,
+      "ebitMargin": 0.2363,
+      "eps": 2.13,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "not fetched"
+    },
+    "consensus": {
+     "rating": "Strong Buy",
+     "analysts": 5,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 244.9,
+     "targetHigh": 272,
+     "targetLow": 225,
+     "source": "stockanalysis.com",
+     "asOf": "2026-07-21"
+    },
+    "forwardEstimates": {
+     "epsNextFY": 7.43,
+     "epsFY2": 10.36,
+     "revenueGrowthNextFY": 0.271,
+     "source": "stockanalysis.com forecast page, pre-Q3-beat, likely understated"
+    },
+    "recentEvents": [
+     "Q3 2026: net sales SEK408.8m (+39% YoY); reported EBIT SEK123.4m (vs 65.4m); EPS SEK1.41 before dilution (vs 0.52).",
+     "Redeye (via Borsvarlden): expects EBIT margin to keep expanding; US launch of CERAMENT G 'so-far highly successful.'",
+     "Stock fell ~6.1% despite strong Q3 print per simplywall.st -- worth noting."
+    ],
+    "valueTrapFlags": [
+     "FY2023 net income far exceeded operating income -- unexplained gap, earnings-quality item to confirm.",
+     "Very rich trailing multiples (P/E ~68x, EV/EBIT ~38x) for only its fourth year of profitability.",
+     "Negative price reaction to an apparently strong Q3 print suggests high expectations already priced in."
+    ],
+    "growthQualityNotes": [
+     "Consistent revenue growth FY2021-2025, margins turning positive FY2023 and expanding to ~24% by FY2025 and further in Q3 2026 -- genuine profitability inflection."
+    ],
+    "dataGaps": [
+     "Not in stock-agent /decisions.",
+     "Current price is stale/unverified -- biggest gap.",
+     "52w range from an unreliable source.",
+     "FCF, refreshed net debt/EV/ROE/ROIC not verified post-Q3.",
+     "FY2023 EPS anomaly unresolved."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value using FY2026 consensus EPS (pre-Q3-beat, likely conservative), tempered for valuation richness",
+    "metricBasis": "EPS (non-GAAP consensus, FY2026E, pre-Q3 beat)",
+    "basisValue": 7.43,
+    "forwardDividendYield": 0,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+     "quality": 4,
+     "growth": 5,
+     "financialStrength": 5,
+     "risk": 2
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 193.18,
+      "epsCagr5y": 0.1,
+      "exitPe5y": 26,
+      "note": "US CERAMENT G rollout slows, valuation multiple fully normalizes toward peer medtech levels."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 267.48,
+      "epsCagr5y": 0.25,
+      "exitPe5y": 36,
+      "note": "US launch continues strong (per Redeye), margin keeps expanding from the current ~24-30% range."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 371.5,
+      "epsCagr5y": 0.35,
+      "exitPe5y": 50,
+      "note": "CERAMENT G US adoption accelerates sharply, international expansion adds further upside."
+     }
+    },
+    "whyItFits": "Genuine, high-margin (92% gross margin) revenue growth with a real recent profitability inflection and a currently 'highly successful' US launch per independent analyst commentary -- strongest pure growth quality of the Nordic names, but also the richest multiple and least data-verified price.",
+    "growthDrivers": "US launch of CERAMENT G, international orthobiologics adoption, high (92%) gross margins giving strong operating leverage.",
+    "saturation": "None evident -- still early in the US commercial ramp.",
+    "principalRisk": "A negative share-price reaction to an apparently strong Q3 print, plus an unresolved FY2023 EPS anomaly, suggest the market (or the data) may be seeing something not fully captured here; valuation leaves little room for a stumble."
+   }
+  },
+  {
+   "ticker": "CAMX.ST",
+   "name": "Camurus AB (publ)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Biotechnology/Pharmaceuticals",
+   "businessSummary": "Swedish biopharmaceutical company developing long-acting injectable drug products (Buvidal for opioid dependence; Brixadi royalty; pipeline incl. Oclaiz, CAM2043/SORENTO).",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 666,
+     "period": "spot",
+     "source": "stockanalysis.com/quote/sto/CAMX/forecast/",
+     "asOf": "~Nov 2026",
+     "note": "Conflicts with an earlier 630.00 snapshot (2026-08-20, pre-Q3)."
+    },
+    "high52w": {
+     "value": null,
+     "period": "52w",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "Only a -6.46% 52-week change found."
+    },
+    "low52w": {
+     "value": null,
+     "period": "52w",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 59.51,
+     "period": "millions",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-20",
+     "note": null
+    },
+    "marketCap": {
+     "value": 39634,
+     "period": "spot",
+     "source": "derived",
+     "asOf": "~Nov 2026",
+     "note": null
+    },
+    "netDebt": {
+     "value": -4400,
+     "period": "2026-09-30",
+     "source": "inderes.se (Q3 2026 interim)",
+     "asOf": "2026-11",
+     "note": "Gross cash SEK4.4bn; total debt not separately confirmed -- approximate net cash."
+    },
+    "enterpriseValue": {
+     "value": 35234,
+     "period": "derived",
+     "source": "derived",
+     "asOf": "~Nov 2026",
+     "note": null
+    },
+    "peTrailing": {
+     "value": 55.8,
+     "period": "TTM, stale pre-Q3 (to 2026-06-30)",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-20",
+     "note": "Q3 EPS not disclosed in sourced content, could not refresh."
+    },
+    "peForward": {
+     "value": null,
+     "period": "FY2026",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "FY2026 consensus EPS 14.70 implies ~45x but not treated as a sourced multiple."
+    },
+    "evEbitTrailing": {
+     "value": 38.84,
+     "period": "TTM to Q3 2026",
+     "source": "derived",
+     "asOf": "~Nov 2026",
+     "note": "Reported EBIT, not EBITA."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "FY2026",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 39.97,
+     "period": "stale, pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-20",
+     "note": null
+    },
+    "fcfTTM": {
+     "value": null,
+     "period": "TTM",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "fcfYield": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "dividendPerShare": {
+     "value": null,
+     "period": "n/a",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-20",
+     "note": "No dividend."
+    },
+    "dividendYield": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-08-20",
+     "note": "No dividend."
+    },
+    "payoutRatio": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-08-20",
+     "note": "No dividend."
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-17",
+     "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "n/a",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.9277,
+     "period": "stale, pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-20",
+     "note": "Unusually high -- small invested-capital base."
+    },
+    "roe": {
+     "value": 0.1586,
+     "period": "stale, pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-20",
+     "note": null
+    },
+    "beta5y": {
+     "value": 0.52,
+     "period": "5y",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-20",
+     "note": null
+    },
+    "sectorMetrics": {
+     "pipelineCatalysts": {
+      "value": null,
+      "period": "n/a",
+      "source": "borsvarlden.com (Redeye)",
+      "asOf": "2026-11-10",
+      "note": "Oclaiz PDUFA 2026-12-18; SORENTO Phase 3 readout Q1 2027; first Brixadi USD15m milestone Q4 2026."
+     }
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 600.57,
+      "ebit": -112.36,
+      "ebitMargin": -0.1871,
+      "eps": -1.66,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 956.34,
+      "ebit": 71.26,
+      "ebitMargin": 0.0745,
+      "eps": 0.97,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 1717,
+      "ebit": 533.41,
+      "ebitMargin": 0.3107,
+      "eps": 7.5,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 1868,
+      "ebit": 463.63,
+      "ebitMargin": 0.2482,
+      "eps": 7.2,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 2265,
+      "ebit": 885.16,
+      "ebitMargin": 0.3907,
+      "eps": 12.26,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "not fetched"
+    },
+    "consensus": {
+     "rating": "Strong Buy",
+     "analysts": 7,
+     "buy": 6,
+     "hold": 1,
+     "sell": 0,
+     "targetAvg": 807.25,
+     "targetHigh": 950,
+     "targetLow": 650,
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-17"
+    },
+    "forwardEstimates": {
+     "epsNextFY": 14.7,
+     "epsFY2": 22.81,
+     "revenueGrowthNextFY": 0.2598,
+     "source": "stockanalysis.com forecast page"
+    },
+    "recentEvents": [
+     "Q3 2026: total revenue SEK724m (+28% YoY); Buvidal record sales SEK574m; EBIT SEK322m (+40%), ~44% margin.",
+     "9M2026: revenue 1,959m (+8.8%), EBIT 783m (+2.9%) -- EBIT grew slower than revenue across the 9 months.",
+     "Guides FY2026 revenue/operating result to upper half of SEK2.6-2.9bn / 0.9-1.2bn ranges.",
+     "Redeye (2026-11-10) raised fair value to SEK745 from 670, rating 'Fairly Priced'."
+    ],
+    "valueTrapFlags": [
+     "9-month EBIT growth (+2.9%) lagged revenue growth (+8.8%) despite a strong standalone Q3.",
+     "Rich trailing multiples; independent analyst (Redeye) rates it 'Fairly Priced' not a buy.",
+     "Concentrated pipeline (Buvidal, Brixadi royalty, binary catalysts) -- outsized single-event risk."
+    ],
+    "growthQualityNotes": [
+     "Strong multi-year revenue/EBIT trend since the FY2021 loss, margins expanding to ~39% by FY2025, though 9-month EBIT growth is decelerating relative to revenue."
+    ],
+    "dataGaps": [
+     "Not in stock-agent /decisions.",
+     "52w high/low not found.",
+     "Q3 2026 EPS not disclosed, so trailing P/E not refreshed.",
+     "FCF, net debt detail, refreshed EV/EBITDA/ROE/ROIC not verified."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value anchored to FY2026 consensus EPS, tempered by an independent analyst's 'Fairly Priced' call",
+    "metricBasis": "EPS (non-GAAP consensus, FY2026E)",
+    "basisValue": 14.7,
+    "forwardDividendYield": 0,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+     "quality": 4,
+     "growth": 4,
+     "financialStrength": 5,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 470.4,
+      "epsCagr5y": 0.05,
+      "exitPe5y": 24,
+      "note": "9-month EBIT deceleration (vs revenue) continues, a pipeline catalyst (Oclaiz/SORENTO) disappoints."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 661.5,
+      "epsCagr5y": 0.15,
+      "exitPe5y": 32,
+      "note": "Buvidal keeps compounding, Brixadi royalties ramp, margin growth resumes after the Q3 lull -- roughly matches Redeye's independent 'Fairly Priced' view."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 926.1,
+      "epsCagr5y": 0.25,
+      "exitPe5y": 42,
+      "note": "Oclaiz approval (PDUFA Dec 2026) and a positive SORENTO Phase 3 readout both land well."
+     }
+    },
+    "whyItFits": "Genuine multi-year revenue/margin growth from a commercial, cash-generative pipeline (not pre-revenue biotech), net-cash balance sheet, real pending catalysts -- but already priced close to an independent analyst's own fair value.",
+    "growthDrivers": "Buvidal international expansion, Brixadi royalty ramp, Oclaiz and SORENTO pipeline catalysts.",
+    "saturation": "9-month EBIT growth (+2.9%) lagging revenue growth (+8.8%) is an early margin-saturation signal to watch at FY2026 close.",
+    "principalRisk": "Concentrated pipeline -- a single regulatory or trial disappointment (Oclaiz, SORENTO) would hit the growth thesis directly."
+   }
+  },
+  {
+   "ticker": "CRDO",
+   "name": "Credo Technology Group Holding Ltd",
+   "exchange": "Nasdaq",
+   "currency": "USD",
+   "sector": "Semiconductors (high-speed connectivity: AEC, optical DSPs, PCIe retimers for AI/datacenter)",
+   "businessSummary": "Designs high-speed connectivity chips (Active Electrical Cables, optical DSPs, retimers, SerDes IP) primarily for hyperscaler AI/datacenter networking.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 120.71,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-16",
+     "note": "Down 8.21% on the day; ~61% below its 52-week high."
+    },
+    "high52w": {
+     "value": 308.67,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-16",
+     "note": null
+    },
+    "low52w": {
+     "value": 86.49,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-16",
+     "note": null
+    },
+    "sharesOutstanding": {
+     "value": 187.95,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-16",
+     "note": "millions"
+    },
+    "marketCap": {
+     "value": 22690,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-16",
+     "note": null
+    },
+    "netDebt": {
+     "value": -814,
+     "period": "~2025-11-01",
+     "source": "investors.credosemi.com Q2 FY26 release",
+     "asOf": "2025-11-01",
+     "note": "Net cash $813.6M, no borrowings line disclosed; not current."
+    },
+    "enterpriseValue": {
+     "value": 26945,
+     "period": "~2026-10-23",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "Stale relative to Nov 16 price decline."
+    },
+    "peTrailing": {
+     "value": 42.63,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-16",
+     "note": "GAAP."
+    },
+    "peForward": {
+     "value": 16.55,
+     "period": "NTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-16",
+     "note": null
+    },
+    "evEbitTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 49.6,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "Stale pre-decline snapshot."
+    },
+    "fcfTTM": {
+     "value": null,
+     "period": "TTM",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "Not disclosed in press releases reviewed."
+    },
+    "fcfYield": {
+     "value": 0.0158,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "Third-party, not independently verified; stale."
+    },
+    "dividendPerShare": {
+     "value": 0,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "No dividend."
+    },
+    "dividendYield": {
+     "value": 0,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": null
+    },
+    "payoutRatio": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "n/a."
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roe": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "beta5y": {
+     "value": 3.29,
+     "period": "",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-16",
+     "note": "Very high -- consistent with realized volatility."
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "Q1 FY2026 (Aug 2025)",
+      "revenue": 223,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": 0.34,
+      "fcf": null,
+      "source": "walnutinvest.com"
+     },
+     {
+      "period": "Q2 FY2026 (Nov 1 2025)",
+      "revenue": 268,
+      "ebit": 78.8,
+      "ebitMargin": 0.294,
+      "eps": 0.44,
+      "fcf": null,
+      "source": "investors.credosemi.com Q2 FY26 release"
+     },
+     {
+      "period": "Q3 FY2026 (Jan 31 2026)",
+      "revenue": 407,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": null,
+      "fcf": null,
+      "source": "walnutinvest.com"
+     },
+     {
+      "period": "Q4 FY2026 (May 2 2026)",
+      "revenue": 437,
+      "ebit": null,
+      "ebitMargin": null,
+      "eps": null,
+      "fcf": null,
+      "source": "walnutinvest.com"
+     },
+     {
+      "period": "Q1 FY2027 (Aug 1 2026)",
+      "revenue": 479,
+      "ebit": 120.7,
+      "ebitMargin": 0.252,
+      "eps": 0.67,
+      "fcf": null,
+      "source": "walnutinvest.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Strong Buy",
+     "analysts": 20,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 277.47,
+     "targetHigh": null,
+     "targetLow": null,
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-16",
+     "note": "Stale -- implies ~130% upside, likely not reset; press reports analyst target cuts (e.g. BofA to $160)."
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "Q2 FY2027 guidance: revenue $525-535M"
+    },
+    "recentEvents": [
+     "Q2 FY2026 (reported Dec 2025): revenue $268.0M +272.1% YoY from $72.0M.",
+     "Q1 FY2027 (reported Sep 2026): revenue $479M +115% YoY -- growth decelerated sharply from +272%.",
+     "Q1 FY27 GAAP gross margin fell to 64.5% from 67.4% a year earlier.",
+     "Stock down ~61% from its 52-week high; fell 8.2% on Nov 16, 2026 alone.",
+     "Press coverage references analyst target cuts (e.g. BofA to $160) and customer-concentration concerns."
+    ],
+    "valueTrapFlags": [
+     "Trailing P/E still 42.6x even after the drawdown -- valuation not fully normalized.",
+     "Growth decelerating fast: +272% to ~+115% YoY; next guided quarter implies further deceleration.",
+     "GAAP gross margin compression (-2.9pts YoY) alongside the deceleration.",
+     "Consensus target ($277) appears stale vs. more recent analyst cuts -- don't trust at face value."
+    ],
+    "growthQualityNotes": [
+     "Growth confirmed real from primary-source quarterly releases across 5 consecutive quarters.",
+     "Gross margins remain healthy (mid-60s% GAAP) and non-GAAP operating margin strong (48.2% Q1 FY27).",
+     "Net cash balance sheet, no debt disclosed.",
+     "Key open question: whether deceleration toward 'normal' growth continues and whether that's priced in after the 61% drawdown."
+    ],
+    "dataGaps": [
+     "FCF, EV/EBIT, ROIC, ROE, interest coverage not found.",
+     "Current post-decline EV/EBITDA, FCF yield unavailable.",
+     "Customer concentration % not independently verified.",
+     "Not in stock-agent /decisions."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, explicitly built around the confirmed sharp growth deceleration and the still-rich post-drawdown multiple",
+    "metricBasis": "EPS (GAAP, TTM/Q1 FY2027)",
+    "basisValue": 2.83,
+    "forwardDividendYield": 0,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+     "quality": 3,
+     "growth": 4,
+     "financialStrength": 5,
+     "risk": 2
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.35,
+      "fairValue": 67.92,
+      "epsCagr5y": 0.1,
+      "exitPe5y": 18,
+      "note": "Growth decelerates further toward normal semiconductor-industry rates, multiple fully normalizes."
+     },
+     "base": {
+      "prob": 0.4,
+      "fairValue": 113.2,
+      "epsCagr5y": 0.25,
+      "exitPe5y": 30,
+      "note": "Growth settles around 40-60% YoY (down from 115%) as AI networking demand remains strong but less explosive."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 198.1,
+      "epsCagr5y": 0.4,
+      "exitPe5y": 42,
+      "note": "AI datacenter networking demand reaccelerates, Credo wins additional hyperscaler sockets."
+     }
+    },
+    "whyItFits": "Confirmed real hypergrowth from primary filings (not hype) in AI datacenter connectivity, net-cash balance sheet, healthy gross margins even as growth decelerates -- included as a higher-risk, already-partially-derated growth name rather than a clean bargain.",
+    "growthDrivers": "AI/datacenter high-speed connectivity (AEC, optical DSP, retimers) demand from hyperscaler buildouts.",
+    "saturation": "Growth has already decelerated sharply (+272% to +115% YoY) and next-quarter guidance implies further deceleration -- the hypergrowth phase looks to be ending.",
+    "principalRisk": "Customer concentration among a small number of hyperscalers, and a valuation that -- even after a 61% drawdown -- still assumes continued strong growth."
+   }
+  },
+  {
+   "ticker": "GMED",
+   "name": "Globus Medical, Inc.",
+   "exchange": "NYSE",
+   "currency": "USD",
+   "sector": "Healthcare / Medical Devices (Musculoskeletal / Spine)",
+   "businessSummary": "Musculoskeletal healthcare products: spine fusion implants, motion preservation, interventional treatments, enabling technologies (robotics/navigation), and (via Nevro) neuromodulation.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 81.83,
+     "period": "close",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-26",
+     "note": "Predates the Nov 7, 2026 Q3 earnings print and guidance cut."
+    },
+    "high52w": {
+     "value": 101.4,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-26",
+     "note": null
+    },
+    "low52w": {
+     "value": 59.51,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-26",
+     "note": null
+    },
+    "sharesOutstanding": {
+     "value": 134.26,
+     "period": "latest",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-26",
+     "note": "millions"
+    },
+    "marketCap": {
+     "value": 10990,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-26",
+     "note": null
+    },
+    "netDebt": {
+     "value": -729,
+     "period": "current",
+     "source": "derived: EV - market cap",
+     "asOf": "2026-08-25",
+     "note": "Net cash ~$729M; FY2025 net cash ~$287M."
+    },
+    "enterpriseValue": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "Back-solved only via net debt."
+    },
+    "peTrailing": {
+     "value": 20.93,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-26",
+     "note": null
+    },
+    "peForward": {
+     "value": 16.05,
+     "period": "NTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-26",
+     "note": null
+    },
+    "evEbitTrailing": {
+     "value": 14.01,
+     "period": "current",
+     "source": "stockanalysis.com/financials/ratios/",
+     "asOf": "2026-10-22",
+     "note": "FY2025 was 18.99x."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 10.13,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-22",
+     "note": "FY2025 was 13.00x."
+    },
+    "fcfTTM": {
+     "value": 755,
+     "period": "current ~TTM",
+     "source": "derived: mktcap x FCF yield",
+     "asOf": "2026-10-22",
+     "note": "FY2025 derived ~$589M."
+    },
+    "fcfYield": {
+     "value": 0.0689,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-22",
+     "note": "FY2025 was 5.04%."
+    },
+    "dividendPerShare": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "No dividend."
+    },
+    "dividendYield": {
+     "value": 0,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-26",
+     "note": "No dividend."
+    },
+    "payoutRatio": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "n/a."
+    },
+    "netDebtToEbitda": {
+     "value": -0.72,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-22",
+     "note": "FY2025=-0.58x."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.1393,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-22",
+     "note": "FY2025=13.41%."
+    },
+    "roe": {
+     "value": 0.1181,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-22",
+     "note": "FY2025=12.29%."
+    },
+    "beta5y": {
+     "value": 0.96,
+     "period": "",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-26",
+     "note": null
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 958.1,
+      "ebit": 194.86,
+      "ebitMargin": 0.2034,
+      "eps": 1.44,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 1023,
+      "ebit": 237.15,
+      "ebitMargin": 0.2318,
+      "eps": 1.85,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 1568,
+      "ebit": 273.51,
+      "ebitMargin": 0.1744,
+      "eps": 1.07,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 2519,
+      "ebit": 441.03,
+      "ebitMargin": 0.1751,
+      "eps": 0.75,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 2939,
+      "ebit": 600.27,
+      "ebitMargin": 0.2042,
+      "eps": 3.92,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "TTM (Jun 2026)",
+      "revenue": 3145,
+      "ebit": 730.32,
+      "ebitMargin": 0.2322,
+      "eps": 3.91,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Buy",
+     "analysts": 14,
+     "buy": 10,
+     "hold": 4,
+     "sell": 0,
+     "targetAvg": 100.92,
+     "targetHigh": 125,
+     "targetLow": 84,
+     "source": "stockanalysis.com/forecast/",
+     "asOf": "~Oct 2026, pre guidance cut"
+    },
+    "forwardEstimates": {
+     "epsNextFY": 5,
+     "epsFY2": 5.39,
+     "revenueGrowthNextFY": 0.089,
+     "source": "stockanalysis.com forecast, pre Q3-2026 cut"
+    },
+    "recentEvents": [
+     "Q3 2026 (reported ~Nov 7, 2026): FY2026 revenue guidance cut to $3.09bn from prior $3.18-3.22bn.",
+     "US Spine revenue grew only 2% in Q3 2026 vs a tough prior-year comp; international revenue fell 5.7%.",
+     "Despite the revenue cut, FY adjusted diluted EPS guidance held at $4.95-5.05 (implying 24.4-26.9% YoY growth).",
+     "Board increased share buyback authorization by $500 million concurrent with the guidance cut.",
+     "Enabling Technologies revenue +24% and robotic/navigation deployments +73% partially offset spine softness."
+    ],
+    "valueTrapFlags": [
+     "Revenue guidance cut while EPS guidance held flat via margin discipline and a larger buyback -- EPS propped up, not organic growth.",
+     "Core US Spine growth decelerated sharply (2%) and international revenue declined (-5.7%).",
+     "Analyst consensus/targets predate the Nov 2026 guidance cut and are stale."
+    ],
+    "growthQualityNotes": [
+     "Multi-year revenue growth real but uneven (7%, 53%, 61%, 17%, now decelerating further per the cut).",
+     "Gross margin drifted down from ~75% to ~68-69%; mild compression.",
+     "Operating margin recovered to a TTM high (23.2%) via cost discipline, not revenue leverage.",
+     "FCF yield modest (6.9%) and already positive."
+    ],
+    "dataGaps": [
+     "Not in stock-agent /decisions.",
+     "Absolute EBITDA/net debt back-solved.",
+     "Interest coverage, payout ratio n/a.",
+     "Consensus pre-dates the Nov 7 guidance cut -- should be re-verified."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, explicitly discounted for the Nov 2026 guidance cut and EPS-via-buyback dynamic",
+    "metricBasis": "EPS (GAAP, TTM to Jun 2026)",
+    "basisValue": 3.91,
+    "forwardDividendYield": 0,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "weakening",
+    "scores": {
+     "quality": 3,
+     "growth": 2,
+     "financialStrength": 4,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.35,
+      "fairValue": 54.74,
+      "epsCagr5y": 0.03,
+      "exitPe5y": 14,
+      "note": "US Spine and international declines persist; EPS support from buybacks runs out of room."
+     },
+     "base": {
+      "prob": 0.4,
+      "fairValue": 74.29,
+      "epsCagr5y": 0.09,
+      "exitPe5y": 19,
+      "note": "Spine stabilizes, Enabling Technologies (+24%) and robotics (+73%) keep offsetting the soft core."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 101.66,
+      "epsCagr5y": 0.15,
+      "exitPe5y": 26,
+      "note": "Robotics/navigation adoption accelerates meaningfully, reversing the Spine deceleration."
+     }
+    },
+    "whyItFits": "Robotics/navigation (Enabling Technologies) is a real, fast-growing (+24%, deployments +73%) structural growth driver inside an otherwise decelerating core Spine business -- included as a flagged, lower-conviction growth name given the Nov 7 guidance cut.",
+    "growthDrivers": "Robotic/navigation surgical system adoption, Enabling Technologies segment growth, post-Nevro neuromodulation cross-sell.",
+    "saturation": "Core US Spine growth has decelerated to 2% and international revenue is now declining -- the original growth engine is clearly maturing/competing harder.",
+    "principalRisk": "EPS guidance is currently being held up by cost discipline and buybacks rather than organic growth; if that support is exhausted before Enabling Technologies scales enough, EPS could disappoint materially."
+   }
+  },
+  {
+   "ticker": "HEI",
+   "name": "HEICO Corporation",
+   "exchange": "NYSE",
+   "currency": "USD",
+   "sector": "Industrials / Aerospace & Defense",
+   "businessSummary": "Aerospace, defense and electronics products/services via Flight Support Group (jet engine/aircraft replacement parts, insulation, repair services) and Electronic Technologies Group.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 332.65,
+     "period": "close",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": "An earlier forecast-page fetch (2026-10-23) showed $297.36 -- unreconciled ~12% discrepancy; ratios below use the Oct 23 figure and may understate current valuation."
+    },
+    "high52w": {
+     "value": 376.86,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": null
+    },
+    "low52w": {
+     "value": 256.11,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": null
+    },
+    "sharesOutstanding": {
+     "value": 139.76,
+     "period": "latest",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": "millions, common HEI class"
+    },
+    "marketCap": {
+     "value": 46490,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": "Ratios page (Oct 23) cited $41,558M, reflecting the price discrepancy."
+    },
+    "netDebt": {
+     "value": 2300,
+     "period": "current",
+     "source": "derived: EV - market cap",
+     "asOf": "2026-10-23",
+     "note": "Actual net debt (not cash); FY2025 net debt ~$2,694M."
+    },
+    "enterpriseValue": {
+     "value": 43858,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": null
+    },
+    "peTrailing": {
+     "value": 55.44,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": null
+    },
+    "peForward": {
+     "value": 47.9,
+     "period": "NTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": null
+    },
+    "evEbitTrailing": {
+     "value": 34.91,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "FY2025 was 39.77x."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 29.75,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "FY2025 was 33.42x."
+    },
+    "fcfTTM": {
+     "value": 1030,
+     "period": "current ~TTM",
+     "source": "derived: mktcap x FCF yield",
+     "asOf": "2026-10-23",
+     "note": "FY2025 derived ~$863M."
+    },
+    "fcfYield": {
+     "value": 0.0248,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "FY2025 was 2.25% -- low given the multiple."
+    },
+    "dividendPerShare": {
+     "value": 0.26,
+     "period": "FY2025",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": null
+    },
+    "dividendYield": {
+     "value": 0.0008,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": "Negligible."
+    },
+    "payoutRatio": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "~4-5% of EPS implied, not independently verified."
+    },
+    "netDebtToEbitda": {
+     "value": 1.56,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "FY2025=1.70x -- highest leverage of the names reviewed."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.1306,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "FY2025=13.04%."
+    },
+    "roe": {
+     "value": 0.1773,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-23",
+     "note": "FY2025=16.73%."
+    },
+    "beta5y": {
+     "value": 1.09,
+     "period": "",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-06",
+     "note": null
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 1866,
+      "ebit": 394.15,
+      "ebitMargin": 0.2113,
+      "eps": 2.21,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 2208,
+      "ebit": 489.21,
+      "ebitMargin": 0.2215,
+      "eps": 2.55,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 2968,
+      "ebit": 637.2,
+      "ebitMargin": 0.2147,
+      "eps": 2.91,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 3858,
+      "ebit": 822.07,
+      "ebitMargin": 0.2131,
+      "eps": 3.67,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 4485,
+      "ebit": 1032,
+      "ebitMargin": 0.2301,
+      "eps": 4.9,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "TTM (Jul 2026)",
+      "revenue": 5177,
+      "ebit": 1256,
+      "ebitMargin": 0.2427,
+      "eps": 6,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Buy",
+     "analysts": 24,
+     "buy": 14,
+     "hold": 10,
+     "sell": 0,
+     "targetAvg": 390.7,
+     "targetHigh": 491,
+     "targetLow": 294,
+     "source": "stockanalysis.com/forecast/",
+     "asOf": "2026-10-23"
+    },
+    "forwardEstimates": {
+     "epsNextFY": 6.36,
+     "epsFY2": 7.23,
+     "revenueGrowthNextFY": 0.205,
+     "source": "stockanalysis.com forecast page"
+    },
+    "recentEvents": [
+     "HEICO fiscal year ends Oct 31; TTM figures run through Jul 2026 (Q3 FY2026) per source; no FY2026 year-end results searched in this pass."
+    ],
+    "valueTrapFlags": [
+     "Extremely rich valuation: trailing P/E ~55x, forward ~48x, EV/EBIT ~35x, EV/EBITDA ~30x -- priced for flawless execution.",
+     "FCF yield low (2.5%) relative to the multiple.",
+     "Highest leverage of the names reviewed: ND/EBITDA 1.56x (actual debt).",
+     "~12% unreconciled price discrepancy between two data pulls -- ratios may understate current valuation."
+    ],
+    "growthQualityNotes": [
+     "Strong, consistent multi-year revenue growth: $1.87bn (FY2021) to $5.18bn TTM.",
+     "Operating margin expanded steadily: 21.1% to 24.3% TTM.",
+     "EPS growth has accelerated recently (33.5% FY2025, 31.3% TTM).",
+     "Solidly FCF positive already; concern is valuation/leverage, not growth quality."
+    ],
+    "dataGaps": [
+     "Not in stock-agent /decisions.",
+     "Price discrepancy unreconciled.",
+     "Absolute EBITDA/net debt back-solved.",
+     "Payout ratio, interest coverage not confirmed."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, explicitly reflecting the already-rich valuation and thin FCF yield",
+    "metricBasis": "EPS (reported, TTM to Jul 2026)",
+    "basisValue": 6,
+    "forwardDividendYield": 0.0008,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+     "quality": 5,
+     "growth": 4,
+     "financialStrength": 3,
+     "risk": 4
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 180,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 30,
+      "note": "Aerospace aftermarket demand softens, high trailing multiple compresses toward a still-rich 30x."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 258,
+      "epsCagr5y": 0.15,
+      "exitPe5y": 43,
+      "note": "Continued steady double-digit growth at a multiple similar to today's, consistent with HEICO's long compounding history."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 348,
+      "epsCagr5y": 0.22,
+      "exitPe5y": 58,
+      "note": "Aftermarket and defense-electronics demand accelerates, market keeps paying a premium multiple for the quality compounding record."
+     }
+    },
+    "whyItFits": "The highest-quality, most consistent growth-and-margin-expansion track record of the whole shortlist (steady double-digit revenue growth, margin expansion every year, strong ROIC/ROE), but it is also priced for that quality -- a genuine 'pay up for quality' GARP case, not a bargain.",
+    "growthDrivers": "Aftermarket aerospace parts demand, continued bolt-on M&A, Electronic Technologies defense-electronics growth.",
+    "saturation": "No clear saturation signal in the data, but the valuation already assumes the compounding continues without interruption.",
+    "principalRisk": "At ~55x trailing earnings with a thin FCF yield (2.5%) and the highest leverage of the shortlist, any growth disappointment would trigger an outsized multiple de-rating."
+   }
+  },
+  {
+   "ticker": "IVSO.ST",
+   "name": "Invisio Communications AB (publ)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Aerospace & Defense (communication systems)",
+   "businessSummary": "Swedish maker of hearing protection and communication systems (headsets, control units) for military and first-responder customers.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 222.5,
+     "period": "spot",
+     "source": "https://ca.marketscreener.com/quote/stock/INVISIO-AB-6498891/",
+     "asOf": "2026-11-10",
+     "note": "Cboe Europe real-time estimate; other snapshots showed 233.60 and 203-204 at different times/sources."
+    },
+    "high52w": {
+     "value": null,
+     "period": "52w",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "low52w": {
+     "value": null,
+     "period": "52w",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 46.18,
+     "period": "millions",
+     "source": "stockanalysis.com/quote/sto/IVSO/statistics/",
+     "asOf": "2026-09-09",
+     "note": null
+    },
+    "marketCap": {
+     "value": 10275,
+     "period": "spot",
+     "source": "derived: shares x price",
+     "asOf": "2026-11-10",
+     "note": null
+    },
+    "netDebt": {
+     "value": -218.3,
+     "period": "2026-06-30",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-09",
+     "note": "Net cash; IFRS16 treatment unconfirmed; stale (pre-Q3)."
+    },
+    "enterpriseValue": {
+     "value": 10056.7,
+     "period": "derived",
+     "source": "derived",
+     "asOf": "2026-11-10",
+     "note": "Uses stale net debt."
+    },
+    "peTrailing": {
+     "value": 36.4,
+     "period": "TTM to Q3 2026",
+     "source": "derived from inderes.se + stockanalysis.com",
+     "asOf": "2026-11-10",
+     "note": "Reported EPS."
+    },
+    "peForward": {
+     "value": null,
+     "period": "FY2026",
+     "source": "marketscreener.com",
+     "asOf": "2026-11-10",
+     "note": "Multiples given (FY2026 41x, FY2027 23x) without underlying EPS; left null to avoid silent derivation."
+    },
+    "evEbitTrailing": {
+     "value": 26.9,
+     "period": "TTM to Q3 2026",
+     "source": "derived",
+     "asOf": "2026-11-10",
+     "note": "Reported EBIT, not EBITA."
+    },
+    "evEbitForward": {
+     "value": 30.4,
+     "period": "FY2026",
+     "source": "marketscreener.com",
+     "asOf": "2026-11-10",
+     "note": "FY2027 16.6x, FY2028 12.6x per same source."
+    },
+    "evEbitdaTrailing": {
+     "value": 27.63,
+     "period": "pre-Q3 (2026-06-30)",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-09",
+     "note": "Stale."
+    },
+    "fcfTTM": {
+     "value": null,
+     "period": "TTM",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "fcfYield": {
+     "value": null,
+     "period": "TTM",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "dividendPerShare": {
+     "value": 3,
+     "period": "FY2025",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-09",
+     "note": null
+    },
+    "dividendYield": {
+     "value": 0.0132,
+     "period": "trailing",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-09",
+     "note": "Based on 233.60 price."
+    },
+    "payoutRatio": {
+     "value": 0.5562,
+     "period": "FY2025",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-09",
+     "note": null
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-17",
+     "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "n/a",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.2792,
+     "period": "TTM pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-09",
+     "note": null
+    },
+    "roe": {
+     "value": 0.2254,
+     "period": "TTM pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-09",
+     "note": null
+    },
+    "beta5y": {
+     "value": 0.87,
+     "period": "5y",
+     "source": "stockanalysis.com",
+     "asOf": "2026-09-09",
+     "note": null
+    },
+    "sectorMetrics": {
+     "orderBook": {
+      "value": 647.7,
+      "period": "2026-09-30",
+      "source": "inderes.se / Q3 2026 interim report",
+      "asOf": "2026-11-10",
+      "note": "Down 27% YoY from SEK 887.0m despite order intake growth."
+     }
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 593,
+      "ebit": 26.6,
+      "ebitMargin": 0.0449,
+      "eps": 0.32,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 775.5,
+      "ebit": 65.3,
+      "ebitMargin": 0.0842,
+      "eps": 0.99,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 1239,
+      "ebit": 242.7,
+      "ebitMargin": 0.196,
+      "eps": 3.91,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 1807,
+      "ebit": 402.4,
+      "ebitMargin": 0.2227,
+      "eps": 6.69,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 1737,
+      "ebit": 308.8,
+      "ebitMargin": 0.1778,
+      "eps": 4.7,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "not fetched"
+    },
+    "consensus": {
+     "rating": "Buy",
+     "analysts": 6,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 294.86,
+     "targetHigh": 330,
+     "targetLow": 220,
+     "source": "marketscreener.com",
+     "asOf": "2026-11-10"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "only forward multiples sourced, not EPS/revenue estimates"
+    },
+    "recentEvents": [
+     "Q3 2026: net sales SEK 408.1m (+40% YoY) vs a weak Q3 2025 base; EBIT margin recovered to 7.9% from -1.1%.",
+     "9M2026: net sales 1,351.4m (+28% YoY), EBIT margin 11.1% vs 8.0% in 9M2025.",
+     "Order book fell to SEK 647.7m from SEK 887.0m a year earlier, despite order intake growth."
+    ],
+    "valueTrapFlags": [
+     "Order book shrinking YoY (-27%) even as revenue and margin recover.",
+     "Operating margin (11.1% 9M2026) still well below the FY2024 peak of 22.27%.",
+     "Trailing P/E (~36-44x) is rich relative to current margin levels."
+    ],
+    "growthQualityNotes": [
+     "Revenue/margin recovering sequentially after a weak FY2025/Q3-2025, but order book decline is a caution flag on forward growth."
+    ],
+    "dataGaps": [
+     "Not in stock-agent /decisions.",
+     "52w high/low not found.",
+     "FCF, refreshed net debt/EV, interest coverage not verified post-Q3."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value: basis EPS x justified P/E, cross-checked against EV/EBIT multiple compression given the Q3 order-book miss",
+    "metricBasis": "EPS (reported, TTM to Q3 2026)",
+    "basisValue": 6.12,
+    "forwardDividendYield": 0.0132,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+     "quality": 4,
+     "growth": 3,
+     "financialStrength": 4,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 134.64,
+      "epsCagr5y": 0.05,
+      "exitPe5y": 20,
+      "note": "Order book keeps shrinking, growth stalls to high-single-digits, multiple de-rates to the low-20s."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 183.6,
+      "epsCagr5y": 0.15,
+      "exitPe5y": 28,
+      "note": "Order intake stabilizes, defense-spending tailwind continues, margin keeps recovering toward FY2024 peak."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 269.28,
+      "epsCagr5y": 0.25,
+      "exitPe5y": 38,
+      "note": "Order book reaccelerates on NATO defense-spending growth, margin returns to FY2024 peak and beyond."
+     }
+    },
+    "whyItFits": "Real, recovering revenue/margin growth in a structurally growing (European defense spending) niche, net cash balance sheet, but the Q3 order-book miss is a genuine growth-quality question the market hasn't fully resolved.",
+    "growthDrivers": "Rising European/NATO defense budgets, expanding communications-systems content per soldier, international program wins.",
+    "saturation": "Order book shrinking YoY despite revenue growth is an early signal that near-term demand may be flattening even as the structural tailwind (defense spending) remains intact.",
+    "principalRisk": "Order intake fails to reaccelerate, EBIT margin stalls well below the FY2024 peak, and the rich trailing multiple de-rates sharply."
+   }
+  },
+  {
+   "ticker": "MILDEF.ST",
+   "name": "MilDef Group AB (publ)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Aerospace & Defense (rugged IT/electronics)",
+   "businessSummary": "Swedish maker of rugged computers, IT and electronics for defense and demanding civilian environments.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 256.9,
+     "period": "spot",
+     "source": "affarsvarlden.se",
+     "asOf": "~2026-11-04",
+     "note": "stockanalysis.com showed 250.90 as of 2026-10-19."
+    },
+    "high52w": {
+     "value": null,
+     "period": "52w",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "low52w": {
+     "value": null,
+     "period": "52w",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "sharesOutstanding": {
+     "value": 47.09,
+     "period": "millions",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": null
+    },
+    "marketCap": {
+     "value": 12097,
+     "period": "spot",
+     "source": "derived",
+     "asOf": "~2026-11-04",
+     "note": null
+    },
+    "netDebt": {
+     "value": 496.4,
+     "period": "2026-06-30",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": "Ambiguous labeling in source; treated as net debt given Q3 negative FCF; not updated for Q3 close."
+    },
+    "enterpriseValue": {
+     "value": 12593.4,
+     "period": "derived",
+     "source": "derived",
+     "asOf": "~2026-11-04",
+     "note": null
+    },
+    "peTrailing": {
+     "value": 36.5,
+     "period": "TTM to Q3 2026",
+     "source": "derived (company-disclosed TTM diluted EPS 7.03)",
+     "asOf": "~2026-11-04",
+     "note": null
+    },
+    "peForward": {
+     "value": 26.72,
+     "period": "FY2026 (stale)",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": "Not refreshed after Q3 beat; likely too high now."
+    },
+    "evEbitTrailing": {
+     "value": 26.3,
+     "period": "TTM to Q3 2026, adjusted EBIT",
+     "source": "derived",
+     "asOf": "~2026-11-04",
+     "note": "Company reports Adjusted EBITA/EBIT as primary measures."
+    },
+    "evEbitForward": {
+     "value": 32.16,
+     "period": "FY2026 (stale)",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": "Not refreshed after Q3 beat."
+    },
+    "evEbitdaTrailing": {
+     "value": 24.55,
+     "period": "stale, pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": null
+    },
+    "fcfTTM": {
+     "value": null,
+     "period": "TTM",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "Q3 2026 FCF -112m; 9M2026 FCF +55m; TTM not computable."
+    },
+    "fcfYield": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "dividendPerShare": {
+     "value": null,
+     "period": "n/a",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": "Yield given as 0.30% but per-share amount not captured."
+    },
+    "dividendYield": {
+     "value": 0.003,
+     "period": "trailing",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": null
+    },
+    "payoutRatio": {
+     "value": 0.1325,
+     "period": "FY2025",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": null
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "n/a",
+     "source": "n/a",
+     "asOf": "2026-11-17",
+     "note": "EBITDA not disclosed separately from Adjusted EBITA."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "n/a",
+     "source": "unavailable",
+     "asOf": "2026-11-17",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.151,
+     "period": "stale, pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": null
+    },
+    "roe": {
+     "value": 0.1763,
+     "period": "stale, pre-Q3",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": null
+    },
+    "beta5y": {
+     "value": 1.07,
+     "period": "5y",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-19",
+     "note": null
+    },
+    "sectorMetrics": {
+     "orderBacklog": {
+      "value": 5654,
+      "period": "2026-09-30",
+      "source": "finanznachrichten.de (Q3 2026 interim)",
+      "asOf": "2026-10",
+      "note": "+61% YoY; Q3 order intake +130%, incl. ~SEK 553m NATO order and Bundeswehr framework extension."
+     }
+    },
+    "history": [
+     {
+      "period": "FY2021",
+      "revenue": 469.6,
+      "ebit": -3.4,
+      "ebitMargin": -0.0072,
+      "eps": -0.03,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2022",
+      "revenue": 738.8,
+      "ebit": 29.8,
+      "ebitMargin": 0.0403,
+      "eps": 0.37,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 1151,
+      "ebit": 105.9,
+      "ebitMargin": 0.092,
+      "eps": 1.71,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 1201,
+      "ebit": 120.5,
+      "ebitMargin": 0.1003,
+      "eps": -5.43,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 2045,
+      "ebit": 212.1,
+      "ebitMargin": 0.1037,
+      "eps": 3.15,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "unavailable",
+     "source": "not fetched"
+    },
+    "consensus": {
+     "rating": "Strong Buy",
+     "analysts": 5,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 356.58,
+     "targetHigh": 416,
+     "targetLow": 275,
+     "source": "stockanalysis.com",
+     "asOf": "through Sep 2026"
+    },
+    "forwardEstimates": {
+     "epsNextFY": 4.92,
+     "epsFY2": 7.74,
+     "revenueGrowthNextFY": 0.271,
+     "source": "stockanalysis.com forecast page"
+    },
+    "recentEvents": [
+     "Q3 2026: net sales SEK 829m (+54% organic YoY); order intake SEK 2,091m (+130%); adj. EBITA margin 21.8% vs 15.7%.",
+     "9M2026: net sales 2,167m (+72%), order backlog 5,654m (+61% YoY); Q3 FCF -112m on working-capital buildup.",
+     "Large new orders: ~SEK553m NATO hardware order; Bundeswehr framework extension up to ~EUR527m.",
+     "FY2024 net loss despite positive EBIT is unexplained from sourced material."
+    ],
+    "valueTrapFlags": [
+     "Negative Q3 2026 FCF despite strong profit growth -- working-capital intensity risk.",
+     "FY2024 net loss despite positive EBIT unexplained; warrants annual-report confirmation.",
+     "Current TTM P/E (~36.5x) assumes the Q3 surge is sustained."
+    ],
+    "growthQualityNotes": [
+     "Very strong, margin-accretive growth (organic +54-72%), but driven by lumpy defense orders -- less predictable than recurring revenue."
+    ],
+    "dataGaps": [
+     "Not in stock-agent /decisions.",
+     "52w high/low not found.",
+     "Net debt not refreshed for Q3 close.",
+     "TTM FCF, EV/EBITDA, ROE, ROIC not refreshed post-Q3."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value using company-disclosed TTM diluted EPS, tempered for working-capital/cash-conversion risk",
+    "metricBasis": "EPS (reported, TTM diluted to Q3 2026)",
+    "basisValue": 7.03,
+    "forwardDividendYield": 0.003,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+     "quality": 3,
+     "growth": 5,
+     "financialStrength": 3,
+     "risk": 2
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.35,
+      "fairValue": 140.6,
+      "epsCagr5y": 0.05,
+      "exitPe5y": 18,
+      "note": "Lumpy order growth fails to repeat, negative FCF persists, multiple compresses sharply."
+     },
+     "base": {
+      "prob": 0.4,
+      "fairValue": 210.9,
+      "epsCagr5y": 0.2,
+      "exitPe5y": 24,
+      "note": "Large NATO/Bundeswehr orders convert to revenue, cash conversion improves as the growth surge matures."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 316.35,
+      "epsCagr5y": 0.35,
+      "exitPe5y": 30,
+      "note": "Backlog (+61% YoY) converts fast, margin keeps expanding, defense-budget supercycle continues."
+     }
+    },
+    "whyItFits": "Very strong, real, margin-accretive order and revenue growth tied to a structural European defense-spending tailwind, but negative free cash flow and an unexplained FY2024 net loss are real quality concerns, not yet resolved.",
+    "growthDrivers": "Record order backlog (+61% YoY), NATO/Bundeswehr framework orders, rugged-IT demand from rising defense budgets.",
+    "saturation": "None evident yet -- backlog growing faster than revenue.",
+    "principalRisk": "Working-capital intensity keeps free cash flow negative even as reported profit grows, and the unexplained FY2024 loss turns out to reflect a recurring earnings-quality issue."
+   }
+  },
+  {
+   "ticker": "NVDA",
+   "name": "NVIDIA Corporation",
+   "exchange": "Nasdaq",
+   "currency": "USD",
+   "sector": "Semiconductors",
+   "businessSummary": "Designer of GPUs and AI accelerator systems/software (CUDA, data-center AI infrastructure); dominant supplier of AI training/inference hardware.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 162.85,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "stock-agent /decisions showed 156.14 a few days apart."
+    },
+    "high52w": {
+     "value": 243.37,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "low52w": {
+     "value": 148.8,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "sharesOutstanding": {
+     "value": 24150,
+     "period": "latest",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "24.15B shares"
+    },
+    "marketCap": {
+     "value": 3930000,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "3.93T"
+    },
+    "netDebt": {
+     "value": -23609,
+     "period": "2026-07-26",
+     "source": "stockanalysis.com balance sheet",
+     "asOf": "2026-07-26",
+     "note": "Net cash. No material lease liabilities disclosed."
+    },
+    "enterpriseValue": {
+     "value": 3906391,
+     "period": "derived",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": "Mixes Nov price with Jul balance sheet."
+    },
+    "peTrailing": {
+     "value": 20.59,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "stock-agent gave 20.60, consistent."
+    },
+    "peForward": {
+     "value": 13.46,
+     "period": "NTM consensus",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "evEbitTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable within budget."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 18.58,
+     "period": "TTM",
+     "source": "stock-agent /decisions 2026-11-17",
+     "asOf": "2026-11-17",
+     "note": "Single-source, not cross-checked."
+    },
+    "fcfTTM": {
+     "value": 127006,
+     "period": "TTM to 2026-07-26",
+     "source": "stockanalysis.com",
+     "asOf": "2026-07-26",
+     "note": null
+    },
+    "fcfYield": {
+     "value": 0.0323,
+     "period": "TTM/spot mktcap",
+     "source": "derived",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "dividendPerShare": {
+     "value": 1,
+     "period": "annualized",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "dividendYield": {
+     "value": 0.0061,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "payoutRatio": {
+     "value": 0.0354,
+     "period": "TTM",
+     "source": "stock-agent /decisions",
+     "asOf": "2026-11-17",
+     "note": null
+    },
+    "netDebtToEbitda": {
+     "value": -0.12,
+     "period": "TTM",
+     "source": "stock-agent /decisions",
+     "asOf": "2026-11-17",
+     "note": "Net cash."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roe": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "beta5y": {
+     "value": 2.247,
+     "period": "5y",
+     "source": "stock-agent /decisions",
+     "asOf": "2026-11-17",
+     "note": "stockanalysis.com showed 2.25, consistent."
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2022",
+      "revenue": 26914,
+      "ebit": null,
+      "ebitMargin": 0.3731,
+      "eps": 0.39,
+      "fcf": 8132,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 26974,
+      "ebit": null,
+      "ebitMargin": 0.2067,
+      "eps": 0.17,
+      "fcf": 3808,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 60922,
+      "ebit": null,
+      "ebitMargin": 0.5412,
+      "eps": 1.19,
+      "fcf": 27021,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 130497,
+      "ebit": null,
+      "ebitMargin": 0.6242,
+      "eps": 2.94,
+      "fcf": 60853,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2026",
+      "revenue": 215938,
+      "ebit": null,
+      "ebitMargin": 0.6038,
+      "eps": 4.9,
+      "fcf": 96676,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Buy",
+     "analysts": 61,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 273.36,
+     "targetHigh": null,
+     "targetLow": null,
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "forward P/E of 13.46 implies consensus NTM EPS ~$12.10, not itemized"
+    },
+    "recentEvents": [
+     "Q3 FY2026 (reported ~Nov 19, 2025 per press reports): revenue +62% YoY; ~$500B cumulative AI chip order backlog cited extending into 2026."
+    ],
+    "valueTrapFlags": [
+     "High customer concentration in a handful of hyperscalers.",
+     "Beta ~2.25 -- outsized volatility if AI capex narrative weakens.",
+     "EV/EBITDA figure single-source, unverified."
+    ],
+    "growthQualityNotes": [
+     "Revenue growth real and recent: $26.9B (FY2022) to $215.9B (FY2026), reported not estimated.",
+     "Gross margin expanded ~65%->~75%; operating margin ~37%->~65%.",
+     "Already solidly FCF positive and growing: $8.1B to $127B TTM.",
+     "Trailing P/E (~20.6x) moderate for the growth rate; forward (13.5x) assumes continued 60%+ growth -- a high bar."
+    ],
+    "dataGaps": [
+     "EV/EBIT, EV/EBITDA forward, ROIC, ROE, interest coverage, historical multiple range, itemized forward EPS not found within budget."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, reflecting NVIDIA's already-moderate trailing multiple relative to its growth rate",
+    "metricBasis": "EPS (reported, TTM/FY2026)",
+    "basisValue": 4.9,
+    "forwardDividendYield": 0.0061,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+     "quality": 5,
+     "growth": 5,
+     "financialStrength": 5,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 122.5,
+      "epsCagr5y": 0.12,
+      "exitPe5y": 18,
+      "note": "AI capex cycle slows materially, hyperscaler customer concentration causes a sharp multiple de-rating."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 220.5,
+      "epsCagr5y": 0.3,
+      "exitPe5y": 25,
+      "note": "AI infrastructure buildout continues at a more moderate pace than the last two years, margins stay elevated."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 318.5,
+      "epsCagr5y": 0.45,
+      "exitPe5y": 32,
+      "note": "AI demand continues to outstrip supply, NVIDIA's software/CUDA moat keeps pricing power intact."
+     }
+    },
+    "whyItFits": "Real, already-reported (not forecast) hypergrowth with genuine margin expansion and a trailing P/E (~20.6x) that looks moderate relative to the growth delivered -- the clearest case of a market leader not yet fully pricing in its own growth, if the AI capex cycle holds.",
+    "growthDrivers": "AI data-center infrastructure buildout, CUDA software ecosystem lock-in, expanding TAM into inference and edge AI.",
+    "saturation": "None evident in reported results yet; the open question is hyperscaler capex durability, not company-specific demand.",
+    "principalRisk": "Extreme customer concentration among a handful of hyperscalers; any pullback in AI infrastructure capex would hit NVIDIA harder than almost any other name on this list."
+   }
+  },
+  {
+   "ticker": "STORY-B.ST",
+   "name": "Storytel AB (publ)",
+   "exchange": "Nasdaq Stockholm",
+   "currency": "SEK",
+   "sector": "Communication Services (Publishing / Audiobook & e-book streaming)",
+   "businessSummary": "Audiobook and e-book subscription streaming (Storytel, Mofibo, Audiobooks.com) plus a traditional Publishing segment, across Nordic, Dutch, Polish, US and other markets.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 113.8,
+     "period": "spot",
+     "source": "stockanalysis.com/quote/sto/STORY.B/",
+     "asOf": "2026-10-16",
+     "note": null
+    },
+    "high52w": {
+     "value": 120.6,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16",
+     "note": null
+    },
+    "low52w": {
+     "value": 67.2,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16",
+     "note": null
+    },
+    "sharesOutstanding": {
+     "value": 77.32,
+     "period": "latest",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16",
+     "note": "millions"
+    },
+    "marketCap": {
+     "value": 8800,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16",
+     "note": null
+    },
+    "netDebt": {
+     "value": null,
+     "period": "FY2025",
+     "source": "stockanalysis.com ratios page",
+     "asOf": "2026-08-25",
+     "note": "Not given in absolute SEK; ND/EBITDA FY2025=-0.01x, current=0.17x."
+    },
+    "enterpriseValue": {
+     "value": null,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-25",
+     "note": "unavailable"
+    },
+    "peTrailing": {
+     "value": 14.71,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16",
+     "note": null
+    },
+    "peForward": {
+     "value": 16.57,
+     "period": "NTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16",
+     "note": null
+    },
+    "evEbitTrailing": {
+     "value": 16.3,
+     "period": "TTM",
+     "source": "stockanalysis.com/financials/ratios/",
+     "asOf": "2026-08-25",
+     "note": "EBIT proxy = reported operating income."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 10.12,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-25",
+     "note": "FY2025 was 9.11x."
+    },
+    "fcfTTM": {
+     "value": null,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-25",
+     "note": "Only FCF yield/multiples given."
+    },
+    "fcfYield": {
+     "value": 0.081,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-25",
+     "note": "FY2025 was 8.77%."
+    },
+    "dividendPerShare": {
+     "value": 1.5,
+     "period": "FY2025",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16",
+     "note": null
+    },
+    "dividendYield": {
+     "value": 0.0132,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16",
+     "note": null
+    },
+    "payoutRatio": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "netDebtToEbitda": {
+     "value": 0.17,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-25",
+     "note": "FY2025=-0.01x (net cash)."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": 0.2537,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-25",
+     "note": "FY2025=24.67%."
+    },
+    "roe": {
+     "value": 0.3593,
+     "period": "current",
+     "source": "stockanalysis.com",
+     "asOf": "2026-08-25",
+     "note": "Inflated by a small equity base after years of losses."
+    },
+    "beta5y": {
+     "value": 1.48,
+     "period": "",
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16",
+     "note": null
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2022",
+      "revenue": 12005,
+      "ebit": -1275,
+      "ebitMargin": -0.106,
+      "eps": -27,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 13469,
+      "ebit": -315,
+      "ebitMargin": -0.023,
+      "eps": -19.13,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 14757,
+      "ebit": 565,
+      "ebitMargin": 0.038,
+      "eps": -25.74,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 15727,
+      "ebit": 1641,
+      "ebitMargin": 0.104,
+      "eps": 16.66,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "TTM (Q3'25-Q2'26)",
+      "revenue": 16185,
+      "ebit": 1953,
+      "ebitMargin": 0.121,
+      "eps": 25.27,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Buy",
+     "analysts": 5,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 124,
+     "targetHigh": null,
+     "targetLow": null,
+     "source": "stockanalysis.com",
+     "asOf": "2026-10-16"
+    },
+    "forwardEstimates": {
+     "epsNextFY": null,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "not fetched"
+    },
+    "recentEvents": [
+     "FY2025 was the first full year of GAAP net profit (SEK1,300m) after several loss-making years; TTM margins continuing to expand through Q2 2026."
+    ],
+    "valueTrapFlags": [
+     "Only ~1.5 years of sustained profitability after a multi-year loss history.",
+     "Beta of 1.48 implies above-market volatility.",
+     "Net income exceeded operating income in TTM/recent quarters, unexplained -- check for one-off items."
+    ],
+    "growthQualityNotes": [
+     "Real, steady revenue growth: SEK12.0bn (FY2022) to SEK16.2bn TTM, high-single-digit annual growth.",
+     "Operating margin clearly expanding: -10.6% to 12.1% TTM.",
+     "FCF yield already positive (8-9%) -- likely already at sustained positive FCF."
+    ],
+    "dataGaps": [
+     "Not in stock-agent /decisions.",
+     "Absolute EBITDA/net debt/FCF in SEK not found.",
+     "Payout ratio, interest coverage, forward estimates not pulled."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, reflecting the recent turn to sustained profitability",
+    "metricBasis": "EPS (reported, TTM)",
+    "basisValue": 25.27,
+    "forwardDividendYield": 0.0132,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+     "quality": 3,
+     "growth": 4,
+     "financialStrength": 4,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 353.78,
+      "epsCagr5y": 0.05,
+      "exitPe5y": 12,
+      "note": "Margin expansion stalls after only ~1.5 years of profitability; subscription growth slows in mature Nordic markets."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 404.32,
+      "epsCagr5y": 0.12,
+      "exitPe5y": 14,
+      "note": "Margin keeps expanding gradually as the Publishing/streaming mix matures and international markets scale."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 505.4,
+      "epsCagr5y": 0.2,
+      "exitPe5y": 18,
+      "note": "International (Dutch/Polish/US) markets scale faster, operating leverage accelerates."
+     }
+    },
+    "whyItFits": "Real, steady high-single-digit revenue growth with a genuine and recent operating-margin inflection to sustained GAAP profitability and already-positive FCF yield -- a textbook GARP turnaround-to-compounder story, if the short profitability track record holds.",
+    "growthDrivers": "Audiobook/e-book subscriber growth across Nordic and international (Netherlands, Poland, US) markets, Publishing segment synergies.",
+    "saturation": "Nordic home markets are relatively mature; future growth increasingly depends on international market scaling.",
+    "principalRisk": "Only ~1.5 years of sustained profitability -- a reversion to losses or margin stagnation would undercut the entire re-rating case."
+   }
+  },
+  {
+   "ticker": "ZS",
+   "name": "Zscaler, Inc.",
+   "exchange": "Nasdaq",
+   "currency": "USD",
+   "sector": "Technology / Cybersecurity (SASE, Zero Trust)",
+   "businessSummary": "Cloud-native security platform (Zero Trust Exchange) for secure internet/app access; subscription SaaS model.",
+   "retrievedAt": "2026-11-17T00:00:00Z",
+   "facts": {
+    "price": {
+     "value": 192.47,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "high52w": {
+     "value": 316.85,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "low52w": {
+     "value": 114.63,
+     "period": "52w",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "sharesOutstanding": {
+     "value": 163.05,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "millions; differs slightly from GAAP/non-GAAP diluted counts reported."
+    },
+    "marketCap": {
+     "value": 31380,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "netDebt": {
+     "value": -1610,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "Net cash $1.61B; convertible notes carrying value $1,699.9M vs cash/ST investments $3,321.3M."
+    },
+    "enterpriseValue": {
+     "value": 29780,
+     "period": "spot",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "peTrailing": {
+     "value": null,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "GAAP net loss (TTM EPS -0.39)."
+    },
+    "peForward": {
+     "value": 39.22,
+     "period": "NTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "Likely on consensus non-GAAP EPS."
+    },
+    "evEbitTrailing": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "GAAP operating loss."
+    },
+    "evEbitForward": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+     "value": 679.06,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "Extreme multiple -- GAAP EBITDA near breakeven, not a meaningful input."
+    },
+    "fcfTTM": {
+     "value": null,
+     "period": "TTM",
+     "source": "ir.zscaler.com",
+     "asOf": "2025-10-31",
+     "note": "Only quarterly FCF confirmed: Q1 FY26 $413.3M (52% of rev) vs $291.9M (46%) a year earlier."
+    },
+    "fcfYield": {
+     "value": 0.0272,
+     "period": "TTM",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": "Inconsistent with annualizing the primary-source Q1 figure -- flagged conflict."
+    },
+    "dividendPerShare": {
+     "value": 0,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "No dividend."
+    },
+    "dividendYield": {
+     "value": 0,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": null
+    },
+    "payoutRatio": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "n/a."
+    },
+    "netDebtToEbitda": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roic": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "roe": {
+     "value": null,
+     "period": "",
+     "source": "",
+     "asOf": "",
+     "note": "unavailable"
+    },
+    "beta5y": {
+     "value": 0.84,
+     "period": "",
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13",
+     "note": null
+    },
+    "sectorMetrics": {},
+    "history": [
+     {
+      "period": "FY2022",
+      "revenue": 1091,
+      "ebit": -327.43,
+      "ebitMargin": -0.3001,
+      "eps": null,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2023",
+      "revenue": 1617,
+      "ebit": -228.06,
+      "ebitMargin": -0.141,
+      "eps": null,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2024",
+      "revenue": 2168,
+      "ebit": -121.48,
+      "ebitMargin": -0.056,
+      "eps": null,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     },
+     {
+      "period": "FY2025",
+      "revenue": 2673,
+      "ebit": -122.22,
+      "ebitMargin": -0.0457,
+      "eps": null,
+      "fcf": null,
+      "source": "stockanalysis.com"
+     }
+    ],
+    "historicalMultiples": {
+     "peLow": null,
+     "peHigh": null,
+     "peMedian": null,
+     "evEbitMedian": null,
+     "years": "",
+     "source": "unavailable"
+    },
+    "consensus": {
+     "rating": "Buy",
+     "analysts": 47,
+     "buy": null,
+     "hold": null,
+     "sell": null,
+     "targetAvg": 235.19,
+     "targetHigh": null,
+     "targetLow": null,
+     "source": "stockanalysis.com",
+     "asOf": "2026-11-13"
+    },
+    "forwardEstimates": {
+     "epsNextFY": 3.8,
+     "epsFY2": null,
+     "revenueGrowthNextFY": null,
+     "source": "company guidance: FY2026 revenue $3.282-3.301B, non-GAAP EPS $3.78-3.82"
+    },
+    "recentEvents": [
+     "Q1 FY2026 (ended Oct 31, 2025): revenue $788.1M +26% YoY, non-GAAP op margin 22%, GAAP op margin -5%, FCF $413.3M (52% of rev), GAAP net loss -$0.07 EPS, non-GAAP EPS $0.96.",
+     "Q2 FY2026 guidance: revenue $797-799M, non-GAAP EPS $0.89-0.90.",
+     "Non-GAAP tax rate lowered to 21% from 23%, flattering non-GAAP EPS comparisons."
+    ],
+    "valueTrapFlags": [
+     "Persistent GAAP net losses and operating losses every year shown, though narrowing.",
+     "Large GAAP-to-non-GAAP gap driven partly by stock-based comp add-back.",
+     "Revenue growth decelerated steadily from 62% (FY22) to 23% (FY25) before a slight reacceleration to 26% in Q1 FY26."
+    ],
+    "growthQualityNotes": [
+     "FCF margin strong and improving: 46% to 52% of revenue -- genuine cash generation despite GAAP losses.",
+     "Non-GAAP operating margin expanding (21% to 22% YoY), consistent with operating leverage.",
+     "Billings growth and net retention rate not disclosed in the release reviewed -- data gap on forward-looking SaaS signals."
+    ],
+    "dataGaps": [
+     "Calculated billings and net retention not found.",
+     "Net debt/lease-adjusted figures not separately available.",
+     "TTM FCF not independently verified.",
+     "Not in stock-agent /decisions."
+    ]
+   },
+   "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "Non-GAAP EPS-based scenario fair value (GAAP basis not usable given GAAP losses), explicitly treating the GAAP/non-GAAP gap as a quality discount",
+    "metricBasis": "EPS (non-GAAP, FY2026E guidance midpoint)",
+    "basisValue": 3.8,
+    "forwardDividendYield": 0,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+     "quality": 3,
+     "growth": 3,
+     "financialStrength": 4,
+     "risk": 3
+    },
+    "scenarios": {
+     "bear": {
+      "prob": 0.3,
+      "fairValue": 91.2,
+      "epsCagr5y": 0.08,
+      "exitPe5y": 24,
+      "note": "Revenue growth decelerates further (toward the FY25 23% trough or below), non-GAAP multiple compresses."
+     },
+     "base": {
+      "prob": 0.45,
+      "fairValue": 159.6,
+      "epsCagr5y": 0.18,
+      "exitPe5y": 42,
+      "note": "Mid-20s% revenue growth sustains as in Q1 FY26, FCF margin keeps improving."
+     },
+     "bull": {
+      "prob": 0.25,
+      "fairValue": 266,
+      "epsCagr5y": 0.28,
+      "exitPe5y": 70,
+      "note": "Zero Trust/SASE adoption accelerates, GAAP profitability finally arrives, re-rating toward peer SaaS multiples."
+     }
+    },
+    "whyItFits": "Strong, improving FCF generation (52% of revenue) and a real reacceleration in growth (23% to 26% YoY) inside a structurally growing cybersecurity category, but persistent GAAP losses and an inconsistent FCF-yield figure are real data-quality caveats.",
+    "growthDrivers": "Zero Trust/SASE category adoption, enterprise cloud security spend shift away from legacy perimeter security.",
+    "saturation": "Revenue growth has decelerated steadily for 3 years before this quarter's uptick -- not yet confirmed as a durable reacceleration.",
+    "principalRisk": "Still GAAP-unprofitable with an inconsistent FCF-yield data point; if the Q1 FY26 growth uptick doesn't hold, the current non-GAAP-anchored valuation has little support."
+   }
+  }
+ ],
  "conclusion": null
 }

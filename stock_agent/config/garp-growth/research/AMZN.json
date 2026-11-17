@@ -1,0 +1,300 @@
+{
+  "ticker": "AMZN",
+  "name": "Amazon.com Inc",
+  "exchange": "Nasdaq",
+  "currency": "USD",
+  "sector": "Internet Retail / Cloud Computing",
+  "businessSummary": "E-commerce and third-party marketplace retailer; AWS cloud computing; advertising; devices and subscriptions (Prime).",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 266.66,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "high52w": {
+      "value": 287.2,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "low52w": {
+      "value": 196.0,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "sharesOutstanding": {
+      "value": 10810,
+      "period": "latest",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "10.81B shares"
+    },
+    "marketCap": {
+      "value": 2880000,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "2.88T"
+    },
+    "netDebt": {
+      "value": 190615,
+      "period": "2026-09-30",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-30",
+      "note": "Total debt $304,841M less cash & investments $114,226M; fulfillment-center lease treatment unconfirmed."
+    },
+    "enterpriseValue": {
+      "value": 3070615,
+      "period": "derived",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "Mixes Nov price with Sep balance sheet."
+    },
+    "peTrailing": {
+      "value": 21.55,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "Absent from stock-agent feed."
+    },
+    "peForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitTrailing": {
+      "value": 26.41,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-30",
+      "note": null
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 15.0,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-30",
+      "note": null
+    },
+    "fcfTTM": {
+      "value": -46892,
+      "period": "TTM to 2026-09-30",
+      "source": "stockanalysis.com",
+      "asOf": "2026-09-30",
+      "note": "Operating CF $168,300M minus capex $215,192M; capex has roughly doubled YoY on AI/data-center buildout."
+    },
+    "fcfYield": {
+      "value": -0.0163,
+      "period": "TTM/spot mktcap",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": "Negative FCF yield -- flag for a GARP screen."
+    },
+    "dividendPerShare": {
+      "value": 0,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "No dividend."
+    },
+    "dividendYield": {
+      "value": 0,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "payoutRatio": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "n/a."
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable; absent from stock-agent feed."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.1116,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-30",
+      "note": null
+    },
+    "roe": {
+      "value": 0.2742,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-30",
+      "note": null
+    },
+    "beta5y": {
+      "value": 1.5,
+      "period": "5y",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "No cross-check available."
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 469822,
+        "ebit": null,
+        "ebitMargin": 0.0529,
+        "eps": 3.24,
+        "fcf": -14726,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 513983,
+        "ebit": null,
+        "ebitMargin": 0.026,
+        "eps": -0.27,
+        "fcf": -16893,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 574785,
+        "ebit": null,
+        "ebitMargin": 0.0641,
+        "eps": 2.9,
+        "fcf": 32217,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 637959,
+        "ebit": null,
+        "ebitMargin": 0.1075,
+        "eps": 5.53,
+        "fcf": 32878,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 716924,
+        "ebit": null,
+        "ebitMargin": 0.1115,
+        "eps": 7.17,
+        "fcf": 7695,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Strong Buy",
+      "analysts": 62,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 326.29,
+      "targetHigh": null,
+      "targetLow": null,
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "unavailable within budget"
+    },
+    "recentEvents": [
+      "Q3 2025 results: AWS growth reaccelerated; retail and advertising also grew; EPS beat and AWS reacceleration cited as catalysts for a sharp stock rise."
+    ],
+    "valueTrapFlags": [
+      "TTM FCF sharply negative (-$46.9B) vs +$7.7B FY2025 and +$32.9B FY2024 -- capex more than doubled for AI/data-center buildout.",
+      "Operating cash flow growing (+21% FY2025 to TTM) but entirely outrun by capex -- FCF conversion has collapsed.",
+      "No dividend, so payout-based leverage checks n/a."
+    ],
+    "growthQualityNotes": [
+      "Revenue growth real, steady, recent: $469.8B (FY2021) to $716.9B (FY2025), ~11%/yr.",
+      "Operating margin genuinely expanding: trough 2.6% (FY2022) to 11.15% (FY2025).",
+      "Path to sustained positive FCF has REVERSED in the most recent TTM due to the AI capex supercycle -- key watch item.",
+      "AMZN absent from the stock-agent feed -- no secondary cross-check available."
+    ],
+    "dataGaps": [
+      "Forward P/E, EV/EBIT forward, ND/EBITDA, interest coverage, historical multiple range, itemized forward estimates, stock-agent cross-check unavailable."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS; the sharply negative TTM FCF (AI capex supercycle) is treated as a risk/quality flag rather than built into the basis value",
+    "metricBasis": "EPS (reported, TTM/FY2025)",
+    "basisValue": 7.17,
+    "forwardDividendYield": 0.0,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+      "quality": 4,
+      "growth": 4,
+      "financialStrength": 3,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 143.4,
+        "epsCagr5y": 0.08,
+        "exitPe5y": 20,
+        "note": "AI capex keeps outrunning operating cash flow for longer than expected, margin story stalls."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 193.59,
+        "epsCagr5y": 0.15,
+        "exitPe5y": 27,
+        "note": "AWS reaccelerates as AI capex starts converting to revenue, retail/advertising margins keep expanding."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 258.12,
+        "epsCagr5y": 0.22,
+        "exitPe5y": 36,
+        "note": "AWS AI infrastructure monetizes faster than expected, FCF reinflects as capex growth moderates."
+      }
+    },
+    "whyItFits": "Genuine, steady multi-year revenue growth and real operating-margin expansion (2.6% to 11.15%) across retail, advertising and AWS, but the current AI capex supercycle has temporarily reversed free cash flow -- the central open question for this GARP case.",
+    "growthDrivers": "AWS AI infrastructure/compute demand, retail logistics efficiency, advertising growth.",
+    "saturation": "No saturation in revenue growth; the constraint right now is capital intensity (capex), not demand.",
+    "principalRisk": "If AI infrastructure capex does not convert to AWS revenue growth as expected, the current negative free cash flow becomes a structural rather than cyclical problem."
+  }
+}

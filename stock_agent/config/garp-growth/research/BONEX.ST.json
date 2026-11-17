@@ -1,0 +1,311 @@
+{
+  "ticker": "BONEX.ST",
+  "name": "Bonesupport Holding AB (publ)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Medical Devices/Biotechnology (orthobiologics)",
+  "businessSummary": "Swedish orthobiologics company commercializing CERAMENT bone-graft substitute products, including the US launch of CERAMENT G.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 218.6,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-21",
+      "note": "Stale -- predates Q3 2026 report. A later marketscreener.com fetch was internally inconsistent and discarded."
+    },
+    "high52w": {
+      "value": 303.8,
+      "period": "52w (as sourced)",
+      "source": "ca.marketscreener.com",
+      "asOf": "internally inconsistent, treat cautiously",
+      "note": null
+    },
+    "low52w": {
+      "value": 167.55,
+      "period": "52w (as sourced)",
+      "source": "ca.marketscreener.com",
+      "asOf": "internally inconsistent, treat cautiously",
+      "note": null
+    },
+    "sharesOutstanding": {
+      "value": 65.86,
+      "period": "millions",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-21",
+      "note": null
+    },
+    "marketCap": {
+      "value": 14398,
+      "period": "spot",
+      "source": "derived",
+      "asOf": "2026-08-21",
+      "note": "Uses stale price."
+    },
+    "netDebt": {
+      "value": -424.18,
+      "period": "2026-06-30",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-21",
+      "note": "Net cash; not updated for Q3 close."
+    },
+    "enterpriseValue": {
+      "value": 13973.8,
+      "period": "derived",
+      "source": "derived",
+      "asOf": "2026-08-21",
+      "note": "Uses stale price and net cash."
+    },
+    "peTrailing": {
+      "value": 68.13,
+      "period": "TTM, stale pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-21",
+      "note": "Not refreshed."
+    },
+    "peForward": {
+      "value": null,
+      "period": "FY2026",
+      "source": "stockanalysis.com",
+      "asOf": "2026-07-21",
+      "note": "Pre-Q3-beat estimate; likely stale."
+    },
+    "evEbitTrailing": {
+      "value": 38.03,
+      "period": "TTM to Q3 2026",
+      "source": "derived",
+      "asOf": "mixed-date, approximate",
+      "note": "Mixes stale EV with fresher EBIT."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "FY2026",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 43.68,
+      "period": "stale, pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-21",
+      "note": null
+    },
+    "fcfTTM": {
+      "value": null,
+      "period": "TTM",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "fcfYield": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "dividendPerShare": {
+      "value": null,
+      "period": "n/a",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-21",
+      "note": "No dividend."
+    },
+    "dividendYield": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-08-21",
+      "note": "No dividend."
+    },
+    "payoutRatio": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-08-21",
+      "note": "No dividend."
+    },
+    "netDebtToEbitda": {
+      "value": null,
+      "period": "n/a",
+      "source": "n/a",
+      "asOf": "2026-11-17",
+      "note": "Net cash, not meaningful."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "n/a",
+      "source": "unavailable",
+      "asOf": "2026-11-17",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.4307,
+      "period": "stale, pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-21",
+      "note": null
+    },
+    "roe": {
+      "value": 0.245,
+      "period": "stale, pre-Q3",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-21",
+      "note": null
+    },
+    "beta5y": {
+      "value": 0.49,
+      "period": "5y",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-21",
+      "note": null
+    },
+    "sectorMetrics": {
+      "grossMargin": {
+        "value": 0.92,
+        "period": "Q3 2026",
+        "source": "inderes.se (Q3 2026 interim)",
+        "asOf": "2026-11",
+        "note": "92.0% vs 92.9% Q3 2025 -- stable, high-margin."
+      }
+    },
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 212.89,
+        "ebit": -83.3,
+        "ebitMargin": -0.3913,
+        "eps": -1.34,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 328.82,
+        "ebit": -67.61,
+        "ebitMargin": -0.2056,
+        "eps": -1.06,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 591.08,
+        "ebit": 22.64,
+        "ebitMargin": 0.0383,
+        "eps": 3.74,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 898.73,
+        "ebit": 147.71,
+        "ebitMargin": 0.1644,
+        "eps": 2.01,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 1175,
+        "ebit": 277.56,
+        "ebitMargin": 0.2363,
+        "eps": 2.13,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "unavailable",
+      "source": "not fetched"
+    },
+    "consensus": {
+      "rating": "Strong Buy",
+      "analysts": 5,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 244.9,
+      "targetHigh": 272.0,
+      "targetLow": 225.0,
+      "source": "stockanalysis.com",
+      "asOf": "2026-07-21"
+    },
+    "forwardEstimates": {
+      "epsNextFY": 7.43,
+      "epsFY2": 10.36,
+      "revenueGrowthNextFY": 0.271,
+      "source": "stockanalysis.com forecast page, pre-Q3-beat, likely understated"
+    },
+    "recentEvents": [
+      "Q3 2026: net sales SEK408.8m (+39% YoY); reported EBIT SEK123.4m (vs 65.4m); EPS SEK1.41 before dilution (vs 0.52).",
+      "Redeye (via Borsvarlden): expects EBIT margin to keep expanding; US launch of CERAMENT G 'so-far highly successful.'",
+      "Stock fell ~6.1% despite strong Q3 print per simplywall.st -- worth noting."
+    ],
+    "valueTrapFlags": [
+      "FY2023 net income far exceeded operating income -- unexplained gap, earnings-quality item to confirm.",
+      "Very rich trailing multiples (P/E ~68x, EV/EBIT ~38x) for only its fourth year of profitability.",
+      "Negative price reaction to an apparently strong Q3 print suggests high expectations already priced in."
+    ],
+    "growthQualityNotes": [
+      "Consistent revenue growth FY2021-2025, margins turning positive FY2023 and expanding to ~24% by FY2025 and further in Q3 2026 -- genuine profitability inflection."
+    ],
+    "dataGaps": [
+      "Not in stock-agent /decisions.",
+      "Current price is stale/unverified -- biggest gap.",
+      "52w range from an unreliable source.",
+      "FCF, refreshed net debt/EV/ROE/ROIC not verified post-Q3.",
+      "FY2023 EPS anomaly unresolved."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value using FY2026 consensus EPS (pre-Q3-beat, likely conservative), tempered for valuation richness",
+    "metricBasis": "EPS (non-GAAP consensus, FY2026E, pre-Q3 beat)",
+    "basisValue": 7.43,
+    "forwardDividendYield": 0.0,
+    "qualityTier": "C",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+      "quality": 4,
+      "growth": 5,
+      "financialStrength": 5,
+      "risk": 2
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 193.18,
+        "epsCagr5y": 0.1,
+        "exitPe5y": 26,
+        "note": "US CERAMENT G rollout slows, valuation multiple fully normalizes toward peer medtech levels."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 267.48,
+        "epsCagr5y": 0.25,
+        "exitPe5y": 36,
+        "note": "US launch continues strong (per Redeye), margin keeps expanding from the current ~24-30% range."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 371.5,
+        "epsCagr5y": 0.35,
+        "exitPe5y": 50,
+        "note": "CERAMENT G US adoption accelerates sharply, international expansion adds further upside."
+      }
+    },
+    "whyItFits": "Genuine, high-margin (92% gross margin) revenue growth with a real recent profitability inflection and a currently 'highly successful' US launch per independent analyst commentary -- strongest pure growth quality of the Nordic names, but also the richest multiple and least data-verified price.",
+    "growthDrivers": "US launch of CERAMENT G, international orthobiologics adoption, high (92%) gross margins giving strong operating leverage.",
+    "saturation": "None evident -- still early in the US commercial ramp.",
+    "principalRisk": "A negative share-price reaction to an apparently strong Q3 print, plus an unresolved FY2023 EPS anomaly, suggest the market (or the data) may be seeing something not fully captured here; valuation leaves little room for a stumble."
+  }
+}

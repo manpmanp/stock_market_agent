@@ -1,0 +1,303 @@
+{
+  "ticker": "ASML.AS",
+  "name": "ASML Holding N.V.",
+  "exchange": "Euronext Amsterdam",
+  "currency": "EUR",
+  "sector": "Semiconductor Equipment",
+  "businessSummary": "Sole supplier of EUV lithography systems and a leading supplier of DUV systems to leading-edge semiconductor manufacturers (TSMC, Samsung, Intel, etc.).",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 1338.8,
+      "period": "spot",
+      "source": "stockanalysis.com/quote/ams/ASML",
+      "asOf": "2026-11-13",
+      "note": "EUR, Amsterdam listing. stock-agent showed 1,406.79 for ticker 'ASML' (presumably the Nasdaq USD ADR) -- not reconciled."
+    },
+    "high52w": {
+      "value": 1741.0,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "EUR"
+    },
+    "low52w": {
+      "value": 822.2,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "EUR"
+    },
+    "sharesOutstanding": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "~382M implied by market cap/price, not independently confirmed."
+    },
+    "marketCap": {
+      "value": 511950,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "EUR511.95B"
+    },
+    "netDebt": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "stock-agent ND/EBITDA of -0.67 implies net cash; underlying EUR figure not independently fetched."
+    },
+    "enterpriseValue": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable without a verified net cash figure."
+    },
+    "peTrailing": {
+      "value": 38.29,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "CONFLICT: stock-agent (ADR/USD) gave 36.79."
+    },
+    "peForward": {
+      "value": 23.29,
+      "period": "NTM consensus",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "evEbitTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "stock-agent figure (1,965.96) implausible, discarded."
+    },
+    "fcfTTM": {
+      "value": 10041,
+      "period": "TTM to 2026-06-28",
+      "source": "stockanalysis.com",
+      "asOf": "2026-06-28",
+      "note": "EUR millions."
+    },
+    "fcfYield": {
+      "value": 0.0196,
+      "period": "TTM/spot mktcap",
+      "source": "derived",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "dividendPerShare": {
+      "value": 7.5,
+      "period": "annualized approx",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": "Q3 2025 interim EUR1.60 confirmed via asml.com press release."
+    },
+    "dividendYield": {
+      "value": 0.0056,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-11-13",
+      "note": null
+    },
+    "payoutRatio": {
+      "value": 0.2226,
+      "period": "TTM",
+      "source": "stock-agent /decisions",
+      "asOf": "2026-11-17",
+      "note": "Not independently cross-checked."
+    },
+    "netDebtToEbitda": {
+      "value": -0.67,
+      "period": "TTM",
+      "source": "stock-agent /decisions",
+      "asOf": "2026-11-17",
+      "note": "Net cash."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roe": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "beta5y": {
+      "value": 1.333,
+      "period": "5y",
+      "source": "stock-agent /decisions",
+      "asOf": "2026-11-17",
+      "note": "stockanalysis.com showed 1.33, consistent."
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2021",
+        "revenue": 18611,
+        "ebit": null,
+        "ebitMargin": 0.3512,
+        "eps": 14.34,
+        "fcf": 9945,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2022",
+        "revenue": 21173,
+        "ebit": null,
+        "ebitMargin": 0.307,
+        "eps": 14.13,
+        "fcf": 7205,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 27559,
+        "ebit": null,
+        "ebitMargin": 0.3281,
+        "eps": 19.89,
+        "fcf": 3288,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 28263,
+        "ebit": null,
+        "ebitMargin": 0.3192,
+        "eps": 19.24,
+        "fcf": 9099,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 32667,
+        "ebit": null,
+        "ebitMargin": 0.3459,
+        "eps": 24.71,
+        "fcf": 11085,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Strong Buy",
+      "analysts": 41,
+      "buy": 31,
+      "hold": 2,
+      "sell": 1,
+      "targetAvg": 2113.0,
+      "targetHigh": 2799.79,
+      "targetLow": 852.31,
+      "source": "stockanalysis.com + stock-agent /decisions",
+      "asOf": "2026-11-17"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "company guidance: ~15% FY2025 sales growth vs 2024; does not expect 2026 below 2025"
+    },
+    "recentEvents": [
+      "Q3 2025: net sales EUR7,516M, net income EUR2,125M, gross margin 51.6%.",
+      "Q3 2025 net bookings EUR5,399M, of which EUR3.6B EUV.",
+      "Q4 2025 guidance: net sales EUR9,200-9,800M, gross margin 51-53%.",
+      "EUR12B 2022-2025 buyback program under-run (only EUR5.9B executed as of Sep 2025); new program to be announced Jan 2026."
+    ],
+    "valueTrapFlags": [
+      "Buyback materially behind its own pace/size -- capital-allocation signal to watch.",
+      "FY2023 FCF dipped sharply despite revenue growth that year -- working-capital timing issue.",
+      "Heavy dependence on a small number of leading-edge customers (TSMC, Samsung, Intel)."
+    ],
+    "growthQualityNotes": [
+      "Revenue growth real: EUR18.6B (FY2021) to EUR32.7B (FY2025), including a near-flat FY2023-24 downcycle then FY2025 reacceleration.",
+      "Operating margin range-bound (31-35%) rather than steadily expanding -- a stable-margin, not margin-expansion, story.",
+      "FCF volatile due to lumpy working capital tied to large system shipments, but TTM/FY2025 level (~EUR10-11B) suggests durable positive FCF."
+    ],
+    "dataGaps": [
+      "Shares outstanding, net debt in EUR, EV, EV/EBIT, EV/EBITDA (stock-agent figure discarded), ROIC, ROE, interest coverage, historical multiple range unavailable.",
+      "Nasdaq ADR not separately verified."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS (EUR), reflecting ASML's range-bound (not expanding) margin profile and lumpy FCF",
+    "metricBasis": "EPS (reported, FY2025)",
+    "basisValue": 24.71,
+    "forwardDividendYield": 0.0056,
+    "qualityTier": "A",
+    "role": "Core Growth Engine",
+    "competitive": "strengthening",
+    "scores": {
+      "quality": 5,
+      "growth": 4,
+      "financialStrength": 5,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 816.43,
+        "epsCagr5y": 0.06,
+        "exitPe5y": 24,
+        "note": "Semiconductor-equipment downcycle repeats (as in FY2023-24), EUV capex delayed by customers."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 1038.0,
+        "epsCagr5y": 0.14,
+        "exitPe5y": 32,
+        "note": "AI-driven leading-edge capex continues at a steady pace, similar to the FY2025 reacceleration."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 1434.0,
+        "epsCagr5y": 0.22,
+        "exitPe5y": 40,
+        "note": "AI chip demand drives an extended leading-edge capex upcycle, High-NA EUV adoption accelerates."
+      }
+    },
+    "whyItFits": "Sole supplier of EUV lithography with effectively no credible competitor, real recent revenue reacceleration (FY2025 +15.6%) after the FY2023-24 downcycle, strong net-cash balance sheet -- the cleanest 'structural moat' growth case on the shortlist, even though margins aren't expanding, just stable.",
+    "growthDrivers": "AI/leading-edge semiconductor capex, High-NA EUV system adoption, structural industry reliance on ASML's monopoly position.",
+    "saturation": "The FY2023-24 near-flat period shows this is a cyclical-within-structural-growth business -- capex cycles will keep causing lumpiness.",
+    "principalRisk": "Heavy dependence on a small number of leading-edge customers (TSMC, Samsung, Intel); a slowdown in their capex plans would hit ASML directly, and geopolitical export restrictions remain a standing risk."
+  }
+}

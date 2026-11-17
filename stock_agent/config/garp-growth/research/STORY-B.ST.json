@@ -1,0 +1,301 @@
+{
+  "ticker": "STORY-B.ST",
+  "name": "Storytel AB (publ)",
+  "exchange": "Nasdaq Stockholm",
+  "currency": "SEK",
+  "sector": "Communication Services (Publishing / Audiobook & e-book streaming)",
+  "businessSummary": "Audiobook and e-book subscription streaming (Storytel, Mofibo, Audiobooks.com) plus a traditional Publishing segment, across Nordic, Dutch, Polish, US and other markets.",
+  "retrievedAt": "2026-11-17T00:00:00Z",
+  "facts": {
+    "price": {
+      "value": 113.8,
+      "period": "spot",
+      "source": "stockanalysis.com/quote/sto/STORY.B/",
+      "asOf": "2026-10-16",
+      "note": null
+    },
+    "high52w": {
+      "value": 120.6,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16",
+      "note": null
+    },
+    "low52w": {
+      "value": 67.2,
+      "period": "52w",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16",
+      "note": null
+    },
+    "sharesOutstanding": {
+      "value": 77.32,
+      "period": "latest",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16",
+      "note": "millions"
+    },
+    "marketCap": {
+      "value": 8800,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16",
+      "note": null
+    },
+    "netDebt": {
+      "value": null,
+      "period": "FY2025",
+      "source": "stockanalysis.com ratios page",
+      "asOf": "2026-08-25",
+      "note": "Not given in absolute SEK; ND/EBITDA FY2025=-0.01x, current=0.17x."
+    },
+    "enterpriseValue": {
+      "value": null,
+      "period": "spot",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-25",
+      "note": "unavailable"
+    },
+    "peTrailing": {
+      "value": 14.71,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16",
+      "note": null
+    },
+    "peForward": {
+      "value": 16.57,
+      "period": "NTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16",
+      "note": null
+    },
+    "evEbitTrailing": {
+      "value": 16.3,
+      "period": "TTM",
+      "source": "stockanalysis.com/financials/ratios/",
+      "asOf": "2026-08-25",
+      "note": "EBIT proxy = reported operating income."
+    },
+    "evEbitForward": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "evEbitdaTrailing": {
+      "value": 10.12,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-25",
+      "note": "FY2025 was 9.11x."
+    },
+    "fcfTTM": {
+      "value": null,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-25",
+      "note": "Only FCF yield/multiples given."
+    },
+    "fcfYield": {
+      "value": 0.081,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-25",
+      "note": "FY2025 was 8.77%."
+    },
+    "dividendPerShare": {
+      "value": 1.5,
+      "period": "FY2025",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16",
+      "note": null
+    },
+    "dividendYield": {
+      "value": 0.0132,
+      "period": "TTM",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16",
+      "note": null
+    },
+    "payoutRatio": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "netDebtToEbitda": {
+      "value": 0.17,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-25",
+      "note": "FY2025=-0.01x (net cash)."
+    },
+    "interestCoverage": {
+      "value": null,
+      "period": "",
+      "source": "",
+      "asOf": "",
+      "note": "unavailable"
+    },
+    "roic": {
+      "value": 0.2537,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-25",
+      "note": "FY2025=24.67%."
+    },
+    "roe": {
+      "value": 0.3593,
+      "period": "current",
+      "source": "stockanalysis.com",
+      "asOf": "2026-08-25",
+      "note": "Inflated by a small equity base after years of losses."
+    },
+    "beta5y": {
+      "value": 1.48,
+      "period": "",
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16",
+      "note": null
+    },
+    "sectorMetrics": {},
+    "history": [
+      {
+        "period": "FY2022",
+        "revenue": 12005,
+        "ebit": -1275,
+        "ebitMargin": -0.106,
+        "eps": -27.0,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2023",
+        "revenue": 13469,
+        "ebit": -315,
+        "ebitMargin": -0.023,
+        "eps": -19.13,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2024",
+        "revenue": 14757,
+        "ebit": 565,
+        "ebitMargin": 0.038,
+        "eps": -25.74,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "FY2025",
+        "revenue": 15727,
+        "ebit": 1641,
+        "ebitMargin": 0.104,
+        "eps": 16.66,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      },
+      {
+        "period": "TTM (Q3'25-Q2'26)",
+        "revenue": 16185,
+        "ebit": 1953,
+        "ebitMargin": 0.121,
+        "eps": 25.27,
+        "fcf": null,
+        "source": "stockanalysis.com"
+      }
+    ],
+    "historicalMultiples": {
+      "peLow": null,
+      "peHigh": null,
+      "peMedian": null,
+      "evEbitMedian": null,
+      "years": "",
+      "source": "unavailable"
+    },
+    "consensus": {
+      "rating": "Buy",
+      "analysts": 5,
+      "buy": null,
+      "hold": null,
+      "sell": null,
+      "targetAvg": 124.0,
+      "targetHigh": null,
+      "targetLow": null,
+      "source": "stockanalysis.com",
+      "asOf": "2026-10-16"
+    },
+    "forwardEstimates": {
+      "epsNextFY": null,
+      "epsFY2": null,
+      "revenueGrowthNextFY": null,
+      "source": "not fetched"
+    },
+    "recentEvents": [
+      "FY2025 was the first full year of GAAP net profit (SEK1,300m) after several loss-making years; TTM margins continuing to expand through Q2 2026."
+    ],
+    "valueTrapFlags": [
+      "Only ~1.5 years of sustained profitability after a multi-year loss history.",
+      "Beta of 1.48 implies above-market volatility.",
+      "Net income exceeded operating income in TTM/recent quarters, unexplained -- check for one-off items."
+    ],
+    "growthQualityNotes": [
+      "Real, steady revenue growth: SEK12.0bn (FY2022) to SEK16.2bn TTM, high-single-digit annual growth.",
+      "Operating margin clearly expanding: -10.6% to 12.1% TTM.",
+      "FCF yield already positive (8-9%) -- likely already at sustained positive FCF."
+    ],
+    "dataGaps": [
+      "Not in stock-agent /decisions.",
+      "Absolute EBITDA/net debt/FCF in SEK not found.",
+      "Payout ratio, interest coverage, forward estimates not pulled."
+    ]
+  },
+  "valuation": {
+    "asOf": "2026-11-17",
+    "kind": "standard",
+    "method": "EPS-based scenario fair value off TTM EPS, reflecting the recent turn to sustained profitability",
+    "metricBasis": "EPS (reported, TTM)",
+    "basisValue": 25.27,
+    "forwardDividendYield": 0.0132,
+    "qualityTier": "B",
+    "role": "Core Growth Engine",
+    "competitive": "stable",
+    "scores": {
+      "quality": 3,
+      "growth": 4,
+      "financialStrength": 4,
+      "risk": 3
+    },
+    "scenarios": {
+      "bear": {
+        "prob": 0.3,
+        "fairValue": 353.78,
+        "epsCagr5y": 0.05,
+        "exitPe5y": 12,
+        "note": "Margin expansion stalls after only ~1.5 years of profitability; subscription growth slows in mature Nordic markets."
+      },
+      "base": {
+        "prob": 0.45,
+        "fairValue": 404.32,
+        "epsCagr5y": 0.12,
+        "exitPe5y": 14,
+        "note": "Margin keeps expanding gradually as the Publishing/streaming mix matures and international markets scale."
+      },
+      "bull": {
+        "prob": 0.25,
+        "fairValue": 505.4,
+        "epsCagr5y": 0.2,
+        "exitPe5y": 18,
+        "note": "International (Dutch/Polish/US) markets scale faster, operating leverage accelerates."
+      }
+    },
+    "whyItFits": "Real, steady high-single-digit revenue growth with a genuine and recent operating-margin inflection to sustained GAAP profitability and already-positive FCF yield -- a textbook GARP turnaround-to-compounder story, if the short profitability track record holds.",
+    "growthDrivers": "Audiobook/e-book subscriber growth across Nordic and international (Netherlands, Poland, US) markets, Publishing segment synergies.",
+    "saturation": "Nordic home markets are relatively mature; future growth increasingly depends on international market scaling.",
+    "principalRisk": "Only ~1.5 years of sustained profitability -- a reversion to losses or margin stagnation would undercut the entire re-rating case."
+  }
+}
