@@ -493,14 +493,7 @@ export function renderDecisionLab(): string {
 
   <div class="page-sidebar">
     <button class="ref-tab demo-tab" id="demo-tab" type="button" aria-expanded="false" aria-controls="demo-flyout" style="--tab-accent:var(--text-primary)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.3" y="3" width="13.4" height="10" rx="1.6"></rect><path d="M6.6 5.8l4 2.2-4 2.2z" fill="currentColor" stroke="none"></path></svg><span>Demo</span><span class="demo-badge">4</span></button>
-    <div id="method-tabs" role="tablist" style="display:contents">
-      <button class="tab ref-tab" data-section="factors" aria-expanded="false" style="--tab-accent:var(--cat-1)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="1.5" y="9" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="9" width="5.5" height="5.5" rx="1"></rect></svg><span>Factors &amp; Inputs</span></button>
-      <button class="tab ref-tab" data-section="glossary" aria-expanded="false" style="--tab-accent:var(--cat-2)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2 2.5h4.5a2 2 0 0 1 2 2V14a1.5 1.5 0 0 0-1.5-1.5H2z"></path><path d="M14 2.5H9.5a2 2 0 0 0-2 2V14a1.5 1.5 0 0 1 1.5-1.5H14z"></path></svg><span>Glossary</span></button>
-      <button class="tab ref-tab" data-section="scoring" aria-expanded="false" style="--tab-accent:var(--cat-3)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.3"></circle><path d="M5.3 8.2l1.9 1.9 3.5-4"></path></svg><span>Scoring &amp; Decisions</span></button>
-      <button class="tab ref-tab" data-section="tuning" aria-expanded="false" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning Guide</span></button>
-      <button class="tab ref-tab" data-section="model" aria-expanded="false" style="--tab-accent:var(--cat-5)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6.3 1.8h3.4"></path><path d="M6.8 2v3.8L2.9 12a1.4 1.4 0 0 0 1.2 2.1h7.8a1.4 1.4 0 0 0 1.2-2.1L9.2 5.8V2"></path><path d="M4.6 10.2h6.8"></path></svg><span>Model Selection &amp; Testing</span></button>
-      <button class="tab ref-tab" data-section="results" aria-expanded="false" style="--tab-accent:var(--cat-6)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="14" x2="14" y2="14"></line><rect x="3" y="8.5" width="2.6" height="5.2" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="6.8" y="5" width="2.6" height="8.7" rx="0.4" fill="currentColor" stroke="none"></rect><rect x="10.6" y="2.5" width="2.6" height="11.2" rx="0.4" fill="currentColor" stroke="none"></rect></svg><span>Model Results</span></button>
-    </div>
+    <button class="ref-tab methodology-tab" id="methodology-tab" type="button" aria-expanded="false" aria-controls="reference-panel" style="--tab-accent:var(--cat-6)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="1.5" width="5.5" height="5.5" rx="1"></rect><rect x="1.5" y="9" width="5.5" height="5.5" rx="1"></rect><rect x="9" y="9" width="5.5" height="5.5" rx="1"></rect></svg><span>System Design</span></button>
     <button class="ref-tab weight-tab" id="weight-tab" type="button" aria-expanded="false" aria-controls="weight-flyout" style="--tab-accent:var(--cat-4)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="3" y1="2" x2="3" y2="14"></line><circle cx="3" cy="6" r="1.6" fill="currentColor" stroke="none"></circle><line x1="8" y1="2" x2="8" y2="14"></line><circle cx="8" cy="10" r="1.6" fill="currentColor" stroke="none"></circle><line x1="13" y1="2" x2="13" y2="14"></line><circle cx="13" cy="5" r="1.6" fill="currentColor" stroke="none"></circle></svg><span>Weight Tuning</span></button>
     <button class="ref-tab admin-tab" id="admin-tab" type="button" aria-expanded="false" aria-controls="admin-flyout" style="--tab-accent:var(--text-primary)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8.8 1.3 2.6 9.1h3.4L5.2 14.7l6.2-7.8H8z" fill="currentColor" stroke="none"></path></svg><span>Run &amp; Update</span></button>
     <button class="ref-tab advisor-tab" id="advisor-tab" type="button" aria-expanded="false" aria-controls="advisor-flyout" style="--tab-accent:var(--seq-400)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5 9.6 5.9 14 7.5 9.6 9.1 8 13.5 6.4 9.1 2 7.5 6.4 5.9z"></path><circle cx="12.5" cy="2.8" r="1" fill="currentColor" stroke="none"></circle></svg><span>Market Advisor</span></button>
@@ -626,9 +619,17 @@ export function renderDecisionLab(): string {
   <section id="reference-panel" class="methodology-panel reference-flyout">
     <h2>Reference &amp; methodology</h2>
     <p class="sub">How the scoring actually works, in as much depth as you want &mdash; pick a tab.</p>
+    <div class="tabs" id="method-tabs" role="tablist">
+      <button class="tab" data-section="factors" aria-selected="true"><span>Factors &amp; Inputs</span></button>
+      <button class="tab" data-section="glossary" aria-selected="false"><span>Glossary</span></button>
+      <button class="tab" data-section="scoring" aria-selected="false"><span>Scoring &amp; Decisions</span></button>
+      <button class="tab" data-section="tuning" aria-selected="false"><span>Weight Tuning Guide</span></button>
+      <button class="tab" data-section="model" aria-selected="false"><span>Model Selection &amp; Testing</span></button>
+      <button class="tab" data-section="results" aria-selected="false"><span>Model Results</span></button>
+    </div>
     <div class="ref-content">
 
-    <div class="method-section" data-section="factors">
+    <div class="method-section active" data-section="factors">
       <div class="method-body">
         <p class="plain-intro">In plain terms: every stock gets scored 0-100 on ten different questions &mdash; is it a profitable business, is it growing, could it survive a downturn, is it fairly priced, and so on. Each factor below covers one of those questions and lists exactly what financial data feeds it.</p>
         <h3>The 10 factors</h3>
@@ -2034,12 +2035,13 @@ export function renderDecisionLab(): string {
   var growthGarpFlyout = document.getElementById("growth-garp-flyout");
   var growthGarpFrame = document.getElementById("growth-garp-frame");
   var growthGarpLoaded = false;
+  var methodologyTab = document.getElementById("methodology-tab");
   var methodTabs = document.querySelectorAll("#method-tabs .tab");
   var methodSections = document.querySelectorAll(".method-section");
 
   function closeReferenceFlyout() {
     referenceFlyout.classList.remove("open");
-    methodTabs.forEach(function (t) { t.setAttribute("aria-expanded", "false"); });
+    methodologyTab.setAttribute("aria-expanded", "false");
   }
   function closeDemoFlyout() {
     demoFlyout.classList.remove("open");
@@ -2138,6 +2140,14 @@ export function renderDecisionLab(): string {
     demoTab.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
+  methodologyTab.addEventListener("click", function (ev) {
+    ev.stopPropagation();
+    var open = !referenceFlyout.classList.contains("open");
+    closeAllFlyoutsExcept(null);
+    referenceFlyout.classList.toggle("open", open);
+    methodologyTab.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
   weightTab.addEventListener("click", function (ev) {
     ev.stopPropagation();
     var open = !weightFlyout.classList.contains("open");
@@ -2182,18 +2192,9 @@ export function renderDecisionLab(): string {
 
   methodTabs.forEach(function (tab) {
     tab.addEventListener("click", function (ev) {
-      ev.stopPropagation(); // keep this click from also tripping the outside-click closer below
       var target = tab.getAttribute("data-section");
-      var wasOpenOnThisTab = referenceFlyout.classList.contains("open") && tab.getAttribute("aria-expanded") === "true";
-      closeAllFlyoutsExcept("reference");
-      if (wasOpenOnThisTab) {
-        // Clicking the already-open tab closes it -- back to just the ticker list.
-        closeReferenceFlyout();
-        return;
-      }
-      methodTabs.forEach(function (t) { t.setAttribute("aria-expanded", t === tab ? "true" : "false"); });
+      methodTabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
       methodSections.forEach(function (s) { s.classList.toggle("active", s.getAttribute("data-section") === target); });
-      referenceFlyout.classList.add("open");
     });
   });
 
